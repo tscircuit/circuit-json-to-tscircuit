@@ -50,7 +50,14 @@ export const MyResistor = (props: Props) => {
         rotationOffset: { x: 0, y: 0, z: 0 },
         positionOffset: { x: 0, y: 0, z: 0 },
       }}
-      pinLabels={pinLabels}
+      pinLabels={{
+  "pin1": [
+    "pin1"
+  ],
+  "pin2": [
+    "pin2"
+  ]
+}}
       supplierPartNumbers={{
   "jlcpcb": [
     "123456"
