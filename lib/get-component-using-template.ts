@@ -1,23 +1,23 @@
 import type { AnyCircuitElement } from "circuit-json"
 import { generateFootprintTsx } from "./generate-footprint-tsx"
 
-interface Params {
-  pinLabels: Record<string, string[]> | Record<string, string> // ChipProps["pinLabels"]
+export interface ComponentTemplateParams {
+  pinLabels?: Record<string, string[]> | Record<string, string> // ChipProps["pinLabels"]
   componentName: string
   objUrl?: string
   circuitJson: AnyCircuitElement[]
-  supplierPartNumbers: Record<string, string[]>
-  manufacturerPartNumber: string
+  supplierPartNumbers?: Record<string, string[]>
+  manufacturerPartNumber?: string
 }
 
-export const soupTypescriptComponentTemplate = ({
+export const getComponentUsingTemplate = ({
   pinLabels,
   componentName,
   objUrl,
   circuitJson,
   supplierPartNumbers,
   manufacturerPartNumber,
-}: Params) => {
+}: ComponentTemplateParams) => {
   const footprintTsx = generateFootprintTsx(circuitJson)
   return `
 import { createUseComponent } from "@tscircuit/core"
@@ -42,9 +42,9 @@ export const ${componentName} = (props: Props) => {
       }}`
           : ""
       }
-      pinLabels={pinLabels}
-      supplierPartNumbers={${JSON.stringify(supplierPartNumbers, null, "  ")}}
-      manufacturerPartNumber="${manufacturerPartNumber}"
+      ${pinLabels ? `pinLabels={${JSON.stringify(pinLabels, null, "  ")}}` : ""}
+      ${supplierPartNumbers ? `supplierPartNumbers={${JSON.stringify(supplierPartNumbers, null, "  ")}}` : ""}
+      ${manufacturerPartNumber ? `manufacturerPartNumber="${manufacturerPartNumber}"` : ""}
       footprint={${footprintTsx}}
     />
   )
