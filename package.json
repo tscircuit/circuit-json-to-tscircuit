@@ -10,6 +10,7 @@
     "format:check": "biome format ."
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@tscircuit/core": "^0.0.251",
     "@tscircuit/mm": "^0.0.8",
     "@tscircuit/soup-util": "^0.0.41",
