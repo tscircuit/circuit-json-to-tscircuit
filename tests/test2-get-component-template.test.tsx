@@ -27,7 +27,6 @@ test("test2 getComponentUsingTemplate", async () => {
   expect(tscircuitCode).toMatchInlineSnapshot(`
 "import { createUseComponent } from "@tscircuit/core"
 import type { CommonLayoutProps } from "@tscircuit/props"
-
 const pinLabels = {
   "pin1": [
     "pin1"
@@ -36,11 +35,9 @@ const pinLabels = {
     "pin2"
   ]
 } as const
-
 interface Props extends CommonLayoutProps {
   name: string
 }
-
 export const MyResistor = (props: Props) => {
   return (
     <chip
@@ -71,7 +68,6 @@ export const MyResistor = (props: Props) => {
     />
   )
 }
-
 export const useMyResistor = createUseComponent(MyResistor, pinLabels)"
 `)
 })
