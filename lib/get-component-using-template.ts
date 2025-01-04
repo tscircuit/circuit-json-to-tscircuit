@@ -52,5 +52,7 @@ export const ${componentName} = (props: Props) => {
 
 export const use${componentName} = createUseComponent(${componentName}, pinLabels)
 
-`.trim()
+`
+    .replace(/\n\s*\n/g, "\n")
+    .trim()
 }

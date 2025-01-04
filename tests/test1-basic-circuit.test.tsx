@@ -26,21 +26,14 @@ test("test1 basic circuit", async () => {
   expect(tscircuit).toMatchInlineSnapshot(`
 "import { createUseComponent } from "@tscircuit/core"
 import type { CommonLayoutProps } from "@tscircuit/props"
-
 const pinLabels = undefined as const
-
 interface Props extends CommonLayoutProps {
   name: string
 }
-
 export const MyResistor = (props: Props) => {
   return (
     <chip
       {...props}
-      
-      
-      
-      
       footprint={<footprint>
         <smtpad portHints={["1","left"]} pcbX="-0.5mm" pcbY="0mm" width="0.6000000000000001mm" height="0.6000000000000001mm" shape="rect" />
 <smtpad portHints={["2","right"]} pcbX="0.5mm" pcbY="0mm" width="0.6000000000000001mm" height="0.6000000000000001mm" shape="rect" />
@@ -48,7 +41,6 @@ export const MyResistor = (props: Props) => {
     />
   )
 }
-
 export const useMyResistor = createUseComponent(MyResistor, pinLabels)"
 `)
 })
