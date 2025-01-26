@@ -1,0 +1,13 @@
+{
+  "elements": [
+    {
+      "type": "resistor",
+      "value": "10k",
+      "id": "R1",
+      "nets": [
+        "net1",
+        "net2"
+      ]
+    }
+  ]
+}

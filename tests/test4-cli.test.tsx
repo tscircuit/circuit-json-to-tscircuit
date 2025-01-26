@@ -18,9 +18,9 @@ test("CLI should convert circuit JSON to TSX component", async () => {
         type: "resistor",
         value: "10k",
         id: "R1",
-        nets: ["net1", "net2"]
-      }
-    ]
+        nets: ["net1", "net2"],
+      },
+    ],
   }
   fs.writeFileSync(inputPath, JSON.stringify(inputJson, null, 2), "utf-8")
 
@@ -35,7 +35,7 @@ test("CLI should convert circuit JSON to TSX component", async () => {
   const proc = spawn({
     cmd: ["bun", "run", cliPath, inputPath, "-o", outputPath],
     stdout: "pipe",
-    stderr: "pipe"
+    stderr: "pipe",
   })
 
   const status = await proc.exited
@@ -45,7 +45,7 @@ test("CLI should convert circuit JSON to TSX component", async () => {
   // Verify process succeeded
   expect(status).toBe(0)
   expect(stderr).toBe("")
-  
+
   // Verify output file exists and contains expected content
   expect(fs.existsSync(outputPath)).toBe(true)
   const outputContent = fs.readFileSync(outputPath, "utf-8")

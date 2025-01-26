@@ -4,7 +4,7 @@ const pinLabels = undefined as const
 interface Props extends CommonLayoutProps {
   name: string
 }
-export const test-output = (props: Props) => {
+export const TestComponent = (props: Props) => {
   return (
     <chip
       {...props}
@@ -13,4 +13,4 @@ export const test-output = (props: Props) => {
     />
   )
 }
-export const usetest-output = createUseComponent(test-output, pinLabels)
+export const useTestComponent = createUseComponent(TestComponent, pinLabels)
