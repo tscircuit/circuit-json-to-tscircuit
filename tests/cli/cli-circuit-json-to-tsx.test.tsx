@@ -17,16 +17,26 @@ test("should convert sample circuit.json to TSX", async () => {
 
   // Verify output file content
   const output = await readFile(outputPath, "utf-8")
-  expect(output).toContain("export const Circuit = (props: Props)")
-  expect(output).toContain("<chip")
-  expect(output).toContain("<footprint>")
-  expect(output).toContain("<smtpad")
-  expect(output).toContain('portHints={["1","left"]}')
-  expect(output).toContain('pcbX="-0.5mm"')
-  expect(output).toContain('pcbY="0mm"')
-  expect(output).toContain('width="0.6000000000000001mm"')
-  expect(output).toContain('height="0.6000000000000001mm"')
-  expect(output).toContain('shape="rect"')
+  expect(output).toMatchInlineSnapshot(`
+"import { createUseComponent } from "@tscircuit/core"
+import type { CommonLayoutProps } from "@tscircuit/props"
+const pinLabels = undefined as const
+interface Props extends CommonLayoutProps {
+  name: string
+}
+export const Circuit = (props: Props) => {
+  return (
+    <chip
+      {...props}
+      footprint={<footprint>
+        <smtpad portHints={["1","left"]} pcbX="-0.5mm" pcbY="0mm" width="0.6000000000000001mm" height="0.6000000000000001mm" shape="rect" />
+<smtpad portHints={["2","right"]} pcbX="0.5mm" pcbY="0mm" width="0.6000000000000001mm" height="0.6000000000000001mm" shape="rect" />
+      </footprint>}
+    />
+  )
+}
+export const useCircuit = createUseComponent(Circuit, pinLabels)"
+`)
 })
 
 test("should require output path", async () => {
