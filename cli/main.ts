@@ -13,6 +13,7 @@ program
   .version(pkg.version)
   .argument("<input>", "Input circuit.json file path")
   .option("-o, --output <path>", "Output TSX file path")
+  .option("-n, --name <name>", "Component name")
   .action(async (input, options) => {
     if (!options.output) {
       throw new Error("Output path is required. Use -o or --output option.")
@@ -35,7 +36,7 @@ program
 
     console.log("Converting to TSCircuit...")
     const tsxContent = convertCircuitJsonToTscircuit(circuitJson, {
-      componentName: "Circuit",
+      componentName: options.name || "Circuit",
     })
     console.log("TSX content generated")
 
