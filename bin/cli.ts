@@ -45,7 +45,7 @@ function main() {
     console.log(
       `Successfully wrote tscircuit component to ${path.resolve(outputFile)}`,
     )
-  } catch (error) {
+  } catch (error: any) {
     console.error(`Error: ${error.message}`)
     process.exit(1)
   }
