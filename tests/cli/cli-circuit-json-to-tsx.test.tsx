@@ -37,5 +37,5 @@ test("should require output path", async () => {
   // Run command without output path
   await expect(
     runCommand(`circuit-json-to-tscircuit ${inputPath}`),
-  ).rejects.toThrow("Error: Output path is required")
+  ).rejects.toThrow("Output path is required. Use -o or --output option.")
 })
