@@ -3,6 +3,9 @@
   "main": "dist/index.js",
   "type": "module",
   "version": "0.0.4",
+  "bin": {
+    "circuit-json-to-tscircuit": "./bin/cli.ts"
+  },
   "scripts": {
     "build": "tsup-node lib/index.ts --format esm --dts",
     "test": "bun test",
