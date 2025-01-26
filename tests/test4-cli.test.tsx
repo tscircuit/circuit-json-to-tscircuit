@@ -16,9 +16,20 @@ test("CLI should convert circuit JSON to TSX component", async () => {
     elements: [
       {
         type: "resistor",
-        value: "10k",
-        id: "R1",
-        nets: ["net1", "net2"],
+        name: "R1",
+        resistance: "10k",
+        footprint: "0402",
+        nets: ["1", "2"],
+      },
+    ],
+    nets: [
+      {
+        id: "1",
+        name: "left",
+      },
+      {
+        id: "2",
+        name: "right",
       },
     ],
   }
@@ -39,8 +50,8 @@ test("CLI should convert circuit JSON to TSX component", async () => {
   })
 
   const status = await proc.exited
-  const stdout = await proc.stdout.text()
-  const stderr = await proc.stderr.text()
+  const stdout = await new Response(proc.stdout).text()
+  const stderr = await new Response(proc.stderr).text()
 
   // Verify process succeeded
   expect(status).toBe(0)
@@ -50,7 +61,8 @@ test("CLI should convert circuit JSON to TSX component", async () => {
   expect(fs.existsSync(outputPath)).toBe(true)
   const outputContent = fs.readFileSync(outputPath, "utf-8")
   expect(outputContent).toContain("export const TestComponent")
-  expect(outputContent).toContain("resistor")
+  expect(outputContent).toContain("<chip")
+  expect(outputContent).toContain("<footprint>")
 
   // Clean up
   fs.rmSync(testDir, { recursive: true, force: true })
