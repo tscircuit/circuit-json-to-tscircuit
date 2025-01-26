@@ -6,7 +6,7 @@ import { getCliTestFixture } from "../fixtures/get-cli-test-fixture"
 test("should convert sample circuit.json to TSX", async () => {
   const { tmpDir, runCommand } = await getCliTestFixture()
 
-  const inputPath = join(__dirname, "sample-input.json")
+  const inputPath = join(__dirname, "../../assets/input-circuit-json.json")
   const outputPath = join(tmpDir, "output.tsx")
 
   // Run the conversion command
@@ -32,7 +32,7 @@ test("should convert sample circuit.json to TSX", async () => {
 test("should require output path", async () => {
   const { runCommand } = await getCliTestFixture()
 
-  const inputPath = join(__dirname, "sample-input.json")
+  const inputPath = join(__dirname, "../../assets/input-circuit-json.json")
 
   // Run command without output path
   await expect(
