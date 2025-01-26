@@ -20,7 +20,7 @@ program
       }
 
       console.log(`Converting ${input} to ${options.output}`)
-      
+
       // Read input JSON file
       console.log("Reading input file...")
       const jsonContent = await readFile(input, "utf-8")
@@ -29,9 +29,11 @@ program
 
       // Convert to TSCircuit
       if (!Array.isArray(circuitJson)) {
-        throw new Error("Invalid circuit.json: expected an array of circuit elements")
+        throw new Error(
+          "Invalid circuit.json: expected an array of circuit elements",
+        )
       }
-      
+
       console.log("Converting to TSCircuit...")
       const tsxContent = convertCircuitJsonToTscircuit(circuitJson, {
         componentName: "Circuit",
@@ -41,7 +43,7 @@ program
       // Write output TSX file
       console.log("Writing output file...")
       await writeFile(options.output, tsxContent, "utf-8")
-      
+
       console.log("Conversion completed successfully!")
     } catch (error) {
       console.error("Error:", (error as Error).message)

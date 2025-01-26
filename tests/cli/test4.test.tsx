@@ -10,7 +10,9 @@ test("should convert sample circuit.json to TSX", async () => {
   const outputPath = join(tmpDir, "output.tsx")
 
   // Run the conversion command
-  const { stdout, stderr } = await runCommand(`circuit-json-to-tscircuit ${inputPath} -o ${outputPath}`)
+  const { stdout, stderr } = await runCommand(
+    `circuit-json-to-tscircuit ${inputPath} -o ${outputPath}`,
+  )
   expect(stderr).toBe("")
 
   // Verify output file content
@@ -33,7 +35,7 @@ test("should require output path", async () => {
   const inputPath = join(__dirname, "sample-input.json")
 
   // Run command without output path
-  await expect(runCommand(`circuit-json-to-tscircuit ${inputPath}`))
-    .rejects
-    .toThrow("Error: Output path is required")
+  await expect(
+    runCommand(`circuit-json-to-tscircuit ${inputPath}`),
+  ).rejects.toThrow("Error: Output path is required")
 })
