@@ -5,12 +5,6 @@ interface Props extends CommonLayoutProps {
   name: string
 }
 export const TestComponent = (props: Props) => {
-  return (
-    <chip
-      {...props}
-      footprint={<footprint>
-      </footprint>}
-    />
-  )
+  return <chip {...props} footprint={<footprint></footprint>} />
 }
 export const useTestComponent = createUseComponent(TestComponent, pinLabels)
