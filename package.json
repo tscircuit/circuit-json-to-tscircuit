@@ -4,13 +4,14 @@
   "type": "module",
   "version": "0.0.4",
   "scripts": {
-    "build": "tsup-node lib/index.ts --format esm --dts",
+    "build": "tsup lib/index.ts cli/main.ts --format esm --dts",
     "test": "bun test",
     "format": "biome format --write .",
     "format:check": "biome format ."
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "commander": "^13.1.0",
     "@tscircuit/core": "^0.0.251",
     "@tscircuit/mm": "^0.0.8",
     "@tscircuit/soup-util": "^0.0.41",
@@ -22,8 +23,5 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "commander": "^13.1.0"
   }
 }
