@@ -2,7 +2,7 @@
   "name": "circuit-json-to-tscircuit",
   "main": "dist/index.js",
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "build": "tsup lib/index.ts cli/main.ts --format esm --dts",
     "test": "bun test",
