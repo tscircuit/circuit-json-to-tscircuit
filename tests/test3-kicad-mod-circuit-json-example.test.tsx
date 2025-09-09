@@ -7,88 +7,79 @@ test("test3 kicad mod circuit json example", async () => {
   })
 
   expect(tscircuit).toMatchInlineSnapshot(`
-"import { createUseComponent } from "@tscircuit/core"
-import type { CommonLayoutProps } from "@tscircuit/props"
-const pinLabels = undefined as const
-interface Props extends CommonLayoutProps {
-  name: string
-}
-export const Test3Component = (props: Props) => {
-  return (
-    <chip
-      {...props}
-      footprint={<footprint>
-        <platedhole  portHints={["1"]} pcbX="-8.89mm" pcbY="7.62mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
-<platedhole  portHints={["2"]} pcbX="-8.89mm" pcbY="5.08mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
-<platedhole  portHints={["2"]} pcbX="-7.62mm" pcbY="5.08mm" outerDiameter="1.4mm" holeDiameter="0.85mm" shape="circle" />
-<platedhole  portHints={["3"]} pcbX="-8.89mm" pcbY="2.54mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
-<platedhole  portHints={["3"]} pcbX="-7.62mm" pcbY="2.54mm" outerDiameter="1.5mm" holeDiameter="0.85mm" shape="circle" />
-<platedhole  portHints={["4"]} pcbX="-8.89mm" pcbY="0mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
-<platedhole  portHints={["4"]} pcbX="-7.62mm" pcbY="0mm" outerDiameter="1.5mm" holeDiameter="0.85mm" shape="circle" />
-<platedhole  portHints={["5"]} pcbX="-8.89mm" pcbY="-2.54mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
-<platedhole  portHints={["5"]} pcbX="-7.62mm" pcbY="-2.54mm" outerDiameter="1.5mm" holeDiameter="0.85mm" shape="circle" />
-<platedhole  portHints={["6"]} pcbX="-8.89mm" pcbY="-5.08mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
-<platedhole  portHints={["6"]} pcbX="-7.62mm" pcbY="-5.08mm" outerDiameter="1.4mm" holeDiameter="0.85mm" shape="circle" />
-<platedhole  portHints={["7"]} pcbX="-8.89mm" pcbY="-7.62mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
-<platedhole  portHints={["7"]} pcbX="-7.62mm" pcbY="-7.62mm" outerDiameter="1.5mm" holeDiameter="0.85mm" shape="circle" />
-<platedhole  portHints={["8"]} pcbX="7.62mm" pcbY="-7.62mm" outerDiameter="1.524mm" holeDiameter="0.889mm" shape="circle" />
-<platedhole  portHints={["8"]} pcbX="8.89mm" pcbY="-7.62mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
-<platedhole  portHints={["9"]} pcbX="7.62mm" pcbY="-5.08mm" outerDiameter="1.4mm" holeDiameter="0.85mm" shape="circle" />
-<platedhole  portHints={["9"]} pcbX="8.89mm" pcbY="-5.08mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
-<platedhole  portHints={["10"]} pcbX="7.62mm" pcbY="-2.54mm" outerDiameter="1.5mm" holeDiameter="0.85mm" shape="circle" />
-<platedhole  portHints={["10"]} pcbX="8.89mm" pcbY="-2.54mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
-<platedhole  portHints={["11"]} pcbX="7.62mm" pcbY="0mm" outerDiameter="1.5mm" holeDiameter="0.85mm" shape="circle" />
-<platedhole  portHints={["11"]} pcbX="8.89mm" pcbY="0mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
-<platedhole  portHints={["12"]} pcbX="7.62mm" pcbY="2.54mm" outerDiameter="1.5mm" holeDiameter="0.85mm" shape="circle" />
-<platedhole  portHints={["12"]} pcbX="8.89mm" pcbY="2.54mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
-<platedhole  portHints={["13"]} pcbX="7.62mm" pcbY="5.08mm" outerDiameter="1.4mm" holeDiameter="0.85mm" shape="circle" />
-<platedhole  portHints={["13"]} pcbX="8.89mm" pcbY="5.08mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
-<platedhole  portHints={["14"]} pcbX="7.62mm" pcbY="7.62mm" outerDiameter="1.5mm" holeDiameter="0.85mm" shape="circle" />
-<platedhole  portHints={["14"]} pcbX="8.89mm" pcbY="7.62mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
-<smtpad portHints={["1"]} pcbX="-8.278mm" pcbY="7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
-<smtpad portHints={["1"]} pcbX="-8.278mm" pcbY="7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
-<smtpad portHints={["2"]} pcbX="-8.337mm" pcbY="5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
-<smtpad portHints={["2"]} pcbX="-8.337mm" pcbY="5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
-<smtpad portHints={["3"]} pcbX="-8.278mm" pcbY="2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
-<smtpad portHints={["3"]} pcbX="-8.278mm" pcbY="2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
-<smtpad portHints={["4"]} pcbX="-8.278mm" pcbY="0mm" width="1.626mm" height="1.325mm" shape="rect" />
-<smtpad portHints={["4"]} pcbX="-8.278mm" pcbY="0mm" width="1.626mm" height="1.325mm" shape="rect" />
-<smtpad portHints={["5"]} pcbX="-8.278mm" pcbY="-2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
-<smtpad portHints={["5"]} pcbX="-8.278mm" pcbY="-2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
-<smtpad portHints={["6"]} pcbX="-8.337mm" pcbY="-5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
-<smtpad portHints={["6"]} pcbX="-8.337mm" pcbY="-5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
-<smtpad portHints={["7"]} pcbX="-8.278mm" pcbY="-7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
-<smtpad portHints={["7"]} pcbX="-8.278mm" pcbY="-7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
-<smtpad portHints={["8"]} pcbX="8.278mm" pcbY="-7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
-<smtpad portHints={["8"]} pcbX="8.278mm" pcbY="-7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
-<smtpad portHints={["9"]} pcbX="8.337mm" pcbY="-5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
-<smtpad portHints={["9"]} pcbX="8.337mm" pcbY="-5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
-<smtpad portHints={["10"]} pcbX="8.278mm" pcbY="-2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
-<smtpad portHints={["10"]} pcbX="8.278mm" pcbY="-2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
-<smtpad portHints={["11"]} pcbX="8.278mm" pcbY="0mm" width="1.626mm" height="1.325mm" shape="rect" />
-<smtpad portHints={["11"]} pcbX="8.278mm" pcbY="0mm" width="1.626mm" height="1.325mm" shape="rect" />
-<smtpad portHints={["12"]} pcbX="8.278mm" pcbY="2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
-<smtpad portHints={["12"]} pcbX="8.278mm" pcbY="2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
-<smtpad portHints={["13"]} pcbX="8.337mm" pcbY="5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
-<smtpad portHints={["13"]} pcbX="8.337mm" pcbY="5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
-<smtpad portHints={["14"]} pcbX="8.278mm" pcbY="7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
-<smtpad portHints={["14"]} pcbX="8.278mm" pcbY="7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
-<silkscreenpath route={[{"x":-8.89,"y":-8.509},{"x":-8.89,"y":8.636}]} />
-<silkscreenpath route={[{"x":-6.985,"y":-10.414},{"x":6.985,"y":-10.414}]} />
-<silkscreenpath route={[{"x":6.985,"y":10.541},{"x":-6.985,"y":10.541}]} />
-<silkscreenpath route={[{"x":8.89,"y":-8.509},{"x":8.89,"y":8.636}]} />
-<silkscreenpath route={[{"x":-8.89,"y":8.636},{"x":-8.634777964987212,"y":9.588499698293818},{"x":-7.937499698293819,"y":10.285777964987211},{"x":-6.985,"y":10.541}]} />
-<silkscreenpath route={[{"x":-6.985,"y":-10.414},{"x":-7.937499698293818,"y":-10.158777964987209},{"x":-8.63477796498721,"y":-9.461499698293817},{"x":-8.89,"y":-8.509}]} />
-<silkscreenpath route={[{"x":6.985,"y":10.541},{"x":7.937499698293818,"y":10.285777964987211},{"x":8.63477796498721,"y":9.588499698293818},{"x":8.889999999999999,"y":8.636}]} />
-<silkscreenpath route={[{"x":8.89,"y":-8.509},{"x":8.63477796498721,"y":-9.461499698293817},{"x":7.937499698293818,"y":-10.158777964987209},{"x":6.985,"y":-10.413999999999998}]} />
-      </footprint>}
-    />
-  )
-}
-export const useTest3Component = createUseComponent(Test3Component, pinLabels)"
-`)
+    "import { type ChipProps } from "tscircuit"
+    export const Test3Component = (props: ChipProps) => (
+      <chip
+        footprint={<footprint>
+            <platedhole  portHints={["1"]} pcbX="-8.89mm" pcbY="7.62mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
+    <platedhole  portHints={["2"]} pcbX="-8.89mm" pcbY="5.08mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
+    <platedhole  portHints={["2"]} pcbX="-7.62mm" pcbY="5.08mm" outerDiameter="1.4mm" holeDiameter="0.85mm" shape="circle" />
+    <platedhole  portHints={["3"]} pcbX="-8.89mm" pcbY="2.54mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
+    <platedhole  portHints={["3"]} pcbX="-7.62mm" pcbY="2.54mm" outerDiameter="1.5mm" holeDiameter="0.85mm" shape="circle" />
+    <platedhole  portHints={["4"]} pcbX="-8.89mm" pcbY="0mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
+    <platedhole  portHints={["4"]} pcbX="-7.62mm" pcbY="0mm" outerDiameter="1.5mm" holeDiameter="0.85mm" shape="circle" />
+    <platedhole  portHints={["5"]} pcbX="-8.89mm" pcbY="-2.54mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
+    <platedhole  portHints={["5"]} pcbX="-7.62mm" pcbY="-2.54mm" outerDiameter="1.5mm" holeDiameter="0.85mm" shape="circle" />
+    <platedhole  portHints={["6"]} pcbX="-8.89mm" pcbY="-5.08mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
+    <platedhole  portHints={["6"]} pcbX="-7.62mm" pcbY="-5.08mm" outerDiameter="1.4mm" holeDiameter="0.85mm" shape="circle" />
+    <platedhole  portHints={["7"]} pcbX="-8.89mm" pcbY="-7.62mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
+    <platedhole  portHints={["7"]} pcbX="-7.62mm" pcbY="-7.62mm" outerDiameter="1.5mm" holeDiameter="0.85mm" shape="circle" />
+    <platedhole  portHints={["8"]} pcbX="7.62mm" pcbY="-7.62mm" outerDiameter="1.524mm" holeDiameter="0.889mm" shape="circle" />
+    <platedhole  portHints={["8"]} pcbX="8.89mm" pcbY="-7.62mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
+    <platedhole  portHints={["9"]} pcbX="7.62mm" pcbY="-5.08mm" outerDiameter="1.4mm" holeDiameter="0.85mm" shape="circle" />
+    <platedhole  portHints={["9"]} pcbX="8.89mm" pcbY="-5.08mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
+    <platedhole  portHints={["10"]} pcbX="7.62mm" pcbY="-2.54mm" outerDiameter="1.5mm" holeDiameter="0.85mm" shape="circle" />
+    <platedhole  portHints={["10"]} pcbX="8.89mm" pcbY="-2.54mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
+    <platedhole  portHints={["11"]} pcbX="7.62mm" pcbY="0mm" outerDiameter="1.5mm" holeDiameter="0.85mm" shape="circle" />
+    <platedhole  portHints={["11"]} pcbX="8.89mm" pcbY="0mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
+    <platedhole  portHints={["12"]} pcbX="7.62mm" pcbY="2.54mm" outerDiameter="1.5mm" holeDiameter="0.85mm" shape="circle" />
+    <platedhole  portHints={["12"]} pcbX="8.89mm" pcbY="2.54mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
+    <platedhole  portHints={["13"]} pcbX="7.62mm" pcbY="5.08mm" outerDiameter="1.4mm" holeDiameter="0.85mm" shape="circle" />
+    <platedhole  portHints={["13"]} pcbX="8.89mm" pcbY="5.08mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
+    <platedhole  portHints={["14"]} pcbX="7.62mm" pcbY="7.62mm" outerDiameter="1.5mm" holeDiameter="0.85mm" shape="circle" />
+    <platedhole  portHints={["14"]} pcbX="8.89mm" pcbY="7.62mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
+    <smtpad portHints={["1"]} pcbX="-8.278mm" pcbY="7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["1"]} pcbX="-8.278mm" pcbY="7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["2"]} pcbX="-8.337mm" pcbY="5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
+    <smtpad portHints={["2"]} pcbX="-8.337mm" pcbY="5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
+    <smtpad portHints={["3"]} pcbX="-8.278mm" pcbY="2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["3"]} pcbX="-8.278mm" pcbY="2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["4"]} pcbX="-8.278mm" pcbY="0mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["4"]} pcbX="-8.278mm" pcbY="0mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["5"]} pcbX="-8.278mm" pcbY="-2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["5"]} pcbX="-8.278mm" pcbY="-2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["6"]} pcbX="-8.337mm" pcbY="-5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
+    <smtpad portHints={["6"]} pcbX="-8.337mm" pcbY="-5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
+    <smtpad portHints={["7"]} pcbX="-8.278mm" pcbY="-7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["7"]} pcbX="-8.278mm" pcbY="-7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["8"]} pcbX="8.278mm" pcbY="-7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["8"]} pcbX="8.278mm" pcbY="-7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["9"]} pcbX="8.337mm" pcbY="-5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
+    <smtpad portHints={["9"]} pcbX="8.337mm" pcbY="-5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
+    <smtpad portHints={["10"]} pcbX="8.278mm" pcbY="-2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["10"]} pcbX="8.278mm" pcbY="-2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["11"]} pcbX="8.278mm" pcbY="0mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["11"]} pcbX="8.278mm" pcbY="0mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["12"]} pcbX="8.278mm" pcbY="2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["12"]} pcbX="8.278mm" pcbY="2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["13"]} pcbX="8.337mm" pcbY="5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
+    <smtpad portHints={["13"]} pcbX="8.337mm" pcbY="5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
+    <smtpad portHints={["14"]} pcbX="8.278mm" pcbY="7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["14"]} pcbX="8.278mm" pcbY="7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <silkscreenpath route={[{"x":-8.89,"y":-8.509},{"x":-8.89,"y":8.636}]} />
+    <silkscreenpath route={[{"x":-6.985,"y":-10.414},{"x":6.985,"y":-10.414}]} />
+    <silkscreenpath route={[{"x":6.985,"y":10.541},{"x":-6.985,"y":10.541}]} />
+    <silkscreenpath route={[{"x":8.89,"y":-8.509},{"x":8.89,"y":8.636}]} />
+    <silkscreenpath route={[{"x":-8.89,"y":8.636},{"x":-8.634777964987212,"y":9.588499698293818},{"x":-7.937499698293819,"y":10.285777964987211},{"x":-6.985,"y":10.541}]} />
+    <silkscreenpath route={[{"x":-6.985,"y":-10.414},{"x":-7.937499698293818,"y":-10.158777964987209},{"x":-8.63477796498721,"y":-9.461499698293817},{"x":-8.89,"y":-8.509}]} />
+    <silkscreenpath route={[{"x":6.985,"y":10.541},{"x":7.937499698293818,"y":10.285777964987211},{"x":8.63477796498721,"y":9.588499698293818},{"x":8.889999999999999,"y":8.636}]} />
+    <silkscreenpath route={[{"x":8.89,"y":-8.509},{"x":8.63477796498721,"y":-9.461499698293817},{"x":7.937499698293818,"y":-10.158777964987209},{"x":6.985,"y":-10.413999999999998}]} />
+          </footprint>}
+        {...props}
+      />
+    )"
+  `)
 })
-
 const circuitJson: any = [
   {
     type: "source_component",
