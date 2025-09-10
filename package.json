@@ -8,7 +8,7 @@
   "type": "module",
   "version": "0.0.7",
   "scripts": {
-    "build": "tsup lib/index.ts cli/main.ts --format esm --dts",
+    "build": "tsup-node lib/index.ts cli/main.ts --format esm --dts",
     "test": "bun test",
     "format": "biome format --write .",
     "format:check": "biome format ."
