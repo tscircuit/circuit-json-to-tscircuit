@@ -1,19 +1,19 @@
 import { test, expect } from "bun:test"
 import { convertCircuitJsonToTscircuit } from "lib/index"
-import { Circuit } from "@tscircuit/core"
+import { readFile } from "node:fs/promises"
+import { join } from "node:path"
 import { getComponentUsingTemplate } from "lib/get-component-using-template"
 
 test("test2 getComponentUsingTemplate", async () => {
-  const circuit = new Circuit()
-
-  circuit.add(
-    <board width="10mm" height="10mm">
-      <resistor name="R1" resistance="1k" footprint="0402" />
-    </board>,
+  const circuitJson = JSON.parse(
+    await readFile(
+      join(__dirname, "../assets/input-circuit-json.json"),
+      "utf-8",
+    ),
   )
 
   const tscircuitCode = getComponentUsingTemplate({
-    circuitJson: circuit.getCircuitJson(),
+    circuitJson,
     componentName: "MyResistor",
     pinLabels: {
       pin1: ["pin1"],
@@ -25,49 +25,35 @@ test("test2 getComponentUsingTemplate", async () => {
   })
 
   expect(tscircuitCode).toMatchInlineSnapshot(`
-"import { createUseComponent } from "@tscircuit/core"
-import type { CommonLayoutProps } from "@tscircuit/props"
-const pinLabels = {
-  "pin1": [
-    "pin1"
-  ],
-  "pin2": [
-    "pin2"
-  ]
-} as const
-interface Props extends CommonLayoutProps {
-  name: string
-}
-export const MyResistor = (props: Props) => {
-  return (
-    <chip
-      {...props}
-      cadModel={{
-        objUrl: "...",
-        rotationOffset: { x: 0, y: 0, z: 0 },
-        positionOffset: { x: 0, y: 0, z: 0 },
-      }}
-      pinLabels={{
-  "pin1": [
-    "pin1"
-  ],
-  "pin2": [
-    "pin2"
-  ]
-}}
-      supplierPartNumbers={{
-  "jlcpcb": [
-    "123456"
-  ]
-}}
-      manufacturerPartNumber="123456"
-      footprint={<footprint>
-        <smtpad portHints={["1","left"]} pcbX="-0.5mm" pcbY="0mm" width="0.6000000000000001mm" height="0.6000000000000001mm" shape="rect" />
-<smtpad portHints={["2","right"]} pcbX="0.5mm" pcbY="0mm" width="0.6000000000000001mm" height="0.6000000000000001mm" shape="rect" />
-      </footprint>}
-    />
-  )
-}
-export const useMyResistor = createUseComponent(MyResistor, pinLabels)"
-`)
+    "import { type ChipProps } from "tscircuit"
+    const pinLabels = {
+      "pin1": [
+        "pin1"
+      ],
+      "pin2": [
+        "pin2"
+      ]
+    } as const
+    export const MyResistor = (props: ChipProps<typeof pinLabels>) => (
+      <chip
+        footprint={<footprint>
+            <smtpad portHints={["1","left"]} pcbX="-0.5mm" pcbY="0mm" width="0.6000000000000001mm" height="0.6000000000000001mm" shape="rect" />
+    <smtpad portHints={["2","right"]} pcbX="0.5mm" pcbY="0mm" width="0.6000000000000001mm" height="0.6000000000000001mm" shape="rect" />
+          </footprint>}
+        pinLabels={pinLabels}
+        cadModel={{
+            objUrl: "...",
+            rotationOffset: { x: 0, y: 0, z: 0 },
+            positionOffset: { x: 0, y: 0, z: 0 },
+          }}
+        supplierPartNumbers={{
+      "jlcpcb": [
+        "123456"
+      ]
+    }}
+        manufacturerPartNumber="123456"
+        {...props}
+      />
+    )"
+  `)
 })

@@ -20,38 +20,17 @@ export const getComponentUsingTemplate = ({
 }: ComponentTemplateParams) => {
   const footprintTsx = generateFootprintTsx(circuitJson)
   return `
-import { createUseComponent } from "@tscircuit/core"
-import type { CommonLayoutProps } from "@tscircuit/props"
-
-const pinLabels = ${JSON.stringify(pinLabels, null, "  ")} as const
-
-interface Props extends CommonLayoutProps {
-  name: string
-}
-
-export const ${componentName} = (props: Props) => {
-  return (
-    <chip
-      {...props}
-      ${
-        objUrl
-          ? `cadModel={{
-        objUrl: "${objUrl}",
-        rotationOffset: { x: 0, y: 0, z: 0 },
-        positionOffset: { x: 0, y: 0, z: 0 },
-      }}`
-          : ""
-      }
-      ${pinLabels ? `pinLabels={${JSON.stringify(pinLabels, null, "  ")}}` : ""}
-      ${supplierPartNumbers ? `supplierPartNumbers={${JSON.stringify(supplierPartNumbers, null, "  ")}}` : ""}
-      ${manufacturerPartNumber ? `manufacturerPartNumber="${manufacturerPartNumber}"` : ""}
-      footprint={${footprintTsx}}
-    />
-  )
-}
-
-export const use${componentName} = createUseComponent(${componentName}, pinLabels)
-
+import { type ChipProps } from "tscircuit"
+${pinLabels ? `const pinLabels = ${JSON.stringify(pinLabels, null, "  ")} as const\n` : ""}export const ${componentName} = (props: ChipProps${pinLabels ? `<typeof pinLabels>` : ""}) => (
+  <chip
+    footprint={${footprintTsx}}
+    ${pinLabels ? "pinLabels={pinLabels}" : ""}
+    ${objUrl ? `cadModel={{\n        objUrl: \"${objUrl}\",\n        rotationOffset: { x: 0, y: 0, z: 0 },\n        positionOffset: { x: 0, y: 0, z: 0 },\n      }}` : ""}
+    ${supplierPartNumbers ? `supplierPartNumbers={${JSON.stringify(supplierPartNumbers, null, "  ")}}` : ""}
+    ${manufacturerPartNumber ? `manufacturerPartNumber=\"${manufacturerPartNumber}\"` : ""}
+    {...props}
+  />
+)
 `
     .replace(/\n\s*\n/g, "\n")
     .trim()

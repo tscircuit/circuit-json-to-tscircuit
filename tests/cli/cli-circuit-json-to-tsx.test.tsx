@@ -18,25 +18,17 @@ test("should convert sample circuit.json to TSX", async () => {
   // Verify output file content
   const output = await readFile(outputPath, "utf-8")
   expect(output).toMatchInlineSnapshot(`
-"import { createUseComponent } from "@tscircuit/core"
-import type { CommonLayoutProps } from "@tscircuit/props"
-const pinLabels = undefined as const
-interface Props extends CommonLayoutProps {
-  name: string
-}
-export const Circuit = (props: Props) => {
-  return (
-    <chip
-      {...props}
-      footprint={<footprint>
-        <smtpad portHints={["1","left"]} pcbX="-0.5mm" pcbY="0mm" width="0.6000000000000001mm" height="0.6000000000000001mm" shape="rect" />
-<smtpad portHints={["2","right"]} pcbX="0.5mm" pcbY="0mm" width="0.6000000000000001mm" height="0.6000000000000001mm" shape="rect" />
-      </footprint>}
-    />
-  )
-}
-export const useCircuit = createUseComponent(Circuit, pinLabels)"
-`)
+    "import { type ChipProps } from "tscircuit"
+    export const Circuit = (props: ChipProps) => (
+      <chip
+        footprint={<footprint>
+            <smtpad portHints={["1","left"]} pcbX="-0.5mm" pcbY="0mm" width="0.6000000000000001mm" height="0.6000000000000001mm" shape="rect" />
+    <smtpad portHints={["2","right"]} pcbX="0.5mm" pcbY="0mm" width="0.6000000000000001mm" height="0.6000000000000001mm" shape="rect" />
+          </footprint>}
+        {...props}
+      />
+    )"
+  `)
 })
 
 test("should require output path", async () => {
