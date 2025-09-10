@@ -1,6 +1,10 @@
 {
   "name": "circuit-json-to-tscircuit",
-  "main": "dist/index.js",
+  "main": "dist/lib/index.js",
+  "exports": {
+    ".": "./dist/lib/index.js",
+    "./cli": "./dist/cli/main.js"
+  },
   "type": "module",
   "version": "0.0.6",
   "scripts": {
