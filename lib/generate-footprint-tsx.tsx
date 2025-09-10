@@ -9,6 +9,8 @@ export const generateFootprintTsx = (
   const platedHoles = su(circuitJson).pcb_plated_hole.list()
   const smtPads = su(circuitJson).pcb_smtpad.list()
   const silkscreenPaths = su(circuitJson).pcb_silkscreen_path.list()
+  const fabricationNotePaths = su(circuitJson).pcb_fabrication_note_path.list()
+  const silkscreenTexts = su(circuitJson).pcb_silkscreen_text.list()
 
   const elementStrings: string[] = []
 
@@ -49,6 +51,28 @@ export const generateFootprintTsx = (
   for (const silkscreenPath of silkscreenPaths) {
     elementStrings.push(
       `<silkscreenpath route={${JSON.stringify(silkscreenPath.route)}} />`,
+    )
+  }
+
+  // Map fabrication note paths to silkscreen paths in footprints
+  for (const fabPath of fabricationNotePaths) {
+    elementStrings.push(
+      `<silkscreenpath route={${JSON.stringify(fabPath.route)}} />`,
+    )
+  }
+
+  // Add silkscreen text elements (use pcbX/pcbY instead of anchorPosition)
+  for (const stext of silkscreenTexts) {
+    const pcbX = stext.anchor_position?.x ?? 0
+    const pcbY = stext.anchor_position?.y ?? 0
+    const anchorAlignment = stext.anchor_alignment
+    const fontSize = stext.font_size
+    // Escape quotes in text content for JSX attribute
+    const rawText = String(stext.text ?? "")
+    const escapedText = rawText.replace(/"/g, '\\"')
+
+    elementStrings.push(
+      `<silkscreentext pcbX={${pcbX}} pcbY={${pcbY}} anchorAlignment="${anchorAlignment}" fontSize={${fontSize}} text="${escapedText}" />`,
     )
   }
 
