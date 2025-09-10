@@ -6,7 +6,7 @@
     "./cli": "./dist/cli/main.js"
   },
   "type": "module",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "scripts": {
     "build": "tsup-node lib/index.ts cli/main.ts --format esm --dts",
     "test": "bun test",
