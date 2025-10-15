@@ -11,6 +11,7 @@ export const generateFootprintTsx = (
   const silkscreenPaths = su(circuitJson).pcb_silkscreen_path.list()
   const fabricationNotePaths = su(circuitJson).pcb_fabrication_note_path.list()
   const silkscreenTexts = su(circuitJson).pcb_silkscreen_text.list()
+  const pcbCutouts = su(circuitJson).pcb_cutout.list()
 
   const elementStrings: string[] = []
 
@@ -74,6 +75,37 @@ export const generateFootprintTsx = (
     elementStrings.push(
       `<silkscreentext pcbX={${pcbX}} pcbY={${pcbY}} anchorAlignment="${anchorAlignment}" fontSize={${fontSize}} text="${escapedText}" />`,
     )
+  }
+
+  // Add pcb_cutout elements
+  for (const cutout of pcbCutouts) {
+    if (cutout.shape === "rect") {
+      const pcbX = cutout.center.x
+      const pcbY = cutout.center.y
+      const width = mmStr(cutout.width)
+      const height = mmStr(cutout.height)
+      const rotation = cutout.rotation !== undefined ? ` pcbRotation="${mmStr(cutout.rotation)}"` : ""
+
+      elementStrings.push(
+        `<pcbcutout shape="rect" pcbX="${mmStr(pcbX)}" pcbY="${mmStr(pcbY)}" width="${width}" height="${height}"${rotation} />`,
+      )
+    } else if (cutout.shape === "circle") {
+      const pcbX = cutout.center.x
+      const pcbY = cutout.center.y
+      const radius = mmStr(cutout.radius)
+
+      elementStrings.push(
+        `<pcbcutout shape="circle" pcbX="${mmStr(pcbX)}" pcbY="${mmStr(pcbY)}" radius="${radius}" />`,
+      )
+    } else if (cutout.shape === "polygon") {
+      const pointsJson = JSON.stringify(cutout.points)
+
+      elementStrings.push(
+        `<pcbcutout shape="polygon" points={${pointsJson}} />`,
+      )
+    } else {
+      console.warn(`Unhandled pcb_cutout shape: ${(cutout as any).shape}`)
+    }
   }
 
   return `
