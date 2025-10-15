@@ -16,13 +16,13 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "commander": "^13.1.0",
-    "@tscircuit/core": "^0.0.251",
+    "@tscircuit/core": "^0.0.792",
     "@tscircuit/mm": "^0.0.8",
     "@tscircuit/soup-util": "^0.0.41",
     "@types/bun": "latest",
     "@types/react": "18",
     "@types/react-dom": "18",
-    "circuit-json": "^0.0.126",
+    "circuit-json": "^0.0.279",
     "tsup": "^8.3.5"
   },
   "peerDependencies": {
