@@ -3,7 +3,6 @@ import { join, resolve } from "node:path"
 import { tmpdir } from "node:os"
 import { exec } from "node:child_process"
 import { promisify } from "node:util"
-import { afterEach } from "bun:test"
 
 const execAsync = promisify(exec)
 
@@ -35,7 +34,7 @@ export async function getCliTestFixture(): Promise<CliTestFixture> {
     await rm(tmpDir, { recursive: true, force: true })
   }
 
-  afterEach(cleanup)
+  globalThis.deferredCleanupFns.push(cleanup)
 
   return {
     tmpDir,
