@@ -82,7 +82,7 @@ export const generateFootprintTsx = (
     )
   }
 
-  // Add pcb_cutout elements
+  // Add cutout elements
   for (const cutout of pcbCutouts) {
     if (cutout.shape === "rect") {
       const pcbX = cutout.center.x
@@ -95,7 +95,7 @@ export const generateFootprintTsx = (
           : ""
 
       elementStrings.push(
-        `<pcbcutout shape="rect" pcbX="${mmStr(pcbX)}" pcbY="${mmStr(pcbY)}" width="${width}" height="${height}"${rotation} />`,
+        `<cutout shape="rect" pcbX="${mmStr(pcbX)}" pcbY="${mmStr(pcbY)}" width="${width}" height="${height}"${rotation} />`,
       )
     } else if (cutout.shape === "circle") {
       const pcbX = cutout.center.x
@@ -103,14 +103,12 @@ export const generateFootprintTsx = (
       const radius = mmStr(cutout.radius)
 
       elementStrings.push(
-        `<pcbcutout shape="circle" pcbX="${mmStr(pcbX)}" pcbY="${mmStr(pcbY)}" radius="${radius}" />`,
+        `<cutout shape="circle" pcbX="${mmStr(pcbX)}" pcbY="${mmStr(pcbY)}" radius="${radius}" />`,
       )
     } else if (cutout.shape === "polygon") {
       const pointsJson = JSON.stringify(cutout.points)
 
-      elementStrings.push(
-        `<pcbcutout shape="polygon" points={${pointsJson}} />`,
-      )
+      elementStrings.push(`<cutout shape="polygon" points={${pointsJson}} />`)
     } else {
       console.warn(`Unhandled pcb_cutout shape: ${(cutout as any).shape}`)
     }
