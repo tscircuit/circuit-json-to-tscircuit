@@ -1,6 +1,7 @@
 import { test, expect } from "bun:test"
 import { convertCircuitJsonToTscircuit } from "lib/index"
 import type { AnyCircuitElement } from "circuit-json"
+import { runTscircuitCode } from "tscircuit"
 
 declare module "bun:test" {
   interface Matchers<T = unknown> {
@@ -48,14 +49,18 @@ test("test pcb_cutout conversion - all shapes", async () => {
     export const ComponentWithCutouts = (props: ChipProps) => (
       <chip
         footprint={<footprint>
-            <pcbcutout shape="rect" pcbX="0mm" pcbY="0mm" width="5mm" height="3mm" pcbRotation="45mm" />
-    <pcbcutout shape="circle" pcbX="10mm" pcbY="10mm" radius="2.5mm" />
-    <pcbcutout shape="polygon" points={[{"x":0,"y":0},{"x":5,"y":0},{"x":5,"y":5},{"x":0,"y":5}]} />
+            <cutout shape="rect" pcbX="0mm" pcbY="0mm" width="5mm" height="3mm" pcbRotation="45mm" />
+    <cutout shape="circle" pcbX="10mm" pcbY="10mm" radius="2.5mm" />
+    <cutout shape="polygon" points={[{"x":0,"y":0},{"x":5,"y":0},{"x":5,"y":5},{"x":0,"y":5}]} />
           </footprint>}
         {...props}
       />
     )"
   `)
+
+  const result = await runTscircuitCode(tscircuit)
+  expect(Array.isArray(result)).toBe(true)
+  expect(result).not.toHaveLength(0)
 })
 
 test("test pcb_cutout conversion - rect without rotation", async () => {
@@ -79,12 +84,16 @@ test("test pcb_cutout conversion - rect without rotation", async () => {
     export const ComponentWithRectCutout = (props: ChipProps) => (
       <chip
         footprint={<footprint>
-            <pcbcutout shape="rect" pcbX="2mm" pcbY="3mm" width="10mm" height="5mm" />
+            <cutout shape="rect" pcbX="2mm" pcbY="3mm" width="10mm" height="5mm" />
           </footprint>}
         {...props}
       />
     )"
   `)
+
+  const result = await runTscircuitCode(tscircuit)
+  expect(Array.isArray(result)).toBe(true)
+  expect(result).not.toHaveLength(0)
 })
 
 test("test pcb_cutout conversion - mixed with other elements", async () => {
@@ -128,10 +137,14 @@ test("test pcb_cutout conversion - mixed with other elements", async () => {
         footprint={<footprint>
             <hole pcbX="10mm" pcbY="10mm" diameter="0.5mm" />
     <smtpad portHints={["1"]} pcbX="0mm" pcbY="0mm" width="1mm" height="1mm" shape="rect" />
-    <pcbcutout shape="circle" pcbX="5mm" pcbY="5mm" radius="1.5mm" />
+    <cutout shape="circle" pcbX="5mm" pcbY="5mm" radius="1.5mm" />
           </footprint>}
         {...props}
       />
     )"
   `)
+
+  const result = await runTscircuitCode(tscircuit)
+  expect(Array.isArray(result)).toBe(true)
+  expect(result).not.toHaveLength(0)
 })
