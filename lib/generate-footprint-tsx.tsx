@@ -82,6 +82,33 @@ export const generateFootprintTsx = (
     )
   }
 
+  // Add courtyard rect elements
+  const courtyardRects = circuitJson.filter(
+    (el: any) => el.type === "pcb_courtyard_rect",
+  ) as Array<{
+    type: "pcb_courtyard_rect"
+    center: { x: number; y: number }
+    width: number
+    height: number
+    layer?: string
+  }>
+  for (const cRect of courtyardRects) {
+    const pcbX = cRect.center?.x ?? 0
+    const pcbY = cRect.center?.y ?? 0
+    const width = cRect.width ?? 0
+    const height = cRect.height ?? 0
+    const attrs = [
+      `pcbX="${mmStr(pcbX)}"`,
+      `pcbY="${mmStr(pcbY)}"`,
+      `width="${mmStr(width)}"`,
+      `height="${mmStr(height)}"`,
+    ]
+    if (cRect.layer) {
+      attrs.push(`layer="${cRect.layer}"`)
+    }
+    elementStrings.push(`<courtyardrect ${attrs.join(" ")} />`)
+  }
+
   // Add cutout elements
   for (const cutout of pcbCutouts) {
     if (cutout.shape === "rect") {
