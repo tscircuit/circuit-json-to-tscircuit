@@ -9,8 +9,12 @@ export const generateFootprintTsx = (
   const platedHoles = su(circuitJson).pcb_plated_hole.list()
   const smtPads = su(circuitJson).pcb_smtpad.list()
   const silkscreenPaths = su(circuitJson).pcb_silkscreen_path.list()
+  const silkscreenCircles = su(circuitJson).pcb_silkscreen_circle.list()
   const fabricationNotePaths = su(circuitJson).pcb_fabrication_note_path.list()
   const silkscreenTexts = su(circuitJson).pcb_silkscreen_text.list()
+  const courtyardCircles = su(circuitJson).pcb_courtyard_circle.list()
+  const courtyardRects = su(circuitJson).pcb_courtyard_rect.list()
+  const courtyardOutlines = su(circuitJson).pcb_courtyard_outline.list()
   const pcbCutouts = su(circuitJson).pcb_cutout.list()
   const noteTexts = su(circuitJson).pcb_note_text.list()
   const noteRects = su(circuitJson).pcb_note_rect.list()
@@ -60,6 +64,19 @@ export const generateFootprintTsx = (
     )
   }
 
+  for (const silkscreenCircle of silkscreenCircles) {
+    const pcbX = silkscreenCircle.center?.x ?? 0
+    const pcbY = silkscreenCircle.center?.y ?? 0
+    const strokeWidth =
+      silkscreenCircle.stroke_width !== undefined
+        ? ` strokeWidth="${mmStr(silkscreenCircle.stroke_width)}"`
+        : ""
+
+    elementStrings.push(
+      `<silkscreencircle pcbX="${mmStr(pcbX)}" pcbY="${mmStr(pcbY)}" radius="${mmStr(silkscreenCircle.radius)}"${strokeWidth} />`,
+    )
+  }
+
   // Map fabrication note paths to silkscreen paths in footprints
   for (const fabPath of fabricationNotePaths) {
     elementStrings.push(
@@ -79,6 +96,26 @@ export const generateFootprintTsx = (
 
     elementStrings.push(
       `<silkscreentext pcbX={${pcbX}} pcbY={${pcbY}} anchorAlignment="${anchorAlignment}" fontSize={${fontSize}} text="${escapedText}" />`,
+    )
+  }
+
+  // Add courtyard elements
+  for (const courtyardCircle of courtyardCircles) {
+    elementStrings.push(
+      `<courtyardcircle pcbX="${mmStr(courtyardCircle.center.x)}" pcbY="${mmStr(courtyardCircle.center.y)}" radius="${mmStr(courtyardCircle.radius)}" />`,
+    )
+  }
+
+  for (const courtyardRect of courtyardRects) {
+    const colorAttr = courtyardRect.color ? ` color="${courtyardRect.color}"` : ""
+    elementStrings.push(
+      `<courtyardrect pcbX="${mmStr(courtyardRect.center.x)}" pcbY="${mmStr(courtyardRect.center.y)}" width="${mmStr(courtyardRect.width)}" height="${mmStr(courtyardRect.height)}"${colorAttr} />`,
+    )
+  }
+
+  for (const courtyardOutline of courtyardOutlines) {
+    elementStrings.push(
+      `<courtyardoutline outline={${JSON.stringify(courtyardOutline.outline)}} />`,
     )
   }
 
