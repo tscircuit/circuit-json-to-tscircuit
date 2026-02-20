@@ -23,9 +23,41 @@ test("test7 support courtyards + silkscreen circles", async () => {
 
 const circuitJson: any = [
   {
+    type: "source_component",
+    source_component_id: "generic_0",
+    supplier_part_numbers: {},
+  },
+  {
+    type: "schematic_component",
+    schematic_component_id: "schematic_generic_component_0",
+    source_component_id: "generic_0",
+    center: {
+      x: 0,
+      y: 0,
+    },
+    rotation: 0,
+    size: {
+      width: 0,
+      height: 0,
+    },
+  },
+  {
+    type: "pcb_component",
+    source_component_id: "generic_0",
+    pcb_component_id: "pcb_generic_component_0",
+    layer: "top",
+    center: {
+      x: 0,
+      y: 0,
+    },
+    rotation: 0,
+    width: 1,
+    height: 1,
+  },
+  {
     type: "pcb_silkscreen_circle",
     pcb_silkscreen_circle_id: "pcb_silkscreen_circle_0",
-    pcb_component_id: "pcb_component_0",
+    pcb_component_id: "pcb_generic_component_0",
     layer: "top",
     center: { x: 1, y: 2 },
     radius: 2,
@@ -34,7 +66,7 @@ const circuitJson: any = [
   {
     type: "pcb_courtyard_circle",
     pcb_courtyard_circle_id: "pcb_courtyard_circle_0",
-    pcb_component_id: "pcb_component_0",
+    pcb_component_id: "pcb_generic_component_0",
     layer: "top",
     center: { x: 0, y: 0 },
     radius: 3,
@@ -42,7 +74,7 @@ const circuitJson: any = [
   {
     type: "pcb_courtyard_rect",
     pcb_courtyard_rect_id: "pcb_courtyard_rect_0",
-    pcb_component_id: "pcb_component_0",
+    pcb_component_id: "pcb_generic_component_0",
     layer: "top",
     center: { x: 0, y: 0 },
     width: 4,
@@ -52,7 +84,7 @@ const circuitJson: any = [
   {
     type: "pcb_courtyard_outline",
     pcb_courtyard_outline_id: "pcb_courtyard_outline_0",
-    pcb_component_id: "pcb_component_0",
+    pcb_component_id: "pcb_generic_component_0",
     layer: "top",
     outline: [
       { x: -1, y: -1 },
