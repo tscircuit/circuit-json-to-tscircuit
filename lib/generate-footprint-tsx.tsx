@@ -12,9 +12,16 @@ export const generateFootprintTsx = (
   const silkscreenCircles = su(circuitJson).pcb_silkscreen_circle.list()
   const fabricationNotePaths = su(circuitJson).pcb_fabrication_note_path.list()
   const silkscreenTexts = su(circuitJson).pcb_silkscreen_text.list()
-  const courtyardCircles = su(circuitJson).pcb_courtyard_circle.list()
-  const courtyardRects = su(circuitJson).pcb_courtyard_rect.list()
-  const courtyardOutlines = su(circuitJson).pcb_courtyard_outline.list()
+  // NOTE: soup-util doesn't currently expose all courtyard helpers, so we filter manually
+  const courtyardCircles = circuitJson.filter(
+    (e: any) => e?.type === "pcb_courtyard_circle",
+  ) as any[]
+  const courtyardRects = circuitJson.filter(
+    (e: any) => e?.type === "pcb_courtyard_rect",
+  ) as any[]
+  const courtyardOutlines = circuitJson.filter(
+    (e: any) => e?.type === "pcb_courtyard_outline",
+  ) as any[]
   const pcbCutouts = su(circuitJson).pcb_cutout.list()
   const noteTexts = su(circuitJson).pcb_note_text.list()
   const noteRects = su(circuitJson).pcb_note_rect.list()
