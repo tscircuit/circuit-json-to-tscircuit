@@ -122,9 +122,7 @@ export const generateFootprintTsx = (
     )
   }
 
-  const maybeRectFromOutline = (
-    outline: Array<{ x: number; y: number }>,
-  ) => {
+  const maybeRectFromOutline = (outline: Array<{ x: number; y: number }>) => {
     if (!Array.isArray(outline) || outline.length !== 4) return null
     const xs = outline.map((p) => p.x)
     const ys = outline.map((p) => p.y)
