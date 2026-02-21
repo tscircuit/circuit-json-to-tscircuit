@@ -117,11 +117,16 @@ export const generateFootprintTsx = (
   }
 
   for (const courtyardRect of courtyardRects) {
+    const pcbX = courtyardRect.center?.x ?? 0
+    const pcbY = courtyardRect.center?.y ?? 0
+    const width = mmStr(courtyardRect.width ?? 0)
+    const height = mmStr(courtyardRect.height ?? 0)
     const colorAttr = courtyardRect.color
       ? ` color="${courtyardRect.color}"`
       : ""
+
     elementStrings.push(
-      `<courtyardrect pcbX="${mmStr(courtyardRect.center.x)}" pcbY="${mmStr(courtyardRect.center.y)}" width="${mmStr(courtyardRect.width)}" height="${mmStr(courtyardRect.height)}"${colorAttr} />`,
+      `<courtyardrect pcbX="${mmStr(pcbX)}" pcbY="${mmStr(pcbY)}" width="${width}" height="${height}"${colorAttr} />`,
     )
   }
 
