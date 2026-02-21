@@ -91,10 +91,9 @@ const circuitJson: any = [
     pcb_component_id: "pcb_generic_component_0",
     layer: "top",
     outline: [
-      { x: -1, y: -1 },
-      { x: 1, y: -1 },
+      { x: 0, y: 0 },
+      { x: 2, y: 0 },
       { x: 1, y: 1 },
-      { x: -1, y: 1 },
     ],
     stroke_width: 0.05,
     is_closed: true,
