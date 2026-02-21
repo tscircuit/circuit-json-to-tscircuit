@@ -99,4 +99,3 @@ const circuitJson: any = [
     is_closed: true,
   },
 ]
-
