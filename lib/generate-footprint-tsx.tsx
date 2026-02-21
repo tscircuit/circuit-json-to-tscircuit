@@ -108,8 +108,11 @@ export const generateFootprintTsx = (
 
   // Add courtyard elements
   for (const courtyardCircle of courtyardCircles) {
+    const pcbX = courtyardCircle.center?.x ?? 0
+    const pcbY = courtyardCircle.center?.y ?? 0
+
     elementStrings.push(
-      `<courtyardcircle pcbX="${mmStr(courtyardCircle.center.x)}" pcbY="${mmStr(courtyardCircle.center.y)}" radius="${mmStr(courtyardCircle.radius)}" />`,
+      `<courtyardcircle pcbX="${mmStr(pcbX)}" pcbY="${mmStr(pcbY)}" radius="${mmStr(courtyardCircle.radius)}" />`,
     )
   }
 
