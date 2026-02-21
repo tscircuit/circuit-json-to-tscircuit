@@ -9,8 +9,19 @@ export const generateFootprintTsx = (
   const platedHoles = su(circuitJson).pcb_plated_hole.list()
   const smtPads = su(circuitJson).pcb_smtpad.list()
   const silkscreenPaths = su(circuitJson).pcb_silkscreen_path.list()
+  const silkscreenCircles = su(circuitJson).pcb_silkscreen_circle.list()
   const fabricationNotePaths = su(circuitJson).pcb_fabrication_note_path.list()
   const silkscreenTexts = su(circuitJson).pcb_silkscreen_text.list()
+  // NOTE: soup-util doesn't currently expose all courtyard helpers, so we filter manually
+  const courtyardCircles = circuitJson.filter(
+    (e: any) => e?.type === "pcb_courtyard_circle",
+  ) as any[]
+  const courtyardRects = circuitJson.filter(
+    (e: any) => e?.type === "pcb_courtyard_rect",
+  ) as any[]
+  const courtyardOutlines = circuitJson.filter(
+    (e: any) => e?.type === "pcb_courtyard_outline",
+  ) as any[]
   const pcbCutouts = su(circuitJson).pcb_cutout.list()
   const noteTexts = su(circuitJson).pcb_note_text.list()
   const noteRects = su(circuitJson).pcb_note_rect.list()
@@ -60,6 +71,19 @@ export const generateFootprintTsx = (
     )
   }
 
+  for (const silkscreenCircle of silkscreenCircles) {
+    const pcbX = silkscreenCircle.center?.x ?? 0
+    const pcbY = silkscreenCircle.center?.y ?? 0
+    const strokeWidth =
+      silkscreenCircle.stroke_width !== undefined
+        ? ` strokeWidth="${mmStr(silkscreenCircle.stroke_width)}"`
+        : ""
+
+    elementStrings.push(
+      `<silkscreencircle pcbX="${mmStr(pcbX)}" pcbY="${mmStr(pcbY)}" radius="${mmStr(silkscreenCircle.radius)}"${strokeWidth} />`,
+    )
+  }
+
   // Map fabrication note paths to silkscreen paths in footprints
   for (const fabPath of fabricationNotePaths) {
     elementStrings.push(
@@ -82,6 +106,71 @@ export const generateFootprintTsx = (
     )
   }
 
+  // Add courtyard elements
+  for (const courtyardCircle of courtyardCircles) {
+    const pcbX = courtyardCircle.center?.x ?? 0
+    const pcbY = courtyardCircle.center?.y ?? 0
+
+    elementStrings.push(
+      `<courtyardcircle pcbX="${mmStr(pcbX)}" pcbY="${mmStr(pcbY)}" radius="${mmStr(courtyardCircle.radius)}" />`,
+    )
+  }
+
+  for (const courtyardRect of courtyardRects) {
+    const pcbX = courtyardRect.center?.x ?? 0
+    const pcbY = courtyardRect.center?.y ?? 0
+    const width = mmStr(courtyardRect.width ?? 0)
+    const height = mmStr(courtyardRect.height ?? 0)
+    const colorAttr = courtyardRect.color
+      ? ` color="${courtyardRect.color}"`
+      : ""
+
+    elementStrings.push(
+      `<courtyardrect pcbX="${mmStr(pcbX)}" pcbY="${mmStr(pcbY)}" width="${width}" height="${height}"${colorAttr} />`,
+    )
+  }
+
+  const maybeRectFromOutline = (outline: Array<{ x: number; y: number }>) => {
+    if (!Array.isArray(outline) || outline.length !== 4) return null
+    const xs = outline.map((p) => p.x)
+    const ys = outline.map((p) => p.y)
+    const minX = Math.min(...xs)
+    const maxX = Math.max(...xs)
+    const minY = Math.min(...ys)
+    const maxY = Math.max(...ys)
+
+    // axis-aligned rectangle must only contain the 4 corners
+    const corners = new Set([
+      `${minX},${minY}`,
+      `${minX},${maxY}`,
+      `${maxX},${minY}`,
+      `${maxX},${maxY}`,
+    ])
+    for (const p of outline) {
+      if (!corners.has(`${p.x},${p.y}`)) return null
+    }
+
+    return {
+      center: { x: (minX + maxX) / 2, y: (minY + maxY) / 2 },
+      width: Math.abs(maxX - minX),
+      height: Math.abs(maxY - minY),
+    }
+  }
+
+  for (const courtyardOutline of courtyardOutlines) {
+    const rect = maybeRectFromOutline(courtyardOutline.outline)
+    if (rect) {
+      elementStrings.push(
+        `<courtyardrect pcbX="${mmStr(rect.center.x)}" pcbY="${mmStr(rect.center.y)}" width="${mmStr(rect.width)}" height="${mmStr(rect.height)}" />`,
+      )
+      continue
+    }
+
+    elementStrings.push(
+      `<courtyardoutline outline={${JSON.stringify(courtyardOutline.outline)}} />`,
+    )
+  }
+
   // Add cutout elements
   for (const cutout of pcbCutouts) {
     if (cutout.shape === "rect") {
@@ -90,9 +179,7 @@ export const generateFootprintTsx = (
       const width = mmStr(cutout.width)
       const height = mmStr(cutout.height)
       const rotation =
-        cutout.rotation !== undefined
-          ? ` pcbRotation="${mmStr(cutout.rotation)}"`
-          : ""
+        cutout.rotation !== undefined ? ` pcbRotation={${cutout.rotation}}` : ""
 
       elementStrings.push(
         `<cutout shape="rect" pcbX="${mmStr(pcbX)}" pcbY="${mmStr(pcbY)}" width="${width}" height="${height}"${rotation} />`,
