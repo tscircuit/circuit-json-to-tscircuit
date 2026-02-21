@@ -171,9 +171,7 @@ export const generateFootprintTsx = (
       const width = mmStr(cutout.width)
       const height = mmStr(cutout.height)
       const rotation =
-        cutout.rotation !== undefined
-          ? ` pcbRotation="${mmStr(cutout.rotation)}"`
-          : ""
+        cutout.rotation !== undefined ? ` pcbRotation={${cutout.rotation}}` : ""
 
       elementStrings.push(
         `<cutout shape="rect" pcbX="${mmStr(pcbX)}" pcbY="${mmStr(pcbY)}" width="${width}" height="${height}"${rotation} />`,
