@@ -122,7 +122,44 @@ export const generateFootprintTsx = (
     )
   }
 
+  const maybeRectFromOutline = (
+    outline: Array<{ x: number; y: number }>,
+  ) => {
+    if (!Array.isArray(outline) || outline.length !== 4) return null
+    const xs = outline.map((p) => p.x)
+    const ys = outline.map((p) => p.y)
+    const minX = Math.min(...xs)
+    const maxX = Math.max(...xs)
+    const minY = Math.min(...ys)
+    const maxY = Math.max(...ys)
+
+    // axis-aligned rectangle must only contain the 4 corners
+    const corners = new Set([
+      `${minX},${minY}`,
+      `${minX},${maxY}`,
+      `${maxX},${minY}`,
+      `${maxX},${maxY}`,
+    ])
+    for (const p of outline) {
+      if (!corners.has(`${p.x},${p.y}`)) return null
+    }
+
+    return {
+      center: { x: (minX + maxX) / 2, y: (minY + maxY) / 2 },
+      width: Math.abs(maxX - minX),
+      height: Math.abs(maxY - minY),
+    }
+  }
+
   for (const courtyardOutline of courtyardOutlines) {
+    const rect = maybeRectFromOutline(courtyardOutline.outline)
+    if (rect) {
+      elementStrings.push(
+        `<courtyardrect pcbX="${mmStr(rect.center.x)}" pcbY="${mmStr(rect.center.y)}" width="${mmStr(rect.width)}" height="${mmStr(rect.height)}" />`,
+      )
+      continue
+    }
+
     elementStrings.push(
       `<courtyardoutline outline={${JSON.stringify(courtyardOutline.outline)}} />`,
     )

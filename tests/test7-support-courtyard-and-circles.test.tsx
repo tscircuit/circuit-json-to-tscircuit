@@ -13,10 +13,10 @@ test("test7 support courtyards + silkscreen circles", async () => {
   expect(tscircuit).toContain("<courtyardcircle")
   expect(tscircuit).toContain('radius="3mm"')
 
+  // generated from pcb_courtyard_outline rectangle
   expect(tscircuit).toContain("<courtyardrect")
   expect(tscircuit).toContain('width="4mm"')
   expect(tscircuit).toContain('height="5mm"')
-  expect(tscircuit).toContain('color="#ff0000"')
 
   expect(tscircuit).toContain("<courtyardoutline")
 })
@@ -72,18 +72,22 @@ const circuitJson: any = [
     radius: 3,
   },
   {
-    type: "pcb_courtyard_rect",
-    pcb_courtyard_rect_id: "pcb_courtyard_rect_0",
+    type: "pcb_courtyard_outline",
+    pcb_courtyard_outline_id: "pcb_courtyard_outline_0",
     pcb_component_id: "pcb_generic_component_0",
     layer: "top",
-    center: { x: 0, y: 0 },
-    width: 4,
-    height: 5,
-    color: "#ff0000",
+    outline: [
+      { x: -2, y: -2.5 },
+      { x: 2, y: -2.5 },
+      { x: 2, y: 2.5 },
+      { x: -2, y: 2.5 },
+    ],
+    stroke_width: 0.05,
+    is_closed: true,
   },
   {
     type: "pcb_courtyard_outline",
-    pcb_courtyard_outline_id: "pcb_courtyard_outline_0",
+    pcb_courtyard_outline_id: "pcb_courtyard_outline_1",
     pcb_component_id: "pcb_generic_component_0",
     layer: "top",
     outline: [
@@ -92,5 +96,8 @@ const circuitJson: any = [
       { x: 1, y: 1 },
       { x: -1, y: 1 },
     ],
+    stroke_width: 0.05,
+    is_closed: true,
   },
 ]
+
