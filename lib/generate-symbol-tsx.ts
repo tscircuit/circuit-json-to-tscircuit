@@ -15,8 +15,8 @@ export const generateSymbolTsx = (
   for (const arc of schematicArcs) {
     const center = arc.center ?? { x: 0, y: 0 }
     const radius = arc.radius ?? 0
-    const startAngle = arc.start_angle_degrees
-    const endAngle = arc.end_angle_degrees
+    const startAngle = arc.start_angle_degrees ?? 0
+    const endAngle = arc.end_angle_degrees ?? 0
     const strokeWidth = arc.stroke_width ?? 0.05
 
     elementStrings.push(
