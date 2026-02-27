@@ -230,6 +230,10 @@ export const generateFootprintTsx = (
     elementStrings.push(`<pcbnotedimension ${attrs.join(" ")} />`)
   }
 
+  if (elementStrings.length === 0) {
+    return ""
+  }
+
   return `
       <footprint>
         ${elementStrings.join("\n")}

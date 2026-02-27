@@ -8,7 +8,19 @@ test("test6 support pcb notes", async () => {
   })
 
   expect(tscircuit).toMatchInlineSnapshot(`
-    "import { type ChipProps } from \"tscircuit\"\n    export const Test6Component = (props: ChipProps) => (\n      <chip\n        footprint={<footprint>\n            <pcbnotetext pcbX={1} pcbY={2} anchorAlignment=\"top_left\" font=\"tscircuit2024\" fontSize={1.5} text=\"Assembly\" color=\"#ff0000\" />\n    <pcbnoterect pcbX={0} pcbY={0} width={3.2} height={1.6} strokeWidth={0.2} isFilled={false} hasStroke={true} isStrokeDashed={true} color=\"#00ff00\" />\n    <pcbnotepath route={[{\"x\":-1,\"y\":-1},{\"x\":1,\"y\":-1},{\"x\":1,\"y\":1}]} strokeWidth={0.15} color=\"#0000ff\" />\n    <pcbnoteline x1={-0.5} y1={-0.5} x2={0.5} y2={0.5} strokeWidth={0.1} color=\"#123456\" isDashed={true} />\n    <pcbnotedimension from={{ x: -2, y: 0 }} to={{ x: 2, y: 0 }} font=\"tscircuit2024\" fontSize={1.2} arrowSize={0.25} text=\"4mm\" color=\"#654321\" />\n          </footprint>}\n        {...props}\n      />\n    )"
+    "import { type ChipProps } from "tscircuit"
+    export const Test6Component = (props: ChipProps) => (
+      <chip
+        footprint={<footprint>
+            <pcbnotetext pcbX={1} pcbY={2} anchorAlignment="top_left" font="tscircuit2024" fontSize={1.5} text="Assembly" color="#ff0000" />
+    <pcbnoterect pcbX={0} pcbY={0} width={3.2} height={1.6} strokeWidth={0.2} isFilled={false} hasStroke={true} isStrokeDashed={true} color="#00ff00" />
+    <pcbnotepath route={[{"x":-1,"y":-1},{"x":1,"y":-1},{"x":1,"y":1}]} strokeWidth={0.15} color="#0000ff" />
+    <pcbnoteline x1={-0.5} y1={-0.5} x2={0.5} y2={0.5} strokeWidth={0.1} color="#123456" isDashed={true} />
+    <pcbnotedimension from={{ x: -2, y: 0 }} to={{ x: 2, y: 0 }} font="tscircuit2024" fontSize={1.2} arrowSize={0.25} text="4mm" color="#654321" />
+          </footprint>}
+        {...props}
+      />
+    )"
   `)
 
   const result = await runTscircuitCode(tscircuit)
