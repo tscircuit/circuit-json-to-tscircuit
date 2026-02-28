@@ -26,9 +26,9 @@ export const generateSymbolTsx = (
   startAngleDegrees={${startAngle}}
   endAngleDegrees={${endAngle}}
   strokeWidth={${strokeWidth}}
-  color={${color}}
+  color="${color}"
   isDashed={${isDashed}}
-  direction={${direction}}
+  direction="${direction}"
 />`,
     )
   }
@@ -43,7 +43,7 @@ export const generateSymbolTsx = (
     const isDashed = line.is_dashed ?? false
 
     elementStrings.push(
-      `<schematicline x1={${x1}} y1={${y1}} x2={${x2}} y2={${y2}} strokeWidth={${strokeWidth}} color={${color}} isDashed={${isDashed}}/>`,
+      `<schematicline x1={${x1}} y1={${y1}} x2={${x2}} y2={${y2}} strokeWidth={${strokeWidth}} color="${color}" isDashed={${isDashed}}/>`,
     )
   }
 

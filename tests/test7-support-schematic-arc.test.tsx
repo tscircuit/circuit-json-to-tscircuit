@@ -46,11 +46,11 @@ test("test7 schematic arc and line inline snapshot", async () => {
           startAngleDegrees={0}
           endAngleDegrees={180}
           strokeWidth={0.05}
-          color={black}
+          color="black"
           isDashed={false}
-          direction={counterclockwise}
+          direction="counterclockwise"
         />
-        <schematicline x1={-1} y1={0} x2={1} y2={0} strokeWidth={0.05} color={black} isDashed={false}/>
+        <schematicline x1={-1} y1={0} x2={1} y2={0} strokeWidth={0.05} color="black" isDashed={false}/>
       </symbol>}
           {...props}
         />
