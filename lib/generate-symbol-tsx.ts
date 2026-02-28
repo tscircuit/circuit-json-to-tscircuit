@@ -15,6 +15,9 @@ export const generateSymbolTsx = (
     const startAngle = arc.start_angle_degrees ?? 0
     const endAngle = arc.end_angle_degrees ?? 0
     const strokeWidth = arc.stroke_width ?? 0.05
+    const color = arc.color ?? "black"
+    const isDashed = arc.is_dashed ?? false
+    const direction = arc.direction ?? "clockwise"
 
     elementStrings.push(
       `<schematicarc
@@ -23,6 +26,9 @@ export const generateSymbolTsx = (
   startAngleDegrees={${startAngle}}
   endAngleDegrees={${endAngle}}
   strokeWidth={${strokeWidth}}
+  color={${color}}
+  isDashed={${isDashed}}
+  direction={${direction}}
 />`,
     )
   }
@@ -33,9 +39,11 @@ export const generateSymbolTsx = (
     const x2 = line.x2 ?? 0
     const y2 = line.y2 ?? 0
     const strokeWidth = line.stroke_width ?? 0.05
+    const color = line.color ?? "black"
+    const isDashed = line.is_dashed ?? false
 
     elementStrings.push(
-      `<schematicline x1={${x1}} y1={${y1}} x2={${x2}} y2={${y2}} strokeWidth={${strokeWidth}} />`,
+      `<schematicline x1={${x1}} y1={${y1}} x2={${x2}} y2={${y2}} strokeWidth={${strokeWidth}} color={${color}} isDashed={${isDashed}}/>`,
     )
   }
 
