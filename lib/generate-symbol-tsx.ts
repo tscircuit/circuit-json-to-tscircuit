@@ -17,7 +17,7 @@ export const generateSymbolTsx = (
     const strokeWidth = arc.stroke_width ?? 0.05
     const color = arc.color ?? "black"
     const isDashed = arc.is_dashed ?? false
-    const direction = arc.direction ?? "clockwise"
+    const direction = arc.direction ?? "counterclockwise"
 
     elementStrings.push(
       `<schematicarc
