@@ -1,6 +1,6 @@
 import { mmStr } from "@tscircuit/mm"
-import type { AnyCircuitElement } from "circuit-json"
 import { su } from "@tscircuit/soup-util"
+import type { AnyCircuitElement } from "circuit-json"
 
 export const generateFootprintTsx = (
   circuitJson: AnyCircuitElement[],
@@ -17,6 +17,14 @@ export const generateFootprintTsx = (
   const notePaths = su(circuitJson).pcb_note_path.list()
   const noteLines = su(circuitJson).pcb_note_line.list()
   const noteDimensions = su(circuitJson).pcb_note_dimension.list()
+  const courtyardRects = circuitJson.filter(
+    (element: any) => element?.type === "pcb_courtyard_rect",
+  ) as Array<{
+    center?: { x?: number; y?: number }
+    width?: number
+    height?: number
+    color?: string
+  }>
 
   const elementStrings: string[] = []
 
@@ -228,6 +236,16 @@ export const generateFootprintTsx = (
     }
 
     elementStrings.push(`<pcbnotedimension ${attrs.join(" ")} />`)
+  }
+
+  for (const courtyardRect of courtyardRects) {
+    const center = courtyardRect.center ?? { x: 0, y: 0 }
+    const colorAttr = courtyardRect.color
+      ? ` color="${courtyardRect.color}"`
+      : ""
+    elementStrings.push(
+      `<courtyardrect pcbX="${mmStr(center.x ?? 0)}" pcbY="${mmStr(center.y ?? 0)}" width="${mmStr(courtyardRect.width ?? 0)}" height="${mmStr(courtyardRect.height ?? 0)}"${colorAttr} />`,
+    )
   }
 
   return `
