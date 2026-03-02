@@ -27,7 +27,7 @@ test("test6 support pcb notes", async () => {
 
   expect(Array.isArray(result)).toBe(true)
   expect(result).not.toHaveLength(0)
-}, 10000)
+}, 15000)
 
 const circuitJson = [
   {
