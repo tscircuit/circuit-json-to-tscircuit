@@ -51,8 +51,8 @@ export const generateSymbolTsx = (
   }
 
   for (const box of schematicBoxes) {
-    const x = box.x ?? box.x ?? 0
-    const y = box.y ?? box.y ?? 0
+    const x = box.x ?? 0
+    const y = box.y ?? 0
     const width = box.width ?? 0
     const height = box.height ?? 0
     const isDashed = box.is_dashed ?? false
