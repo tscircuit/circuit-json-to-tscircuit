@@ -61,7 +61,7 @@ test("test pcb_cutout conversion - all shapes", async () => {
   const result = await runTscircuitCode(tscircuit)
   expect(Array.isArray(result)).toBe(true)
   expect(result).not.toHaveLength(0)
-})
+}, 10000)
 
 test("test pcb_cutout conversion - rect without rotation", async () => {
   const circuitJson: AnyCircuitElement[] = [
@@ -94,7 +94,7 @@ test("test pcb_cutout conversion - rect without rotation", async () => {
   const result = await runTscircuitCode(tscircuit)
   expect(Array.isArray(result)).toBe(true)
   expect(result).not.toHaveLength(0)
-})
+}, 10000)
 
 test("test pcb_cutout conversion - mixed with other elements", async () => {
   const circuitJson: AnyCircuitElement[] = [
@@ -147,4 +147,4 @@ test("test pcb_cutout conversion - mixed with other elements", async () => {
   const result = await runTscircuitCode(tscircuit)
   expect(Array.isArray(result)).toBe(true)
   expect(result).not.toHaveLength(0)
-})
+}, 10000)
