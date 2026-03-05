@@ -4,7 +4,7 @@ import { su } from "@tscircuit/soup-util"
 
 export const generateFootprintTsx = (
   circuitJson: AnyCircuitElement[],
-): string => {
+): string | null => {
   const holes = su(circuitJson).pcb_hole.list()
   const platedHoles = su(circuitJson).pcb_plated_hole.list()
   const smtPads = su(circuitJson).pcb_smtpad.list()
@@ -231,7 +231,7 @@ export const generateFootprintTsx = (
   }
 
   if (elementStrings.length === 0) {
-    return ""
+    return null
   }
 
   return `
