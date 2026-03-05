@@ -91,9 +91,9 @@ export const U1 = (props: ChipProps) => (
   />
   <schematicline x1={-1} y1={0} x2={1} y2={0} strokeWidth={0.05} color="black" isDashed={false}/>
   <schematicbox center={{ x: 0, y: 0 }} width={2} height={2} isDashed={true}/>
-  <schematicpath points={[{"x":0,"y":0},{"x":1,"y":1}]} fillColor="blue"/>
-  <schematictext text="U1" x={1} y={1} anchorAlignment="center" fontSize={0.2} color="red" />
-  <schematiccircle center={{ x: 5, y: 5 }} radius={0.5} strokeWidth={0.05} color="green" />
+  <schematicpath points={[{"x":0,"y":0},{"x":1,"y":1}]} fillColor="blue" isFilled={false}/>
+  <schematictext text="U1" x={1} y={1} anchorAlignment="center" fontSize={0.2} color="red" rotation={45} />
+  <schematiccircle center={{ x: 5, y: 5 }} radius={0.5} strokeWidth={0.05} color="green" isFilled={true} isDashed={true} />
 </symbol>}
     {...props}
   />
