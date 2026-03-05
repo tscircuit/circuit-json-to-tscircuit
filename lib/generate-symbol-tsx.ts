@@ -73,8 +73,8 @@ export const generateSymbolTsx = (
   }
 
   for (const text of schematicTexts) {
-    const x = text.position.x ?? 0
-    const y = text.position.y ?? 0
+    const x = text.position?.x ?? 0
+    const y = text.position?.y ?? 0
     const rawText = String(text.text ?? "")
     const escapedText = rawText.replace(/"/g, '\\"')
     const anchorAlignment = text.anchor ?? "center"
