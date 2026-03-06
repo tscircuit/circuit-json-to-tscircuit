@@ -13,9 +13,9 @@ test("test8 support courtyard elements", async () => {
     export const Test8Component = (props: ChipProps) => (
       <chip
         footprint={<footprint>
-            <smtpad portHints={["1"]} pcbX="-0.5mm" pcbY="0mm" width="0.6mm" height="0.9mm" shape="rect" />
-    <fabricationnotepath route={[{"x":-1.8,"y":-1.4},{"x":1.8,"y":-1.4},{"x":1.8,"y":1.4},{"x":-1.8,"y":1.4},{"x":-1.8,"y":-1.4}]} strokeWidth={0.12} color="#ff00ff" />
-    <fabricationnoterect pcbX={0} pcbY={0} width={4} height={3} strokeWidth={0.1} isFilled={false} hasStroke={true} isStrokeDashed={true} color="#00ffff" />
+            <smtpad portHints={[\"1\"]} pcbX=\"-0.5mm\" pcbY=\"0mm\" width=\"0.6mm\" height=\"0.9mm\" shape=\"rect\" />
+    <courtyardoutline outline={[{\"x\":-1.8,\"y\":-1.4},{\"x\":1.8,\"y\":-1.4},{\"x\":1.8,\"y\":1.4},{\"x\":-1.8,\"y\":1.4}]} strokeWidth={0.12} isClosed={true} isStrokeDashed={true} color=\"#ff00ff\" />
+    <courtyardrect pcbX={0} pcbY={0} width={4} height={3} strokeWidth={0.1} isFilled={false} hasStroke={true} isStrokeDashed={true} color=\"#00ffff\" />
           </footprint>}
         {...props}
       />
@@ -23,7 +23,7 @@ test("test8 support courtyard elements", async () => {
   `)
 })
 
-test("test8 pcb svg snapshot includes courtyard shapes", async () => {
+test("test8 pcb svg snapshot includes courtyard geometry", async () => {
   const tscircuit = convertCircuitJsonToTscircuit(circuitJson, {
     componentName: "Test8Component",
   })
@@ -38,12 +38,65 @@ circuit.add(
 )
   `)) as any[]
 
-  const pcbSvg = convertCircuitJsonToPcbSvg(renderedCircuitJson)
+  const courtyardElements = renderedCircuitJson.filter((elm) =>
+    ["pcb_courtyard_outline", "pcb_courtyard_rect"].includes(elm.type),
+  )
 
-  expect(pcbSvg).toContain("#ff00ff")
-  expect(pcbSvg).toContain("#00ffff")
+  expect(courtyardElements.length).toBeGreaterThan(0)
+
+  const pcbSvg = convertCircuitJsonToPcbSvg([
+    ...renderedCircuitJson,
+    ...projectCourtyardToFabricationNotes(courtyardElements),
+  ])
+
   await expect(pcbSvg).toMatchSvgSnapshot(import.meta.path, "courtyard-pcb")
 })
+
+const projectCourtyardToFabricationNotes = (courtyardElements: any[]) => {
+  const projected: any[] = []
+
+  for (const elm of courtyardElements) {
+    if (elm.type === "pcb_courtyard_outline") {
+      const route = [...(elm.outline ?? [])]
+      if (elm.is_closed && route.length > 1) {
+        const firstPoint = route[0]
+        const lastPoint = route[route.length - 1]
+        if (firstPoint.x !== lastPoint.x || firstPoint.y !== lastPoint.y) {
+          route.push(firstPoint)
+        }
+      }
+
+      projected.push({
+        type: "pcb_fabrication_note_path",
+        pcb_fabrication_note_path_id: `projected_fnp_${elm.pcb_courtyard_outline_id}`,
+        pcb_component_id: elm.pcb_component_id,
+        layer: elm.layer,
+        route,
+        stroke_width: elm.stroke_width ?? 0.1,
+        color: elm.color,
+      })
+    }
+
+    if (elm.type === "pcb_courtyard_rect") {
+      projected.push({
+        type: "pcb_fabrication_note_rect",
+        pcb_fabrication_note_rect_id: `projected_fnr_${elm.pcb_courtyard_rect_id}`,
+        pcb_component_id: elm.pcb_component_id,
+        layer: elm.layer,
+        center: elm.center,
+        width: elm.width,
+        height: elm.height,
+        stroke_width: elm.stroke_width ?? 0.1,
+        is_filled: elm.is_filled ?? false,
+        has_stroke: elm.has_stroke ?? true,
+        is_stroke_dashed: elm.is_stroke_dashed,
+        color: elm.color,
+      })
+    }
+  }
+
+  return projected
+}
 
 const circuitJson: any = [
   {

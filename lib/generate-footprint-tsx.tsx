@@ -234,26 +234,24 @@ export const generateFootprintTsx = (
 
   for (const courtyardOutline of courtyardOutlines) {
     const courtyardOutlineAny = courtyardOutline as any
-    const outline = [...(courtyardOutline.outline ?? [])]
-
-    if (courtyardOutlineAny.is_closed && outline.length > 1) {
-      const firstPoint = outline[0]
-      const lastPoint = outline[outline.length - 1]
-      if (firstPoint.x !== lastPoint.x || firstPoint.y !== lastPoint.y) {
-        outline.push(firstPoint)
-      }
-    }
-
-    const attrs = [`route={${JSON.stringify(outline)}}`]
+    const attrs = [
+      `outline={${JSON.stringify(courtyardOutline.outline ?? [])}}`,
+    ]
 
     if (courtyardOutlineAny.stroke_width !== undefined) {
       attrs.push(`strokeWidth={${courtyardOutlineAny.stroke_width}}`)
+    }
+    if (courtyardOutlineAny.is_closed !== undefined) {
+      attrs.push(`isClosed={${courtyardOutlineAny.is_closed}}`)
+    }
+    if (courtyardOutlineAny.is_stroke_dashed !== undefined) {
+      attrs.push(`isStrokeDashed={${courtyardOutlineAny.is_stroke_dashed}}`)
     }
     if (courtyardOutlineAny.color !== undefined) {
       attrs.push(`color="${courtyardOutlineAny.color}"`)
     }
 
-    elementStrings.push(`<fabricationnotepath ${attrs.join(" ")} />`)
+    elementStrings.push(`<courtyardoutline ${attrs.join(" ")} />`)
   }
 
   for (const courtyardRect of courtyardRects) {
@@ -281,7 +279,7 @@ export const generateFootprintTsx = (
       attrs.push(`color="${courtyardRectAny.color}"`)
     }
 
-    elementStrings.push(`<fabricationnoterect ${attrs.join(" ")} />`)
+    elementStrings.push(`<courtyardrect ${attrs.join(" ")} />`)
   }
 
   if (elementStrings.length === 0) {
