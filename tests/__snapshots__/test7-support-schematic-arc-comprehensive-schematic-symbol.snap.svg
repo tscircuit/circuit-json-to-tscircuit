@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" style="background-color: rgb(245, 241, 237)" data-real-to-screen-transform="matrix(70.5052878966,0,0,-70.5052878966,493.8895417156,317.9788484136)" data-software-used-string="@tscircuit/core@0.0.1090"><style>
+              .boundary { fill: rgb(245, 241, 237); }
+              .schematic-boundary { fill: none; stroke: #fff; }
+              .component { fill: none; stroke: rgb(132, 0, 0); }
+              .chip { fill: rgb(255, 255, 194); stroke: rgb(132, 0, 0); }
+              .component-pin { fill: none; stroke: rgb(132, 0, 0); }
+              /* Basic per-trace hover fallback */
+              .trace:hover {
+                filter: invert(1);
+              }
+              .trace:hover .trace-crossing-outline {
+                opacity: 0;
+              }
+              .trace:hover .trace-junction {
+                filter: invert(1);
+              }
+              /* Net-hover highlighting: when a trace or its overlays are hovered,
+                 invert color for all traces (base + overlays) sharing the same
+                 subcircuit connectivity key. Also hide crossing outline during hover. */
+              
+              .text { font-family: sans-serif; fill: rgb(0, 150, 0); }
+              .pin-number { fill: rgb(169, 0, 0); }
+              .port-label { fill: rgb(0, 100, 100); }
+              .component-name { fill: rgb(0, 100, 100); }
+            </style><rect class="boundary" x="0" y="0" width="1200" height="600"/><line x1="634.9001175088" y1="317.9788484136" x2="775.910693302" y2="317.9788484136" stroke="black" stroke-width="3.5252643948299998" data-schematic-line-id="schematic_line_0" data-schematic-component-id="schematic_component_0"/><circle cx="705.4054054054" cy="529.4947121033999" r="35.2526439483" fill="green" stroke="green" stroke-width="3.5252643948299998" stroke-dasharray="10.57579318449" data-schematic-circle-id="schematic_circle_0" data-schematic-component-id="schematic_component_0"/><path d="M 564.3948296121999 317.9788484136 A 70.5052878966 70.5052878966 0 0 0 423.384253819 317.9788484136" fill="none" stroke="black" stroke-width="3.5252643948299998" data-schematic-arc-id="schematic_arc_0" data-schematic-component-id="schematic_component_0"/><path d="M 705.4054054054 106.46298472380005 L 775.910693302 35.95769682720004" stroke="blue" stroke-width="1.410105757932" fill="none" stroke-linecap="round" stroke-linejoin="round" data-schematic-component-id="schematic_component_0"/><text x="493.8895417156" y="317.9788484136" fill="red" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14.101057579319999px" transform="rotate(0, 493.8895417156, 317.9788484136)">U1</text><rect class="schematic-box" x="423.384253819" y="247.473560517" width="141.01057579319996" height="141.01057579320002" stroke-width="1.410105757932px" stroke="rgb(132, 0, 0)" fill="transparent"/></svg>

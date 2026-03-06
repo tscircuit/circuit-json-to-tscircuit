@@ -68,7 +68,7 @@ export const generateSymbolTsx = (
     const isFilled = path.is_filled ?? false
 
     elementStrings.push(
-      `<schematicpath points={${JSON.stringify(points)}} fillColor="${fillColor}" isFilled={${isFilled}}/>`,
+      `<schematicpath points={${JSON.stringify(points)}} strokeColor="${fillColor}" fillColor="${fillColor}" isFilled={${isFilled}}/>`,
     )
   }
 
