@@ -1,6 +1,7 @@
 import { test, expect } from "bun:test"
 import { convertCircuitJsonToTscircuit } from "lib/index"
 import type { AnyCircuitElement } from "circuit-json"
+import { runTscircuitCode } from "tscircuit"
 
 test("test7 comprehensive schematic symbol support", async () => {
   const circuitJson: AnyCircuitElement[] = [
@@ -99,4 +100,8 @@ export const U1 = (props: ChipProps) => (
   />
 )"
 `)
-})
+  const result = await runTscircuitCode(tscircuit)
+
+  expect(Array.isArray(result)).toBe(true)
+  expect(result).not.toHaveLength(0)
+}, 15000)
