@@ -17,6 +17,8 @@ export const generateFootprintTsx = (
   const notePaths = su(circuitJson).pcb_note_path.list()
   const noteLines = su(circuitJson).pcb_note_line.list()
   const noteDimensions = su(circuitJson).pcb_note_dimension.list()
+  const courtyardOutlines = su(circuitJson).pcb_courtyard_outline.list()
+  const courtyardRects = su(circuitJson).pcb_courtyard_rect.list()
 
   const elementStrings: string[] = []
 
@@ -228,6 +230,56 @@ export const generateFootprintTsx = (
     }
 
     elementStrings.push(`<pcbnotedimension ${attrs.join(" ")} />`)
+  }
+
+  for (const courtyardOutline of courtyardOutlines) {
+    const courtyardOutlineAny = courtyardOutline as any
+    const attrs = [
+      `outline={${JSON.stringify(courtyardOutline.outline ?? [])}}`,
+    ]
+
+    if (courtyardOutlineAny.stroke_width !== undefined) {
+      attrs.push(`strokeWidth={${courtyardOutlineAny.stroke_width}}`)
+    }
+    if (courtyardOutlineAny.is_closed !== undefined) {
+      attrs.push(`isClosed={${courtyardOutlineAny.is_closed}}`)
+    }
+    if (courtyardOutlineAny.is_stroke_dashed !== undefined) {
+      attrs.push(`isStrokeDashed={${courtyardOutlineAny.is_stroke_dashed}}`)
+    }
+    if (courtyardOutlineAny.color !== undefined) {
+      attrs.push(`color="${courtyardOutlineAny.color}"`)
+    }
+
+    elementStrings.push(`<courtyardoutline ${attrs.join(" ")} />`)
+  }
+
+  for (const courtyardRect of courtyardRects) {
+    const courtyardRectAny = courtyardRect as any
+    const attrs = [
+      `pcbX={${courtyardRect.center?.x ?? 0}}`,
+      `pcbY={${courtyardRect.center?.y ?? 0}}`,
+      `width={${courtyardRect.width ?? 0}}`,
+      `height={${courtyardRect.height ?? 0}}`,
+    ]
+
+    if (courtyardRectAny.stroke_width !== undefined) {
+      attrs.push(`strokeWidth={${courtyardRectAny.stroke_width}}`)
+    }
+    if (courtyardRectAny.is_filled !== undefined) {
+      attrs.push(`isFilled={${courtyardRectAny.is_filled}}`)
+    }
+    if (courtyardRectAny.has_stroke !== undefined) {
+      attrs.push(`hasStroke={${courtyardRectAny.has_stroke}}`)
+    }
+    if (courtyardRectAny.is_stroke_dashed !== undefined) {
+      attrs.push(`isStrokeDashed={${courtyardRectAny.is_stroke_dashed}}`)
+    }
+    if (courtyardRectAny.color !== undefined) {
+      attrs.push(`color="${courtyardRectAny.color}"`)
+    }
+
+    elementStrings.push(`<courtyardrect ${attrs.join(" ")} />`)
   }
 
   if (elementStrings.length === 0) {

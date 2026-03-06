@@ -1,3 +1,4 @@
+import "bun-match-svg"
 import { afterEach } from "bun:test"
 
 declare global {
