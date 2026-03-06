@@ -17,6 +17,8 @@ export const generateFootprintTsx = (
   const notePaths = su(circuitJson).pcb_note_path.list()
   const noteLines = su(circuitJson).pcb_note_line.list()
   const noteDimensions = su(circuitJson).pcb_note_dimension.list()
+  const courtyardOutlines = su(circuitJson).pcb_courtyard_outline.list()
+  const courtyardRects = su(circuitJson).pcb_courtyard_rect.list()
 
   const elementStrings: string[] = []
 
@@ -228,6 +230,29 @@ export const generateFootprintTsx = (
     }
 
     elementStrings.push(`<pcbnotedimension ${attrs.join(" ")} />`)
+  }
+
+  for (const courtyardOutline of courtyardOutlines) {
+    const attrs = [
+      `outline={${JSON.stringify(courtyardOutline.outline ?? [])}}`,
+    ]
+
+    elementStrings.push(`<courtyardoutline ${attrs.join(" ")} />`)
+  }
+
+  for (const courtyardRect of courtyardRects) {
+    const attrs = [
+      `pcbX={${courtyardRect.center?.x ?? 0}}`,
+      `pcbY={${courtyardRect.center?.y ?? 0}}`,
+      `width={${courtyardRect.width ?? 0}}`,
+      `height={${courtyardRect.height ?? 0}}`,
+    ]
+
+    if (courtyardRect.color !== undefined) {
+      attrs.push(`color="${courtyardRect.color}"`)
+    }
+
+    elementStrings.push(`<courtyardrect ${attrs.join(" ")} />`)
   }
 
   if (elementStrings.length === 0) {
