@@ -233,14 +233,31 @@ export const generateFootprintTsx = (
   }
 
   for (const courtyardOutline of courtyardOutlines) {
-    const attrs = [
-      `outline={${JSON.stringify(courtyardOutline.outline ?? [])}}`,
-    ]
+    const courtyardOutlineAny = courtyardOutline as any
+    const outline = [...(courtyardOutline.outline ?? [])]
 
-    elementStrings.push(`<courtyardoutline ${attrs.join(" ")} />`)
+    if (courtyardOutlineAny.is_closed && outline.length > 1) {
+      const firstPoint = outline[0]
+      const lastPoint = outline[outline.length - 1]
+      if (firstPoint.x !== lastPoint.x || firstPoint.y !== lastPoint.y) {
+        outline.push(firstPoint)
+      }
+    }
+
+    const attrs = [`route={${JSON.stringify(outline)}}`]
+
+    if (courtyardOutlineAny.stroke_width !== undefined) {
+      attrs.push(`strokeWidth={${courtyardOutlineAny.stroke_width}}`)
+    }
+    if (courtyardOutlineAny.color !== undefined) {
+      attrs.push(`color="${courtyardOutlineAny.color}"`)
+    }
+
+    elementStrings.push(`<fabricationnotepath ${attrs.join(" ")} />`)
   }
 
   for (const courtyardRect of courtyardRects) {
+    const courtyardRectAny = courtyardRect as any
     const attrs = [
       `pcbX={${courtyardRect.center?.x ?? 0}}`,
       `pcbY={${courtyardRect.center?.y ?? 0}}`,
@@ -248,11 +265,23 @@ export const generateFootprintTsx = (
       `height={${courtyardRect.height ?? 0}}`,
     ]
 
-    if (courtyardRect.color !== undefined) {
-      attrs.push(`color="${courtyardRect.color}"`)
+    if (courtyardRectAny.stroke_width !== undefined) {
+      attrs.push(`strokeWidth={${courtyardRectAny.stroke_width}}`)
+    }
+    if (courtyardRectAny.is_filled !== undefined) {
+      attrs.push(`isFilled={${courtyardRectAny.is_filled}}`)
+    }
+    if (courtyardRectAny.has_stroke !== undefined) {
+      attrs.push(`hasStroke={${courtyardRectAny.has_stroke}}`)
+    }
+    if (courtyardRectAny.is_stroke_dashed !== undefined) {
+      attrs.push(`isStrokeDashed={${courtyardRectAny.is_stroke_dashed}}`)
+    }
+    if (courtyardRectAny.color !== undefined) {
+      attrs.push(`color="${courtyardRectAny.color}"`)
     }
 
-    elementStrings.push(`<courtyardrect ${attrs.join(" ")} />`)
+    elementStrings.push(`<fabricationnoterect ${attrs.join(" ")} />`)
   }
 
   if (elementStrings.length === 0) {

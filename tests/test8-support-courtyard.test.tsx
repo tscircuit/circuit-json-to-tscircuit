@@ -13,9 +13,9 @@ test("test8 support courtyard elements", async () => {
     export const Test8Component = (props: ChipProps) => (
       <chip
         footprint={<footprint>
-            <smtpad portHints={[\"1\"]} pcbX=\"-0.5mm\" pcbY=\"0mm\" width=\"0.6mm\" height=\"0.9mm\" shape=\"rect\" />
-    <courtyardoutline outline={[{\"x\":-1.8,\"y\":-1.4},{\"x\":1.8,\"y\":-1.4},{\"x\":1.8,\"y\":1.4},{\"x\":-1.8,\"y\":1.4}]} />
-    <courtyardrect pcbX={0} pcbY={0} width={4} height={3} color=\"#00ffff\" />
+            <smtpad portHints={["1"]} pcbX="-0.5mm" pcbY="0mm" width="0.6mm" height="0.9mm" shape="rect" />
+    <fabricationnotepath route={[{"x":-1.8,"y":-1.4},{"x":1.8,"y":-1.4},{"x":1.8,"y":1.4},{"x":-1.8,"y":1.4},{"x":-1.8,"y":-1.4}]} strokeWidth={0.12} color="#ff00ff" />
+    <fabricationnoterect pcbX={0} pcbY={0} width={4} height={3} strokeWidth={0.1} isFilled={false} hasStroke={true} isStrokeDashed={true} color="#00ffff" />
           </footprint>}
         {...props}
       />
@@ -40,6 +40,8 @@ circuit.add(
 
   const pcbSvg = convertCircuitJsonToPcbSvg(renderedCircuitJson)
 
+  expect(pcbSvg).toContain("#ff00ff")
+  expect(pcbSvg).toContain("#00ffff")
   await expect(pcbSvg).toMatchSvgSnapshot(import.meta.path, "courtyard-pcb")
 })
 

@@ -20,16 +20,14 @@
     "@types/bun": "latest",
     "@types/react": "18",
     "@types/react-dom": "18",
+    "bun-match-svg": "^0.0.15",
     "circuit-json": "^0.0.391",
+    "circuit-to-svg": "^0.0.333",
     "commander": "^13.1.0",
     "tscircuit": "^0.0.1444",
     "tsup": "^8.3.5"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "bun-match-svg": "^0.0.15",
-    "circuit-to-svg": "^0.0.333"
   }
 }
