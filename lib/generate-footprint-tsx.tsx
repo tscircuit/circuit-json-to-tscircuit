@@ -12,6 +12,7 @@ export const generateFootprintTsx = (
   const fabricationNotePaths = su(circuitJson).pcb_fabrication_note_path.list()
   const silkscreenTexts = su(circuitJson).pcb_silkscreen_text.list()
   const pcbCutouts = su(circuitJson).pcb_cutout.list()
+  const courtyardRects = su(circuitJson).pcb_courtyard_rect.list()
   const noteTexts = su(circuitJson).pcb_note_text.list()
   const noteRects = su(circuitJson).pcb_note_rect.list()
   const notePaths = su(circuitJson).pcb_note_path.list()
@@ -114,6 +115,19 @@ export const generateFootprintTsx = (
     } else {
       console.warn(`Unhandled pcb_cutout shape: ${(cutout as any).shape}`)
     }
+  }
+
+  // Add pcb_courtyard_rect elements
+  for (const courtyard of courtyardRects) {
+    const pcbX = courtyard.center.x
+    const pcbY = courtyard.center.y
+    const width = mmStr(courtyard.width)
+    const height = mmStr(courtyard.height)
+    const layer = courtyard.layer ?? "top"
+
+    elementStrings.push(
+      `<courtyardrect pcbX="${mmStr(pcbX)}" pcbY="${mmStr(pcbY)}" width="${width}" height="${height}" layer="${layer}" />`,
+    )
   }
 
   for (const noteText of noteTexts) {
