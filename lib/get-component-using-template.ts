@@ -24,7 +24,7 @@ export const getComponentUsingTemplate = ({
   if (sourceSubcircuitTsx) {
     return `
 export const ${componentName} = (props: any) => (
-  ${sourceSubcircuitTsx.replace(/\n/g, "\n  ")}
+  ${sourceSubcircuitTsx.replace("<board", "<board {...props}").replace(/\n/g, "\n  ")}
 )
 `
       .replace(/\n\s*\n/g, "\n")
