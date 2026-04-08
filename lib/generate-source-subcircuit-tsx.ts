@@ -118,7 +118,9 @@ const getComponentConnections = (
         `net.${sanitizeIdentifier(netName)}`,
       ] as const
     })
-    .filter((entry): entry is readonly [string, string] => entry !== null)
+    .filter(
+      (entry): entry is readonly [string, `net.${string}`] => entry !== null,
+    )
 
   if (entries.length === 0) return null
 
