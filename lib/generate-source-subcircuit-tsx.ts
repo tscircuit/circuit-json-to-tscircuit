@@ -80,10 +80,16 @@ const getConnectionLabel = (
     sourceComponent.ftype === "simple_diode" ||
     sourceComponent.ftype === "simple_led"
   ) {
-    if (port.port_hints?.includes("pos") || port.port_hints?.includes("anode")) {
+    if (
+      port.port_hints?.includes("pos") ||
+      port.port_hints?.includes("anode")
+    ) {
       return "pos"
     }
-    if (port.port_hints?.includes("neg") || port.port_hints?.includes("cathode")) {
+    if (
+      port.port_hints?.includes("neg") ||
+      port.port_hints?.includes("cathode")
+    ) {
       return "neg"
     }
     return `pin${port.pin_number ?? 1}`
@@ -117,7 +123,10 @@ const getComponentConnections = (
   if (entries.length === 0) return null
 
   return `connections={{ ${entries
-    .map(([label, netName]) => `${JSON.stringify(label)}: ${JSON.stringify(netName)}`)
+    .map(
+      ([label, netName]) =>
+        `${JSON.stringify(label)}: ${JSON.stringify(netName)}`,
+    )
     .join(", ")} }}`
 }
 
@@ -133,7 +142,8 @@ const getComponentProps = (
   const footprint = getBaseFootprint(cadComponent?.footprinter_string)
   if (footprint) attrs.push(`footprint=${JSON.stringify(footprint)}`)
 
-  if (pcbComponent?.layer) attrs.push(`layer=${JSON.stringify(pcbComponent.layer)}`)
+  if (pcbComponent?.layer)
+    attrs.push(`layer=${JSON.stringify(pcbComponent.layer)}`)
   if (pcbComponent?.center?.x !== undefined) {
     attrs.push(`pcbX={${pcbComponent.center.x}}`)
   }
@@ -147,7 +157,9 @@ const getComponentProps = (
     attrs.push(`doNotPlace={${pcbComponent.do_not_place}}`)
   }
   if (pcbComponent?.obstructs_within_bounds !== undefined) {
-    attrs.push(`obstructsWithinBounds={${pcbComponent.obstructs_within_bounds}}`)
+    attrs.push(
+      `obstructsWithinBounds={${pcbComponent.obstructs_within_bounds}}`,
+    )
   }
 
   const connections = getComponentConnections(
@@ -165,7 +177,9 @@ const getComponentProps = (
       return `<resistor ${attrs.join(" ")} />`
     case "simple_capacitor":
       if (sourceComponent.display_capacitance) {
-        attrs.push(`capacitance=${JSON.stringify(sourceComponent.display_capacitance)}`)
+        attrs.push(
+          `capacitance=${JSON.stringify(sourceComponent.display_capacitance)}`,
+        )
       } else if (sourceComponent.capacitance !== undefined) {
         attrs.push(`capacitance={${sourceComponent.capacitance}}`)
       }
@@ -253,21 +267,36 @@ const getTraceProps = (
 export const generateSourceSubcircuitTsx = (
   circuitJson: AnyCircuitElement[],
 ): string | null => {
-  const sourceComponents = su(circuitJson).source_component.list() as SourceComponentElement[]
+  const sourceComponents = su(
+    circuitJson,
+  ).source_component.list() as SourceComponentElement[]
   const sourcePorts = su(circuitJson).source_port.list() as SourcePortElement[]
-  const sourceTraces = su(circuitJson).source_trace.list() as SourceTraceElement[]
+  const sourceTraces = su(
+    circuitJson,
+  ).source_trace.list() as SourceTraceElement[]
   const sourceNets = su(circuitJson).source_net.list() as SourceNetElement[]
-  const pcbComponents = su(circuitJson).pcb_component.list() as PcbComponentElement[]
-  const cadComponents = su(circuitJson).cad_component.list() as CadComponentElement[]
+  const pcbComponents = su(
+    circuitJson,
+  ).pcb_component.list() as PcbComponentElement[]
+  const cadComponents = su(
+    circuitJson,
+  ).cad_component.list() as CadComponentElement[]
 
   if (sourceComponents.length === 0) return null
-  if (!sourceComponents.some((component) => component.ftype?.startsWith("simple_"))) {
+  if (
+    !sourceComponents.some((component) =>
+      component.ftype?.startsWith("simple_"),
+    )
+  ) {
     return null
   }
   if (sourceTraces.length === 0) return null
 
   const sourceComponentById = new Map(
-    sourceComponents.map((component) => [component.source_component_id, component]),
+    sourceComponents.map((component) => [
+      component.source_component_id,
+      component,
+    ]),
   )
   const sourcePortById = new Map(
     sourcePorts.map((port) => [port.source_port_id, port]),
@@ -299,12 +328,15 @@ export const generateSourceSubcircuitTsx = (
     const portId = connectedPortIds[0]!
     const netName =
       sourceTrace.connected_source_net_ids
-        ?.map((netId) =>
-          sourceNets.find((net) => net.source_net_id === netId)?.name,
+        ?.map(
+          (netId) =>
+            sourceNets.find((net) => net.source_net_id === netId)?.name,
         )
         .find((name): name is string => Boolean(name)) ??
       (sourceTrace.subcircuit_connectivity_map_key
-        ? netNameByConnectivityKey.get(sourceTrace.subcircuit_connectivity_map_key)
+        ? netNameByConnectivityKey.get(
+            sourceTrace.subcircuit_connectivity_map_key,
+          )
         : undefined) ??
       (sourceTrace.subcircuit_connectivity_map_key
         ? sanitizeIdentifier(sourceTrace.subcircuit_connectivity_map_key)
@@ -324,8 +356,12 @@ export const generateSourceSubcircuitTsx = (
       const ports = sourcePorts.filter(
         (port) => port.source_component_id === component.source_component_id,
       )
-      const pcbComponent = pcbBySourceComponentId.get(component.source_component_id)
-      const cadComponent = cadBySourceComponentId.get(component.source_component_id)
+      const pcbComponent = pcbBySourceComponentId.get(
+        component.source_component_id,
+      )
+      const cadComponent = cadBySourceComponentId.get(
+        component.source_component_id,
+      )
       return getComponentProps(
         component,
         pcbComponent,
