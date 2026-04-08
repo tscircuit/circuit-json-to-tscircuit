@@ -1,5 +1,6 @@
 import type { AnyCircuitElement } from "circuit-json"
 import { generateFootprintTsx } from "./generate-footprint-tsx"
+import { generateSourceSubcircuitTsx } from "./generate-source-subcircuit-tsx"
 import { generateSymbolTsx } from "./generate-symbol-tsx"
 
 export interface ComponentTemplateParams {
@@ -19,6 +20,17 @@ export const getComponentUsingTemplate = ({
   supplierPartNumbers,
   manufacturerPartNumber,
 }: ComponentTemplateParams) => {
+  const sourceSubcircuitTsx = generateSourceSubcircuitTsx(circuitJson)
+  if (sourceSubcircuitTsx) {
+    return `
+export const ${componentName} = (props: any) => (
+  ${sourceSubcircuitTsx.replace(/\n/g, "\n  ")}
+)
+`
+      .replace(/\n\s*\n/g, "\n")
+      .trim()
+  }
+
   const footprintTsx = generateFootprintTsx(circuitJson)
   const symbolTsx = generateSymbolTsx(circuitJson)
   return `
