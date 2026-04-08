@@ -76,7 +76,8 @@ const getSourceComponentProps = (
   const footprint = cadComponent?.footprinter_string
   if (footprint) attrs.push(`footprint=${JSON.stringify(footprint)}`)
 
-  if (pcbComponent?.layer) attrs.push(`layer=${JSON.stringify(pcbComponent.layer)}`)
+  if (pcbComponent?.layer)
+    attrs.push(`layer=${JSON.stringify(pcbComponent.layer)}`)
   if (pcbComponent?.center?.x !== undefined)
     attrs.push(`pcbX={${pcbComponent.center.x}}`)
   if (pcbComponent?.center?.y !== undefined)
@@ -86,7 +87,9 @@ const getSourceComponentProps = (
   if (pcbComponent?.do_not_place !== undefined)
     attrs.push(`doNotPlace={${pcbComponent.do_not_place}}`)
   if (pcbComponent?.obstructs_within_bounds !== undefined) {
-    attrs.push(`obstructsWithinBounds={${pcbComponent.obstructs_within_bounds}}`)
+    attrs.push(
+      `obstructsWithinBounds={${pcbComponent.obstructs_within_bounds}}`,
+    )
   }
 
   const connections = ports
@@ -94,7 +97,9 @@ const getSourceComponentProps = (
     .map((port) => {
       const key = port.name || `pin${port.pin_number ?? 1}`
       const net = port.subcircuit_connectivity_map_key
-        ? sourceNetNameByConnectivityKey.get(port.subcircuit_connectivity_map_key)
+        ? sourceNetNameByConnectivityKey.get(
+            port.subcircuit_connectivity_map_key,
+          )
         : undefined
       const fallbackNet =
         net ??
@@ -118,7 +123,9 @@ const getSourceComponentProps = (
       return `<resistor ${attrs.join(" ")} />`
     case "simple_capacitor":
       if (sourceComponent.display_capacitance) {
-        attrs.push(`capacitance=${JSON.stringify(sourceComponent.display_capacitance)}`)
+        attrs.push(
+          `capacitance=${JSON.stringify(sourceComponent.display_capacitance)}`,
+        )
       } else if (sourceComponent.capacitance !== undefined) {
         attrs.push(`capacitance={${sourceComponent.capacitance}}`)
       }
@@ -126,7 +133,8 @@ const getSourceComponentProps = (
     case "simple_diode":
       return `<diode ${attrs.join(" ")} />`
     case "simple_led":
-      if (sourceComponent.color) attrs.push(`color=${JSON.stringify(sourceComponent.color)}`)
+      if (sourceComponent.color)
+        attrs.push(`color=${JSON.stringify(sourceComponent.color)}`)
       return `<led ${attrs.join(" ")} />`
     case "simple_pin_header":
       if (sourceComponent.pin_count !== undefined) {
@@ -171,12 +179,18 @@ let sourceNetNameByConnectivityKey = new Map<string, string>()
 export const generateSourceSubcircuitTsx = (
   circuitJson: AnyCircuitElement[],
 ): string | null => {
-  const sourceComponents = su(circuitJson).source_component.list() as SourceComponentElement[]
+  const sourceComponents = su(
+    circuitJson,
+  ).source_component.list() as SourceComponentElement[]
   const sourcePorts = su(circuitJson).source_port.list() as SourcePortElement[]
   const sourceNets = su(circuitJson).source_net.list() as SourceNetElement[]
-  const pcbComponents = su(circuitJson).pcb_component.list() as PcbComponentElement[]
-  const cadComponents = su(circuitJson).cad_component.list() as CadComponentElement[]
-  
+  const pcbComponents = su(
+    circuitJson,
+  ).pcb_component.list() as PcbComponentElement[]
+  const cadComponents = su(
+    circuitJson,
+  ).cad_component.list() as CadComponentElement[]
+
   if (sourceComponents.length === 0) return null
   if (sourceComponents.length === 1 && sourceNets.length === 0) return null
 
@@ -209,16 +223,19 @@ export const generateSourceSubcircuitTsx = (
   }
 
   const board = su(circuitJson).pcb_board.list()[0]
-  const boardWidth =
-    board?.width !== undefined ? ` width={${board.width}}` : ""
+  const boardWidth = board?.width !== undefined ? ` width={${board.width}}` : ""
   const boardHeight =
     board?.height !== undefined ? ` height={${board.height}}` : ""
 
   const childStrings = sourceComponents
     .map((component) => {
       const ports = portsByComponentId.get(component.source_component_id) ?? []
-      const pcbComponent = pcbBySourceComponentId.get(component.source_component_id)
-      const cadComponent = cadBySourceComponentId.get(component.source_component_id)
+      const pcbComponent = pcbBySourceComponentId.get(
+        component.source_component_id,
+      )
+      const cadComponent = cadBySourceComponentId.get(
+        component.source_component_id,
+      )
       return getSourceComponentProps(
         component,
         pcbComponent,
