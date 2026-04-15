@@ -282,7 +282,8 @@ export const generateFootprintTsx = (
     elementStrings.push(`<courtyardrect ${attrs.join(" ")} />`)
   }
 
-  const courtyardPolygons = (su(circuitJson) as any).pcb_courtyard_polygon?.list() ?? []
+  const courtyardPolygons =
+    (su(circuitJson) as any).pcb_courtyard_polygon?.list() ?? []
   for (const courtyardPolygon of courtyardPolygons) {
     const courtyardPolygonAny = courtyardPolygon as any
     const attrs = [
@@ -308,7 +309,8 @@ export const generateFootprintTsx = (
     elementStrings.push(`<courtyardpolygon ${attrs.join(" ")} />`)
   }
 
-  const courtyardCircles = (su(circuitJson) as any).pcb_courtyard_circle?.list() ?? []
+  const courtyardCircles =
+    (su(circuitJson) as any).pcb_courtyard_circle?.list() ?? []
   for (const courtyardCircle of courtyardCircles) {
     const courtyardCircleAny = courtyardCircle as any
     const attrs = [

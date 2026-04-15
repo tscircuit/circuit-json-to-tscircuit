@@ -104,7 +104,9 @@ test("test8 support courtyard polygon and circle", () => {
   })
 
   expect(tscircuit).toContain("<courtyardpolygon")
-  expect(tscircuit).toContain(`points={[{"x":-1,"y":-1},{"x":1,"y":-1},{"x":0,"y":1}]}`)
+  expect(tscircuit).toContain(
+    `points={[{"x":-1,"y":-1},{"x":1,"y":-1},{"x":0,"y":1}]}`,
+  )
   expect(tscircuit).toContain("<courtyardcircle")
   expect(tscircuit).toContain("pcbX={2}")
   expect(tscircuit).toContain("pcbY={1}")
