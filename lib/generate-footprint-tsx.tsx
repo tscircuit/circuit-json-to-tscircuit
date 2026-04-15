@@ -282,6 +282,51 @@ export const generateFootprintTsx = (
     elementStrings.push(`<courtyardrect ${attrs.join(" ")} />`)
   }
 
+  const courtyardPolygons = (su(circuitJson) as any).pcb_courtyard_polygon?.list() ?? []
+  for (const courtyardPolygon of courtyardPolygons) {
+    const courtyardPolygonAny = courtyardPolygon as any
+    const attrs = [
+      `points={${JSON.stringify(courtyardPolygonAny.points ?? [])}}`,
+    ]
+
+    if (courtyardPolygonAny.stroke_width !== undefined) {
+      attrs.push(`strokeWidth={${courtyardPolygonAny.stroke_width}}`)
+    }
+    if (courtyardPolygonAny.is_filled !== undefined) {
+      attrs.push(`isFilled={${courtyardPolygonAny.is_filled}}`)
+    }
+    if (courtyardPolygonAny.has_stroke !== undefined) {
+      attrs.push(`hasStroke={${courtyardPolygonAny.has_stroke}}`)
+    }
+    if (courtyardPolygonAny.is_stroke_dashed !== undefined) {
+      attrs.push(`isStrokeDashed={${courtyardPolygonAny.is_stroke_dashed}}`)
+    }
+    if (courtyardPolygonAny.color !== undefined) {
+      attrs.push(`color="${courtyardPolygonAny.color}"`)
+    }
+
+    elementStrings.push(`<courtyardpolygon ${attrs.join(" ")} />`)
+  }
+
+  const courtyardCircles = (su(circuitJson) as any).pcb_courtyard_circle?.list() ?? []
+  for (const courtyardCircle of courtyardCircles) {
+    const courtyardCircleAny = courtyardCircle as any
+    const attrs = [
+      `pcbX={${courtyardCircleAny.center?.x ?? 0}}`,
+      `pcbY={${courtyardCircleAny.center?.y ?? 0}}`,
+      `radius={${courtyardCircleAny.radius ?? 0}}`,
+    ]
+
+    if (courtyardCircleAny.stroke_width !== undefined) {
+      attrs.push(`strokeWidth={${courtyardCircleAny.stroke_width}}`)
+    }
+    if (courtyardCircleAny.color !== undefined) {
+      attrs.push(`color="${courtyardCircleAny.color}"`)
+    }
+
+    elementStrings.push(`<courtyardcircle ${attrs.join(" ")} />`)
+  }
+
   if (elementStrings.length === 0) {
     return null
   }

@@ -98,6 +98,76 @@ const projectCourtyardToFabricationNotes = (courtyardElements: any[]) => {
   return projected
 }
 
+test("test8 support courtyard polygon and circle", () => {
+  const tscircuit = convertCircuitJsonToTscircuit(circuitJson2, {
+    componentName: "Test8bComponent",
+  })
+
+  expect(tscircuit).toContain("<courtyardpolygon")
+  expect(tscircuit).toContain(`points={[{"x":-1,"y":-1},{"x":1,"y":-1},{"x":0,"y":1}]}`)
+  expect(tscircuit).toContain("<courtyardcircle")
+  expect(tscircuit).toContain("pcbX={2}")
+  expect(tscircuit).toContain("pcbY={1}")
+  expect(tscircuit).toContain("radius={0.8}")
+})
+
+const circuitJson2: any = [
+  {
+    type: "source_component",
+    source_component_id: "generic_1",
+    supplier_part_numbers: {},
+  },
+  {
+    type: "schematic_component",
+    schematic_component_id: "schematic_generic_component_1",
+    source_component_id: "generic_1",
+    center: { x: 0, y: 0 },
+    rotation: 0,
+    size: { width: 0, height: 0 },
+  },
+  {
+    type: "pcb_component",
+    source_component_id: "generic_1",
+    pcb_component_id: "pcb_generic_component_1",
+    layer: "top",
+    center: { x: 0, y: 0 },
+    rotation: 0,
+    width: 2,
+    height: 1,
+  },
+  {
+    type: "pcb_smtpad",
+    pcb_smtpad_id: "pcb_smtpad_1",
+    shape: "rect",
+    x: 0,
+    y: 0,
+    width: 0.5,
+    height: 0.5,
+    layer: "top",
+    pcb_component_id: "pcb_generic_component_1",
+    port_hints: ["1"],
+  },
+  {
+    type: "pcb_courtyard_polygon",
+    pcb_courtyard_polygon_id: "pcb_courtyard_polygon_0",
+    pcb_component_id: "pcb_generic_component_1",
+    layer: "top",
+    points: [
+      { x: -1, y: -1 },
+      { x: 1, y: -1 },
+      { x: 0, y: 1 },
+    ],
+  },
+  {
+    type: "pcb_courtyard_circle",
+    pcb_courtyard_circle_id: "pcb_courtyard_circle_0",
+    pcb_component_id: "pcb_generic_component_1",
+    layer: "top",
+    center: { x: 2, y: 1 },
+    radius: 0.8,
+  },
+]
+
 const circuitJson: any = [
   {
     type: "source_component",
