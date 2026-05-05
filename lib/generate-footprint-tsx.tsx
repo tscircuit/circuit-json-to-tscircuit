@@ -233,50 +233,25 @@ export const generateFootprintTsx = (
   }
 
   for (const courtyardOutline of courtyardOutlines) {
-    const courtyardOutlineAny = courtyardOutline as any
     const attrs = [
       `outline={${JSON.stringify(courtyardOutline.outline ?? [])}}`,
     ]
-
-    if (courtyardOutlineAny.stroke_width !== undefined) {
-      attrs.push(`strokeWidth={${courtyardOutlineAny.stroke_width}}`)
-    }
-    if (courtyardOutlineAny.is_closed !== undefined) {
-      attrs.push(`isClosed={${courtyardOutlineAny.is_closed}}`)
-    }
-    if (courtyardOutlineAny.is_stroke_dashed !== undefined) {
-      attrs.push(`isStrokeDashed={${courtyardOutlineAny.is_stroke_dashed}}`)
-    }
-    if (courtyardOutlineAny.color !== undefined) {
-      attrs.push(`color="${courtyardOutlineAny.color}"`)
+    if (courtyardOutline.layer !== undefined) {
+      attrs.push(`layer="${courtyardOutline.layer}"`)
     }
 
     elementStrings.push(`<courtyardoutline ${attrs.join(" ")} />`)
   }
 
   for (const courtyardRect of courtyardRects) {
-    const courtyardRectAny = courtyardRect as any
     const attrs = [
       `pcbX={${courtyardRect.center?.x ?? 0}}`,
       `pcbY={${courtyardRect.center?.y ?? 0}}`,
       `width={${courtyardRect.width ?? 0}}`,
       `height={${courtyardRect.height ?? 0}}`,
     ]
-
-    if (courtyardRectAny.stroke_width !== undefined) {
-      attrs.push(`strokeWidth={${courtyardRectAny.stroke_width}}`)
-    }
-    if (courtyardRectAny.is_filled !== undefined) {
-      attrs.push(`isFilled={${courtyardRectAny.is_filled}}`)
-    }
-    if (courtyardRectAny.has_stroke !== undefined) {
-      attrs.push(`hasStroke={${courtyardRectAny.has_stroke}}`)
-    }
-    if (courtyardRectAny.is_stroke_dashed !== undefined) {
-      attrs.push(`isStrokeDashed={${courtyardRectAny.is_stroke_dashed}}`)
-    }
-    if (courtyardRectAny.color !== undefined) {
-      attrs.push(`color="${courtyardRectAny.color}"`)
+    if (courtyardRect.layer !== undefined) {
+      attrs.push(`layer="${courtyardRect.layer}"`)
     }
 
     elementStrings.push(`<courtyardrect ${attrs.join(" ")} />`)
