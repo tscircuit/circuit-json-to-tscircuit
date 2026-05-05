@@ -62,11 +62,17 @@ export const generateFootprintTsx = (
     )
   }
 
-  // Map fabrication note paths to silkscreen paths in footprints
   for (const fabPath of fabricationNotePaths) {
-    elementStrings.push(
-      `<silkscreenpath route={${JSON.stringify(fabPath.route)}} />`,
-    )
+    const attrs = [`route={${JSON.stringify(fabPath.route)}}`]
+
+    if ("stroke_width" in fabPath && fabPath.stroke_width !== undefined) {
+      attrs.push(`strokeWidth={${fabPath.stroke_width}}`)
+    }
+    if ("color" in fabPath && fabPath.color !== undefined) {
+      attrs.push(`color="${fabPath.color}"`)
+    }
+
+    elementStrings.push(`<fabricationnotepath ${attrs.join(" ")} />`)
   }
 
   // Add silkscreen text elements (use pcbX/pcbY instead of anchorPosition)

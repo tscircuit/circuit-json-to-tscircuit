@@ -13,10 +13,10 @@ test("test4 support silkscreen", async () => {
         footprint={<footprint>
             <smtpad portHints={["1"]} pcbX="-0.32mm" pcbY="0mm" width="0.46mm" height="0.4mm" shape="rect" />
     <smtpad portHints={["2"]} pcbX="0.32mm" pcbY="0mm" width="0.46mm" height="0.4mm" shape="rect" />
-    <silkscreenpath route={[{"x":-0.3,"y":0.15},{"x":0.3,"y":0.15}]} />
-    <silkscreenpath route={[{"x":-0.3,"y":-0.15},{"x":-0.3,"y":0.15}]} />
-    <silkscreenpath route={[{"x":0.3,"y":0.15},{"x":0.3,"y":-0.15}]} />
-    <silkscreenpath route={[{"x":0.3,"y":-0.15},{"x":-0.3,"y":-0.15}]} />
+    <fabricationnotepath route={[{"x":-0.3,"y":0.15},{"x":0.3,"y":0.15}]} strokeWidth={0.1} />
+    <fabricationnotepath route={[{"x":-0.3,"y":-0.15},{"x":-0.3,"y":0.15}]} strokeWidth={0.1} />
+    <fabricationnotepath route={[{"x":0.3,"y":0.15},{"x":0.3,"y":-0.15}]} strokeWidth={0.1} />
+    <fabricationnotepath route={[{"x":0.3,"y":-0.15},{"x":-0.3,"y":-0.15}]} strokeWidth={0.1} />
     <silkscreentext pcbX={0} pcbY={0.68} anchorAlignment="center" fontSize={0.25} text="\${REFERENCE}" />
     <silkscreentext pcbX={0} pcbY={1.05} anchorAlignment="center" fontSize={1.27} text="REF**" />
     <silkscreentext pcbX={0} pcbY={-1.05} anchorAlignment="center" fontSize={1.27} text="R_0201_0603Metric" />
