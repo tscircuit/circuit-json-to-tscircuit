@@ -74,6 +74,8 @@ test("test3 kicad mod circuit json example", async () => {
     <silkscreenpath route={[{"x":-6.985,"y":-10.414},{"x":-7.937499698293818,"y":-10.158777964987209},{"x":-8.63477796498721,"y":-9.461499698293817},{"x":-8.89,"y":-8.509}]} />
     <silkscreenpath route={[{"x":6.985,"y":10.541},{"x":7.937499698293818,"y":10.285777964987211},{"x":8.63477796498721,"y":9.588499698293818},{"x":8.889999999999999,"y":8.636}]} />
     <silkscreenpath route={[{"x":8.89,"y":-8.509},{"x":8.63477796498721,"y":-9.461499698293817},{"x":7.937499698293818,"y":-10.158777964987209},{"x":6.985,"y":-10.413999999999998}]} />
+    <fabricationnotetext pcbX={-8} pcbY={11.5} anchorAlignment="center" text="REF**" font="tscircuit2024" fontSize={1.27} />
+    <fabricationnotetext pcbX={0} pcbY={0} anchorAlignment="center" text="XIAO-Add-On" font="tscircuit2024" fontSize={1.27} />
           </footprint>}
         {...props}
       />
