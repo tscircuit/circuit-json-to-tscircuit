@@ -84,14 +84,24 @@ export const generateFootprintTsx = (
     const pcbX = stext.anchor_position?.x ?? 0
     const pcbY = stext.anchor_position?.y ?? 0
     const anchorAlignment = stext.anchor_alignment
-    const fontSize = stext.font_size
     // Escape quotes in text content for JSX attribute
     const rawText = String(stext.text ?? "")
     const escapedText = rawText.replace(/"/g, '\\"')
 
-    elementStrings.push(
-      `<silkscreentext pcbX={${pcbX}} pcbY={${pcbY}} anchorAlignment="${anchorAlignment}" fontSize={${fontSize}} text="${escapedText}" />`,
-    )
+    // Only emit fontSize when set; emitting `fontSize={null}` or
+    // `fontSize={undefined}` produces invalid TSX that fails typecheck
+    // for downstream consumers of the generated component.
+    const attrs = [
+      `pcbX={${pcbX}}`,
+      `pcbY={${pcbY}}`,
+      `anchorAlignment="${anchorAlignment}"`,
+    ]
+    if (stext.font_size != null) {
+      attrs.push(`fontSize={${stext.font_size}}`)
+    }
+    attrs.push(`text="${escapedText}"`)
+
+    elementStrings.push(`<silkscreentext ${attrs.join(" ")} />`)
   }
 
   // Add cutout elements
