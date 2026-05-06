@@ -16,6 +16,7 @@ test("test8 support courtyard elements", async () => {
     <courtyardoutline outline={[{"x":-1.8,"y":-1.4},{"x":1.8,"y":-1.4},{"x":1.8,"y":1.4},{"x":-1.8,"y":1.4}]} layer="top" />
     <courtyardrect pcbX={0} pcbY={0} width={4} height={3} layer="top" />
     <courtyardrect pcbX={0.2} pcbY={0.2} width={4.6} height={3.6} layer="bottom" />
+    <courtyardcircle pcbX={0.4} pcbY={-0.3} radius={2.1} layer="top" />
           </footprint>}
         {...props}
       />
@@ -39,16 +40,23 @@ circuit.add(
   `)) as any[]
 
   const courtyardElements = renderedCircuitJson.filter((elm) =>
-    ["pcb_courtyard_outline", "pcb_courtyard_rect"].includes(elm.type),
+    [
+      "pcb_courtyard_outline",
+      "pcb_courtyard_rect",
+      "pcb_courtyard_circle",
+    ].includes(elm.type),
   )
 
-  expect(courtyardElements).toHaveLength(6)
+  expect(courtyardElements).toHaveLength(8)
   expect(
     courtyardElements.filter((elm) => elm.type === "pcb_courtyard_outline"),
   ).toHaveLength(2)
   expect(
     courtyardElements.filter((elm) => elm.type === "pcb_courtyard_rect"),
   ).toHaveLength(4)
+  expect(
+    courtyardElements.filter((elm) => elm.type === "pcb_courtyard_circle"),
+  ).toHaveLength(2)
 })
 
 const circuitJson: any = [
@@ -125,5 +133,13 @@ const circuitJson: any = [
     width: 4.6,
     height: 3.6,
     layer: "bottom",
+  },
+  {
+    type: "pcb_courtyard_circle",
+    pcb_courtyard_circle_id: "pcb_courtyard_circle_0",
+    pcb_component_id: "pcb_generic_component_0",
+    center: { x: 0.4, y: -0.3 },
+    radius: 2.1,
+    layer: "top",
   },
 ]

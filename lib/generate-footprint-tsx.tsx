@@ -19,6 +19,7 @@ export const generateFootprintTsx = (
   const noteDimensions = su(circuitJson).pcb_note_dimension.list()
   const courtyardOutlines = su(circuitJson).pcb_courtyard_outline.list()
   const courtyardRects = su(circuitJson).pcb_courtyard_rect.list()
+  const courtyardCircles = su(circuitJson).pcb_courtyard_circle.list()
 
   const elementStrings: string[] = []
 
@@ -265,6 +266,19 @@ export const generateFootprintTsx = (
     }
 
     elementStrings.push(`<courtyardrect ${attrs.join(" ")} />`)
+  }
+
+  for (const courtyardCircle of courtyardCircles) {
+    const attrs = [
+      `pcbX={${courtyardCircle.center?.x ?? 0}}`,
+      `pcbY={${courtyardCircle.center?.y ?? 0}}`,
+      `radius={${courtyardCircle.radius ?? 0}}`,
+    ]
+    if (courtyardCircle.layer !== undefined) {
+      attrs.push(`layer="${courtyardCircle.layer}"`)
+    }
+
+    elementStrings.push(`<courtyardcircle ${attrs.join(" ")} />`)
   }
 
   if (elementStrings.length === 0) {
