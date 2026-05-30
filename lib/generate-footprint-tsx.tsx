@@ -14,6 +14,7 @@ export const generateFootprintTsx = (
   const fabricationNoteRects = su(circuitJson).pcb_fabrication_note_rect.list()
   const fabricationNoteDimensions =
     su(circuitJson).pcb_fabrication_note_dimension.list()
+  const copperTexts = su(circuitJson).pcb_copper_text.list()
   const silkscreenTexts = su(circuitJson).pcb_silkscreen_text.list()
   const pcbCutouts = su(circuitJson).pcb_cutout.list()
   const noteTexts = su(circuitJson).pcb_note_text.list()
@@ -187,6 +188,41 @@ export const generateFootprintTsx = (
     }
 
     elementStrings.push(`<fabricationnotedimension ${attrs.join(" ")} />`)
+  }
+
+  for (const copperText of copperTexts) {
+    const anchorPosition = copperText.anchor_position ?? { x: 0, y: 0 }
+    const anchorAlignment = copperText.anchor_alignment ?? "center"
+    const rawText = String(copperText.text ?? "")
+    const escapedText = rawText.replace(/"/g, '\\"')
+
+    const attrs = [
+      `pcbX={${anchorPosition.x}}`,
+      `pcbY={${anchorPosition.y}}`,
+      `anchorAlignment="${anchorAlignment}"`,
+      `text="${escapedText}"`,
+    ]
+
+    if (copperText.font !== undefined) {
+      attrs.push(`font="${copperText.font}"`)
+    }
+    if (copperText.font_size !== undefined) {
+      attrs.push(`fontSize={${copperText.font_size}}`)
+    }
+    if (copperText.ccw_rotation !== undefined) {
+      attrs.push(`pcbRotation="${copperText.ccw_rotation}deg"`)
+    }
+    if (copperText.is_knockout !== undefined) {
+      attrs.push(`knockout={${copperText.is_knockout}}`)
+    }
+    if (copperText.is_mirrored !== undefined) {
+      attrs.push(`mirrored={${copperText.is_mirrored}}`)
+    }
+    if (copperText.layer !== undefined && copperText.layer !== "top") {
+      attrs.push(`layer="${copperText.layer}"`)
+    }
+
+    elementStrings.push(`<coppertext ${attrs.join(" ")} />`)
   }
 
   // Add silkscreen text elements (use pcbX/pcbY instead of anchorPosition)
