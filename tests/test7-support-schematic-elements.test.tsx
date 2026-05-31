@@ -40,6 +40,20 @@ const circuitJson: AnyCircuitElement[] = [
     is_dashed: true,
   },
   {
+    type: "schematic_rect",
+    schematic_rect_id: "schematic_rect_id_1",
+    schematic_component_id: "schematic_component_id_1",
+    center: { x: -3, y: 3 },
+    width: 2,
+    height: 1,
+    rotation: 30,
+    stroke_width: 0.05,
+    color: "purple",
+    is_filled: true,
+    fill_color: "yellow",
+    is_dashed: true,
+  },
+  {
     type: "schematic_path",
     schematic_path_id: "schematic_path_id_1",
     points: [
@@ -92,6 +106,7 @@ export const U1 = (props: ChipProps) => (
   />
   <schematicline x1={2} y1={0} x2={4} y2={0} strokeWidth={0.05} color="black" isDashed={false}/>
   <schematicbox center={{ x: 0, y: 3 }} width={2} height={2} isDashed={true}/>
+  <schematicrect schX={-3} schY={3} width={2} height={1} rotation={30} strokeWidth={0.05} color="purple" isFilled={true} fillColor="yellow" isDashed={true} />
   <schematicpath points={[{"x":3,"y":3},{"x":4,"y":4}]} strokeColor="blue" fillColor="blue" isFilled={false}/>
   <schematictext text="U1" x={0} y={-3} anchorAlignment="center" fontSize={0.2} color="red" rotation={45} />
   <schematiccircle center={{ x: 3, y: -3 }} radius={0.5} strokeWidth={0.05} color="green" isFilled={true} isDashed={true} />

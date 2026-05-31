@@ -10,6 +10,7 @@ export const generateSymbolTsx = (
   const schematicTexts = su(circuitJson).schematic_text.list()
   const schematicCircles = su(circuitJson).schematic_circle.list()
   const schematicBoxes = su(circuitJson).schematic_box.list()
+  const schematicRects = su(circuitJson).schematic_rect.list()
   const elementStrings: string[] = []
 
   for (const arc of schematicArcs) {
@@ -59,6 +60,22 @@ export const generateSymbolTsx = (
 
     elementStrings.push(
       `<schematicbox center={{ x: ${x}, y: ${y} }} width={${width}} height={${height}} isDashed={${isDashed}}/>`,
+    )
+  }
+
+  for (const rect of schematicRects) {
+    const center = rect.center ?? { x: 0, y: 0 }
+    const width = rect.width ?? 0
+    const height = rect.height ?? 0
+    const rotation = rect.rotation ?? 0
+    const strokeWidth = rect.stroke_width ?? 0
+    const color = rect.color ?? "black"
+    const isFilled = rect.is_filled ?? false
+    const fillColor = rect.fill_color ?? color
+    const isDashed = rect.is_dashed ?? false
+
+    elementStrings.push(
+      `<schematicrect schX={${center.x}} schY={${center.y}} width={${width}} height={${height}} rotation={${rotation}} strokeWidth={${strokeWidth}} color="${color}" isFilled={${isFilled}} fillColor="${fillColor}" isDashed={${isDashed}} />`,
     )
   }
 
