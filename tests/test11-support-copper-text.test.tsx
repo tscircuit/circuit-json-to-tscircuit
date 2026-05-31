@@ -14,7 +14,7 @@ test("test11 support pcb copper text", async () => {
     export const Test11Component = (props: ChipProps) => (
       <chip
         footprint={<footprint>
-            <coppertext pcbX={-1.5} pcbY={-2.25} anchorAlignment="top_left" text="CU" font="tscircuit2024" fontSize={1.8} />
+            <coppertext pcbX={-1.5} pcbY={-2.25} anchorAlignment="top_left" text="copper text" font="tscircuit2024" fontSize={1.8} />
           </footprint>}
         {...props}
       />
@@ -38,34 +38,18 @@ circuit.add(
   expect(copperTextElements).toHaveLength(2)
   expect(copperTextElements[0]).toMatchObject({
     layer: "top",
-    text: "CU",
+    text: "copper text",
     font: "tscircuit2024",
     font_size: 1.8,
     anchor_alignment: "top_left",
   })
   expect(copperTextElements[1]).toMatchObject({
     layer: "top",
-    text: "CU",
+    text: "copper text",
     font: "tscircuit2024",
     font_size: 1.8,
     anchor_alignment: "top_left",
   })
-}, 15000)
-
-test("test11 support pcb copper text snapshot", async () => {
-  const tscircuit = convertCircuitJsonToTscircuit(circuitJson as any, {
-    componentName: "Test11Component",
-  })
-
-  const renderedCircuitJson = (await runTscircuitCode(`
-${tscircuit}
-
-circuit.add(
-  <board width="20mm" height="20mm">
-    <Test11Component />
-  </board>,
-)
-  `)) as AnyCircuitElement[]
 
   const pcbSvg = convertCircuitJsonToPcbSvg(renderedCircuitJson)
   await expect(pcbSvg).toMatchSvgSnapshot(import.meta.path, "pcb")
@@ -103,6 +87,6 @@ const circuitJson = [
     anchor_alignment: "top_left",
     font: "tscircuit2024",
     font_size: 1.8,
-    text: "CU",
+    text: "copper text",
   },
 ]
