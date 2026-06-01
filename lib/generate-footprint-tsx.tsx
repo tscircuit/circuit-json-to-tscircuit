@@ -8,6 +8,7 @@ export const generateFootprintTsx = (
   const holes = su(circuitJson).pcb_hole.list()
   const platedHoles = su(circuitJson).pcb_plated_hole.list()
   const smtPads = su(circuitJson).pcb_smtpad.list()
+  const silkscreenLines = su(circuitJson).pcb_silkscreen_line.list()
   const silkscreenPaths = su(circuitJson).pcb_silkscreen_path.list()
   const fabricationNotePaths = su(circuitJson).pcb_fabrication_note_path.list()
   const fabricationNoteTexts = su(circuitJson).pcb_fabrication_note_text.list()
@@ -70,6 +71,22 @@ export const generateFootprintTsx = (
     elementStrings.push(
       `<silkscreenpath route={${JSON.stringify(silkscreenPath.route)}} />`,
     )
+  }
+
+  for (const silkscreenLine of silkscreenLines) {
+    const attrs = [
+      `x1={${silkscreenLine.x1 ?? 0}}`,
+      `y1={${silkscreenLine.y1 ?? 0}}`,
+      `x2={${silkscreenLine.x2 ?? 0}}`,
+      `y2={${silkscreenLine.y2 ?? 0}}`,
+      `strokeWidth={${silkscreenLine.stroke_width ?? 0}}`,
+    ]
+
+    if (silkscreenLine.layer === "bottom") {
+      attrs.push(`layer="bottom"`)
+    }
+
+    elementStrings.push(`<silkscreenline ${attrs.join(" ")} />`)
   }
 
   for (const fabPath of fabricationNotePaths) {
