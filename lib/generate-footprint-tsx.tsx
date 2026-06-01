@@ -79,8 +79,11 @@ export const generateFootprintTsx = (
       `y1={${silkscreenLine.y1 ?? 0}}`,
       `x2={${silkscreenLine.x2 ?? 0}}`,
       `y2={${silkscreenLine.y2 ?? 0}}`,
-      `strokeWidth={${silkscreenLine.stroke_width ?? 0}}`,
     ]
+
+    if (silkscreenLine.stroke_width !== undefined) {
+      attrs.push(`strokeWidth={${silkscreenLine.stroke_width}}`)
+    }
 
     if (silkscreenLine.layer === "bottom") {
       attrs.push(`layer="bottom"`)
