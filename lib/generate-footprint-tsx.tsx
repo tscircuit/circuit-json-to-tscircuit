@@ -10,6 +10,7 @@ export const generateFootprintTsx = (
   const smtPads = su(circuitJson).pcb_smtpad.list()
   const silkscreenLines = su(circuitJson).pcb_silkscreen_line.list()
   const silkscreenPaths = su(circuitJson).pcb_silkscreen_path.list()
+  const silkscreenRects = su(circuitJson).pcb_silkscreen_rect.list()
   const fabricationNotePaths = su(circuitJson).pcb_fabrication_note_path.list()
   const fabricationNoteTexts = su(circuitJson).pcb_fabrication_note_text.list()
   const fabricationNoteRects = su(circuitJson).pcb_fabrication_note_rect.list()
@@ -71,6 +72,29 @@ export const generateFootprintTsx = (
     elementStrings.push(
       `<silkscreenpath route={${JSON.stringify(silkscreenPath.route)}} />`,
     )
+  }
+
+  for (const silkscreenRect of silkscreenRects) {
+    const center = silkscreenRect.center ?? { x: 0, y: 0 }
+    const attrs = [
+      `pcbX={${center.x}}`,
+      `pcbY={${center.y}}`,
+      `width={${silkscreenRect.width ?? 0}}`,
+      `height={${silkscreenRect.height ?? 0}}`,
+      `layer="${silkscreenRect.layer}"`,
+    ]
+
+    if (silkscreenRect.stroke_width !== undefined) {
+      attrs.push(`strokeWidth={${silkscreenRect.stroke_width}}`)
+    }
+    if (silkscreenRect.is_filled !== undefined) {
+      attrs.push(`filled={${silkscreenRect.is_filled}}`)
+    }
+    if (silkscreenRect.corner_radius !== undefined) {
+      attrs.push(`cornerRadius={${silkscreenRect.corner_radius}}`)
+    }
+
+    elementStrings.push(`<silkscreenrect ${attrs.join(" ")} />`)
   }
 
   for (const silkscreenLine of silkscreenLines) {
