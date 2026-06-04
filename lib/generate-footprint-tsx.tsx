@@ -11,6 +11,7 @@ export const generateFootprintTsx = (
   const silkscreenLines = su(circuitJson).pcb_silkscreen_line.list()
   const silkscreenPaths = su(circuitJson).pcb_silkscreen_path.list()
   const silkscreenRects = su(circuitJson).pcb_silkscreen_rect.list()
+  const silkscreenCircles = su(circuitJson).pcb_silkscreen_circle.list()
   const fabricationNotePaths = su(circuitJson).pcb_fabrication_note_path.list()
   const fabricationNoteTexts = su(circuitJson).pcb_fabrication_note_text.list()
   const fabricationNoteRects = su(circuitJson).pcb_fabrication_note_rect.list()
@@ -95,6 +96,25 @@ export const generateFootprintTsx = (
     }
 
     elementStrings.push(`<silkscreenrect ${attrs.join(" ")} />`)
+  }
+
+  for (const silkscreenCircle of silkscreenCircles) {
+    const center = silkscreenCircle.center ?? { x: 0, y: 0 }
+    const attrs = [
+      `pcbX={${center.x}}`,
+      `pcbY={${center.y}}`,
+      `radius={${silkscreenCircle.radius ?? 0}}`,
+      `layer="${silkscreenCircle.layer}"`,
+    ]
+
+    if (silkscreenCircle.stroke_width !== undefined) {
+      attrs.push(`strokeWidth={${silkscreenCircle.stroke_width}}`)
+    }
+    if (silkscreenCircle.is_filled !== undefined) {
+      attrs.push(`isFilled={${silkscreenCircle.is_filled}}`)
+    }
+
+    elementStrings.push(`<silkscreencircle ${attrs.join(" ")} />`)
   }
 
   for (const silkscreenLine of silkscreenLines) {
