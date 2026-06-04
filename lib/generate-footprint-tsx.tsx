@@ -36,8 +36,22 @@ export const generateFootprintTsx = (
       elementStrings.push(
         `<hole pcbX="${mmStr(hole.x)}" pcbY="${mmStr(hole.y)}" diameter="${mmStr(hole.hole_diameter)}" />`,
       )
-    } else if (hole.hole_shape === "oval") {
-      console.warn("Unhandled oval hole in conversion (needs implementation)")
+    } else if (hole.hole_shape === "rect") {
+      elementStrings.push(
+        `<hole pcbX="${mmStr(hole.x)}" pcbY="${mmStr(hole.y)}" width="${mmStr(hole.hole_width)}" height="${mmStr(hole.hole_height)}" shape="rect" />`,
+      )
+    } else if (
+      hole.hole_shape === "oval" ||
+      hole.hole_shape === "pill" ||
+      hole.hole_shape === "rotated_pill"
+    ) {
+      const pcbRotation =
+        "ccw_rotation" in hole && hole.ccw_rotation !== undefined
+          ? ` pcbRotation="${typeof hole.ccw_rotation === "number" ? `${hole.ccw_rotation}deg` : hole.ccw_rotation}"`
+          : ""
+      elementStrings.push(
+        `<hole pcbX="${mmStr(hole.x)}" pcbY="${mmStr(hole.y)}" width="${mmStr(hole.hole_width)}" height="${mmStr(hole.hole_height)}" shape="pill"${pcbRotation} />`,
+      )
     }
   }
 
