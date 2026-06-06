@@ -68,6 +68,89 @@ export const generateFootprintTsx = (
       elementStrings.push(
         `<platedhole  portHints={${JSON.stringify(platedHole.port_hints)}} pcbX="${mmStr(platedHole.x)}" pcbY="${mmStr(platedHole.y)}" outerDiameter="${mmStr(platedHole.outer_diameter)}" holeDiameter="${mmStr(platedHole.hole_diameter)}" shape="circle" />`,
       )
+    } else if (platedHole.shape === "circular_hole_with_rect_pad") {
+      const attrs = [
+        `portHints={${JSON.stringify(platedHole.port_hints)}}`,
+        `pcbX="${mmStr(platedHole.x)}"`,
+        `pcbY="${mmStr(platedHole.y)}"`,
+        `holeDiameter="${mmStr(platedHole.hole_diameter)}"`,
+        `rectPadWidth="${mmStr(platedHole.rect_pad_width)}"`,
+        `rectPadHeight="${mmStr(platedHole.rect_pad_height)}"`,
+        `shape="circular_hole_with_rect_pad"`,
+      ]
+      if (
+        "rect_border_radius" in platedHole &&
+        platedHole.rect_border_radius !== undefined
+      ) {
+        attrs.push(`rectBorderRadius="${mmStr(platedHole.rect_border_radius)}"`)
+      }
+      if (
+        "hole_offset_x" in platedHole &&
+        platedHole.hole_offset_x !== undefined
+      ) {
+        attrs.push(`holeOffsetX="${mmStr(platedHole.hole_offset_x)}"`)
+      }
+      if (
+        "hole_offset_y" in platedHole &&
+        platedHole.hole_offset_y !== undefined
+      ) {
+        attrs.push(`holeOffsetY="${mmStr(platedHole.hole_offset_y)}"`)
+      }
+      elementStrings.push(`<platedhole  ${attrs.join(" ")} />`)
+    } else if (platedHole.shape === "pill_hole_with_rect_pad") {
+      const attrs = [
+        `portHints={${JSON.stringify(platedHole.port_hints)}}`,
+        `pcbX="${mmStr(platedHole.x)}"`,
+        `pcbY="${mmStr(platedHole.y)}"`,
+        `holeWidth="${mmStr(platedHole.hole_width)}"`,
+        `holeHeight="${mmStr(platedHole.hole_height)}"`,
+        `rectPadWidth="${mmStr(platedHole.rect_pad_width)}"`,
+        `rectPadHeight="${mmStr(platedHole.rect_pad_height)}"`,
+        `shape="pill_hole_with_rect_pad"`,
+      ]
+      if (
+        "hole_offset_x" in platedHole &&
+        platedHole.hole_offset_x !== undefined
+      ) {
+        attrs.push(`holeOffsetX="${mmStr(platedHole.hole_offset_x)}"`)
+      }
+      if (
+        "hole_offset_y" in platedHole &&
+        platedHole.hole_offset_y !== undefined
+      ) {
+        attrs.push(`holeOffsetY="${mmStr(platedHole.hole_offset_y)}"`)
+      }
+      if (
+        "rect_border_radius" in platedHole &&
+        platedHole.rect_border_radius !== undefined
+      ) {
+        attrs.push(`rectBorderRadius="${mmStr(platedHole.rect_border_radius)}"`)
+      }
+      elementStrings.push(`<platedhole  ${attrs.join(" ")} />`)
+    } else if (platedHole.shape === "hole_with_polygon_pad") {
+      const attrs = [
+        `portHints={${JSON.stringify(platedHole.port_hints)}}`,
+        `pcbX="${mmStr(platedHole.x)}"`,
+        `pcbY="${mmStr(platedHole.y)}"`,
+        `holeShape="${platedHole.hole_shape}"`,
+        `padOutline={${JSON.stringify(platedHole.pad_outline)}}`,
+        `holeOffsetX="${mmStr(platedHole.hole_offset_x ?? 0)}"`,
+        `holeOffsetY="${mmStr(platedHole.hole_offset_y ?? 0)}"`,
+        `shape="hole_with_polygon_pad"`,
+      ]
+      if (
+        "hole_diameter" in platedHole &&
+        platedHole.hole_diameter !== undefined
+      ) {
+        attrs.push(`holeDiameter="${mmStr(platedHole.hole_diameter)}"`)
+      }
+      if ("hole_width" in platedHole && platedHole.hole_width !== undefined) {
+        attrs.push(`holeWidth="${mmStr(platedHole.hole_width)}"`)
+      }
+      if ("hole_height" in platedHole && platedHole.hole_height !== undefined) {
+        attrs.push(`holeHeight="${mmStr(platedHole.hole_height)}"`)
+      }
+      elementStrings.push(`<platedhole  ${attrs.join(" ")} />`)
     }
   }
 
