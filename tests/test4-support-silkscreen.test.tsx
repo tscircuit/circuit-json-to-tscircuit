@@ -1,5 +1,7 @@
 import { test, expect } from "bun:test"
+import type { AnyCircuitElement, PcbSilkscreenText } from "circuit-json"
 import { convertCircuitJsonToTscircuit } from "lib"
+import { runTscircuitCode } from "tscircuit"
 
 test("test4 support silkscreen", async () => {
   const tscircuit = convertCircuitJsonToTscircuit(circuitJson, {
@@ -17,14 +19,46 @@ test("test4 support silkscreen", async () => {
     <fabricationnotepath route={[{"x":-0.3,"y":-0.15},{"x":-0.3,"y":0.15}]} strokeWidth={0.1} />
     <fabricationnotepath route={[{"x":0.3,"y":0.15},{"x":0.3,"y":-0.15}]} strokeWidth={0.1} />
     <fabricationnotepath route={[{"x":0.3,"y":-0.15},{"x":-0.3,"y":-0.15}]} strokeWidth={0.1} />
-    <silkscreentext pcbX={0} pcbY={0.68} anchorAlignment="center" fontSize={0.25} text="\${REFERENCE}" />
-    <silkscreentext pcbX={0} pcbY={1.05} anchorAlignment="center" fontSize={1.27} text="REF**" />
-    <silkscreentext pcbX={0} pcbY={-1.05} anchorAlignment="center" fontSize={1.27} text="R_0201_0603Metric" />
+    <silkscreentext pcbX={0} pcbY={0.68} anchorAlignment="center" fontSize={0.25} text="\${REFERENCE}" font="tscircuit2024" layer="top" />
+    <silkscreentext pcbX={0} pcbY={1.05} anchorAlignment="center" fontSize={1.27} text="REF**" font="tscircuit2024" pcbRotation={90} isKnockout={true} knockoutPaddingLeft={0.1} knockoutPaddingRight={0.3} knockoutPaddingTop={0.2} knockoutPaddingBottom={0.4} layer="bottom" />
+    <silkscreentext pcbX={0} pcbY={-1.05} anchorAlignment="center" fontSize={1.27} text="R_0201_0603Metric" font="tscircuit2024" layer="top" />
           </footprint>}
         {...props}
       />
     )"
   `)
+
+  const renderedCircuitJson = (await runTscircuitCode(`
+${tscircuit}
+
+circuit.add(
+  <board width="20mm" height="20mm">
+    <Test4Component />
+  </board>,
+)
+  `)) as AnyCircuitElement[]
+
+  const renderedSilkscreenTexts = renderedCircuitJson.filter(
+    (elm): elm is PcbSilkscreenText => elm.type === "pcb_silkscreen_text",
+  )
+
+  expect(renderedSilkscreenTexts).toEqual(
+    expect.arrayContaining([
+      expect.objectContaining({
+        text: "REF**",
+        font: "tscircuit2024",
+        layer: "bottom",
+        ccw_rotation: 90,
+        is_knockout: true,
+        knockout_padding: {
+          left: 0.1,
+          right: 0.3,
+          top: 0.2,
+          bottom: 0.4,
+        },
+      }),
+    ]),
+  )
 })
 
 const circuitJson: any = [
@@ -171,7 +205,7 @@ const circuitJson: any = [
   },
   {
     type: "pcb_silkscreen_text",
-    layer: "top",
+    layer: "bottom",
     font: "tscircuit2024",
     font_size: 1.27,
     pcb_component_id: "pcb_generic_component_0",
@@ -180,6 +214,14 @@ const circuitJson: any = [
       y: 1.05,
     },
     anchor_alignment: "center",
+    ccw_rotation: 90,
+    is_knockout: true,
+    knockout_padding: {
+      left: 0.1,
+      right: 0.3,
+      top: 0.2,
+      bottom: 0.4,
+    },
     text: "REF**",
   },
   {
