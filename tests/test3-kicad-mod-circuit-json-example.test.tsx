@@ -38,34 +38,34 @@ test("test3 kicad mod circuit json example", async () => {
     <platedhole  portHints={["13"]} pcbX="8.89mm" pcbY="5.08mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
     <platedhole  portHints={["14"]} pcbX="7.62mm" pcbY="7.62mm" outerDiameter="1.5mm" holeDiameter="0.85mm" shape="circle" />
     <platedhole  portHints={["14"]} pcbX="8.89mm" pcbY="7.62mm" outerDiameter="1.27mm" holeDiameter="0.7mm" shape="circle" />
-    <smtpad portHints={["1"]} pcbX="-8.278mm" pcbY="7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
-    <smtpad portHints={["1"]} pcbX="-8.278mm" pcbY="7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
-    <smtpad portHints={["2"]} pcbX="-8.337mm" pcbY="5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
-    <smtpad portHints={["2"]} pcbX="-8.337mm" pcbY="5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
-    <smtpad portHints={["3"]} pcbX="-8.278mm" pcbY="2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
-    <smtpad portHints={["3"]} pcbX="-8.278mm" pcbY="2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
-    <smtpad portHints={["4"]} pcbX="-8.278mm" pcbY="0mm" width="1.626mm" height="1.325mm" shape="rect" />
-    <smtpad portHints={["4"]} pcbX="-8.278mm" pcbY="0mm" width="1.626mm" height="1.325mm" shape="rect" />
-    <smtpad portHints={["5"]} pcbX="-8.278mm" pcbY="-2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
-    <smtpad portHints={["5"]} pcbX="-8.278mm" pcbY="-2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
-    <smtpad portHints={["6"]} pcbX="-8.337mm" pcbY="-5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
-    <smtpad portHints={["6"]} pcbX="-8.337mm" pcbY="-5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
-    <smtpad portHints={["7"]} pcbX="-8.278mm" pcbY="-7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
-    <smtpad portHints={["7"]} pcbX="-8.278mm" pcbY="-7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
-    <smtpad portHints={["8"]} pcbX="8.278mm" pcbY="-7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
-    <smtpad portHints={["8"]} pcbX="8.278mm" pcbY="-7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
-    <smtpad portHints={["9"]} pcbX="8.337mm" pcbY="-5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
-    <smtpad portHints={["9"]} pcbX="8.337mm" pcbY="-5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
-    <smtpad portHints={["10"]} pcbX="8.278mm" pcbY="-2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
-    <smtpad portHints={["10"]} pcbX="8.278mm" pcbY="-2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
-    <smtpad portHints={["11"]} pcbX="8.278mm" pcbY="0mm" width="1.626mm" height="1.325mm" shape="rect" />
-    <smtpad portHints={["11"]} pcbX="8.278mm" pcbY="0mm" width="1.626mm" height="1.325mm" shape="rect" />
-    <smtpad portHints={["12"]} pcbX="8.278mm" pcbY="2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
-    <smtpad portHints={["12"]} pcbX="8.278mm" pcbY="2.54mm" width="1.626mm" height="1.325mm" shape="rect" />
-    <smtpad portHints={["13"]} pcbX="8.337mm" pcbY="5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
-    <smtpad portHints={["13"]} pcbX="8.337mm" pcbY="5.08mm" width="1.626mm" height="1.208mm" shape="rect" />
-    <smtpad portHints={["14"]} pcbX="8.278mm" pcbY="7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
-    <smtpad portHints={["14"]} pcbX="8.278mm" pcbY="7.62mm" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["1"]} pcbX="-8.278mm" pcbY="7.62mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["1"]} pcbX="-8.278mm" pcbY="7.62mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["2"]} pcbX="-8.337mm" pcbY="5.08mm" layer="top" width="1.626mm" height="1.208mm" shape="rect" />
+    <smtpad portHints={["2"]} pcbX="-8.337mm" pcbY="5.08mm" layer="top" width="1.626mm" height="1.208mm" shape="rect" />
+    <smtpad portHints={["3"]} pcbX="-8.278mm" pcbY="2.54mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["3"]} pcbX="-8.278mm" pcbY="2.54mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["4"]} pcbX="-8.278mm" pcbY="0mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["4"]} pcbX="-8.278mm" pcbY="0mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["5"]} pcbX="-8.278mm" pcbY="-2.54mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["5"]} pcbX="-8.278mm" pcbY="-2.54mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["6"]} pcbX="-8.337mm" pcbY="-5.08mm" layer="top" width="1.626mm" height="1.208mm" shape="rect" />
+    <smtpad portHints={["6"]} pcbX="-8.337mm" pcbY="-5.08mm" layer="top" width="1.626mm" height="1.208mm" shape="rect" />
+    <smtpad portHints={["7"]} pcbX="-8.278mm" pcbY="-7.62mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["7"]} pcbX="-8.278mm" pcbY="-7.62mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["8"]} pcbX="8.278mm" pcbY="-7.62mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["8"]} pcbX="8.278mm" pcbY="-7.62mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["9"]} pcbX="8.337mm" pcbY="-5.08mm" layer="top" width="1.626mm" height="1.208mm" shape="rect" />
+    <smtpad portHints={["9"]} pcbX="8.337mm" pcbY="-5.08mm" layer="top" width="1.626mm" height="1.208mm" shape="rect" />
+    <smtpad portHints={["10"]} pcbX="8.278mm" pcbY="-2.54mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["10"]} pcbX="8.278mm" pcbY="-2.54mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["11"]} pcbX="8.278mm" pcbY="0mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["11"]} pcbX="8.278mm" pcbY="0mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["12"]} pcbX="8.278mm" pcbY="2.54mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["12"]} pcbX="8.278mm" pcbY="2.54mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["13"]} pcbX="8.337mm" pcbY="5.08mm" layer="top" width="1.626mm" height="1.208mm" shape="rect" />
+    <smtpad portHints={["13"]} pcbX="8.337mm" pcbY="5.08mm" layer="top" width="1.626mm" height="1.208mm" shape="rect" />
+    <smtpad portHints={["14"]} pcbX="8.278mm" pcbY="7.62mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
+    <smtpad portHints={["14"]} pcbX="8.278mm" pcbY="7.62mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
     <silkscreenpath route={[{"x":-8.89,"y":-8.509},{"x":-8.89,"y":8.636}]} />
     <silkscreenpath route={[{"x":-6.985,"y":-10.414},{"x":6.985,"y":-10.414}]} />
     <silkscreenpath route={[{"x":6.985,"y":10.541},{"x":-6.985,"y":10.541}]} />
@@ -80,7 +80,7 @@ test("test3 kicad mod circuit json example", async () => {
         {...props}
       />
     )"
-  `)
+    `)
 })
 const circuitJson: any = [
   {

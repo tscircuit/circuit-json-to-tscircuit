@@ -11,8 +11,8 @@ test("test4 support silkscreen", async () => {
     export const Test4Component = (props: ChipProps) => (
       <chip
         footprint={<footprint>
-            <smtpad portHints={["1"]} pcbX="-0.32mm" pcbY="0mm" width="0.46mm" height="0.4mm" shape="rect" />
-    <smtpad portHints={["2"]} pcbX="0.32mm" pcbY="0mm" width="0.46mm" height="0.4mm" shape="rect" />
+            <smtpad portHints={["1"]} pcbX="-0.32mm" pcbY="0mm" layer="top" width="0.46mm" height="0.4mm" shape="rect" />
+    <smtpad portHints={["2"]} pcbX="0.32mm" pcbY="0mm" layer="top" width="0.46mm" height="0.4mm" shape="rect" />
     <fabricationnotepath route={[{"x":-0.3,"y":0.15},{"x":0.3,"y":0.15}]} strokeWidth={0.1} />
     <fabricationnotepath route={[{"x":-0.3,"y":-0.15},{"x":-0.3,"y":0.15}]} strokeWidth={0.1} />
     <fabricationnotepath route={[{"x":0.3,"y":0.15},{"x":0.3,"y":-0.15}]} strokeWidth={0.1} />
@@ -24,7 +24,7 @@ test("test4 support silkscreen", async () => {
         {...props}
       />
     )"
-  `)
+    `)
 })
 
 const circuitJson: any = [

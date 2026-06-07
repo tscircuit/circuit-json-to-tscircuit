@@ -37,8 +37,8 @@ test("test2 getComponentUsingTemplate", async () => {
     export const MyResistor = (props: ChipProps<typeof pinLabels>) => (
       <chip
         footprint={<footprint>
-            <smtpad portHints={["1","left"]} pcbX="-0.5mm" pcbY="0mm" width="0.6000000000000001mm" height="0.6000000000000001mm" shape="rect" />
-    <smtpad portHints={["2","right"]} pcbX="0.5mm" pcbY="0mm" width="0.6000000000000001mm" height="0.6000000000000001mm" shape="rect" />
+            <smtpad portHints={["1","left"]} pcbX="-0.5mm" pcbY="0mm" layer="top" width="0.6000000000000001mm" height="0.6000000000000001mm" shape="rect" />
+    <smtpad portHints={["2","right"]} pcbX="0.5mm" pcbY="0mm" layer="top" width="0.6000000000000001mm" height="0.6000000000000001mm" shape="rect" />
           </footprint>}
         pinLabels={pinLabels}
         cadModel={{
@@ -55,5 +55,5 @@ test("test2 getComponentUsingTemplate", async () => {
         {...props}
       />
     )"
-  `)
+    `)
 })
