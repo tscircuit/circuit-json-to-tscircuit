@@ -1,5 +1,6 @@
 import { test, expect } from "bun:test"
 import type { AnyCircuitElement, PcbSilkscreenText } from "circuit-json"
+import { convertCircuitJsonToPcbSvg } from "circuit-to-svg"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
 
@@ -41,6 +42,9 @@ circuit.add(
   const renderedSilkscreenTexts = renderedCircuitJson.filter(
     (elm): elm is PcbSilkscreenText => elm.type === "pcb_silkscreen_text",
   )
+
+  const pcbSvg = convertCircuitJsonToPcbSvg(renderedCircuitJson)
+  await expect(pcbSvg).toMatchSvgSnapshot(import.meta.path, "pcb")
 
   expect(renderedSilkscreenTexts).toEqual(
     expect.arrayContaining([
