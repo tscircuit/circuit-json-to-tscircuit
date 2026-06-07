@@ -20,9 +20,9 @@ test("test4 support silkscreen", async () => {
     <fabricationnotepath route={[{"x":-0.3,"y":-0.15},{"x":-0.3,"y":0.15}]} strokeWidth={0.1} />
     <fabricationnotepath route={[{"x":0.3,"y":0.15},{"x":0.3,"y":-0.15}]} strokeWidth={0.1} />
     <fabricationnotepath route={[{"x":0.3,"y":-0.15},{"x":-0.3,"y":-0.15}]} strokeWidth={0.1} />
-    <silkscreentext pcbX={0} pcbY={0.68} anchorAlignment="center" fontSize={0.25} text="\${REFERENCE}" font="tscircuit2024" layer="top" />
-    <silkscreentext pcbX={0} pcbY={1.05} anchorAlignment="center" fontSize={1.27} text="REF**" font="tscircuit2024" pcbRotation={90} isKnockout={true} knockoutPaddingLeft={0.1} knockoutPaddingRight={0.3} knockoutPaddingTop={0.2} knockoutPaddingBottom={0.4} layer="bottom" />
-    <silkscreentext pcbX={0} pcbY={-1.05} anchorAlignment="center" fontSize={1.27} text="R_0201_0603Metric" font="tscircuit2024" layer="top" />
+    <silkscreentext pcbX={3} pcbY={0.68} anchorAlignment="center" fontSize={0.25} text="\${REFERENCE}" font="tscircuit2024" layer="top" />
+    <silkscreentext pcbX={-3} pcbY={1.05} anchorAlignment="center" fontSize={1.27} text="REF**" font="tscircuit2024" pcbRotation={90} isKnockout={true} knockoutPaddingLeft={0.1} knockoutPaddingRight={0.3} knockoutPaddingTop={0.2} knockoutPaddingBottom={0.4} layer="bottom" />
+    <silkscreentext pcbX={0} pcbY={-3.05} anchorAlignment="center" fontSize={1.27} text="R_0201_0603Metric" font="tscircuit2024" layer="top" />
           </footprint>}
         {...props}
       />
@@ -201,7 +201,7 @@ const circuitJson: any = [
     font_size: 0.25,
     pcb_component_id: "pcb_generic_component_0",
     anchor_position: {
-      x: 0,
+      x: 3,
       y: 0.68,
     },
     anchor_alignment: "center",
@@ -214,7 +214,7 @@ const circuitJson: any = [
     font_size: 1.27,
     pcb_component_id: "pcb_generic_component_0",
     anchor_position: {
-      x: 0,
+      x: -3,
       y: 1.05,
     },
     anchor_alignment: "center",
@@ -236,7 +236,7 @@ const circuitJson: any = [
     pcb_component_id: "pcb_generic_component_0",
     anchor_position: {
       x: 0,
-      y: -1.05,
+      y: -3.05,
     },
     anchor_alignment: "center",
     text: "R_0201_0603Metric",
