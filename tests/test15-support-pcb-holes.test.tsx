@@ -15,6 +15,7 @@ test("test15 support pcb holes", async () => {
         footprint={<footprint>
             <hole pcbX="-3mm" pcbY="-2.5mm" diameter="0.8mm" />
     <hole pcbX="-1mm" pcbY="1.5mm" width="1.2mm" height="0.7mm" shape="rect" />
+    <hole pcbX="0.2mm" pcbY="0.4mm" width="1.5mm" height="0.75mm" shape="oval" />
     <hole pcbX="1.4mm" pcbY="-1.3mm" width="1.7mm" height="0.8mm" shape="pill" />
     <hole pcbX="2.6mm" pcbY="2mm" width="1.8mm" height="0.9mm" shape="pill" pcbRotation="90deg" />
           </footprint>}
@@ -79,6 +80,16 @@ const circuitJson: any = [
     y: 1.5,
     hole_width: 1.2,
     hole_height: 0.7,
+  },
+  {
+    type: "pcb_hole",
+    pcb_hole_id: "hole_oval",
+    pcb_component_id: "pcb_generic_component_0",
+    hole_shape: "oval",
+    x: 0.2,
+    y: 0.4,
+    hole_width: 1.5,
+    hole_height: 0.75,
   },
   {
     type: "pcb_hole",
