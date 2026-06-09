@@ -5,6 +5,7 @@ import { convertCourtyard } from "./generate-footprint-tsx/convert-courtyard"
 import { convertCutouts } from "./generate-footprint-tsx/convert-cutouts"
 import { convertFabrication } from "./generate-footprint-tsx/convert-fabrication"
 import { convertHoles } from "./generate-footprint-tsx/convert-holes"
+import { convertKeepouts } from "./generate-footprint-tsx/convert-keepouts"
 import { convertNotes } from "./generate-footprint-tsx/convert-notes"
 import { convertPlatedHoles } from "./generate-footprint-tsx/convert-plated-holes"
 import { convertSilkscreen } from "./generate-footprint-tsx/convert-silkscreen"
@@ -22,6 +23,7 @@ export const generateFootprintTsx = (
     convertFabrication,
     convertSilkscreenText,
     convertCopperText,
+    convertKeepouts,
     convertCutouts,
     convertNotes,
     convertCourtyard,
