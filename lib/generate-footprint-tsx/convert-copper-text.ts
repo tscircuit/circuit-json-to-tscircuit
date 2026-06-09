@@ -2,8 +2,7 @@ import { su } from "@tscircuit/soup-util"
 import type { FootprintElementConverter } from "./converter-types"
 import {
   escapeJsxText,
-  formatOptionalBooleanAttr,
-  formatOptionalNumberAttr,
+  formatOptionalJsxAttr,
   formatOptionalStringAttr,
   formatPcbRotationAttr,
 } from "./helpers"
@@ -20,7 +19,7 @@ export const convertCopperText: FootprintElementConverter = (circuitJson) => {
         : ""
 
     elementStrings.push(
-      `<coppertext pcbX={${anchorPosition.x}} pcbY={${anchorPosition.y}} anchorAlignment="${copperText.anchor_alignment ?? "center"}" text="${escapeJsxText(copperText.text)}"${formatOptionalStringAttr("font", copperText.font)}${formatOptionalNumberAttr("fontSize", copperText.font_size)}${formatPcbRotationAttr(copperText.ccw_rotation)}${formatOptionalBooleanAttr("knockout", copperText.is_knockout)}${formatOptionalBooleanAttr("mirrored", copperText.is_mirrored)}${nonDefaultLayer} />`,
+      `<coppertext pcbX={${anchorPosition.x}} pcbY={${anchorPosition.y}} anchorAlignment="${copperText.anchor_alignment ?? "center"}" text="${escapeJsxText(copperText.text)}"${formatOptionalStringAttr("font", copperText.font)}${formatOptionalJsxAttr("fontSize", copperText.font_size)}${formatPcbRotationAttr(copperText.ccw_rotation)}${formatOptionalJsxAttr("knockout", copperText.is_knockout)}${formatOptionalJsxAttr("mirrored", copperText.is_mirrored)}${nonDefaultLayer} />`,
     )
   }
 

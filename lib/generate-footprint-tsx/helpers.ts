@@ -13,17 +13,9 @@ export const formatOptionalStringAttr = (
   return ` ${attrName}="${escapeJsxText(value)}"`
 }
 
-export const formatOptionalNumberAttr = (
+export const formatOptionalJsxAttr = (
   attrName: string,
-  value: number | undefined,
-): string => {
-  if (value === undefined) return ""
-  return ` ${attrName}={${value}}`
-}
-
-export const formatOptionalBooleanAttr = (
-  attrName: string,
-  value: boolean | undefined,
+  value: number | boolean | undefined,
 ): string => {
   if (value === undefined) return ""
   return ` ${attrName}={${value}}`
@@ -50,7 +42,7 @@ export const formatSolderMaskAttrs = (options: {
   is_covered_with_solder_mask?: boolean
   soldermask_margin?: number
 }): string =>
-  `${formatOptionalBooleanAttr(
+  `${formatOptionalJsxAttr(
     "coveredWithSolderMask",
     options.is_covered_with_solder_mask,
   )}${formatOptionalMmAttr("solderMaskMargin", options.soldermask_margin)}`
