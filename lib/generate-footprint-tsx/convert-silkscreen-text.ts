@@ -9,10 +9,12 @@ export const convertSilkscreenText: FootprintElementConverter = (
   const elementStrings: string[] = []
 
   for (const silkscreenText of silkscreenTexts) {
+
     const anchorPosition = silkscreenText.anchor_position ?? { x: 0, y: 0 }
     const attrs = [
-      `pcbX={${anchorPosition.x}}`,
-      `pcbY={${anchorPosition.y}}`,
+      `pcbX={${anchorPosition.x ?? 0}}`,
+      `pcbY={${anchorPosition.y ?? 0}}`,
+
       `anchorAlignment="${silkscreenText.anchor_alignment}"`,
       `fontSize={${silkscreenText.font_size}}`,
       `text="${escapeJsxText(silkscreenText.text)}"`,
