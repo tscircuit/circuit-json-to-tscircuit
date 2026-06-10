@@ -3,30 +3,15 @@ import { mmStr } from "@tscircuit/mm"
 import type { FootprintElementConverter } from "./converter-types"
 import { formatOptionalMmAttr, formatPcbRotationAttr } from "./helpers"
 
-const formatOptionalStringAttr = (
-  attrName: string,
-  value: string | undefined,
-): string => {
-  if (value === undefined) return ""
-  return ` ${attrName}="${value}"`
-}
-
-const formatOptionalBooleanAttr = (
-  attrName: string,
-  value: boolean | undefined,
-): string => {
-  if (value === undefined) return ""
-  return ` ${attrName}={${value}}`
-}
-
 const formatSolderMaskAttrs = (platedHole: {
   is_covered_with_solder_mask?: boolean
   soldermask_margin?: number
 }): string =>
-  `${formatOptionalBooleanAttr(
-    "coveredWithSolderMask",
-    platedHole.is_covered_with_solder_mask,
-  )}${formatOptionalMmAttr("solderMaskMargin", platedHole.soldermask_margin)}`
+  `${
+    platedHole.is_covered_with_solder_mask === undefined
+      ? ""
+      : ` coveredWithSolderMask={${platedHole.is_covered_with_solder_mask}}`
+  }${formatOptionalMmAttr("solderMaskMargin", platedHole.soldermask_margin)}`
 
 export const convertPlatedHoles: FootprintElementConverter = (circuitJson) => {
   const platedHoles = su(circuitJson).pcb_plated_hole.list()
@@ -43,7 +28,15 @@ export const convertPlatedHoles: FootprintElementConverter = (circuitJson) => {
       )
     } else if (platedHole.shape === "circular_hole_with_rect_pad") {
       elementStrings.push(
-        `<platedhole  portHints={${JSON.stringify(platedHole.port_hints)}} pcbX="${mmStr(platedHole.x)}" pcbY="${mmStr(platedHole.y)}"${formatOptionalStringAttr("holeShape", platedHole.hole_shape)}${formatOptionalStringAttr("padShape", platedHole.pad_shape)}${formatSolderMaskAttrs(platedHole)} holeDiameter="${mmStr(platedHole.hole_diameter)}" rectPadWidth="${mmStr(platedHole.rect_pad_width)}" rectPadHeight="${mmStr(platedHole.rect_pad_height)}"${formatOptionalMmAttr("rectBorderRadius", platedHole.rect_border_radius)}${formatOptionalMmAttr("holeOffsetX", platedHole.hole_offset_x)}${formatOptionalMmAttr("holeOffsetY", platedHole.hole_offset_y)}${formatPcbRotationAttr(platedHole.rect_ccw_rotation)} shape="circular_hole_with_rect_pad" />`,
+        `<platedhole  portHints={${JSON.stringify(platedHole.port_hints)}} pcbX="${mmStr(platedHole.x)}" pcbY="${mmStr(platedHole.y)}"${
+          platedHole.hole_shape === undefined
+            ? ""
+            : ` holeShape="${platedHole.hole_shape}"`
+        }${
+          platedHole.pad_shape === undefined
+            ? ""
+            : ` padShape="${platedHole.pad_shape}"`
+        }${formatSolderMaskAttrs(platedHole)} holeDiameter="${mmStr(platedHole.hole_diameter)}" rectPadWidth="${mmStr(platedHole.rect_pad_width)}" rectPadHeight="${mmStr(platedHole.rect_pad_height)}"${formatOptionalMmAttr("rectBorderRadius", platedHole.rect_border_radius)}${formatOptionalMmAttr("holeOffsetX", platedHole.hole_offset_x)}${formatOptionalMmAttr("holeOffsetY", platedHole.hole_offset_y)}${formatPcbRotationAttr(platedHole.rect_ccw_rotation)} shape="circular_hole_with_rect_pad" />`,
       )
     } else if (
       platedHole.shape === "pill_hole_with_rect_pad" ||
@@ -59,7 +52,13 @@ export const convertPlatedHoles: FootprintElementConverter = (circuitJson) => {
           : undefined
 
       elementStrings.push(
-        `<platedhole  portHints={${JSON.stringify(platedHole.port_hints)}} pcbX="${mmStr(platedHole.x)}" pcbY="${mmStr(platedHole.y)}"${formatOptionalStringAttr("holeShape", holeShape)}${formatOptionalStringAttr("padShape", platedHole.pad_shape)}${formatSolderMaskAttrs(platedHole)} holeWidth="${mmStr(platedHole.hole_width)}" holeHeight="${mmStr(platedHole.hole_height)}" rectPadWidth="${mmStr(platedHole.rect_pad_width)}" rectPadHeight="${mmStr(platedHole.rect_pad_height)}"${formatOptionalMmAttr("rectBorderRadius", platedHole.rect_border_radius)}${formatOptionalMmAttr("holeOffsetX", platedHole.hole_offset_x)}${formatOptionalMmAttr("holeOffsetY", platedHole.hole_offset_y)}${formatPcbRotationAttr(rotation)} shape="pill_hole_with_rect_pad" />`,
+        `<platedhole  portHints={${JSON.stringify(platedHole.port_hints)}} pcbX="${mmStr(platedHole.x)}" pcbY="${mmStr(platedHole.y)}"${
+          holeShape === undefined ? "" : ` holeShape="${holeShape}"`
+        }${
+          platedHole.pad_shape === undefined
+            ? ""
+            : ` padShape="${platedHole.pad_shape}"`
+        }${formatSolderMaskAttrs(platedHole)} holeWidth="${mmStr(platedHole.hole_width)}" holeHeight="${mmStr(platedHole.hole_height)}" rectPadWidth="${mmStr(platedHole.rect_pad_width)}" rectPadHeight="${mmStr(platedHole.rect_pad_height)}"${formatOptionalMmAttr("rectBorderRadius", platedHole.rect_border_radius)}${formatOptionalMmAttr("holeOffsetX", platedHole.hole_offset_x)}${formatOptionalMmAttr("holeOffsetY", platedHole.hole_offset_y)}${formatPcbRotationAttr(rotation)} shape="pill_hole_with_rect_pad" />`,
       )
     } else if (platedHole.shape === "hole_with_polygon_pad") {
       const holeSizeAttrs =
@@ -68,7 +67,11 @@ export const convertPlatedHoles: FootprintElementConverter = (circuitJson) => {
           : `${formatOptionalMmAttr("holeWidth", platedHole.hole_width)}${formatOptionalMmAttr("holeHeight", platedHole.hole_height)}`
 
       elementStrings.push(
-        `<platedhole  portHints={${JSON.stringify(platedHole.port_hints)}} pcbX="${mmStr(platedHole.x)}" pcbY="${mmStr(platedHole.y)}"${formatOptionalStringAttr("holeShape", platedHole.hole_shape)}${formatSolderMaskAttrs(platedHole)}${holeSizeAttrs} padOutline={${JSON.stringify(platedHole.pad_outline)}} holeOffsetX="${mmStr(platedHole.hole_offset_x ?? 0)}" holeOffsetY="${mmStr(platedHole.hole_offset_y ?? 0)}" shape="hole_with_polygon_pad" />`,
+        `<platedhole  portHints={${JSON.stringify(platedHole.port_hints)}} pcbX="${mmStr(platedHole.x)}" pcbY="${mmStr(platedHole.y)}"${
+          platedHole.hole_shape === undefined
+            ? ""
+            : ` holeShape="${platedHole.hole_shape}"`
+        }${formatSolderMaskAttrs(platedHole)}${holeSizeAttrs} padOutline={${JSON.stringify(platedHole.pad_outline)}} holeOffsetX="${mmStr(platedHole.hole_offset_x ?? 0)}" holeOffsetY="${mmStr(platedHole.hole_offset_y ?? 0)}" shape="hole_with_polygon_pad" />`,
       )
     }
   }

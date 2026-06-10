@@ -205,7 +205,9 @@ circuit.add(
       }),
       expect.objectContaining({
         port_hints: expect.arrayContaining(["6"]),
-        shape: "pill_hole_with_rect_pad",
+        shape: "rotated_pill_hole_with_rect_pad",
+        hole_shape: "rotated_pill",
+        pad_shape: "rect",
         hole_width: 1.5,
         hole_height: 0.6,
         rect_pad_width: 2.3,
