@@ -9,7 +9,6 @@ export const convertSilkscreenText: FootprintElementConverter = (
   const elementStrings: string[] = []
 
   for (const silkscreenText of silkscreenTexts) {
-
     const anchorPosition = silkscreenText.anchor_position ?? { x: 0, y: 0 }
     const attrs = [
       `pcbX={${anchorPosition.x ?? 0}}`,
