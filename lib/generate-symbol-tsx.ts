@@ -1,6 +1,9 @@
 import type { AnyCircuitElement } from "circuit-json"
 import { su } from "@tscircuit/soup-util"
 
+const escapeJsxText = (text: string) =>
+  text.replace(/\\/g, "\\\\").replace(/"/g, '\\"')
+
 export const generateSymbolTsx = (
   circuitJson: AnyCircuitElement[],
 ): string | null => {
@@ -11,6 +14,8 @@ export const generateSymbolTsx = (
   const schematicCircles = su(circuitJson).schematic_circle.list()
   const schematicBoxes = su(circuitJson).schematic_box.list()
   const schematicRects = su(circuitJson).schematic_rect.list()
+  const schematicTables = su(circuitJson).schematic_table.list()
+  const schematicTableCells = su(circuitJson).schematic_table_cell.list()
   const elementStrings: string[] = []
 
   for (const arc of schematicArcs) {
@@ -93,7 +98,7 @@ export const generateSymbolTsx = (
     const x = text.position?.x ?? 0
     const y = text.position?.y ?? 0
     const rawText = String(text.text ?? "")
-    const escapedText = rawText.replace(/"/g, '\\"')
+    const escapedText = escapeJsxText(rawText)
     const anchorAlignment = text.anchor ?? "center"
     const fontSize = text.font_size ?? 0.1
     const color = text.color ?? "black"
@@ -115,6 +120,95 @@ export const generateSymbolTsx = (
 
     elementStrings.push(
       `<schematiccircle center={{ x: ${x}, y: ${y} }} radius={${radius}} strokeWidth={${strokeWidth}} color="${color}" isFilled={${isFilled}} isDashed={${isDashed}} />`,
+    )
+  }
+
+  for (const table of schematicTables) {
+    const tableCells = schematicTableCells
+      .filter((cell) => cell.schematic_table_id === table.schematic_table_id)
+      .sort((a, b) => {
+        if (a.start_row_index !== b.start_row_index) {
+          return a.start_row_index - b.start_row_index
+        }
+        return a.start_column_index - b.start_column_index
+      })
+
+    const rowCount = table.row_heights.length
+    const rowStrings: string[] = []
+
+    for (let rowIndex = 0; rowIndex < rowCount; rowIndex++) {
+      const rowHeight = table.row_heights[rowIndex]
+      const rowCells = tableCells.filter(
+        (cell) => cell.start_row_index === rowIndex,
+      )
+      const cellStrings: string[] = []
+
+      for (const cell of rowCells) {
+        const rowSpan = cell.end_row_index - cell.start_row_index + 1
+        const colSpan = cell.end_column_index - cell.start_column_index + 1
+        const columnWidths = table.column_widths.slice(
+          cell.start_column_index,
+          cell.end_column_index + 1,
+        )
+        const averageColumnWidth =
+          columnWidths.length > 0
+            ? columnWidths.reduce((sum, width) => sum + width, 0) /
+              columnWidths.length
+            : cell.width / Math.max(colSpan, 1)
+
+        const props: string[] = []
+        const text = cell.text ?? ""
+
+        if (text.length > 0) {
+          props.push(`text="${escapeJsxText(text)}"`)
+        }
+        if (cell.horizontal_align) {
+          props.push(`horizontalAlign="${cell.horizontal_align}"`)
+        }
+        if (cell.vertical_align) {
+          props.push(`verticalAlign="${cell.vertical_align}"`)
+        }
+        if (cell.font_size != null) {
+          props.push(`fontSize={${cell.font_size}}`)
+        }
+        if (rowSpan !== 1) {
+          props.push(`rowSpan={${rowSpan}}`)
+        }
+        if (colSpan !== 1) {
+          props.push(`colSpan={${colSpan}}`)
+        }
+        if (averageColumnWidth > 0) {
+          props.push(`width={${averageColumnWidth}}`)
+        }
+
+        cellStrings.push(`<schematiccell ${props.join(" ")} />`)
+      }
+
+      rowStrings.push(
+        `<schematicrow height={${rowHeight}}>
+    ${cellStrings.join("\n    ")}
+  </schematicrow>`,
+      )
+    }
+
+    const tableProps = [
+      `schX={${table.anchor_position.x}}`,
+      `schY={${table.anchor_position.y}}`,
+    ]
+    if (table.cell_padding != null) {
+      tableProps.push(`cellPadding={${table.cell_padding}}`)
+    }
+    if (table.border_width != null) {
+      tableProps.push(`borderWidth={${table.border_width}}`)
+    }
+    if (table.anchor) {
+      tableProps.push(`anchor="${table.anchor}"`)
+    }
+
+    elementStrings.push(
+      `<schematictable ${tableProps.join(" ")}>
+  ${rowStrings.map((s) => s.split("\n").join("\n  ")).join("\n  ")}
+</schematictable>`,
     )
   }
 
