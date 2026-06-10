@@ -5,22 +5,6 @@ export const escapeJsxText = (value: unknown): string =>
 
 export const formatMm = (value: number | undefined): string => mmStr(value ?? 0)
 
-export const formatOptionalStringAttr = (
-  attrName: string,
-  value: string | undefined,
-): string => {
-  if (value === undefined) return ""
-  return ` ${attrName}="${escapeJsxText(value)}"`
-}
-
-export const formatOptionalJsxAttr = (
-  attrName: string,
-  value: number | boolean | undefined,
-): string => {
-  if (value === undefined) return ""
-  return ` ${attrName}={${value}}`
-}
-
 export const formatOptionalMmAttr = (
   attrName: string,
   value: number | undefined,
@@ -37,12 +21,3 @@ export const formatPcbRotationAttr = (
   const formatted = typeof rotation === "number" ? `${rotation}deg` : rotation
   return ` ${attrName}="${formatted}"`
 }
-
-export const formatSolderMaskAttrs = (options: {
-  is_covered_with_solder_mask?: boolean
-  soldermask_margin?: number
-}): string =>
-  `${formatOptionalJsxAttr(
-    "coveredWithSolderMask",
-    options.is_covered_with_solder_mask,
-  )}${formatOptionalMmAttr("solderMaskMargin", options.soldermask_margin)}`
