@@ -1,17 +1,11 @@
 import { su } from "@tscircuit/soup-util"
 import { mmStr } from "@tscircuit/mm"
 import type { FootprintElementConverter } from "./converter-types"
-import { formatOptionalMmAttr, formatPcbRotationAttr } from "./helpers"
-
-const formatSolderMaskAttrs = (platedHole: {
-  is_covered_with_solder_mask?: boolean
-  soldermask_margin?: number
-}): string =>
-  `${
-    platedHole.is_covered_with_solder_mask === undefined
-      ? ""
-      : ` coveredWithSolderMask={${platedHole.is_covered_with_solder_mask}}`
-  }${formatOptionalMmAttr("solderMaskMargin", platedHole.soldermask_margin)}`
+import {
+  formatOptionalMmAttr,
+  formatPcbRotationAttr,
+  formatSolderMaskAttrs,
+} from "./helpers"
 
 export const convertPlatedHoles: FootprintElementConverter = (circuitJson) => {
   const platedHoles = su(circuitJson).pcb_plated_hole.list()
