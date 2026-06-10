@@ -9,12 +9,23 @@ export const convertSilkscreenText: FootprintElementConverter = (
   const elementStrings: string[] = []
 
   for (const silkscreenText of silkscreenTexts) {
-    const pcbX = silkscreenText.anchor_position?.x ?? 0
-    const pcbY = silkscreenText.anchor_position?.y ?? 0
+    const anchorPosition = silkscreenText.anchor_position ?? { x: 0, y: 0 }
+    const attrs = [
+      `pcbX={${anchorPosition.x}}`,
+      `pcbY={${anchorPosition.y}}`,
+      `anchorAlignment="${silkscreenText.anchor_alignment}"`,
+      `fontSize={${silkscreenText.font_size}}`,
+      `text="${escapeJsxText(silkscreenText.text)}"`,
+    ]
 
-    elementStrings.push(
-      `<silkscreentext pcbX={${pcbX}} pcbY={${pcbY}} anchorAlignment="${silkscreenText.anchor_alignment}" fontSize={${silkscreenText.font_size}} text="${escapeJsxText(silkscreenText.text)}" />`,
-    )
+    if (silkscreenText.font !== undefined) {
+      attrs.push(`font="${silkscreenText.font}"`)
+    }
+    if (silkscreenText.layer === "bottom") {
+      attrs.push(`layer="bottom"`)
+    }
+
+    elementStrings.push(`<silkscreentext ${attrs.join(" ")} />`)
   }
 
   return elementStrings

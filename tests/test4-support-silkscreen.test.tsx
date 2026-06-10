@@ -17,9 +17,9 @@ test("test4 support silkscreen", async () => {
     <fabricationnotepath route={[{"x":-0.3,"y":-0.15},{"x":-0.3,"y":0.15}]} strokeWidth={0.1} />
     <fabricationnotepath route={[{"x":0.3,"y":0.15},{"x":0.3,"y":-0.15}]} strokeWidth={0.1} />
     <fabricationnotepath route={[{"x":0.3,"y":-0.15},{"x":-0.3,"y":-0.15}]} strokeWidth={0.1} />
-    <silkscreentext pcbX={0} pcbY={0.68} anchorAlignment="center" fontSize={0.25} text="\${REFERENCE}" />
-    <silkscreentext pcbX={0} pcbY={1.05} anchorAlignment="center" fontSize={1.27} text="REF**" />
-    <silkscreentext pcbX={0} pcbY={-1.05} anchorAlignment="center" fontSize={1.27} text="R_0201_0603Metric" />
+    <silkscreentext pcbX={0} pcbY={0.68} anchorAlignment="center" fontSize={0.25} text="\${REFERENCE}" font="tscircuit2024" />
+    <silkscreentext pcbX={0} pcbY={1.05} anchorAlignment="center" fontSize={1.27} text="REF**" font="tscircuit2024" layer="bottom" />
+    <silkscreentext pcbX={0} pcbY={-1.05} anchorAlignment="center" fontSize={1.27} text="R_0201_0603Metric" font="tscircuit2024" />
           </footprint>}
         {...props}
       />
@@ -171,7 +171,7 @@ const circuitJson: any = [
   },
   {
     type: "pcb_silkscreen_text",
-    layer: "top",
+    layer: "bottom",
     font: "tscircuit2024",
     font_size: 1.27,
     pcb_component_id: "pcb_generic_component_0",
