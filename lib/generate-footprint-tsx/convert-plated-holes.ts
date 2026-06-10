@@ -1,15 +1,7 @@
 import { su } from "@tscircuit/soup-util"
 import { mmStr } from "@tscircuit/mm"
 import type { FootprintElementConverter } from "./converter-types"
-import { formatPcbRotationAttr } from "./helpers"
-
-const formatOptionalMmAttr = (
-  attrName: string,
-  value: number | undefined,
-): string => {
-  if (value === undefined) return ""
-  return ` ${attrName}="${mmStr(value)}"`
-}
+import { formatOptionalMmAttr, formatPcbRotationAttr } from "./helpers"
 
 const formatOptionalStringAttr = (
   attrName: string,
