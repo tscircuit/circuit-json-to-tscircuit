@@ -5,6 +5,24 @@ export const escapeJsxText = (value: unknown): string =>
 
 export const formatMm = (value: number | undefined): string => mmStr(value ?? 0)
 
+export const formatOptionalMmAttr = (
+  attrName: string,
+  value: number | undefined,
+): string => {
+  if (value === undefined) return ""
+  return ` ${attrName}="${mmStr(value)}"`
+}
+
+export const formatSolderMaskAttrs = (platedHole: {
+  is_covered_with_solder_mask?: boolean
+  soldermask_margin?: number
+}): string =>
+  `${
+    platedHole.is_covered_with_solder_mask === undefined
+      ? ""
+      : ` coveredWithSolderMask={${platedHole.is_covered_with_solder_mask}}`
+  }${formatOptionalMmAttr("solderMaskMargin", platedHole.soldermask_margin)}`
+
 export const formatPcbRotationAttr = (
   rotation: string | number | undefined,
   attrName = "pcbRotation",

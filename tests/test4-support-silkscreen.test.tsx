@@ -20,9 +20,9 @@ test("test4 support silkscreen", async () => {
     <fabricationnotepath route={[{"x":-0.3,"y":-0.15},{"x":-0.3,"y":0.15}]} strokeWidth={0.1} />
     <fabricationnotepath route={[{"x":0.3,"y":0.15},{"x":0.3,"y":-0.15}]} strokeWidth={0.1} />
     <fabricationnotepath route={[{"x":0.3,"y":-0.15},{"x":-0.3,"y":-0.15}]} strokeWidth={0.1} />
-    <silkscreentext pcbX={3} pcbY={0.68} anchorAlignment="center" fontSize={0.25} text="\${REFERENCE}" font="tscircuit2024" layer="top" />
-    <silkscreentext pcbX={-3} pcbY={1.05} anchorAlignment="center" fontSize={1.27} text="REF**" font="tscircuit2024" pcbRotation={90} isKnockout={true} knockoutPaddingLeft={0.1} knockoutPaddingRight={0.3} knockoutPaddingTop={0.2} knockoutPaddingBottom={0.4} layer="bottom" />
-    <silkscreentext pcbX={0} pcbY={-3.05} anchorAlignment="center" fontSize={1.27} text="R_0201_0603Metric" font="tscircuit2024" layer="top" />
+    <silkscreentext pcbX={0} pcbY={4} anchorAlignment="center" fontSize={0.25} font="tscircuit2024" pcbRotation="15deg" isKnockout={true} knockoutPadding="0.1mm" mirrored={true} layer="top" text="chip1" />
+    <silkscreentext pcbX={0} pcbY={1.05} anchorAlignment="center" fontSize={1.27} font="tscircuit2024" pcbRotation="180deg" isKnockout={true} knockoutPaddingLeft="0.1mm" knockoutPaddingTop="0.2mm" knockoutPaddingRight="0.3mm" knockoutPaddingBottom="0.4mm" layer="bottom" text="REF**" />
+    <silkscreentext pcbX={0} pcbY={-1.05} anchorAlignment="center" fontSize={1.27} font="tscircuit2024" layer="top" text="R_0201_0603Metric" />
           </footprint>}
         {...props}
       />
@@ -43,26 +43,44 @@ circuit.add(
     (elm): elm is PcbSilkscreenText => elm.type === "pcb_silkscreen_text",
   )
 
-  const pcbSvg = convertCircuitJsonToPcbSvg(renderedCircuitJson)
-  await expect(pcbSvg).toMatchSvgSnapshot(import.meta.path, "pcb")
-
   expect(renderedSilkscreenTexts).toEqual(
     expect.arrayContaining([
+      expect.objectContaining({
+        text: "chip1",
+        font: "tscircuit2024",
+        layer: "top",
+        ccw_rotation: 15,
+        is_knockout: true,
+        knockout_padding: {
+          left: 0.1,
+          top: 0.1,
+          right: 0.1,
+          bottom: 0.1,
+        },
+      }),
       expect.objectContaining({
         text: "REF**",
         font: "tscircuit2024",
         layer: "bottom",
-        ccw_rotation: 90,
+        ccw_rotation: 180,
         is_knockout: true,
         knockout_padding: {
           left: 0.1,
-          right: 0.3,
           top: 0.2,
+          right: 0.3,
           bottom: 0.4,
         },
       }),
+      expect.objectContaining({
+        text: "R_0201_0603Metric",
+        font: "tscircuit2024",
+        layer: "top",
+      }),
     ]),
   )
+
+  const pcbSvg = convertCircuitJsonToPcbSvg(renderedCircuitJson)
+  await expect(pcbSvg).toMatchSvgSnapshot(import.meta.path, "pcb")
 })
 
 const circuitJson: any = [
@@ -199,31 +217,40 @@ const circuitJson: any = [
     layer: "top",
     font: "tscircuit2024",
     font_size: 0.25,
+    ccw_rotation: 15,
     pcb_component_id: "pcb_generic_component_0",
     anchor_position: {
-      x: 3,
-      y: 0.68,
+      x: 0,
+      y: 4,
     },
     anchor_alignment: "center",
-    text: "${REFERENCE}",
+    is_knockout: true,
+    knockout_padding: {
+      left: 0.1,
+      top: 0.1,
+      right: 0.1,
+      bottom: 0.1,
+    },
+    is_mirrored: true,
+    text: "chip1",
   },
   {
     type: "pcb_silkscreen_text",
     layer: "bottom",
     font: "tscircuit2024",
     font_size: 1.27,
+    ccw_rotation: 180,
     pcb_component_id: "pcb_generic_component_0",
     anchor_position: {
       x: -3,
       y: 1.05,
     },
     anchor_alignment: "center",
-    ccw_rotation: 90,
     is_knockout: true,
     knockout_padding: {
       left: 0.1,
-      right: 0.3,
       top: 0.2,
+      right: 0.3,
       bottom: 0.4,
     },
     text: "REF**",
