@@ -16,8 +16,11 @@ export const convertHoles: FootprintElementConverter = (circuitJson) => {
       elementStrings.push(
         `<hole pcbX="${mmStr(hole.x)}" pcbY="${mmStr(hole.y)}" width="${mmStr(hole.hole_width)}" height="${mmStr(hole.hole_height)}" shape="rect" />`,
       )
+    } else if (hole.hole_shape === "oval") {
+      elementStrings.push(
+        `<hole pcbX="${mmStr(hole.x)}" pcbY="${mmStr(hole.y)}" width="${mmStr(hole.hole_width)}" height="${mmStr(hole.hole_height)}" shape="oval" />`,
+      )
     } else if (
-      hole.hole_shape === "oval" ||
       hole.hole_shape === "pill" ||
       hole.hole_shape === "rotated_pill"
     ) {

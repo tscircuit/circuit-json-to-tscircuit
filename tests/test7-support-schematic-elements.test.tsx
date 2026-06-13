@@ -61,6 +61,7 @@ const circuitJson: AnyCircuitElement[] = [
       { x: 4, y: 4 },
     ],
     fill_color: "blue",
+    is_dashed: false,
   },
   {
     type: "schematic_text",

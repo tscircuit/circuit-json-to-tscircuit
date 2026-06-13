@@ -45,10 +45,28 @@ export const generateSymbolTsx = (
     const strokeWidth = line.stroke_width ?? 0.05
     const color = line.color ?? "black"
     const isDashed = line.is_dashed ?? false
+    const dashLength = line.dash_length
+    const dashGap = line.dash_gap
 
-    elementStrings.push(
-      `<schematicline x1={${x1}} y1={${y1}} x2={${x2}} y2={${y2}} strokeWidth={${strokeWidth}} color="${color}" isDashed={${isDashed}}/>`,
-    )
+    const attrs = [
+      `x1={${x1}}`,
+      `y1={${y1}}`,
+      `x2={${x2}}`,
+      `y2={${y2}}`,
+      `strokeWidth={${strokeWidth}}`,
+      `color="${color}"`,
+      `isDashed={${isDashed}}`,
+    ]
+
+    if (dashLength != null) {
+      attrs.push(`dashLength={${dashLength}}`)
+    }
+
+    if (dashGap != null) {
+      attrs.push(`dashGap={${dashGap}}`)
+    }
+
+    elementStrings.push(`<schematicline ${attrs.join(" ")}/>`)
   }
 
   for (const box of schematicBoxes) {
@@ -83,10 +101,25 @@ export const generateSymbolTsx = (
     const points = path.points ?? []
     const fillColor = path.fill_color ?? "red"
     const isFilled = path.is_filled ?? false
+    const dashLength = path.dash_length
+    const dashGap = path.dash_gap
 
-    elementStrings.push(
-      `<schematicpath points={${JSON.stringify(points)}} strokeColor="${fillColor}" fillColor="${fillColor}" isFilled={${isFilled}}/>`,
-    )
+    const attrs = [
+      `points={${JSON.stringify(points)}}`,
+      `strokeColor="${fillColor}"`,
+      `fillColor="${fillColor}"`,
+      `isFilled={${isFilled}}`,
+    ]
+
+    if (dashLength != null) {
+      attrs.push(`dashLength={${dashLength}}`)
+    }
+
+    if (dashGap != null) {
+      attrs.push(`dashGap={${dashGap}}`)
+    }
+
+    elementStrings.push(`<schematicpath ${attrs.join(" ")}/>`)
   }
 
   for (const text of schematicTexts) {
