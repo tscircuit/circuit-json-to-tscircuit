@@ -1,5 +1,6 @@
 import { test, expect } from "bun:test"
 import type { AnyCircuitElement, PcbSilkscreenText } from "circuit-json"
+import { convertCircuitJsonToPcbSvg } from "circuit-to-svg"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
 
@@ -77,6 +78,9 @@ circuit.add(
       }),
     ]),
   )
+
+  const pcbSvg = convertCircuitJsonToPcbSvg(renderedCircuitJson)
+  await expect(pcbSvg).toMatchSvgSnapshot(import.meta.path, "pcb")
 })
 
 const circuitJson: any = [
