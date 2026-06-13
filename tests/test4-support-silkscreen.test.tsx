@@ -20,7 +20,7 @@ test("test4 support silkscreen", async () => {
     <fabricationnotepath route={[{"x":-0.3,"y":-0.15},{"x":-0.3,"y":0.15}]} strokeWidth={0.1} />
     <fabricationnotepath route={[{"x":0.3,"y":0.15},{"x":0.3,"y":-0.15}]} strokeWidth={0.1} />
     <fabricationnotepath route={[{"x":0.3,"y":-0.15},{"x":-0.3,"y":-0.15}]} strokeWidth={0.1} />
-    <silkscreentext pcbX={0} pcbY={0.68} anchorAlignment="center" fontSize={0.25} font="tscircuit2024" pcbRotation="15deg" isKnockout={true} knockoutPadding="0.1mm" mirrored={true} layer="top" text="\${REFERENCE}" />
+    <silkscreentext pcbX={0} pcbY={4} anchorAlignment="center" fontSize={0.25} font="tscircuit2024" pcbRotation="15deg" isKnockout={true} knockoutPadding="0.1mm" mirrored={true} layer="top" text="chip1" />
     <silkscreentext pcbX={0} pcbY={1.05} anchorAlignment="center" fontSize={1.27} font="tscircuit2024" pcbRotation="180deg" isKnockout={true} knockoutPaddingLeft="0.1mm" knockoutPaddingTop="0.2mm" knockoutPaddingRight="0.3mm" knockoutPaddingBottom="0.4mm" layer="bottom" text="REF**" />
     <silkscreentext pcbX={0} pcbY={-1.05} anchorAlignment="center" fontSize={1.27} font="tscircuit2024" layer="top" text="R_0201_0603Metric" />
           </footprint>}
@@ -46,7 +46,7 @@ circuit.add(
   expect(renderedSilkscreenTexts).toEqual(
     expect.arrayContaining([
       expect.objectContaining({
-        text: "$unnamed_chip1",
+        text: "chip1",
         font: "tscircuit2024",
         layer: "top",
         ccw_rotation: 15,
@@ -221,7 +221,7 @@ const circuitJson: any = [
     pcb_component_id: "pcb_generic_component_0",
     anchor_position: {
       x: 0,
-      y: 0.68,
+      y: 4,
     },
     anchor_alignment: "center",
     is_knockout: true,
@@ -232,7 +232,7 @@ const circuitJson: any = [
       bottom: 0.1,
     },
     is_mirrored: true,
-    text: "${REFERENCE}",
+    text: "chip1",
   },
   {
     type: "pcb_silkscreen_text",
