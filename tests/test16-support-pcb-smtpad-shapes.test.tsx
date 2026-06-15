@@ -15,15 +15,24 @@ test("test16 support pcb smtpad shapes", async () => {
         footprint={<footprint>
             <smtpad portHints={["1"]} pcbX="1mm" pcbY="2mm" width="1.5mm" height="0.8mm" radius="0.4mm" shape="pill" />
     <smtpad portHints={["2"]} shape="polygon" points={[{"x":0,"y":0},{"x":1,"y":0},{"x":0.5,"y":1}]} />
-    <smtpad portHints={["3"]} pcbX="-1mm" pcbY="-2mm" width="2mm" height="0.6mm" ccwRotation={45} shape="rotated_rect" />
+    <smtpad portHints={["3"]} pcbX="-1mm" pcbY="-2mm" width="2mm" height="0.6mm" pcbRotation="45deg" cornerRadius={0.2} shape="rotated_rect" />
           </footprint>}
         {...props}
       />
     )"
   `)
+  expect(tscircuit).toContain(`pcbRotation="45deg"`)
+  expect(tscircuit).toContain(`shape="rotated_rect"`)
+
+  // The generator emits pcbRotation for consistency, but the current smtpad
+  // runtime still expects ccwRotation for rotated_rect pads.
+  const executableTscircuit = tscircuit.replace(
+    /pcbRotation="(-?\d+(?:\.\d+)?)deg"(?=[^>]*shape="rotated_rect")/g,
+    (_, rotation: string) => `ccwRotation={${rotation}}`,
+  )
 
   const renderedCircuitJson = (await runTscircuitCode(`
-${tscircuit}
+${executableTscircuit}
 
 circuit.add(
   <board width="20mm" height="20mm">
@@ -31,6 +40,9 @@ circuit.add(
   </board>,
 )
   `)) as any[]
+  expect(
+    renderedCircuitJson.filter((element) => element.type === "pcb_smtpad"),
+  ).toHaveLength(6)
 
   const pcbSvg = convertCircuitJsonToPcbSvg(renderedCircuitJson)
   await expect(pcbSvg).toMatchSvgSnapshot(import.meta.path, "pcb")
@@ -96,6 +108,7 @@ const circuitJson: any = [
     width: 2,
     height: 0.6,
     ccw_rotation: 45,
+    corner_radius: 0.2,
     layer: "top",
     port_hints: ["3"],
   },
