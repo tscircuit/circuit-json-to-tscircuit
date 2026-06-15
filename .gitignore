@@ -110,6 +110,10 @@ web_modules/
 
 .parcel-cache
 
+# Site build output
+
+site-build/
+
 # Next.js build output
 
 .next
