@@ -1,4 +1,7 @@
 import type { AnyCircuitElement } from "circuit-json"
+import { convertBoard } from "./convert-board"
+import { convertSourceComponents } from "./convert-source-components"
+import { convertTraces } from "./convert-traces"
 import { generateFootprintTsx } from "./generate-footprint-tsx"
 import { generateSymbolTsx } from "./generate-symbol-tsx"
 
@@ -19,6 +22,21 @@ export const getComponentUsingTemplate = ({
   supplierPartNumbers,
   manufacturerPartNumber,
 }: ComponentTemplateParams) => {
+  const boardAttrs = convertBoard(circuitJson)
+  if (boardAttrs !== null) {
+    const children = [
+      ...convertSourceComponents(circuitJson),
+      ...convertTraces(circuitJson),
+    ]
+    const inner =
+      children.length === 0 ? "\n  " : `\n    ${children.join("\n    ")}\n  `
+    return `
+export const ${componentName} = () => (
+  <board ${boardAttrs}>${inner}</board>
+)
+`.trim()
+  }
+
   const footprintTsx = generateFootprintTsx(circuitJson)
   const symbolTsx = generateSymbolTsx(circuitJson)
   return `
