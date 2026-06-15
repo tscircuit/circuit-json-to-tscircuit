@@ -326,7 +326,7 @@ function createRunframeHtml({
 }) {
   const serializedCircuitJson = serializeForInlineScript(circuitJson)
   const serializedPreviewProps = serializeForInlineScript({
-    availableTabs: ["pcb"],
+    availableTabs: ["pcb", "cad"],
     defaultActiveTab: "pcb",
     isWebEmbedded: true,
     projectName,
@@ -334,7 +334,7 @@ function createRunframeHtml({
     showFileMenu: false,
     showJsonTab: false,
     showRenderLogTab: false,
-    showRightHeaderContent: false,
+    showRightHeaderContent: true,
     showToggleFullScreen: false,
   })
 
