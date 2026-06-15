@@ -1,6 +1,7 @@
 import { su } from "@tscircuit/soup-util"
 import { mmStr } from "@tscircuit/mm"
 import type { FootprintElementConverter } from "./converter-types"
+import { formatPcbRotationAttr } from "./helpers"
 
 export const convertSmtPads: FootprintElementConverter = (circuitJson) => {
   const smtPads = su(circuitJson).pcb_smtpad.list()
@@ -24,8 +25,10 @@ export const convertSmtPads: FootprintElementConverter = (circuitJson) => {
         `<smtpad portHints={${JSON.stringify(smtPad.port_hints)}} shape="polygon" points={${JSON.stringify(smtPad.points)}} />`,
       )
     } else if (smtPad.shape === "rotated_rect") {
+      const cornerRadius =
+        smtPad.corner_radius ?? smtPad.rect_border_radius ?? undefined
       elementStrings.push(
-        `<smtpad portHints={${JSON.stringify(smtPad.port_hints)}} pcbX="${mmStr(smtPad.x)}" pcbY="${mmStr(smtPad.y)}" width="${mmStr(smtPad.width)}" height="${mmStr(smtPad.height)}" ccwRotation={${smtPad.ccw_rotation}} shape="rotated_rect" />`,
+        `<smtpad portHints={${JSON.stringify(smtPad.port_hints)}} pcbX="${mmStr(smtPad.x)}" pcbY="${mmStr(smtPad.y)}" width="${mmStr(smtPad.width)}" height="${mmStr(smtPad.height)}"${formatPcbRotationAttr(smtPad.ccw_rotation)}${cornerRadius !== undefined ? ` cornerRadius={${cornerRadius}}` : ""} shape="rotated_rect" />`,
       )
     }
   }
