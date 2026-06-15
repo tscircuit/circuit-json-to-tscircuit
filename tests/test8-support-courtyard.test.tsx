@@ -12,7 +12,7 @@ test("test8 support courtyard elements", async () => {
     export const Test8Component = (props: ChipProps) => (
       <chip
         footprint={<footprint>
-            <smtpad portHints={["1"]} pcbX="-0.5mm" pcbY="0mm" width="0.6mm" height="0.9mm" shape="rect" />
+            <smtpad portHints={["1"]} pcbX="-0.5mm" pcbY="0mm" layer="top" width="0.6mm" height="0.9mm" shape="rect" />
     <courtyardoutline outline={[{"x":-1.8,"y":-1.4},{"x":1.8,"y":-1.4},{"x":1.8,"y":1.4},{"x":-1.8,"y":1.4}]} layer="top" />
     <courtyardrect pcbX={0} pcbY={0} width={4} height={3} layer="top" />
     <courtyardrect pcbX={0.2} pcbY={0.2} width={4.6} height={3.6} layer="bottom" />

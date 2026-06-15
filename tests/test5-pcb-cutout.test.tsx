@@ -136,13 +136,13 @@ test("test pcb_cutout conversion - mixed with other elements", async () => {
       <chip
         footprint={<footprint>
             <hole pcbX="10mm" pcbY="10mm" diameter="0.5mm" />
-    <smtpad portHints={["1"]} pcbX="0mm" pcbY="0mm" width="1mm" height="1mm" shape="rect" />
+    <smtpad portHints={["1"]} pcbX="0mm" pcbY="0mm" layer="top" width="1mm" height="1mm" shape="rect" />
     <cutout shape="circle" pcbX="5mm" pcbY="5mm" radius="1.5mm" />
           </footprint>}
         {...props}
       />
     )"
-  `)
+    `)
 
   const result = await runTscircuitCode(tscircuit)
   expect(Array.isArray(result)).toBe(true)
