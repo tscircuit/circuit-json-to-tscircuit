@@ -16,11 +16,8 @@ test("test16 support pcb smtpad shapes", async () => {
         footprint={<footprint>
             <smtpad portHints={["1"]} pcbX="1mm" pcbY="2mm" layer="top" coveredWithSolderMask={true} solderMaskMargin="0.03mm" width="1.5mm" height="0.8mm" radius="0.4mm" shape="pill" />
     <smtpad portHints={["2"]} layer="top" coveredWithSolderMask={true} solderMaskMargin="0.06mm" shape="polygon" points={[{"x":0,"y":0},{"x":1,"y":0},{"x":0.5,"y":1}]} />
-    <smtpad portHints={["3"]} pcbX="-1mm" pcbY="-2mm" layer="bottom" coveredWithSolderMask={true} solderMaskMargin="0.04mm" cornerRadius="0.15mm" solderMaskMarginLeft="0.01mm" solderMaskMarginTop="0.02mm" solderMaskMarginRight="0.03mm" solderMaskMarginBottom="0.05mm" width="2mm" height="0.6mm" ccwRotation={45} shape="rotated_rect" />
+    <smtpad portHints={["3"]} pcbX="-1mm" pcbY="-2mm" layer="bottom" coveredWithSolderMask={true} solderMaskMargin="0.04mm" cornerRadius="0.15mm" solderMaskMarginLeft="0.01mm" solderMaskMarginTop="0.02mm" solderMaskMarginRight="0.03mm" solderMaskMarginBottom="0.05mm" width="2mm" height="0.6mm" pcbRotation="45deg" shape="rotated_rect" />
     <smtpad portHints={["4"]} pcbX="2.5mm" pcbY="-1.5mm" layer="bottom" coveredWithSolderMask={true} solderMaskMargin="0.05mm" rectBorderRadius="0.25mm" cornerRadius="0.2mm" solderMaskMarginLeft="0.11mm" solderMaskMarginTop="0.12mm" solderMaskMarginRight="0.13mm" solderMaskMarginBottom="0.14mm" width="1.8mm" height="0.9mm" shape="rect" />
-            <smtpad portHints={["1"]} pcbX="1mm" pcbY="2mm" width="1.5mm" height="0.8mm" radius="0.4mm" shape="pill" />
-    <smtpad portHints={["2"]} shape="polygon" points={[{"x":0,"y":0},{"x":1,"y":0},{"x":0.5,"y":1}]} />
-    <smtpad portHints={["3"]} pcbX="-1mm" pcbY="-2mm" width="2mm" height="0.6mm" pcbRotation="45deg" cornerRadius={0.2} shape="rotated_rect" />
           </footprint>}
         {...props}
       />
@@ -50,6 +47,7 @@ circuit.add(
     (elm): elm is PcbSmtPad => elm.type === "pcb_smtpad",
   )
 
+  expect(renderedSmtPads).toHaveLength(8)
   expect(renderedSmtPads).toEqual(
     expect.arrayContaining([
       expect.objectContaining({
@@ -70,10 +68,6 @@ circuit.add(
       }),
     ]),
   )
-  `)) as any[]
-  expect(
-    renderedCircuitJson.filter((element) => element.type === "pcb_smtpad"),
-  ).toHaveLength(6)
 
   const pcbSvg = convertCircuitJsonToPcbSvg(renderedCircuitJson)
   await expect(pcbSvg).toMatchSvgSnapshot(import.meta.path, "pcb")
@@ -151,8 +145,6 @@ const circuitJson: any = [
     soldermask_margin_top: 0.02,
     soldermask_margin_right: 0.03,
     soldermask_margin_bottom: 0.05,
-    corner_radius: 0.2,
-    layer: "top",
     port_hints: ["3"],
   },
   {

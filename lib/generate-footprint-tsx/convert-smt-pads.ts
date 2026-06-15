@@ -76,8 +76,11 @@ export const convertSmtPads: FootprintElementConverter = (circuitJson) => {
         `<smtpad ${commonAttrs.join(" ")} shape="polygon" points={${JSON.stringify(smtPad.points)}} />`,
       )
     } else if (smtPad.shape === "rotated_rect") {
-      if (smtPad.corner_radius !== undefined) {
-        commonAttrs.push(`cornerRadius="${mmStr(smtPad.corner_radius)}"`)
+      const cornerRadius =
+        smtPad.corner_radius ?? smtPad.rect_border_radius ?? undefined
+
+      if (cornerRadius !== undefined) {
+        commonAttrs.push(`cornerRadius="${mmStr(cornerRadius)}"`)
       }
       if (smtPad.soldermask_margin_left !== undefined) {
         commonAttrs.push(
@@ -100,11 +103,7 @@ export const convertSmtPads: FootprintElementConverter = (circuitJson) => {
         )
       }
       elementStrings.push(
-        `<smtpad ${commonAttrs.join(" ")} width="${mmStr(smtPad.width ?? 0)}" height="${mmStr(smtPad.height ?? 0)}" ccwRotation={${smtPad.ccw_rotation}} shape="rotated_rect" />`,
-      const cornerRadius =
-        smtPad.corner_radius ?? smtPad.rect_border_radius ?? undefined
-      elementStrings.push(
-        `<smtpad portHints={${JSON.stringify(smtPad.port_hints)}} pcbX="${mmStr(smtPad.x)}" pcbY="${mmStr(smtPad.y)}" width="${mmStr(smtPad.width)}" height="${mmStr(smtPad.height)}"${formatPcbRotationAttr(smtPad.ccw_rotation)}${cornerRadius !== undefined ? ` cornerRadius={${cornerRadius}}` : ""} shape="rotated_rect" />`,
+        `<smtpad ${commonAttrs.join(" ")} width="${mmStr(smtPad.width ?? 0)}" height="${mmStr(smtPad.height ?? 0)}"${formatPcbRotationAttr(smtPad.ccw_rotation)} shape="rotated_rect" />`,
       )
     }
   }
