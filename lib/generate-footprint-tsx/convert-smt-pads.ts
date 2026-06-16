@@ -71,6 +71,10 @@ export const convertSmtPads: FootprintElementConverter = (circuitJson) => {
       elementStrings.push(
         `<smtpad ${commonAttrs.join(" ")} width="${mmStr(smtPad.width ?? 0)}" height="${mmStr(smtPad.height ?? 0)}" radius="${mmStr(smtPad.radius ?? 0)}" shape="pill" />`,
       )
+    } else if (smtPad.shape === "rotated_pill") {
+      elementStrings.push(
+        `<smtpad ${commonAttrs.join(" ")} width="${mmStr(smtPad.width ?? 0)}" height="${mmStr(smtPad.height ?? 0)}" radius="${mmStr(smtPad.radius ?? 0)}"${formatPcbRotationAttr(smtPad.ccw_rotation)} shape="pill" />`,
+      )
     } else if (smtPad.shape === "polygon") {
       elementStrings.push(
         `<smtpad ${commonAttrs.join(" ")} shape="polygon" points={${JSON.stringify(smtPad.points)}} />`,
