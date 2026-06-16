@@ -7,7 +7,8 @@ export const convertBoard = (
 ): string | null => {
   const board = su(circuitJson).pcb_board.list()[0]
   if (!board) return null
-  if (su(circuitJson).source_board.list().length === 0) return null
+  const sourceBoard = su(circuitJson).source_board.list()[0]
+  if (!sourceBoard) return null
 
   const attrs: string[] = []
   if (board.width !== undefined) {
@@ -24,6 +25,26 @@ export const convertBoard = (
   }
   if (board.material !== undefined) {
     attrs.push(`material="${board.material}"`)
+  }
+  if (sourceBoard.title !== undefined) {
+    attrs.push(`title=${JSON.stringify(sourceBoard.title)}`)
+  }
+  if (board.outline !== undefined) {
+    attrs.push(`outline={${JSON.stringify(board.outline)}}`)
+  }
+  if (board.anchor_position !== undefined) {
+    attrs.push(
+      `boardAnchorPosition={{ x: ${board.anchor_position.x}, y: ${board.anchor_position.y} }}`,
+    )
+  }
+  if (board.anchor_alignment !== undefined) {
+    attrs.push(`anchorAlignment="${board.anchor_alignment}"`)
+  }
+  if (board.solder_mask_color !== undefined) {
+    attrs.push(`solderMaskColor=${JSON.stringify(board.solder_mask_color)}`)
+  }
+  if (board.silkscreen_color !== undefined) {
+    attrs.push(`silkscreenColor=${JSON.stringify(board.silkscreen_color)}`)
   }
 
   return attrs.join(" ")

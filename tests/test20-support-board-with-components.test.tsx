@@ -10,7 +10,7 @@ test("test20 support board with resistor, capacitor, and trace", async () => {
 
   expect(tscircuit).toMatchInlineSnapshot(`
     "export const R1C1Board = () => (
-      <board width="20mm" height="10mm" thickness="1.4mm" layers={2} material="fr4">
+      <board width="20mm" height="10mm" thickness="1.4mm" layers={2} material="fr4" title="R1C1 Demo Board" outline={[{"x":-10,"y":-5},{"x":10,"y":-5},{"x":10,"y":5},{"x":-10,"y":5}]} boardAnchorPosition={{ x: 1, y: 2 }} anchorAlignment="top_left" solderMaskColor="blue" silkscreenColor="white">
         <resistor name="R1" resistance="1kΩ" footprint="res0402" pcbX={0} pcbY={0} />
         <capacitor name="C1" capacitance="1000pF" footprint="0402" pcbX="-2.86mm" pcbY="0mm" pcbRotation="180deg" />
         <trace from=".C1 > .pin1" to=".R1 > .pin1" />
@@ -103,6 +103,7 @@ const circuitJson: any = [
     type: "source_board",
     source_board_id: "source_board_0",
     source_group_id: "source_group_0",
+    title: "R1C1 Demo Board",
   },
   {
     type: "source_trace",
@@ -143,6 +144,16 @@ const circuitJson: any = [
     width: 20,
     height: 10,
     material: "fr4",
+    outline: [
+      { x: -10, y: -5 },
+      { x: 10, y: -5 },
+      { x: 10, y: 5 },
+      { x: -10, y: 5 },
+    ],
+    anchor_position: { x: 1, y: 2 },
+    anchor_alignment: "top_left",
+    solder_mask_color: "blue",
+    silkscreen_color: "white",
   },
   {
     type: "pcb_smtpad",
