@@ -1,5 +1,6 @@
 import { su } from "@tscircuit/soup-util"
 import type { FootprintElementConverter } from "./converter-types"
+import { formatPcbRotationAttr } from "./helpers"
 
 export const convertCourtyard: FootprintElementConverter = (circuitJson) => {
   const courtyardOutlines = su(circuitJson).pcb_courtyard_outline.list()
@@ -27,6 +28,9 @@ export const convertCourtyard: FootprintElementConverter = (circuitJson) => {
     ]
     if (courtyardRect.layer !== undefined) {
       attrs.push(`layer="${courtyardRect.layer}"`)
+    }
+    if (courtyardRect.ccw_rotation !== undefined) {
+      attrs.push(formatPcbRotationAttr(courtyardRect.ccw_rotation).trimStart())
     }
 
     elementStrings.push(`<courtyardrect ${attrs.join(" ")} />`)
