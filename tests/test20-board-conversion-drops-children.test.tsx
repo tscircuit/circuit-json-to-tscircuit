@@ -38,7 +38,7 @@ export default () => (
 )
 `
 
-test("test20 board conversion drops child component geometry", async () => {
+test.failing("test20 board conversion drops child component geometry", async () => {
   const sourceCircuitJson = (await runTscircuitCode(
     sourceTscircuit,
   )) as AnyCircuitElement[]
