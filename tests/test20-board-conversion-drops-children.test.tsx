@@ -38,38 +38,44 @@ export default () => (
 )
 `
 
-test.failing("test20 board conversion drops child component geometry", async () => {
-  const sourceCircuitJson = (await runTscircuitCode(
-    sourceTscircuit,
-  )) as AnyCircuitElement[]
+test.failing(
+  "test20 board conversion drops child component geometry",
+  async () => {
+    const sourceCircuitJson = (await runTscircuitCode(
+      sourceTscircuit,
+    )) as AnyCircuitElement[]
 
-  const sourcePads = sourceCircuitJson.filter(
-    (elm): elm is PcbSmtPad => elm.type === "pcb_smtpad",
-  )
+    const sourcePads = sourceCircuitJson.filter(
+      (elm): elm is PcbSmtPad => elm.type === "pcb_smtpad",
+    )
 
-  expect(sourcePads).toHaveLength(2)
+    expect(sourcePads).toHaveLength(2)
 
-  const convertedTscircuit = convertCircuitJsonToTscircuit(sourceCircuitJson, {
-    componentName: "ConvertedBoard",
-  })
+    const convertedTscircuit = convertCircuitJsonToTscircuit(
+      sourceCircuitJson,
+      {
+        componentName: "ConvertedBoard",
+      },
+    )
 
-  expect(convertedTscircuit).toMatchInlineSnapshot(`
+    expect(convertedTscircuit).toMatchInlineSnapshot(`
     "export default () => (
       <board width="12mm" height="8mm" thickness="1.4mm" layers={2} material="fr4">
       </board>
     )"
   `)
 
-  const convertedCircuitJson = (await runTscircuitCode(
-    convertedTscircuit,
-  )) as AnyCircuitElement[]
+    const convertedCircuitJson = (await runTscircuitCode(
+      convertedTscircuit,
+    )) as AnyCircuitElement[]
 
-  const convertedPads = convertedCircuitJson.filter(
-    (elm): elm is PcbSmtPad => elm.type === "pcb_smtpad",
-  )
+    const convertedPads = convertedCircuitJson.filter(
+      (elm): elm is PcbSmtPad => elm.type === "pcb_smtpad",
+    )
 
-  const pcbSvg = convertCircuitJsonToPcbSvg(convertedCircuitJson)
-  await expect(pcbSvg).toMatchSvgSnapshot(import.meta.path, "pcb")
+    const pcbSvg = convertCircuitJsonToPcbSvg(convertedCircuitJson)
+    await expect(pcbSvg).toMatchSvgSnapshot(import.meta.path, "pcb")
 
-  expect(convertedPads).toHaveLength(2)
-})
+    expect(convertedPads).toHaveLength(2)
+  },
+)
