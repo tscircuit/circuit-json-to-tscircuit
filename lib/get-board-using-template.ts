@@ -1,6 +1,7 @@
 import { mmStr } from "@tscircuit/mm"
 import { su } from "@tscircuit/soup-util"
 import type { AnyCircuitElement } from "circuit-json"
+import { generateFootprintTsx } from "./generate-footprint-tsx"
 
 export interface BoardTemplateParams {
   circuitJson: AnyCircuitElement[]
@@ -50,9 +51,9 @@ export const getBoardUsingTemplate = ({ circuitJson }: BoardTemplateParams) => {
   }
 
   const boardPropsStr = boardProps.join(" ")
+  const footprintTsx = generateFootprintTsx(circuitJson)
 
-  // Children slot - components and connections are added in later stages
-  const children = ""
+  const children = footprintTsx ? `<chip footprint={${footprintTsx}} />` : ""
 
   return `
 export default () => (
