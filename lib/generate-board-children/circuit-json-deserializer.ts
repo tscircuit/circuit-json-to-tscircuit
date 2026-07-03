@@ -7,7 +7,6 @@ export type SourceComponent = Extract<
 >
 
 interface CircuitJsonDeserializerClass<Element extends SourceComponent> {
-  readonly prototype: CircuitJsonDeserializer<Element>
   readonly ftype: Element["ftype"]
   readonly elementName?: string
   getPropsFromElement(element: Element): TsxProps
