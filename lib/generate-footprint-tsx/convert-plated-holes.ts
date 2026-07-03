@@ -5,7 +5,7 @@ import {
   formatOptionalMmAttr,
   formatPcbRotationAttr,
   formatSolderMaskAttrs,
-} from "./helpers"
+} from "./footprint-tsx-attribute-formatters"
 
 export const convertPlatedHoles: FootprintElementConverter = (circuitJson) => {
   const platedHoles = su(circuitJson).pcb_plated_hole.list()

@@ -1,6 +1,6 @@
 import { su } from "@tscircuit/soup-util"
 import type { FootprintElementConverter } from "./converter-types"
-import { formatPcbRotationAttr } from "./helpers"
+import { formatPcbRotationAttr } from "./footprint-tsx-attribute-formatters"
 
 export const convertCourtyard: FootprintElementConverter = (circuitJson) => {
   const courtyardOutlines = su(circuitJson).pcb_courtyard_outline.list()

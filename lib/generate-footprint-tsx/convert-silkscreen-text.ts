@@ -1,7 +1,7 @@
 import { su } from "@tscircuit/soup-util"
 import { mmStr } from "@tscircuit/mm"
 import type { FootprintElementConverter } from "./converter-types"
-import { escapeJsxText } from "./helpers"
+import { escapeJsxText } from "./footprint-tsx-attribute-formatters"
 
 export const convertSilkscreenText: FootprintElementConverter = (
   circuitJson,

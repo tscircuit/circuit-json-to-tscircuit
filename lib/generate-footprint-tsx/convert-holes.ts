@@ -1,7 +1,7 @@
 import { su } from "@tscircuit/soup-util"
 import { mmStr } from "@tscircuit/mm"
 import type { FootprintElementConverter } from "./converter-types"
-import { formatPcbRotationAttr } from "./helpers"
+import { formatPcbRotationAttr } from "./footprint-tsx-attribute-formatters"
 
 export const convertHoles: FootprintElementConverter = (circuitJson) => {
   const holes = su(circuitJson).pcb_hole.list()
