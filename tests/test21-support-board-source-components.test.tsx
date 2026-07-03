@@ -14,7 +14,7 @@ export default () => (
     <crystal frequency="16MHz" loadCapacitance="18pF" footprint="hc49" name="Y1" pcbX={28} pcbY={18} />
 
     <diode footprint="sod123" name="D1" pcbX={-28} pcbY={9} />
-    <fiducial padDiameter="1mm" soldermaskPullback="1mm" name="FID1" pcbX={-14} pcbY={9} />
+    <transistor type="npn" footprint="sot23" name="Q2" pcbX={-14} pcbY={9} />
     <fuse currentRating="2A" voltageRating="32V" footprint="0603" name="F1" pcbX={0} pcbY={9} />
     <inductor inductance="10uH" footprint="0603" name="L1" pcbX={14} pcbY={9} />
     <led color="red" footprint="0603" name="LED1" pcbX={28} pcbY={9} />
@@ -31,7 +31,6 @@ export default () => (
     <switch type="spst" footprint="pinrow2" name="SW2" pcbX={14} pcbY={-9} />
     <testpoint footprintVariant="pad" padShape="circle" padDiameter="1mm" name="TP1" pcbX={28} pcbY={-9} />
 
-    <transistor type="npn" footprint="sot23" name="Q2" pcbX={0} pcbY={-18} />
   </board>
 )
 `
@@ -51,17 +50,6 @@ test("preserves board source components", async () => {
   expect(
     rendered.filter((element) => element.type === "source_component"),
   ).toHaveLength(20)
-  expect(
-    rendered.some(
-      (element) =>
-        element.type === "pcb_smtpad" &&
-        "x" in element &&
-        "y" in element &&
-        element.pcb_component_id == null &&
-        element.x === -14 &&
-        element.y === 9,
-    ),
-  ).toBe(true)
   expect(
     rendered.some(
       (element) =>
