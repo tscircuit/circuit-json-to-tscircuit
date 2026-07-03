@@ -1,6 +1,6 @@
 import { su } from "@tscircuit/soup-util"
 import type { FootprintElementConverter } from "./converter-types"
-import { escapeJsxText } from "./footprint-tsx-attribute-formatters"
+import { escapeJsxText } from "./footprint-tsx-attribute-formatters/escape-jsx-text"
 
 export const convertFabrication: FootprintElementConverter = (circuitJson) => {
   const fabricationNotePaths = su(circuitJson).pcb_fabrication_note_path.list()
