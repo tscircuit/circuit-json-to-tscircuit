@@ -1,5 +1,5 @@
 import type { SourceSimpleBattery } from "circuit-json"
 
-export const getBatteryAttributes = (component: SourceSimpleBattery) => ({
+export const getBatteryProps = (component: SourceSimpleBattery) => ({
   capacity: component.capacity,
 })

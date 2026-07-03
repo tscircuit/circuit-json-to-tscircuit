@@ -1,6 +1,6 @@
 import type { SourceSimpleCurrentSource } from "circuit-json"
 
-export const getCurrentSourceAttributes = (
+export const getCurrentSourceProps = (
   component: SourceSimpleCurrentSource,
 ) => ({
   current: component.current,

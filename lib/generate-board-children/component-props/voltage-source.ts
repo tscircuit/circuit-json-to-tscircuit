@@ -1,6 +1,6 @@
 import type { SourceSimpleVoltageSource } from "circuit-json"
 
-export const getVoltageSourceAttributes = (
+export const getVoltageSourceProps = (
   component: SourceSimpleVoltageSource,
 ) => ({
   voltage: component.voltage,

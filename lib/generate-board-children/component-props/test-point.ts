@@ -1,6 +1,6 @@
 import type { SourceSimpleTestPoint } from "circuit-json"
 
-export const getTestPointAttributes = (component: SourceSimpleTestPoint) => ({
+export const getTestPointProps = (component: SourceSimpleTestPoint) => ({
   footprintVariant: component.footprint_variant,
   padShape: component.pad_shape,
   padDiameter: component.pad_diameter,

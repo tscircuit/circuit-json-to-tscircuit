@@ -1,6 +1,6 @@
 import type { SourceSimpleResonator } from "circuit-json"
 
-export const getResonatorAttributes = (component: SourceSimpleResonator) => ({
+export const getResonatorProps = (component: SourceSimpleResonator) => ({
   frequency: component.frequency,
   loadCapacitance: component.load_capacitance,
 })

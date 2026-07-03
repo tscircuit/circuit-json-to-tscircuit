@@ -3,7 +3,7 @@ import type {
   CadComponent,
   PcbComponent,
 } from "circuit-json"
-import { getComponentAttributes } from "./component-attributes"
+import { getComponentProps } from "./component-props"
 import { formatJsxElement } from "./format-jsx-element"
 import {
   getSourceComponentElementName,
@@ -39,7 +39,7 @@ export const generateSourceComponentChildren = (
     )
 
     return formatJsxElement(getSourceComponentElementName(component), {
-      ...getComponentAttributes(component),
+      ...getComponentProps(component),
       footprint: cadComponent?.footprinter_string,
       name: component.name,
       pcbX: pcbComponent?.center.x,
