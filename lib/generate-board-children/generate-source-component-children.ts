@@ -5,7 +5,7 @@ import type {
 } from "circuit-json"
 import "./components/register-all"
 import { CircuitJsonDeserializer } from "./circuit-json-deserializer"
-import { formatJsxElement } from "./format-jsx-element"
+import { formatTsxElement } from "./format-tsx-element"
 
 const isCadComponent = (element: AnyCircuitElement): element is CadComponent =>
   element.type === "cad_component"
@@ -40,7 +40,7 @@ export const generateSourceComponentChildren = (
       component.source_component_id,
     )
     return [
-      formatJsxElement(deserializedComponent.elementName, {
+      formatTsxElement(deserializedComponent.elementName, {
         ...deserializedComponent.props,
         footprint: cadComponent?.footprinter_string,
         name: component.name,

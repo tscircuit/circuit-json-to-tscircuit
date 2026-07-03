@@ -1,10 +1,11 @@
 import type { SourceSimpleTestPoint } from "circuit-json"
 import { CircuitJsonDeserializer } from "../circuit-json-deserializer"
+import type { TsxProps } from "../format-tsx-element"
 
 export class TestPoint extends CircuitJsonDeserializer<SourceSimpleTestPoint> {
   static readonly ftype = "simple_test_point"
 
-  static getPropsFromElement(element: SourceSimpleTestPoint) {
+  static getPropsFromElement(element: SourceSimpleTestPoint): TsxProps {
     return {
       footprintVariant: element.footprint_variant,
       padShape: element.pad_shape,

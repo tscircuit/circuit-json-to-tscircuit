@@ -1,10 +1,11 @@
 import type { SourceSimpleCurrentSource } from "circuit-json"
 import { CircuitJsonDeserializer } from "../circuit-json-deserializer"
+import type { TsxProps } from "../format-tsx-element"
 
 export class CurrentSource extends CircuitJsonDeserializer<SourceSimpleCurrentSource> {
   static readonly ftype = "simple_current_source"
 
-  static getPropsFromElement(element: SourceSimpleCurrentSource) {
+  static getPropsFromElement(element: SourceSimpleCurrentSource): TsxProps {
     return {
       current: element.current,
       frequency: element.frequency,

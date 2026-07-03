@@ -1,5 +1,5 @@
 import type { AnySourceElement } from "circuit-json"
-import type { JsxProps } from "./format-jsx-element"
+import type { TsxProps } from "./format-tsx-element"
 
 export type SourceComponent = Extract<
   AnySourceElement,
@@ -10,7 +10,7 @@ interface CircuitJsonDeserializerClass<Element extends SourceComponent> {
   readonly prototype: CircuitJsonDeserializer<Element>
   readonly ftype: Element["ftype"]
   readonly elementName?: string
-  getPropsFromElement(element: Element): JsxProps
+  getPropsFromElement(element: Element): TsxProps
 }
 
 export abstract class CircuitJsonDeserializer<Element extends SourceComponent> {

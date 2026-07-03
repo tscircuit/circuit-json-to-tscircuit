@@ -1,16 +1,16 @@
-export type JsxProps = Record<string, unknown>
+export type TsxProps = Record<string, unknown>
 
-const formatJsxProp = (name: string, value: unknown): string => {
+const formatTsxProp = (name: string, value: unknown): string => {
   const serializedValue = JSON.stringify(value)
   if (typeof value === "string") return `  ${name}=${serializedValue}`
 
   return `  ${name}={${serializedValue}}`
 }
 
-export const formatJsxElement = (name: string, props: JsxProps): string => {
+export const formatTsxElement = (name: string, props: TsxProps): string => {
   const propLines = Object.entries(props)
     .filter(([, value]) => value !== undefined)
-    .map(([name, value]) => formatJsxProp(name, value))
+    .map(([name, value]) => formatTsxProp(name, value))
 
   return [`<${name}`, ...propLines, "/>"].join("\n")
 }
