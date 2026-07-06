@@ -21,7 +21,7 @@ const camelCaseProps = (element: object | null): TsxProps =>
     ]),
   )
 
-export const extractPropsFromElement = ({
+export const getPropsFromElement = ({
   element,
   propsSchema,
   propNameAliases = {},

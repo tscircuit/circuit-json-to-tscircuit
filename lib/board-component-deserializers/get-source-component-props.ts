@@ -1,10 +1,7 @@
 import type { SoupUtilObjects } from "@tscircuit/soup-util"
 import type { AnySourceElement } from "circuit-json"
 import type { TsxProps } from "./format-tsx"
-import {
-  extractPropsFromElement,
-  type PropsSchema,
-} from "./get-props-from-element"
+import { getPropsFromElement, type PropsSchema } from "./get-props-from-element"
 
 export type SourceComponent = Extract<
   AnySourceElement,
@@ -54,7 +51,7 @@ export const getSourceComponentProps = (
     kicadFootprintMetadata: pcb_component?.metadata?.kicad_footprint,
   }
 
-  return extractPropsFromElement({
+  return getPropsFromElement({
     element: candidateProps,
     propsSchema,
   })

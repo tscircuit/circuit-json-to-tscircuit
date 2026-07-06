@@ -6,7 +6,7 @@ import {
   type TsxProps,
 } from "./format-tsx"
 import { getBoardChildrenTsx } from "./get-board-children-tsx"
-import { extractPropsFromElement } from "./get-props-from-element"
+import { getPropsFromElement } from "./get-props-from-element"
 
 interface PcbBoardRef {
   pcb_board_id: string
@@ -29,7 +29,7 @@ export class Board {
     const pcb_board = db.pcb_board.get(pcb_board_id)
     if (!pcb_board) return undefined
 
-    return extractPropsFromElement({
+    return getPropsFromElement({
       element: pcb_board,
       propsSchema: this.propsSchema,
       propNameAliases: BOARD_PROP_NAME_ALIASES,
