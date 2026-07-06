@@ -1,7 +1,9 @@
 import type { TsxProps } from "./format-tsx"
 
 export interface PropsSchema {
-  parse(props: unknown): object
+  safeParse(
+    props: unknown,
+  ): { success: true; data: object } | { success: false; error: unknown }
 }
 
 type PropNameAliases = Record<string, string>
@@ -37,5 +39,14 @@ export const extractPropsFromElement = ({
     delete candidateProps[sourceName]
   }
 
-  return Object.fromEntries(Object.entries(propsSchema.parse(candidateProps)))
+  const parseResult = propsSchema.safeParse(candidateProps)
+  if (!parseResult.success) {
+    console.warn(
+      "Failed to parse Circuit JSON element props",
+      parseResult.error,
+    )
+    return {}
+  }
+
+  return Object.fromEntries(Object.entries(parseResult.data))
 }
