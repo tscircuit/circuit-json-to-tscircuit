@@ -8,12 +8,6 @@ export interface PropsSchema {
 
 type PropNameAliases = Record<string, string>
 
-interface ExtractPropsFromElementParams {
-  element: object | null
-  propsSchema: PropsSchema
-  propNameAliases?: PropNameAliases
-}
-
 const toCamelCase = (snakeCaseName: string): string =>
   snakeCaseName.replace(/_([a-z])/g, (_, letter: string) =>
     letter.toUpperCase(),
@@ -31,7 +25,11 @@ export const extractPropsFromElement = ({
   element,
   propsSchema,
   propNameAliases = {},
-}: ExtractPropsFromElementParams): TsxProps => {
+}: {
+  element: object | null
+  propsSchema: PropsSchema
+  propNameAliases?: PropNameAliases
+}): TsxProps => {
   const candidateProps = camelCaseProps(element)
 
   for (const [sourceName, targetName] of Object.entries(propNameAliases)) {

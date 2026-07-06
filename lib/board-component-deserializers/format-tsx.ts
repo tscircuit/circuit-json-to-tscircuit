@@ -1,16 +1,5 @@
 export type TsxProps = Record<string, unknown>
 
-interface FormatTsxPropsOptions {
-  indent?: string
-  separator?: string
-}
-
-interface FormatTsxElementParams {
-  name: string
-  props: TsxProps
-  children?: string
-}
-
 const formatTsxProp = (name: string, prop: unknown): string => {
   const serializedProp = JSON.stringify(prop)
   if (typeof prop === "string") return `${name}=${serializedProp}`
@@ -20,7 +9,13 @@ const formatTsxProp = (name: string, prop: unknown): string => {
 
 const formatTsxProps = (
   props: TsxProps,
-  { indent = "  ", separator = "\n" }: FormatTsxPropsOptions = {},
+  {
+    indent = "  ",
+    separator = "\n",
+  }: {
+    indent?: string
+    separator?: string
+  } = {},
 ): string =>
   Object.entries(props)
     .filter(([, prop]) => prop !== undefined)
@@ -37,7 +32,11 @@ export const formatTsxElement = ({
   name,
   props,
   children,
-}: FormatTsxElementParams): string => {
+}: {
+  name: string
+  props: TsxProps
+  children?: string
+}): string => {
   if (children !== undefined) {
     const formattedProps = formatTsxProps(props, {
       indent: "",

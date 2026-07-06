@@ -11,11 +11,6 @@ export type SourceComponent = Extract<
   { type: "source_component"; ftype: string }
 >
 
-interface GetSourceComponentPropsParams {
-  source_component: SourceComponent
-  propsSchema: PropsSchema
-}
-
 const getLayoutProps = (
   element: {
     center: { x: number; y: number }
@@ -29,7 +24,13 @@ const getLayoutProps = (
 })
 
 export const getSourceComponentProps = (
-  { source_component, propsSchema }: GetSourceComponentPropsParams,
+  {
+    source_component,
+    propsSchema,
+  }: {
+    source_component: SourceComponent
+    propsSchema: PropsSchema
+  },
   db: SoupUtilObjects,
 ): TsxProps => {
   const sourceComponentSelector = {
