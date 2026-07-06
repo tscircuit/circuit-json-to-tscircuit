@@ -9,17 +9,17 @@ export interface BoardTemplateParams {
 
 export const getBoardUsingTemplate = ({ circuitJson }: BoardTemplateParams) => {
   const db = su(circuitJson)
-  const pcbBoard = db.pcb_board.list()[0]
-  if (!pcbBoard) {
+  const pcb_board = db.pcb_board.list()[0]
+  if (!pcb_board) {
     throw new Error("Cannot deserialize a board without a pcb_board element")
   }
 
   const tsx = Board.deserializeToTsx(
-    { pcb_board_id: pcbBoard.pcb_board_id },
-    { db },
+    { pcb_board_id: pcb_board.pcb_board_id },
+    db,
   )
   if (!tsx) {
-    throw new Error(`PCB board not found: ${pcbBoard.pcb_board_id}`)
+    throw new Error(`PCB board not found: ${pcb_board.pcb_board_id}`)
   }
 
   return tsx

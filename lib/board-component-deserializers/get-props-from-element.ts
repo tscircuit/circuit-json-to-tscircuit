@@ -19,7 +19,7 @@ const toCamelCase = (snakeCaseName: string): string =>
     letter.toUpperCase(),
   )
 
-export const camelCaseProps = (element: object | null): TsxProps =>
+const camelCaseProps = (element: object | null): TsxProps =>
   Object.fromEntries(
     Object.entries(element ?? {}).map(([snakeCaseName, prop]) => [
       toCamelCase(snakeCaseName),

@@ -1,10 +1,15 @@
+import type { SoupUtilObjects } from "@tscircuit/soup-util"
+import type { AnySourceElement } from "circuit-json"
 import type { TsxProps } from "./format-tsx"
 import {
-  camelCaseProps,
   extractPropsFromElement,
   type PropsSchema,
 } from "./get-props-from-element"
-import type { DeserializerContext, SourceComponent } from "./types"
+
+export type SourceComponent = Extract<
+  AnySourceElement,
+  { type: "source_component"; ftype: string }
+>
 
 interface GetSourceComponentPropsParams {
   source_component: SourceComponent
@@ -25,7 +30,7 @@ const getLayoutProps = (
 
 export const getSourceComponentProps = (
   { source_component, propsSchema }: GetSourceComponentPropsParams,
-  { db }: DeserializerContext,
+  db: SoupUtilObjects,
 ): TsxProps => {
   const sourceComponentSelector = {
     source_component_id: source_component.source_component_id,
@@ -37,10 +42,10 @@ export const getSourceComponentProps = (
   )
 
   const candidateProps: TsxProps = {
-    ...camelCaseProps(source_component),
-    ...camelCaseProps(cad_component),
-    ...camelCaseProps(pcb_component),
-    ...camelCaseProps(schematic_component),
+    ...source_component,
+    ...cad_component,
+    ...pcb_component,
+    ...schematic_component,
     ...getLayoutProps(pcb_component, "pcb"),
     ...getLayoutProps(schematic_component, "sch"),
     footprint: cad_component?.footprinter_string,

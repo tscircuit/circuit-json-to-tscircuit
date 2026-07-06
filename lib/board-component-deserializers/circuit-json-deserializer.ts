@@ -1,11 +1,14 @@
+import type { SoupUtilObjects } from "@tscircuit/soup-util"
 import { formatTsxElement, type TsxProps } from "./format-tsx"
 import type { PropsSchema } from "./get-props-from-element"
-import { getSourceComponentProps } from "./get-source-component-props"
-import type {
-  DeserializerContext,
-  SourceComponent,
-  SourceComponentRef,
-} from "./types"
+import {
+  getSourceComponentProps,
+  type SourceComponent,
+} from "./get-source-component-props"
+
+interface SourceComponentRef {
+  source_component_id: string
+}
 
 interface CircuitJsonDeserializerClass {
   ftype: SourceComponent["ftype"]
@@ -13,13 +16,13 @@ interface CircuitJsonDeserializerClass {
   propsSchema: PropsSchema
   getPropsFromElement(
     ref: SourceComponentRef,
-    context: DeserializerContext,
+    db: SoupUtilObjects,
   ): TsxProps | undefined
 }
 
 const getSourceComponent = (
   ref: SourceComponentRef,
-  { db }: DeserializerContext,
+  db: SoupUtilObjects,
 ): SourceComponent | undefined => {
   const { source_component_id } = ref
   return db.source_component.get(source_component_id) ?? undefined
@@ -39,9 +42,9 @@ export class CircuitJsonDeserializer {
 
   static deserializeToTsx(
     ref: SourceComponentRef,
-    context: DeserializerContext,
+    db: SoupUtilObjects,
   ): string | undefined {
-    const source_component = getSourceComponent(ref, context)
+    const source_component = getSourceComponent(ref, db)
     if (!source_component) return undefined
 
     const Deserializer = CircuitJsonDeserializer.registry.get(
@@ -49,7 +52,7 @@ export class CircuitJsonDeserializer {
     )
     if (!Deserializer) return undefined
 
-    const props = Deserializer.getPropsFromElement(ref, context)
+    const props = Deserializer.getPropsFromElement(ref, db)
     if (!props) return undefined
 
     return formatTsxElement({ name: Deserializer.tsxElementName, props })
@@ -57,9 +60,9 @@ export class CircuitJsonDeserializer {
 
   static getPropsFromElement(
     ref: SourceComponentRef,
-    context: DeserializerContext,
+    db: SoupUtilObjects,
   ): TsxProps | undefined {
-    const source_component = getSourceComponent(ref, context)
+    const source_component = getSourceComponent(ref, db)
     if (!source_component || !this.propsSchema) return undefined
 
     return getSourceComponentProps(
@@ -67,7 +70,7 @@ export class CircuitJsonDeserializer {
         source_component,
         propsSchema: this.propsSchema,
       },
-      context,
+      db,
     )
   }
 }
