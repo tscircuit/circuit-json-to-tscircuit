@@ -7,26 +7,12 @@ const formatTsxProp = (name: string, prop: unknown): string => {
   return `${name}={${serializedProp}}`
 }
 
-const formatTsxProps = (
-  props: TsxProps,
-  {
-    indent = "  ",
-    separator = "\n",
-  }: {
-    indent?: string
-    separator?: string
-  } = {},
-): string =>
+const formatTsxProps = (props: TsxProps): string[] =>
   Object.entries(props)
     .filter(([, prop]) => prop !== undefined)
-    .map(([name, prop]) => `${indent}${formatTsxProp(name, prop)}`)
-    .join(separator)
+    .map(([name, prop]) => formatTsxProp(name, prop))
 
-const indentTsx = (tsx: string): string =>
-  tsx
-    .split("\n")
-    .map((line) => `  ${line}`)
-    .join("\n")
+const indentTsx = (tsx: string): string => tsx.replace(/^/gm, "  ")
 
 export const formatTsxElement = ({
   name,
@@ -37,12 +23,11 @@ export const formatTsxElement = ({
   props: TsxProps
   children?: string
 }): string => {
+  const formattedProps = formatTsxProps(props)
+
   if (children !== undefined) {
-    const formattedProps = formatTsxProps(props, {
-      indent: "",
-      separator: " ",
-    })
-    const openingTag = `<${name}${formattedProps ? ` ${formattedProps}` : ""}>`
+    const inlineProps = formattedProps.join(" ")
+    const openingTag = `<${name}${inlineProps ? ` ${inlineProps}` : ""}>`
 
     return [
       openingTag,
@@ -53,9 +38,10 @@ export const formatTsxElement = ({
       .join("\n")
   }
 
-  const formattedProps = formatTsxProps(props)
-  return [`<${name}`, formattedProps, "/>"].filter(Boolean).join("\n")
+  return [`<${name}`, ...formattedProps.map((prop) => `  ${prop}`), "/>"].join(
+    "\n",
+  )
 }
 
 export const formatDefaultExport = (tsx: string): string =>
-  [`export default () => (`, indentTsx(tsx), ")"].join("\n")
+  `export default () => (\n${indentTsx(tsx)}\n)`
