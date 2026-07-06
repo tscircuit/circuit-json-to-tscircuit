@@ -60,7 +60,7 @@ test.failing(
 
     expect(convertedTscircuit).toMatchInlineSnapshot(`
     "export default () => (
-      <board width="12mm" height="8mm" thickness="1.4mm" layers={2} material="fr4">
+      <board thickness={1.4} width={12} height={8} material="fr4" minTraceWidth={0.1} minViaHoleDiameter={0.2} minViaPadDiameter={0.3} minViaHoleEdgeToViaHoleEdgeClearance={0.1} minTraceToPadEdgeClearance={0.1} minPadEdgeToPadEdgeClearance={0.1} minPlatedHoleDrillEdgeToDrillEdgeClearance={0.15} minBoardEdgeClearance={0.2} layers={2}>
       </board>
     )"
   `)
