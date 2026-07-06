@@ -1,7 +1,7 @@
 import { su } from "@tscircuit/soup-util"
 import { mmStr } from "@tscircuit/mm"
 import type { FootprintElementConverter } from "./converter-types"
-import { formatPcbRotationAttr } from "./helpers"
+import { formatPcbRotationAttr } from "./footprint-tsx-attribute-formatters/format-pcb-rotation-attr"
 
 export const convertSmtPads: FootprintElementConverter = (circuitJson) => {
   const smtPads = su(circuitJson).pcb_smtpad.list()

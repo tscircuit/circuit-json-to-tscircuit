@@ -1,6 +1,6 @@
 import { su } from "@tscircuit/soup-util"
 import type { FootprintElementConverter } from "./converter-types"
-import { formatMm } from "./helpers"
+import { formatMm } from "./footprint-tsx-attribute-formatters/format-mm"
 
 export const convertKeepouts: FootprintElementConverter = (circuitJson) => {
   const pcbKeepouts = su(circuitJson).pcb_keepout.list()

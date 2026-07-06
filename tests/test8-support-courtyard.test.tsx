@@ -1,4 +1,5 @@
 import { expect, test } from "bun:test"
+import { convertCircuitJsonToPcbSvg } from "circuit-to-svg"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
 
@@ -13,10 +14,10 @@ test("test8 support courtyard elements", async () => {
       <chip
         footprint={<footprint>
             <smtpad portHints={["1"]} pcbX="-0.5mm" pcbY="0mm" layer="top" width="0.6mm" height="0.9mm" shape="rect" />
-    <courtyardoutline outline={[{"x":-1.8,"y":-1.4},{"x":1.8,"y":-1.4},{"x":1.8,"y":1.4},{"x":-1.8,"y":1.4}]} layer="top" />
-    <courtyardrect pcbX={0} pcbY={0} width={4} height={3} layer="top" />
-    <courtyardrect pcbX={0.2} pcbY={0.2} width={4.6} height={3.6} layer="bottom" />
-    <courtyardcircle pcbX={0.4} pcbY={-0.3} radius={2.1} layer="top" />
+    <courtyardoutline outline={[{"x":-7.8,"y":-1.4},{"x":-4.2,"y":-1.4},{"x":-4.2,"y":1.4},{"x":-7.8,"y":1.4}]} layer="top" />
+    <courtyardrect pcbX={0} pcbY={0} width={4} height={3} layer="top" pcbRotation="45deg" />
+    <courtyardrect pcbX={6.2} pcbY={0.2} width={4.6} height={3.6} layer="bottom" />
+    <courtyardcircle pcbX={0.4} pcbY={5.4} radius={2.1} layer="top" />
           </footprint>}
         {...props}
       />
@@ -57,6 +58,25 @@ circuit.add(
   expect(
     courtyardElements.filter((elm) => elm.type === "pcb_courtyard_circle"),
   ).toHaveLength(2)
+  expect(
+    courtyardElements.filter(
+      (elm) =>
+        elm.type === "pcb_courtyard_rect" &&
+        elm.layer === "top" &&
+        elm.center?.x === 0 &&
+        elm.center?.y === 0 &&
+        elm.width === 4 &&
+        elm.height === 3,
+    ),
+  ).toEqual([
+    expect.objectContaining({ ccw_rotation: 45 }),
+    expect.objectContaining({ ccw_rotation: 45 }),
+  ])
+
+  const pcbSvg = convertCircuitJsonToPcbSvg(renderedCircuitJson, {
+    showCourtyards: true,
+  })
+  await expect(pcbSvg).toMatchSvgSnapshot(import.meta.path, "courtyard-pcb")
 })
 
 const circuitJson: any = [
@@ -110,10 +130,10 @@ const circuitJson: any = [
     pcb_component_id: "pcb_generic_component_0",
     layer: "top",
     outline: [
-      { x: -1.8, y: -1.4 },
-      { x: 1.8, y: -1.4 },
-      { x: 1.8, y: 1.4 },
-      { x: -1.8, y: 1.4 },
+      { x: -7.8, y: -1.4 },
+      { x: -4.2, y: -1.4 },
+      { x: -4.2, y: 1.4 },
+      { x: -7.8, y: 1.4 },
     ],
   },
   {
@@ -124,12 +144,13 @@ const circuitJson: any = [
     width: 4,
     height: 3,
     layer: "top",
+    ccw_rotation: 45,
   },
   {
     type: "pcb_courtyard_rect",
     pcb_courtyard_rect_id: "pcb_courtyard_rect_1",
     pcb_component_id: "pcb_generic_component_0",
-    center: { x: 0.2, y: 0.2 },
+    center: { x: 6.2, y: 0.2 },
     width: 4.6,
     height: 3.6,
     layer: "bottom",
@@ -138,7 +159,7 @@ const circuitJson: any = [
     type: "pcb_courtyard_circle",
     pcb_courtyard_circle_id: "pcb_courtyard_circle_0",
     pcb_component_id: "pcb_generic_component_0",
-    center: { x: 0.4, y: -0.3 },
+    center: { x: 0.4, y: 5.4 },
     radius: 2.1,
     layer: "top",
   },
