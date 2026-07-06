@@ -1,6 +1,6 @@
 import { su } from "@tscircuit/soup-util"
 import type { AnyCircuitElement } from "circuit-json"
-import { Board } from "./board-component-deserializers/classes/board"
+import { Board } from "./board-component-deserializers/board"
 import "./board-component-deserializers/classes/register-all"
 
 export interface BoardTemplateParams {

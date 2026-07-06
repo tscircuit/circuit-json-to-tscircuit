@@ -5,11 +5,17 @@ interface FormatTsxPropsOptions {
   separator?: string
 }
 
-const formatTsxProp = (name: string, value: unknown): string => {
-  const serializedValue = JSON.stringify(value)
-  if (typeof value === "string") return `${name}=${serializedValue}`
+interface FormatTsxElementParams {
+  name: string
+  props: TsxProps
+  children?: string
+}
 
-  return `${name}={${serializedValue}}`
+const formatTsxProp = (name: string, prop: unknown): string => {
+  const serializedProp = JSON.stringify(prop)
+  if (typeof prop === "string") return `${name}=${serializedProp}`
+
+  return `${name}={${serializedProp}}`
 }
 
 const formatTsxProps = (
@@ -17,8 +23,8 @@ const formatTsxProps = (
   { indent = "  ", separator = "\n" }: FormatTsxPropsOptions = {},
 ): string =>
   Object.entries(props)
-    .filter(([, value]) => value !== undefined)
-    .map(([name, value]) => `${indent}${formatTsxProp(name, value)}`)
+    .filter(([, prop]) => prop !== undefined)
+    .map(([name, prop]) => `${indent}${formatTsxProp(name, prop)}`)
     .join(separator)
 
 const indentTsx = (tsx: string): string =>
@@ -27,11 +33,11 @@ const indentTsx = (tsx: string): string =>
     .map((line) => `  ${line}`)
     .join("\n")
 
-export const formatTsxElement = (
-  name: string,
-  props: TsxProps,
-  children?: string,
-): string => {
+export const formatTsxElement = ({
+  name,
+  props,
+  children,
+}: FormatTsxElementParams): string => {
   if (children !== undefined) {
     const formattedProps = formatTsxProps(props, {
       indent: "",

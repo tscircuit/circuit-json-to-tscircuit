@@ -1,8 +1,9 @@
 import { resistorProps } from "@tscircuit/props"
-import { CircuitJsonDeserializer } from "../base-classes/circuit-json-deserializer"
+import { CircuitJsonDeserializer } from "../circuit-json-deserializer"
 
 export class Resistor extends CircuitJsonDeserializer {
-  static ftype = "simple_resistor"
+  static ftype = "simple_resistor" as const
+  static tsxElementName = "resistor"
   static propsSchema = resistorProps
 }
 

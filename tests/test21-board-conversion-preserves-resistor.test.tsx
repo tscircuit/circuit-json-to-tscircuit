@@ -107,7 +107,7 @@ const getResistorState = (circuitJson: AnyCircuitElement[]) => {
   }
 }
 
-test("preserves a board resistor", async () => {
+test("preserves resistor semantics during board conversion", async () => {
   const originalCircuitJson = (await runTscircuitCode(
     sourceTscircuit,
   )) as AnyCircuitElement[]

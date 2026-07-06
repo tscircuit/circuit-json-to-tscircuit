@@ -12,6 +12,10 @@ export interface DeserializerContext {
   db: CircuitJsonUtil
 }
 
-export type CircuitJsonElementRef = {
-  [id in `${string}_id`]?: string
+export interface PcbBoardRef {
+  pcb_board_id: string
+}
+
+export interface SourceComponentRef {
+  source_component_id: string
 }
