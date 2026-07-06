@@ -6,22 +6,18 @@ import {
   type SourceComponent,
 } from "./get-source-component-props"
 
-interface SourceComponentRef {
-  source_component_id: string
-}
-
 interface CircuitJsonDeserializerClass {
   ftype: SourceComponent["ftype"]
   tsxElementName: string
   propsSchema: PropsSchema
   getPropsFromElement(
-    ref: SourceComponentRef,
+    ref: { source_component_id: string },
     db: SoupUtilObjects,
   ): TsxProps | undefined
 }
 
 const getSourceComponent = (
-  ref: SourceComponentRef,
+  ref: { source_component_id: string },
   db: SoupUtilObjects,
 ): SourceComponent | undefined => {
   const { source_component_id } = ref
@@ -41,7 +37,7 @@ export class CircuitJsonDeserializer {
   }
 
   static deserializeToTsx(
-    ref: SourceComponentRef,
+    ref: { source_component_id: string },
     db: SoupUtilObjects,
   ): string | undefined {
     const source_component = getSourceComponent(ref, db)
@@ -59,7 +55,7 @@ export class CircuitJsonDeserializer {
   }
 
   static getPropsFromElement(
-    ref: SourceComponentRef,
+    ref: { source_component_id: string },
     db: SoupUtilObjects,
   ): TsxProps | undefined {
     const source_component = getSourceComponent(ref, db)
