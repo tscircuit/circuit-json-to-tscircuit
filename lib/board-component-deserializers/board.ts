@@ -45,7 +45,7 @@ export class Board {
 
     const boardChildrenTsx = getBoardChildrenTsx(db)
     const boardTsx = formatTsxElement({
-      name: "board",
+      tsxElementName: "board",
       props,
       children: boardChildrenTsx,
     })

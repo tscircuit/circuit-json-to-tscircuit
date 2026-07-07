@@ -51,7 +51,10 @@ export class CircuitJsonDeserializer {
     const props = Deserializer.getPropsFromElement(ref, db)
     if (!props) return undefined
 
-    return formatTsxElement({ name: Deserializer.tsxElementName, props })
+    return formatTsxElement({
+      tsxElementName: Deserializer.tsxElementName,
+      props,
+    })
   }
 
   static getPropsFromElement(
