@@ -16,7 +16,7 @@ export const getBoardUsingTemplate = ({ circuitJson }: BoardTemplateParams) => {
 
   const tsx = Board.deserializeToTsx(
     { pcb_board_id: pcb_board.pcb_board_id },
-    db,
+    { db },
   )
   if (!tsx) {
     throw new Error(`PCB board not found: ${pcb_board.pcb_board_id}`)

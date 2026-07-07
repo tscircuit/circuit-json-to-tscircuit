@@ -1,5 +1,5 @@
 import { boardProps } from "@tscircuit/props"
-import type { SoupUtilObjects } from "@tscircuit/soup-util"
+import type { CircuitJsonDeserializerContext } from "./circuit-json-deserializer"
 import {
   formatDefaultExport,
   formatTsxElement,
@@ -23,7 +23,7 @@ export class Board {
 
   static getPropsFromElement(
     ref: PcbBoardRef,
-    db: SoupUtilObjects,
+    { db }: CircuitJsonDeserializerContext,
   ): TsxProps | undefined {
     const { pcb_board_id } = ref
     const pcb_board = db.pcb_board.get(pcb_board_id)
@@ -38,12 +38,12 @@ export class Board {
 
   static deserializeToTsx(
     ref: PcbBoardRef,
-    db: SoupUtilObjects,
+    { db }: CircuitJsonDeserializerContext,
   ): string | undefined {
-    const props = this.getPropsFromElement(ref, db)
+    const props = this.getPropsFromElement(ref, { db })
     if (!props) return undefined
 
-    const boardChildrenTsx = getBoardChildrenTsx(db)
+    const boardChildrenTsx = getBoardChildrenTsx({ db })
     const boardTsx = formatTsxElement({
       tsxElementName: "board",
       props,
