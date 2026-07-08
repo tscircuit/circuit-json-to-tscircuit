@@ -18,6 +18,7 @@ test("test16 support pcb smtpad shapes", async () => {
     <smtpad portHints={["2"]} layer="top" coveredWithSolderMask={true} solderMaskMargin="0.06mm" shape="polygon" points={[{"x":0,"y":0},{"x":1,"y":0},{"x":0.5,"y":1}]} />
     <smtpad portHints={["3"]} pcbX="-1mm" pcbY="-2mm" layer="bottom" coveredWithSolderMask={true} solderMaskMargin="0.04mm" cornerRadius="0.15mm" solderMaskMarginLeft="0.01mm" solderMaskMarginTop="0.02mm" solderMaskMarginRight="0.03mm" solderMaskMarginBottom="0.05mm" width="2mm" height="0.6mm" pcbRotation="45deg" shape="rotated_rect" />
     <smtpad portHints={["4"]} pcbX="2.5mm" pcbY="-1.5mm" layer="bottom" coveredWithSolderMask={true} solderMaskMargin="0.05mm" rectBorderRadius="0.25mm" cornerRadius="0.2mm" solderMaskMarginLeft="0.11mm" solderMaskMarginTop="0.12mm" solderMaskMarginRight="0.13mm" solderMaskMarginBottom="0.14mm" width="1.8mm" height="0.9mm" shape="rect" />
+    <smtpad portHints={["5"]} pcbX="-2.4mm" pcbY="1.6mm" layer="top" coveredWithSolderMask={true} solderMaskMargin="0.07mm" width="2.2mm" height="0.9mm" radius="0.45mm" pcbRotation="30deg" shape="pill" />
           </footprint>}
         {...props}
       />
@@ -25,6 +26,7 @@ test("test16 support pcb smtpad shapes", async () => {
   `)
   expect(tscircuit).toContain(`pcbRotation="45deg"`)
   expect(tscircuit).toContain(`shape="rotated_rect"`)
+  expect(tscircuit).toContain(`pcbRotation="30deg"`)
 
   // The generator emits pcbRotation for consistency, but the current smtpad
   // runtime still expects ccwRotation for rotated_rect pads.
@@ -47,7 +49,7 @@ circuit.add(
     (elm): elm is PcbSmtPad => elm.type === "pcb_smtpad",
   )
 
-  expect(renderedSmtPads).toHaveLength(8)
+  expect(renderedSmtPads).toHaveLength(10)
   expect(renderedSmtPads).toEqual(
     expect.arrayContaining([
       expect.objectContaining({
@@ -65,6 +67,17 @@ circuit.add(
         corner_radius: 0.2,
         is_covered_with_solder_mask: true,
         soldermask_margin: 0.05,
+      }),
+      expect.objectContaining({
+        port_hints: ["5"],
+        layer: "top",
+        shape: "rotated_pill",
+        ccw_rotation: 30,
+        radius: 0.45,
+        width: 2.2,
+        height: 0.9,
+        is_covered_with_solder_mask: true,
+        soldermask_margin: 0.07,
       }),
     ]),
   )
@@ -166,5 +179,21 @@ const circuitJson: any = [
     soldermask_margin_right: 0.13,
     soldermask_margin_bottom: 0.14,
     port_hints: ["4"],
+  },
+  {
+    type: "pcb_smtpad",
+    pcb_smtpad_id: "rotated_pill_pad",
+    pcb_component_id: "pcb_generic_component_0",
+    shape: "rotated_pill",
+    x: -2.4,
+    y: 1.6,
+    width: 2.2,
+    height: 0.9,
+    radius: 0.45,
+    ccw_rotation: 30,
+    layer: "top",
+    is_covered_with_solder_mask: true,
+    soldermask_margin: 0.07,
+    port_hints: ["5"],
   },
 ]
