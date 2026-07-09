@@ -1,13 +1,16 @@
 import { mmStr } from "@tscircuit/mm"
 import { su } from "@tscircuit/soup-util"
 import type { AnyCircuitElement } from "circuit-json"
+import { generateBoardChildren } from "./generate-board-children"
 import { generateFootprintTsx } from "./generate-footprint-tsx"
 
-export interface BoardTemplateParams {
+export interface BoardTemplateOptions {
   circuitJson: AnyCircuitElement[]
 }
 
-export const getBoardUsingTemplate = ({ circuitJson }: BoardTemplateParams) => {
+export const getBoardUsingTemplate = ({
+  circuitJson,
+}: BoardTemplateOptions) => {
   const pcbBoard = su(circuitJson).pcb_board.list()[0]
 
   const boardProps: string[] = []
@@ -51,14 +54,17 @@ export const getBoardUsingTemplate = ({ circuitJson }: BoardTemplateParams) => {
   }
 
   const boardPropsStr = boardProps.join(" ")
+  const componentChildrenTsx = generateBoardChildren(circuitJson)
   const footprintTsx = generateFootprintTsx(circuitJson)
-
-  const children = footprintTsx ? `<chip footprint={${footprintTsx}} />` : ""
+  let boardChildrenTsx = componentChildrenTsx.join("\n")
+  if (!boardChildrenTsx && footprintTsx) {
+    boardChildrenTsx = `<chip footprint={${footprintTsx}} />`
+  }
 
   return `
 export default () => (
   <board${boardPropsStr ? ` ${boardPropsStr}` : ""}>
-    ${children}
+    ${boardChildrenTsx.replace(/\n/g, "\n    ")}
   </board>
 )
 `
