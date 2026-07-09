@@ -34,6 +34,23 @@ export const generateFootprintTsx = (
     return null
   }
 
+  // Add courtyard rect elements
+  const courtyardRects = circuitJson.filter(
+    (el: any) => el.type === "pcb_courtyard_rect",
+  )
+  for (const courtyard of courtyardRects) {
+    const cy = courtyard as any
+    const cx = cy.center?.x ?? 0
+    const cy_ = cy.center?.y ?? 0
+    const width = cy.width ?? 0
+    const height = cy.height ?? 0
+    const layer = cy.layer ?? "top"
+
+    elementStrings.push(
+      `<courtyardrect pcbX="${mmStr(cx)}" pcbY="${mmStr(cy_)}" width="${mmStr(width)}" height="${mmStr(height)}" layer="${layer}" />`,
+    )
+  }
+
   return `
       <footprint>
         ${elementStrings.join("\n")}
