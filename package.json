@@ -9,6 +9,7 @@
   "version": "0.0.42",
   "scripts": {
     "build": "tsup-node lib/index.ts cli/main.ts --format esm --dts",
+    "build:site": "bun build ./site/index.html --outdir site-build",
     "test": "bun test",
     "format": "biome format --write .",
     "format:check": "biome format ."
