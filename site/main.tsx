@@ -257,10 +257,7 @@ function downloadFile(filename: string, content: string) {
 }
 
 // Helper function to show status
-function showStatus(
-  message: string,
-  type: "success" | "error" | "processing",
-) {
+function showStatus(message: string, type: "success" | "error" | "processing") {
   statusText.textContent = message
   status.className = `status visible ${type}`
 }
