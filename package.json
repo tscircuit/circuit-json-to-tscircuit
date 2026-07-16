@@ -9,6 +9,8 @@
   "version": "0.0.42",
   "scripts": {
     "build": "tsup-node lib/index.ts cli/main.ts --format esm --dts",
+    "build:site": "bun build ./site/index.html --outdir site-build",
+    "dev:site": "bun --hot ./site/index.html",
     "test": "bun test",
     "format": "biome format --write .",
     "format:check": "biome format ."
@@ -24,6 +26,8 @@
     "circuit-json": "^0.0.433",
     "circuit-to-svg": "^0.0.353",
     "commander": "^13.1.0",
+    "prettier": "^3.9.5",
+    "shiki": "^4.3.1",
     "tscircuit": "^0.0.1873",
     "tsup": "^8.3.5"
   },
