@@ -2,7 +2,7 @@ import type { AnyCircuitElement } from "circuit-json"
 import { su } from "@tscircuit/soup-util"
 
 const escapeJsxText = (text: string) =>
-  text.replace(/\\/g, "\\\\").replace(/"/g, '\\"')
+  text.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;")
 
 export const generateSymbolTsx = (
   circuitJson: AnyCircuitElement[],
