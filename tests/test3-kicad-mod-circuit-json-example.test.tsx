@@ -66,14 +66,14 @@ test("test3 kicad mod circuit json example", async () => {
     <smtpad portHints={["13"]} pcbX="8.337mm" pcbY="5.08mm" layer="top" width="1.626mm" height="1.208mm" shape="rect" />
     <smtpad portHints={["14"]} pcbX="8.278mm" pcbY="7.62mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
     <smtpad portHints={["14"]} pcbX="8.278mm" pcbY="7.62mm" layer="top" width="1.626mm" height="1.325mm" shape="rect" />
-    <silkscreenpath route={[{"x":-8.89,"y":-8.509},{"x":-8.89,"y":8.636}]} />
-    <silkscreenpath route={[{"x":-6.985,"y":-10.414},{"x":6.985,"y":-10.414}]} />
-    <silkscreenpath route={[{"x":6.985,"y":10.541},{"x":-6.985,"y":10.541}]} />
-    <silkscreenpath route={[{"x":8.89,"y":-8.509},{"x":8.89,"y":8.636}]} />
-    <silkscreenpath route={[{"x":-8.89,"y":8.636},{"x":-8.634777964987212,"y":9.588499698293818},{"x":-7.937499698293819,"y":10.285777964987211},{"x":-6.985,"y":10.541}]} />
-    <silkscreenpath route={[{"x":-6.985,"y":-10.414},{"x":-7.937499698293818,"y":-10.158777964987209},{"x":-8.63477796498721,"y":-9.461499698293817},{"x":-8.89,"y":-8.509}]} />
-    <silkscreenpath route={[{"x":6.985,"y":10.541},{"x":7.937499698293818,"y":10.285777964987211},{"x":8.63477796498721,"y":9.588499698293818},{"x":8.889999999999999,"y":8.636}]} />
-    <silkscreenpath route={[{"x":8.89,"y":-8.509},{"x":8.63477796498721,"y":-9.461499698293817},{"x":7.937499698293818,"y":-10.158777964987209},{"x":6.985,"y":-10.413999999999998}]} />
+    <silkscreenpath route={[{"x":-8.89,"y":-8.509},{"x":-8.89,"y":8.636}]} strokeWidth={0.1} />
+    <silkscreenpath route={[{"x":-6.985,"y":-10.414},{"x":6.985,"y":-10.414}]} strokeWidth={0.1} />
+    <silkscreenpath route={[{"x":6.985,"y":10.541},{"x":-6.985,"y":10.541}]} strokeWidth={0.1} />
+    <silkscreenpath route={[{"x":8.89,"y":-8.509},{"x":8.89,"y":8.636}]} strokeWidth={0.1} />
+    <silkscreenpath route={[{"x":-8.89,"y":8.636},{"x":-8.634777964987212,"y":9.588499698293818},{"x":-7.937499698293819,"y":10.285777964987211},{"x":-6.985,"y":10.541}]} strokeWidth={0.1} />
+    <silkscreenpath route={[{"x":-6.985,"y":-10.414},{"x":-7.937499698293818,"y":-10.158777964987209},{"x":-8.63477796498721,"y":-9.461499698293817},{"x":-8.89,"y":-8.509}]} strokeWidth={0.1} />
+    <silkscreenpath route={[{"x":6.985,"y":10.541},{"x":7.937499698293818,"y":10.285777964987211},{"x":8.63477796498721,"y":9.588499698293818},{"x":8.889999999999999,"y":8.636}]} strokeWidth={0.1} />
+    <silkscreenpath route={[{"x":8.89,"y":-8.509},{"x":8.63477796498721,"y":-9.461499698293817},{"x":7.937499698293818,"y":-10.158777964987209},{"x":6.985,"y":-10.413999999999998}]} strokeWidth={0.1} />
     <fabricationnotetext pcbX={-8} pcbY={11.5} anchorAlignment="center" text="REF**" font="tscircuit2024" fontSize={1.27} />
     <fabricationnotetext pcbX={0} pcbY={0} anchorAlignment="center" text="XIAO-Add-On" font="tscircuit2024" fontSize={1.27} />
           </footprint>}
