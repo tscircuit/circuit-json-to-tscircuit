@@ -7,6 +7,10 @@
   },
   "type": "module",
   "version": "0.0.44",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tscircuit/circuit-json-to-tscircuit.git"
+  },
   "scripts": {
     "build": "tsup-node lib/index.ts cli/main.ts --format esm --dts",
     "build:site": "bun build ./site/index.html --outdir site-build",
