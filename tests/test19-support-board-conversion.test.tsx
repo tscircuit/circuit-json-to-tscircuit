@@ -1,9 +1,9 @@
-import { test, expect } from "bun:test"
+import { expect, test } from "bun:test"
+import { readFile } from "node:fs/promises"
+import { join } from "node:path"
 import type { AnyCircuitElement } from "circuit-json"
 import { convertCircuitJsonToPcbSvg } from "circuit-to-svg"
 import { convertCircuitJsonToTscircuit } from "lib/index"
-import { readFile } from "node:fs/promises"
-import { join } from "node:path"
 import { runTscircuitCode } from "tscircuit"
 
 test("test19 board conversion", async () => {
@@ -18,7 +18,7 @@ test("test19 board conversion", async () => {
 
   expect(tscircuitCode).toMatchInlineSnapshot(`
     "export default () => (
-      <board width="20mm" height="10mm" thickness="1.4mm" layers={2} material="fr4">
+      <board width={20} height={10} thickness={1.4} layers={2} material="fr4" minTraceWidth={0.1} minViaHoleEdgeToViaHoleEdgeClearance={0.1} minPlatedHoleDrillEdgeToDrillEdgeClearance={0.15} minTraceToPadEdgeClearance={0.1} minPadEdgeToPadEdgeClearance={0.1} minBoardEdgeClearance={0.2} minViaHoleDiameter={0.2} minViaPadDiameter={0.3}>
       </board>
     )"
   `)
