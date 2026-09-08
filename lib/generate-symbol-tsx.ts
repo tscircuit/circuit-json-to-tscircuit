@@ -183,10 +183,11 @@ export const generateSymbolTsx = (
           cell.start_column_index,
           cell.end_column_index + 1,
         )
-        const averageColumnWidth =
+        // A spanning cell's width is a minimum for every covered column.
+        // Averaging would enlarge narrower columns on the next render.
+        const minimumColumnWidth =
           columnWidths.length > 0
-            ? columnWidths.reduce((sum, width) => sum + width, 0) /
-              columnWidths.length
+            ? columnWidths.reduce((min, width) => Math.min(min, width))
             : cell.width / Math.max(colSpan, 1)
 
         const props: string[] = []
@@ -210,8 +211,8 @@ export const generateSymbolTsx = (
         if (colSpan !== 1) {
           props.push(`colSpan={${colSpan}}`)
         }
-        if (averageColumnWidth > 0) {
-          props.push(`width={${averageColumnWidth}}`)
+        if (minimumColumnWidth > 0) {
+          props.push(`width={${minimumColumnWidth}}`)
         }
 
         cellStrings.push(`<schematiccell ${props.join(" ")} />`)
