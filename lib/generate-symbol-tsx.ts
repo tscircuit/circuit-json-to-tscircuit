@@ -82,7 +82,7 @@ export const generateSymbolTsx = (
     const isDashed = box.is_dashed ?? false
 
     elementStrings.push(
-      `<schematicbox center={{ x: ${x}, y: ${y} }} width={${width}} height={${height}} isDashed={${isDashed}}/>`,
+      `<schematicbox schX={${x + width / 2}} schY={${y + height / 2}} width={${width}} height={${height}} strokeStyle="${isDashed ? "dashed" : "solid"}"/>`,
     )
   }
 
