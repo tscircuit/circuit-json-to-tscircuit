@@ -105,16 +105,21 @@ export const generateSymbolTsx = (
   for (const path of schematicPaths) {
     const points = path.points ?? []
     const fillColor = path.fill_color ?? "red"
+    const strokeColor = path.stroke_color ?? fillColor
     const isFilled = path.is_filled ?? false
     const dashLength = path.dash_length
     const dashGap = path.dash_gap
 
     const attrs = [
       `points={${JSON.stringify(points)}}`,
-      `strokeColor="${fillColor}"`,
+      `strokeColor="${strokeColor}"`,
       `fillColor="${fillColor}"`,
       `isFilled={${isFilled}}`,
     ]
+
+    if (path.stroke_width != null) {
+      attrs.push(`strokeWidth={${path.stroke_width}}`)
+    }
 
     if (dashLength != null) {
       attrs.push(`dashLength={${dashLength}}`)
