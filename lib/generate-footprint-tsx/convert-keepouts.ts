@@ -7,13 +7,17 @@ export const convertKeepouts: FootprintElementConverter = (circuitJson) => {
   const elementStrings: string[] = []
 
   for (const keepout of pcbKeepouts) {
+    const layersAttr =
+      keepout.layers === undefined
+        ? ""
+        : ` layers={${JSON.stringify(keepout.layers)}}`
     if (keepout.shape === "rect") {
       elementStrings.push(
-        `<keepout shape="rect" pcbX="${formatMm(keepout.center.x)}" pcbY="${formatMm(keepout.center.y)}" width="${formatMm(keepout.width)}" height="${formatMm(keepout.height)}" />`,
+        `<keepout shape="rect" pcbX="${formatMm(keepout.center.x)}" pcbY="${formatMm(keepout.center.y)}" width="${formatMm(keepout.width)}" height="${formatMm(keepout.height)}"${layersAttr} />`,
       )
     } else if (keepout.shape === "circle") {
       elementStrings.push(
-        `<keepout shape="circle" pcbX="${formatMm(keepout.center.x)}" pcbY="${formatMm(keepout.center.y)}" radius="${formatMm(keepout.radius)}" />`,
+        `<keepout shape="circle" pcbX="${formatMm(keepout.center.x)}" pcbY="${formatMm(keepout.center.y)}" radius="${formatMm(keepout.radius)}"${layersAttr} />`,
       )
     } else {
       console.warn(`Unhandled pcb_keepout shape: ${(keepout as any).shape}`)
