@@ -9,9 +9,16 @@ export const convertSilkscreen: FootprintElementConverter = (circuitJson) => {
   const elementStrings: string[] = []
 
   for (const silkscreenPath of silkscreenPaths) {
-    elementStrings.push(
-      `<silkscreenpath route={${JSON.stringify(silkscreenPath.route)}} />`,
-    )
+    const attrs = [
+      `route={${JSON.stringify(silkscreenPath.route)}}`,
+      `layer="${silkscreenPath.layer}"`,
+    ]
+
+    if (silkscreenPath.stroke_width !== undefined) {
+      attrs.push(`strokeWidth={${silkscreenPath.stroke_width}}`)
+    }
+
+    elementStrings.push(`<silkscreenpath ${attrs.join(" ")} />`)
   }
 
   for (const silkscreenRect of silkscreenRects) {
