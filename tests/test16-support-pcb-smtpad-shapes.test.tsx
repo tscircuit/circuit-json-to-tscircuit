@@ -16,7 +16,7 @@ test("test16 support pcb smtpad shapes", async () => {
         footprint={<footprint>
             <smtpad portHints={["1"]} pcbX="1mm" pcbY="2mm" layer="top" coveredWithSolderMask={true} solderMaskMargin="0.03mm" width="1.5mm" height="0.8mm" radius="0.4mm" shape="pill" />
     <smtpad portHints={["2"]} layer="top" coveredWithSolderMask={true} solderMaskMargin="0.06mm" shape="polygon" points={[{"x":0,"y":0},{"x":1,"y":0},{"x":0.5,"y":1}]} />
-    <smtpad portHints={["3"]} pcbX="-1mm" pcbY="-2mm" layer="bottom" coveredWithSolderMask={true} solderMaskMargin="0.04mm" cornerRadius="0.15mm" solderMaskMarginLeft="0.01mm" solderMaskMarginTop="0.02mm" solderMaskMarginRight="0.03mm" solderMaskMarginBottom="0.05mm" width="2mm" height="0.6mm" pcbRotation="45deg" shape="rotated_rect" />
+    <smtpad portHints={["3"]} pcbX="-1mm" pcbY="-2mm" layer="bottom" coveredWithSolderMask={true} solderMaskMargin="0.04mm" cornerRadius="0.15mm" solderMaskMarginLeft="0.01mm" solderMaskMarginTop="0.02mm" solderMaskMarginRight="0.03mm" solderMaskMarginBottom="0.05mm" width="2mm" height="0.6mm" ccwRotation={45} shape="rotated_rect" />
     <smtpad portHints={["4"]} pcbX="2.5mm" pcbY="-1.5mm" layer="bottom" coveredWithSolderMask={true} solderMaskMargin="0.05mm" rectBorderRadius="0.25mm" cornerRadius="0.2mm" solderMaskMarginLeft="0.11mm" solderMaskMarginTop="0.12mm" solderMaskMarginRight="0.13mm" solderMaskMarginBottom="0.14mm" width="1.8mm" height="0.9mm" shape="rect" />
     <smtpad portHints={["5"]} pcbX="-2.4mm" pcbY="1.6mm" layer="top" coveredWithSolderMask={true} solderMaskMargin="0.07mm" width="2.2mm" height="0.9mm" radius="0.45mm" pcbRotation="30deg" shape="pill" />
           </footprint>}
@@ -24,19 +24,12 @@ test("test16 support pcb smtpad shapes", async () => {
       />
     )"
   `)
-  expect(tscircuit).toContain(`pcbRotation="45deg"`)
+  expect(tscircuit).toContain(`ccwRotation={45}`)
   expect(tscircuit).toContain(`shape="rotated_rect"`)
   expect(tscircuit).toContain(`pcbRotation="30deg"`)
 
-  // The generator emits pcbRotation for consistency, but the current smtpad
-  // runtime still expects ccwRotation for rotated_rect pads.
-  const executableTscircuit = tscircuit.replace(
-    /pcbRotation="(-?\d+(?:\.\d+)?)deg"(?=[^>]*shape="rotated_rect")/g,
-    (_, rotation: string) => `ccwRotation={${rotation}}`,
-  )
-
   const renderedCircuitJson = (await runTscircuitCode(`
-${executableTscircuit}
+${tscircuit}
 
 circuit.add(
   <board width="20mm" height="20mm">
@@ -56,6 +49,7 @@ circuit.add(
         port_hints: ["3"],
         layer: "bottom",
         shape: "rotated_rect",
+        ccw_rotation: 45,
         corner_radius: 0.15,
         is_covered_with_solder_mask: true,
         soldermask_margin: 0.04,

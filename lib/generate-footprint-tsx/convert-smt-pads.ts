@@ -51,7 +51,7 @@ export const convertSmtPads: FootprintElementConverter = (circuitJson) => {
         smtPad.corner_radius ?? smtPad.rect_border_radius ?? undefined
 
       elementStrings.push(
-        `<smtpad ${commonAttrs.join(" ")}${solderMaskAttrs}${formatOptionalMmAttr("cornerRadius", cornerRadius)}${formatOptionalMmAttr("solderMaskMarginLeft", smtPad.soldermask_margin_left)}${formatOptionalMmAttr("solderMaskMarginTop", smtPad.soldermask_margin_top)}${formatOptionalMmAttr("solderMaskMarginRight", smtPad.soldermask_margin_right)}${formatOptionalMmAttr("solderMaskMarginBottom", smtPad.soldermask_margin_bottom)} width="${mmStr(smtPad.width ?? 0)}" height="${mmStr(smtPad.height ?? 0)}"${formatPcbRotationAttr(smtPad.ccw_rotation)} shape="rotated_rect" />`,
+        `<smtpad ${commonAttrs.join(" ")}${solderMaskAttrs}${formatOptionalMmAttr("cornerRadius", cornerRadius)}${formatOptionalMmAttr("solderMaskMarginLeft", smtPad.soldermask_margin_left)}${formatOptionalMmAttr("solderMaskMarginTop", smtPad.soldermask_margin_top)}${formatOptionalMmAttr("solderMaskMarginRight", smtPad.soldermask_margin_right)}${formatOptionalMmAttr("solderMaskMarginBottom", smtPad.soldermask_margin_bottom)} width="${mmStr(smtPad.width ?? 0)}" height="${mmStr(smtPad.height ?? 0)}" ccwRotation={${smtPad.ccw_rotation ?? 0}} shape="rotated_rect" />`,
       )
     }
   }
