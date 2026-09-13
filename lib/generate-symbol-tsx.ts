@@ -138,7 +138,7 @@ export const generateSymbolTsx = (
     const rotation = text.rotation ?? 0
 
     elementStrings.push(
-      `<schematictext text="${escapedText}" x={${x}} y={${y}} anchorAlignment="${anchorAlignment}" fontSize={${fontSize}} color="${color}" rotation={${rotation}} />`,
+      `<schematictext text="${escapedText}" schX={${x}} schY={${y}} anchor="${anchorAlignment}" fontSize={${fontSize}} color="${color}" schRotation={${rotation}} />`,
     )
   }
 
