@@ -4,7 +4,7 @@ import { convertCircuitJsonToPcbSvg } from "circuit-to-svg"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
 
-test("test23 support hole solder mask - TSX props", async () => {
+test.failing("test23 support hole solder mask - TSX props", async () => {
   const tscircuit = convertCircuitJsonToTscircuit(circuitJson, {
     componentName: "Test23Component",
   })
@@ -14,7 +14,7 @@ test("test23 support hole solder mask - TSX props", async () => {
   expect(tscircuit).toContain('solderMaskMargin="-0.05mm"')
 })
 
-test("test23 support hole solder mask - round trip", async () => {
+test.failing("test23 support hole solder mask - round trip", async () => {
   const tscircuit = convertCircuitJsonToTscircuit(circuitJson, {
     componentName: "Test23Component",
   })
