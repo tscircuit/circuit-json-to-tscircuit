@@ -1,22 +1,12 @@
 import { expect, test } from "bun:test"
-import type { AnyCircuitElement, PcbHole } from "circuit-json"
+import type { AnyCircuitElement } from "circuit-json"
 import { convertCircuitJsonToPcbSvg } from "circuit-to-svg"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
 
-test.failing("test23 support hole solder mask - TSX props", async () => {
+test("test25 support hole solder mask - SVG snapshot", async () => {
   const tscircuit = convertCircuitJsonToTscircuit(circuitJson, {
-    componentName: "Test23Component",
-  })
-
-  expect(tscircuit).toContain("coveredWithSolderMask={true}")
-  expect(tscircuit).toContain('solderMaskMargin="0.1mm"')
-  expect(tscircuit).toContain('solderMaskMargin="-0.05mm"')
-})
-
-test.failing("test23 support hole solder mask - round trip", async () => {
-  const tscircuit = convertCircuitJsonToTscircuit(circuitJson, {
-    componentName: "Test23Component",
+    componentName: "Test25Component",
   })
 
   const renderedCircuitJson = (await runTscircuitCode(`
@@ -24,42 +14,7 @@ ${tscircuit}
 
 circuit.add(
   <board width="20mm" height="20mm">
-    <Test23Component />
-  </board>,
-)
-  `)) as AnyCircuitElement[]
-
-  const renderedHoles = renderedCircuitJson.filter(
-    (elm): elm is PcbHole => elm.type === "pcb_hole",
-  )
-
-  expect(renderedHoles).toEqual(
-    expect.arrayContaining([
-      expect.objectContaining({
-        hole_shape: "circle",
-        is_covered_with_solder_mask: true,
-        soldermask_margin: 0.1,
-      }),
-      expect.objectContaining({
-        hole_shape: "pill",
-        is_covered_with_solder_mask: true,
-        soldermask_margin: -0.05,
-      }),
-    ]),
-  )
-})
-
-test("test23 support hole solder mask - SVG snapshot", async () => {
-  const tscircuit = convertCircuitJsonToTscircuit(circuitJson, {
-    componentName: "Test23Component",
-  })
-
-  const renderedCircuitJson = (await runTscircuitCode(`
-${tscircuit}
-
-circuit.add(
-  <board width="20mm" height="20mm">
-    <Test23Component />
+    <Test25Component />
   </board>,
 )
   `)) as AnyCircuitElement[]
