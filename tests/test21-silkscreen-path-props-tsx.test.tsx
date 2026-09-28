@@ -1,7 +1,7 @@
 import { expect, test } from "bun:test"
 import { convertCircuitJsonToTscircuit } from "lib"
 
-test.failing("test21 silkscreen path props tsx", async () => {
+test("test21 silkscreen path props tsx", async () => {
   const tscircuit = convertCircuitJsonToTscircuit(circuitJson, {
     componentName: "Test21Component",
   })
