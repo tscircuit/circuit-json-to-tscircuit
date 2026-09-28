@@ -3,14 +3,12 @@ import type { AnyCircuitElement } from "circuit-json"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
 
-test.failing(
-  "test22 silkscreen path props roundtrip",
-  async () => {
-    const tscircuit = convertCircuitJsonToTscircuit(circuitJson, {
-      componentName: "Test22Component",
-    })
+test("test22 silkscreen path props roundtrip", async () => {
+  const tscircuit = convertCircuitJsonToTscircuit(circuitJson, {
+    componentName: "Test22Component",
+  })
 
-    const renderedCircuitJson = (await runTscircuitCode(`
+  const renderedCircuitJson = (await runTscircuitCode(`
 ${tscircuit}
 
 circuit.add(
@@ -20,16 +18,14 @@ circuit.add(
 )
   `)) as AnyCircuitElement[]
 
-    const silkscreenPath = renderedCircuitJson.find(
-      (el) => el.type === "pcb_silkscreen_path",
-    ) as any
+  const silkscreenPath = renderedCircuitJson.find(
+    (el) => el.type === "pcb_silkscreen_path",
+  ) as any
 
-    expect(silkscreenPath).toBeDefined()
-    expect(silkscreenPath.layer).toBe("bottom")
-    expect(silkscreenPath.stroke_width).toBe(0.2)
-  },
-  15000,
-)
+  expect(silkscreenPath).toBeDefined()
+  expect(silkscreenPath.layer).toBe("bottom")
+  expect(silkscreenPath.stroke_width).toBe(0.2)
+}, 15000)
 
 const circuitJson: any = [
   {
