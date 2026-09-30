@@ -93,7 +93,11 @@ test("preserves PCB component boundaries and placements", async () => {
     renderedCircuitJson.filter(
       (element) => element.type === "schematic_component",
     ),
-  ).toHaveLength(0)
+  ).toHaveLength(
+    sourceCircuitJson.filter(
+      (element) => element.type === "schematic_component",
+    ).length,
+  )
   expect(
     renderedCircuitJson
       .filter((element) => element.type === "pcb_silkscreen_text")

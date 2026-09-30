@@ -5,9 +5,11 @@ import type {
 } from "circuit-json"
 import { applyToPoint, inverse, translate } from "transformation-matrix"
 import { generateFootprintTsx } from "../../generate-footprint-tsx"
+import { generateSymbolTsx } from "../../generate-symbol-tsx"
 import type { BoardConverterStage } from "../BoardConverterContext"
 import { getSchematicComponentsForPcbComponent } from "../get-schematic-components-for-pcb-component"
 import { localizePcbComponentElements } from "../localize-pcb-component-elements"
+import { localizeSchematicComponentElements } from "../localize-schematic-component-elements"
 
 type PinLabelKey = `pin${number}`
 type PinLabels = Partial<Record<PinLabelKey, string[]>>
@@ -76,10 +78,12 @@ const getPinLabels = ({
   return Object.keys(pinLabels).length > 0 ? pinLabels : undefined
 }
 
-const addNamedSchematicComponentProps = ({
+const addSchematicComponentProps = ({
+  circuitJson,
   componentProps,
   schematicComponents,
 }: {
+  circuitJson: AnyCircuitElement[]
   componentProps: string[]
   schematicComponents: SchematicComponent[]
 }): void => {
@@ -88,6 +92,34 @@ const addNamedSchematicComponentProps = ({
   )
 
   if (!namedSchematicComponent?.symbol_name) {
+    if (schematicComponents.length !== 1) {
+      componentProps.push("noSchematicRepresentation")
+      return
+    }
+
+    const anchorComponent = schematicComponents[0]
+    const symbolTsx = generateSymbolTsx({
+      circuitJson: localizeSchematicComponentElements({
+        circuitJson,
+        schematicComponents,
+      }),
+      includePorts: true,
+    })
+
+    if (anchorComponent && symbolTsx) {
+      componentProps.push(
+        `schX={${anchorComponent.center.x}}`,
+        `schY={${anchorComponent.center.y}}`,
+        `symbol={${symbolTsx}}`,
+      )
+      if (anchorComponent.symbol_display_value !== undefined) {
+        componentProps.push(
+          `schDisplayValue=${JSON.stringify(anchorComponent.symbol_display_value)}`,
+        )
+      }
+      return
+    }
+
     componentProps.push("noSchematicRepresentation")
     return
   }
@@ -156,7 +188,11 @@ export const convertPcbComponents: BoardConverterStage = ({
       `layer="${pcbComponent.layer}"`,
     ]
 
-    addNamedSchematicComponentProps({ componentProps, schematicComponents })
+    addSchematicComponentProps({
+      circuitJson,
+      componentProps,
+      schematicComponents,
+    })
 
     if (pinLabels) {
       componentProps.push(`pinLabels={${JSON.stringify(pinLabels)}}`)

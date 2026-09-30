@@ -20,7 +20,7 @@ export const getComponentUsingTemplate = ({
   manufacturerPartNumber,
 }: ComponentTemplateParams) => {
   const footprintTsx = generateFootprintTsx(circuitJson)
-  const symbolTsx = generateSymbolTsx(circuitJson)
+  const symbolTsx = generateSymbolTsx({ circuitJson })
   return `
 import { type ChipProps } from "tscircuit"
 ${pinLabels ? `const pinLabels = ${JSON.stringify(pinLabels, null, "  ")} as const\n` : ""}export const ${componentName} = (props: ChipProps${pinLabels ? `<typeof pinLabels>` : ""}) => (

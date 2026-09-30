@@ -33,6 +33,18 @@ const replaceSilkscreenGraphicGeometryWithHashes = (
     },
   )
 
+const replaceCustomSymbolGeometryWithHashes = (
+  generatedTscircuit: string,
+): string =>
+  generatedTscircuit.replace(/<symbol>[\s\S]*?<\/symbol>/g, (symbolElement) => {
+    const geometryHash = createHash("sha256")
+      .update(symbolElement)
+      .digest("hex")
+      .slice(0, 12)
+
+    return `<symbol geometryHash="${geometryHash}" />`
+  })
+
 export async function createTiEvmRoundtrip({
   componentName,
   fixtureName,
@@ -65,8 +77,9 @@ export async function createTiEvmRoundtrip({
 
   return {
     generatedTscircuit,
-    generatedTscircuitSnapshot:
+    generatedTscircuitSnapshot: replaceCustomSymbolGeometryWithHashes(
       replaceSilkscreenGraphicGeometryWithHashes(generatedTscircuit),
+    ),
     pcbComparisonSvg: createComparisonSvg({
       fixtureName,
       kind: "PCB",
