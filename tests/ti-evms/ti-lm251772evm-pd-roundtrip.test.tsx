@@ -1457,6 +1457,7 @@ test(
           <trace path={[".C39 > .pin1",".R34 > .pin1"]} />
           <trace path={[".Q5 > .pin4",".R20 > .pin2",".C42 > .pin2","net.HO2_G"]} />
           <trace path={[".R10 > .pin2",".U1 > .pin15"]} />
+          {/* standalone schematic primitives: count=316 geometryHash=cb27230ad752 */}
           <chip noSchematicRepresentation pcbX={-69.6468} pcbY={-84.6836} footprint={<footprint>
                   <silkscreenline x1={73.91944575999999} y1={118.36399999999999} x2={75.9714} y2={118.36399999999999} strokeWidth={0.127} />
           <silkscreenline x1={75.9714} y1={118.36399999999999} x2={76.5556} y2={117.7798} strokeWidth={0.127} />

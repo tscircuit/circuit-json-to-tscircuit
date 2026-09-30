@@ -45,6 +45,26 @@ const replaceCustomSymbolGeometryWithHashes = (
     return `<symbol geometryHash="${geometryHash}" />`
   })
 
+const replaceStandaloneSchematicPrimitivesWithHash = (
+  generatedTscircuit: string,
+): string =>
+  generatedTscircuit.replace(
+    /\{\/\* Standalone schematic primitives \*\/\}[\s\S]*?\{\/\* End standalone schematic primitives \*\/\}/g,
+    (primitiveBlock) => {
+      const primitiveCount = (
+        primitiveBlock.match(
+          /<schematic(?:arc|box|circle|line|path|rect|table|text)\b/g,
+        ) ?? []
+      ).length
+      const geometryHash = createHash("sha256")
+        .update(primitiveBlock)
+        .digest("hex")
+        .slice(0, 12)
+
+      return `{/* standalone schematic primitives: count=${primitiveCount} geometryHash=${geometryHash} */}`
+    },
+  )
+
 export async function createTiEvmRoundtrip({
   componentName,
   fixtureName,
@@ -77,8 +97,10 @@ export async function createTiEvmRoundtrip({
 
   return {
     generatedTscircuit,
-    generatedTscircuitSnapshot: replaceCustomSymbolGeometryWithHashes(
-      replaceSilkscreenGraphicGeometryWithHashes(generatedTscircuit),
+    generatedTscircuitSnapshot: replaceStandaloneSchematicPrimitivesWithHash(
+      replaceCustomSymbolGeometryWithHashes(
+        replaceSilkscreenGraphicGeometryWithHashes(generatedTscircuit),
+      ),
     ),
     pcbComparisonSvg: createComparisonSvg({
       fixtureName,

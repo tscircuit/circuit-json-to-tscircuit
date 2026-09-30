@@ -984,6 +984,7 @@ test(
           <trace path={[".R14 > .pin2",".D3 > .pin2"]} />
           <trace path={[".JP1 > .pin1",".R16 > .pin2"]} />
           <trace path={[".U5 > .pin5",".C5 > .pin1"]} />
+          {/* standalone schematic primitives: count=432 geometryHash=9720e8e680cc */}
           <chip noSchematicRepresentation pcbX={-61.4426} pcbY={-76.463652} footprint={<footprint>
                   <platedhole  portHints={["0"]} pcbX="21.6408mm" pcbY="43.0276mm" outerDiameter="4.318mm" holeDiameter="3.81mm" shape="circle" />
           <platedhole  portHints={["0"]} pcbX="21.6408mm" pcbY="109.8296mm" outerDiameter="4.318mm" holeDiameter="3.81mm" shape="circle" />

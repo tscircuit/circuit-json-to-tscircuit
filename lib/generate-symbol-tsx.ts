@@ -2,7 +2,7 @@ import type { AnyCircuitElement } from "circuit-json"
 import { su } from "@tscircuit/soup-util"
 import { formatJsxStringAttribute } from "./format-jsx-string-attribute"
 
-export const generateSymbolTsx = ({
+export const generateSchematicPrimitiveTsx = ({
   circuitJson,
   includePorts = false,
 }: {
@@ -322,9 +322,26 @@ export const generateSymbolTsx = ({
     return null
   }
 
+  return elementStrings.join("\n")
+}
+
+export const generateSymbolTsx = ({
+  circuitJson,
+  includePorts = false,
+}: {
+  circuitJson: AnyCircuitElement[]
+  includePorts?: boolean
+}): string | null => {
+  const primitiveTsx = generateSchematicPrimitiveTsx({
+    circuitJson,
+    includePorts,
+  })
+
+  if (!primitiveTsx) return null
+
   return `
 <symbol>
-  ${elementStrings.map((s) => s.split("\n").join("\n  ")).join("\n  ")}
+  ${primitiveTsx.split("\n").join("\n  ")}
 </symbol>
   `.trim()
 }
