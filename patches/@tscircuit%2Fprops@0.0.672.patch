@@ -1,0 +1,31 @@
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -46788,6 +46788,8 @@ interface ChipPropsSU<PinLabel extends SchematicPinLabel = SchematicPinLabel> ex
+     schPinSpacing?: Distance;
+     schWidth?: Distance;
+     schHeight?: Distance;
++    /** Text rendered in the symbol's value placeholder, such as a part value. */
++    schDisplayValue?: string;
+     noSchematicRepresentation?: boolean;
+     /**
+      * Whether to show the components from `internalCircuit` in the schematic.
+@@ -51052,6 +51054,7 @@ declare const chipProps: z.ZodObject<{
+     schPinSpacing: z.ZodOptional<z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodNumber]>, number, string | number>>;
+     schWidth: z.ZodOptional<z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodNumber]>, number, string | number>>;
+     schHeight: z.ZodOptional<z.ZodEffects<z.ZodUnion<[z.ZodString, z.ZodNumber]>, number, string | number>>;
++    schDisplayValue: z.ZodOptional<z.ZodString>;
+     noSchematicRepresentation: z.ZodOptional<z.ZodBoolean>;
+     schShowInternalCircuit: z.ZodDefault<z.ZodOptional<z.ZodBoolean>>;
+     noConnect: z.ZodOptional<z.ZodUnion<[z.ZodReadonly<z.ZodArray<z.ZodString, "many">>, z.ZodArray<z.ZodString, "many">]>>;
+diff --git a/dist/index.js b/dist/index.js
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -17089,6 +17089,7 @@ var chipProps = commonComponentProps.extend({
+   schPinSpacing: distance12.optional(),
+   schWidth: distance12.optional(),
+   schHeight: distance12.optional(),
++  schDisplayValue: z54.string().optional(),
+   noSchematicRepresentation: z54.boolean().optional(),
+   schShowInternalCircuit: z54.boolean().optional().default(false),
+   noConnect: noConnectProp.optional(),
