@@ -8,7 +8,7 @@ diff --git a/node_modules/@tscircuit/core/.bun-tag-e03f092aed6c8030 b/.bun-tag-e
 new file mode 100644
 index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
 diff --git a/dist/index.js b/dist/index.js
-index 6d63e56c658c619b3c86d25146afa91d34392e07..32143318d484ae30f28837fb466d1c2f6152b3c8 100644
+index 6d63e56c658c619b3c86d25146afa91d34392e07..d84aa2ea31279066c0eacb52158032e7a471dcf0 100644
 --- a/dist/index.js
 +++ b/dist/index.js
 @@ -57,6 +57,8 @@ __export(components_exports, {
@@ -384,7 +384,20 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..32143318d484ae30f28837fb466d1c2f
      } else {
        const globalTransform = this._computePcbGlobalTransformBeforeLayout();
        const decomposedTransform = decomposeTSR5(globalTransform);
-@@ -12776,8 +13004,9 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+@@ -9418,6 +9646,12 @@ var Port = class extends PrimitiveComponent2 {
+   _getGlobalSchematicPositionBeforeLayout() {
+     const { schX, schY } = this._parsedProps;
+     if (schX !== void 0 && schY !== void 0) {
++      if (this._getSymbolAncestor()) {
++        return applyToPoint22(this.computeSchematicGlobalTransform(), {
++          x: 0,
++          y: 0
++        });
++      }
+       return { x: schX, y: schY };
+     }
+     const parentNormalComponent = this.getParentNormalComponent();
+@@ -12776,8 +13010,9 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
          }
        }
      }
@@ -396,7 +409,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..32143318d484ae30f28837fb466d1c2f
        if (!sym) return;
        for (const symPort of sym.ports) {
          const pinNumber = getPinNumberFromLabels(symPort.labels);
-@@ -13019,7 +13248,7 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+@@ -13019,7 +13254,7 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
          message: "schPinSpacing is deprecated and will be ignored. Pin spacing is always 0.2."
        });
      }
@@ -405,7 +418,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..32143318d484ae30f28837fb466d1c2f
      const { _parsedProps: props } = this;
      const hasSymbolChild = this.children.some(
        (c) => c.componentName === "Symbol"
-@@ -13579,9 +13808,9 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+@@ -13579,9 +13814,9 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
    }
    getPortsFromSchematicSymbol() {
      if (this.root?.schematicDisabled) return [];
@@ -418,7 +431,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..32143318d484ae30f28837fb466d1c2f
      if (!symbol) return [];
      const newPorts = [];
      for (const symbolPort of symbol.ports) {
-@@ -14462,6 +14691,9 @@ var Chip = class extends NormalComponent3 {
+@@ -14462,6 +14697,9 @@ var Chip = class extends NormalComponent3 {
      if (props?.noSchematicRepresentation === true) return;
      super.doInitialSchematicComponentRender();
    }
@@ -428,7 +441,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..32143318d484ae30f28837fb466d1c2f
    doInitialSourceRender() {
      const { db } = this.root;
      const { _parsedProps: props } = this;
-@@ -30537,6 +30769,8 @@ export {
+@@ -30537,6 +30775,8 @@ export {
    PcbNotePath,
    PcbNoteRect,
    PcbNoteText,
