@@ -74,7 +74,7 @@ function createComparisonSvg({
   renderedSvg: string
   sourceSvg: string
 }): string {
-  return stackSvgsHorizontally([sourceSvg, renderedSvg], {
+  const comparisonSvg = stackSvgsHorizontally([sourceSvg, renderedSvg], {
     gap: 24,
     normalizeSize: true,
     targetSize: 800,
@@ -83,4 +83,6 @@ function createComparisonSvg({
       role: "img",
     },
   })
+
+  return comparisonSvg.replace(/[\t ]+$/gm, "")
 }

@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@tscircuit/circuit-json-util": "^0.0.102",
     "@tscircuit/mm": "^0.0.8",
     "@tscircuit/soup-util": "^0.0.41",
     "@types/bun": "latest",
@@ -33,10 +34,17 @@
     "prettier": "^3.9.5",
     "shiki": "^4.3.1",
     "stack-svgs": "^0.0.1",
+    "transformation-matrix": "^2.16.1",
     "tscircuit": "^0.0.1873",
     "tsup": "^8.3.5"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "overrides": {
+    "@tscircuit/core": "0.0.1322"
+  },
+  "patchedDependencies": {
+    "@tscircuit/core@0.0.1322": "patches/@tscircuit%2Fcore@0.0.1322.patch"
   }
 }

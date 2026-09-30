@@ -1,0 +1,17 @@
+diff --git a/dist/index.js b/dist/index.js
+index 6d63e56c658c619b3c86d25146afa91d34392e07..d1152770233342ddc668e4d3696e4b5edaf81d12 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -8583,8 +8583,10 @@ var SilkscreenText = class extends PrimitiveComponent2 {
+     const { maybeFlipLayer, isFlipped } = this._getPcbPrimitiveFlippedHelpers();
+     const subcircuit = this.getSubcircuit();
+     let rotation4 = 0;
+-    if (props.pcbRotation !== void 0 && props.pcbRotation !== 0) {
+-      rotation4 = props.pcbRotation;
++    const explicitRotation = props.pcbRotation;
++    const hasExplicitRotation = explicitRotation !== void 0 && (explicitRotation !== 0 || typeof this.props.pcbRotation === "string");
++    if (hasExplicitRotation) {
++      rotation4 = explicitRotation;
+     } else {
+       const globalTransform = this._computePcbGlobalTransformBeforeLayout();
+       const decomposedTransform = decomposeTSR5(globalTransform);
