@@ -1,8 +1,6 @@
 import type { AnyCircuitElement } from "circuit-json"
 import { su } from "@tscircuit/soup-util"
-
-const escapeJsxText = (text: string) =>
-  text.replace(/\\/g, "\\\\").replace(/"/g, '\\"')
+import { formatJsxStringAttribute } from "./format-jsx-string-attribute"
 
 export const generateSymbolTsx = ({
   circuitJson,
@@ -206,14 +204,13 @@ export const generateSymbolTsx = ({
     const x = text.position?.x ?? 0
     const y = text.position?.y ?? 0
     const rawText = String(text.text ?? "")
-    const escapedText = escapeJsxText(rawText)
     const anchorAlignment = text.anchor ?? "center"
     const fontSize = text.font_size ?? 0.1
     const color = text.color ?? "black"
     const rotation = text.rotation ?? 0
 
     elementStrings.push(
-      `<schematictext text="${escapedText}" schX={${x}} schY={${y}} anchor="${anchorAlignment}" fontSize={${fontSize}} color="${color}" schRotation={${rotation}} />`,
+      `<schematictext text=${formatJsxStringAttribute(rawText)} schX={${x}} schY={${y}} anchor="${anchorAlignment}" fontSize={${fontSize}} color="${color}" schRotation={${rotation}} />`,
     )
   }
 
@@ -269,7 +266,7 @@ export const generateSymbolTsx = ({
         const text = cell.text ?? ""
 
         if (text.length > 0) {
-          props.push(`text="${escapeJsxText(text)}"`)
+          props.push(`text=${formatJsxStringAttribute(text)}`)
         }
         if (cell.horizontal_align) {
           props.push(`horizontalAlign="${cell.horizontal_align}"`)

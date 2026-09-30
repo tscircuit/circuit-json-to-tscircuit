@@ -1477,11 +1477,7 @@ test(
           <fabricationnotedimension from={{ x: 17.5768, y: 28.8036 }} to={{ x: 42.9768, y: 28.8036 }} text="1000.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={1.524} />
           <fabricationnotedimension from={{ x: 17.5768, y: 130.40359999999998 }} to={{ x: 17.576799999999995, y: 38.96360000000001 }} text="3600.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={2.54} />
           <fabricationnotedimension from={{ x: 121.71679999999999, y: 38.9636 }} to={{ x: 17.5768, y: 38.9636 }} text="4100.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={2.5654} />
-          <silkscreentext pcbX={37.0580412} pcbY={121.54144093999999} anchorAlignment="bottom_left" fontSize={0.508} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="USB2ANY
-          5: VBUS
-          6: GND
-          9: SCL
-          10:SDA" />
+          <silkscreentext pcbX={37.0580412} pcbY={121.54144093999999} anchorAlignment="bottom_left" fontSize={0.508} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text={"USB2ANY\\n5: VBUS\\n6: GND\\n9: SCL\\n10:SDA"} />
           <silkscreentext pcbX={115.31599999999999} pcbY={82.3976} anchorAlignment="bottom_left" fontSize={1.143} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="PPHV" />
           <silkscreentext pcbX={115.3169525} pcbY={86.1437825} anchorAlignment="bottom_left" fontSize={1.143} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="VOUT1" />
           <silkscreentext pcbX={115.31504749999999} pcbY={89.9664825} anchorAlignment="bottom_left" fontSize={1.143} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="AGND" />

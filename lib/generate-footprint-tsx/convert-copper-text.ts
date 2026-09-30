@@ -1,6 +1,6 @@
 import { su } from "@tscircuit/soup-util"
+import { formatJsxStringAttribute } from "../format-jsx-string-attribute"
 import type { FootprintElementConverter } from "./converter-types"
-import { escapeJsxText } from "./footprint-tsx-attribute-formatters/escape-jsx-text"
 
 export const convertCopperText: FootprintElementConverter = (circuitJson) => {
   const copperTexts = su(circuitJson).pcb_copper_text.list()
@@ -12,7 +12,7 @@ export const convertCopperText: FootprintElementConverter = (circuitJson) => {
       `pcbX={${anchorPosition.x}}`,
       `pcbY={${anchorPosition.y}}`,
       `anchorAlignment="${copperText.anchor_alignment ?? "center"}"`,
-      `text="${escapeJsxText(copperText.text)}"`,
+      `text=${formatJsxStringAttribute(copperText.text)}`,
     ]
 
     if (copperText.font !== undefined) {
