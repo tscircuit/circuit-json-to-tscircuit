@@ -1,0 +1,63 @@
+diff --git a/dist/index.js b/dist/index.js
+index 7e04d2fb91f647af361c47c82606234f3cf39219..d4d642932cb49815f2169795f9674afa1f79f1e6 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -892,6 +892,45 @@ var oppositeSide = (sideOrDir) => {
+ 
+ // lib/transform-soup-elements.ts
+ var getQuarterTurns = (angleRadians) => Math.round(angleRadians / (Math.PI / 2));
++var transformBrepRing = ({
++  isFlipped,
++  matrix,
++  ring
++}) => {
++  if (!isFlipped) {
++    return {
++      vertices: ring.vertices.map((vertex) => ({
++        ...applyToPoint(matrix, vertex),
++        ...vertex.bulge !== void 0 ? { bulge: vertex.bulge } : {}
++      }))
++    };
++  }
++  const vertexCount = ring.vertices.length;
++  return {
++    vertices: [...ring.vertices].reverse().map((vertex, reversedIndex) => {
++      const sourceVertexIndex = vertexCount - 1 - reversedIndex;
++      const precedingSourceVertex = ring.vertices[(sourceVertexIndex - 1 + vertexCount) % vertexCount];
++      return {
++        ...applyToPoint(matrix, vertex),
++        ...precedingSourceVertex?.bulge !== void 0 ? { bulge: -precedingSourceVertex.bulge } : {}
++      };
++    })
++  };
++};
++var transformBrepShape = ({
++  brepShape,
++  isFlipped,
++  matrix
++}) => ({
++  outer_ring: transformBrepRing({
++    isFlipped,
++    matrix,
++    ring: brepShape.outer_ring
++  }),
++  inner_rings: brepShape.inner_rings.map(
++    (ring) => transformBrepRing({ isFlipped, matrix, ring })
++  )
++});
+ var insertionDirectionToVec = (direction) => {
+   switch (direction) {
+     case "from_left":
+@@ -1018,6 +1057,12 @@ var transformPCBElement = (elm, matrix) => {
+     if (elm.anchor_position) {
+       elm.anchor_position = applyToPoint(matrix, elm.anchor_position);
+     }
++  } else if (elm.type === "pcb_silkscreen_graphic" || elm.type === "pcb_copper_pour" && elm.shape === "brep") {
++    elm.brep_shape = transformBrepShape({
++      brepShape: elm.brep_shape,
++      isFlipped,
++      matrix
++    });
+   } else if (elm.type === "pcb_courtyard_rect") {
+     elm.center = applyToPoint(matrix, elm.center);
+     elm.ccw_rotation = ((elm.ccw_rotation ?? 0) + rotationDegrees) % 360;

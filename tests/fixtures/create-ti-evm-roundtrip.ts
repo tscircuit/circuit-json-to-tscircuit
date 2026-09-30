@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto"
 import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 import { gunzipSync } from "node:zlib"
@@ -12,9 +13,25 @@ import { runTscircuitCode } from "tscircuit"
 
 interface TiEvmRoundtripResult {
   generatedTscircuit: string
+  generatedTscircuitSnapshot: string
   pcbComparisonSvg: string
   schematicComparisonSvg: string
 }
+
+const replaceSilkscreenGraphicGeometryWithHashes = (
+  generatedTscircuit: string,
+): string =>
+  generatedTscircuit.replace(
+    /<pcbsilkscreengraphic\b[^>]*\/>/g,
+    (graphicElement) => {
+      const geometryHash = createHash("sha256")
+        .update(graphicElement)
+        .digest("hex")
+        .slice(0, 12)
+
+      return `<pcbsilkscreengraphic geometryHash="${geometryHash}" />`
+    },
+  )
 
 export async function createTiEvmRoundtrip({
   componentName,
@@ -48,6 +65,8 @@ export async function createTiEvmRoundtrip({
 
   return {
     generatedTscircuit,
+    generatedTscircuitSnapshot:
+      replaceSilkscreenGraphicGeometryWithHashes(generatedTscircuit),
     pcbComparisonSvg: createComparisonSvg({
       fixtureName,
       kind: "PCB",

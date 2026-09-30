@@ -9,7 +9,7 @@ test(
       fixtureName: "lm5155evm-fly",
     })
 
-    expect(result.generatedTscircuit).toMatchInlineSnapshot(`
+    expect(result.generatedTscircuitSnapshot).toMatchInlineSnapshot(`
       "export default () => (
         <board pcbX={60.1218} pcbY={59.9186} width="85.09mm" height="41.91mm" outline={[{ x: 17.5768, y: 38.9636 }, { x: 17.5768, y: 80.8736 }, { x: 102.6668, y: 80.8736 }, { x: 102.6668, y: 38.9636 }, { x: 17.5768, y: 38.9636 }]} thickness="1.6mm" layers={2} material="fr4">
           <chip name="ZZ1" pcbX={-37.846000000000004} pcbY={40.766999999999996} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} footprint={<footprint>

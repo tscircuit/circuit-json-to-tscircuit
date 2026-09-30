@@ -9,7 +9,7 @@ test(
       fixtureName: "drv8307evm",
     })
 
-    expect(result.generatedTscircuit).toMatchInlineSnapshot(`
+    expect(result.generatedTscircuitSnapshot).toMatchInlineSnapshot(`
       "export default () => (
         <board pcbX={61.4426} pcbY={76.463652} width="87.7316mm" height="75.00010400000001mm" outline={[{ x: 17.5768, y: 38.9636 }, { x: 17.5768, y: 113.963704 }, { x: 105.30839999999999, y: 113.963704 }, { x: 105.30839999999999, y: 38.9636 }, { x: 17.5768, y: 38.9636 }]} thickness="1.6mm" layers={2} material="fr4">
           <chip name="R29" pcbX={17.0942} pcbY={11.267948000000004} pcbRotation="0deg" layer="top" noSchematicRepresentation pinLabels={{"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
@@ -544,7 +544,44 @@ test(
           <silkscreentext pcbX={1.7779999999999916} pcbY={-0.2539999999999907} anchorAlignment="center" fontSize={1.524} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="C2" />
           <courtyardoutline outline={[{"x":-1.4250009600000055,"y":-0.7999983999999927},{"x":1.4249984199999943,"y":-0.7999983999999927},{"x":1.4249984199999943,"y":0.8000009400000039},{"x":-1.4250009600000055,"y":0.8000009400000039}]} layer="top" />
                 </footprint>} />
-          <chip name="LOGO" pcbX={3.124200000000002} pcbY={-9.306051999999994} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} />
+          <chip name="LOGO" pcbX={3.124200000000002} pcbY={-9.306051999999994} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} footprint={<footprint>
+                  <pcbsilkscreengraphic geometryHash="9bdda940f28c" />
+          <pcbsilkscreengraphic geometryHash="618b6ec4b09f" />
+          <pcbsilkscreengraphic geometryHash="895ce69e6cbe" />
+          <pcbsilkscreengraphic geometryHash="90e21bad6a2b" />
+          <pcbsilkscreengraphic geometryHash="c3b60cfd3f94" />
+          <pcbsilkscreengraphic geometryHash="ba8e5408e7a3" />
+          <pcbsilkscreengraphic geometryHash="cdea60842495" />
+          <pcbsilkscreengraphic geometryHash="dbc2f45724fd" />
+          <pcbsilkscreengraphic geometryHash="709995378cbd" />
+          <pcbsilkscreengraphic geometryHash="afc229f178df" />
+          <pcbsilkscreengraphic geometryHash="d904c63cec96" />
+          <pcbsilkscreengraphic geometryHash="aad2d9a52ed8" />
+          <pcbsilkscreengraphic geometryHash="77e7a4fcf87b" />
+          <pcbsilkscreengraphic geometryHash="f0996ac55843" />
+          <pcbsilkscreengraphic geometryHash="58cb9016487e" />
+          <pcbsilkscreengraphic geometryHash="59399e41c6a0" />
+          <pcbsilkscreengraphic geometryHash="752aee4dd37d" />
+          <pcbsilkscreengraphic geometryHash="8f0de4f99dec" />
+          <pcbsilkscreengraphic geometryHash="67577c6a471b" />
+          <pcbsilkscreengraphic geometryHash="bf0d64a515bb" />
+          <pcbsilkscreengraphic geometryHash="c344587ecfd8" />
+          <pcbsilkscreengraphic geometryHash="dd43d07604f3" />
+          <pcbsilkscreengraphic geometryHash="e547913def75" />
+          <pcbsilkscreengraphic geometryHash="1a920068d2ee" />
+          <pcbsilkscreengraphic geometryHash="ec4c635c22b4" />
+          <pcbsilkscreengraphic geometryHash="4325e393cb42" />
+          <pcbsilkscreengraphic geometryHash="1b95845e55bd" />
+          <pcbsilkscreengraphic geometryHash="347065634939" />
+          <pcbsilkscreengraphic geometryHash="fe4f3736bf40" />
+          <pcbsilkscreengraphic geometryHash="e197792277bb" />
+          <pcbsilkscreengraphic geometryHash="e4579922767f" />
+          <pcbsilkscreengraphic geometryHash="0df6eefa07d2" />
+          <pcbsilkscreengraphic geometryHash="79764b7504d5" />
+          <pcbsilkscreengraphic geometryHash="377ba89f51d5" />
+          <pcbsilkscreengraphic geometryHash="94e198ffee5d" />
+          <pcbsilkscreengraphic geometryHash="e1e13477012a" />
+                </footprint>} />
           <chip name="U1" pcbX={4.899840339999997} pcbY={8.321946780000005} pcbRotation="270deg" layer="top" noSchematicRepresentation pinLabels={{"pin41":["41","pin41"],"pin40":["40","pin40"],"pin39":["39","pin39"],"pin38":["38","pin38"],"pin37":["37","pin37"],"pin36":["36","pin36"],"pin35":["35","pin35"],"pin34":["34","pin34"],"pin33":["33","pin33"],"pin32":["32","pin32"],"pin31":["31","pin31"],"pin30":["30","pin30"],"pin29":["29","pin29"],"pin28":["28","pin28"],"pin27":["27","pin27"],"pin26":["26","pin26"],"pin25":["25","pin25"],"pin24":["24","pin24"],"pin23":["23","pin23"],"pin22":["22","pin22"],"pin21":["21","pin21"],"pin20":["20","pin20"],"pin19":["19","pin19"],"pin18":["18","pin18"],"pin17":["17","pin17"],"pin16":["16","pin16"],"pin15":["15","pin15"],"pin14":["14","pin14"],"pin13":["13","pin13"],"pin12":["12","pin12"],"pin11":["11","pin11"],"pin10":["10","pin10"],"pin9":["9","pin9"],"pin8":["8","pin8"],"pin7":["7","pin7"],"pin6":["6","pin6"],"pin5":["5","pin5"],"pin4":["4","pin4"],"pin3":["3","pin3"],"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["41"]} pcbX="0mm" pcbY="0mm" layer="top" solderMaskMargin="0.06999986mm" width="2.89999928mm" height="2.89999928mm" ccwRotation={270} shape="rotated_rect" />
           <smtpad portHints={["40"]} pcbX="-2.250000579999991mm" pcbY="2.975000399999999mm" layer="top" solderMaskMargin="0.06999986mm" width="0.27999944mm" height="0.8500008399999999mm" radius="0.13999972mm" pcbRotation="270deg" shape="pill" />
