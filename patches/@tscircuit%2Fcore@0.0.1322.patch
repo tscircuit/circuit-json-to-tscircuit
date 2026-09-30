@@ -1,8 +1,149 @@
 diff --git a/dist/index.js b/dist/index.js
-index 6d63e56c658c619b3c86d25146afa91d34392e07..d1152770233342ddc668e4d3696e4b5edaf81d12 100644
+index 6d63e56c658c619b3c86d25146afa91d34392e07..e9cf6686c2fda4e4bb3cfe2aee748370f6b32dfe 100644
 --- a/dist/index.js
 +++ b/dist/index.js
-@@ -8583,8 +8583,10 @@ var SilkscreenText = class extends PrimitiveComponent2 {
+@@ -57,6 +57,7 @@ __export(components_exports, {
+   PcbNotePath: () => PcbNotePath,
+   PcbNoteRect: () => PcbNoteRect,
+   PcbNoteText: () => PcbNoteText,
++  PcbCopperPour: () => PcbCopperPour,
+   PcbTrace: () => PcbTrace,
+   PcbVia: () => PcbVia,
+   PinHeader: () => PinHeader,
+@@ -7200,6 +7201,132 @@ var PcbTrace = class extends PrimitiveComponent2 {
+   }
+ };
+ 
++// Temporary compiled copy of tscircuit/core#4250. Remove when that release is
++// available to this converter's runtime dependency.
++import { brep_shape, distance as copperPourDistance, layer_ref as copperPourLayerRef, point as copperPourPoint, rotation as copperPourRotation } from "circuit-json";
++import { applyToPoint as applyToCopperPourPoint, decomposeTSR as decomposeCopperPourTransform } from "transformation-matrix";
++var pcbCopperPourCommonProps = {
++  coveredWithSolderMask: z5.boolean().optional().default(true),
++  layer: copperPourLayerRef,
++  sourceNetId: z5.string().optional()
++};
++var pcbCopperPourProps = z5.discriminatedUnion("shape", [
++  z5.object({
++    ...pcbCopperPourCommonProps,
++    shape: z5.literal("rect"),
++    pcbX: copperPourDistance,
++    pcbY: copperPourDistance,
++    width: copperPourDistance,
++    height: copperPourDistance,
++    pcbRotation: copperPourRotation.optional()
++  }),
++  z5.object({
++    ...pcbCopperPourCommonProps,
++    shape: z5.literal("polygon"),
++    points: z5.array(copperPourPoint)
++  }),
++  z5.object({
++    ...pcbCopperPourCommonProps,
++    shape: z5.literal("brep"),
++    brepShape: brep_shape
++  })
++]);
++function transformCopperPourBrepRing({ isFlipped, parentTransform, ring }) {
++  if (!isFlipped) {
++    return {
++      vertices: ring.vertices.map((vertex) => ({
++        ...applyToCopperPourPoint(parentTransform, vertex),
++        ...vertex.bulge !== void 0 ? { bulge: vertex.bulge } : {}
++      }))
++    };
++  }
++  const vertexCount = ring.vertices.length;
++  return {
++    vertices: ring.vertices.toReversed().map((vertex, reversedIndex) => {
++      const sourceVertexIndex = vertexCount - 1 - reversedIndex;
++      const precedingSourceVertex = ring.vertices[(sourceVertexIndex - 1 + vertexCount) % vertexCount];
++      return {
++        ...applyToCopperPourPoint(parentTransform, vertex),
++        ...precedingSourceVertex?.bulge !== void 0 ? { bulge: -precedingSourceVertex.bulge } : {}
++      };
++    })
++  };
++}
++var PcbCopperPour = class extends PrimitiveComponent2 {
++  isPcbPrimitive = true;
++  get config() {
++    return {
++      componentName: "PcbCopperPour",
++      zodProps: pcbCopperPourProps
++    };
++  }
++  getPcbSize() {
++    return { width: 0, height: 0 };
++  }
++  doInitialPcbPrimitiveRender() {
++    if (this.root?.pcbDisabled) return;
++    const { db } = this.root;
++    const props = this._parsedProps;
++    const subcircuit = this.getSubcircuit();
++    const primitiveTransform = this._computePcbGlobalTransformBeforeLayout();
++    const { isFlipped, maybeFlipLayer } = this._getPcbPrimitiveFlippedHelpers();
++    const commonFields = {
++      covered_with_solder_mask: props.coveredWithSolderMask,
++      layer: maybeFlipLayer(props.layer),
++      pcb_group_id: this.getGroup()?.pcb_group_id ?? void 0,
++      source_net_id: props.sourceNetId,
++      subcircuit_id: subcircuit?.subcircuit_id ?? void 0
++    };
++    if (props.shape === "polygon") {
++      db.pcb_copper_pour.insert({
++        ...commonFields,
++        shape: "polygon",
++        points: props.points.map((point6) => applyToCopperPourPoint(primitiveTransform, point6))
++      });
++      return;
++    }
++    if (props.shape === "brep") {
++      db.pcb_copper_pour.insert({
++        ...commonFields,
++        shape: "brep",
++        brep_shape: {
++          outer_ring: transformCopperPourBrepRing({
++            isFlipped,
++            parentTransform: primitiveTransform,
++            ring: props.brepShape.outer_ring
++          }),
++          inner_rings: props.brepShape.inner_rings.map((ring) => transformCopperPourBrepRing({ isFlipped, parentTransform: primitiveTransform, ring }))
++        }
++      });
++      return;
++    }
++    if (isFlipped) {
++      const halfWidth = props.width / 2;
++      const halfHeight = props.height / 2;
++      db.pcb_copper_pour.insert({
++        ...commonFields,
++        shape: "polygon",
++        points: [
++          { x: -halfWidth, y: -halfHeight },
++          { x: halfWidth, y: -halfHeight },
++          { x: halfWidth, y: halfHeight },
++          { x: -halfWidth, y: halfHeight }
++        ].map((point6) => applyToCopperPourPoint(primitiveTransform, point6))
++      });
++      return;
++    }
++    const globalRotationDegrees = decomposeCopperPourTransform(primitiveTransform).rotation.angle * 180 / Math.PI;
++    db.pcb_copper_pour.insert({
++      ...commonFields,
++      shape: "rect",
++      center: applyToCopperPourPoint(primitiveTransform, { x: 0, y: 0 }),
++      width: props.width,
++      height: props.height,
++      rotation: globalRotationDegrees
++    });
++  }
++};
++
+ // lib/components/primitive-components/PcbVia.ts
+ import { viaProps } from "@tscircuit/props";
+ import {
+@@ -8583,8 +8710,10 @@ var SilkscreenText = class extends PrimitiveComponent2 {
      const { maybeFlipLayer, isFlipped } = this._getPcbPrimitiveFlippedHelpers();
      const subcircuit = this.getSubcircuit();
      let rotation4 = 0;
@@ -15,3 +156,11 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..d1152770233342ddc668e4d3696e4b5e
      } else {
        const globalTransform = this._computePcbGlobalTransformBeforeLayout();
        const decomposedTransform = decomposeTSR5(globalTransform);
+@@ -30537,6 +30666,7 @@ export {
+   PcbNotePath,
+   PcbNoteRect,
+   PcbNoteText,
++  PcbCopperPour,
+   PcbTrace,
+   PcbVia,
+   PinHeader,

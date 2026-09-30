@@ -7,6 +7,7 @@ import { convertFabrication } from "./generate-footprint-tsx/convert-fabrication
 import { convertHoles } from "./generate-footprint-tsx/convert-holes"
 import { convertKeepouts } from "./generate-footprint-tsx/convert-keepouts"
 import { convertNotes } from "./generate-footprint-tsx/convert-notes"
+import { convertPcbCopperPours } from "./generate-footprint-tsx/convert-pcb-copper-pours"
 import { convertPcbTraces } from "./generate-footprint-tsx/convert-pcb-traces"
 import { convertPcbVias } from "./generate-footprint-tsx/convert-pcb-vias"
 import { convertPlatedHoles } from "./generate-footprint-tsx/convert-plated-holes"
@@ -29,6 +30,7 @@ export const generateFootprintTsx = (
     convertCutouts,
     convertNotes,
     convertCourtyard,
+    convertPcbCopperPours,
     convertPcbTraces,
     convertPcbVias,
   ]
