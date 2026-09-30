@@ -14,8 +14,8 @@ test("test17 support pcb keepouts", async () => {
     export const Test17Component = (props: ChipProps) => (
       <chip
         footprint={<footprint>
-            <keepout shape="rect" pcbX="-1.5mm" pcbY="2mm" width="3.2mm" height="1.4mm" />
-    <keepout shape="circle" pcbX="2.5mm" pcbY="-1mm" radius="0.9mm" />
+            <keepout shape="rect" pcbX="-1.5mm" pcbY="2mm" width="3.2mm" height="1.4mm" layers={["top"]} />
+    <keepout shape="circle" pcbX="2.5mm" pcbY="-1mm" radius="0.9mm" layers={["top"]} />
           </footprint>}
         {...props}
       />
