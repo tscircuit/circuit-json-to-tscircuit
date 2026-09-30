@@ -1,12 +1,18 @@
-import type { AnyCircuitElement, PcbComponent } from "circuit-json"
+import type {
+  AnyCircuitElement,
+  PcbComponent,
+  SchematicComponent,
+} from "circuit-json"
 import { applyToPoint, inverse, translate } from "transformation-matrix"
 import { generateFootprintTsx } from "../../generate-footprint-tsx"
 import type { BoardConverterStage } from "../BoardConverterContext"
+import { getSchematicComponentsForPcbComponent } from "../get-schematic-components-for-pcb-component"
 import { localizePcbComponentElements } from "../localize-pcb-component-elements"
 
 type PinLabelKey = `pin${number}`
 type PinLabels = Partial<Record<PinLabelKey, string[]>>
 type SourceComponent = Extract<AnyCircuitElement, { type: "source_component" }>
+type SourceComponentId = NonNullable<SourceComponent["source_component_id"]>
 
 const getComponentFootprintTsx = ({
   circuitJson,
@@ -25,19 +31,28 @@ const getComponentFootprintTsx = ({
 
 const getPinLabels = ({
   circuitJson,
-  sourceComponent,
+  sourceComponents,
 }: {
   circuitJson: AnyCircuitElement[]
-  sourceComponent: SourceComponent | undefined
+  sourceComponents: SourceComponent[]
 }): PinLabels | undefined => {
-  if (!sourceComponent) return undefined
+  if (sourceComponents.length === 0) return undefined
 
   const pinLabels: PinLabels = {}
+  const sourceComponentIds = new Set<SourceComponentId>(
+    sourceComponents
+      .map((sourceComponent) => sourceComponent.source_component_id)
+      .filter(
+        (sourceComponentId): sourceComponentId is SourceComponentId =>
+          sourceComponentId !== undefined,
+      ),
+  )
 
   for (const sourcePort of circuitJson) {
     if (
       sourcePort.type !== "source_port" ||
-      sourcePort.source_component_id !== sourceComponent.source_component_id ||
+      sourcePort.source_component_id === undefined ||
+      !sourceComponentIds.has(sourcePort.source_component_id) ||
       sourcePort.pin_number === undefined
     ) {
       continue
@@ -48,10 +63,46 @@ const getPinLabels = ({
         alias.length > 0 && allAliases.indexOf(alias) === aliasIndex,
     )
 
-    pinLabels[`pin${sourcePort.pin_number}`] = aliases
+    const pinLabelKey: PinLabelKey = `pin${sourcePort.pin_number}`
+    pinLabels[pinLabelKey] = [
+      ...(pinLabels[pinLabelKey] ?? []),
+      ...aliases,
+    ].filter(
+      (alias, aliasIndex, allAliases) =>
+        allAliases.indexOf(alias) === aliasIndex,
+    )
   }
 
   return Object.keys(pinLabels).length > 0 ? pinLabels : undefined
+}
+
+const addNamedSchematicComponentProps = ({
+  componentProps,
+  schematicComponents,
+}: {
+  componentProps: string[]
+  schematicComponents: SchematicComponent[]
+}): void => {
+  const namedSchematicComponent = schematicComponents.find(
+    (schematicComponent) => schematicComponent.symbol_name !== undefined,
+  )
+
+  if (!namedSchematicComponent?.symbol_name) {
+    componentProps.push("noSchematicRepresentation")
+    return
+  }
+
+  componentProps.push(
+    `symbolName=${JSON.stringify(namedSchematicComponent.symbol_name)}`,
+    `schX={${namedSchematicComponent.center.x}}`,
+    `schY={${namedSchematicComponent.center.y}}`,
+  )
+
+  if (namedSchematicComponent.symbol_display_value !== undefined) {
+    componentProps.push(
+      `schDisplayValue=${JSON.stringify(namedSchematicComponent.symbol_display_value)}`,
+    )
+  }
 }
 
 export const convertPcbComponents: BoardConverterStage = ({
@@ -70,12 +121,31 @@ export const convertPcbComponents: BoardConverterStage = ({
         element.type === "source_component" &&
         element.source_component_id === pcbComponent.source_component_id,
     )
+    const schematicComponents = getSchematicComponentsForPcbComponent({
+      circuitJson,
+      pcbComponent,
+    })
+    const schematicSourceComponentIds = new Set<SourceComponentId>(
+      schematicComponents
+        .map((schematicComponent) => schematicComponent.source_component_id)
+        .filter(
+          (sourceComponentId): sourceComponentId is SourceComponentId =>
+            sourceComponentId !== undefined,
+        ),
+    )
+    const sourceComponents = circuitJson.filter(
+      (element): element is SourceComponent =>
+        element.type === "source_component" &&
+        (element.source_component_id === pcbComponent.source_component_id ||
+          (element.source_component_id !== undefined &&
+            schematicSourceComponentIds.has(element.source_component_id))),
+    )
     const componentPosition = applyToPoint(boardToLocal, pcbComponent.center)
     const footprintTsx = getComponentFootprintTsx({
       circuitJson,
       pcbComponent,
     })
-    const pinLabels = getPinLabels({ circuitJson, sourceComponent })
+    const pinLabels = getPinLabels({ circuitJson, sourceComponents })
     const componentName =
       sourceComponent?.name ?? `imported_component_${componentIndex + 1}`
     const componentProps = [
@@ -84,8 +154,9 @@ export const convertPcbComponents: BoardConverterStage = ({
       `pcbY={${componentPosition.y}}`,
       `pcbRotation="${pcbComponent.rotation}deg"`,
       `layer="${pcbComponent.layer}"`,
-      "noSchematicRepresentation",
     ]
+
+    addNamedSchematicComponentProps({ componentProps, schematicComponents })
 
     if (pinLabels) {
       componentProps.push(`pinLabels={${JSON.stringify(pinLabels)}}`)

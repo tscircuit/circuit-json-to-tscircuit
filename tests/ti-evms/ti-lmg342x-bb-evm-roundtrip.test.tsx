@@ -202,7 +202,7 @@ test(
                   <platedhole  portHints={["1"]} pcbX="0mm" pcbY="0mm" outerDiameter="7.999999239999999mm" holeDiameter="3.20000122mm" shape="circle" />
                 </footprint>} />
           <chip name="H14" pcbX={-23.958036919999998} pcbY={-27.088815519999997} pcbRotation="180deg" layer="bottom" noSchematicRepresentation obstructsWithinBounds={false} />
-          <chip name="L2" pcbX={42.66574652} pcbY={17.462500000000006} pcbRotation="180deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="L2" pcbX={42.66574652} pcbY={17.462500000000006} pcbRotation="180deg" layer="top" symbolName="inductor_right" schX={6.496062992125983} schY={-6.012042612320519} schDisplayValue="570uH" pinLabels={{"pin1":["1","pin1","S"],"pin2":["2","pin2","F"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <platedhole  portHints={["1"]} pcbX="-25.400000000000006mm" pcbY="0mm" holeShape="circle" padShape="rect" holeDiameter="1.44999964mm" rectPadWidth="2.20000068mm" rectPadHeight="2.20000068mm" rectBorderRadius="0.055000017mm" holeOffsetX="0mm" holeOffsetY="0mm" pcbRotation="180deg" shape="circular_hole_with_rect_pad" />
           <platedhole  portHints={["2"]} pcbX="25.400000000000006mm" pcbY="0mm" outerDiameter="2.20000068mm" holeDiameter="1.44999964mm" shape="circle" />
           <silkscreenpath route={[{"x":26.50000048749955,"y":2.9999969295054996},{"x":25.90724948949355,"y":6.326219736999704},{"x":24.898726447861947,"y":9.55081167788616},{"x":23.49061662712819,"y":12.62202294438751},{"x":21.705518053302427,"y":15.49056525581625},{"x":19.57207884985351,"y":18.11040286069162},{"x":17.124537478796825,"y":20.439491340697856},{"x":14.402173265331072,"y":22.44045235980164},{"x":11.4486760242699,"y":24.081173529828945},{"x":8.311444904807274,"y":25.33532376556913},{"x":5.040827706094774,"y":26.18277585873868},{"x":1.6893128714607712,"y":26.60992948913399},{"x":-1.6893128714607712,"y":26.60992948913399},{"x":-5.0408277060947455,"y":26.18277585873868},{"x":-8.311444904807303,"y":25.33532376556913},{"x":-11.4486760242699,"y":24.08117352982896},{"x":-14.4021732653311,"y":22.44045235980164},{"x":-17.12453747879684,"y":20.439491340697842},{"x":-19.57207884985351,"y":18.11040286069162},{"x":-21.705518053302427,"y":15.490565255816307},{"x":-23.49061662712819,"y":12.62202294438751},{"x":-24.898726447861947,"y":9.550811677886188},{"x":-25.90724948949358,"y":6.326219736999704},{"x":-26.500000487499562,"y":2.9999969295054996}]} strokeWidth={0.14999969999999999} />
@@ -250,7 +250,7 @@ test(
           <fabricationnotetext pcbX={-0.7249998200000007} pcbY={-0.14999970000000928} anchorAlignment="center" text="HVBUS1" font="tscircuit2024" fontSize={0.39999919999999994} color="#ec4899" />
           <silkscreentext pcbX={-3.174999999999997} pcbY={2.667152399999992} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="HVBUS1" />
                 </footprint>} />
-          <chip name="R30" pcbX={-23.165597559999995} pcbY={39.76204646000001} pcbRotation="0deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R30" pcbX={-23.165597559999995} pcbY={39.76204646000001} pcbRotation="0deg" layer="bottom" symbolName="boxresistor_up" schX={11.463640574339971} schY={-0.3821213524780003} schDisplayValue="3.3k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009400000039mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={270} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999983999999927mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={270} shape="rotated_rect" />
           <silkscreenline x1={-1.5235478800000095} y1={-0.6925564000000151} x2={-0.863599999999991} y2={-0.6925564000000151} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -263,7 +263,7 @@ test(
           <silkscreentext pcbX={1.3215975600000007} pcbY={-3.88454646000001} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R30" />
           <courtyardoutline outline={[{"x":1.5499994400000077,"y":0.7249998199999794},{"x":1.5499994400000077,"y":-0.7249998200000078},{"x":-1.5500019800000047,"y":-0.7249998200000078},{"x":-1.5500019800000047,"y":0.7249998199999794}]} layer="bottom" />
                 </footprint>} />
-          <chip name="R29" pcbX={-6.7309999999999945} pcbY={39.96829446000001} pcbRotation="0deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R29" pcbX={-6.7309999999999945} pcbY={39.96829446000001} pcbRotation="0deg" layer="bottom" symbolName="boxresistor_up" schX={11.463640574339971} schY={2.674849467345993} schDisplayValue="3.3k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009400000039mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={270} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984000000069mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={270} shape="rotated_rect" />
           <silkscreenline x1={-1.5235478799999953} y1={-0.6925564000000151} x2={-0.8636000000000053} y2={-0.6925564000000151} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -276,7 +276,7 @@ test(
           <silkscreentext pcbX={1.269999999999996} pcbY={-4.143248} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R29" />
           <courtyardoutline outline={[{"x":1.5499994399999935,"y":0.7249998199999936},{"x":1.5499994399999935,"y":-0.7249998200000078},{"x":-1.5500019800000047,"y":-0.7249998200000078},{"x":-1.5500019800000047,"y":0.7249998199999936}]} layer="bottom" />
                 </footprint>} />
-          <chip name="LS_OC" pcbX={-23.215599999999995} pcbY={39.76204646000001} pcbRotation="180deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="LS_OC" pcbX={-23.215599999999995} pcbY={39.76204646000001} pcbRotation="180deg" layer="top" symbolName="led_down" schX={11.520958777211673} schY={0.3821213524779985} schDisplayValue="Yellow" pinLabels={{"pin1":["1","pin1","A"],"pin2":["2","pin2","K"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="0.8249996199999998mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.8000009399999999mm" height="0.8000009399999999mm" ccwRotation={180} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="-0.8249996199999998mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.8000009399999999mm" height="0.8000009399999999mm" ccwRotation={180} shape="rotated_rect" />
           <silkscreenrect pcbX={-1.6625011200000017} pcbY={0.00015494000001581298} width={0.2750007199999954} height={1.600001879999992} layer="top" strokeWidth={0.2750007199999954} filled={true} />
@@ -286,7 +286,7 @@ test(
           <fabricationnotetext pcbX={-0.35459923999999887} pcbY={-0.2540000000000049} anchorAlignment="center" text="LS_OC" font="tscircuit2024" fontSize={0.508} color="#ec4899" />
           <silkscreentext pcbX={1.3850010399999917} pcbY={1.9795464600000088} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="LS_OC" />
                 </footprint>} />
-          <chip name="HS_OC" pcbX={-6.85799999999999} pcbY={39.76204646000001} pcbRotation="180deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="HS_OC" pcbX={-6.85799999999999} pcbY={39.76204646000001} pcbRotation="180deg" layer="top" symbolName="led_down" schX={11.520958777211673} schY={3.439092172301992} schDisplayValue="Yellow" pinLabels={{"pin1":["1","pin1","A"],"pin2":["2","pin2","K"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="0.824999620000014mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.8000009399999999mm" height="0.8000009399999999mm" ccwRotation={180} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="-0.8249996199999998mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.8000009399999999mm" height="0.8000009399999999mm" ccwRotation={180} shape="rotated_rect" />
           <silkscreenrect pcbX={-1.6625011199999875} pcbY={0.00015494000001581298} width={0.2750007199999954} height={1.600001879999992} layer="top" strokeWidth={0.2750007199999954} filled={true} />
@@ -296,7 +296,7 @@ test(
           <fabricationnotetext pcbX={-0.35459923999998466} pcbY={-0.2540000000000049} anchorAlignment="center" text="HS_OC" font="tscircuit2024" fontSize={0.508} color="#ec4899" />
           <silkscreentext pcbX={1.5659684200000044} pcbY={2.0319999999999965} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="HS_OC" />
                 </footprint>} />
-          <chip name="C21" pcbX={-23.050599059999996} pcbY={37.89880406000002} pcbRotation="0deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="C21" pcbX={-23.050599059999996} pcbY={37.89880406000002} pcbRotation="0deg" layer="bottom" symbolName="capacitor_down" schX={11.463640574339971} schY={-1.0826771653543314} schDisplayValue="39pF" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009400000039mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={270} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999983999999927mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={270} shape="rotated_rect" />
           <silkscreenline x1={-1.5235478799999953} y1={-0.6925564000000151} x2={-0.8636000000000053} y2={-0.6925564000000151} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -309,7 +309,7 @@ test(
           <silkscreentext pcbX={0.9081998599999963} pcbY={-3.534818940000008} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="C21" />
           <courtyardoutline outline={[{"x":1.5499994399999935,"y":0.7249998199999794},{"x":1.5499994399999935,"y":-0.7249998200000078},{"x":-1.5500019799999905,"y":-0.7249998200000078},{"x":-1.5500019799999905,"y":0.7249998199999794}]} layer="bottom" />
                 </footprint>} />
-          <chip name="C5" pcbX={-6.7309999999999945} pcbY={37.89880406000002} pcbRotation="0deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="C5" pcbX={-6.7309999999999945} pcbY={37.89880406000002} pcbRotation="0deg" layer="bottom" symbolName="capacitor_down" schX={11.463640574339971} schY={1.9742936544696619} schDisplayValue="39pF" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009400000039mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={270} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984000000069mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={270} shape="rotated_rect" />
           <silkscreenline x1={-1.5235478799999953} y1={-0.6925564000000151} x2={-0.8636000000000053} y2={-0.6925564000000151} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -322,7 +322,7 @@ test(
           <silkscreentext pcbX={0.8889999999999958} pcbY={-3.5037572800000163} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="C5" />
           <courtyardoutline outline={[{"x":1.5499994399999935,"y":0.7249998199999794},{"x":1.5499994399999935,"y":-0.7249998200000078},{"x":-1.5500019800000047,"y":-0.7249998200000078},{"x":-1.5500019800000047,"y":0.7249998199999794}]} layer="bottom" />
                 </footprint>} />
-          <chip name="R7" pcbX={-5.931001599999988} pcbY={8.5725762} pcbRotation="180deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R7" pcbX={-5.931001599999988} pcbY={8.5725762} pcbRotation="180deg" layer="bottom" symbolName="boxresistor_right" schX={3.5664659564613235} schY={3.184344603983325} schDisplayValue="100" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009399999897mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984000000069mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <silkscreenline x1={-0.863599999999991} y1={-0.6925564000000008} x2={-1.5235478799999953} y2={-0.6925564000000008} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -358,7 +358,7 @@ test(
           <fabricationnotetext pcbX={-1.524000000000001} pcbY={-0.5080000000000098} anchorAlignment="center" text="J14" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
           <silkscreentext pcbX={5.240591499999994} pcbY={-2.003247200000004} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="J14" />
                 </footprint>} />
-          <chip name="C25" pcbX={43.434} pcbY={-27.415500159999993} pcbRotation="270deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="C25" pcbX={43.434} pcbY={-27.415500159999993} pcbRotation="270deg" layer="bottom" symbolName="capacitor_polarized_down" schX={4.075961093098657} schY={-6.642542843909218} schDisplayValue="150uF" pinLabels={{"pin2":["2","pin2","-"],"pin1":["1","pin1","+"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <platedhole  portHints={["2"]} pcbX="5.000000160000006mm" pcbY="0mm" outerDiameter="2.99999908mm" holeDiameter="2.20000068mm" shape="circle" />
           <platedhole  portHints={["1"]} pcbX="-5.000000159999999mm" pcbY="0mm" holeShape="circle" padShape="rect" holeDiameter="2.20000068mm" rectPadWidth="2.99999908mm" rectPadHeight="2.99999908mm" rectBorderRadius="0.044999986199999994mm" holeOffsetX="0mm" holeOffsetY="0mm" pcbRotation="270deg" shape="circular_hole_with_rect_pad" />
           <silkscreenpath route={[{"x":0,"y":15.59999928000002},{"x":-2.036208504653942,"y":15.466539123591133},{"x":-4.037576917249609,"y":15.06844219464287},{"x":-5.969861269363335,"y":14.412520041982816},{"x":-7.79999964000001,"y":13.509995675498942},{"x":-9.496677854227812,"y":12.37631153732886},{"x":-11.03086527739326,"y":11.030865277393275},{"x":-12.37631153732886,"y":9.496677854227812},{"x":-13.509995675498956,"y":7.799999639999982},{"x":-14.412520041982802,"y":5.969861269363321},{"x":-15.06844219464287,"y":4.037576917249623},{"x":-15.466539123591147,"y":2.036208504653956},{"x":-15.599999279999992,"y":0},{"x":-15.466539123591147,"y":-2.0362085046539278},{"x":-15.06844219464287,"y":-4.037576917249595},{"x":-14.412520041982802,"y":-5.969861269363321},{"x":-13.509995675498956,"y":-7.799999639999982},{"x":-12.37631153732886,"y":-9.496677854227784},{"x":-11.03086527739326,"y":-11.030865277393247},{"x":-9.496677854227812,"y":-12.37631153732886},{"x":-7.79999964000001,"y":-13.509995675498942},{"x":-5.969861269363328,"y":-14.41252004198283},{"x":-4.037576917249609,"y":-15.06844219464287},{"x":-2.036208504653935,"y":-15.466539123591147},{"x":7.105427357601002e-15,"y":-15.59999928000002},{"x":2.036208504653949,"y":-15.466539123591147},{"x":4.037576917249609,"y":-15.06844219464287},{"x":5.969861269363321,"y":-14.41252004198283},{"x":7.79999964000001,"y":-13.509995675498942},{"x":9.49667785422782,"y":-12.37631153732886},{"x":11.030865277393268,"y":-11.030865277393247},{"x":12.376311537328867,"y":-9.496677854227812},{"x":13.50999567549895,"y":-7.79999964000001},{"x":14.412520041982809,"y":-5.969861269363321},{"x":15.068442194642863,"y":-4.037576917249595},{"x":15.46653912359114,"y":-2.0362085046539278},{"x":15.599999279999999,"y":0},{"x":15.46653912359114,"y":2.036208504653956},{"x":15.068442194642863,"y":4.037576917249623},{"x":14.412520041982802,"y":5.969861269363321},{"x":13.50999567549895,"y":7.799999639999982},{"x":12.37631153732886,"y":9.496677854227812},{"x":11.03086527739326,"y":11.030865277393275},{"x":9.496677854227812,"y":12.37631153732886},{"x":7.799999640000003,"y":13.509995675498942},{"x":5.969861269363321,"y":14.412520041982816},{"x":4.037576917249602,"y":15.06844219464287},{"x":2.036208504653949,"y":15.466539123591133},{"x":0,"y":15.59999928000002}]} strokeWidth={0.19999959999999997} layer="bottom" />
@@ -368,7 +368,7 @@ test(
           <silkscreentext pcbX={-16.891000000000005} pcbY={15.113} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="C25" />
                 </footprint>} />
           <chip name="SH-J4" pcbX={-46.989999999999995} pcbY={24.218900000000005} pcbRotation="90deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} />
-          <chip name="R28" pcbX={-50.152998499999995} pcbY={27.241500000000002} pcbRotation="0deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R28" pcbX={-50.152998499999995} pcbY={27.241500000000002} pcbRotation="0deg" layer="top" symbolName="boxresistor_right" schX={-5.604446503010653} schY={-3.821213524779991} schDisplayValue="33.2k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009399999968mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999983999999998mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <silkscreenline x1={-1.5235478800000024} y1={0.6925563999999866} x2={-0.8635999999999981} y2={0.6925563999999866} strokeWidth={0.17779999999999999} />
@@ -398,7 +398,7 @@ test(
           <fabricationnotetext pcbX={-1.524000000000001} pcbY={-0.5080000000000098} anchorAlignment="center" text="J12" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
           <silkscreentext pcbX={5.981001499999991} pcbY={-2.0319999999999965} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="J12" />
                 </footprint>} />
-          <chip name="C16" pcbX={-39.3579985} pcbY={26.4795} pcbRotation="270deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="C16" pcbX={-39.3579985} pcbY={26.4795} pcbRotation="270deg" layer="top" symbolName="capacitor_down" schX={-1.6558591940713292} schY={-3.5027790643816585} schDisplayValue="0.022uF" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009400000039mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.00000054mm" height="0.9500006400000001mm" shape="rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984000000069mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.00000054mm" height="0.9500006400000001mm" shape="rect" />
           <silkscreenline x1={-0.8636000000000053} y1={0.6925564000000008} x2={-1.5235478800000095} y2={0.6925564000000008} strokeWidth={0.17779999999999999} />
@@ -411,7 +411,7 @@ test(
           <silkscreentext pcbX={-1.9940016000000043} pcbY={0.4750003200000066} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="90deg" mirrored={false} layer="top" text="C16" />
           <courtyardoutline outline={[{"x":-1.5500019799999905,"y":-0.7249998199999936},{"x":-1.5500019799999905,"y":0.7249998200000078},{"x":1.5499994400000077,"y":0.7249998200000078},{"x":1.5499994400000077,"y":-0.7249998199999936}]} layer="top" />
                 </footprint>} />
-          <chip name="C15" pcbX={-50.152998499999995} pcbY={25.463499999999996} pcbRotation="0deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="C15" pcbX={-50.152998499999995} pcbY={25.463499999999996} pcbRotation="0deg" layer="top" symbolName="capacitor_down" schX={-9.170912459471978} schY={-3.5027790643816585} schDisplayValue="10uF" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009399999968mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999983999999998mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <silkscreenline x1={-1.5235478800000024} y1={0.6925564000000008} x2={-0.8635999999999981} y2={0.6925564000000008} strokeWidth={0.17779999999999999} />
@@ -424,7 +424,7 @@ test(
           <silkscreentext pcbX={-1.2820014999999998} pcbY={-2.228126099999983} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="C15" />
           <courtyardoutline outline={[{"x":-1.5500019800000047,"y":-0.7249998200000078},{"x":-1.5500019800000047,"y":0.7249998200000078},{"x":1.5499994400000006,"y":0.7249998200000078},{"x":1.5499994400000006,"y":-0.7249998200000078}]} layer="top" />
                 </footprint>} />
-          <chip name="U2" pcbX={3.867000140000002} pcbY={23.8125} pcbRotation="180deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin5":["5","pin5"],"pin6":["6","pin6"],"pin7":["7","pin7"],"pin8":["8","pin8"],"pin4":["4","pin4"],"pin3":["3","pin3"],"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="U2" pcbX={3.867000140000002} pcbY={23.8125} pcbRotation="180deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin5":["5","pin5","2A"],"pin6":["6","pin6","2B"],"pin7":["7","pin7","1Y"],"pin8":["8","pin8","VCC"],"pin4":["4","pin4","GND"],"pin3":["3","pin3","2Y"],"pin2":["2","pin2","1B"],"pin1":["1","pin1","1A"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["5"]} pcbX="1.9749998600000112mm" pcbY="0.9750018600000061mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.39999919999999994mm" height="1.05000044mm" radius="0.19999959999999997mm" pcbRotation="90deg" shape="pill" />
           <smtpad portHints={["6"]} pcbX="1.9749998600000112mm" pcbY="0.3250006199999973mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.39999919999999994mm" height="1.05000044mm" radius="0.19999959999999997mm" pcbRotation="90deg" shape="pill" />
           <smtpad portHints={["7"]} pcbX="1.9749998600000112mm" pcbY="-0.3249980799999861mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.39999919999999994mm" height="1.05000044mm" radius="0.19999959999999997mm" pcbRotation="90deg" shape="pill" />
@@ -441,7 +441,7 @@ test(
                 </footprint>} />
           <chip name="SH-J3" pcbX={-1.3030834999999854} pcbY={27.226094900000007} pcbRotation="270deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} />
           <chip name="SH-J2" pcbX={8.849299040000005} pcbY={27.209899860000007} pcbRotation="270deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} />
-          <chip name="R27" pcbX={-19.143002100000004} pcbY={39.96661806} pcbRotation="180deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R27" pcbX={-19.143002100000004} pcbY={39.96661806} pcbRotation="180deg" layer="bottom" symbolName="boxresistor_right" schX={4.203334877257989} schY={0} schDisplayValue="105k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009400000181mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999983999999927mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <silkscreenline x1={-0.8636000000000053} y1={-0.6925564000000008} x2={-1.5235478800000095} y2={-0.6925564000000008} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -454,7 +454,7 @@ test(
           <silkscreentext pcbX={-4.6650021000000095} pcbY={0.5331180600000067} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R27" />
           <courtyardoutline outline={[{"x":-1.5500019800000047,"y":0.7249998199999936},{"x":-1.5500019800000047,"y":-0.7249998199999936},{"x":1.5499994399999935,"y":-0.7249998199999936},{"x":1.5499994399999935,"y":0.7249998199999936}]} layer="bottom" />
                 </footprint>} />
-          <chip name="R8" pcbX={-2.4129949200000027} pcbY={39.96661806} pcbRotation="180deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R8" pcbX={-2.4129949200000027} pcbY={39.96661806} pcbRotation="180deg" layer="bottom" symbolName="boxresistor_right" schX={4.075961093098657} schY={1.9106067623899943} schDisplayValue="105k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009400000039mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999983999999927mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <silkscreenline x1={-0.8636000000000053} y1={-0.6925564000000008} x2={-1.5235478800000095} y2={-0.6925564000000008} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -479,7 +479,7 @@ test(
           <fabricationnotetext pcbX={-1.524000000000001} pcbY={-0.5079999999999956} anchorAlignment="center" text="J10" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
           <silkscreentext pcbX={-3.1813372999999956} pcbY={-1.2292990400000008} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="J10" />
                 </footprint>} />
-          <chip name="LS_FLT" pcbX={-26.644599999999997} pcbY={39.968441780000006} pcbRotation="180deg" layer="top" noSchematicRepresentation pinLabels={{"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="LS_FLT" pcbX={-26.644599999999997} pcbY={39.968441780000006} pcbRotation="180deg" layer="top" symbolName="led_down" schX={9.737725798981009} schY={0.3821213524779985} schDisplayValue="Red" pinLabels={{"pin2":["2","pin2","K"],"pin1":["1","pin1","A"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["2"]} pcbX="0.7500010400000008mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.8000009399999999mm" height="0.8000009399999999mm" ccwRotation={180} shape="rotated_rect" />
           <smtpad portHints={["1"]} pcbX="-0.7499985000000038mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.8000009399999999mm" height="0.8000009399999999mm" ccwRotation={180} shape="rotated_rect" />
           <silkscreenline x1={1.4499996400000015} y1={0.34999929999999324} x2={1.4499996400000015} y2={-0.3750005199999862} strokeWidth={0.24999949999999999} />
@@ -488,7 +488,7 @@ test(
           <fabricationnotetext pcbX={-0.7500010400000008} pcbY={-0.19999959999998396} anchorAlignment="center" text="LS_FLT" font="tscircuit2024" fontSize={0.3499993} color="#ec4899" />
           <silkscreentext pcbX={4.2814367} pcbY={2.199731440000008} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="LS_FLT" />
                 </footprint>} />
-          <chip name="C12" pcbX={-10.922005079999991} pcbY={37.89879389999999} pcbRotation="180deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="C12" pcbX={-10.922005079999991} pcbY={37.89879389999999} pcbRotation="180deg" layer="bottom" symbolName="capacitor_down" schX={9.68040759610931} schY={1.9742936544696619} schDisplayValue="39pF" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009399999897mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984000000069mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <silkscreenline x1={-0.863599999999991} y1={-0.6925564000000151} x2={-1.5235478799999953} y2={-0.6925564000000151} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -501,7 +501,7 @@ test(
           <silkscreentext pcbX={1.850971659999999} pcbY={0.4325569199999819} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="C12" />
           <courtyardoutline outline={[{"x":-1.5500019799999905,"y":0.7249998199999794},{"x":-1.5500019799999905,"y":-0.7249998200000078},{"x":1.5499994400000077,"y":-0.7249998200000078},{"x":1.5499994400000077,"y":0.7249998199999794}]} layer="bottom" />
                 </footprint>} />
-          <chip name="C3" pcbX={-19.143002100000004} pcbY={37.897127659999995} pcbRotation="180deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="C3" pcbX={-19.143002100000004} pcbY={37.897127659999995} pcbRotation="180deg" layer="bottom" symbolName="capacitor_down" schX={4.458082445576656} schY={0.19106067623899925} schDisplayValue="1600pF" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009400000181mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999983999999927mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <silkscreenline x1={-0.8636000000000053} y1={-0.6925564000000151} x2={-1.5235478800000095} y2={-0.6925564000000151} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -514,7 +514,7 @@ test(
           <silkscreentext pcbX={-0.8000009400000181} pcbY={1.9745223399999787} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="C3" />
           <courtyardoutline outline={[{"x":-1.5500019800000047,"y":0.7249998199999794},{"x":-1.5500019800000047,"y":-0.7249998200000078},{"x":1.5499994399999935,"y":-0.7249998200000078},{"x":1.5499994399999935,"y":0.7249998199999794}]} layer="bottom" />
                 </footprint>} />
-          <chip name="C2" pcbX={-2.4129949200000027} pcbY={37.897127659999995} pcbRotation="180deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="C2" pcbX={-2.4129949200000027} pcbY={37.897127659999995} pcbRotation="180deg" layer="bottom" symbolName="capacitor_up" schX={4.7128300138953225} schY={1.719546086150995} schDisplayValue="1600pF" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009400000039mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999983999999927mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <silkscreenline x1={-0.8636000000000053} y1={-0.6925564000000151} x2={-1.5235478800000095} y2={-0.6925564000000151} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -527,7 +527,7 @@ test(
           <silkscreentext pcbX={-0.8000009400000039} pcbY={3.503757279999988} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="C2" />
           <courtyardoutline outline={[{"x":-1.5500019800000047,"y":0.7249998199999794},{"x":-1.5500019800000047,"y":-0.7249998200000078},{"x":1.5499994399999935,"y":-0.7249998200000078},{"x":1.5499994399999935,"y":0.7249998199999794}]} layer="bottom" />
                 </footprint>} />
-          <chip name="C1" pcbX={3.974998400000004} pcbY={26.606499999999997} pcbRotation="180deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="C1" pcbX={3.974998400000004} pcbY={26.606499999999997} pcbRotation="180deg" layer="bottom" symbolName="capacitor_down" schX={-0.6368689207966653} schY={4.394395553496988} schDisplayValue="1uF" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009400000039mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984000000069mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <silkscreenline x1={-0.8636000000000053} y1={-0.6925564000000008} x2={-1.523547879999981} y2={-0.6925564000000008} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -600,7 +600,7 @@ test(
           <fabricationnotetext pcbX={-1.3969999999999914} pcbY={-0.3810000000000002} anchorAlignment="center" text="HS_FET_PWM" font="tscircuit2024" fontSize={0.762} color="#ec4899" />
           <silkscreentext pcbX={-12.197206999999977} pcbY={-0.30048707999999635} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="90deg" mirrored={false} layer="top" text="HS_FET_PWM" />
                 </footprint>} />
-          <chip name="C14" pcbX={-26.804602219999992} pcbY={37.898951380000014} pcbRotation="180deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="C14" pcbX={-26.804602219999992} pcbY={37.898951380000014} pcbRotation="180deg" layer="bottom" symbolName="capacitor_down" schX={9.68040759610931} schY={-1.0826771653543314} schDisplayValue="39pF" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009400000039mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984000000069mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <silkscreenline x1={-0.863599999999991} y1={-0.6925563999999866} x2={-1.5235478799999953} y2={-0.6925563999999866} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -613,7 +613,7 @@ test(
           <silkscreentext pcbX={-1.2776022199999915} pcbY={3.545451380000017} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="C14" />
           <courtyardoutline outline={[{"x":-1.5500019800000047,"y":0.7249998200000078},{"x":-1.5500019800000047,"y":-0.7249998199999794},{"x":1.5499994400000077,"y":-0.7249998199999794},{"x":1.5499994400000077,"y":0.7249998200000078}]} layer="bottom" />
                 </footprint>} />
-          <chip name="C9" pcbX={-28.74460596} pcbY={22.854498360000008} pcbRotation="0deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="C9" pcbX={-28.74460596} pcbY={22.854498360000008} pcbRotation="0deg" layer="bottom" symbolName="capacitor_down" schX={-10.57202408522464} schY={4.5217693376563215} schDisplayValue="1uF" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009399999897mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={270} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984000000069mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={270} shape="rotated_rect" />
           <silkscreenline x1={-1.5235478799999953} y1={-0.6925564000000151} x2={-0.863599999999991} y2={-0.6925564000000151} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -626,7 +626,7 @@ test(
           <silkscreentext pcbX={3.5986059600000004} pcbY={-0.5659983600000089} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="C9" />
           <courtyardoutline outline={[{"x":1.5499994400000077,"y":0.7249998199999794},{"x":1.5499994400000077,"y":-0.7249998200000078},{"x":-1.5500019800000047,"y":-0.7249998200000078},{"x":-1.5500019800000047,"y":0.7249998199999794}]} layer="bottom" />
                 </footprint>} />
-          <chip name="C8" pcbX={-5.01723659999999} pcbY={14.37114982} pcbRotation="90deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="C8" pcbX={-5.01723659999999} pcbY={14.37114982} pcbRotation="90deg" layer="bottom" symbolName="capacitor_up" schX={3.6938397406206587} schY={4.776516905974988} schDisplayValue="1uF" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009400000039mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.00000054mm" height="0.9500006400000001mm" shape="rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984000000069mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.00000054mm" height="0.9500006400000001mm" shape="rect" />
           <silkscreenline x1={-1.5235478799999953} y1={-0.6925564000000008} x2={-0.8636000000000053} y2={-0.6925564000000008} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -639,7 +639,7 @@ test(
           <silkscreentext pcbX={2.2479228600000027} pcbY={-0.8211642199999858} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="C8" />
           <courtyardoutline outline={[{"x":-1.5500019799999905,"y":0.7249998200000078},{"x":-1.5500019799999905,"y":-0.7249998199999936},{"x":1.5499994399999935,"y":-0.7249998199999936},{"x":1.5499994399999935,"y":0.7249998200000078}]} layer="bottom" />
                 </footprint>} />
-          <chip name="C6" pcbX={4.082247360000011} pcbY={14.452500939999993} pcbRotation="90deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="C6" pcbX={4.082247360000011} pcbY={14.452500939999993} pcbRotation="90deg" layer="bottom" symbolName="capacitor_up" schX={3.6938397406206587} schY={0.955303381194998} schDisplayValue="1uF" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009399999897mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.00000054mm" height="0.9500006400000001mm" shape="rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984000000069mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.00000054mm" height="0.9500006400000001mm" shape="rect" />
           <silkscreenline x1={-1.5235478799999953} y1={-0.6925563999999866} x2={-0.863599999999991} y2={-0.6925563999999866} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -702,7 +702,7 @@ test(
           <fabricationnotetext pcbX={-1.524000000000001} pcbY={-0.5079999999999956} anchorAlignment="center" text="J2" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
           <silkscreentext pcbX={7.112000000000009} pcbY={2.741546459999995} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="J2" />
                 </footprint>} />
-          <chip name="HS_FLT" pcbX={-10.921999999999997} pcbY={39.968441780000006} pcbRotation="180deg" layer="top" noSchematicRepresentation pinLabels={{"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="HS_FLT" pcbX={-10.921999999999997} pcbY={39.968441780000006} pcbRotation="180deg" layer="top" symbolName="led_down" schX={9.737725798981009} schY={3.439092172301992} schDisplayValue="Red" pinLabels={{"pin2":["2","pin2","K"],"pin1":["1","pin1","A"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["2"]} pcbX="0.7500010400000008mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.8000009399999999mm" height="0.8000009399999999mm" ccwRotation={180} shape="rotated_rect" />
           <smtpad portHints={["1"]} pcbX="-0.7499985000000038mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.8000009399999999mm" height="0.8000009399999999mm" ccwRotation={180} shape="rotated_rect" />
           <silkscreenline x1={1.4499996400000015} y1={0.34999929999999324} x2={1.4499996400000015} y2={-0.3750005199999862} strokeWidth={0.24999949999999999} />
@@ -711,7 +711,7 @@ test(
           <fabricationnotetext pcbX={-0.7500010400000008} pcbY={-0.19999959999998396} anchorAlignment="center" text="HS_FLT" font="tscircuit2024" fontSize={0.3499993} color="#ec4899" />
           <silkscreentext pcbX={4.1910000000000025} pcbY={2.238395319999995} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="HS_FLT" />
                 </footprint>} />
-          <chip name="U5" pcbX={-33.7141185} pcbY={19.240499999999997} pcbRotation="0deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"],"pin3":["3","pin3"],"pin4":["4","pin4"],"pin8":["8","pin8"],"pin7":["7","pin7"],"pin6":["6","pin6"],"pin5":["5","pin5"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="U5" pcbX={-33.7141185} pcbY={19.240499999999997} pcbRotation="0deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1","1A"],"pin2":["2","pin2","3Y"],"pin3":["3","pin3","2A"],"pin4":["4","pin4","GND"],"pin8":["8","pin8","VCC"],"pin7":["7","pin7","1Y"],"pin6":["6","pin6","3A"],"pin5":["5","pin5","2Y"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-1.5999993399999894mm" pcbY="-0.7500010399999866mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.29999939999999997mm" height="0.8000009399999999mm" radius="0.14999969999999999mm" pcbRotation="270deg" shape="pill" />
           <smtpad portHints={["2"]} pcbX="-1.5999993399999894mm" pcbY="-0.25000203999999826mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.29999939999999997mm" height="0.8000009399999999mm" radius="0.14999969999999999mm" pcbRotation="270deg" shape="pill" />
           <smtpad portHints={["3"]} pcbX="-1.5999993399999894mm" pcbY="0.24999950000000126mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.29999939999999997mm" height="0.8000009399999999mm" radius="0.14999969999999999mm" pcbRotation="270deg" shape="pill" />
@@ -726,7 +726,7 @@ test(
           <silkscreentext pcbX={0.9331198000000143} pcbY={1.524000000000001} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="U5" />
           <courtyardoutline outline={[{"x":2.224999359999998,"y":1.2999999399999922},{"x":2.224999359999998,"y":-1.2999999399999922},{"x":-2.225001899999995,"y":-1.2999999399999922},{"x":-2.225001899999995,"y":1.2999999399999922}]} layer="bottom" />
                 </footprint>} />
-          <chip name="U4" pcbX={-45.707998499999995} pcbY={36.00450000000001} pcbRotation="90deg" layer="top" noSchematicRepresentation pinLabels={{"pin8":["8","pin8"],"pin7":["7","pin7"],"pin6":["6","pin6"],"pin5":["5","pin5"],"pin4":["4","pin4"],"pin3":["3","pin3"],"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="U4" pcbX={-45.707998499999995} pcbY={36.00450000000001} pcbRotation="90deg" layer="top" noSchematicRepresentation pinLabels={{"pin8":["8","pin8","EP"],"pin7":["7","pin7","VOUT"],"pin6":["6","pin6","FB"],"pin5":["5","pin5","SS"],"pin4":["4","pin4","GND"],"pin3":["3","pin3","EN"],"pin2":["2","pin2","RON"],"pin1":["1","pin1","VIN"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["8"]} pcbX="2.2800005199999873mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" cornerRadius="0.053499994599999996mm" width="5.349999459999999mm" height="8.5400007mm" ccwRotation={180} shape="rotated_rect" />
           <smtpad portHints={["7"]} pcbX="-5.3499994600000065mm" pcbY="-3.809999999999995mm" layer="top" solderMaskMargin="0.04999989999999999mm" cornerRadius="0.048950041799999996mm" width="0.89000076mm" height="2.41000026mm" ccwRotation={180} shape="rotated_rect" />
           <smtpad portHints={["6"]} pcbX="-5.3499994600000065mm" pcbY="-2.539999999999999mm" layer="top" solderMaskMargin="0.04999989999999999mm" cornerRadius="0.048950041799999996mm" width="0.89000076mm" height="2.41000026mm" ccwRotation={180} shape="rotated_rect" />
@@ -741,7 +741,7 @@ test(
           <silkscreentext pcbX={-4.230862760000008} pcbY={-5.625000180000001} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="U4" />
           <courtyardoutline outline={[{"x":-6.655000659999999,"y":-5.3499994600000065},{"x":7.69999983999999,"y":-5.3499994600000065},{"x":7.69999983999999,"y":5.349999459999999},{"x":-6.655000659999999,"y":5.349999459999999}]} layer="top" />
                 </footprint>} />
-          <chip name="U3" pcbX={-28.74460341999999} pcbY={19.240499999999997} pcbRotation="0deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"],"pin3":["3","pin3"],"pin4":["4","pin4"],"pin8":["8","pin8"],"pin7":["7","pin7"],"pin6":["6","pin6"],"pin5":["5","pin5"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="U3" pcbX={-28.74460341999999} pcbY={19.240499999999997} pcbRotation="0deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1","1A"],"pin2":["2","pin2","3Y"],"pin3":["3","pin3","2A"],"pin4":["4","pin4","GND"],"pin8":["8","pin8","VCC"],"pin7":["7","pin7","1Y"],"pin6":["6","pin6","3A"],"pin5":["5","pin5","2Y"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-1.5999993400000108mm" pcbY="-0.7500010399999866mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.29999939999999997mm" height="0.8000009399999999mm" radius="0.14999969999999999mm" pcbRotation="270deg" shape="pill" />
           <smtpad portHints={["2"]} pcbX="-1.5999993400000108mm" pcbY="-0.25000203999999826mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.29999939999999997mm" height="0.8000009399999999mm" radius="0.14999969999999999mm" pcbRotation="270deg" shape="pill" />
           <smtpad portHints={["3"]} pcbX="-1.5999993400000108mm" pcbY="0.24999950000000126mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.29999939999999997mm" height="0.8000009399999999mm" radius="0.14999969999999999mm" pcbRotation="270deg" shape="pill" />
@@ -756,7 +756,7 @@ test(
           <silkscreentext pcbX={0.8046034199999923} pcbY={1.524000000000001} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="U3" />
           <courtyardoutline outline={[{"x":2.224999359999998,"y":1.2999999399999922},{"x":2.224999359999998,"y":-1.2999999399999922},{"x":-2.2250019000000094,"y":-1.2999999399999922},{"x":-2.2250019000000094,"y":1.2999999399999922}]} layer="bottom" />
                 </footprint>} />
-          <chip name="U1" pcbX={3.867000140000002} pcbY={29.35950186000001} pcbRotation="180deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin5":["5","pin5"],"pin6":["6","pin6"],"pin7":["7","pin7"],"pin8":["8","pin8"],"pin4":["4","pin4"],"pin3":["3","pin3"],"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="U1" pcbX={3.867000140000002} pcbY={29.35950186000001} pcbRotation="180deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin5":["5","pin5","2A"],"pin6":["6","pin6","2B"],"pin7":["7","pin7","1Y"],"pin8":["8","pin8","VCC"],"pin4":["4","pin4","GND"],"pin3":["3","pin3","2Y"],"pin2":["2","pin2","1B"],"pin1":["1","pin1","1A"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["5"]} pcbX="1.9749998600000112mm" pcbY="0.9750018600000061mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.39999919999999994mm" height="1.05000044mm" radius="0.19999959999999997mm" pcbRotation="90deg" shape="pill" />
           <smtpad portHints={["6"]} pcbX="1.9749998600000112mm" pcbY="0.3250006199999973mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.39999919999999994mm" height="1.05000044mm" radius="0.19999959999999997mm" pcbRotation="90deg" shape="pill" />
           <smtpad portHints={["7"]} pcbX="1.9749998600000112mm" pcbY="-0.3249980799999861mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.39999919999999994mm" height="1.05000044mm" radius="0.19999959999999997mm" pcbRotation="90deg" shape="pill" />
@@ -772,7 +772,7 @@ test(
           <courtyardoutline outline={[{"x":-2.725000900000012,"y":-1.8499988399999978},{"x":2.7250008999999977,"y":-1.8499988399999978},{"x":2.7250008999999977,"y":1.850001380000009},{"x":-2.725000900000012,"y":1.850001380000009}]} layer="bottom" />
                 </footprint>} />
           <chip name="SH-J1" pcbX={-14.858999999999995} pcbY={29.058910639999993} pcbRotation="90deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} />
-          <chip name="R26" pcbX={-42.1519985} pcbY={25.590500000000006} pcbRotation="0deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R26" pcbX={-42.1519985} pcbY={25.590500000000006} pcbRotation="0deg" layer="top" symbolName="boxresistor_up" schX={-2.165354330708661} schY={-4.330708661417323} schDisplayValue="1.18k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009399999968mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999983999999998mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <silkscreenline x1={-1.5235478800000024} y1={0.6925563999999866} x2={-0.8635999999999981} y2={0.6925563999999866} strokeWidth={0.17779999999999999} />
@@ -785,7 +785,7 @@ test(
           <silkscreentext pcbX={-1.2700000000000031} pcbY={-3.683000000000007} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="R26" />
           <courtyardoutline outline={[{"x":-1.5500019799999976,"y":-0.7249998200000078},{"x":-1.5500019799999976,"y":0.7249998200000078},{"x":1.5499994400000006,"y":0.7249998200000078},{"x":1.5499994400000006,"y":-0.7249998200000078}]} layer="top" />
                 </footprint>} />
-          <chip name="R25" pcbX={-42.1519985} pcbY={27.368499999999997} pcbRotation="0deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R25" pcbX={-42.1519985} pcbY={27.368499999999997} pcbRotation="0deg" layer="top" symbolName="boxresistor_up" schX={-2.165354330708661} schY={-3.439092172301992} schDisplayValue="6.20k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009399999968mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999983999999998mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <silkscreenline x1={-1.5235478800000024} y1={0.6925564000000008} x2={-0.8635999999999981} y2={0.6925564000000008} strokeWidth={0.17779999999999999} />
@@ -798,7 +798,7 @@ test(
           <silkscreentext pcbX={-1.2700000000000031} pcbY={-3.9369999999999976} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="R25" />
           <courtyardoutline outline={[{"x":-1.5500019799999976,"y":-0.7249998200000078},{"x":-1.5500019799999976,"y":0.7249998200000078},{"x":1.5499994400000006,"y":0.7249998200000078},{"x":1.5499994400000006,"y":-0.7249998200000078}]} layer="top" />
                 </footprint>} />
-          <chip name="R22" pcbX={1.7780000000000058} pcbY={33.8455} pcbRotation="90deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R22" pcbX={1.7780000000000058} pcbY={33.8455} pcbRotation="90deg" layer="bottom" symbolName="boxresistor_up" schX={-2.92959703566466} schY={0.3821213524779985} schDisplayValue="100k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009400000039mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.00000054mm" height="0.9500006400000001mm" shape="rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984000000069mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.00000054mm" height="0.9500006400000001mm" shape="rect" />
           <silkscreenline x1={-1.5235478800000095} y1={-0.6925564000000008} x2={-0.8636000000000053} y2={-0.6925564000000008} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -811,7 +811,7 @@ test(
           <silkscreentext pcbX={1.9151777800000076} pcbY={-1.269999999999996} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R22" />
           <courtyardoutline outline={[{"x":-1.5500019799999905,"y":0.7249998199999936},{"x":-1.5500019799999905,"y":-0.7249998199999936},{"x":1.5499994400000077,"y":-0.7249998199999936},{"x":1.5499994400000077,"y":0.7249998199999936}]} layer="bottom" />
                 </footprint>} />
-          <chip name="R21" pcbX={5.405798179999991} pcbY={6.032499999999999} pcbRotation="0deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R21" pcbX={5.405798179999991} pcbY={6.032499999999999} pcbRotation="0deg" layer="bottom" symbolName="boxresistor_right" schX={3.5664659564613235} schY={-1.2737378415933307} schDisplayValue="100" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009399999897mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={270} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984000000069mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={270} shape="rotated_rect" />
           <silkscreenline x1={-1.523547879999981} y1={-0.6925564000000008} x2={-0.863599999999991} y2={-0.6925564000000008} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -824,7 +824,7 @@ test(
           <silkscreentext pcbX={4.2975885600000225} pcbY={-0.5079999999999956} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R21" />
           <courtyardoutline outline={[{"x":1.5499994400000077,"y":0.7249998199999936},{"x":1.5499994400000077,"y":-0.7249998199999936},{"x":-1.5500019799999905,"y":-0.7249998199999936},{"x":-1.5500019799999905,"y":0.7249998199999936}]} layer="bottom" />
                 </footprint>} />
-          <chip name="R20" pcbX={-67.76599604} pcbY={16.573499999999996} pcbRotation="90deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R20" pcbX={-67.76599604} pcbY={16.573499999999996} pcbRotation="90deg" layer="bottom" symbolName="boxresistor_up" schX={11.591014358499306} schY={-5.85919407132932} schDisplayValue="30k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-1.4499996400000015mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.29999994mm" height="1.8499988399999998mm" shape="rect" />
           <smtpad portHints={["2"]} pcbX="1.4499996400000015mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.29999994mm" height="1.8499988399999998mm" shape="rect" />
           <silkscreenline x1={-2.400000279999986} y1={1.2100001199999966} x2={-1.4999995399999904} y2={1.2100001199999966} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -837,7 +837,7 @@ test(
           <silkscreentext pcbX={2.794000000000011} pcbY={-1.2179960400000027} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R20" />
           <courtyardoutline outline={[{"x":-2.350000379999983,"y":1.1750014599999972},{"x":-2.350000379999983,"y":-1.1749989200000002},{"x":2.3500003799999973,"y":-1.1749989200000002},{"x":2.3500003799999973,"y":1.1750014599999972}]} layer="bottom" />
                 </footprint>} />
-          <chip name="R19" pcbX={-70.99499644} pcbY={5.521055759999996} pcbRotation="90deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R19" pcbX={-70.99499644} pcbY={5.521055759999996} pcbRotation="90deg" layer="bottom" symbolName="boxresistor_up" schX={11.208893006021308} schY={-5.85919407132932} schDisplayValue="30k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-1.4499996400000015mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.29999994mm" height="1.8499988399999998mm" shape="rect" />
           <smtpad portHints={["2"]} pcbX="1.4499996400000015mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.29999994mm" height="1.8499988399999998mm" shape="rect" />
           <silkscreenline x1={-2.400000279999986} y1={1.2100001200000001} x2={-1.4999995399999904} y2={1.2100001200000001} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -850,7 +850,7 @@ test(
           <silkscreentext pcbX={-7.061890879999993} pcbY={-1.2640005199999997} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R19" />
           <courtyardoutline outline={[{"x":-2.3500003799999973,"y":1.1750014600000007},{"x":-2.3500003799999973,"y":-1.1749989200000002},{"x":2.3500003800000115,"y":-1.1749989200000002},{"x":2.3500003800000115,"y":1.1750014600000007}]} layer="bottom" />
                 </footprint>} />
-          <chip name="R18" pcbX={-74.16999643999999} pcbY={8.459053440000005} pcbRotation="90deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R18" pcbX={-74.16999643999999} pcbY={8.459053440000005} pcbRotation="90deg" layer="bottom" symbolName="boxresistor_up" schX={10.826771653543306} schY={-5.85919407132932} schDisplayValue="30k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-1.4499996400000015mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.29999994mm" height="1.8499988399999998mm" shape="rect" />
           <smtpad portHints={["2"]} pcbX="1.4499996399999873mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.29999994mm" height="1.8499988399999998mm" shape="rect" />
           <silkscreenline x1={-2.4000002800000004} y1={1.2100001200000001} x2={-1.4999995400000046} y2={1.2100001200000001} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -863,7 +863,7 @@ test(
           <silkscreentext pcbX={-7.061890879999993} pcbY={-1.2700000000000031} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R18" />
           <courtyardoutline outline={[{"x":-2.3500003800000115,"y":1.1750014599999972},{"x":-2.3500003800000115,"y":-1.1749989200000002},{"x":2.3500003799999973,"y":-1.1749989200000002},{"x":2.3500003799999973,"y":1.1750014599999972}]} layer="bottom" />
                 </footprint>} />
-          <chip name="R17" pcbX={-77.34499643999999} pcbY={16.570055760000002} pcbRotation="90deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R17" pcbX={-77.34499643999999} pcbY={16.570055760000002} pcbRotation="90deg" layer="bottom" symbolName="boxresistor_up" schX={10.444650301065307} schY={-5.85919407132932} schDisplayValue="30k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-1.4499996400000015mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.29999994mm" height="1.8499988399999998mm" shape="rect" />
           <smtpad portHints={["2"]} pcbX="1.4499996400000015mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.29999994mm" height="1.8499988399999998mm" shape="rect" />
           <silkscreenline x1={-2.4000002800000004} y1={1.2100001200000001} x2={-1.4999995400000046} y2={1.2100001200000001} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -876,7 +876,7 @@ test(
           <silkscreentext pcbX={-14.859000000000009} pcbY={-1.1050016000000014} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R17" />
           <courtyardoutline outline={[{"x":-2.3500003799999973,"y":1.1750014599999972},{"x":-2.3500003799999973,"y":-1.1749989200000002},{"x":2.3500003800000115,"y":-1.1749989200000002},{"x":2.3500003800000115,"y":1.1750014599999972}]} layer="bottom" />
                 </footprint>} />
-          <chip name="R16" pcbX={-77.34499643999999} pcbY={11.109055760000004} pcbRotation="270deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R16" pcbX={-77.34499643999999} pcbY={11.109055760000004} pcbRotation="270deg" layer="bottom" symbolName="boxresistor_up" schX={10.062528948587309} schY={-5.85919407132932} schDisplayValue="30k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-1.4499996400000015mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.8499988399999998mm" height="1.29999994mm" ccwRotation={180} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="1.4499996400000015mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.8499988399999998mm" height="1.29999994mm" ccwRotation={180} shape="rotated_rect" />
           <silkscreenline x1={-1.4999995399999904} y1={1.2100001200000037} x2={-2.4000002800000004} y2={1.2100001200000037} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -889,7 +889,7 @@ test(
           <silkscreentext pcbX={11.023945439999991} pcbY={1.105001600000005} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R16" />
           <courtyardoutline outline={[{"x":2.3500003799999973,"y":1.1750014600000007},{"x":2.3500003799999973,"y":-1.1749989199999966},{"x":-2.3500003799999973,"y":-1.1749989199999966},{"x":-2.3500003799999973,"y":1.1750014600000007}]} layer="bottom" />
                 </footprint>} />
-          <chip name="R15" pcbX={-23.367999999999995} pcbY={31.803500020000016} pcbRotation="90deg" layer="top" noSchematicRepresentation pinLabels={{"pin2":["2","pin2"],"pin3":["3","pin3"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R15" pcbX={-23.367999999999995} pcbY={31.803500020000016} pcbRotation="90deg" layer="top" noSchematicRepresentation pinLabels={{"pin2":["2","pin2","WIPER"],"pin3":["3","pin3","CW"],"pin1":["1","pin1","CCW"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["2"]} pcbX="2.5499999799999813mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.89999874mm" height="2.00000108mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["3"]} pcbX="-2.549999980000024mm" pcbY="-1.2500000400000033mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.89999874mm" height="1.29999994mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["1"]} pcbX="-2.549999980000024mm" pcbY="1.250000039999989mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.89999874mm" height="1.29999994mm" ccwRotation={90} shape="rotated_rect" />
@@ -903,7 +903,7 @@ test(
           <fabricationnotetext pcbX={-1.3999997400000268} pcbY={0.4999989999999883} anchorAlignment="center" text="R15" font="tscircuit2024" fontSize={0.762} color="#ec4899" />
           <silkscreentext pcbX={4.022001099999983} pcbY={1.1430000000000007} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="R15" />
                 </footprint>} />
-          <chip name="R14" pcbX={-70.99499644} pcbY={16.570055760000002} pcbRotation="270deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R14" pcbX={-70.99499644} pcbY={16.570055760000002} pcbRotation="270deg" layer="bottom" symbolName="boxresistor_up" schX={11.591014358499306} schY={-5.094951366373321} schDisplayValue="30k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-1.4499996400000015mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.8499988399999998mm" height="1.29999994mm" ccwRotation={180} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="1.4499996400000015mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.8499988399999998mm" height="1.29999994mm" ccwRotation={180} shape="rotated_rect" />
           <silkscreenline x1={-1.4999995400000046} y1={1.2100001199999966} x2={-2.4000002800000004} y2={1.2100001199999966} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -916,7 +916,7 @@ test(
           <silkscreentext pcbX={14.859000000000009} pcbY={1.2640005199999962} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R14" />
           <courtyardoutline outline={[{"x":2.3500003799999973,"y":1.1750014600000007},{"x":2.3500003799999973,"y":-1.1749989200000002},{"x":-2.3500003800000115,"y":-1.1749989200000002},{"x":-2.3500003800000115,"y":1.1750014600000007}]} layer="bottom" />
                 </footprint>} />
-          <chip name="R13" pcbX={-70.99499644} pcbY={11.109055760000004} pcbRotation="90deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R13" pcbX={-70.99499644} pcbY={11.109055760000004} pcbRotation="90deg" layer="bottom" symbolName="boxresistor_up" schX={11.208893006021308} schY={-5.094951366373321} schDisplayValue="30k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-1.4499996400000015mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.29999994mm" height="1.8499988399999998mm" shape="rect" />
           <smtpad portHints={["2"]} pcbX="1.4499996400000015mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.29999994mm" height="1.8499988399999998mm" shape="rect" />
           <silkscreenline x1={-2.4000002800000004} y1={1.2100001200000001} x2={-1.4999995400000046} y2={1.2100001200000001} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -929,7 +929,7 @@ test(
           <silkscreentext pcbX={-11.023945439999991} pcbY={-1.2640005199999997} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R13" />
           <courtyardoutline outline={[{"x":-2.3500003799999973,"y":1.1750014600000007},{"x":-2.3500003799999973,"y":-1.1749989200000002},{"x":2.3500003799999973,"y":-1.1749989200000002},{"x":2.3500003799999973,"y":1.1750014600000007}]} layer="bottom" />
                 </footprint>} />
-          <chip name="R12" pcbX={-74.16999643999999} pcbY={14.047053440000013} pcbRotation="90deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R12" pcbX={-74.16999643999999} pcbY={14.047053440000013} pcbRotation="90deg" layer="bottom" symbolName="boxresistor_up" schX={10.826771653543306} schY={-5.094951366373321} schDisplayValue="30k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-1.4499996400000015mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.29999994mm" height="1.8499988399999998mm" shape="rect" />
           <smtpad portHints={["2"]} pcbX="1.4499996399999873mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.29999994mm" height="1.8499988399999998mm" shape="rect" />
           <silkscreenline x1={-2.4000002800000146} y1={1.2100001200000001} x2={-1.4999995400000046} y2={1.2100001200000001} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -942,7 +942,7 @@ test(
           <silkscreentext pcbX={-11.023945440000006} pcbY={-1.3910005199999986} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R12" />
           <courtyardoutline outline={[{"x":-2.3500003800000115,"y":1.1750014599999972},{"x":-2.3500003800000115,"y":-1.1749989200000002},{"x":2.350000379999983,"y":-1.1749989200000002},{"x":2.350000379999983,"y":1.1750014599999972}]} layer="bottom" />
                 </footprint>} />
-          <chip name="R11" pcbX={-74.16999643999999} pcbY={19.508053439999998} pcbRotation="270deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R11" pcbX={-74.16999643999999} pcbY={19.508053439999998} pcbRotation="270deg" layer="bottom" symbolName="boxresistor_up" schX={10.444650301065307} schY={-5.094951366373321} schDisplayValue="30k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-1.4499996400000157mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.8499988399999998mm" height="1.29999994mm" ccwRotation={180} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="1.4499996399999873mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.8499988399999998mm" height="1.29999994mm" ccwRotation={180} shape="rotated_rect" />
           <silkscreenline x1={-1.4999995400000046} y1={1.2100001200000001} x2={-2.4000002800000146} y2={1.2100001200000001} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -955,7 +955,7 @@ test(
           <silkscreentext pcbX={14.858999999999995} pcbY={1.3910005199999986} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R11" />
           <courtyardoutline outline={[{"x":2.3500003799999973,"y":1.1750014600000007},{"x":2.3500003799999973,"y":-1.1749989199999966},{"x":-2.3500003799999973,"y":-1.1749989200000002},{"x":-2.3500003799999973,"y":1.1750014599999972}]} layer="bottom" />
                 </footprint>} />
-          <chip name="R10" pcbX={-77.34299999999999} pcbY={5.471500359999993} pcbRotation="270deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R10" pcbX={-77.34299999999999} pcbY={5.471500359999993} pcbRotation="270deg" layer="bottom" symbolName="boxresistor_up" schX={10.062528948587309} schY={-5.094951366373321} schDisplayValue="30k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-1.4499996400000157mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.8499988399999998mm" height="1.29999994mm" ccwRotation={180} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="1.4499996400000015mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="1.8499988399999998mm" height="1.29999994mm" ccwRotation={180} shape="rotated_rect" />
           <silkscreenline x1={-1.4999995400000046} y1={1.2100001200000001} x2={-2.4000002800000146} y2={1.2100001200000001} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -968,7 +968,7 @@ test(
           <silkscreentext pcbX={7.188890879999988} pcbY={1.105001600000005} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R10" />
           <courtyardoutline outline={[{"x":2.350000379999983,"y":1.1750014600000007},{"x":2.350000379999983,"y":-1.1749989200000002},{"x":-2.3500003800000115,"y":-1.1749989200000002},{"x":-2.3500003800000115,"y":1.1750014600000007}]} layer="bottom" />
                 </footprint>} />
-          <chip name="R9" pcbX={10.540999999999997} pcbY={-4.381500000000003} pcbRotation="270deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R9" pcbX={10.540999999999997} pcbY={-4.381500000000003} pcbRotation="270deg" layer="bottom" symbolName="boxresistor_right" schX={7.769800833719314} schY={1.4011116257526623} schDisplayValue="0" pinLabels={{"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["2"]} pcbX="0.7112025400000022mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.762mm" height="0.762mm" ccwRotation={270} shape="rotated_rect" />
           <smtpad portHints={["1"]} pcbX="-0.711197459999994mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.762mm" height="0.762mm" ccwRotation={270} shape="rotated_rect" />
           <silkscreenline x1={-1.3208000000000055} y1={0} x2={-1.3208000000000055} y2={0.6096000000000004} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -982,7 +982,7 @@ test(
           <fabricationnotetext pcbX={-1.1637898999999976} pcbY={0.31739586000000486} anchorAlignment="center" text="R9" font="tscircuit2024" fontSize={0.635} color="#ec4899" layer="bottom" />
           <silkscreentext pcbX={-1.7780000000000058} pcbY={0.3810000000000002} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R9" />
                 </footprint>} />
-          <chip name="R31" pcbX={-34.404998500000005} pcbY={26.4795} pcbRotation="90deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R31" pcbX={-34.404998500000005} pcbY={26.4795} pcbRotation="90deg" layer="top" symbolName="boxresistor_up" schX={-0.2547475683186651} schY={-3.5664659564613252} schDisplayValue="1.6k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009400000039mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={180} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984000000069mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={180} shape="rotated_rect" />
           <silkscreenline x1={-1.5235478800000095} y1={0.6925564000000008} x2={-0.8636000000000053} y2={0.6925564000000008} strokeWidth={0.17779999999999999} />
@@ -995,7 +995,7 @@ test(
           <silkscreentext pcbX={2.2860000000000014} pcbY={-0.4750003200000066} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="90deg" mirrored={false} layer="top" text="R31" />
           <courtyardoutline outline={[{"x":1.5499994400000077,"y":-0.7249998200000078},{"x":1.5499994400000077,"y":0.7249998199999936},{"x":-1.5500019799999905,"y":0.7249998199999936},{"x":-1.5500019799999905,"y":-0.7249998200000078}]} layer="top" />
                 </footprint>} />
-          <chip name="R6" pcbX={4.518698099999995} pcbY={33.8455} pcbRotation="270deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R6" pcbX={4.518698099999995} pcbY={33.8455} pcbRotation="270deg" layer="bottom" symbolName="boxresistor_up" schX={-2.92959703566466} schY={1.5284854099119958} schDisplayValue="100k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009400000039mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={180} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984000000069mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={180} shape="rotated_rect" />
           <silkscreenline x1={-0.8636000000000053} y1={-0.6925564000000008} x2={-1.5235478800000095} y2={-0.6925564000000008} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -1008,7 +1008,7 @@ test(
           <silkscreentext pcbX={-1.9795464600000088} pcbY={0.8153019000000086} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R6" />
           <courtyardoutline outline={[{"x":1.5499994400000077,"y":0.7249998200000078},{"x":1.5499994400000077,"y":-0.7249998199999936},{"x":-1.5500019799999905,"y":-0.7249998199999936},{"x":-1.5500019799999905,"y":0.7249998200000078}]} layer="bottom" />
                 </footprint>} />
-          <chip name="R5" pcbX={-26.804602219999992} pcbY={39.968441780000006} pcbRotation="180deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R5" pcbX={-26.804602219999992} pcbY={39.968441780000006} pcbRotation="180deg" layer="bottom" symbolName="boxresistor_up" schX={9.68040759610931} schY={-0.3821213524780003} schDisplayValue="3.3k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009400000039mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984000000069mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <silkscreenline x1={-0.863599999999991} y1={-0.6925563999999866} x2={-1.5235478799999953} y2={-0.6925563999999866} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -1021,7 +1021,7 @@ test(
           <silkscreentext pcbX={-0.7999983999999927} pcbY={4.143395319999996} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R5" />
           <courtyardoutline outline={[{"x":-1.5500019800000047,"y":0.7249998200000078},{"x":-1.5500019800000047,"y":-0.7249998200000078},{"x":1.5499994400000077,"y":-0.7249998200000078},{"x":1.5499994400000077,"y":0.7249998200000078}]} layer="bottom" />
                 </footprint>} />
-          <chip name="R4" pcbX={4.452749539999999} pcbY={3.492652399999997} pcbRotation="180deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R4" pcbX={4.452749539999999} pcbY={3.492652399999997} pcbRotation="180deg" layer="bottom" symbolName="boxresistor_right" schX={-0.3821213524779985} schY={-0.7642427049559988} schDisplayValue="0" pinLabels={{"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["2"]} pcbX="0.7112025400000022mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.762mm" height="0.762mm" ccwRotation={180} shape="rotated_rect" />
           <smtpad portHints={["1"]} pcbX="-0.711197459999994mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.762mm" height="0.762mm" ccwRotation={180} shape="rotated_rect" />
           <silkscreenline x1={-1.3207999999999913} y1={0.6096000000000004} x2={-1.3207999999999913} y2={0} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -1035,7 +1035,7 @@ test(
           <fabricationnotetext pcbX={-1.1637898999999976} pcbY={0.31739585999999065} anchorAlignment="center" text="R4" font="tscircuit2024" fontSize={0.635} color="#ec4899" layer="bottom" />
           <silkscreentext pcbX={-3.5775239600000077} pcbY={0.5080761999999908} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R4" />
                 </footprint>} />
-          <chip name="R3" pcbX={-9.778999999999996} pcbY={31.763091160000002} pcbRotation="90deg" layer="top" noSchematicRepresentation pinLabels={{"pin2":["2","pin2"],"pin3":["3","pin3"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R3" pcbX={-9.778999999999996} pcbY={31.763091160000002} pcbRotation="90deg" layer="top" noSchematicRepresentation pinLabels={{"pin2":["2","pin2","WIPER"],"pin3":["3","pin3","CW"],"pin1":["1","pin1","CCW"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["2"]} pcbX="2.5499999799999955mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.89999874mm" height="2.00000108mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["3"]} pcbX="-2.5499999800000097mm" pcbY="-1.2500000400000033mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.89999874mm" height="1.29999994mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["1"]} pcbX="-2.5499999800000097mm" pcbY="1.2500000399999749mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.89999874mm" height="1.29999994mm" ccwRotation={90} shape="rotated_rect" />
@@ -1049,7 +1049,7 @@ test(
           <fabricationnotetext pcbX={-1.3999997400000126} pcbY={0.4999989999999883} anchorAlignment="center" text="R3" font="tscircuit2024" fontSize={0.762} color="#ec4899" />
           <silkscreentext pcbX={4.064000000000007} pcbY={0.7620000000000005} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="R3" />
                 </footprint>} />
-          <chip name="R2" pcbX={-5.7058229799999935} pcbY={11.112576200000007} pcbRotation="0deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R2" pcbX={-5.7058229799999935} pcbY={11.112576200000007} pcbRotation="0deg" layer="bottom" symbolName="boxresistor_right" schX={-0.3821213524779985} schY={2.92959703566466} schDisplayValue="0" pinLabels={{"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["2"]} pcbX="0.711202539999988mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.762mm" height="0.762mm" shape="rect" />
           <smtpad portHints={["1"]} pcbX="-0.7111974600000082mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.762mm" height="0.762mm" shape="rect" />
           <silkscreenline x1={-1.3208000000000055} y1={0} x2={-1.3208000000000055} y2={0.6096000000000004} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -1063,7 +1063,7 @@ test(
           <fabricationnotetext pcbX={-1.1637898999999976} pcbY={0.31739585999999065} anchorAlignment="center" text="R2" font="tscircuit2024" fontSize={0.635} color="#ec4899" layer="bottom" />
           <silkscreentext pcbX={-1.8251779600000049} pcbY={-0.482600000000005} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R2" />
                 </footprint>} />
-          <chip name="R1" pcbX={-10.922005079999991} pcbY={39.96828430000001} pcbRotation="180deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="R1" pcbX={-10.922005079999991} pcbY={39.96828430000001} pcbRotation="180deg" layer="bottom" symbolName="boxresistor_up" schX={9.68040759610931} schY={2.674849467345993} schDisplayValue="3.3k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009399999897mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984000000069mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <silkscreenline x1={-0.863599999999991} y1={-0.6925563999999866} x2={-1.5235478799999953} y2={-0.6925563999999866} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -1189,7 +1189,7 @@ test(
           <fabricationnotetext pcbX={-1.5239999999999938} pcbY={-0.5080000000000027} anchorAlignment="center" text="J1" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
           <silkscreentext pcbX={-6.85799999999999} pcbY={-4.368800000000004} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="J1" />
                 </footprint>} />
-          <chip name="HVIN_EN" pcbX={-67.81650393999999} pcbY={9.63405490000001} pcbRotation="270deg" layer="top" noSchematicRepresentation pinLabels={{"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="HVIN_EN" pcbX={-67.81650393999999} pcbY={9.63405490000001} pcbRotation="270deg" layer="top" symbolName="led_down" schX={11.648332561371005} schY={-6.496062992125984} schDisplayValue="Green" pinLabels={{"pin2":["2","pin2","K"],"pin1":["1","pin1","A"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["2"]} pcbX="0.750001040000015mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.8000009399999999mm" height="0.8000009399999999mm" ccwRotation={270} shape="rotated_rect" />
           <smtpad portHints={["1"]} pcbX="-0.7499984999999896mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.8000009399999999mm" height="0.8000009399999999mm" ccwRotation={270} shape="rotated_rect" />
           <silkscreenline x1={1.4499996400000015} y1={-0.3750005200000004} x2={1.4499996400000015} y2={0.34999930000000035} strokeWidth={0.24999949999999999} />
@@ -1198,7 +1198,7 @@ test(
           <fabricationnotetext pcbX={-0.7500010400000008} pcbY={-0.19999960000000172} anchorAlignment="center" text="HVIN_EN" font="tscircuit2024" fontSize={0.3499993} color="#ec4899" />
           <silkscreentext pcbX={0.5079999999999956} pcbY={1.0039985000000016} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="HVIN_EN" />
                 </footprint>} />
-          <chip name="5V_EN" pcbX={-35.1669985} pcbY={23.304500000000004} pcbRotation="180deg" layer="top" noSchematicRepresentation pinLabels={{"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="5V_EN" pcbX={-35.1669985} pcbY={23.304500000000004} pcbRotation="180deg" layer="top" symbolName="led_down" schX={-0.19742936544696654} schY={-4.203334877257991} schDisplayValue="Green" pinLabels={{"pin2":["2","pin2","K"],"pin1":["1","pin1","A"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["2"]} pcbX="0.7500010400000008mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.8000009399999999mm" height="0.8000009399999999mm" ccwRotation={180} shape="rotated_rect" />
           <smtpad portHints={["1"]} pcbX="-0.7499984999999967mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.8000009399999999mm" height="0.8000009399999999mm" ccwRotation={180} shape="rotated_rect" />
           <silkscreenline x1={1.4499996399999944} y1={0.34999929999999324} x2={1.4499996399999944} y2={-0.3750005199999862} strokeWidth={0.24999949999999999} />
@@ -1207,7 +1207,7 @@ test(
           <fabricationnotetext pcbX={-0.7500010400000079} pcbY={-0.19999959999999817} anchorAlignment="center" text="5V_EN" font="tscircuit2024" fontSize={0.3499993} color="#ec4899" />
           <silkscreentext pcbX={2.576957} pcbY={1.8624245200000047} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="5V_EN" />
                 </footprint>} />
-          <chip name="D3" pcbX={-19.304000000000002} pcbY={31.604544360000006} pcbRotation="270deg" layer="top" noSchematicRepresentation pinLabels={{"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="D3" pcbX={-19.304000000000002} pcbY={31.604544360000006} pcbRotation="270deg" layer="top" symbolName="schottky_diode_left" schX={-6.164891153311718} schY={-0.12737378415933343} schDisplayValue="30V" pinLabels={{"pin2":["2","pin2","A"],"pin1":["1","pin1","K"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["2"]} pcbX="1.1000028800000052mm" pcbY="1.4210854715202004e-14mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.5999987999999999mm" height="0.5999987999999999mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["1"]} pcbX="-1.099997799999997mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.5999987999999999mm" height="0.5999987999999999mm" ccwRotation={90} shape="rotated_rect" />
           <silkscreenrect pcbX={-1.8030952000000013} pcbY={0.000010160000002201741} width={0.508} height={1.7271999999999998} layer="top" strokeWidth={0.508} filled={true} />
@@ -1218,7 +1218,7 @@ test(
           <fabricationnotetext pcbX={-1.3999997399999842} pcbY={-0.2750007199999942} anchorAlignment="center" text="D3" font="tscircuit2024" fontSize={0.762} color="#ec4899" />
           <silkscreentext pcbX={-0.8439556399999901} pcbY={1.1430000000000007} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="D3" />
                 </footprint>} />
-          <chip name="D1" pcbX={-5.715000000000003} pcbY={31.630503160000004} pcbRotation="270deg" layer="top" noSchematicRepresentation pinLabels={{"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="D1" pcbX={-5.715000000000003} pcbY={31.630503160000004} pcbRotation="270deg" layer="top" symbolName="schottky_diode_left" schX={-6.164891153311718} schY={3.5664659564613235} schDisplayValue="30V" pinLabels={{"pin2":["2","pin2","A"],"pin1":["1","pin1","K"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["2"]} pcbX="1.1000028800000052mm" pcbY="1.4210854715202004e-14mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.5999987999999999mm" height="0.5999987999999999mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["1"]} pcbX="-1.099997799999997mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.5999987999999999mm" height="0.5999987999999999mm" ccwRotation={90} shape="rotated_rect" />
           <silkscreenrect pcbX={-1.8030952000000013} pcbY={0.000010160000002201741} width={0.508} height={1.7271999999999998} layer="top" strokeWidth={0.508} filled={true} />
@@ -1229,7 +1229,7 @@ test(
           <fabricationnotetext pcbX={-1.3999997399999842} pcbY={-0.2750007199999942} anchorAlignment="center" text="D1" font="tscircuit2024" fontSize={0.762} color="#ec4899" />
           <silkscreentext pcbX={-0.9069882799999931} pcbY={1.2130963800000103} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="D1" />
                 </footprint>} />
-          <chip name="C23" pcbX={-19.294124479999994} pcbY={31.80108956000001} pcbRotation="270deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="C23" pcbX={-19.294124479999994} pcbY={31.80108956000001} pcbRotation="270deg" layer="bottom" symbolName="capacitor_down" schX={-5.604446503010653} schY={-0.955303381194998} schDisplayValue="39pF" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009399999897mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={180} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984000000069mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={180} shape="rotated_rect" />
           <silkscreenline x1={-0.8636000000000053} y1={-0.6925564000000008} x2={-1.523547879999981} y2={-0.6925564000000008} strokeWidth={0.17779999999999999} layer="bottom" />
@@ -1242,7 +1242,7 @@ test(
           <silkscreentext pcbX={1.5115895600000044} pcbY={-1.2544755199999855} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="C23" />
           <courtyardoutline outline={[{"x":1.5499994400000077,"y":0.7249998200000078},{"x":1.5499994400000077,"y":-0.7249998199999936},{"x":-1.5500019799999905,"y":-0.7249998200000078},{"x":-1.5500019799999905,"y":0.7249998199999936}]} layer="bottom" />
                 </footprint>} />
-          <chip name="C20" pcbX={-44.6919985} pcbY={26.4795} pcbRotation="270deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="C20" pcbX={-44.6919985} pcbY={26.4795} pcbRotation="270deg" layer="top" symbolName="capacitor_down" schX={-5.2223251505326544} schY={-4.267021769337656} schDisplayValue="0.022uF" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009400000039mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.00000054mm" height="0.9500006400000001mm" shape="rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984000000069mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.00000054mm" height="0.9500006400000001mm" shape="rect" />
           <silkscreenline x1={-0.8636000000000053} y1={0.6925564000000008} x2={-1.5235478800000095} y2={0.6925564000000008} strokeWidth={0.17779999999999999} />
@@ -1255,7 +1255,7 @@ test(
           <silkscreentext pcbX={1.9050000000000011} pcbY={-0.5080000000000027} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="270deg" mirrored={false} layer="top" text="C20" />
           <courtyardoutline outline={[{"x":-1.5500019799999905,"y":-0.7249998199999936},{"x":-1.5500019799999905,"y":0.7249998200000078},{"x":1.5499994400000077,"y":0.7249998200000078},{"x":1.5499994400000077,"y":-0.7249998199999936}]} layer="top" />
                 </footprint>} />
-          <chip name="C19" pcbX={-64.37699849999998} pcbY={35.4965} pcbRotation="0deg" layer="top" noSchematicRepresentation pinLabels={{"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="C19" pcbX={-64.37699849999998} pcbY={35.4965} pcbRotation="0deg" layer="top" symbolName="capacitor_down" schX={-11.208893006021306} schY={-3.5027790643816585} schDisplayValue="10uF" pinLabels={{"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["2"]} pcbX="1.0160025400000023mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.27mm" height="1.6001999999999998mm" shape="rect" />
           <smtpad portHints={["1"]} pcbX="-1.0159974600000012mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.27mm" height="1.6001999999999998mm" shape="rect" />
           <silkscreenline x1={1.0159999999999982} y1={-1.0159999999999911} x2={1.8796000000000035} y2={-1.0159999999999911} strokeWidth={0.17779999999999999} />
@@ -1269,7 +1269,7 @@ test(
           <fabricationnotetext pcbX={-1.6255999999999986} pcbY={-0.4317999999999955} anchorAlignment="center" text="C19" font="tscircuit2024" fontSize={0.889} color="#ec4899" />
           <silkscreentext pcbX={-4.952999999999999} pcbY={-0.3810000000000002} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="C19" />
                 </footprint>} />
-          <chip name="C18" pcbX={-64.37699849999998} pcbY={33.591499999999996} pcbRotation="0deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="C18" pcbX={-64.37699849999998} pcbY={33.591499999999996} pcbRotation="0deg" layer="top" symbolName="capacitor_down" schX={-11.718388142658638} schY={-3.5027790643816585} schDisplayValue="1uF" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009400000039mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999983999999998mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <silkscreenline x1={-1.5235478800000024} y1={0.6925564000000008} x2={-0.8635999999999981} y2={0.6925564000000008} strokeWidth={0.17779999999999999} />
@@ -1282,7 +1282,7 @@ test(
           <silkscreentext pcbX={-4.952999999999999} pcbY={-0.5079999999999956} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="C18" />
           <courtyardoutline outline={[{"x":-1.5500019800000047,"y":-0.7249998200000078},{"x":-1.5500019800000047,"y":0.7249998200000078},{"x":1.5499994400000006,"y":0.7249998200000078},{"x":1.5499994400000006,"y":-0.7249998200000078}]} layer="top" />
                 </footprint>} />
-          <chip name="C17" pcbX={-36.9449985} pcbY={26.0985} pcbRotation="270deg" layer="top" noSchematicRepresentation pinLabels={{"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="C17" pcbX={-36.9449985} pcbY={26.0985} pcbRotation="270deg" layer="top" symbolName="capacitor_down" schX={-1.1463640574339973} schY={-3.884900416859658} schDisplayValue="100uF" pinLabels={{"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["2"]} pcbX="1.0160025400000023mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.27mm" height="1.6001999999999998mm" ccwRotation={270} shape="rotated_rect" />
           <smtpad portHints={["1"]} pcbX="-1.0159974599999941mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.27mm" height="1.6001999999999998mm" ccwRotation={270} shape="rotated_rect" />
           <silkscreenline x1={1.8795999999999964} y1={-1.0160000000000053} x2={1.0160000000000053} y2={-1.0160000000000053} strokeWidth={0.17779999999999999} />
@@ -1324,7 +1324,7 @@ test(
           <fabricationnotetext pcbX={-1.875000060000005} pcbY={-0.4999990000000025} anchorAlignment="center" text="COUT3" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
           <silkscreentext pcbX={-3.6677600000000012} pcbY={-2.6670000000000016} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="COUT3" />
                 </footprint>} />
-          <chip name="C10" pcbX={-5.715000000000003} pcbY={31.80108956000001} pcbRotation="270deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
+          <chip name="C10" pcbX={-5.715000000000003} pcbY={31.80108956000001} pcbRotation="270deg" layer="bottom" symbolName="capacitor_down" schX={-5.604446503010653} schY={2.738536359425659} schDisplayValue="39pF" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.8000009399999897mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={180} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984000000069mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.04999989999999999mm" width="0.9500006400000001mm" height="1.00000054mm" ccwRotation={180} shape="rotated_rect" />
           <silkscreenline x1={-0.8636000000000053} y1={-0.6925564000000008} x2={-1.523547879999981} y2={-0.6925564000000008} strokeWidth={0.17779999999999999} layer="bottom" />

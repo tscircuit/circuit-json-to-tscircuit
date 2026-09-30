@@ -23,6 +23,7 @@
     "@biomejs/biome": "^1.9.4",
     "@tscircuit/circuit-json-util": "^0.0.117",
     "@tscircuit/mm": "^0.0.8",
+    "@tscircuit/props": "0.0.672",
     "@tscircuit/soup-util": "^0.0.41",
     "@types/bun": "latest",
     "@types/react": "18",
@@ -33,6 +34,7 @@
     "commander": "^13.1.0",
     "format-si-unit": "^0.0.14",
     "prettier": "^3.9.5",
+    "schematic-symbols": "0.0.248",
     "shiki": "^4.3.1",
     "stack-svgs": "^0.0.1",
     "transformation-matrix": "^2.16.1",
@@ -47,6 +49,7 @@
   },
   "patchedDependencies": {
     "@tscircuit/core@0.0.1322": "patches/@tscircuit%2Fcore@0.0.1322.patch",
+    "@tscircuit/props@0.0.672": "patches/@tscircuit%2Fprops@0.0.672.patch",
     "@tscircuit/circuit-json-util@0.0.117": "patches/@tscircuit%2Fcircuit-json-util@0.0.117.patch"
   }
 }

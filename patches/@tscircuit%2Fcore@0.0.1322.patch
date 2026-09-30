@@ -8,7 +8,7 @@ diff --git a/node_modules/@tscircuit/core/.bun-tag-e03f092aed6c8030 b/.bun-tag-e
 new file mode 100644
 index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
 diff --git a/dist/index.js b/dist/index.js
-index 6d63e56c658c619b3c86d25146afa91d34392e07..49f429853586bc3496b9153e68972a99a215e70f 100644
+index 6d63e56c658c619b3c86d25146afa91d34392e07..32143318d484ae30f28837fb466d1c2f6152b3c8 100644
 --- a/dist/index.js
 +++ b/dist/index.js
 @@ -57,6 +57,8 @@ __export(components_exports, {
@@ -20,7 +20,17 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..49f429853586bc3496b9153e68972a99
    PcbTrace: () => PcbTrace,
    PcbVia: () => PcbVia,
    PinHeader: () => PinHeader,
-@@ -6747,65 +6749,96 @@ var Hole = class extends PrimitiveComponent2 {
+@@ -1746,7 +1748,8 @@ var PrimitiveComponent2 = class extends Renderable {
+   }
+   _getSchematicSymbolName() {
+     const { _parsedProps: props } = this;
+-    const base_symbol_name = this.config.schematicSymbolName;
++    const base_symbol_name = props.symbolName ?? this.config.schematicSymbolName;
++    if (!base_symbol_name) return void 0;
+     const orientationRotationMap = {
+       horizontal: 0,
+       pos_left: 0,
+@@ -6747,65 +6750,96 @@ var Hole = class extends PrimitiveComponent2 {
  };
  
  // lib/components/primitive-components/Keepout.ts
@@ -153,7 +163,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..49f429853586bc3496b9153e68972a99
    }
    getPcbSize() {
      const { _parsedProps: props } = this;
-@@ -6815,7 +6848,12 @@ var Keepout = class extends PrimitiveComponent2 {
+@@ -6815,7 +6849,12 @@ var Keepout = class extends PrimitiveComponent2 {
      if (props.shape === "rect") {
        return { width: props.width, height: props.height };
      }
@@ -167,7 +177,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..49f429853586bc3496b9153e68972a99
    }
  };
  
-@@ -7200,6 +7238,193 @@ var PcbTrace = class extends PrimitiveComponent2 {
+@@ -7200,6 +7239,193 @@ var PcbTrace = class extends PrimitiveComponent2 {
    }
  };
  
@@ -361,7 +371,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..49f429853586bc3496b9153e68972a99
  // lib/components/primitive-components/PcbVia.ts
  import { viaProps } from "@tscircuit/props";
  import {
-@@ -8583,8 +8808,10 @@ var SilkscreenText = class extends PrimitiveComponent2 {
+@@ -8583,8 +8809,10 @@ var SilkscreenText = class extends PrimitiveComponent2 {
      const { maybeFlipLayer, isFlipped } = this._getPcbPrimitiveFlippedHelpers();
      const subcircuit = this.getSubcircuit();
      let rotation4 = 0;
@@ -374,7 +384,51 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..49f429853586bc3496b9153e68972a99
      } else {
        const globalTransform = this._computePcbGlobalTransformBeforeLayout();
        const decomposedTransform = decomposeTSR5(globalTransform);
-@@ -30537,6 +30764,8 @@ export {
+@@ -12776,8 +13004,9 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+         }
+       }
+     }
+-    if (config.schematicSymbolName && !opts.ignoreSymbolPorts) {
+-      const sym = symbols2[this._getSchematicSymbolNameOrThrow()];
++    const schematicSymbolName = this._getSchematicSymbolName();
++    if (schematicSymbolName && !opts.ignoreSymbolPorts) {
++      const sym = symbols2[schematicSymbolName];
+       if (!sym) return;
+       for (const symPort of sym.ports) {
+         const pinNumber = getPinNumberFromLabels(symPort.labels);
+@@ -13019,7 +13248,7 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+         message: "schPinSpacing is deprecated and will be ignored. Pin spacing is always 0.2."
+       });
+     }
+-    const { schematicSymbolName } = this.config;
++    const schematicSymbolName = this._getSchematicSymbolName();
+     const { _parsedProps: props } = this;
+     const hasSymbolChild = this.children.some(
+       (c) => c.componentName === "Symbol"
+@@ -13579,9 +13808,9 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+   }
+   getPortsFromSchematicSymbol() {
+     if (this.root?.schematicDisabled) return [];
+-    const { config } = this;
+-    if (!config.schematicSymbolName) return [];
+-    const symbol = symbols2[config.schematicSymbolName];
++    const schematicSymbolName = this._getSchematicSymbolName();
++    if (!schematicSymbolName) return [];
++    const symbol = symbols2[schematicSymbolName];
+     if (!symbol) return [];
+     const newPorts = [];
+     for (const symbolPort of symbol.ports) {
+@@ -14462,6 +14691,9 @@ var Chip = class extends NormalComponent3 {
+     if (props?.noSchematicRepresentation === true) return;
+     super.doInitialSchematicComponentRender();
+   }
++  _getSchematicSymbolDisplayValue() {
++    return this._parsedProps.schDisplayValue;
++  }
+   doInitialSourceRender() {
+     const { db } = this.root;
+     const { _parsedProps: props } = this;
+@@ -30537,6 +30769,8 @@ export {
    PcbNotePath,
    PcbNoteRect,
    PcbNoteText,
