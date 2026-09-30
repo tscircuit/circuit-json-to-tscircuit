@@ -638,9 +638,9 @@ test(
           <chip name="FID3" pcbX={-37.97307112} pcbY={16.63707620000001} pcbRotation="180deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="0mm" pcbY="0mm" layer="top" solderMaskMargin="0.499999mm" radius="0.50000027mm" shape="circle" />
                 </footprint>} />
-          <chip name="ZZ2" pcbX={-37.846000000000004} pcbY={38.20449052000001} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} />
-          <chip name="ZZ3" pcbX={-37.846000000000004} pcbY={35.955145259999995} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} />
-          <chip name="ZZ4" pcbX={-37.846000000000004} pcbY={33.705799999999996} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} />
+          <chip name="ZZ2" pcbX={-37.846000000000004} pcbY={38.20449052000001} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} footprint={<footprint />} />
+          <chip name="ZZ3" pcbX={-37.846000000000004} pcbY={35.955145259999995} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} footprint={<footprint />} />
+          <chip name="ZZ4" pcbX={-37.846000000000004} pcbY={33.705799999999996} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} footprint={<footprint />} />
           <chip name="C28" pcbX={0.3810000000000002} pcbY={-7.366} pcbRotation="180deg" layer="top" symbolName="capacitor_left" schX={1.553641732283463} schY={-4.935097267253358} schDisplayValue="1000pF" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-2.00000108mm" pcbY="0mm" layer="top" solderMaskMargin="0.0499999mm" width="3.40000082mm" height="1.59999934mm" ccwRotation={270} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="1.99999854mm" pcbY="0mm" layer="top" solderMaskMargin="0.0499999mm" width="3.40000082mm" height="1.59999934mm" ccwRotation={270} shape="rotated_rect" />
