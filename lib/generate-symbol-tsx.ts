@@ -4,9 +4,22 @@ import { su } from "@tscircuit/soup-util"
 const escapeJsxText = (text: string) =>
   text.replace(/\\/g, "\\\\").replace(/"/g, '\\"')
 
-export const generateSymbolTsx = (
-  circuitJson: AnyCircuitElement[],
-): string | null => {
+export const generateSymbolTsx = ({
+  circuitJson,
+  includePorts = false,
+}: {
+  circuitJson: AnyCircuitElement[]
+  includePorts?: boolean
+}): string | null => {
+  const sourcePorts = circuitJson.filter(
+    (element) => element.type === "source_port",
+  )
+  const schematicComponents = circuitJson.filter(
+    (element) => element.type === "schematic_component",
+  )
+  const schematicPorts = circuitJson.filter(
+    (element) => element.type === "schematic_port",
+  )
   const schematicArcs = su(circuitJson).schematic_arc.list()
   const schematicLines = su(circuitJson).schematic_line.list()
   const schematicPaths = su(circuitJson).schematic_path.list()
@@ -17,6 +30,61 @@ export const generateSymbolTsx = (
   const schematicTables = su(circuitJson).schematic_table.list()
   const schematicTableCells = su(circuitJson).schematic_table_cell.list()
   const elementStrings: string[] = []
+
+  for (const schematicPort of includePorts ? schematicPorts : []) {
+    const sourcePort = sourcePorts.find(
+      (candidateSourcePort) =>
+        candidateSourcePort.source_port_id === schematicPort.source_port_id,
+    )
+    const pinNumber = schematicPort.pin_number ?? sourcePort?.pin_number
+    const portName =
+      sourcePort?.name ||
+      (pinNumber !== undefined ? `pin${pinNumber}` : undefined)
+
+    if (!portName) continue
+
+    const aliases = [
+      ...(sourcePort?.port_hints ?? []),
+      ...(pinNumber !== undefined ? [`pin${pinNumber}`] : []),
+    ].filter(
+      (alias, aliasIndex, allAliases) =>
+        alias.length > 0 &&
+        alias !== portName &&
+        allAliases.indexOf(alias) === aliasIndex,
+    )
+    const owner = schematicComponents.find(
+      (schematicComponent) =>
+        schematicComponent.schematic_component_id ===
+        schematicPort.schematic_component_id,
+    )
+    const portProps = [
+      `name=${JSON.stringify(portName)}`,
+      `schX={${schematicPort.center.x}}`,
+      `schY={${schematicPort.center.y}}`,
+    ]
+
+    if (schematicPort.facing_direction !== undefined) {
+      portProps.push(
+        `direction=${JSON.stringify(schematicPort.facing_direction)}`,
+      )
+    }
+    if (pinNumber !== undefined) {
+      portProps.push(`pinNumber={${pinNumber}}`)
+    }
+    if (aliases.length > 0) {
+      portProps.push(`aliases={${JSON.stringify(aliases)}}`)
+    }
+    if (
+      owner?.is_box_with_pins === true &&
+      schematicPort.distance_from_component_edge !== undefined
+    ) {
+      portProps.push(
+        `schStemLength={${schematicPort.distance_from_component_edge}}`,
+      )
+    }
+
+    elementStrings.push(`<port ${portProps.join(" ")} />`)
+  }
 
   for (const arc of schematicArcs) {
     const center = arc.center ?? { x: 0, y: 0 }
