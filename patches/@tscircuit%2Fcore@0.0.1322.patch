@@ -1,5 +1,11 @@
+diff --git a/node_modules/@tscircuit/core/.bun-tag-b7971c3db8bc994 b/.bun-tag-b7971c3db8bc994
+new file mode 100644
+index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+diff --git a/node_modules/@tscircuit/core/.bun-tag-e03f092aed6c8030 b/.bun-tag-e03f092aed6c8030
+new file mode 100644
+index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
 diff --git a/dist/index.js b/dist/index.js
-index 6d63e56c658c619b3c86d25146afa91d34392e07..e9cf6686c2fda4e4bb3cfe2aee748370f6b32dfe 100644
+index 6d63e56c658c619b3c86d25146afa91d34392e07..dcd22e11421470baa3951c42e583e4b64071d9c3 100644
 --- a/dist/index.js
 +++ b/dist/index.js
 @@ -57,6 +57,7 @@ __export(components_exports, {
@@ -10,7 +16,154 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..e9cf6686c2fda4e4bb3cfe2aee748370
    PcbTrace: () => PcbTrace,
    PcbVia: () => PcbVia,
    PinHeader: () => PinHeader,
-@@ -7200,6 +7201,132 @@ var PcbTrace = class extends PrimitiveComponent2 {
+@@ -6747,65 +6748,96 @@ var Hole = class extends PrimitiveComponent2 {
+ };
+ 
+ // lib/components/primitive-components/Keepout.ts
+-import { pcbKeepoutProps } from "@tscircuit/props";
+-import { decomposeTSR as decomposeTSR2 } from "transformation-matrix";
++import { applyToPoint as applyToKeepoutPoint, decomposeTSR as decomposeKeepoutTransform } from "transformation-matrix";
++var importedKeepoutDistance = z5.union([z5.number(), z5.string()]).transform(
++  (distanceValue) => typeof distanceValue === "number" ? distanceValue : Number.parseFloat(distanceValue)
++);
++var importedKeepoutCommonProps = {
++  pcbX: importedKeepoutDistance.optional(),
++  pcbY: importedKeepoutDistance.optional(),
++  pcbRotation: importedKeepoutDistance.optional(),
++  layer: z5.string().optional(),
++  layers: z5.array(z5.string()).optional(),
++  warningOnly: z5.boolean().optional(),
++  allowTraces: z5.boolean().optional(),
++  allowPlacements: z5.boolean().optional(),
++  description: z5.string().optional()
++};
++var importedPcbKeepoutProps = z5.discriminatedUnion("shape", [
++  z5.object({
++    ...importedKeepoutCommonProps,
++    shape: z5.literal("circle"),
++    radius: importedKeepoutDistance
++  }),
++  z5.object({
++    ...importedKeepoutCommonProps,
++    shape: z5.literal("rect"),
++    width: importedKeepoutDistance,
++    height: importedKeepoutDistance
++  }),
++  z5.object({
++    ...importedKeepoutCommonProps,
++    shape: z5.literal("outline"),
++    outline: z5.array(z5.object({ x: z5.number(), y: z5.number() })).min(2),
++    strokeWidth: importedKeepoutDistance
++  })
++]);
+ var Keepout = class extends PrimitiveComponent2 {
+   pcb_keepout_id = null;
+   isPcbPrimitive = true;
+   get config() {
+     return {
+       componentName: "Keepout",
+-      zodProps: pcbKeepoutProps
++      zodProps: importedPcbKeepoutProps
+     };
+   }
+   doInitialPcbPrimitiveRender() {
+     if (this.root?.pcbDisabled) return;
+     const subcircuit = this.getSubcircuit();
+     const { db } = this.root;
+-    const { _parsedProps: props } = this;
+-    const position = this._getGlobalPcbPositionBeforeLayout();
+-    const decomposedMat = decomposeTSR2(
+-      this._computePcbGlobalTransformBeforeLayout()
++    const props = this._parsedProps;
++    const primitiveTransform = this._computePcbGlobalTransformBeforeLayout();
++    const position = applyToKeepoutPoint(primitiveTransform, { x: 0, y: 0 });
++    const decomposedTransform = decomposeKeepoutTransform(primitiveTransform);
++    const rotationDegrees = decomposedTransform.rotation.angle * 180 / Math.PI;
++    const isRotated90Degrees = Math.abs(rotationDegrees - 90) % 180 < 0.01;
++    const { maybeFlipLayer } = this._getPcbPrimitiveFlippedHelpers();
++    const layers = (props.layers ?? (props.layer ? [props.layer] : ["top"])).map(
++      (layer) => layer === "top" || layer === "bottom" ? maybeFlipLayer(layer) : layer
+     );
+-    const isRotated90 = Math.abs(decomposedMat.rotation.angle * (180 / Math.PI) - 90) % 180 < 0.01;
+-    let layers = props.layers;
+-    if (!layers && props.layer) {
+-      layers = [props.layer];
+-    }
+-    if (!layers) {
+-      layers = ["top"];
+-    }
+-    let pcb_keepout = null;
++    const commonFields = {
++      ...props.allowTraces !== void 0 ? { allow_traces: props.allowTraces } : {},
++      ...props.allowPlacements !== void 0 ? { allow_placements: props.allowPlacements } : {},
++      ...props.warningOnly !== void 0 ? { warning_only: props.warningOnly } : {},
++      description: props.description,
++      layers,
++      subcircuit_id: subcircuit?.subcircuit_id ?? void 0,
++      pcb_group_id: subcircuit?.getGroup()?.pcb_group_id ?? void 0
++    };
++    let pcb_keepout;
+     if (props.shape === "circle") {
+       pcb_keepout = db.pcb_keepout.insert({
+-        layers,
++        ...commonFields,
+         shape: "circle",
+-        // @ts-ignore: no idea why this is triggering
+         radius: props.radius,
+-        center: {
+-          x: position.x,
+-          y: position.y
+-        },
+-        subcircuit_id: subcircuit?.subcircuit_id ?? void 0,
+-        pcb_group_id: subcircuit?.getGroup()?.pcb_group_id ?? void 0
++        center: position
+       });
+     } else if (props.shape === "rect") {
+       pcb_keepout = db.pcb_keepout.insert({
+-        layers,
++        ...commonFields,
+         shape: "rect",
+-        ...isRotated90 ? { width: props.height, height: props.width } : { width: props.width, height: props.height },
+-        // @ts-ignore: no idea why this is triggering
+-        center: {
+-          x: position.x,
+-          y: position.y
+-        },
+-        subcircuit_id: subcircuit?.subcircuit_id ?? void 0,
+-        pcb_group_id: subcircuit?.getGroup()?.pcb_group_id ?? void 0
++        ...isRotated90Degrees ? { width: props.height, height: props.width } : { width: props.width, height: props.height },
++        center: position
++      });
++    } else {
++      pcb_keepout = db.pcb_keepout.insert({
++        ...commonFields,
++        shape: "outline",
++        outline: props.outline.map((point6) => applyToKeepoutPoint(primitiveTransform, point6)),
++        stroke_width: props.strokeWidth
+       });
+     }
+-    if (pcb_keepout) {
+-      this.pcb_keepout_id = pcb_keepout.pcb_keepout_id;
+-    }
++    this.pcb_keepout_id = pcb_keepout.pcb_keepout_id;
+   }
+   getPcbSize() {
+     const { _parsedProps: props } = this;
+@@ -6815,7 +6847,12 @@ var Keepout = class extends PrimitiveComponent2 {
+     if (props.shape === "rect") {
+       return { width: props.width, height: props.height };
+     }
+-    return { width: 0, height: 0 };
++    const xCoordinates = props.outline.map((point6) => point6.x);
++    const yCoordinates = props.outline.map((point6) => point6.y);
++    return {
++      width: Math.max(...xCoordinates) - Math.min(...xCoordinates) + props.strokeWidth,
++      height: Math.max(...yCoordinates) - Math.min(...yCoordinates) + props.strokeWidth
++    };
+   }
+ };
+ 
+@@ -7200,6 +7237,132 @@ var PcbTrace = class extends PrimitiveComponent2 {
    }
  };
  
@@ -85,7 +238,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..e9cf6686c2fda4e4bb3cfe2aee748370
 +    const { isFlipped, maybeFlipLayer } = this._getPcbPrimitiveFlippedHelpers();
 +    const commonFields = {
 +      covered_with_solder_mask: props.coveredWithSolderMask,
-+      layer: maybeFlipLayer(props.layer),
++      layer: props.layer === "top" || props.layer === "bottom" ? maybeFlipLayer(props.layer) : props.layer,
 +      pcb_group_id: this.getGroup()?.pcb_group_id ?? void 0,
 +      source_net_id: props.sourceNetId,
 +      subcircuit_id: subcircuit?.subcircuit_id ?? void 0
@@ -143,7 +296,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..e9cf6686c2fda4e4bb3cfe2aee748370
  // lib/components/primitive-components/PcbVia.ts
  import { viaProps } from "@tscircuit/props";
  import {
-@@ -8583,8 +8710,10 @@ var SilkscreenText = class extends PrimitiveComponent2 {
+@@ -8583,8 +8746,10 @@ var SilkscreenText = class extends PrimitiveComponent2 {
      const { maybeFlipLayer, isFlipped } = this._getPcbPrimitiveFlippedHelpers();
      const subcircuit = this.getSubcircuit();
      let rotation4 = 0;
@@ -156,7 +309,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..e9cf6686c2fda4e4bb3cfe2aee748370
      } else {
        const globalTransform = this._computePcbGlobalTransformBeforeLayout();
        const decomposedTransform = decomposeTSR5(globalTransform);
-@@ -30537,6 +30666,7 @@ export {
+@@ -30537,6 +30702,7 @@ export {
    PcbNotePath,
    PcbNoteRect,
    PcbNoteText,
