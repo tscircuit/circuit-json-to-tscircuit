@@ -216,9 +216,8 @@ export const convertPcbComponents: BoardConverterStage = ({
     if (pcbComponent.obstructs_within_bounds === false) {
       componentProps.push("obstructsWithinBounds={false}")
     }
-
     boardChildren.push(
-      `<chip ${componentProps.join(" ")}${footprintTsx ? ` footprint={${footprintTsx}}` : ""} />`,
+      `<chip ${componentProps.join(" ")} footprint={${footprintTsx ?? "<footprint />"}} />`,
     )
   }
 }

@@ -174,11 +174,11 @@ test(
           <pcbsilkscreengraphic geometryHash="e2d3cdacd778" />
           <pcbsilkscreengraphic geometryHash="5a0e39320c05" />
                 </footprint>} />
-          <chip name="H12" pcbX={-74.29509651999999} pcbY={39.30658636} pcbRotation="180deg" layer="bottom" noSchematicRepresentation obstructsWithinBounds={false} />
-          <chip name="H11" pcbX={11.604691039999992} pcbY={40.06841364000002} pcbRotation="180deg" layer="bottom" noSchematicRepresentation obstructsWithinBounds={false} />
-          <chip name="H10" pcbX={74.54909652} pcbY={39.96835542000001} pcbRotation="180deg" layer="bottom" noSchematicRepresentation obstructsWithinBounds={false} />
-          <chip name="H9" pcbX={-74.42200507999999} pcbY={-39.814499999999995} pcbRotation="180deg" layer="bottom" noSchematicRepresentation obstructsWithinBounds={false} />
-          <chip name="H8" pcbX={6.855876559999999} pcbY={-39.81458636} pcbRotation="180deg" layer="bottom" noSchematicRepresentation obstructsWithinBounds={false} />
+          <chip name="H12" pcbX={-74.29509651999999} pcbY={39.30658636} pcbRotation="180deg" layer="bottom" noSchematicRepresentation obstructsWithinBounds={false} footprint={<footprint />} />
+          <chip name="H11" pcbX={11.604691039999992} pcbY={40.06841364000002} pcbRotation="180deg" layer="bottom" noSchematicRepresentation obstructsWithinBounds={false} footprint={<footprint />} />
+          <chip name="H10" pcbX={74.54909652} pcbY={39.96835542000001} pcbRotation="180deg" layer="bottom" noSchematicRepresentation obstructsWithinBounds={false} footprint={<footprint />} />
+          <chip name="H9" pcbX={-74.42200507999999} pcbY={-39.814499999999995} pcbRotation="180deg" layer="bottom" noSchematicRepresentation obstructsWithinBounds={false} footprint={<footprint />} />
+          <chip name="H8" pcbX={6.855876559999999} pcbY={-39.81458636} pcbRotation="180deg" layer="bottom" noSchematicRepresentation obstructsWithinBounds={false} footprint={<footprint />} />
           <chip name="H7" pcbX={-74.29519303999999} pcbY={39.30667272000001} pcbRotation="0deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <platedhole  portHints={["1"]} pcbX="0mm" pcbY="0mm" outerDiameter="5.842mm" holeDiameter="3.175mm" shape="circle" />
                 </footprint>} />
@@ -197,11 +197,11 @@ test(
           <chip name="H2" pcbX={73.22826096} pcbY={-39.78901363999999} pcbRotation="0deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <platedhole  portHints={["1"]} pcbX="0mm" pcbY="0mm" outerDiameter="5.842mm" holeDiameter="3.175mm" shape="circle" />
                 </footprint>} />
-          <chip name="H1" pcbX={73.22819491999999} pcbY={-39.7891} pcbRotation="180deg" layer="bottom" noSchematicRepresentation obstructsWithinBounds={false} />
+          <chip name="H1" pcbX={73.22819491999999} pcbY={-39.7891} pcbRotation="180deg" layer="bottom" noSchematicRepresentation obstructsWithinBounds={false} footprint={<footprint />} />
           <chip name="H13" pcbX={-23.95219999999999} pcbY={-27.089099999999995} pcbRotation="0deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <platedhole  portHints={["1"]} pcbX="0mm" pcbY="0mm" outerDiameter="7.99999924mm" holeDiameter="3.20000122mm" shape="circle" />
                 </footprint>} />
-          <chip name="H14" pcbX={-23.958036919999998} pcbY={-27.088815519999997} pcbRotation="180deg" layer="bottom" noSchematicRepresentation obstructsWithinBounds={false} />
+          <chip name="H14" pcbX={-23.958036919999998} pcbY={-27.088815519999997} pcbRotation="180deg" layer="bottom" noSchematicRepresentation obstructsWithinBounds={false} footprint={<footprint />} />
           <chip name="L2" pcbX={42.66574652} pcbY={17.462500000000006} pcbRotation="180deg" layer="top" symbolName="inductor_right" schX={6.496062992125983} schY={-6.012042612320519} schDisplayValue="570uH" pinLabels={{"pin1":["1","pin1","S"],"pin2":["2","pin2","F"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <platedhole  portHints={["1"]} pcbX="-25.4mm" pcbY="0mm" holeShape="circle" padShape="rect" holeDiameter="1.44999964mm" rectPadWidth="2.20000068mm" rectPadHeight="2.20000068mm" rectBorderRadius="0.055000017mm" holeOffsetX="0mm" holeOffsetY="0mm" pcbRotation="180deg" shape="circular_hole_with_rect_pad" />
           <platedhole  portHints={["2"]} pcbX="25.4mm" pcbY="0mm" outerDiameter="2.20000068mm" holeDiameter="1.44999964mm" shape="circle" />
@@ -335,7 +335,7 @@ test(
           <silkscreentext pcbX={1.9479971200000108} pcbY={0.475269560000001} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="R7" />
           <courtyardoutline outline={[{"x":-1.5500019799999905,"y":0.7249998200000078},{"x":-1.5500019799999905,"y":-0.7249998200000078},{"x":1.5499994400000077,"y":-0.7249998200000078},{"x":1.5499994400000077,"y":0.7249998200000078}]} layer="bottom" />
                 </footprint>} />
-          <chip name="SH-J5" pcbX={-28.355203639999985} pcbY={29.002090839999994} pcbRotation="90deg" layer="top" schX={-4.840203798054654} schY={0.4458082445576643} symbol={<symbol geometryHash="e822f44508c5" />} schDisplayValue="1x2" obstructsWithinBounds={false} />
+          <chip name="SH-J5" pcbX={-28.355203639999985} pcbY={29.002090839999994} pcbRotation="90deg" layer="top" schX={-4.840203798054654} schY={0.4458082445576643} symbol={<symbol geometryHash="e822f44508c5" />} schDisplayValue="1x2" obstructsWithinBounds={false} footprint={<footprint />} />
           <chip name="J18" pcbX={66.929} pcbY={-10.096499999999992} pcbRotation="0deg" layer="top" schX={6.878184344603982} schY={-7.13293191292265} symbol={<symbol geometryHash="43b1ee9d4fab" />} schDisplayValue="3267" pinLabels={{"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <platedhole  portHints={["1"]} pcbX="0mm" pcbY="0mm" outerDiameter="11.99999886mm" holeDiameter="6.858mm" shape="circle" />
           <fabricationnotetext pcbX={-1.3969999999999914} pcbY={-0.7620000000000005} anchorAlignment="center" text="J18" font="tscircuit2024" fontSize={1.524} color="#ec4899" />
@@ -367,7 +367,7 @@ test(
           <silkscreentext pcbX={-17.30000095999999} pcbY={0.5000015399999995} anchorAlignment="center" fontSize={1.8499988399999998} font="tscircuit2024" pcbRotation="90deg" mirrored={true} layer="bottom" text="+" />
           <silkscreentext pcbX={-16.891000000000005} pcbY={15.113} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="C25" />
                 </footprint>} />
-          <chip name="SH-J4" pcbX={-46.989999999999995} pcbY={24.218900000000005} pcbRotation="90deg" layer="top" schX={-7.515053265400648} schY={-3.375405280222326} symbol={<symbol geometryHash="c218e7c40145" />} schDisplayValue="1x2" obstructsWithinBounds={false} />
+          <chip name="SH-J4" pcbX={-46.989999999999995} pcbY={24.218900000000005} pcbRotation="90deg" layer="top" schX={-7.515053265400648} schY={-3.375405280222326} symbol={<symbol geometryHash="c218e7c40145" />} schDisplayValue="1x2" obstructsWithinBounds={false} footprint={<footprint />} />
           <chip name="R28" pcbX={-50.152998499999995} pcbY={27.241500000000002} pcbRotation="0deg" layer="top" symbolName="boxresistor_right" schX={-5.604446503010653} schY={-3.821213524779991} schDisplayValue="33.2k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.80000094mm" pcbY="0mm" layer="top" solderMaskMargin="0.0499999mm" width="0.95000064mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984mm" pcbY="0mm" layer="top" solderMaskMargin="0.0499999mm" width="0.95000064mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
@@ -439,8 +439,8 @@ test(
           <silkscreentext pcbX={-4.814028979999989} pcbY={1.5118359399999974} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="U2" />
           <courtyardoutline outline={[{"x":-2.725000900000012,"y":-1.8499988399999978},{"x":2.7250008999999977,"y":-1.8499988399999978},{"x":2.7250008999999977,"y":1.850001380000009},{"x":-2.725000900000012,"y":1.850001380000009}]} layer="bottom" />
                 </footprint>} />
-          <chip name="SH-J3" pcbX={-1.3030834999999854} pcbY={27.226094900000007} pcbRotation="270deg" layer="top" schX={-1.7832329782306626} schY={0.5731820287169977} symbol={<symbol geometryHash="fe2bf749e412" />} schDisplayValue="1x2" obstructsWithinBounds={false} />
-          <chip name="SH-J2" pcbX={8.849299040000005} pcbY={27.209899860000007} pcbRotation="270deg" layer="top" schX={-1.7832329782306626} schY={1.3374247336729965} symbol={<symbol geometryHash="f1e263a9b7a2" />} schDisplayValue="1x2" obstructsWithinBounds={false} />
+          <chip name="SH-J3" pcbX={-1.3030834999999854} pcbY={27.226094900000007} pcbRotation="270deg" layer="top" schX={-1.7832329782306626} schY={0.5731820287169977} symbol={<symbol geometryHash="fe2bf749e412" />} schDisplayValue="1x2" obstructsWithinBounds={false} footprint={<footprint />} />
+          <chip name="SH-J2" pcbX={8.849299040000005} pcbY={27.209899860000007} pcbRotation="270deg" layer="top" schX={-1.7832329782306626} schY={1.3374247336729965} symbol={<symbol geometryHash="f1e263a9b7a2" />} schDisplayValue="1x2" obstructsWithinBounds={false} footprint={<footprint />} />
           <chip name="R27" pcbX={-19.143002100000004} pcbY={39.96661806} pcbRotation="180deg" layer="bottom" symbolName="boxresistor_right" schX={4.203334877257989} schY={0} schDisplayValue="105k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.80000094mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.0499999mm" width="0.95000064mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.0499999mm" width="0.95000064mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
@@ -771,7 +771,7 @@ test(
           <silkscreentext pcbX={-3.244999860000007} pcbY={-2.0729981399999957} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="U1" />
           <courtyardoutline outline={[{"x":-2.725000900000012,"y":-1.8499988399999978},{"x":2.7250008999999977,"y":-1.8499988399999978},{"x":2.7250008999999977,"y":1.850001380000009},{"x":-2.725000900000012,"y":1.850001380000009}]} layer="bottom" />
                 </footprint>} />
-          <chip name="SH-J1" pcbX={-14.858999999999995} pcbY={29.058910639999993} pcbRotation="90deg" layer="top" schX={-4.840203798054654} schY={1.8469198703103284} symbol={<symbol geometryHash="639edf4bc21c" />} schDisplayValue="1x2" obstructsWithinBounds={false} />
+          <chip name="SH-J1" pcbX={-14.858999999999995} pcbY={29.058910639999993} pcbRotation="90deg" layer="top" schX={-4.840203798054654} schY={1.8469198703103284} symbol={<symbol geometryHash="639edf4bc21c" />} schDisplayValue="1x2" obstructsWithinBounds={false} footprint={<footprint />} />
           <chip name="R26" pcbX={-42.1519985} pcbY={25.590500000000006} pcbRotation="0deg" layer="top" symbolName="boxresistor_up" schX={-2.165354330708661} schY={-4.330708661417323} schDisplayValue="1.18k" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.80000094mm" pcbY="0mm" layer="top" solderMaskMargin="0.0499999mm" width="0.95000064mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.7999984mm" pcbY="0mm" layer="top" solderMaskMargin="0.0499999mm" width="0.95000064mm" height="1.00000054mm" ccwRotation={90} shape="rotated_rect" />
@@ -1411,9 +1411,9 @@ test(
           <pcbsilkscreengraphic geometryHash="3eb292c4fd6d" />
           <pcbsilkscreengraphic geometryHash="5e7e29103cea" />
                 </footprint>} />
-          <chip name="ZZ2" pcbX={-61.163199999999996} pcbY={111.76712724} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} />
-          <chip name="ZZ3" pcbX={-61.163199999999996} pcbY={109.30611362} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} />
-          <chip name="ZZ4" pcbX={-61.163199999999996} pcbY={106.84509999999999} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} />
+          <chip name="ZZ2" pcbX={-61.163199999999996} pcbY={111.76712724} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} footprint={<footprint />} />
+          <chip name="ZZ3" pcbX={-61.163199999999996} pcbY={109.30611362} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} footprint={<footprint />} />
+          <chip name="ZZ4" pcbX={-61.163199999999996} pcbY={106.84509999999999} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} footprint={<footprint />} />
           <net name="AGND" />
           <net name="PGND" />
           <net name="VAUX" />

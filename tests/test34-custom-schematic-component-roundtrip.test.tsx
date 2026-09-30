@@ -69,7 +69,7 @@ test("preserves custom schematic component geometry and ports", async () => {
           <schematicline x1={-0.6000000000000001} y1={0} x2={0.6000000000000001} y2={0} strokeWidth={0.12} color="blue" isDashed={false}/>
           <schematicrect schX={0} schY={0} width={1.2} height={0.8} rotation={0} strokeWidth={0.12} color="blue" isFilled={false} fillColor="blue" isDashed={false} />
           <schematiccircle center={{ x: 0, y: 0 }} radius={0.2} strokeWidth={0.12} color="blue" isFilled={false} fillColor="blue" isDashed={false} />
-        </symbol>} schDisplayValue="CUSTOM" pinLabels={{"pin1":["IN","pin1","1"],"pin2":["OUT","pin2","2"]}} />
+        </symbol>} schDisplayValue="CUSTOM" pinLabels={{"pin1":["IN","pin1","1"],"pin2":["OUT","pin2","2"]}} footprint={<footprint />} />
       </board>
     )"
   `)
