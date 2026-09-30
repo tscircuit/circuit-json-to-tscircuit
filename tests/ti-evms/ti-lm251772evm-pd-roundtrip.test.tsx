@@ -11,8 +11,8 @@ test(
 
     expect(result.generatedTscircuit).toMatchInlineSnapshot(`
       "export default () => (
-        <board width="104.14mm" height="91.44mm" outline={[{ x: 17.5768, y: 38.9636 }, { x: 17.5768, y: 130.40359999999998 }, { x: 121.71679491999998, y: 130.40359999999998 }, { x: 121.71679999999999, y: 38.9636 }, { x: 17.5768, y: 38.9636 }]} thickness="1.6mm" layers={4} material="fr4">
-          <chip footprint={<footprint>
+        <board pcbX={69.6468} pcbY={84.6836} width="104.14mm" height="91.44mm" outline={[{ x: 17.5768, y: 38.9636 }, { x: 17.5768, y: 130.40359999999998 }, { x: 121.71679491999998, y: 130.40359999999998 }, { x: 121.71679999999999, y: 38.9636 }, { x: 17.5768, y: 38.9636 }]} thickness="1.6mm" layers={4} material="fr4">
+          <chip pcbX={-69.6468} pcbY={-84.6836} footprint={<footprint>
               <platedhole  portHints={["1"]} pcbX="116.6368mm" pcbY="111.22659999999999mm" holeShape="circle" padShape="rect" holeDiameter="1.1500002399999998mm" rectPadWidth="1.6499992399999999mm" rectPadHeight="1.6499992399999999mm" rectBorderRadius="0.41249980999999997mm" holeOffsetX="0mm" holeOffsetY="0mm" pcbRotation="180deg" shape="circular_hole_with_rect_pad" />
       <platedhole  portHints={["2"]} pcbX="114.0968mm" pcbY="111.22659999999999mm" outerDiameter="1.6499992399999999mm" holeDiameter="1.1500002399999998mm" shape="circle" />
       <platedhole  portHints={["3"]} pcbX="111.5568mm" pcbY="111.22659999999999mm" outerDiameter="1.6499992399999999mm" holeDiameter="1.1500002399999998mm" shape="circle" />

@@ -13,6 +13,12 @@ export const getBoardUsingTemplate = ({ circuitJson }: BoardTemplateParams) => {
   const boardProps: string[] = []
 
   if (pcbBoard) {
+    if (pcbBoard.center.x !== 0) {
+      boardProps.push(`pcbX={${pcbBoard.center.x}}`)
+    }
+    if (pcbBoard.center.y !== 0) {
+      boardProps.push(`pcbY={${pcbBoard.center.y}}`)
+    }
     if (pcbBoard.width !== undefined) {
       boardProps.push(`width="${mmStr(pcbBoard.width)}"`)
     }
@@ -52,8 +58,19 @@ export const getBoardUsingTemplate = ({ circuitJson }: BoardTemplateParams) => {
 
   const boardPropsStr = boardProps.join(" ")
   const footprintTsx = generateFootprintTsx(circuitJson)
+  const footprintContainerProps: string[] = []
 
-  const children = footprintTsx ? `<chip footprint={${footprintTsx}} />` : ""
+  if (pcbBoard?.center.x) {
+    footprintContainerProps.push(`pcbX={${-pcbBoard.center.x}}`)
+  }
+  if (pcbBoard?.center.y) {
+    footprintContainerProps.push(`pcbY={${-pcbBoard.center.y}}`)
+  }
+
+  const footprintContainerPropsStr = footprintContainerProps.join(" ")
+  const children = footprintTsx
+    ? `<chip${footprintContainerPropsStr ? ` ${footprintContainerPropsStr}` : ""} footprint={${footprintTsx}} />`
+    : ""
 
   return `
 export default () => (

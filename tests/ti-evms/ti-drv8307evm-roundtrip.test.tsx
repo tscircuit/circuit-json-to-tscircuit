@@ -11,8 +11,8 @@ test(
 
     expect(result.generatedTscircuit).toMatchInlineSnapshot(`
       "export default () => (
-        <board width="87.7316mm" height="75.00010400000001mm" outline={[{ x: 17.5768, y: 38.9636 }, { x: 17.5768, y: 113.963704 }, { x: 105.30839999999999, y: 113.963704 }, { x: 105.30839999999999, y: 38.9636 }, { x: 17.5768, y: 38.9636 }]} thickness="1.6mm" layers={2} material="fr4">
-          <chip footprint={<footprint>
+        <board pcbX={61.4426} pcbY={76.463652} width="87.7316mm" height="75.00010400000001mm" outline={[{ x: 17.5768, y: 38.9636 }, { x: 17.5768, y: 113.963704 }, { x: 105.30839999999999, y: 113.963704 }, { x: 105.30839999999999, y: 38.9636 }, { x: 17.5768, y: 38.9636 }]} thickness="1.6mm" layers={2} material="fr4">
+          <chip pcbX={-61.4426} pcbY={-76.463652} footprint={<footprint>
               <platedhole  portHints={["0"]} pcbX="21.6408mm" pcbY="43.0276mm" outerDiameter="4.318mm" holeDiameter="3.81mm" shape="circle" />
       <platedhole  portHints={["0"]} pcbX="21.6408mm" pcbY="109.8296mm" outerDiameter="4.318mm" holeDiameter="3.81mm" shape="circle" />
       <platedhole  portHints={["0"]} pcbX="101.1428mm" pcbY="109.8296mm" outerDiameter="4.318mm" holeDiameter="3.81mm" shape="circle" />
