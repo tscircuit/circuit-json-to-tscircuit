@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" style="background-color: rgb(245, 241, 237)" data-real-to-screen-transform="matrix(64.5869731593,0,0,-64.5869731593,567.7065134203,502.4736705294)" data-software-used-string="@tscircuit/core@0.0.1322"><style>
+              .boundary { fill: rgb(245, 241, 237); }
+              .schematic-boundary { fill: none; stroke: #fff; }
+              .component { fill: none; stroke: rgb(132, 0, 0); }
+              .chip { fill: rgb(255, 255, 194); stroke: rgb(132, 0, 0); }
+              .component-pin { fill: none; stroke: rgb(132, 0, 0); }
+              /* Basic per-trace hover fallback */
+              .trace:hover {
+                filter: invert(1);
+              }
+              .trace:hover .trace-crossing-outline {
+                opacity: 0;
+              }
+              .trace:hover .trace-junction {
+                filter: invert(1);
+              }
+              /* Net-hover highlighting: when a trace or its overlays are hovered,
+                 invert color for all traces (base + overlays) sharing the same
+                 subcircuit connectivity key. Also hide crossing outline during hover. */
+              
+              .text { font-family: sans-serif; fill: rgb(0, 150, 0); }
+              .pin-number { fill: rgb(169, 0, 0); }
+              .port-label { fill: rgb(0, 100, 100); }
+              .component-name { fill: rgb(0, 100, 100); }
+            </style><rect class="boundary" x="0" y="0" width="1200" height="600"/><circle cx="567.7065134203" cy="373.29972421080004" r="1.937609194779" fill="rgb(0, 150, 0)" stroke="none" stroke-width="1.0043057982096593" data-schematic-circle-id="schematic_circle_0"/><path d="M 438.5325671017 373.29972421080004 L 567.7065134203 373.29972421080004 L 567.7065134203 567.0606436887" stroke="rgb(0, 150, 0)" stroke-width="1.291739463186" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M 632.2934865796 211.83229131255 L 761.4674328982001 211.83229131255 L 761.4674328982001 405.59321079045003 L 632.2934865796 405.59321079045003 L 632.2934865796 211.83229131255" stroke="rgb(132, 0, 0)" stroke-width="1.291739463186" fill="rgb(255, 255, 194)" stroke-linecap="round" stroke-linejoin="round"/><text x="632.2934865796" y="179.53880473290002" fill="#000000" text-anchor="start" dominant-baseline="ideographic" font-family="sans-serif" font-size="12.91739463186px" transform="rotate(-90, 632.2934865796, 179.53880473290002)">U1 "controller" {flyback}</text></svg>
