@@ -80,9 +80,11 @@ export const generateSymbolTsx = (
     const width = box.width ?? 0
     const height = box.height ?? 0
     const isDashed = box.is_dashed ?? false
+    const centerX = x + width / 2
+    const centerY = y + height / 2
 
     elementStrings.push(
-      `<schematicbox center={{ x: ${x}, y: ${y} }} width={${width}} height={${height}} isDashed={${isDashed}}/>`,
+      `<schematicbox schX={${centerX}} schY={${centerY}} width={${width}} height={${height}} strokeStyle="${isDashed ? "dashed" : "solid"}"/>`,
     )
   }
 
@@ -104,18 +106,23 @@ export const generateSymbolTsx = (
 
   for (const path of schematicPaths) {
     const points = path.points ?? []
-    const fillColor = path.fill_color ?? "red"
+    const strokeColor = path.stroke_color ?? path.fill_color ?? "black"
+    const fillColor = path.fill_color ?? strokeColor
     const isFilled = path.is_filled ?? false
+    const strokeWidth = path.stroke_width
     const dashLength = path.dash_length
     const dashGap = path.dash_gap
 
     const attrs = [
       `points={${JSON.stringify(points)}}`,
-      `strokeColor="${fillColor}"`,
+      `strokeColor="${strokeColor}"`,
       `fillColor="${fillColor}"`,
       `isFilled={${isFilled}}`,
     ]
 
+    if (strokeWidth != null) {
+      attrs.push(`strokeWidth={${strokeWidth}}`)
+    }
     if (dashLength != null) {
       attrs.push(`dashLength={${dashLength}}`)
     }
@@ -138,7 +145,7 @@ export const generateSymbolTsx = (
     const rotation = text.rotation ?? 0
 
     elementStrings.push(
-      `<schematictext text="${escapedText}" x={${x}} y={${y}} anchorAlignment="${anchorAlignment}" fontSize={${fontSize}} color="${color}" rotation={${rotation}} />`,
+      `<schematictext text="${escapedText}" schX={${x}} schY={${y}} anchor="${anchorAlignment}" fontSize={${fontSize}} color="${color}" schRotation={${rotation}} />`,
     )
   }
 
@@ -149,10 +156,11 @@ export const generateSymbolTsx = (
     const strokeWidth = circle.stroke_width ?? 0.05
     const color = circle.color ?? "black"
     const isFilled = circle.is_filled ?? false
+    const fillColor = circle.fill_color ?? color
     const isDashed = circle.is_dashed ?? false
 
     elementStrings.push(
-      `<schematiccircle center={{ x: ${x}, y: ${y} }} radius={${radius}} strokeWidth={${strokeWidth}} color="${color}" isFilled={${isFilled}} isDashed={${isDashed}} />`,
+      `<schematiccircle center={{ x: ${x}, y: ${y} }} radius={${radius}} strokeWidth={${strokeWidth}} color="${color}" isFilled={${isFilled}} fillColor="${fillColor}" isDashed={${isDashed}} />`,
     )
   }
 

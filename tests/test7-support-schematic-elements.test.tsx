@@ -162,11 +162,11 @@ export const U1 = (props: ChipProps) => (
     direction="counterclockwise"
   />
   <schematicline x1={3} y1={4} x2={6} y2={4} strokeWidth={0.05} color="black" isDashed={false}/>
-  <schematicbox center={{ x: -6, y: -1 }} width={2} height={2} isDashed={true}/>
+  <schematicbox schX={-5} schY={0} width={2} height={2} strokeStyle="dashed"/>
   <schematicrect schX={0} schY={4} width={2} height={1} rotation={30} strokeWidth={0.05} color="purple" isFilled={true} fillColor="yellow" isDashed={true} />
   <schematicpath points={[{"x":4,"y":-2},{"x":5,"y":-1}]} strokeColor="blue" fillColor="blue" isFilled={false}/>
-  <schematictext text="U1" x={0} y={0} anchorAlignment="center" fontSize={0.2} color="red" rotation={45} />
-  <schematiccircle center={{ x: -2, y: 0 }} radius={0.5} strokeWidth={0.05} color="green" isFilled={true} isDashed={true} />
+  <schematictext text="U1" schX={0} schY={0} anchor="center" fontSize={0.2} color="red" schRotation={45} />
+  <schematiccircle center={{ x: -2, y: 0 }} radius={0.5} strokeWidth={0.05} color="green" isFilled={true} fillColor="green" isDashed={true} />
   <schematictable schX={2} schY={-4} cellPadding={0.2} borderWidth={0.1} anchor="top_left">
     <schematicrow height={1}>
         <schematiccell text="Header" horizontalAlign="center" verticalAlign="middle" fontSize={0.18} colSpan={2} width={2.5} />
