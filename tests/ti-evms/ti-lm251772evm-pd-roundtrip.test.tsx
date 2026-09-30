@@ -11,7 +11,7 @@ test(
 
     expect(result.generatedTscircuitSnapshot).toMatchInlineSnapshot(`
       "export default () => (
-        <board pcbX={69.6468} pcbY={84.6836} width="104.14mm" height="91.44mm" outline={[{ x: 17.5768, y: 38.9636 }, { x: 17.5768, y: 130.40359999999998 }, { x: 121.71679491999998, y: 130.40359999999998 }, { x: 121.71679999999999, y: 38.9636 }, { x: 17.5768, y: 38.9636 }]} thickness="1.6mm" layers={4} material="fr4">
+        <board pcbX={69.6468} pcbY={84.6836} width="104.14mm" height="91.44mm" outline={[{ x: 17.5768, y: 38.9636 }, { x: 17.5768, y: 130.40359999999998 }, { x: 121.71679491999998, y: 130.40359999999998 }, { x: 121.71679999999999, y: 38.9636 }, { x: 17.5768, y: 38.9636 }]} thickness="1.6mm" layers={4} material="fr4" routingDisabled>
           <chip name="C44" pcbX={14.008000939999988} pcbY={11.683999999999997} pcbRotation="0deg" layer="top" symbolName="capacitor_down" schX={4.012274201018991} schY={-3.7575266327003245} schDisplayValue="680pF" pinLabels={{"pin1":["1","pin1"],"pin2":["2","pin2"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="-0.762mm" pcbY="0mm" layer="top" solderMaskMargin="0.0499999mm" width="0.889mm" height="0.508mm" ccwRotation={90} shape="rotated_rect" />
           <smtpad portHints={["2"]} pcbX="0.762mm" pcbY="0mm" layer="top" solderMaskMargin="0.0499999mm" width="0.889mm" height="0.508mm" ccwRotation={90} shape="rotated_rect" />
@@ -1350,6 +1350,113 @@ test(
           <fabricationnotetext pcbX={0} pcbY={-0.16661130000001378} anchorAlignment="bottom_left" text="C23" font="tscircuit2024" fontSize={0.49999899999999997} color="#ec4899" />
           <silkscreentext pcbX={6.542158619999995} pcbY={2.5395961399999862} anchorAlignment="center" fontSize={1.143} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="C23" />
                 </footprint>} />
+          <net name="FB" />
+          <net name="VOUT1" />
+          <net name="VOUT" />
+          <net name="AGND" />
+          <net name="VIN" />
+          <net name="GND" />
+          <net name="SW1" />
+          <net name="ISNSP" />
+          <net name="ISNSN" />
+          <net name="CSA_SW1" />
+          <net name="CSB" />
+          <net name="SCL" />
+          <net name="SDA" />
+          <net name="VCC2" />
+          <net name="LO2" />
+          <net name="DTRK" />
+          <net name="ADDR" />
+          <net name="LO2_G" />
+          <net name="VBUS" />
+          <net name="DRV1" />
+          <net name="COMP" />
+          <net name="RT" />
+          <net name="SW2" />
+          <net name="SS_ATRK" />
+          <net name="SYNC" />
+          <net name="HO2" />
+          <net name="HB2" />
+          <net name="HB1" />
+          <net name="CDC" />
+          <net name="EN_UVLO" />
+          <net name="PPHV" />
+          <net name="HO1_G" />
+          <net name="HO1" />
+          <net name="LO1_G" />
+          <net name="VCC1" />
+          <net name="MODE" />
+          <net name="nFLT" />
+          <net name="nRST" />
+          <net name="CFG2" />
+          <net name="BIAS" />
+          <net name="ILIMCOMP" />
+          <net name="VCC1_J" />
+          <net name="PTC" />
+          <net name="PDCTRL_GOOD" />
+          <net name="LO1" />
+          <net name="HO2_G" />
+          <trace path={[".JP2 > .pin4",".R2 > .pin1",".R19 > .pin2",".R12 > .pin1",".U1 > .pin14","net.FB"]} />
+          <trace path={[".TP1 > .pin1",".R3 > .pin1",".J4 > .pin3",".C13 > .pin2",".R15 > .pin2",".C5 > .pin2",".C22 > .pin2",".C21 > .pin2",".C7 > .pin2",".C23 > .pin2",".C10 > .pin2",".C6 > .pin2",".JP1 > .pin1",".R26 > .pin2",".Q5 > .Drain",".JP3 > .pin1","net.VOUT1"]} />
+          <trace path={[".TP2 > .pin1",".R3 > .pin2",".J4 > .pin1",".C8 > .pin2",".R16 > .pin2",".J4 > .pin2",".C3 > .pin2",".Q3 > .pin5",".Q3 > .pin6",".Q3 > .pin7",".Q3 > .pin8",".Q3 > .pin9",".C4 > .pin2",".Q1 > .pin1",".Q1 > .pin2",".Q1 > .pin3",".R1 > .pin2",".C1 > .pin2",".D1 > .pin1",".J1 > .pin1","net.VOUT"]} />
+          <trace path={[".JP2 > .pin3",".C15 > .pin1",".C16 > .pin2",".R19 > .pin1",".C29 > .pin2",".R22 > .pin1",".JP7 > .pin1",".J12 > .pin6",".C36 > .pin2",".C37 > .pin2",".C35 > .pin2",".R31 > .pin1",".R30 > .pin1",".U1 > .pin41",".U1 > .pin17",".R10 > .pin1",".NT3 > .pin2",".C26 > .pin1",".C28 > .pin1",".C38 > .pin2",".C39 > .pin2",".R27 > .pin1",".R42 > .pin1",".JP11 > .pin2",".R41 > .pin1",".JP10 > .pin2",".R37 > .pin1",".JP8 > .pin2",".R24 > .pin1",".JP9 > .pin1",".R38 > .pin2",".JP4 > .pin1",".JP5 > .pin1",".JP6 > .pin2",".TP7 > .pin1",".TP4 > .pin1",".J11 > .pin2","net.AGND"]} />
+          <trace path={[".TP3 > .pin1",".J2 > .pin1",".J3 > .pin1",".J3 > .pin2",".C11 > .pin1",".C9 > .pin2",".J3 > .pin3",".C12 > .pin1",".Q4 > .D",".C20 > .pin2",".R7 > .pin2",".C17 > .pin2",".Q2 > .D",".R21 > .pin2",".C19 > .pin2",".C18 > .pin2",".C40 > .pin2",".C14 > .pin2",".JP4 > .pin3",".R23 > .pin2",".D3 > .pin1",".J9 > .pin2",".JP3 > .pin3",".R35 > .pin2","net.VIN"]} />
+          <trace path={[".J3 > .pin4",".C9 > .pin1",".C11 > .pin2",".J3 > .pin5",".J3 > .pin6",".TP8 > .pin1",".J5 > .pin1",".C8 > .pin1",".J4 > .pin6",".J6 > .pin1",".J4 > .pin5",".C3 > .pin1",".C13 > .pin1",".J4 > .pin4",".C10 > .pin1",".C5 > .pin1",".C22 > .pin1",".C6 > .pin1",".C21 > .pin1",".C7 > .pin1",".C23 > .pin1",".Q6 > .S",".NT3 > .pin1",".U1 > .pin28",".C17 > .pin1",".C20 > .pin1",".C18 > .pin1",".C19 > .pin1",".C40 > .pin1",".C14 > .pin1",".C4 > .pin1",".J9 > .pin3",".J9 > .pin4",".D3 > .pin2",".D4 > .pin2",".J10 > .pin4",".J10 > .pin3",".J10 > .pin1",".J7 > .pin7",".J7 > .pin10",".RT1 > .pin1",".Q7 > .pin3",".C43 > .pin2",".C44 > .pin2",".Q8 > .pin1",".Q8 > .pin2",".Q7 > .pin2",".Q7 > .pin1",".Q8 > .pin3",".C12 > .pin2",".C27 > .pin1",".J9 > .pin1",".C41 > .pin1","net.GND"]} />
+          <trace path={[".R12 > .pin2",".JP2 > .pin2"]} />
+          <trace path={[".R17 > .pin2",".U1 > .pin23",".C31 > .pin1",".Q6 > .D",".C30 > .pin2",".Q4 > .S",".Q2 > .S",".TP5 > .pin1",".R4 > .pin2",".R6 > .pin2","net.SW1"]} />
+          <trace path={[".C24 > .pin2",".U1 > .pin20",".R15 > .pin1","net.ISNSP"]} />
+          <trace path={[".C24 > .pin1",".U1 > .pin19",".R16 > .pin1","net.ISNSN"]} />
+          <trace path={[".C25 > .pin2",".U1 > .pin22",".R17 > .pin1","net.CSA_SW1"]} />
+          <trace path={[".C25 > .pin1",".U1 > .pin21",".R18 > .pin1","net.CSB"]} />
+          <trace path={[".C30 > .pin1",".R23 > .pin1"]} />
+          <trace path={[".U1 > .pin6",".R39 > .pin1",".J12 > .pin9",".R42 > .pin2",".JP11 > .pin1",".J7 > .pin8","net.SCL"]} />
+          <trace path={[".U1 > .pin5",".R40 > .pin1",".J12 > .pin10",".R41 > .pin2",".JP10 > .pin1",".J7 > .pin6","net.SDA"]} />
+          <trace path={[".JP5 > .pin3",".U1 > .pin29",".C27 > .pin2",".TP9 > .pin1",".R25 > .pin2",".JP2 > .pin5",".R2 > .pin2",".R36 > .pin1",".JP9 > .pin3",".JP7 > .pin3","net.VCC2"]} />
+          <trace path={[".U1 > .pin30",".R32 > .pin1",".R33 > .pin1","net.LO2"]} />
+          <trace path={[".U1 > .pin4",".R27 > .pin2","net.DTRK"]} />
+          <trace path={[".U1 > .pin9",".R38 > .pin1",".R36 > .pin2",".JP9 > .pin2","net.ADDR"]} />
+          <trace path={[".C36 > .pin1",".R29 > .pin1"]} />
+          <trace path={[".R32 > .pin2",".C43 > .pin1",".Q7 > .pin4","net.LO2_G"]} />
+          <trace path={[".J12 > .pin5",".R39 > .pin2",".R40 > .pin2","net.VBUS"]} />
+          <trace path={[".U1 > .pin35",".R11 > .pin1",".C2 > .pin1","net.DRV1"]} />
+          <trace path={[".R29 > .pin2",".TP12 > .pin1",".U1 > .pin13","net.COMP"]} />
+          <trace path={[".R31 > .pin2",".U1 > .pin12","net.RT"]} />
+          <trace path={[".C15 > .pin2",".U1 > .pin36",".R7 > .pin1"]} />
+          <trace path={[".L1 > .pin2",".TP6 > .pin1",".Q7 > .Drain",".U1 > .pin33",".C33 > .pin1",".Q8 > .Drain",".C32 > .pin2",".Q5 > .pin2",".Q5 > .pin3",".Q5 > .pin1",".C42 > .pin1","net.SW2"]} />
+          <trace path={[".TP13 > .pin1",".U1 > .pin2",".C37 > .pin1","net.SS_ATRK"]} />
+          <trace path={[".JP6 > .pin1",".U1 > .pin3",".R24 > .pin2","net.SYNC"]} />
+          <trace path={[".U1 > .pin32",".R20 > .pin1","net.HO2"]} />
+          <trace path={[".U1 > .pin31",".C33 > .pin2","net.HB2"]} />
+          <trace path={[".U1 > .pin25",".C31 > .pin2","net.HB1"]} />
+          <trace path={[".JP2 > .pin1",".R9 > .pin2",".JP1 > .pin2"]} />
+          <trace path={[".C35 > .pin1",".U1 > .pin10",".J11 > .pin1",".R30 > .pin2",".J7 > .pin1","net.CDC"]} />
+          <trace path={[".C16 > .pin1",".U1 > .pin18",".R9 > .pin1"]} />
+          <trace path={[".R21 > .pin1",".JP4 > .pin2",".U1 > .pin37",".C29 > .pin1",".R22 > .pin2",".J7 > .pin5","net.EN_UVLO"]} />
+          <trace path={[".R5 > .pin2",".D2 > .pin1",".JP1 > .pin3",".Q1 > .pin5",".Q1 > .pin6",".Q1 > .pin7",".Q1 > .pin8",".Q1 > .pin9",".C41 > .pin2",".Q3 > .pin1",".Q3 > .pin2",".Q3 > .pin3",".J10 > .pin2",".D4 > .pin1","net.PPHV"]} />
+          <trace path={[".D2 > .pin2",".Q3 > .pin4",".R11 > .pin2",".R5 > .pin1"]} />
+          <trace path={[".R18 > .pin2",".R6 > .pin1",".R4 > .pin1",".L1 > .pin1"]} />
+          <trace path={[".R13 > .pin2",".Q4 > .pin4","net.HO1_G"]} />
+          <trace path={[".R14 > .pin2",".Q2 > .pin4"]} />
+          <trace path={[".R13 > .pin1",".U1 > .pin24",".R14 > .pin1","net.HO1"]} />
+          <trace path={[".Q6 > .pin4",".R28 > .pin1","net.LO1_G"]} />
+          <trace path={[".C26 > .pin2",".U1 > .pin1",".TP10 > .pin1",".JP12 > .pin2","net.VCC1"]} />
+          <trace path={[".JP5 > .pin2",".U1 > .pin7","net.MODE"]} />
+          <trace path={[".R25 > .pin1",".U1 > .pin11",".J7 > .pin4","net.nFLT"]} />
+          <trace path={[".U1 > .pin38",".R35 > .pin1",".TP11 > .pin1","net.nRST"]} />
+          <trace path={[".U1 > .pin8",".R37 > .pin2",".JP8 > .pin1","net.CFG2"]} />
+          <trace path={[".C28 > .pin2",".U1 > .pin40",".JP3 > .pin2","net.BIAS"]} />
+          <trace path={[".C1 > .pin1",".D1 > .pin2",".R1 > .pin1",".Q1 > .pin4"]} />
+          <trace path={[".C2 > .pin2",".D1 > .pin3"]} />
+          <trace path={[".C38 > .pin1",".JP7 > .pin2",".R34 > .pin2",".U1 > .pin16","net.ILIMCOMP"]} />
+          <trace path={[".J7 > .pin9",".JP12 > .pin1","net.VCC1_J"]} />
+          <trace path={[".RT1 > .pin2",".R43 > .pin2",".J7 > .pin2","net.PTC"]} />
+          <trace path={[".J7 > .pin3",".R43 > .pin1","net.PDCTRL_GOOD"]} />
+          <trace path={[".U1 > .pin27",".R28 > .pin2","net.LO1"]} />
+          <trace path={[".R33 > .pin2",".C44 > .pin1",".Q8 > .pin4"]} />
+          <trace path={[".R26 > .pin1",".C32 > .pin1"]} />
+          <trace path={[".C39 > .pin1",".R34 > .pin1"]} />
+          <trace path={[".Q5 > .pin4",".R20 > .pin2",".C42 > .pin2","net.HO2_G"]} />
+          <trace path={[".R10 > .pin2",".U1 > .pin15"]} />
           <chip noSchematicRepresentation pcbX={-69.6468} pcbY={-84.6836} footprint={<footprint>
                   <silkscreenline x1={73.91944575999999} y1={118.36399999999999} x2={75.9714} y2={118.36399999999999} strokeWidth={0.127} />
           <silkscreenline x1={75.9714} y1={118.36399999999999} x2={76.5556} y2={117.7798} strokeWidth={0.127} />

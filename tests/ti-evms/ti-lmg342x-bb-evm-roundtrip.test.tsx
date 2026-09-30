@@ -11,7 +11,7 @@ test(
 
     expect(result.generatedTscircuitSnapshot).toMatchInlineSnapshot(`
       "export default () => (
-        <board pcbX={98.85679999999999} pcbY={85.3821} width="162.56mm" height="92.837mm" outline={[{ x: 17.5768, y: 38.9636 }, { x: 180.1368, y: 38.9636 }, { x: 180.1368, y: 131.8006 }, { x: 17.5768, y: 131.8006 }, { x: 17.5768, y: 38.9636 }]} thickness="1.6mm" layers={2} material="fr4">
+        <board pcbX={98.85679999999999} pcbY={85.3821} width="162.56mm" height="92.837mm" outline={[{ x: 17.5768, y: 38.9636 }, { x: 180.1368, y: 38.9636 }, { x: 180.1368, y: 131.8006 }, { x: 17.5768, y: 131.8006 }, { x: 17.5768, y: 38.9636 }]} thickness="1.6mm" layers={2} material="fr4" routingDisabled>
           <chip name="C22" pcbX={-55.117999999999995} pcbY={-23.558499999999995} pcbRotation="270deg" layer="bottom" schX={4.852941176470589} schY={-5.031264474293655} symbol={<symbol geometryHash="8fdb41cdc28d" />} schDisplayValue="20uF" pinLabels={{"pin2":["2","pin2"],"pin1":["1","pin1"],"pin3":["3","pin3"],"pin4":["4","pin4"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <platedhole  portHints={["2"]} pcbX="18.7500006mm" pcbY="0.05000752mm" outerDiameter="2.25000058mm" holeDiameter="1.49999954mm" shape="circle" />
           <platedhole  portHints={["1"]} pcbX="-18.7500006mm" pcbY="0.0500126mm" holeShape="circle" padShape="rect" holeDiameter="1.49999954mm" rectPadWidth="2.25000058mm" rectPadHeight="2.25000058mm" rectBorderRadius="0.562500145mm" holeOffsetX="0mm" holeOffsetY="0mm" pcbRotation="270deg" shape="circular_hole_with_rect_pad" />
@@ -1414,6 +1414,85 @@ test(
           <chip name="ZZ2" pcbX={-61.163199999999996} pcbY={111.76712724} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} />
           <chip name="ZZ3" pcbX={-61.163199999999996} pcbY={109.30611362} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} />
           <chip name="ZZ4" pcbX={-61.163199999999996} pcbY={106.84509999999999} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} />
+          <net name="AGND" />
+          <net name="PGND" />
+          <net name="VAUX" />
+          <net name="NET_5V" />
+          <net name="NET_12V" />
+          <net name="HS_FET_PWM" />
+          <net name="LS_FET_PWM" />
+          <net name="HS_FET_OCZ" />
+          <net name="HS_FET_TEMP" />
+          <net name="HS_FET_FAULTZ" />
+          <net name="LS_FET_OCZ" />
+          <net name="LS_FET_TEMP" />
+          <net name="HVBUS" />
+          <net name="LS_FET_FAULTZ" />
+          <net name="LS_FET_TEMP_FILT" />
+          <net name="HS_FET_TEMP_FILT" />
+          <net name="HVOUT" />
+          <net name="PWM_HS" />
+          <net name="PWM_LS" />
+          <net name="TACH" />
+          <net name="SW" />
+          <trace path={[".J3 > .pin5",".J3 > .pin4",".J3 > .pin3",".J3 > .pin2",".R9 > .pin1",".C17 > .pin2",".5V_EN > .pin2",".AGND1 > .pin1",".C9 > .pin1",".C10 > .pin2",".J8 > .pin5",".J8 > .pin4",".J8 > .pin3",".J8 > .pin2",".C23 > .pin2",".L3 > .pin2",".AGND2 > .pin1",".C15 > .pin2",".U3 > .pin4",".U5 > .pin4",".U1 > .pin4",".U4 > .pin4",".U4 > .pin8",".J2 > .pin5",".J4 > .pin5",".C1 > .pin1",".U2 > .pin4",".C12 > .pin2",".C14 > .pin2",".J12 > .pin1",".J13 > .pin1",".C20 > .pin2",".C5 > .pin2",".C21 > .pin2",".J19 > .pin1",".C8 > .pin2",".C3 > .pin1",".J15 > .pin1",".C2 > .pin1",".C6 > .pin2",".J25 > .pin1",".R26 > .pin1","net.AGND"]} />
+          <trace path={[".PGND5 > .pin1",".R9 > .pin2",".CIN3 > .pin2",".CIN4 > .pin2",".J1 > .pin1",".C22 > .pin1",".C22 > .pin3",".C25 > .pin2",".COUT3 > .pin2",".COUT4 > .pin2",".PGND4 > .pin1",".J9 > .pin1",".PGND1 > .pin1",".PGND2 > .pin1",".HVIN_EN > .pin2","net.PGND"]} />
+          <trace path={[".C18 > .pin1",".C19 > .pin1",".J6 > .pin2",".L3 > .pin3",".VAUX > .pin1","net.VAUX"]} />
+          <trace path={[".C19 > .pin2",".C18 > .pin2",".J6 > .pin1",".L3 > .pin4",".ACMGND > .pin1"]} />
+          <trace path={[".U3 > .pin5",".R3 > .pin1",".D1 > .pin2"]} />
+          <trace path={[".U3 > .pin8",".C9 > .pin2",".R25 > .pin2",".C17 > .pin1",".R31 > .pin2",".U4 > .pin7",".J12 > .pin2",".5V > .pin1",".C16 > .pin1",".HS_FLT > .pin1",".U5 > .pin8",".U1 > .pin8",".LS_FLT > .pin1",".R6 > .pin1",".R22 > .pin2",".HS_OC > .pin1",".LS_OC > .pin1",".C8 > .pin1",".J20 > .pin1",".C1 > .pin2",".U2 > .pin8","net.NET_5V"]} />
+          <trace path={[".R1 > .pin2",".HS_FLT > .pin2"]} />
+          <trace path={[".C23 > .pin1",".D3 > .pin1",".U5 > .pin6",".R15 > .pin2"]} />
+          <trace path={[".U5 > .pin5",".R15 > .pin1",".D3 > .pin2"]} />
+          <trace path={[".C15 > .pin1",".R28 > .pin1",".L3 > .pin1",".12V > .pin1",".U4 > .pin1",".J26 > .pin1",".C6 > .pin1",".J15 > .pin2","net.NET_12V"]} />
+          <trace path={[".U3 > .pin7",".U3 > .pin3"]} />
+          <trace path={[".U5 > .pin7",".U5 > .pin3",".U3 > .pin1"]} />
+          <trace path={[".R2 > .pin2",".HS_FET_PWM > .pin1",".J2 > .pin6",".J21 > .pin1","net.HS_FET_PWM"]} />
+          <trace path={[".LS_FET_PWM > .pin1",".R4 > .pin2",".J4 > .pin6",".J30 > .pin1","net.LS_FET_PWM"]} />
+          <trace path={[".J2 > .pin3",".U2 > .pin2",".R29 > .pin1",".C5 > .pin1",".J23 > .pin1","net.HS_FET_OCZ"]} />
+          <trace path={[".J2 > .pin1",".J24 > .pin1",".R8 > .pin1","net.HS_FET_TEMP"]} />
+          <trace path={[".J2 > .pin4",".C12 > .pin1",".R1 > .pin1",".U2 > .pin1",".R7 > .pin2","net.HS_FET_FAULTZ"]} />
+          <trace path={[".J4 > .pin3",".U2 > .pin6",".R30 > .pin1",".C21 > .pin1",".J28 > .pin1","net.LS_FET_OCZ"]} />
+          <trace path={[".J4 > .pin1",".J27 > .pin1",".R27 > .pin1","net.LS_FET_TEMP"]} />
+          <trace path={[".U4 > .pin6",".R25 > .pin1",".C16 > .pin2",".R26 > .pin2"]} />
+          <trace path={[".R10 > .pin1",".R16 > .pin2"]} />
+          <trace path={[".R16 > .pin1",".R17 > .pin1"]} />
+          <trace path={[".R17 > .pin2",".R11 > .pin1"]} />
+          <trace path={[".R11 > .pin2",".R12 > .pin2"]} />
+          <trace path={[".R12 > .pin1",".R18 > .pin2"]} />
+          <trace path={[".R18 > .pin1",".R19 > .pin1"]} />
+          <trace path={[".R19 > .pin2",".R13 > .pin1"]} />
+          <trace path={[".R10 > .pin2",".CIN3 > .pin1",".C22 > .pin4",".C22 > .pin2",".HVIN > .pin1",".J1 > .pin2",".HVBUS1 > .pin1",".HVBUS2 > .pin1",".CIN4 > .pin1","net.HVBUS"]} />
+          <trace path={[".U2 > .pin5",".C14 > .pin1",".R5 > .pin1",".J4 > .pin4",".R21 > .pin2","net.LS_FET_FAULTZ"]} />
+          <trace path={[".J4 > .pin2",".R27 > .pin2",".C3 > .pin2","net.LS_FET_TEMP_FILT"]} />
+          <trace path={[".J2 > .pin2",".C2 > .pin2",".R8 > .pin2","net.HS_FET_TEMP_FILT"]} />
+          <trace path={[".R5 > .pin2",".LS_FLT > .pin2"]} />
+          <trace path={[".J18 > .pin1",".C25 > .pin1",".COUT3 > .pin1",".L2 > .pin1",".COUT4 > .pin1",".HVOUT > .pin1",".J9 > .pin2","net.HVOUT"]} />
+          <trace path={[".U4 > .pin2",".R28 > .pin2"]} />
+          <trace path={[".U4 > .pin5",".C20 > .pin1"]} />
+          <trace path={[".U4 > .pin3",".J13 > .pin2"]} />
+          <trace path={[".J7 > .pin2",".U1 > .pin1"]} />
+          <trace path={[".U1 > .pin5",".J14 > .pin2"]} />
+          <trace path={[".U3 > .pin2",".J7 > .pin3"]} />
+          <trace path={[".J3 > .pin1",".PWM_HS > .pin1",".J7 > .pin1","net.PWM_HS"]} />
+          <trace path={[".U1 > .pin7",".R2 > .pin1"]} />
+          <trace path={[".U1 > .pin3",".R4 > .pin1"]} />
+          <trace path={[".J8 > .pin1",".PWM_LS > .pin1",".U5 > .pin1",".J14 > .pin1","net.PWM_LS"]} />
+          <trace path={[".U2 > .pin3",".J10 > .pin2"]} />
+          <trace path={[".U1 > .pin2",".R6 > .pin2",".J10 > .pin1"]} />
+          <trace path={[".U1 > .pin6",".R22 > .pin1",".J11 > .pin1"]} />
+          <trace path={[".U2 > .pin7",".J11 > .pin2"]} />
+          <trace path={[".R29 > .pin2",".HS_OC > .pin2"]} />
+          <trace path={[".R30 > .pin2",".LS_OC > .pin2"]} />
+          <trace path={[".L2 > .pin2",".J16 > .pin1"]} />
+          <trace path={[".U5 > .pin2",".J14 > .pin3"]} />
+          <trace path={[".D1 > .pin1",".C10 > .pin1",".U3 > .pin6",".R3 > .pin2"]} />
+          <trace path={[".J15 > .pin3",".TACH > .pin1","net.TACH"]} />
+          <trace path={[".SW2 > .pin1",".SW1 > .pin1",".J17 > .pin1",".SW > .pin1","net.SW"]} />
+          <trace path={[".R21 > .pin1",".J29 > .pin1"]} />
+          <trace path={[".R7 > .pin1",".J22 > .pin1"]} />
+          <trace path={[".R31 > .pin1",".5V_EN > .pin1"]} />
+          <trace path={[".R20 > .pin1",".HVIN_EN > .pin1"]} />
           <chip noSchematicRepresentation pcbX={-98.85679999999999} pcbY={-85.3821} footprint={<footprint>
                   <silkscreenrect pcbX={51.500001139999995} pcbY={56.81955361999999} width={7.62} height={2.54} layer="top" strokeWidth={2.54} filled={true} />
           <fabricationnotedimension from={{ x: 17.5768, y: 38.9636 }} to={{ x: 180.1368, y: 38.9636 }} text="6400.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={2.5654} />
