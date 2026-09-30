@@ -1505,8 +1505,7 @@ test(
           <silkscreentext pcbX={68.56971046} pcbY={117.65818988} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="1" />
           <silkscreentext pcbX={96.3168} pcbY={129.64159999999998} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="1" />
           <silkscreentext pcbX={80.61244736} pcbY={129.64159999999998} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="1" />
-          <silkscreentext pcbX={146.9898} pcbY={51.4096} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="LMG342X-BB-EVM
-          HVP049A1" />
+          <silkscreentext pcbX={146.9898} pcbY={51.4096} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text={"LMG342X-BB-EVM\\nHVP049A1"} />
           <silkscreentext pcbX={117.90679999999999} pcbY={39.9796} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="SW" />
           <silkscreentext pcbX={75.61567554} pcbY={99.92867491999999} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="PWM_HS" />
           <silkscreentext pcbX={53.783925960000005} pcbY={100.0506} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="PWM_LS" />

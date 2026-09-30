@@ -1,6 +1,6 @@
 import { su } from "@tscircuit/soup-util"
+import { formatJsxStringAttribute } from "../format-jsx-string-attribute"
 import type { FootprintElementConverter } from "./converter-types"
-import { escapeJsxText } from "./footprint-tsx-attribute-formatters/escape-jsx-text"
 
 export const convertFabrication: FootprintElementConverter = (circuitJson) => {
   const fabricationNotePaths = su(circuitJson).pcb_fabrication_note_path.list()
@@ -32,7 +32,7 @@ export const convertFabrication: FootprintElementConverter = (circuitJson) => {
       `pcbX={${anchorPosition.x}}`,
       `pcbY={${anchorPosition.y}}`,
       `anchorAlignment="${fabText.anchor_alignment ?? "center"}"`,
-      `text="${escapeJsxText(fabText.text)}"`,
+      `text=${formatJsxStringAttribute(fabText.text)}`,
     ]
 
     if (fabText.font !== undefined) {
@@ -94,7 +94,7 @@ export const convertFabrication: FootprintElementConverter = (circuitJson) => {
     ]
 
     if (fabDimension.text !== undefined) {
-      attrs.push(`text="${escapeJsxText(fabDimension.text)}"`)
+      attrs.push(`text=${formatJsxStringAttribute(fabDimension.text)}`)
     }
     if (fabDimension.font !== undefined) {
       attrs.push(`font="${fabDimension.font}"`)
