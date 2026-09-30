@@ -896,6 +896,96 @@ test(
           <platedhole  portHints={["0"]} pcbX="21.6408mm" pcbY="109.8296mm" outerDiameter="4.318mm" holeDiameter="3.81mm" shape="circle" />
           <platedhole  portHints={["0"]} pcbX="101.1428mm" pcbY="109.8296mm" outerDiameter="4.318mm" holeDiameter="3.81mm" shape="circle" />
           <platedhole  portHints={["0"]} pcbX="101.1428mm" pcbY="43.0276mm" outerDiameter="4.318mm" holeDiameter="3.81mm" shape="circle" />
+          <silkscreenline x1={73.4568} y1={83.1596} x2={73.4568} y2={91.2876} strokeWidth={0.254} />
+          <silkscreenline x1={73.46244134} y1={74.79143792} x2={73.46244134} y2={82.14359999999999} strokeWidth={0.254} />
+          <silkscreenline x1={59.867799999999995} y1={91.2876} x2={73.4568} y2={91.2876} strokeWidth={0.254} />
+          <silkscreenline x1={47.294799999999995} y1={94.0816} x2={47.294799999999995} y2={113.6396} strokeWidth={0.254} />
+          <silkscreenline x1={46.532799999999995} y1={93.3196} x2={47.294799999999995} y2={94.0816} strokeWidth={0.254} />
+          <silkscreenline x1={18.3388} y1={93.3196} x2={46.532799999999995} y2={93.3196} strokeWidth={0.254} />
+          <silkscreenline x1={29.7688} y1={93.3196} x2={29.7688} y2={101.95559999999999} strokeWidth={0.254} />
+          <silkscreenline x1={65.29880006} y1={102.68760006000001} x2={65.29880006} y2={113.68360041999999} strokeWidth={0.254} />
+          <silkscreenline x1={64.5668} y1={101.95559999999999} x2={65.29880006} y2={102.68760006000001} strokeWidth={0.254} />
+          <silkscreenline x1={47.8028} y1={101.95559999999999} x2={64.5668} y2={101.95559999999999} strokeWidth={0.254} />
+          <silkscreenline x1={17.8308} y1={101.95559999999999} x2={48.056799999999996} y2={101.95559999999999} strokeWidth={0.254} />
+          <silkscreenline x1={63.87388291999999} y1={74.79143792} x2={69.43399626} y2={74.79143792} strokeWidth={0.254} />
+          <silkscreenline x1={59.867799999999995} y1={74.79143792} x2={59.867799999999995} y2={91.2876} strokeWidth={0.254} />
+          <silkscreenline x1={59.867799999999995} y1={74.79143792} x2={63.87388291999999} y2={74.79143792} strokeWidth={0.254} />
+          <silkscreenline x1={69.43399626} y1={74.79143792} x2={73.46244134} y2={74.79143792} strokeWidth={0.254} />
+          <fabricationnotepath route={[{"x":105.30839999999999,"y":38.9636},{"x":17.5768,"y":38.96360000000001}]} strokeWidth={0.254} color="#ec4899" />
+          <fabricationnotedimension from={{ x: 17.5641, y: 27.139899999999997 }} to={{ x: 42.964099999999995, y: 27.139899999999997 }} text="1000.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={0} />
+          <fabricationnotedimension from={{ x: 17.5768, y: 38.9636 }} to={{ x: 17.5768, y: 38.96360000000001 }} text="0.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={2.54} />
+          <silkscreentext pcbX={25.7048} pcbY={105.76559999999999} anchorAlignment="center" fontSize={1.27} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="S.E." />
+          <silkscreentext pcbX={26.7208} pcbY={109.32159999999999} anchorAlignment="center" fontSize={1.27} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="S.E." />
+          <silkscreentext pcbX={26.11167752} pcbY={100.39354826} anchorAlignment="center" fontSize={1.27} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="GND" />
+          <silkscreentext pcbX={21.1328} pcbY={93.82759999999999} anchorAlignment="center" fontSize={1.778} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="SPEED" />
+          <silkscreentext pcbX={63.311062099999994} pcbY={89.50959999999999} anchorAlignment="center" fontSize={1.778} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="DRV8307" />
+          <silkscreentext pcbX={18.084799999999998} pcbY={58.5216} anchorAlignment="center" fontSize={2.032} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="SPEED ADJUST" />
+          <silkscreentext pcbX={46.28303164} pcbY={41.60429068} anchorAlignment="center" fontSize={2.032} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="HALLOUT" />
+          <silkscreentext pcbX={56.50835282} pcbY={41.61520252} anchorAlignment="center" fontSize={2.032} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="FAULTn" />
+          <silkscreentext pcbX={65.68587065999999} pcbY={41.60429068} anchorAlignment="center" fontSize={2.032} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="LOCKn" />
+          <silkscreentext pcbX={74.20480968} pcbY={41.60330008} anchorAlignment="center" fontSize={2.032} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="ENABLE" />
+          <silkscreentext pcbX={22.6568} pcbY={96.11359999999999} anchorAlignment="center" fontSize={1.27} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="SPEED_ADJ" />
+          <silkscreentext pcbX={22.6568} pcbY={98.6536} anchorAlignment="center" fontSize={1.27} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="PWM" />
+          <silkscreentext pcbX={22.9108} pcbY={104.7496} anchorAlignment="center" fontSize={1.27} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="NORMAL" />
+          <silkscreentext pcbX={28.244799999999998} pcbY={104.7496} anchorAlignment="center" fontSize={4.572} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="[" />
+          <silkscreentext pcbX={29.2608} pcbY={108.0516} anchorAlignment="center" fontSize={4.572} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="[" />
+          <silkscreentext pcbX={42.2148} pcbY={105.76559999999999} anchorAlignment="center" fontSize={1.27} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="ENDED" />
+          <silkscreentext pcbX={30.276799999999998} pcbY={102.4636} anchorAlignment="center" fontSize={1.778} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="HALL SIGNALS" />
+          <silkscreentext pcbX={34.76235872} pcbY={108.55747656} anchorAlignment="center" fontSize={1.27} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="DIFF" />
+          <silkscreentext pcbX={33.67330578} pcbY={107.98932428} anchorAlignment="center" fontSize={4.572} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="]" />
+          <silkscreentext pcbX={37.31369982} pcbY={107.98932428} anchorAlignment="center" fontSize={4.572} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="[" />
+          <silkscreentext pcbX={41.1988} pcbY={105.5116} anchorAlignment="center" fontSize={4.572} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="]" />
+          <silkscreentext pcbX={42.2148} pcbY={107.0356} anchorAlignment="center" fontSize={1.27} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="SINGLE" />
+          <silkscreentext pcbX={40.4368} pcbY={96.87559999999999} anchorAlignment="center" fontSize={1.27} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="IS LOW" />
+          <silkscreentext pcbX={40.4368} pcbY={97.8916} anchorAlignment="center" fontSize={1.27} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="INSTALLED" />
+          <silkscreentext pcbX={37.388799999999996} pcbY={93.82759999999999} anchorAlignment="center" fontSize={1.778} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="DIR" />
+          <silkscreentext pcbX={30.784799999999997} pcbY={93.82759999999999} anchorAlignment="center" fontSize={1.778} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="BRAKE" />
+          <silkscreentext pcbX={50.30741526} pcbY={102.31578216} anchorAlignment="center" fontSize={1.778} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="HALL POWER" />
+          <silkscreentext pcbX={52.01063766} pcbY={105.34160034} anchorAlignment="center" fontSize={1.524} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="5V" />
+          <silkscreentext pcbX={50.8508} pcbY={104.868599} anchorAlignment="center" fontSize={4.572} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="]" />
+          <silkscreentext pcbX={53.898799999999994} pcbY={104.868599} anchorAlignment="center" fontSize={4.572} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="[" />
+          <silkscreentext pcbX={58.4708} pcbY={108.0516} anchorAlignment="center" fontSize={4.572} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="]" />
+          <silkscreentext pcbX={59.486799999999995} pcbY={108.8136} anchorAlignment="center" fontSize={1.27} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="CURRENT" />
+          <silkscreentext pcbX={89.9980928} pcbY={105.48102347999999} anchorAlignment="center" fontSize={1.27} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="HPWR" />
+          <silkscreentext pcbX={93.7612552} pcbY={109.54769302000001} anchorAlignment="center" fontSize={1.778} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="HALL" />
+          <silkscreentext pcbX={93.7768} pcbY={107.79759999999999} anchorAlignment="center" fontSize={1.778} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="INPUT" />
+          <silkscreentext pcbX={85.13931409999999} pcbY={105.93077874} anchorAlignment="center" fontSize={1.397} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="_" />
+          <silkscreentext pcbX={88.55061284} pcbY={105.24771685999998} anchorAlignment="center" fontSize={1.778} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="+" />
+          <silkscreentext pcbX={78.1101054} pcbY={105.93077874} anchorAlignment="center" fontSize={1.397} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="_" />
+          <silkscreentext pcbX={81.5649118} pcbY={105.24771685999998} anchorAlignment="center" fontSize={1.778} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="+" />
+          <silkscreentext pcbX={74.74886498} pcbY={105.24771685999998} anchorAlignment="center" fontSize={1.778} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="+" />
+          <silkscreentext pcbX={71.29931384} pcbY={105.93077874} anchorAlignment="center" fontSize={1.397} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="_" />
+          <silkscreentext pcbX={81.25581412} pcbY={47.0916} anchorAlignment="center" fontSize={2.032} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="VM" />
+          <silkscreentext pcbX={50.0888} pcbY={61.0616} anchorAlignment="center" fontSize={2.54} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="DRV8307EVM" />
+          <silkscreentext pcbX={84.15716975999999} pcbY={105.31915182} anchorAlignment="center" fontSize={1.524} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="U" />
+          <silkscreentext pcbX={87.57625868} pcbY={105.31915182} anchorAlignment="center" fontSize={1.524} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="U" />
+          <silkscreentext pcbX={77.11023186} pcbY={105.31915182} anchorAlignment="center" fontSize={1.524} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="V" />
+          <silkscreentext pcbX={80.57283097999999} pcbY={105.31915182} anchorAlignment="center" fontSize={1.524} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="V" />
+          <silkscreentext pcbX={73.37714813999999} pcbY={105.31915182} anchorAlignment="center" fontSize={1.524} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="W" />
+          <silkscreentext pcbX={69.91980682} pcbY={105.31915182} anchorAlignment="center" fontSize={1.524} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="W" />
+          <silkscreentext pcbX={65.58609946} pcbY={105.46738875999999} anchorAlignment="center" fontSize={1.27} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="HGND" />
+          <silkscreentext pcbX={32.2326} pcbY={17.1578651} anchorAlignment="center" fontSize={1.524} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text=".Layer_Name" />
+          <silkscreentext pcbX={89.575386} pcbY={74.54534748} anchorAlignment="center" fontSize={2.794} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="U" />
+          <silkscreentext pcbX={89.51449711999999} pcbY={85.35698955999999} anchorAlignment="center" fontSize={2.794} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="V" />
+          <silkscreentext pcbX={73.90908002} pcbY={82.27420172} anchorAlignment="center" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="UHSG" />
+          <silkscreentext pcbX={73.94090368} pcbY={75.19903172000001} anchorAlignment="center" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="ULSG" />
+          <silkscreentext pcbX={75.51397902} pcbY={78.19513444} anchorAlignment="center" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="U" />
+          <silkscreentext pcbX={75.98887012} pcbY={85.85333096} anchorAlignment="center" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="V" />
+          <silkscreentext pcbX={74.40057255999999} pcbY={83.2406006} anchorAlignment="center" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="VLSG" />
+          <silkscreentext pcbX={75.96174291999999} pcbY={84.22314118} anchorAlignment="center" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="VHSG" />
+          <silkscreentext pcbX={80.31479999999999} pcbY={96.11359999999999} anchorAlignment="center" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="W" />
+          <silkscreentext pcbX={77.5208} pcbY={92.5576} anchorAlignment="center" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="WHSG" />
+          <silkscreentext pcbX={74.60299531999999} pcbY={88.22209686} anchorAlignment="center" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="WLSG" />
+          <silkscreentext pcbX={89.14774143999999} pcbY={96.32279947999999} anchorAlignment="center" fontSize={2.794} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="W" />
+          <silkscreentext pcbX={101.27562676} pcbY={64.12810898} anchorAlignment="center" fontSize={1.778} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="VM" />
+          <silkscreentext pcbX={100.723954} pcbY={50.40502746} anchorAlignment="center" fontSize={1.778} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="GND" />
+          <silkscreentext pcbX={67.10679999999999} pcbY={61.0616} anchorAlignment="center" fontSize={2.54} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="REV.A" />
+          <silkscreentext pcbX={24.9428} pcbY={108.3056} anchorAlignment="center" fontSize={1.27} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="INVERT" />
+          <silkscreentext pcbX={20.116799999999998} pcbY={76.5556} anchorAlignment="center" fontSize={1.778} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="GND" />
+          <silkscreentext pcbX={95.71031404} pcbY={97.8916} anchorAlignment="center" fontSize={1.778} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="GND" />
+          <silkscreentext pcbX={32.2326} pcbY={17.1578651} anchorAlignment="center" fontSize={1.524} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="bottom" text=".Layer_Name" />
+          <coppertext pcbX={32.2326} pcbY={17.1578651} anchorAlignment="center" text=".Layer_Name" font="tscircuit2024" fontSize={1.524} pcbRotation="0deg" mirrored={false} />
+          <coppertext pcbX={32.2326} pcbY={17.1578651} anchorAlignment="center" text=".Layer_Name" font="tscircuit2024" fontSize={1.524} pcbRotation="0deg" mirrored={false} layer="bottom" />
           <pcbcopperpour shape="rect" layer="bottom" coveredWithSolderMask={true} sourceNetId="source_net_altium_pcb_35" pcbX={94.25792299} pcbY={83.25787641000001} width={30.791482740000003} height={6.388676579999999} pcbRotation={270} />
           <pcbcopperpour shape="polygon" layer="top" coveredWithSolderMask={true} sourceNetId="source_net_altium_pcb_35" points={[{"x":93.49376271999999,"y":93.91151905999999},{"x":97.45488002,"y":91.68339042},{"x":97.42145362,"y":98.63421726},{"x":95.7832857,"y":98.67256618},{"x":93.13602912,"y":98.64993986},{"x":91.07226134,"y":98.6349183},{"x":91.07217752,"y":95.64676578},{"x":91.99702454,"y":93.94690634}]} />
           <pcbcopperpour shape="polygon" layer="top" coveredWithSolderMask={true} sourceNetId="source_net_altium_pcb_35" points={[{"x":87.98220148,"y":52.073223260000006},{"x":91.88438824,"y":52.0511786},{"x":94.22128984,"y":56.59270368},{"x":97.38228936,"y":58.933890260000005},{"x":101.8301113,"y":59.92394162},{"x":103.38771296,"y":66.69314068},{"x":103.39384706,"y":67.83418996},{"x":100.1268,"y":69.6976},{"x":99.21154655999999,"y":70.3787137},{"x":98.85679999999999,"y":71.72959999999999},{"x":95.72899828,"y":69.50624909999999},{"x":93.7080168,"y":68.63146802},{"x":91.10142562,"y":68.62651248},{"x":89.82052394,"y":67.33625852},{"x":89.7967089,"y":62.89124327999999},{"x":89.3758309,"y":59.30375744},{"x":88.23344558,"y":56.137149599999994}]} />
