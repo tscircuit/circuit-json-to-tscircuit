@@ -7,6 +7,8 @@ import { convertFabrication } from "./generate-footprint-tsx/convert-fabrication
 import { convertHoles } from "./generate-footprint-tsx/convert-holes"
 import { convertKeepouts } from "./generate-footprint-tsx/convert-keepouts"
 import { convertNotes } from "./generate-footprint-tsx/convert-notes"
+import { convertPcbTraces } from "./generate-footprint-tsx/convert-pcb-traces"
+import { convertPcbVias } from "./generate-footprint-tsx/convert-pcb-vias"
 import { convertPlatedHoles } from "./generate-footprint-tsx/convert-plated-holes"
 import { convertSilkscreen } from "./generate-footprint-tsx/convert-silkscreen"
 import { convertSilkscreenText } from "./generate-footprint-tsx/convert-silkscreen-text"
@@ -27,6 +29,8 @@ export const generateFootprintTsx = (
     convertCutouts,
     convertNotes,
     convertCourtyard,
+    convertPcbTraces,
+    convertPcbVias,
   ]
   const elementStrings = converters.flatMap((convert) => convert(circuitJson))
 
