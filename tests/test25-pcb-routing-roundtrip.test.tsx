@@ -108,7 +108,13 @@ test("preserves explicit PCB trace routes and vias", async () => {
   )
 
   expect(generatedTscircuit).toContain("<pcbtrace")
-  expect(generatedTscircuit).toContain("<via")
+  expect(generatedTscircuit).toContain("<pcbvia")
+  expect(generatedTscircuit).not.toContain("<via")
+  expect(
+    renderedCircuitJson.filter(
+      (element) => element.type === "source_manually_placed_via",
+    ),
+  ).toHaveLength(0)
   expect(renderedPcbTraces).toHaveLength(sourcePcbTraces.length)
   for (const [pcbTraceIndex, sourcePcbTrace] of sourcePcbTraces.entries()) {
     expectRouteGeometryToMatch({
