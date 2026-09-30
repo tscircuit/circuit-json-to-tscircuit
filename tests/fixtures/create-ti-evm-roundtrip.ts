@@ -78,28 +78,13 @@ function createComparisonSvg({
   renderedSvg: string
   sourceSvg: string
 }): string {
-  return stackSvgsHorizontally(
-    [addSvgViewBox(sourceSvg), addSvgViewBox(renderedSvg)],
-    {
-      gap: 24,
-      normalizeSize: true,
-      targetSize: 800,
-      rootAttributes: {
-        "aria-label": `${fixtureName} ${kind}: source Circuit JSON on left, generated tscircuit render on right`,
-        role: "img",
-      },
+  return stackSvgsHorizontally([sourceSvg, renderedSvg], {
+    gap: 24,
+    normalizeSize: true,
+    targetSize: 800,
+    rootAttributes: {
+      "aria-label": `${fixtureName} ${kind}: source Circuit JSON on left, generated tscircuit render on right`,
+      role: "img",
     },
-  ).replace(/[ \t]+$/gm, "")
-}
-
-// stack-svgs rescales content through its viewBox. The renderers emit explicit
-// dimensions without one, which otherwise clips the comparison at targetSize.
-function addSvgViewBox(svg: string): string {
-  return svg.replace(/<svg\b([^>]*)>/, (root, attributes: string) => {
-    if (/\bviewBox=/.test(attributes)) return root
-    const width = attributes.match(/\bwidth="([\d.]+)"/)?.[1]
-    const height = attributes.match(/\bheight="([\d.]+)"/)?.[1]
-    if (!width || !height) return root
-    return `<svg${attributes} viewBox="0 0 ${width} ${height}">`
   })
 }
