@@ -11,7 +11,7 @@ test(
 
     expect(result.generatedTscircuitSnapshot).toMatchInlineSnapshot(`
       "export default () => (
-        <board pcbX={60.1218} pcbY={59.9186} width="85.09mm" height="41.91mm" outline={[{ x: 17.5768, y: 38.9636 }, { x: 17.5768, y: 80.8736 }, { x: 102.6668, y: 80.8736 }, { x: 102.6668, y: 38.9636 }, { x: 17.5768, y: 38.9636 }]} thickness="1.6mm" layers={2} material="fr4">
+        <board pcbX={60.1218} pcbY={59.9186} width="85.09mm" height="41.91mm" outline={[{ x: 17.5768, y: 38.9636 }, { x: 17.5768, y: 80.8736 }, { x: 102.6668, y: 80.8736 }, { x: 102.6668, y: 38.9636 }, { x: 17.5768, y: 38.9636 }]} thickness="1.6mm" layers={2} material="fr4" routingDisabled>
           <chip name="ZZ1" pcbX={-37.846000000000004} pcbY={40.766999999999996} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} footprint={<footprint>
                   <fabricationnotetext pcbX={1.1429999999999971} pcbY={-0.5079999999999956} anchorAlignment="center" text="Install label in silkscreened box after final wash.  Text shall be 8 pt font.  Text shall be per the Label Table in the PDF schematic." font="tscircuit2024" fontSize={1.016} color="#ec4899" />
                 </footprint>} />
@@ -856,6 +856,51 @@ test(
           <silkscreentext pcbX={0.4999989999999954} pcbY={2.074880279999995} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="R25" />
           <courtyardoutline outline={[{"x":1.4249984200000014,"y":-0.7999983999999998},{"x":1.4249984200000014,"y":0.8000009399999968},{"x":-1.4250009600000055,"y":0.8000009399999968},{"x":-1.4250009600000055,"y":-0.7999983999999998}]} layer="top" />
                 </footprint>} />
+          <net name="PGND" />
+          <net name="VCC" />
+          <net name="VIN" />
+          <net name="AGND" />
+          <net name="SS" />
+          <net name="VOUT" />
+          <net name="ISO_GND" />
+          <net name="COMP" />
+          <net name="FB" />
+          <net name="VAUX" />
+          <net name="PGOOD" />
+          <trace path={[".R12 > .pin1",".J3 > .pin1",".C17 > .pin1",".C15 > .pin1",".R25 > .pin1",".C2 > .pin2",".J1 > .pin2",".C5 > .pin2",".C6 > .pin2",".C3 > .pin2",".C4 > .pin2",".TP3 > .pin1",".C28 > .pin2",".T1 > .pin1",".U1 > .pin13",".U1 > .pin4",".NT1 > .pin2",".C19 > .pin2",".J4 > .pin5",".NT2 > .pin1",".C26 > .pin2",".C25 > .pin2",".C18 > .pin2","net.PGND"]} />
+          <trace path={[".R11 > .pin2",".C19 > .pin1",".R10 > .pin1"]} />
+          <trace path={[".Q1 > .pin4",".R8 > .pin1"]} />
+          <trace path={[".Q1 > .pin1",".Q1 > .pin2",".Q1 > .pin3",".R12 > .pin2",".R11 > .pin1"]} />
+          <trace path={[".U1 > .pin5",".R10 > .pin2"]} />
+          <trace path={[".R8 > .pin2",".U1 > .pin3"]} />
+          <trace path={[".C17 > .pin2",".U1 > .pin2",".R3 > .pin1",".R18 > .pin2",".R9 > .pin1","net.VCC"]} />
+          <trace path={[".R6 > .pin2",".C16 > .pin1",".R4 > .pin2",".T1 > .pin5",".J1 > .pin1",".C2 > .pin1",".C6 > .pin1",".C5 > .pin1",".C4 > .pin1",".C3 > .pin1",".TP1 > .pin1",".D5 > .pin2",".R26 > .pin2",".C27 > .pin2","net.VIN"]} />
+          <trace path={[".C21 > .pin2",".R16 > .pin1",".R17 > .pin1",".C22 > .pin2",".U1 > .pin7",".NT1 > .pin1",".TP8 > .pin1",".R24 > .pin1",".Q2 > .pin3","net.AGND"]} />
+          <trace path={[".C21 > .pin1",".U1 > .pin12",".R16 > .pin2",".R6 > .pin1"]} />
+          <trace path={[".U1 > .pin10",".R17 > .pin2"]} />
+          <trace path={[".U1 > .pin9",".C22 > .pin1",".J4 > .pin3",".Q2 > .pin1","net.SS"]} />
+          <trace path={[".R5 > .pin1",".C18 > .pin1",".U1 > .pin1"]} />
+          <trace path={[".D1 > .pin3",".C1 > .pin1",".C7 > .pin1",".C8 > .pin1",".C9 > .pin1",".C10 > .pin1",".C11 > .pin1",".C12 > .pin1",".J2 > .pin2",".TP2 > .pin1",".C14 > .pin1",".C13 > .pin1",".R7 > .pin2",".TP6 > .pin1","net.VOUT"]} />
+          <trace path={[".T1 > .pin10",".C7 > .pin2",".C8 > .pin2",".C9 > .pin2",".C10 > .pin2",".C11 > .pin2",".C12 > .pin2",".J2 > .pin1",".T1 > .pin9",".TP4 > .pin1",".C13 > .pin2",".C14 > .pin2",".R22 > .pin1",".U3 > .pin3",".TP9 > .pin1",".C20 > .pin2",".C28 > .pin1",".C27 > .pin1","net.ISO_GND"]} />
+          <trace path={[".R19 > .pin2",".R14 > .pin2",".R7 > .pin1",".TP7 > .pin1",".R13 > .pin2",".D4 > .pin2",".R15 > .pin2"]} />
+          <trace path={[".R22 > .pin2",".R21 > .pin1",".R19 > .pin1",".C23 > .pin2",".U3 > .pin1"]} />
+          <trace path={[".U3 > .pin2",".U2 > .pin2",".D4 > .pin1",".C23 > .pin1",".C24 > .pin1",".R15 > .pin1"]} />
+          <trace path={[".U2 > .pin4",".U1 > .pin6",".R18 > .pin1",".C25 > .pin1",".R20 > .pin1",".Q2 > .pin2",".J4 > .pin2","net.COMP"]} />
+          <trace path={[".R14 > .pin1",".U2 > .pin1"]} />
+          <trace path={[".C24 > .pin2",".R21 > .pin2"]} />
+          <trace path={[".R1 > .pin1",".D1 > .pin1",".D1 > .pin2",".T1 > .pin7",".T1 > .pin6"]} />
+          <trace path={[".R1 > .pin2",".C1 > .pin2"]} />
+          <trace path={[".D3 > .pin1",".R4 > .pin1",".C16 > .pin2"]} />
+          <trace path={[".D3 > .pin2",".Q1 > .pin5",".Q1 > .pin6",".Q1 > .pin7",".Q1 > .pin8",".Q1 > .pin9",".T1 > .pin3",".TP5 > .pin1"]} />
+          <trace path={[".C26 > .pin1",".R20 > .pin2"]} />
+          <trace path={[".D4 > .pin3",".C20 > .pin1",".R13 > .pin1"]} />
+          <trace path={[".R24 > .pin2",".R23 > .pin1",".U1 > .pin8","net.FB"]} />
+          <trace path={[".C15 > .pin2",".R3 > .pin2",".R2 > .pin2",".R25 > .pin2",".R23 > .pin2",".J4 > .pin4","net.VAUX"]} />
+          <trace path={[".T1 > .pin2",".D2 > .pin2"]} />
+          <trace path={[".U1 > .pin11",".R9 > .pin2",".J4 > .pin1","net.PGOOD"]} />
+          <trace path={[".R2 > .pin1",".D2 > .pin1"]} />
+          <trace path={[".NT2 > .pin2",".U2 > .pin3"]} />
+          <trace path={[".D5 > .pin1",".R5 > .pin2",".R26 > .pin1"]} />
           <chip noSchematicRepresentation pcbX={-60.1218} pcbY={-59.9186} footprint={<footprint>
                   <silkscreenline x1={55.041799999999995} y1={69.0626} x2={65.0748} y2={69.0626} strokeWidth={0.17779999999999999} />
           <silkscreenline x1={53.5178} y1={54.7116} x2={53.5178} y2={55.0926} strokeWidth={0.17779999999999999} />
