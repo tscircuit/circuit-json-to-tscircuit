@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@tscircuit/circuit-json-util": "^0.0.102",
+    "@tscircuit/circuit-json-util": "^0.0.117",
     "@tscircuit/mm": "^0.0.8",
     "@tscircuit/soup-util": "^0.0.41",
     "@types/bun": "latest",
@@ -46,6 +46,7 @@
     "@tscircuit/core": "0.0.1322"
   },
   "patchedDependencies": {
-    "@tscircuit/core@0.0.1322": "patches/@tscircuit%2Fcore@0.0.1322.patch"
+    "@tscircuit/core@0.0.1322": "patches/@tscircuit%2Fcore@0.0.1322.patch",
+    "@tscircuit/circuit-json-util@0.0.117": "patches/@tscircuit%2Fcircuit-json-util@0.0.117.patch"
   }
 }

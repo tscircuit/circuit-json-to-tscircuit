@@ -9,7 +9,7 @@ test(
       fixtureName: "lmg342x-bb-evm",
     })
 
-    expect(result.generatedTscircuit).toMatchInlineSnapshot(`
+    expect(result.generatedTscircuitSnapshot).toMatchInlineSnapshot(`
       "export default () => (
         <board pcbX={98.85679999999999} pcbY={85.3821} width="162.56mm" height="92.837mm" outline={[{ x: 17.5768, y: 38.9636 }, { x: 180.1368, y: 38.9636 }, { x: 180.1368, y: 131.8006 }, { x: 17.5768, y: 131.8006 }, { x: 17.5768, y: 38.9636 }]} thickness="1.6mm" layers={2} material="fr4">
           <chip name="C22" pcbX={-55.117999999999995} pcbY={-23.558499999999995} pcbRotation="270deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin2":["2","pin2"],"pin1":["1","pin1"],"pin3":["3","pin3"],"pin4":["4","pin4"]}} obstructsWithinBounds={false} footprint={<footprint>
@@ -70,6 +70,14 @@ test(
                   <silkscreenline x1={-11.049} y1={-9.525000000000006} x2={11.048999999999992} y2={-9.525000000000006} strokeWidth={1.27} />
           <silkscreenline x1={-11.049} y1={-9.525000000000006} x2={0} y2={9.612429340000006} strokeWidth={1.27} />
           <silkscreenline x1={0} y1={9.612429340000006} x2={11.048999999999992} y2={-9.525000000000006} strokeWidth={1.27} />
+          <pcbsilkscreengraphic geometryHash="3fb90cadd03e" />
+          <pcbsilkscreengraphic geometryHash="aa02520d1014" />
+          <pcbsilkscreengraphic geometryHash="448cfb991205" />
+          <pcbsilkscreengraphic geometryHash="8cf61f7fa371" />
+          <pcbsilkscreengraphic geometryHash="63ddab129d42" />
+          <pcbsilkscreengraphic geometryHash="15a925d5d34d" />
+          <pcbsilkscreengraphic geometryHash="71a7048bb6a2" />
+          <pcbsilkscreengraphic geometryHash="11b569b1fc46" />
                 </footprint>} />
           <chip name="FID8" pcbX={-78.74} pcbY={43.87849999999999} pcbRotation="90deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="0mm" pcbY="0mm" layer="bottom" solderMaskMargin="0.49999899999999997mm" radius="0.50000027mm" shape="circle" />
@@ -95,11 +103,56 @@ test(
           <chip name="FID1" pcbX={78.74000000000001} pcbY={-43.878499999999995} pcbRotation="0deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <smtpad portHints={["1"]} pcbX="0mm" pcbY="0mm" layer="top" solderMaskMargin="0.49999899999999997mm" radius="0.50000027mm" shape="circle" />
                 </footprint>} />
-          <chip name="LOGO6" pcbX={34.00182684000001} pcbY={-29.781499999999994} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} />
+          <chip name="LOGO6" pcbX={34.00182684000001} pcbY={-29.781499999999994} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} footprint={<footprint>
+                  <pcbsilkscreengraphic geometryHash="63d415d76c8d" />
+          <pcbsilkscreengraphic geometryHash="68ee297ec642" />
+          <pcbsilkscreengraphic geometryHash="7ca2e0f7eda9" />
+          <pcbsilkscreengraphic geometryHash="819ebd58f0ab" />
+                </footprint>} />
           <chip name="Logo4" pcbX={33.90899999999999} pcbY={-36.6395} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} footprint={<footprint>
                   <silkscreenpath route={[{"x":1.175999680000018,"y":-1.4820976199999976},{"x":1.1733475923300887,"y":-1.441634581338029},{"x":1.1654367072756031,"y":-1.4018638764860256},{"x":1.152402382273209,"y":-1.3634659932305482},{"x":1.1344676382374246,"y":-1.3270979300000008},{"x":1.1119393436112261,"y":-1.2933819544393828},{"x":1.0852029637616454,"y":-1.2628949562383767},{"x":1.0547159655606322,"y":-1.2361585763887817},{"x":1.020999990000007,"y":-1.2136302817625761},{"x":0.9846319267694525,"y":-1.195695537726813},{"x":0.9462340435139822,"y":-1.1826612127244047},{"x":0.9064633386620073,"y":-1.1747503276699334},{"x":0.8660003000000245,"y":-1.1720982399999968},{"x":0.8255372613380416,"y":-1.1747503276699334},{"x":0.7857665564860383,"y":-1.1826612127244047},{"x":0.747368673230568,"y":-1.195695537726813},{"x":0.7110006100000135,"y":-1.2136302817625761},{"x":0.6772846344393884,"y":-1.2361585763887817},{"x":0.6467976362383752,"y":-1.2628949562383767},{"x":0.6200612563887944,"y":-1.2933819544393828},{"x":0.597532961762596,"y":-1.3270979300000008},{"x":0.5795982177268115,"y":-1.3634659932305482},{"x":0.5665638927244174,"y":-1.4018638764860256},{"x":0.5586530076699319,"y":-1.441634581338029},{"x":0.5560009200000025,"y":-1.4820976199999976},{"x":0.5586530076699319,"y":-1.5225606586619733},{"x":0.5665638927244174,"y":-1.5623313635139695},{"x":0.5795982177268115,"y":-1.600729246769454},{"x":0.597532961762596,"y":-1.6370973100000015},{"x":0.6200612563887944,"y":-1.6708132855606124},{"x":0.6467976362383752,"y":-1.7013002837616256},{"x":0.6772846344393884,"y":-1.7280366636112134},{"x":0.7110006100000135,"y":-1.750564958237426},{"x":0.747368673230568,"y":-1.7684997022731892},{"x":0.7857665564860383,"y":-1.7815340272755975},{"x":0.8255372613380416,"y":-1.7894449123300689},{"x":0.8660003000000245,"y":-1.7920969999999983},{"x":0.9064633386620073,"y":-1.7894449123300689},{"x":0.9462340435139822,"y":-1.7815340272755975},{"x":0.9846319267694525,"y":-1.7684997022731892},{"x":1.020999990000007,"y":-1.750564958237426},{"x":1.0547159655606322,"y":-1.7280366636112134},{"x":1.0852029637616454,"y":-1.7013002837616256},{"x":1.1119393436112261,"y":-1.6708132855606124},{"x":1.1344676382374246,"y":-1.6370973100000015},{"x":1.152402382273209,"y":-1.600729246769454},{"x":1.1654367072756031,"y":-1.5623313635139695},{"x":1.1733475923300887,"y":-1.5225606586619733},{"x":1.175999680000018,"y":-1.4820976199999976}]} strokeWidth={0.19999959999999997} />
           <silkscreenpath route={[{"x":1.3800023200000169,"y":1.7820005000000023},{"x":1.379189572590974,"y":1.7944006292291945},{"x":1.3767652366973664,"y":1.806588588809312},{"x":1.3727707933784927,"y":1.818355839372792},{"x":1.3672745886669873,"y":1.8295010400000038},{"x":1.3603706641492863,"y":1.8398334932181797},{"x":1.352177147888085,"y":1.8491764078880522},{"x":1.3428342332181842,"y":1.8573699241492818},{"x":1.3325017800000296,"y":1.8642738486669614},{"x":1.3213565793728037,"y":1.869770053378474},{"x":1.3095893288093237,"y":1.873764496697362},{"x":1.2974013692292203,"y":1.8761888325909695},{"x":1.285001240000014,"y":1.8770015799999982},{"x":1.272601110770836,"y":1.8761888325909695},{"x":1.2604131511907326,"y":1.873764496697362},{"x":1.2486459006272241,"y":1.869770053378474},{"x":1.2375007000000267,"y":1.8642738486669614},{"x":1.2271682467818437,"y":1.8573699241492818},{"x":1.2178253321119712,"y":1.8491764078880522},{"x":1.2096318158507415,"y":1.8398334932181797},{"x":1.202727891333069,"y":1.8295010400000038},{"x":1.1972316866215351,"y":1.818355839372792},{"x":1.1932372433026615,"y":1.806588588809312},{"x":1.1908129074090539,"y":1.7944006292291945},{"x":1.190000160000011,"y":1.7820005000000023},{"x":1.1908129074090539,"y":1.7696003707708101},{"x":1.1932372433026615,"y":1.7574124111906926},{"x":1.1972316866215351,"y":1.7456451606272125},{"x":1.202727891333069,"y":1.7344999600000008},{"x":1.2096318158507415,"y":1.724167506781832},{"x":1.2178253321119712,"y":1.7148245921119525},{"x":1.2271682467818437,"y":1.70663107585073},{"x":1.2375007000000267,"y":1.6997271513330432},{"x":1.2486459006272241,"y":1.6942309466215306},{"x":1.2604131511907326,"y":1.6902365033026499},{"x":1.272601110770836,"y":1.6878121674090352},{"x":1.285001240000014,"y":1.6869994200000065},{"x":1.2974013692292203,"y":1.6878121674090352},{"x":1.309589328809352,"y":1.6902365033026499},{"x":1.3213565793728037,"y":1.6942309466215306},{"x":1.3325017800000296,"y":1.6997271513330432},{"x":1.3428342332181842,"y":1.70663107585073},{"x":1.352177147888085,"y":1.7148245921119525},{"x":1.3603706641492863,"y":1.724167506781832},{"x":1.3672745886669873,"y":1.7344999600000008},{"x":1.3727707933784927,"y":1.7456451606272125},{"x":1.3767652366973664,"y":1.7574124111906926},{"x":1.379189572590974,"y":1.7696003707708101},{"x":1.3800023200000169,"y":1.7820005000000023}]} strokeWidth={0.18999961999999998} />
           <silkscreenpath route={[{"x":0.9347504800000195,"y":-1.4820976199999976},{"x":0.9341623126795469,"y":-1.473123920790158},{"x":0.9324078744240296,"y":-1.4643037640617749},{"x":0.9295171841584704,"y":-1.4557880651418813},{"x":0.9255397023947864,"y":-1.44772253},{"x":0.920543484948638,"y":-1.4402451621785985},{"x":0.9146140184858211,"y":-1.433483901514201},{"x":0.9078527578214164,"y":-1.427554435051377},{"x":0.900375390000022,"y":-1.4225582176052498},{"x":0.892309854858155,"y":-1.4185807358415303},{"x":0.883794155938233,"y":-1.4156900455759782},{"x":0.8749739992098569,"y":-1.4139356073204752},{"x":0.8660003000000245,"y":-1.4133474400000026},{"x":0.8570266007901637,"y":-1.4139356073204752},{"x":0.8482064440617876,"y":-1.4156900455759782},{"x":0.839690745141894,"y":-1.4185807358415303},{"x":0.8316252099999986,"y":-1.4225582176052498},{"x":0.8241478421786042,"y":-1.427554435051377},{"x":0.8173865815142278,"y":-1.433483901514201},{"x":0.8114571150513825,"y":-1.4402451621785985},{"x":0.8064608976052625,"y":-1.44772253},{"x":0.8024834158415501,"y":-1.4557880651418813},{"x":0.7995927255759909,"y":-1.4643037640617749},{"x":0.7978382873204737,"y":-1.473123920790158},{"x":0.7972501200000295,"y":-1.4820976199999976},{"x":0.7978382873204737,"y":-1.4910713192098441},{"x":0.7995927255759909,"y":-1.4998914759382274},{"x":0.8024834158415501,"y":-1.5084071748581138},{"x":0.8064608976052625,"y":-1.5164727100000022},{"x":0.8114571150513825,"y":-1.5239500778214037},{"x":0.8173865815142278,"y":-1.5307113384857942},{"x":0.8241478421786042,"y":-1.5366408049486253},{"x":0.8316252099999986,"y":-1.5416370223947524},{"x":0.839690745141894,"y":-1.545614504158472},{"x":0.8482064440617876,"y":-1.548505194424024},{"x":0.8570266007901637,"y":-1.550259632679527},{"x":0.8660003000000245,"y":-1.5508477999999997},{"x":0.8749739992098569,"y":-1.550259632679527},{"x":0.883794155938233,"y":-1.548505194424024},{"x":0.892309854858155,"y":-1.545614504158472},{"x":0.900375390000022,"y":-1.5416370223947524},{"x":0.9078527578214164,"y":-1.5366408049486253},{"x":0.9146140184858211,"y":-1.5307113384857942},{"x":0.920543484948638,"y":-1.5239500778214037},{"x":0.9255397023947864,"y":-1.5164727100000022},{"x":0.9295171841584704,"y":-1.5084071748581138},{"x":0.9324078744240296,"y":-1.4998914759382274},{"x":0.9341623126795469,"y":-1.4910713192098441},{"x":0.9347504800000195,"y":-1.4820976199999976}]} strokeWidth={0.13750036} />
+          <pcbsilkscreengraphic geometryHash="91b576af8337" />
+          <pcbsilkscreengraphic geometryHash="bfd0b3e7404f" />
+          <pcbsilkscreengraphic geometryHash="71482117e77a" />
+          <pcbsilkscreengraphic geometryHash="41af4eb12933" />
+          <pcbsilkscreengraphic geometryHash="cff1d06a3382" />
+          <pcbsilkscreengraphic geometryHash="e788944a6991" />
+          <pcbsilkscreengraphic geometryHash="3dbc0556d5bd" />
+          <pcbsilkscreengraphic geometryHash="22d31b73c010" />
+          <pcbsilkscreengraphic geometryHash="6357aa9b2177" />
+          <pcbsilkscreengraphic geometryHash="ed09c73123d6" />
+          <pcbsilkscreengraphic geometryHash="7c1d5172805a" />
+          <pcbsilkscreengraphic geometryHash="d352dac99b15" />
+          <pcbsilkscreengraphic geometryHash="066901310832" />
+          <pcbsilkscreengraphic geometryHash="254711489c60" />
+          <pcbsilkscreengraphic geometryHash="9304303b756f" />
+          <pcbsilkscreengraphic geometryHash="f90f71cd9ae1" />
+          <pcbsilkscreengraphic geometryHash="14e55bce141f" />
+          <pcbsilkscreengraphic geometryHash="79a7f9047e7d" />
+          <pcbsilkscreengraphic geometryHash="5e3fb1c2dfe3" />
+          <pcbsilkscreengraphic geometryHash="9f5df00edf93" />
+          <pcbsilkscreengraphic geometryHash="af927c6e3ed4" />
+          <pcbsilkscreengraphic geometryHash="357c93ea340f" />
+          <pcbsilkscreengraphic geometryHash="787cac6e2a33" />
+          <pcbsilkscreengraphic geometryHash="b5f141d45363" />
+          <pcbsilkscreengraphic geometryHash="863f2640699f" />
+          <pcbsilkscreengraphic geometryHash="50e31f19a36a" />
+          <pcbsilkscreengraphic geometryHash="220d070ad032" />
+          <pcbsilkscreengraphic geometryHash="5af2787d6594" />
+          <pcbsilkscreengraphic geometryHash="c3b1af4239bd" />
+          <pcbsilkscreengraphic geometryHash="342d241aaeef" />
+          <pcbsilkscreengraphic geometryHash="1f41c9c7c622" />
+          <pcbsilkscreengraphic geometryHash="209f214250da" />
+          <pcbsilkscreengraphic geometryHash="2a85e5e66977" />
+          <pcbsilkscreengraphic geometryHash="676f547bffe9" />
+          <pcbsilkscreengraphic geometryHash="c7865198d74a" />
+          <pcbsilkscreengraphic geometryHash="433030801b34" />
+          <pcbsilkscreengraphic geometryHash="5856a1b20a2d" />
+          <pcbsilkscreengraphic geometryHash="4803c33bc6d7" />
+          <pcbsilkscreengraphic geometryHash="01d461f97f5a" />
+          <pcbsilkscreengraphic geometryHash="b04a0ba7c3d5" />
                 </footprint>} />
           <chip name="J15" pcbX={-62.098407679999994} pcbY={23.558499999999995} pcbRotation="180deg" layer="top" noSchematicRepresentation pinLabels={{"pin3":["3","pin3"],"pin2":["2","pin2"],"pin1":["1","pin1"]}} obstructsWithinBounds={false} footprint={<footprint>
                   <platedhole  portHints={["3"]} pcbX="2.539999999999999mm" pcbY="0mm" outerDiameter="1.6499992399999999mm" holeDiameter="1.016mm" shape="circle" />
@@ -118,6 +171,8 @@ test(
                   <silkscreenline x1={-11.049} y1={-8.940799999999996} x2={11.049} y2={-8.940799999999996} strokeWidth={1.27} />
           <silkscreenline x1={0} y1={10.196629340000015} x2={11.049} y2={-8.940799999999996} strokeWidth={1.27} />
           <silkscreenline x1={-11.049} y1={-8.940799999999996} x2={0} y2={10.196629340000015} strokeWidth={1.27} />
+          <pcbsilkscreengraphic geometryHash="e2d3cdacd778" />
+          <pcbsilkscreengraphic geometryHash="5a0e39320c05" />
                 </footprint>} />
           <chip name="H12" pcbX={-74.29509651999999} pcbY={39.30658636} pcbRotation="180deg" layer="bottom" noSchematicRepresentation obstructsWithinBounds={false} />
           <chip name="H11" pcbX={11.604691039999992} pcbY={40.06841364000002} pcbRotation="180deg" layer="bottom" noSchematicRepresentation obstructsWithinBounds={false} />
@@ -1318,7 +1373,44 @@ test(
           <silkscreenline x1={-15.875} y1={-1.904999999999994} x2={-15.875} y2={1.9050000000000011} strokeWidth={0.17779999999999999} />
           <silkscreenline x1={-14.605000000000004} y1={-3.174999999999997} x2={14.60499999999999} y2={-3.174999999999997} strokeWidth={0.17779999999999999} />
                 </footprint>} />
-          <chip name="Logo1" pcbX={34.13759999999999} pcbY={31.69667778} pcbRotation="90deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} />
+          <chip name="Logo1" pcbX={34.13759999999999} pcbY={31.69667778} pcbRotation="90deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} footprint={<footprint>
+                  <pcbsilkscreengraphic geometryHash="8cfe7efa9dad" />
+          <pcbsilkscreengraphic geometryHash="5ad9a3fa12b6" />
+          <pcbsilkscreengraphic geometryHash="1d74207acf2b" />
+          <pcbsilkscreengraphic geometryHash="ad389ac37e57" />
+          <pcbsilkscreengraphic geometryHash="b4f4c3535dcd" />
+          <pcbsilkscreengraphic geometryHash="bb936ac7ca19" />
+          <pcbsilkscreengraphic geometryHash="526ee538352c" />
+          <pcbsilkscreengraphic geometryHash="a2edf130c9b4" />
+          <pcbsilkscreengraphic geometryHash="c48836948afe" />
+          <pcbsilkscreengraphic geometryHash="7148bbea14b5" />
+          <pcbsilkscreengraphic geometryHash="16262ac53f84" />
+          <pcbsilkscreengraphic geometryHash="58ea79a70172" />
+          <pcbsilkscreengraphic geometryHash="2c2caf1aad43" />
+          <pcbsilkscreengraphic geometryHash="097ca7fe148e" />
+          <pcbsilkscreengraphic geometryHash="96f2d85060df" />
+          <pcbsilkscreengraphic geometryHash="18f703ed74d3" />
+          <pcbsilkscreengraphic geometryHash="d835c49efbe8" />
+          <pcbsilkscreengraphic geometryHash="841bdf028b74" />
+          <pcbsilkscreengraphic geometryHash="7d3498fe00f8" />
+          <pcbsilkscreengraphic geometryHash="b5924fccd418" />
+          <pcbsilkscreengraphic geometryHash="ba2143ed899f" />
+          <pcbsilkscreengraphic geometryHash="2b763b9ab413" />
+          <pcbsilkscreengraphic geometryHash="a5a499a30943" />
+          <pcbsilkscreengraphic geometryHash="6fc6f50df638" />
+          <pcbsilkscreengraphic geometryHash="644dfd2501df" />
+          <pcbsilkscreengraphic geometryHash="73561a64948f" />
+          <pcbsilkscreengraphic geometryHash="59e3aaaf2fcf" />
+          <pcbsilkscreengraphic geometryHash="96a607bc08af" />
+          <pcbsilkscreengraphic geometryHash="f3b0dba42b0f" />
+          <pcbsilkscreengraphic geometryHash="8982dffb47c9" />
+          <pcbsilkscreengraphic geometryHash="4d26a5a3e3bf" />
+          <pcbsilkscreengraphic geometryHash="40f3948e8b9a" />
+          <pcbsilkscreengraphic geometryHash="4ab5f8301070" />
+          <pcbsilkscreengraphic geometryHash="6c63ba3cace2" />
+          <pcbsilkscreengraphic geometryHash="3eb292c4fd6d" />
+          <pcbsilkscreengraphic geometryHash="5e7e29103cea" />
+                </footprint>} />
           <chip name="ZZ2" pcbX={-61.163199999999996} pcbY={111.76712724} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} />
           <chip name="ZZ3" pcbX={-61.163199999999996} pcbY={109.30611362} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} />
           <chip name="ZZ4" pcbX={-61.163199999999996} pcbY={106.84509999999999} pcbRotation="0deg" layer="top" noSchematicRepresentation obstructsWithinBounds={false} />

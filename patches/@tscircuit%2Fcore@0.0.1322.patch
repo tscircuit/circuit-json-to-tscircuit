@@ -1,3 +1,6 @@
+diff --git a/node_modules/@tscircuit/core/.bun-tag-ab8681d8621c37c8 b/.bun-tag-ab8681d8621c37c8
+new file mode 100644
+index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
 diff --git a/node_modules/@tscircuit/core/.bun-tag-b7971c3db8bc994 b/.bun-tag-b7971c3db8bc994
 new file mode 100644
 index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
@@ -5,18 +8,19 @@ diff --git a/node_modules/@tscircuit/core/.bun-tag-e03f092aed6c8030 b/.bun-tag-e
 new file mode 100644
 index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
 diff --git a/dist/index.js b/dist/index.js
-index 6d63e56c658c619b3c86d25146afa91d34392e07..dcd22e11421470baa3951c42e583e4b64071d9c3 100644
+index 6d63e56c658c619b3c86d25146afa91d34392e07..49f429853586bc3496b9153e68972a99a215e70f 100644
 --- a/dist/index.js
 +++ b/dist/index.js
-@@ -57,6 +57,7 @@ __export(components_exports, {
+@@ -57,6 +57,8 @@ __export(components_exports, {
    PcbNotePath: () => PcbNotePath,
    PcbNoteRect: () => PcbNoteRect,
    PcbNoteText: () => PcbNoteText,
 +  PcbCopperPour: () => PcbCopperPour,
++  PcbSilkscreenGraphic: () => PcbSilkscreenGraphic,
    PcbTrace: () => PcbTrace,
    PcbVia: () => PcbVia,
    PinHeader: () => PinHeader,
-@@ -6747,65 +6748,96 @@ var Hole = class extends PrimitiveComponent2 {
+@@ -6747,65 +6749,96 @@ var Hole = class extends PrimitiveComponent2 {
  };
  
  // lib/components/primitive-components/Keepout.ts
@@ -149,7 +153,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..dcd22e11421470baa3951c42e583e4b6
    }
    getPcbSize() {
      const { _parsedProps: props } = this;
-@@ -6815,7 +6847,12 @@ var Keepout = class extends PrimitiveComponent2 {
+@@ -6815,7 +6848,12 @@ var Keepout = class extends PrimitiveComponent2 {
      if (props.shape === "rect") {
        return { width: props.width, height: props.height };
      }
@@ -163,7 +167,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..dcd22e11421470baa3951c42e583e4b6
    }
  };
  
-@@ -7200,6 +7237,132 @@ var PcbTrace = class extends PrimitiveComponent2 {
+@@ -7200,6 +7238,193 @@ var PcbTrace = class extends PrimitiveComponent2 {
    }
  };
  
@@ -293,10 +297,71 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..dcd22e11421470baa3951c42e583e4b6
 +  }
 +};
 +
++// Temporary compiled copy of tscircuit/core#4252. Remove when that release is
++// available to this converter's runtime dependency.
++var pcbSilkscreenGraphicProps = z5.object({
++  brepShape: brep_shape,
++  imageAsset: z5.object({
++    project_relative_path: z5.string(),
++    url: z5.string(),
++    mimetype: z5.string()
++  }).optional(),
++  layer: z5.enum(["top", "bottom"])
++});
++var PcbSilkscreenGraphic = class extends PrimitiveComponent2 {
++  isPcbPrimitive = true;
++  get config() {
++    return {
++      componentName: "PcbSilkscreenGraphic",
++      zodProps: pcbSilkscreenGraphicProps
++    };
++  }
++  getPcbSize() {
++    const vertices = this._parsedProps.brepShape.outer_ring.vertices;
++    const xCoordinates = vertices.map((vertex) => vertex.x);
++    const yCoordinates = vertices.map((vertex) => vertex.y);
++    return {
++      width: Math.max(...xCoordinates) - Math.min(...xCoordinates),
++      height: Math.max(...yCoordinates) - Math.min(...yCoordinates)
++    };
++  }
++  doInitialPcbPrimitiveRender() {
++    if (this.root?.pcbDisabled) return;
++    const { db } = this.root;
++    const props = this._parsedProps;
++    const primitiveTransform = this._computePcbGlobalTransformBeforeLayout();
++    const { isFlipped, maybeFlipLayer } = this._getPcbPrimitiveFlippedHelpers();
++    const layer = maybeFlipLayer(props.layer);
++    if (layer !== "top" && layer !== "bottom") {
++      throw new Error(`Invalid silkscreen layer: ${layer}`);
++    }
++    db.pcb_silkscreen_graphic.insert({
++      brep_shape: {
++        outer_ring: transformCopperPourBrepRing({
++          isFlipped,
++          parentTransform: primitiveTransform,
++          ring: props.brepShape.outer_ring
++        }),
++        inner_rings: props.brepShape.inner_rings.map((ring) => transformCopperPourBrepRing({
++          isFlipped,
++          parentTransform: primitiveTransform,
++          ring
++        }))
++      },
++      image_asset: props.imageAsset,
++      layer,
++      pcb_component_id: this.parent?.pcb_component_id ?? this.getPrimitiveContainer()?.pcb_component_id ?? "",
++      pcb_group_id: this.getGroup()?.pcb_group_id ?? void 0,
++      shape: "brep",
++      subcircuit_id: this.getSubcircuit()?.subcircuit_id ?? void 0
++    });
++  }
++};
++
  // lib/components/primitive-components/PcbVia.ts
  import { viaProps } from "@tscircuit/props";
  import {
-@@ -8583,8 +8746,10 @@ var SilkscreenText = class extends PrimitiveComponent2 {
+@@ -8583,8 +8808,10 @@ var SilkscreenText = class extends PrimitiveComponent2 {
      const { maybeFlipLayer, isFlipped } = this._getPcbPrimitiveFlippedHelpers();
      const subcircuit = this.getSubcircuit();
      let rotation4 = 0;
@@ -309,11 +374,12 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..dcd22e11421470baa3951c42e583e4b6
      } else {
        const globalTransform = this._computePcbGlobalTransformBeforeLayout();
        const decomposedTransform = decomposeTSR5(globalTransform);
-@@ -30537,6 +30702,7 @@ export {
+@@ -30537,6 +30764,8 @@ export {
    PcbNotePath,
    PcbNoteRect,
    PcbNoteText,
 +  PcbCopperPour,
++  PcbSilkscreenGraphic,
    PcbTrace,
    PcbVia,
    PinHeader,
