@@ -1493,6 +1493,7 @@ test(
           <trace path={[".R7 > .pin1",".J22 > .pin1"]} />
           <trace path={[".R31 > .pin1",".5V_EN > .pin1"]} />
           <trace path={[".R20 > .pin1",".HVIN_EN > .pin1"]} />
+          {/* standalone schematic primitives: count=265 geometryHash=43d606ca123e */}
           <chip noSchematicRepresentation pcbX={-98.85679999999999} pcbY={-85.3821} footprint={<footprint>
                   <silkscreenrect pcbX={51.500001139999995} pcbY={56.81955361999999} width={7.62} height={2.54} layer="top" strokeWidth={2.54} filled={true} />
           <fabricationnotedimension from={{ x: 17.5768, y: 38.9636 }} to={{ x: 180.1368, y: 38.9636 }} text="6400.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={2.5654} />
