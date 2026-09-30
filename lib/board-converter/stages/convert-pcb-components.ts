@@ -92,7 +92,7 @@ const addSchematicComponentProps = ({
   )
 
   if (!namedSchematicComponent?.symbol_name) {
-    if (schematicComponents.length !== 1) {
+    if (schematicComponents.length === 0) {
       componentProps.push("noSchematicRepresentation")
       return
     }
