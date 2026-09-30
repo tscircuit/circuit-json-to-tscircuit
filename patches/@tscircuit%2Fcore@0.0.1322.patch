@@ -8,7 +8,7 @@ diff --git a/node_modules/@tscircuit/core/.bun-tag-e03f092aed6c8030 b/.bun-tag-e
 new file mode 100644
 index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
 diff --git a/dist/index.js b/dist/index.js
-index 6d63e56c658c619b3c86d25146afa91d34392e07..d84aa2ea31279066c0eacb52158032e7a471dcf0 100644
+index 6d63e56c658c619b3c86d25146afa91d34392e07..0e75b87f82b394c9422e69b1e614629928293446 100644
 --- a/dist/index.js
 +++ b/dist/index.js
 @@ -57,6 +57,8 @@ __export(components_exports, {
@@ -397,7 +397,64 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..d84aa2ea31279066c0eacb52158032e7
        return { x: schX, y: schY };
      }
      const parentNormalComponent = this.getParentNormalComponent();
-@@ -12776,8 +13010,9 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+@@ -12693,11 +12927,15 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+    * 1. `config.schematicSymbolName`
+    * 2. `props.footprint`
+    *
+    */
+   initPorts(opts = {}) {
++    const hasPendingReactSymbol = isValidElement(this.props.symbol) && !this.children.some((child) => child.componentName === "Symbol");
++    if (hasPendingReactSymbol) return;
+     this._inferredInternallyConnectedPinNames = [];
+     const { config } = this;
+     const portsToCreate = [];
++    const existingChildPorts = this._getAllPortsFromChildren();
++    const hasExistingOrQueuedPortWithPinNumber = (pinNumber) => existingChildPorts.some((port) => port._parsedProps.pinNumber === pinNumber) || portsToCreate.some((port) => port._parsedProps.pinNumber === pinNumber);
+     const schPortArrangement = this._getSchematicPortArrangement();
+     if (schPortArrangement && !this._parsedProps.pinLabels) {
+       for (const side in schPortArrangement) {
+@@ -12708,6 +12946,7 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+               pinNumberOrLabel,
+               this._parsedProps.pinLabels
+             );
++            if (hasExistingOrQueuedPortWithPinNumber(pinNumber)) continue;
+             portsToCreate.push(
+               new Port(
+                 {
+@@ -12727,11 +12966,13 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+       for (const side of sides) {
+         const size = schPortArrangement[`${side}Size`];
+         for (let i = 0; i < size; i++) {
++          const nextPinNumber = pinNum++;
++          if (hasExistingOrQueuedPortWithPinNumber(nextPinNumber)) continue;
+           portsToCreate.push(
+             new Port(
+               {
+-                pinNumber: pinNum++,
+-                aliases: opts.additionalAliases?.[`pin${pinNum}`] ?? []
++                pinNumber: nextPinNumber,
++                aliases: opts.additionalAliases?.[`pin${nextPinNumber}`] ?? []
+               },
+               {
+                 originDescription: `schPortArrangement:${side}`
+@@ -12750,9 +12991,9 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+             `Invalid pinLabels key "${pinKey}". Expected "pin\${number}" (e.g. pin1, pin2).`
+           );
+         }
+-        let existingPort = portsToCreate.find(
+-          (p) => p._parsedProps.pinNumber === pinNumber
+-        );
++        let existingPort = existingChildPorts.find(
++          (port) => port._parsedProps.pinNumber === pinNumber
++        ) ?? portsToCreate.find((port) => port._parsedProps.pinNumber === pinNumber);
+         const primaryLabel = Array.isArray(label) ? label[0] : label;
+         const otherLabels = Array.isArray(label) ? label.slice(1) : [];
+         if (!existingPort) {
+@@ -12772,12 +13013,12 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+           portsToCreate.push(existingPort);
+         } else {
+           existingPort.externallyAddedAliases.push(primaryLabel, ...otherLabels);
+-          existingPort.props.name = primaryLabel;
          }
        }
      }
@@ -409,7 +466,30 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..d84aa2ea31279066c0eacb52158032e7
        if (!sym) return;
        for (const symPort of sym.ports) {
          const pinNumber = getPinNumberFromLabels(symPort.labels);
-@@ -13019,7 +13254,7 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+@@ -12833,7 +13074,7 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+     }
+     const requiredPinCount = opts.pinCount ?? this._getPrimaryPinCount() ?? 0;
+     for (let pn = 1; pn <= requiredPinCount; pn++) {
+-      if (portsToCreate.find((p) => p._parsedProps.pinNumber === pn)) continue;
++      if (hasExistingOrQueuedPortWithPinNumber(pn)) continue;
+       if (!schPortArrangement) {
+         portsToCreate.push(
+           new Port({
+@@ -12926,8 +13167,11 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+       {},
+       {
+         get: (target, prop) => {
+-          const port = this.children.find(
+-            (c) => c.componentName === "Port" && c.isMatchingNameOrAlias(prop)
++          const symbol = this.children.find(
++            (child) => child.componentName === "Symbol"
++          );
++          const port = [...this.children, ...symbol?.children ?? []].find(
++            (child) => child.componentName === "Port" && child.isMatchingNameOrAlias(prop)
+           );
+           if (!port) {
+             throw new Error(
+@@ -13019,7 +13263,7 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
          message: "schPinSpacing is deprecated and will be ignored. Pin spacing is always 0.2."
        });
      }
@@ -418,7 +498,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..d84aa2ea31279066c0eacb52158032e7
      const { _parsedProps: props } = this;
      const hasSymbolChild = this.children.some(
        (c) => c.componentName === "Symbol"
-@@ -13579,9 +13814,9 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+@@ -13579,9 +13823,9 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
    }
    getPortsFromSchematicSymbol() {
      if (this.root?.schematicDisabled) return [];
@@ -431,7 +511,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..d84aa2ea31279066c0eacb52158032e7
      if (!symbol) return [];
      const newPorts = [];
      for (const symbolPort of symbol.ports) {
-@@ -14462,6 +14697,9 @@ var Chip = class extends NormalComponent3 {
+@@ -14462,6 +14706,9 @@ var Chip = class extends NormalComponent3 {
      if (props?.noSchematicRepresentation === true) return;
      super.doInitialSchematicComponentRender();
    }
@@ -441,7 +521,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..d84aa2ea31279066c0eacb52158032e7
    doInitialSourceRender() {
      const { db } = this.root;
      const { _parsedProps: props } = this;
-@@ -30537,6 +30775,8 @@ export {
+@@ -30537,6 +30784,8 @@ export {
    PcbNotePath,
    PcbNoteRect,
    PcbNoteText,
