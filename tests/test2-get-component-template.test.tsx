@@ -58,7 +58,7 @@ test("test2 getComponentUsingTemplate", async () => {
         "123456"
       ]
     }}
-        manufacturerPartNumber="123456"
+        manufacturerPartNumber={"123456"}
         {...props}
       />
     )"
