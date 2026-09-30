@@ -51,6 +51,6 @@ export const convertPcbVias: FootprintElementConverter = (circuitJson) => {
       )
     }
 
-    return `<via ${attributes.join(" ")} />`
+    return `<pcbvia ${attributes.join(" ")} />`
   })
 }
