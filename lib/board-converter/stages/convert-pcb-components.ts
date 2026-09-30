@@ -4,6 +4,7 @@ import type {
   SchematicComponent,
 } from "circuit-json"
 import { applyToPoint, inverse, translate } from "transformation-matrix"
+import { formatJsxStringAttribute } from "../../format-jsx-string-attribute"
 import { generateFootprintTsx } from "../../generate-footprint-tsx"
 import { generateSymbolTsx } from "../../generate-symbol-tsx"
 import type { BoardConverterStage } from "../BoardConverterContext"
@@ -114,7 +115,7 @@ const addSchematicComponentProps = ({
       )
       if (anchorComponent.symbol_display_value !== undefined) {
         componentProps.push(
-          `schDisplayValue=${JSON.stringify(anchorComponent.symbol_display_value)}`,
+          `schDisplayValue=${formatJsxStringAttribute(anchorComponent.symbol_display_value)}`,
         )
       }
       return
@@ -125,14 +126,14 @@ const addSchematicComponentProps = ({
   }
 
   componentProps.push(
-    `symbolName=${JSON.stringify(namedSchematicComponent.symbol_name)}`,
+    `symbolName=${formatJsxStringAttribute(namedSchematicComponent.symbol_name)}`,
     `schX={${namedSchematicComponent.center.x}}`,
     `schY={${namedSchematicComponent.center.y}}`,
   )
 
   if (namedSchematicComponent.symbol_display_value !== undefined) {
     componentProps.push(
-      `schDisplayValue=${JSON.stringify(namedSchematicComponent.symbol_display_value)}`,
+      `schDisplayValue=${formatJsxStringAttribute(namedSchematicComponent.symbol_display_value)}`,
     )
   }
 }
@@ -181,7 +182,7 @@ export const convertPcbComponents: BoardConverterStage = ({
     const componentName =
       sourceComponent?.name ?? `imported_component_${componentIndex + 1}`
     const componentProps = [
-      `name=${JSON.stringify(componentName)}`,
+      `name=${formatJsxStringAttribute(componentName)}`,
       `pcbX={${componentPosition.x}}`,
       `pcbY={${componentPosition.y}}`,
       `pcbRotation="${pcbComponent.rotation}deg"`,
@@ -199,7 +200,7 @@ export const convertPcbComponents: BoardConverterStage = ({
     }
     if (sourceComponent?.manufacturer_part_number) {
       componentProps.push(
-        `manufacturerPartNumber=${JSON.stringify(sourceComponent.manufacturer_part_number)}`,
+        `manufacturerPartNumber=${formatJsxStringAttribute(sourceComponent.manufacturer_part_number)}`,
       )
     }
     if (
