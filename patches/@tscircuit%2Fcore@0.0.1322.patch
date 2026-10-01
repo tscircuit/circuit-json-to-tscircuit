@@ -8,7 +8,7 @@ diff --git a/node_modules/@tscircuit/core/.bun-tag-e03f092aed6c8030 b/.bun-tag-e
 new file mode 100644
 index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
 diff --git a/dist/index.js b/dist/index.js
-index 6d63e56c658c619b3c86d25146afa91d34392e07..0e75b87f82b394c9422e69b1e614629928293446 100644
+index 6d63e56c658c619b3c86d25146afa91d34392e07..87c12285d0b8793e33064fb9e563ae213a476ce3 100644
 --- a/dist/index.js
 +++ b/dist/index.js
 @@ -57,6 +57,8 @@ __export(components_exports, {
@@ -30,7 +30,34 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..0e75b87f82b394c9422e69b1e6146299
      const orientationRotationMap = {
        horizontal: 0,
        pos_left: 0,
-@@ -6747,65 +6750,96 @@ var Hole = class extends PrimitiveComponent2 {
+@@ -5333,7 +5336,8 @@ var Trace3 = class extends PrimitiveComponent2 {
+     if (!allPortsFound) return;
+     this._traceConnectionHash = this._computeTraceConnectionHash();
+     const existingTraces = db.source_trace.list();
+-    const existingTrace = existingTraces.find(
++    // Temporary compiled copy of tscircuit/core#4262. Remove after release.
++    const existingTrace = props.sourceTraceId ? void 0 : existingTraces.find(
+       (t) => t.subcircuit_connectivity_map_key === this.subcircuit_connectivity_map_key && t.connected_source_port_ids.sort().join(",") === this._traceConnectionHash
+     );
+     if (existingTrace) {
+@@ -5343,6 +5347,7 @@ var Trace3 = class extends PrimitiveComponent2 {
+     const nets = this._findConnectedNets().nets;
+     const displayName = getTraceDisplayName({ ports, nets });
+     const trace = db.source_trace.insert({
++      ...props.sourceTraceId ? { source_trace_id: props.sourceTraceId } : {},
+       connected_source_port_ids: ports.map((p) => p.port.source_port_id),
+       connected_source_net_ids: nets.map((n) => n.source_net_id),
+       subcircuit_id: this.getSubcircuit()?.subcircuit_id,
+@@ -5413,7 +5418,8 @@ var Trace3 = class extends PrimitiveComponent2 {
+     const isPort2Chip = port2.parent.config.shouldRenderAsSchematicBox;
+     return isPort1Chip && isPort2Chip;
+   }
+   doInitialSchematicTraceRender() {
++    if (this._parsedProps.noSchematicRepresentation) return;
+     Trace_doInitialSchematicTraceRender(this);
+   }
+ };
+@@ -6747,65 +6753,96 @@ var Hole = class extends PrimitiveComponent2 {
  };
  
  // lib/components/primitive-components/Keepout.ts
@@ -163,7 +190,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..0e75b87f82b394c9422e69b1e6146299
    }
    getPcbSize() {
      const { _parsedProps: props } = this;
-@@ -6815,7 +6849,12 @@ var Keepout = class extends PrimitiveComponent2 {
+@@ -6815,7 +6852,12 @@ var Keepout = class extends PrimitiveComponent2 {
      if (props.shape === "rect") {
        return { width: props.width, height: props.height };
      }
@@ -177,7 +204,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..0e75b87f82b394c9422e69b1e6146299
    }
  };
  
-@@ -7200,6 +7239,193 @@ var PcbTrace = class extends PrimitiveComponent2 {
+@@ -7200,6 +7242,193 @@ var PcbTrace = class extends PrimitiveComponent2 {
    }
  };
  
@@ -371,7 +398,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..0e75b87f82b394c9422e69b1e6146299
  // lib/components/primitive-components/PcbVia.ts
  import { viaProps } from "@tscircuit/props";
  import {
-@@ -8583,8 +8809,10 @@ var SilkscreenText = class extends PrimitiveComponent2 {
+@@ -8583,8 +8812,10 @@ var SilkscreenText = class extends PrimitiveComponent2 {
      const { maybeFlipLayer, isFlipped } = this._getPcbPrimitiveFlippedHelpers();
      const subcircuit = this.getSubcircuit();
      let rotation4 = 0;
@@ -384,7 +411,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..0e75b87f82b394c9422e69b1e6146299
      } else {
        const globalTransform = this._computePcbGlobalTransformBeforeLayout();
        const decomposedTransform = decomposeTSR5(globalTransform);
-@@ -9418,6 +9646,12 @@ var Port = class extends PrimitiveComponent2 {
+@@ -9418,6 +9649,12 @@ var Port = class extends PrimitiveComponent2 {
    _getGlobalSchematicPositionBeforeLayout() {
      const { schX, schY } = this._parsedProps;
      if (schX !== void 0 && schY !== void 0) {
@@ -397,9 +424,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..0e75b87f82b394c9422e69b1e6146299
        return { x: schX, y: schY };
      }
      const parentNormalComponent = this.getParentNormalComponent();
-@@ -12693,11 +12927,15 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
-    * 1. `config.schematicSymbolName`
-    * 2. `props.footprint`
+@@ -12695,9 +12932,13 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
     *
     */
    initPorts(opts = {}) {
@@ -413,7 +438,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..0e75b87f82b394c9422e69b1e6146299
      const schPortArrangement = this._getSchematicPortArrangement();
      if (schPortArrangement && !this._parsedProps.pinLabels) {
        for (const side in schPortArrangement) {
-@@ -12708,6 +12946,7 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+@@ -12708,6 +12949,7 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
                pinNumberOrLabel,
                this._parsedProps.pinLabels
              );
@@ -421,7 +446,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..0e75b87f82b394c9422e69b1e6146299
              portsToCreate.push(
                new Port(
                  {
-@@ -12727,11 +12966,13 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+@@ -12727,11 +12969,13 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
        for (const side of sides) {
          const size = schPortArrangement[`${side}Size`];
          for (let i = 0; i < size; i++) {
@@ -437,7 +462,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..0e75b87f82b394c9422e69b1e6146299
                },
                {
                  originDescription: `schPortArrangement:${side}`
-@@ -12750,9 +12991,9 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+@@ -12750,9 +12994,9 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
              `Invalid pinLabels key "${pinKey}". Expected "pin\${number}" (e.g. pin1, pin2).`
            );
          }
@@ -450,7 +475,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..0e75b87f82b394c9422e69b1e6146299
          const primaryLabel = Array.isArray(label) ? label[0] : label;
          const otherLabels = Array.isArray(label) ? label.slice(1) : [];
          if (!existingPort) {
-@@ -12772,12 +13013,12 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+@@ -12772,12 +13016,12 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
            portsToCreate.push(existingPort);
          } else {
            existingPort.externallyAddedAliases.push(primaryLabel, ...otherLabels);
@@ -466,7 +491,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..0e75b87f82b394c9422e69b1e6146299
        if (!sym) return;
        for (const symPort of sym.ports) {
          const pinNumber = getPinNumberFromLabels(symPort.labels);
-@@ -12833,7 +13074,7 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+@@ -12833,7 +13077,7 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
      }
      const requiredPinCount = opts.pinCount ?? this._getPrimaryPinCount() ?? 0;
      for (let pn = 1; pn <= requiredPinCount; pn++) {
@@ -475,7 +500,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..0e75b87f82b394c9422e69b1e6146299
        if (!schPortArrangement) {
          portsToCreate.push(
            new Port({
-@@ -12926,8 +13167,11 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+@@ -12926,8 +13170,11 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
        {},
        {
          get: (target, prop) => {
@@ -489,7 +514,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..0e75b87f82b394c9422e69b1e6146299
            );
            if (!port) {
              throw new Error(
-@@ -13019,7 +13263,7 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+@@ -13019,7 +13266,7 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
          message: "schPinSpacing is deprecated and will be ignored. Pin spacing is always 0.2."
        });
      }
@@ -498,7 +523,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..0e75b87f82b394c9422e69b1e6146299
      const { _parsedProps: props } = this;
      const hasSymbolChild = this.children.some(
        (c) => c.componentName === "Symbol"
-@@ -13579,9 +13823,9 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
+@@ -13579,9 +13826,9 @@ var NormalComponent3 = class extends PrimitiveComponent2 {
    }
    getPortsFromSchematicSymbol() {
      if (this.root?.schematicDisabled) return [];
@@ -511,7 +536,7 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..0e75b87f82b394c9422e69b1e6146299
      if (!symbol) return [];
      const newPorts = [];
      for (const symbolPort of symbol.ports) {
-@@ -14462,6 +14706,9 @@ var Chip = class extends NormalComponent3 {
+@@ -14462,6 +14709,9 @@ var Chip = class extends NormalComponent3 {
      if (props?.noSchematicRepresentation === true) return;
      super.doInitialSchematicComponentRender();
    }
@@ -521,7 +546,43 @@ index 6d63e56c658c619b3c86d25146afa91d34392e07..0e75b87f82b394c9422e69b1e6146299
    doInitialSourceRender() {
      const { db } = this.root;
      const { _parsedProps: props } = this;
-@@ -30537,6 +30784,8 @@ export {
+@@ -18915,3 +19165,9 @@ var DEFAULT_MAX_MSP_PAIR_DISTANCE = 2.4;
+ function createSchematicTraceSolverInputProblem(group) {
+   const { db } = group.root;
++  const sourceTraceIdsWithoutSchematicRepresentation = /* @__PURE__ */ new Set(
++    group.selectAll("trace").filter((trace) => trace._parsedProps.noSchematicRepresentation).flatMap((trace) => trace.source_trace_id ? [trace.source_trace_id] : [])
++  );
++  const schematicSourceTraces = db.source_trace.list().filter(
++    (sourceTrace) => !sourceTraceIdsWithoutSchematicRepresentation.has(sourceTrace.source_trace_id)
++  );
+   const connKeyToSourceNet = /* @__PURE__ */ new Map();
+@@ -18993,7 +19246,7 @@ function createSchematicTraceSolverInputProblem(group) {
+   for (const cg of childGroups) {
+     if (cg.subcircuit_id) allowedSubcircuitIds.add(cg.subcircuit_id);
+   }
+-  const tracesInScope = db.source_trace.list().filter((st) => {
++  const tracesInScope = schematicSourceTraces.filter((st) => {
+     if (st.subcircuit_id === group.subcircuit_id) return true;
+     for (const source_port_id of st.connected_source_port_ids) {
+       if (sourcePortIdToSchPortId.has(source_port_id)) return true;
+@@ -19019,1 +19275,1 @@ function createSchematicTraceSolverInputProblem(group) {
+-  for (const st of db.source_trace.list()) {
++  for (const st of schematicSourceTraces) {
+@@ -20227,9 +20483,12 @@ function Group_doInitialSourceAddConnectivityMapKey(group) {
+   const { db } = group.root;
+   const traces = group.selectAll("trace");
++  const tracesWithSchematicRepresentation = traces.filter(
++    (trace) => !trace._parsedProps.noSchematicRepresentation
++  );
+   const vias = group.selectAll("via");
+   const nets = group.selectAll("net");
+   const connMap = new ConnectivityMap2({});
+   connMap.addConnections(
+-    traces.map((t) => {
++    tracesWithSchematicRepresentation.map((t) => {
+       const source_trace = db.source_trace.get(
+         t.source_trace_id
+@@ -30537,6 +30796,8 @@ export {
    PcbNotePath,
    PcbNoteRect,
    PcbNoteText,

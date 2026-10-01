@@ -18,6 +18,33 @@ interface TiEvmRoundtripResult {
   schematicComparisonSvg: string
 }
 
+const assertPcbTracesReferenceSourceTraces = (
+  circuitJson: CircuitJson,
+): void => {
+  const sourceTraceIds = new Set(
+    circuitJson.flatMap((element) =>
+      element.type === "source_trace" ? [element.source_trace_id] : [],
+    ),
+  )
+  const missingSourceTraceIds = [
+    ...new Set(
+      circuitJson.flatMap((element) =>
+        element.type === "pcb_trace" &&
+        element.source_trace_id &&
+        !sourceTraceIds.has(element.source_trace_id)
+          ? [element.source_trace_id]
+          : [],
+      ),
+    ),
+  ]
+
+  if (missingSourceTraceIds.length > 0) {
+    throw new Error(
+      `Rendered PCB traces reference missing source traces: ${missingSourceTraceIds.join(", ")}`,
+    )
+  }
+}
+
 const replaceSilkscreenGraphicGeometryWithHashes = (
   generatedTscircuit: string,
 ): string =>
@@ -84,6 +111,7 @@ export async function createTiEvmRoundtrip({
   const renderedCircuitJson = (await runTscircuitCode(
     generatedTscircuit,
   )) as CircuitJson
+  assertPcbTracesReferenceSourceTraces(renderedCircuitJson)
 
   const sourcePcbSvg = convertCircuitJsonToPcbSvg(sourceCircuitJson, {
     matchBoardAspectRatio: true,

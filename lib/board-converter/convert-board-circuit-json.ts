@@ -5,14 +5,14 @@ import type {
 } from "./BoardConverterContext"
 import { convertBoardProperties } from "./stages/convert-board-properties"
 import { convertPcbComponents } from "./stages/convert-pcb-components"
-import { convertSchematicConnectivity } from "./stages/convert-schematic-connectivity"
+import { convertSourceConnectivity } from "./stages/convert-source-connectivity"
 import { convertStandalonePcbPrimitives } from "./stages/convert-standalone-pcb-primitives"
 import { convertStandaloneSchematicPrimitives } from "./stages/convert-standalone-schematic-primitives"
 
 const conversionStages: BoardConverterStage[] = [
   convertBoardProperties,
   convertPcbComponents,
-  convertSchematicConnectivity,
+  convertSourceConnectivity,
   convertStandaloneSchematicPrimitives,
   convertStandalonePcbPrimitives,
 ]

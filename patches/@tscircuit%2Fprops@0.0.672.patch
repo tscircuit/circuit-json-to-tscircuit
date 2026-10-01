@@ -29,3 +29,13 @@ diff --git a/dist/index.js b/dist/index.js
    noSchematicRepresentation: z54.boolean().optional(),
    schShowInternalCircuit: z54.boolean().optional().default(false),
    noConnect: noConnectProp.optional(),
+@@ -17780,6 +17781,9 @@ var baseTraceProps = z77.object({
+   key: z77.string().optional(),
+   name: z77.string().optional(),
+   displayName: z77.string().optional(),
++  // Temporary compiled copy of tscircuit/props#882. Remove after release.
++  sourceTraceId: z77.string().optional(),
++  noSchematicRepresentation: z77.boolean().optional(),
+   thickness: distance19.optional(),
+   width: distance19.optional().describe("Alias for trace thickness"),
+   schematicRouteHints: z77.array(point).optional(),
