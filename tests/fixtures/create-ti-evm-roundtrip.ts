@@ -13,7 +13,6 @@ import { runTscircuitCode } from "tscircuit"
 
 interface TiEvmRoundtripResult {
   generatedTscircuit: string
-  renderedPcbSvg: string
   pcbComparisonSvg: string
   schematicComparisonSvg: string
 }
@@ -63,7 +62,6 @@ export async function createTiEvmRoundtrip({
 
   return {
     generatedTscircuit,
-    renderedPcbSvg,
     pcbComparisonSvg: createComparisonSvg({
       fixtureName,
       kind: "PCB",
@@ -92,7 +90,7 @@ function createComparisonSvg({
 }): string {
   return stackSvgsHorizontally([sourceSvg, renderedSvg], {
     gap: 24,
-    normalizeSize: true,
+    normalizeSize: kind !== "PCB",
     targetSize: 800,
     rootAttributes: {
       "aria-label": `${fixtureName} ${kind}: source Circuit JSON on left, generated tscircuit render on right`,

@@ -1075,13 +1075,9 @@ test(
       )
       export default Lm251772EvmPd"
     `)
-    await expect(result.renderedPcbSvg).toMatchSvgSnapshot(
-      import.meta.path,
-      "full-board",
-    )
     await expect(result.pcbComparisonSvg).toMatchSvgSnapshot(
       import.meta.path,
-      "pcb-comparison",
+      "full-board",
     )
     await expect(result.schematicComparisonSvg).toMatchSvgSnapshot(
       import.meta.path,
