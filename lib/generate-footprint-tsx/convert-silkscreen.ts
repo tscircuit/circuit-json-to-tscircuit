@@ -34,6 +34,16 @@ export const convertSilkscreen: FootprintElementConverter = (circuitJson) => {
     if (silkscreenRect.stroke_width !== undefined) {
       attrs.push(`strokeWidth={${silkscreenRect.stroke_width}}`)
     }
+    if (silkscreenRect.has_stroke === false) {
+      attrs.push('stroke="none"')
+    } else if (silkscreenRect.is_stroke_dashed) {
+      attrs.push('stroke="dashed"')
+    } else if (
+      silkscreenRect.has_stroke === true ||
+      silkscreenRect.is_stroke_dashed === false
+    ) {
+      attrs.push('stroke="solid"')
+    }
     if (silkscreenRect.is_filled !== undefined) {
       attrs.push(`filled={${silkscreenRect.is_filled}}`)
     }
