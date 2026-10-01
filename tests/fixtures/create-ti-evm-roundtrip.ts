@@ -12,6 +12,8 @@ import { stackSvgsHorizontally } from "stack-svgs"
 import { runTscircuitCode } from "tscircuit"
 
 interface TiEvmRoundtripResult {
+  sourceCircuitJson: CircuitJson
+  renderedCircuitJson: CircuitJson
   generatedTscircuit: string
   pcbComparisonSvg: string
   schematicComparisonSvg: string
@@ -68,6 +70,8 @@ export async function createTiEvmRoundtrip({
 
   return {
     generatedTscircuit,
+    sourceCircuitJson,
+    renderedCircuitJson,
     pcbComparisonSvg: createComparisonSvg({
       fixtureName,
       kind: "PCB",
