@@ -51,11 +51,9 @@ export async function createTiEvmRoundtrip({
   expect(renderedBoard).toMatchObject({ center: sourceBoard.center })
 
   const sourcePcbSvg = convertCircuitJsonToPcbSvg(sourceCircuitJson, {
-    viewportTarget: { pcb_board_id: sourceBoard.pcb_board_id },
     matchBoardAspectRatio: true,
   })
   const renderedPcbSvg = convertCircuitJsonToPcbSvg(renderedCircuitJson, {
-    viewportTarget: { pcb_board_id: renderedBoard.pcb_board_id },
     matchBoardAspectRatio: true,
   })
   const sourceSchematicSvg = convertCircuitJsonToSchematicSvg(sourceCircuitJson)
