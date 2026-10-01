@@ -1,17 +1,14 @@
 import { su } from "@tscircuit/soup-util"
 import type { SchematicElementConverter } from "./converter-types"
+import { formatElement } from "./format-attributes"
 
-// Preserve the imported drawing; electrical source connections are not rebuilt.
+// Circuit JSON carries wire geometry, but no drawing color or junction radius.
+// Preserve the edges and let native schematic paths choose their styling.
 export const convertTraces: SchematicElementConverter = (circuitJson) =>
   su(circuitJson)
     .schematic_trace.list()
-    .flatMap((schematic_trace) => [
-      ...schematic_trace.edges.map(
-        (edge) =>
-          `<schematicpath points={${JSON.stringify([edge.from, edge.to])}} strokeWidth={0.02} strokeColor="#008800" />`,
+    .flatMap((schematic_trace) =>
+      schematic_trace.edges.map((edge) =>
+        formatElement("schematicpath", { points: [edge.from, edge.to] }),
       ),
-      ...schematic_trace.junctions.map(
-        (center) =>
-          `<schematiccircle center={${JSON.stringify(center)}} radius={0.04} strokeWidth={0} color="#008800" fillColor="#008800" isFilled />`,
-      ),
-    ])
+    )

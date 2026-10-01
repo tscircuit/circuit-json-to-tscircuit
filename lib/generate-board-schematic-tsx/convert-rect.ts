@@ -4,12 +4,13 @@ import {
   rotateDEG,
   translate,
 } from "transformation-matrix"
+import { formatElement } from "./format-attributes"
 
 export const convertRect = ({
   center,
   width,
   height,
-  ccwRotationDegrees = 0,
+  ccwRotationDegrees,
   strokeWidth,
   color,
   fillColor,
@@ -19,14 +20,14 @@ export const convertRect = ({
   width: number
   height: number
   ccwRotationDegrees?: number
-  strokeWidth: number
-  color: string
-  fillColor: string
-  isFilled: boolean
+  strokeWidth?: number | null
+  color?: string
+  fillColor?: string
+  isFilled?: boolean
 }) => {
   const rectToSchematicTransform = compose(
     translate(center.x, center.y),
-    rotateDEG(ccwRotationDegrees),
+    rotateDEG(ccwRotationDegrees ?? 0),
   )
   const points = [
     { x: -width / 2, y: -height / 2 },
@@ -35,6 +36,12 @@ export const convertRect = ({
     { x: -width / 2, y: height / 2 },
     { x: -width / 2, y: -height / 2 },
   ].map((point) => applyToPoint(rectToSchematicTransform, point))
-  // SchematicRect does not expose separate outline and fill colors in core.
-  return `<schematicpath points={${JSON.stringify(points)}} strokeWidth={${strokeWidth}} strokeColor={${JSON.stringify(color)}} fillColor={${JSON.stringify(fillColor)}} isFilled={${isFilled}} />`
+  // Native rectangles cannot carry separate outline and fill colors.
+  return formatElement("schematicpath", {
+    points,
+    strokeWidth,
+    strokeColor: color,
+    fillColor,
+    isFilled,
+  })
 }

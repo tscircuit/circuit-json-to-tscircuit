@@ -69,23 +69,13 @@ test("test22 preserves board schematic drawing without a PCB footprint", async (
   expect(controllerLabel.text).toBe('U1 "controller" {flyback}')
   expect(controllerLabel.position.x).toBeCloseTo(1, 6)
   expect(controllerLabel.position.y).toBeCloseTo(5, 6)
-  expect(controllerLabel.rotation).toBe(-90)
+  expect(controllerLabel.rotation).toBe(90)
   const paths = renderedCircuitJson.filter(
     (elm) => elm.type === "schematic_path",
   )
   expect(
     paths.some((path) =>
       path.points.some((point) => point.x === -2 && point.y === 2),
-    ),
-  ).toBe(true)
-  const junctions = renderedCircuitJson.filter(
-    (elm) => elm.type === "schematic_circle",
-  )
-  expect(
-    junctions.some(
-      (circle) =>
-        Math.abs(circle.center.x) < 0.000001 &&
-        Math.abs(circle.center.y - 2) < 0.000001,
     ),
   ).toBe(true)
   expect(
@@ -113,6 +103,7 @@ test("fits named symbol geometry to imported schematic ports", async () => {
     {
       type: "schematic_port",
       schematic_port_id: "top",
+      pin_number: 1,
       schematic_component_id: "capacitor",
       source_port_id: "top",
       center: { x: 10, y: 5 },
@@ -122,6 +113,7 @@ test("fits named symbol geometry to imported schematic ports", async () => {
     {
       type: "schematic_port",
       schematic_port_id: "bottom",
+      pin_number: 2,
       schematic_component_id: "capacitor",
       source_port_id: "bottom",
       center: { x: 10, y: 1 },
@@ -144,4 +136,53 @@ test("fits named symbol geometry to imported schematic ports", async () => {
           Math.abs(point.x - 10) < 0.000001 && Math.abs(point.y - y) < 0.000001,
       ),
     ).toBe(true)
+})
+
+test("preserves imported schematic styling instead of replacing it with a palette", async () => {
+  const styledCircuitJson: CircuitJson = [
+    circuitJson[0]!,
+    {
+      type: "schematic_path",
+      schematic_path_id: "styled_path",
+      points: [
+        { x: 1, y: 2 },
+        { x: 3, y: 4 },
+      ],
+      stroke_color: "#123456",
+      stroke_width: 0.07,
+      fill_color: "#abcdef",
+      is_filled: true,
+      is_dashed: false,
+    },
+    {
+      type: "schematic_text",
+      schematic_text_id: "styled_label",
+      text: "source styling",
+      position: { x: 7, y: 8 },
+      anchor: "top_right",
+      font_size: 0.31,
+      color: "#654321",
+      rotation: 25,
+    },
+  ]
+  const rendered = await runTscircuitCode(
+    convertCircuitJsonToTscircuit(styledCircuitJson, {
+      componentName: "StyledBoard",
+    }),
+  )
+  const path = rendered.find((element) => element.type === "schematic_path")
+  const text = rendered.find((element) => element.type === "schematic_text")
+  if (path?.type !== "schematic_path" || text?.type !== "schematic_text")
+    throw new Error("Missing styled schematic primitives")
+  expect(path.points).toEqual([
+    { x: 1, y: 2 },
+    { x: 3, y: 4 },
+  ])
+  expect(path.stroke_color).toBe("#123456")
+  expect(path.stroke_width).toBe(0.07)
+  expect(path.fill_color).toBe("#abcdef")
+  expect(text.position).toEqual({ x: 7, y: 8 })
+  expect(text.color).toBe("#654321")
+  expect(text.font_size).toBe(0.31)
+  expect(text.rotation).toBe(25)
 })

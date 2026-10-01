@@ -1,5 +1,7 @@
+import { schematic_text } from "circuit-json"
 import type { SchSymbol } from "schematic-symbols"
 import { applyToPoint, type Matrix } from "transformation-matrix"
+import { formatElement } from "./format-attributes"
 
 const anchors = {
   middle_top: "top_center",
@@ -30,7 +32,11 @@ export const convertSymbolPrimitives = ({
         applyToPoint(symbolToSchematicTransform, point),
       )
       if (primitive.closed && points[0]) points.push(points[0])
-      return `<schematicpath points={${JSON.stringify(points)}} strokeWidth={0.02} strokeColor="#840000" />`
+      return formatElement("schematicpath", {
+        points,
+        strokeWidth: primitive.strokeWidth,
+        isFilled: primitive.fill,
+      })
     }
     const center = applyToPoint(symbolToSchematicTransform, primitive)
     if (primitive.type === "text") {
@@ -40,10 +46,15 @@ export const convertSymbolPrimitives = ({
           : primitive.text === "{VAL}"
             ? displayText
             : primitive.text
-      return `<schematictext text={${JSON.stringify(text)}} schX={${center.x}} schY={${center.y}} anchor="${anchors[primitive.anchor]}" fontSize={0.18} color="#006464" />`
+      return formatElement("schematictext", {
+        text,
+        schX: center.x,
+        schY: center.y,
+        anchor: anchors[primitive.anchor],
+        fontSize:
+          primitive.fontSize ?? schematic_text.shape.font_size.parse(undefined),
+      })
     }
-    // Transform displacement vectors without translation to measure lengths in
-    // schematic coordinates, including when the symbol transform has rotation.
     const symbolToSchematicVectorTransform = {
       ...symbolToSchematicTransform,
       e: 0,
@@ -54,8 +65,11 @@ export const convertSymbolPrimitives = ({
         x: primitive.radius,
         y: 0,
       })
-      const radius = Math.hypot(radiusVector.x, radiusVector.y)
-      return `<schematiccircle center={${JSON.stringify(center)}} radius={${radius}} color="#840000" strokeWidth={0.02} isFilled={${primitive.fill}} />`
+      return formatElement("schematiccircle", {
+        center,
+        radius: Math.hypot(radiusVector.x, radiusVector.y),
+        isFilled: primitive.fill,
+      })
     }
     const widthVector = applyToPoint(symbolToSchematicVectorTransform, {
       x: primitive.width,
@@ -65,12 +79,13 @@ export const convertSymbolPrimitives = ({
       x: 0,
       y: primitive.height,
     })
-    const width = Math.hypot(widthVector.x, widthVector.y)
-    const height = Math.hypot(heightVector.x, heightVector.y)
     const ccwRotationDegrees =
       (Math.atan2(widthVector.y, widthVector.x) * 180) / Math.PI
-    const rotationAttribute = ccwRotationDegrees
-      ? ` rotation={${ccwRotationDegrees}}`
-      : ""
-    return `<schematicrect schX={${center.x}} schY={${center.y}} width={${width}} height={${height}} color="#840000" strokeWidth={0.02}${rotationAttribute} />`
+    return formatElement("schematicrect", {
+      schX: center.x,
+      schY: center.y,
+      width: Math.hypot(widthVector.x, widthVector.y),
+      height: Math.hypot(heightVector.x, heightVector.y),
+      rotation: ccwRotationDegrees,
+    })
   })
