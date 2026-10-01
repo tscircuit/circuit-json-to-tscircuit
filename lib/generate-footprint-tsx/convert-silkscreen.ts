@@ -1,5 +1,6 @@
 import { su } from "@tscircuit/soup-util"
 import type { FootprintElementConverter } from "./converter-types"
+import { formatPcbRotationAttr } from "./footprint-tsx-attribute-formatters/format-pcb-rotation-attr"
 
 export const convertSilkscreen: FootprintElementConverter = (circuitJson) => {
   const silkscreenLines = su(circuitJson).pcb_silkscreen_line.list()
@@ -41,7 +42,9 @@ export const convertSilkscreen: FootprintElementConverter = (circuitJson) => {
       attrs.push(`cornerRadius={${silkscreenRect.corner_radius}}`)
     }
 
-    elementStrings.push(`<silkscreenrect ${attrs.join(" ")} />`)
+    elementStrings.push(
+      `<silkscreenrect ${attrs.join(" ")}${formatPcbRotationAttr(silkscreenRect.ccw_rotation)} />`,
+    )
   }
 
   for (const silkscreenCircle of silkscreenCircles) {
