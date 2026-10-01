@@ -1,4 +1,5 @@
 import type { PcbCopperPourBRep, Point } from "circuit-json"
+import { flattenBrepRing } from "./flatten-brep-ring"
 
 type BRepShape = PcbCopperPourBRep["brep_shape"]
 
@@ -7,9 +8,12 @@ export const getBrepCopperPourOutline = (
 ): Point[] | undefined => {
   // <copperpour> accepts one outline. Opposite-winding hole rings joined by
   // duplicate bridge edges retain their voids when the solver rebuilds BRep.
-  let outline = withWinding(brepShape.outer_ring.vertices, "ccw")
+  let outline = withWinding(
+    flattenBrepRing(brepShape.outer_ring.vertices),
+    "ccw",
+  )
   const holes = (brepShape.inner_rings ?? [])
-    .map((ring) => withWinding(ring.vertices, "cw"))
+    .map((ring) => withWinding(flattenBrepRing(ring.vertices), "cw"))
     .filter((ring) => ring.length >= 3)
     .sort((first, second) => getLeftmostX(first) - getLeftmostX(second))
 
