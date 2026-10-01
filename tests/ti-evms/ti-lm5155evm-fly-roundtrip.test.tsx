@@ -502,83 +502,83 @@ test(
       <silkscreenline x1={41.549601939999995} y1={53.12440226} x2={41.85438162} y2={52.81962258} strokeWidth={0.254} />
       <silkscreenline x1={41.56262451999999} y1={52.81962258} x2={41.85438162} y2={52.81962258} strokeWidth={0.254} />
       <fabricationnotepath route={[{"x":45.0088,"y":28.2956},{"x":45.0088,"y":28.549599999999998}]} strokeWidth={0.254} color="#ec4899" />
-      <fabricationnotetext pcbX={40.439797199999994} pcbY={49.8505988} anchorAlignment="center" text="U1" font="tscircuit2024" fontSize={0.4572} color="#ec4899" />
-      <fabricationnotetext pcbX={20.243700939999997} pcbY={51.842136599999996} anchorAlignment="center" text="TP3" font="tscircuit2024" fontSize={0.4572} color="#ec4899" />
-      <fabricationnotetext pcbX={99.49170093999999} pcbY={61.0115366} anchorAlignment="center" text="TP2" font="tscircuit2024" fontSize={0.4572} color="#ec4899" />
-      <fabricationnotetext pcbX={45.00870094} pcbY={40.5899366} anchorAlignment="center" text="TP8" font="tscircuit2024" fontSize={0.4572} color="#ec4899" />
-      <fabricationnotetext pcbX={20.243700939999997} pcbY={66.5741366} anchorAlignment="center" text="TP1" font="tscircuit2024" fontSize={0.4572} color="#ec4899" />
-      <fabricationnotetext pcbX={99.49170093999999} pcbY={46.254136599999995} anchorAlignment="center" text="TP4" font="tscircuit2024" fontSize={0.4572} color="#ec4899" />
-      <fabricationnotetext pcbX={23.418799999999997} pcbY={100.1776} anchorAlignment="center" text="Install label in silkscreened box after final wash.  Text shall be 8 pt font.  Text shall be per the Label Table in the PDF schematic." font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={49.94079928} pcbY={50.42760044} anchorAlignment="center" text="R26" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={60.5217992} pcbY={60.47760066} anchorAlignment="center" text="T1" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={36.60579928} pcbY={56.77760044} anchorAlignment="center" text="R11" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={84.21779955999999} pcbY={40.491999279999995} anchorAlignment="center" text="R7" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={80.33580072} pcbY={66.10759956} anchorAlignment="center" text="C13" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={91.72379928} pcbY={57.15860044} anchorAlignment="center" text="C11" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={36.60579928} pcbY={51.06260044} anchorAlignment="center" text="C25" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={67.59379928} pcbY={42.42660044} anchorAlignment="center" text="R15" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={33.936800299999994} pcbY={45.26859628} anchorAlignment="center" text="Q2" font="tscircuit2024" fontSize={0.635} color="#ec4899" />
-      <fabricationnotetext pcbX={49.80580082} pcbY={53.977600960000004} anchorAlignment="center" text="D2" font="tscircuit2024" fontSize={0.762} color="#ec4899" />
-      <fabricationnotetext pcbX={74.47279999999999} pcbY={51.9176} anchorAlignment="center" text="TP9" font="tscircuit2024" fontSize={0.635} color="#ec4899" />
-      <fabricationnotetext pcbX={30.657799999999998} pcbY={58.7756} anchorAlignment="center" text="J3" font="tscircuit2024" fontSize={0.635} color="#ec4899" />
-      <fabricationnotetext pcbX={27.998801} pcbY={50.107601079999995} anchorAlignment="center" text="J4" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={50.8298196} pcbY={53.952373679999994} anchorAlignment="center" text="R2" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={36.55499928} pcbY={53.72960044} anchorAlignment="center" text="R10" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={42.39979582} pcbY={50.49959928} anchorAlignment="center" text="R5" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={41.69279698} pcbY={43.21259836} anchorAlignment="center" text="R17" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={42.39979582} pcbY={53.54759928} anchorAlignment="center" text="R3" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={38.09479554} pcbY={46.74460044} anchorAlignment="center" text="R23" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={37.120796979999994} pcbY={43.120599559999995} anchorAlignment="center" text="R24" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={47.3964} pcbY={68.3514} anchorAlignment="center" text="C5" font="tscircuit2024" fontSize={0.889} color="#ec4899" />
-      <fabricationnotetext pcbX={47.3964} pcbY={72.4252044} anchorAlignment="center" text="C3" font="tscircuit2024" fontSize={0.889} color="#ec4899" />
-      <fabricationnotetext pcbX={47.3964} pcbY={70.3834} anchorAlignment="center" text="C4" font="tscircuit2024" fontSize={0.889} color="#ec4899" />
-      <fabricationnotetext pcbX={33.76379582} pcbY={48.72159928} anchorAlignment="center" text="C26" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={39.61879554} pcbY={45.312599240000004} anchorAlignment="center" text="C22" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={35.863796699999995} pcbY={50.795600719999996} anchorAlignment="center" text="R20" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={39.958599279999994} pcbY={56.16800044} anchorAlignment="center" text="R8" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={35.59679697999999} pcbY={51.50259956} anchorAlignment="center" text="R18" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={42.39979582} pcbY={48.97559928} anchorAlignment="center" text="R6" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={44.4997967} pcbY={48.00160072} anchorAlignment="center" text="R16" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={51.636800459999996} pcbY={70.5676008} anchorAlignment="center" text="C16" font="tscircuit2024" fontSize={0.8128} color="#ec4899" />
-      <fabricationnotetext pcbX={32.85080044} pcbY={53.46260071999999} anchorAlignment="center" text="R9" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={74.95979928} pcbY={47.12560044} anchorAlignment="center" text="R19" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={73.98580071999999} pcbY={42.48559956} anchorAlignment="center" text="C20" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={73.42279956} pcbY={41.22859928} anchorAlignment="center" text="R13" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={68.15680044} pcbY={47.493600719999996} anchorAlignment="center" text="R21" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={68.14380071999999} pcbY={43.89660004} anchorAlignment="center" text="C23" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={75.36779947999999} pcbY={61.44559974} anchorAlignment="center" text="C10" font="tscircuit2024" fontSize={0.762} color="#ec4899" />
-      <fabricationnotetext pcbX={71.81179947999999} pcbY={61.44559974} anchorAlignment="center" text="C9" font="tscircuit2024" fontSize={0.762} color="#ec4899" />
-      <fabricationnotetext pcbX={78.00779928} pcbY={61.09560044} anchorAlignment="center" text="C12" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={21.6408} pcbY={62.8396} anchorAlignment="center" text="J1" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={32.562799999999996} pcbY={68.6816} anchorAlignment="center" text="C2" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={89.08880074} pcbY={65.30360066} anchorAlignment="center" text="C8" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={38.73000636} pcbY={51.93040414} anchorAlignment="center" text="C17" font="tscircuit2024" fontSize={0.635} color="#ec4899" />
-      <fabricationnotetext pcbX={70.69579968} pcbY={46.06160206} anchorAlignment="center" text="U3" font="tscircuit2024" fontSize={0.508} color="#ec4899" />
-      <fabricationnotetext pcbX={74.210799} pcbY={63.83360105999999} anchorAlignment="center" text="D1" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={65.05379928} pcbY={42.55360044} anchorAlignment="center" text="R14" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={62.42779996} pcbY={43.34860012} anchorAlignment="center" text="U2" font="tscircuit2024" fontSize={1.143} color="#ec4899" />
-      <fabricationnotetext pcbX={43.77079892} pcbY={61.88559886} anchorAlignment="center" text="Q1" font="tscircuit2024" fontSize={1.8499988399999998} color="#ec4899" />
-      <fabricationnotetext pcbX={98.6028} pcbY={54.203599999999994} anchorAlignment="center" text="J2" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={47.403628839999996} pcbY={74.60929959999999} anchorAlignment="center" text="C6" font="tscircuit2024" fontSize={0.8128} color="#ec4899" />
-      <fabricationnotetext pcbX={42.41142901999999} pcbY={52.02359928} anchorAlignment="center" text="C18" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={37.975496820000004} pcbY={55.38060044} anchorAlignment="center" text="C19" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={42.39979582} pcbY={45.927599279999995} anchorAlignment="center" text="C21" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={84.49479926} pcbY={56.057599339999996} anchorAlignment="center" text="C7" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={70.41280049999999} pcbY={42.403600739999995} anchorAlignment="center" text="D4" font="tscircuit2024" fontSize={0.8000009399999999} color="#ec4899" />
-      <fabricationnotetext pcbX={45.681999059999995} pcbY={58.347000400000006} anchorAlignment="bottom_left" text="TP5" font="tscircuit2024" fontSize={0.49999899999999997} color="#ec4899" />
-      <fabricationnotetext pcbX={62.377800060000006} pcbY={53.052598999999994} anchorAlignment="center" text="C28" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={62.377800060000006} pcbY={78.579599} anchorAlignment="center" text="C27" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={57.1246} pcbY={75.2602} anchorAlignment="center" text="D3" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={81.85980072} pcbY={66.10759956} anchorAlignment="center" text="C14" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={47.56099708} pcbY={55.27965576} anchorAlignment="center" text="C15" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={40.31579948} pcbY={64.74759974} anchorAlignment="center" text="R12" font="tscircuit2024" fontSize={0.762} color="#ec4899" />
-      <fabricationnotetext pcbX={69.26280025999999} pcbY={70.84659948} anchorAlignment="center" text="R1" font="tscircuit2024" fontSize={0.762} color="#ec4899" />
-      <fabricationnotetext pcbX={53.84379884} pcbY={74.64259899999999} anchorAlignment="center" text="R4" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={74.15519585999999} pcbY={68.5338101} anchorAlignment="center" text="C1" font="tscircuit2024" fontSize={0.635} color="#ec4899" />
-      <fabricationnotetext pcbX={66.61980071999999} pcbY={43.89660004} anchorAlignment="center" text="C24" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={54.46380014} pcbY={52.4836009} anchorAlignment="center" text="R25" font="tscircuit2024" fontSize={0.635} color="#ec4899" />
-      <fabricationnotetext pcbX={48.214399379999996} pcbY={51.01260054} anchorAlignment="center" text="D5" font="tscircuit2024" fontSize={0.762} color="#ec4899" />
-      <fabricationnotetext pcbX={73.98580071999999} pcbY={45.025599559999996} anchorAlignment="center" text="R22" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
+      <fabricationnotetext pcbX={40.439797199999994} pcbY={49.8505988} anchorAlignment="center" text="U1" font="tscircuit2024" fontSize={0.4572} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={20.243700939999997} pcbY={51.842136599999996} anchorAlignment="center" text="TP3" font="tscircuit2024" fontSize={0.4572} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={99.49170093999999} pcbY={61.0115366} anchorAlignment="center" text="TP2" font="tscircuit2024" fontSize={0.4572} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={45.00870094} pcbY={40.5899366} anchorAlignment="center" text="TP8" font="tscircuit2024" fontSize={0.4572} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={20.243700939999997} pcbY={66.5741366} anchorAlignment="center" text="TP1" font="tscircuit2024" fontSize={0.4572} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={99.49170093999999} pcbY={46.254136599999995} anchorAlignment="center" text="TP4" font="tscircuit2024" fontSize={0.4572} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={23.418799999999997} pcbY={100.1776} anchorAlignment="center" text="Install label in silkscreened box after final wash.  Text shall be 8 pt font.  Text shall be per the Label Table in the PDF schematic." font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={49.94079928} pcbY={50.42760044} anchorAlignment="center" text="R26" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={60.5217992} pcbY={60.47760066} anchorAlignment="center" text="T1" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={36.60579928} pcbY={56.77760044} anchorAlignment="center" text="R11" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={84.21779955999999} pcbY={40.491999279999995} anchorAlignment="center" text="R7" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={80.33580072} pcbY={66.10759956} anchorAlignment="center" text="C13" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={91.72379928} pcbY={57.15860044} anchorAlignment="center" text="C11" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={36.60579928} pcbY={51.06260044} anchorAlignment="center" text="C25" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={67.59379928} pcbY={42.42660044} anchorAlignment="center" text="R15" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={33.936800299999994} pcbY={45.26859628} anchorAlignment="center" text="Q2" font="tscircuit2024" fontSize={0.635} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={49.80580082} pcbY={53.977600960000004} anchorAlignment="center" text="D2" font="tscircuit2024" fontSize={0.762} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={74.47279999999999} pcbY={51.9176} anchorAlignment="center" text="TP9" font="tscircuit2024" fontSize={0.635} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={30.657799999999998} pcbY={58.7756} anchorAlignment="center" text="J3" font="tscircuit2024" fontSize={0.635} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={27.998801} pcbY={50.107601079999995} anchorAlignment="center" text="J4" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={50.8298196} pcbY={53.952373679999994} anchorAlignment="center" text="R2" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={36.55499928} pcbY={53.72960044} anchorAlignment="center" text="R10" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={42.39979582} pcbY={50.49959928} anchorAlignment="center" text="R5" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={41.69279698} pcbY={43.21259836} anchorAlignment="center" text="R17" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={42.39979582} pcbY={53.54759928} anchorAlignment="center" text="R3" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={38.09479554} pcbY={46.74460044} anchorAlignment="center" text="R23" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={37.120796979999994} pcbY={43.120599559999995} anchorAlignment="center" text="R24" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={47.3964} pcbY={68.3514} anchorAlignment="center" text="C5" font="tscircuit2024" fontSize={0.889} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={47.3964} pcbY={72.4252044} anchorAlignment="center" text="C3" font="tscircuit2024" fontSize={0.889} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={47.3964} pcbY={70.3834} anchorAlignment="center" text="C4" font="tscircuit2024" fontSize={0.889} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={33.76379582} pcbY={48.72159928} anchorAlignment="center" text="C26" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={39.61879554} pcbY={45.312599240000004} anchorAlignment="center" text="C22" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={35.863796699999995} pcbY={50.795600719999996} anchorAlignment="center" text="R20" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={39.958599279999994} pcbY={56.16800044} anchorAlignment="center" text="R8" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={35.59679697999999} pcbY={51.50259956} anchorAlignment="center" text="R18" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={42.39979582} pcbY={48.97559928} anchorAlignment="center" text="R6" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={44.4997967} pcbY={48.00160072} anchorAlignment="center" text="R16" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={51.636800459999996} pcbY={70.5676008} anchorAlignment="center" text="C16" font="tscircuit2024" fontSize={0.8128} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={32.85080044} pcbY={53.46260071999999} anchorAlignment="center" text="R9" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={74.95979928} pcbY={47.12560044} anchorAlignment="center" text="R19" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={73.98580071999999} pcbY={42.48559956} anchorAlignment="center" text="C20" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={73.42279956} pcbY={41.22859928} anchorAlignment="center" text="R13" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={68.15680044} pcbY={47.493600719999996} anchorAlignment="center" text="R21" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={68.14380071999999} pcbY={43.89660004} anchorAlignment="center" text="C23" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={75.36779947999999} pcbY={61.44559974} anchorAlignment="center" text="C10" font="tscircuit2024" fontSize={0.762} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={71.81179947999999} pcbY={61.44559974} anchorAlignment="center" text="C9" font="tscircuit2024" fontSize={0.762} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={78.00779928} pcbY={61.09560044} anchorAlignment="center" text="C12" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={21.6408} pcbY={62.8396} anchorAlignment="center" text="J1" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={32.562799999999996} pcbY={68.6816} anchorAlignment="center" text="C2" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={89.08880074} pcbY={65.30360066} anchorAlignment="center" text="C8" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={38.73000636} pcbY={51.93040414} anchorAlignment="center" text="C17" font="tscircuit2024" fontSize={0.635} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={70.69579968} pcbY={46.06160206} anchorAlignment="center" text="U3" font="tscircuit2024" fontSize={0.508} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={74.210799} pcbY={63.83360105999999} anchorAlignment="center" text="D1" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={65.05379928} pcbY={42.55360044} anchorAlignment="center" text="R14" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={62.42779996} pcbY={43.34860012} anchorAlignment="center" text="U2" font="tscircuit2024" fontSize={1.143} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={43.77079892} pcbY={61.88559886} anchorAlignment="center" text="Q1" font="tscircuit2024" fontSize={1.8499988399999998} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={98.6028} pcbY={54.203599999999994} anchorAlignment="center" text="J2" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={47.403628839999996} pcbY={74.60929959999999} anchorAlignment="center" text="C6" font="tscircuit2024" fontSize={0.8128} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={42.41142901999999} pcbY={52.02359928} anchorAlignment="center" text="C18" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={37.975496820000004} pcbY={55.38060044} anchorAlignment="center" text="C19" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={42.39979582} pcbY={45.927599279999995} anchorAlignment="center" text="C21" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={84.49479926} pcbY={56.057599339999996} anchorAlignment="center" text="C7" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={70.41280049999999} pcbY={42.403600739999995} anchorAlignment="center" text="D4" font="tscircuit2024" fontSize={0.8000009399999999} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={45.681999059999995} pcbY={58.347000400000006} anchorAlignment="bottom_left" text="TP5" font="tscircuit2024" fontSize={0.49999899999999997} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={62.377800060000006} pcbY={53.052598999999994} anchorAlignment="center" text="C28" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={62.377800060000006} pcbY={78.579599} anchorAlignment="center" text="C27" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={57.1246} pcbY={75.2602} anchorAlignment="center" text="D3" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={81.85980072} pcbY={66.10759956} anchorAlignment="center" text="C14" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={47.56099708} pcbY={55.27965576} anchorAlignment="center" text="C15" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={40.31579948} pcbY={64.74759974} anchorAlignment="center" text="R12" font="tscircuit2024" fontSize={0.762} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={69.26280025999999} pcbY={70.84659948} anchorAlignment="center" text="R1" font="tscircuit2024" fontSize={0.762} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={53.84379884} pcbY={74.64259899999999} anchorAlignment="center" text="R4" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={74.15519585999999} pcbY={68.5338101} anchorAlignment="center" text="C1" font="tscircuit2024" fontSize={0.635} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={66.61980071999999} pcbY={43.89660004} anchorAlignment="center" text="C24" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={54.46380014} pcbY={52.4836009} anchorAlignment="center" text="R25" font="tscircuit2024" fontSize={0.635} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={48.214399379999996} pcbY={51.01260054} anchorAlignment="center" text="D5" font="tscircuit2024" fontSize={0.762} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={73.98580071999999} pcbY={45.025599559999996} anchorAlignment="center" text="R22" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="90deg" />
       <fabricationnotedimension from={{ x: 19.6088, y: 28.549599999999998 }} to={{ x: 45.0088, y: 28.549599999999998 }} text="1000.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={1.27} />
       <fabricationnotedimension from={{ x: 17.5768, y: 38.9636 }} to={{ x: 102.6668, y: 38.9636 }} text="3350.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={1.778} />
       <fabricationnotedimension from={{ x: 17.5768, y: 38.9636 }} to={{ x: 17.576800000000002, y: 80.8736 }} text="1650.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={1.524} />

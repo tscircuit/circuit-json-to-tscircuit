@@ -1,4 +1,5 @@
 import { su } from "@tscircuit/soup-util"
+import { formatPcbRotationAttr } from "./footprint-tsx-attribute-formatters/format-pcb-rotation-attr"
 import type { FootprintElementConverter } from "./converter-types"
 import { escapeJsxText } from "./footprint-tsx-attribute-formatters/escape-jsx-text"
 
@@ -48,7 +49,9 @@ export const convertFabrication: FootprintElementConverter = (circuitJson) => {
       attrs.push(`layer="bottom"`)
     }
 
-    elementStrings.push(`<fabricationnotetext ${attrs.join(" ")} />`)
+    elementStrings.push(
+      `<fabricationnotetext ${attrs.join(" ")}${formatPcbRotationAttr(fabText.ccw_rotation)} />`,
+    )
   }
 
   for (const fabRect of fabricationNoteRects) {
