@@ -169,7 +169,7 @@ export const U1 = (props: ChipProps) => (
   <schematiccircle center={{ x: -2, y: 0 }} radius={0.5} strokeWidth={0.05} color="green" isFilled={true} isDashed={true} />
   <schematictable schX={2} schY={-4} cellPadding={0.2} borderWidth={0.1} anchor="top_left">
     <schematicrow height={1}>
-        <schematiccell text="Header" horizontalAlign="center" verticalAlign="middle" fontSize={0.18} colSpan={2} width={2.5} />
+        <schematiccell text="Header" horizontalAlign="center" verticalAlign="middle" fontSize={0.18} colSpan={2} width={2} />
       </schematicrow>
     <schematicrow height={1.5}>
         <schematiccell text="A2" horizontalAlign="left" verticalAlign="top" width={2} />
