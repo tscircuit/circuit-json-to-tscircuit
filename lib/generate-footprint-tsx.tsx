@@ -12,6 +12,7 @@ import { convertSilkscreen } from "./generate-footprint-tsx/convert-silkscreen"
 import { convertSilkscreenGraphics } from "./generate-footprint-tsx/convert-silkscreen-graphics"
 import { convertSilkscreenText } from "./generate-footprint-tsx/convert-silkscreen-text"
 import { convertSmtPads } from "./generate-footprint-tsx/convert-smt-pads"
+import { convertVias } from "./generate-footprint-tsx/convert-vias"
 
 export const generateFootprintTsx = (
   circuitJson: AnyCircuitElement[],
@@ -19,6 +20,7 @@ export const generateFootprintTsx = (
   const converters: FootprintElementConverter[] = [
     convertHoles,
     convertPlatedHoles,
+    convertVias,
     convertSmtPads,
     convertSilkscreen,
     convertSilkscreenGraphics,
