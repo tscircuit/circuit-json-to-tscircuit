@@ -1,5 +1,4 @@
 import type { AnyCircuitElement } from "circuit-json"
-import type { FootprintElementConverter } from "./generate-footprint-tsx/converter-types"
 import { convertCopperText } from "./generate-footprint-tsx/convert-copper-text"
 import { convertCourtyard } from "./generate-footprint-tsx/convert-courtyard"
 import { convertCutouts } from "./generate-footprint-tsx/convert-cutouts"
@@ -11,6 +10,8 @@ import { convertPlatedHoles } from "./generate-footprint-tsx/convert-plated-hole
 import { convertSilkscreen } from "./generate-footprint-tsx/convert-silkscreen"
 import { convertSilkscreenText } from "./generate-footprint-tsx/convert-silkscreen-text"
 import { convertSmtPads } from "./generate-footprint-tsx/convert-smt-pads"
+import { convertVias } from "./generate-footprint-tsx/convert-vias"
+import type { FootprintElementConverter } from "./generate-footprint-tsx/converter-types"
 
 export const generateFootprintTsx = (
   circuitJson: AnyCircuitElement[],
@@ -19,6 +20,7 @@ export const generateFootprintTsx = (
     convertHoles,
     convertPlatedHoles,
     convertSmtPads,
+    convertVias,
     convertSilkscreen,
     convertFabrication,
     convertSilkscreenText,
