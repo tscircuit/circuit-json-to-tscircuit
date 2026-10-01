@@ -23,15 +23,9 @@ const baseElements: AnyCircuitElement[] = [
   {
     type: "source_component",
     source_component_id: "generic_0",
+    name: "KeepoutBoundary",
+    ftype: "simple_chip",
     supplier_part_numbers: {},
-  },
-  {
-    type: "schematic_component",
-    schematic_component_id: "schematic_generic_component_0",
-    source_component_id: "generic_0",
-    center: { x: 0, y: 0 },
-    rotation: 0,
-    size: { width: 0, height: 0 },
   },
   {
     type: "pcb_component",
@@ -42,6 +36,7 @@ const baseElements: AnyCircuitElement[] = [
     rotation: 0,
     width: 10,
     height: 10,
+    obstructs_within_bounds: true,
   },
 ]
 
