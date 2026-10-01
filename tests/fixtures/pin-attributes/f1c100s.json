@@ -1,0 +1,1644 @@
+{
+  "circuitJson": [
+    {
+      "type": "source_component",
+      "ftype": "simple_chip",
+      "source_component_id": "source_component_1",
+      "name": "U1",
+      "manufacturer_part_number": "F1C100S"
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_1",
+      "source_component_id": "source_component_1",
+      "name": "pin1",
+      "pin_number": 1,
+      "port_hints": ["HPL"],
+      "is_output": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_2",
+      "source_component_id": "source_component_1",
+      "name": "pin2",
+      "pin_number": 2,
+      "port_hints": ["HPCOMFB"],
+      "is_input": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_3",
+      "source_component_id": "source_component_1",
+      "name": "pin3",
+      "pin_number": 3,
+      "port_hints": ["HPCOM"],
+      "is_output": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_4",
+      "source_component_id": "source_component_1",
+      "name": "pin4",
+      "pin_number": 4,
+      "port_hints": ["HPVCC"],
+      "must_be_connected": true,
+      "requires_power": true,
+      "should_have_decoupling_capacitor": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_5",
+      "source_component_id": "source_component_1",
+      "name": "pin5",
+      "pin_number": 5,
+      "port_hints": ["VCC_IO1"],
+      "must_be_connected": true,
+      "requires_power": true,
+      "requires_voltage": 3.3,
+      "should_have_decoupling_capacitor": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_6",
+      "source_component_id": "source_component_1",
+      "name": "pin6",
+      "pin_number": 6,
+      "port_hints": ["PD0"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "can_use_open_drain": true,
+      "supports_i2c_sda": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_7",
+      "source_component_id": "source_component_1",
+      "name": "pin7",
+      "pin_number": 7,
+      "port_hints": ["PD1"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_8",
+      "source_component_id": "source_component_1",
+      "name": "pin8",
+      "pin_number": 8,
+      "port_hints": ["PD2"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_9",
+      "source_component_id": "source_component_1",
+      "name": "pin9",
+      "pin_number": 9,
+      "port_hints": ["PD3"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "supports_uart_rx": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_10",
+      "source_component_id": "source_component_1",
+      "name": "pin10",
+      "pin_number": 10,
+      "port_hints": ["PD4"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "supports_uart_tx": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_11",
+      "source_component_id": "source_component_1",
+      "name": "pin11",
+      "pin_number": 11,
+      "port_hints": ["PD5"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "can_use_open_drain": true,
+      "supports_i2c_scl": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_12",
+      "source_component_id": "source_component_1",
+      "name": "pin12",
+      "pin_number": 12,
+      "port_hints": ["PD6"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "can_use_open_drain": true,
+      "supports_i2c_sda": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_13",
+      "source_component_id": "source_component_1",
+      "name": "pin13",
+      "pin_number": 13,
+      "port_hints": ["PD7"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_14",
+      "source_component_id": "source_component_1",
+      "name": "pin14",
+      "pin_number": 14,
+      "port_hints": ["PD8"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_15",
+      "source_component_id": "source_component_1",
+      "name": "pin15",
+      "pin_number": 15,
+      "port_hints": ["PD9"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_16",
+      "source_component_id": "source_component_1",
+      "name": "pin16",
+      "pin_number": 16,
+      "port_hints": ["PD10"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_17",
+      "source_component_id": "source_component_1",
+      "name": "pin17",
+      "pin_number": 17,
+      "port_hints": ["PD11"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_18",
+      "source_component_id": "source_component_1",
+      "name": "pin18",
+      "pin_number": 18,
+      "port_hints": ["PD12"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "can_use_open_drain": true,
+      "supports_i2c_scl": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_19",
+      "source_component_id": "source_component_1",
+      "name": "pin19",
+      "pin_number": 19,
+      "port_hints": ["PD13"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "supports_uart_tx": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_20",
+      "source_component_id": "source_component_1",
+      "name": "pin20",
+      "pin_number": 20,
+      "port_hints": ["VCC_IO2"],
+      "must_be_connected": true,
+      "requires_power": true,
+      "requires_voltage": 3.3,
+      "should_have_decoupling_capacitor": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_21",
+      "source_component_id": "source_component_1",
+      "name": "pin21",
+      "pin_number": 21,
+      "port_hints": ["PD14"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "supports_uart_rx": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_22",
+      "source_component_id": "source_component_1",
+      "name": "pin22",
+      "pin_number": 22,
+      "port_hints": ["VDD_CORE1"],
+      "must_be_connected": true,
+      "requires_power": true,
+      "requires_voltage": 1.1,
+      "should_have_decoupling_capacitor": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_23",
+      "source_component_id": "source_component_1",
+      "name": "pin23",
+      "pin_number": 23,
+      "port_hints": ["PD15"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "can_use_open_drain": true,
+      "supports_i2c_scl": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_24",
+      "source_component_id": "source_component_1",
+      "name": "pin24",
+      "pin_number": 24,
+      "port_hints": ["PD16"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "can_use_open_drain": true,
+      "supports_i2c_sda": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_25",
+      "source_component_id": "source_component_1",
+      "name": "pin25",
+      "pin_number": 25,
+      "port_hints": ["PD17"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_26",
+      "source_component_id": "source_component_1",
+      "name": "pin26",
+      "pin_number": 26,
+      "port_hints": ["PD18"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "supports_spi_cs": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_27",
+      "source_component_id": "source_component_1",
+      "name": "pin27",
+      "pin_number": 27,
+      "port_hints": ["PD19"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "supports_spi_mosi": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_28",
+      "source_component_id": "source_component_1",
+      "name": "pin28",
+      "pin_number": 28,
+      "port_hints": ["PD20"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "supports_spi_sck": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_29",
+      "source_component_id": "source_component_1",
+      "name": "pin29",
+      "pin_number": 29,
+      "port_hints": ["PD21"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "supports_spi_miso": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_30",
+      "source_component_id": "source_component_1",
+      "name": "pin30",
+      "pin_number": 30,
+      "port_hints": ["VCC_DRAM1"],
+      "must_be_connected": true,
+      "requires_power": true,
+      "requires_voltage": 2.5,
+      "should_have_decoupling_capacitor": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_31",
+      "source_component_id": "source_component_1",
+      "name": "pin31",
+      "pin_number": 31,
+      "port_hints": ["VCC_DRAM2"],
+      "must_be_connected": true,
+      "requires_power": true,
+      "requires_voltage": 2.5,
+      "should_have_decoupling_capacitor": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_32",
+      "source_component_id": "source_component_1",
+      "name": "pin32",
+      "pin_number": 32,
+      "port_hints": ["VCC_DRAM3"],
+      "must_be_connected": true,
+      "requires_power": true,
+      "requires_voltage": 2.5,
+      "should_have_decoupling_capacitor": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_33",
+      "source_component_id": "source_component_1",
+      "name": "pin33",
+      "pin_number": 33,
+      "port_hints": ["SVREF"],
+      "must_be_connected": true,
+      "requires_power": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_34",
+      "source_component_id": "source_component_1",
+      "name": "pin34",
+      "pin_number": 34,
+      "port_hints": ["VCC_DRAM4"],
+      "must_be_connected": true,
+      "requires_power": true,
+      "requires_voltage": 2.5,
+      "should_have_decoupling_capacitor": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_35",
+      "source_component_id": "source_component_1",
+      "name": "pin35",
+      "pin_number": 35,
+      "port_hints": ["VDD_CORE2"],
+      "must_be_connected": true,
+      "requires_power": true,
+      "requires_voltage": 1.1,
+      "should_have_decoupling_capacitor": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_36",
+      "source_component_id": "source_component_1",
+      "name": "pin36",
+      "pin_number": 36,
+      "port_hints": ["VCC_DRAM5"],
+      "must_be_connected": true,
+      "requires_power": true,
+      "requires_voltage": 2.5,
+      "should_have_decoupling_capacitor": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_37",
+      "source_component_id": "source_component_1",
+      "name": "pin37",
+      "pin_number": 37,
+      "port_hints": ["PE12"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "can_use_open_drain": true,
+      "supports_i2c_sda": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_38",
+      "source_component_id": "source_component_1",
+      "name": "pin38",
+      "pin_number": 38,
+      "port_hints": ["PE11"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "can_use_open_drain": true,
+      "supports_i2c_scl": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_39",
+      "source_component_id": "source_component_1",
+      "name": "pin39",
+      "pin_number": 39,
+      "port_hints": ["PE10"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "supports_spi_miso": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_40",
+      "source_component_id": "source_component_1",
+      "name": "pin40",
+      "pin_number": 40,
+      "port_hints": ["PE9"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "supports_spi_sck": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_41",
+      "source_component_id": "source_component_1",
+      "name": "pin41",
+      "pin_number": 41,
+      "port_hints": ["PE8"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "supports_uart_rx": true,
+      "supports_spi_mosi": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_42",
+      "source_component_id": "source_component_1",
+      "name": "pin42",
+      "pin_number": 42,
+      "port_hints": ["PE7"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "supports_uart_tx": true,
+      "supports_spi_cs": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_43",
+      "source_component_id": "source_component_1",
+      "name": "pin43",
+      "pin_number": 43,
+      "port_hints": ["PE6"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_44",
+      "source_component_id": "source_component_1",
+      "name": "pin44",
+      "pin_number": 44,
+      "port_hints": ["PE5"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_45",
+      "source_component_id": "source_component_1",
+      "name": "pin45",
+      "pin_number": 45,
+      "port_hints": ["PE4"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_46",
+      "source_component_id": "source_component_1",
+      "name": "pin46",
+      "pin_number": 46,
+      "port_hints": ["PE3"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_47",
+      "source_component_id": "source_component_1",
+      "name": "pin47",
+      "pin_number": 47,
+      "port_hints": ["PE2"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_48",
+      "source_component_id": "source_component_1",
+      "name": "pin48",
+      "pin_number": 48,
+      "port_hints": ["PE1"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "can_use_open_drain": true,
+      "supports_i2c_sda": true,
+      "supports_uart_tx": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_49",
+      "source_component_id": "source_component_1",
+      "name": "pin49",
+      "pin_number": 49,
+      "port_hints": ["PE0"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "can_use_open_drain": true,
+      "supports_i2c_scl": true,
+      "supports_uart_rx": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_50",
+      "source_component_id": "source_component_1",
+      "name": "pin50",
+      "pin_number": 50,
+      "port_hints": ["VCC_IO3"],
+      "must_be_connected": true,
+      "requires_power": true,
+      "requires_voltage": 3.3,
+      "should_have_decoupling_capacitor": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_51",
+      "source_component_id": "source_component_1",
+      "name": "pin51",
+      "pin_number": 51,
+      "port_hints": ["HOSCI"],
+      "is_input": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_52",
+      "source_component_id": "source_component_1",
+      "name": "pin52",
+      "pin_number": 52,
+      "port_hints": ["HOSCO"],
+      "is_output": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_53",
+      "source_component_id": "source_component_1",
+      "name": "pin53",
+      "pin_number": 53,
+      "port_hints": ["PF5"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_54",
+      "source_component_id": "source_component_1",
+      "name": "pin54",
+      "pin_number": 54,
+      "port_hints": ["PF4"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "supports_uart_tx": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_55",
+      "source_component_id": "source_component_1",
+      "name": "pin55",
+      "pin_number": 55,
+      "port_hints": ["PF3"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_56",
+      "source_component_id": "source_component_1",
+      "name": "pin56",
+      "pin_number": 56,
+      "port_hints": ["PF2"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "supports_uart_rx": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_57",
+      "source_component_id": "source_component_1",
+      "name": "pin57",
+      "pin_number": 57,
+      "port_hints": ["PF1"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_58",
+      "source_component_id": "source_component_1",
+      "name": "pin58",
+      "pin_number": 58,
+      "port_hints": ["PF0"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_59",
+      "source_component_id": "source_component_1",
+      "name": "pin59",
+      "pin_number": 59,
+      "port_hints": ["PC0"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "supports_spi_sck": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_60",
+      "source_component_id": "source_component_1",
+      "name": "pin60",
+      "pin_number": 60,
+      "port_hints": ["PC1"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "supports_spi_cs": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_61",
+      "source_component_id": "source_component_1",
+      "name": "pin61",
+      "pin_number": 61,
+      "port_hints": ["PC2"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "supports_spi_miso": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_62",
+      "source_component_id": "source_component_1",
+      "name": "pin62",
+      "pin_number": 62,
+      "port_hints": ["PC3"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "can_use_internal_pullup": true,
+      "can_use_internal_pulldown": true,
+      "supports_spi_mosi": true,
+      "supports_uart_tx": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_63",
+      "source_component_id": "source_component_1",
+      "name": "pin63",
+      "pin_number": 63,
+      "port_hints": ["TPY2"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "supports_uart_tx": true,
+      "supports_spi_miso": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_64",
+      "source_component_id": "source_component_1",
+      "name": "pin64",
+      "pin_number": 64,
+      "port_hints": ["TPY1"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "supports_uart_rx": true,
+      "supports_spi_sck": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_65",
+      "source_component_id": "source_component_1",
+      "name": "pin65",
+      "pin_number": 65,
+      "port_hints": ["TPX2"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "supports_spi_mosi": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_66",
+      "source_component_id": "source_component_1",
+      "name": "pin66",
+      "pin_number": 66,
+      "port_hints": ["TPX1"],
+      "is_bidirectional": true,
+      "can_use_tri_state": true,
+      "is_gpio": true,
+      "supports_spi_cs": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_67",
+      "source_component_id": "source_component_1",
+      "name": "pin67",
+      "pin_number": 67,
+      "port_hints": ["UVCC"],
+      "must_be_connected": true,
+      "requires_power": true,
+      "requires_voltage": 3.3,
+      "should_have_decoupling_capacitor": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_68",
+      "source_component_id": "source_component_1",
+      "name": "pin68",
+      "pin_number": 68,
+      "port_hints": ["USB_DM"],
+      "is_bidirectional": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_69",
+      "source_component_id": "source_component_1",
+      "name": "pin69",
+      "pin_number": 69,
+      "port_hints": ["USB_DP"],
+      "is_bidirectional": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_70",
+      "source_component_id": "source_component_1",
+      "name": "pin70",
+      "pin_number": 70,
+      "port_hints": ["RESET"],
+      "is_input": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_71",
+      "source_component_id": "source_component_1",
+      "name": "pin71",
+      "pin_number": 71,
+      "port_hints": ["VDD_CORE3"],
+      "must_be_connected": true,
+      "requires_power": true,
+      "requires_voltage": 1.1,
+      "should_have_decoupling_capacitor": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_72",
+      "source_component_id": "source_component_1",
+      "name": "pin72",
+      "pin_number": 72,
+      "port_hints": ["TVOUT"],
+      "is_output": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_73",
+      "source_component_id": "source_component_1",
+      "name": "pin73",
+      "pin_number": 73,
+      "port_hints": ["TV_VCC"],
+      "must_be_connected": true,
+      "requires_power": true,
+      "requires_voltage": 3.3,
+      "should_have_decoupling_capacitor": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_74",
+      "source_component_id": "source_component_1",
+      "name": "pin74",
+      "pin_number": 74,
+      "port_hints": ["TVGND"],
+      "must_be_connected": true,
+      "requires_ground": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_75",
+      "source_component_id": "source_component_1",
+      "name": "pin75",
+      "pin_number": 75,
+      "port_hints": ["TV_VRN"],
+      "is_input": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_76",
+      "source_component_id": "source_component_1",
+      "name": "pin76",
+      "pin_number": 76,
+      "port_hints": ["TV_VRP"],
+      "is_input": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_77",
+      "source_component_id": "source_component_1",
+      "name": "pin77",
+      "pin_number": 77,
+      "port_hints": ["TVIN1"],
+      "is_input": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_78",
+      "source_component_id": "source_component_1",
+      "name": "pin78",
+      "pin_number": 78,
+      "port_hints": ["TVIN0"],
+      "is_input": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_79",
+      "source_component_id": "source_component_1",
+      "name": "pin79",
+      "pin_number": 79,
+      "port_hints": ["LRADC0"],
+      "is_input": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_80",
+      "source_component_id": "source_component_1",
+      "name": "pin80",
+      "pin_number": 80,
+      "port_hints": ["AVCC"],
+      "must_be_connected": true,
+      "requires_power": true,
+      "requires_voltage": 2.8,
+      "should_have_decoupling_capacitor": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_81",
+      "source_component_id": "source_component_1",
+      "name": "pin81",
+      "pin_number": 81,
+      "port_hints": ["VRA1"],
+      "is_output": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_82",
+      "source_component_id": "source_component_1",
+      "name": "pin82",
+      "pin_number": 82,
+      "port_hints": ["AGND"],
+      "must_be_connected": true,
+      "requires_ground": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_83",
+      "source_component_id": "source_component_1",
+      "name": "pin83",
+      "pin_number": 83,
+      "port_hints": ["VRA2"],
+      "is_output": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_84",
+      "source_component_id": "source_component_1",
+      "name": "pin84",
+      "pin_number": 84,
+      "port_hints": ["FMINL"],
+      "is_input": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_85",
+      "source_component_id": "source_component_1",
+      "name": "pin85",
+      "pin_number": 85,
+      "port_hints": ["FMINR"],
+      "is_input": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_86",
+      "source_component_id": "source_component_1",
+      "name": "pin86",
+      "pin_number": 86,
+      "port_hints": ["LINL"],
+      "is_input": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_87",
+      "source_component_id": "source_component_1",
+      "name": "pin87",
+      "pin_number": 87,
+      "port_hints": ["MICIN"],
+      "is_input": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_88",
+      "source_component_id": "source_component_1",
+      "name": "pin88",
+      "pin_number": 88,
+      "port_hints": ["HPR"],
+      "is_output": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_89",
+      "source_component_id": "source_component_1",
+      "name": "pin89",
+      "pin_number": 89,
+      "port_hints": ["GND"],
+      "must_be_connected": true,
+      "requires_ground": true
+    }
+  ],
+  "pinAttributes": {
+    "pin1": {
+      "isOutput": true
+    },
+    "pin2": {
+      "isInput": true
+    },
+    "pin3": {
+      "isOutput": true
+    },
+    "pin4": {
+      "requiresPower": true,
+      "mustBeConnected": true,
+      "shouldHaveDecouplingCapacitor": true
+    },
+    "pin5": {
+      "requiresPower": true,
+      "requiresVoltage": 3.3,
+      "mustBeConnected": true,
+      "shouldHaveDecouplingCapacitor": true
+    },
+    "pin6": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["i2c_sda"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "canUseOpenDrain": true,
+      "isGpio": true
+    },
+    "pin7": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin8": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin9": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["uart_rx"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin10": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["uart_tx"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin11": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["i2c_scl"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "canUseOpenDrain": true,
+      "isGpio": true
+    },
+    "pin12": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["i2c_sda"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "canUseOpenDrain": true,
+      "isGpio": true
+    },
+    "pin13": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin14": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin15": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin16": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin17": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin18": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["i2c_scl"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "canUseOpenDrain": true,
+      "isGpio": true
+    },
+    "pin19": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["uart_tx"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin20": {
+      "requiresPower": true,
+      "requiresVoltage": 3.3,
+      "mustBeConnected": true,
+      "shouldHaveDecouplingCapacitor": true
+    },
+    "pin21": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["uart_rx"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin22": {
+      "requiresPower": true,
+      "requiresVoltage": 1.1,
+      "mustBeConnected": true,
+      "shouldHaveDecouplingCapacitor": true
+    },
+    "pin23": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["i2c_scl"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "canUseOpenDrain": true,
+      "isGpio": true
+    },
+    "pin24": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["i2c_sda"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "canUseOpenDrain": true,
+      "isGpio": true
+    },
+    "pin25": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin26": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["spi_cs"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin27": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["spi_mosi"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin28": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["spi_sck"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin29": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["spi_miso"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin30": {
+      "requiresPower": true,
+      "requiresVoltage": 2.5,
+      "mustBeConnected": true,
+      "shouldHaveDecouplingCapacitor": true
+    },
+    "pin31": {
+      "requiresPower": true,
+      "requiresVoltage": 2.5,
+      "mustBeConnected": true,
+      "shouldHaveDecouplingCapacitor": true
+    },
+    "pin32": {
+      "requiresPower": true,
+      "requiresVoltage": 2.5,
+      "mustBeConnected": true,
+      "shouldHaveDecouplingCapacitor": true
+    },
+    "pin33": {
+      "requiresPower": true,
+      "mustBeConnected": true
+    },
+    "pin34": {
+      "requiresPower": true,
+      "requiresVoltage": 2.5,
+      "mustBeConnected": true,
+      "shouldHaveDecouplingCapacitor": true
+    },
+    "pin35": {
+      "requiresPower": true,
+      "requiresVoltage": 1.1,
+      "mustBeConnected": true,
+      "shouldHaveDecouplingCapacitor": true
+    },
+    "pin36": {
+      "requiresPower": true,
+      "requiresVoltage": 2.5,
+      "mustBeConnected": true,
+      "shouldHaveDecouplingCapacitor": true
+    },
+    "pin37": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["i2c_sda"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "canUseOpenDrain": true,
+      "isGpio": true
+    },
+    "pin38": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["i2c_scl"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "canUseOpenDrain": true,
+      "isGpio": true
+    },
+    "pin39": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["spi_miso"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin40": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["spi_sck"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin41": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["uart_rx", "spi_mosi"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin42": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["uart_tx", "spi_cs"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin43": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin44": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin45": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin46": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin47": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin48": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["i2c_sda", "uart_tx"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "canUseOpenDrain": true,
+      "isGpio": true
+    },
+    "pin49": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["i2c_scl", "uart_rx"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "canUseOpenDrain": true,
+      "isGpio": true
+    },
+    "pin50": {
+      "requiresPower": true,
+      "requiresVoltage": 3.3,
+      "mustBeConnected": true,
+      "shouldHaveDecouplingCapacitor": true
+    },
+    "pin51": {
+      "isInput": true
+    },
+    "pin52": {
+      "isOutput": true
+    },
+    "pin53": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin54": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["uart_tx"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin55": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin56": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["uart_rx"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin57": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin58": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin59": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["spi_sck"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin60": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["spi_cs"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin61": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["spi_miso"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin62": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["spi_mosi", "uart_tx"],
+      "canUseInternalPullup": true,
+      "canUseInternalPulldown": true,
+      "isGpio": true
+    },
+    "pin63": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["uart_tx", "spi_miso"],
+      "isGpio": true
+    },
+    "pin64": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["uart_rx", "spi_sck"],
+      "isGpio": true
+    },
+    "pin65": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["spi_mosi"],
+      "isGpio": true
+    },
+    "pin66": {
+      "isBidirectional": true,
+      "canUseTriState": true,
+      "capabilities": ["spi_cs"],
+      "isGpio": true
+    },
+    "pin67": {
+      "requiresPower": true,
+      "requiresVoltage": 3.3,
+      "mustBeConnected": true,
+      "shouldHaveDecouplingCapacitor": true
+    },
+    "pin68": {
+      "isBidirectional": true
+    },
+    "pin69": {
+      "isBidirectional": true
+    },
+    "pin70": {
+      "isInput": true
+    },
+    "pin71": {
+      "requiresPower": true,
+      "requiresVoltage": 1.1,
+      "mustBeConnected": true,
+      "shouldHaveDecouplingCapacitor": true
+    },
+    "pin72": {
+      "isOutput": true
+    },
+    "pin73": {
+      "requiresPower": true,
+      "requiresVoltage": 3.3,
+      "mustBeConnected": true,
+      "shouldHaveDecouplingCapacitor": true
+    },
+    "pin74": {
+      "requiresGround": true,
+      "mustBeConnected": true
+    },
+    "pin75": {
+      "isInput": true
+    },
+    "pin76": {
+      "isInput": true
+    },
+    "pin77": {
+      "isInput": true
+    },
+    "pin78": {
+      "isInput": true
+    },
+    "pin79": {
+      "isInput": true
+    },
+    "pin80": {
+      "requiresPower": true,
+      "requiresVoltage": 2.8,
+      "mustBeConnected": true,
+      "shouldHaveDecouplingCapacitor": true
+    },
+    "pin81": {
+      "isOutput": true
+    },
+    "pin82": {
+      "requiresGround": true,
+      "mustBeConnected": true
+    },
+    "pin83": {
+      "isOutput": true
+    },
+    "pin84": {
+      "isInput": true
+    },
+    "pin85": {
+      "isInput": true
+    },
+    "pin86": {
+      "isInput": true
+    },
+    "pin87": {
+      "isInput": true
+    },
+    "pin88": {
+      "isOutput": true
+    },
+    "pin89": {
+      "requiresGround": true,
+      "mustBeConnected": true
+    }
+  }
+}
