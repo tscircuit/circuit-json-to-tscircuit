@@ -726,6 +726,10 @@ test(
       )
       export default Lm5155EvmFly"
     `)
+    await expect(result.renderedPcbSvg).toMatchSvgSnapshot(
+      import.meta.path,
+      "full-board",
+    )
     await expect(result.pcbComparisonSvg).toMatchSvgSnapshot(
       import.meta.path,
       "pcb-comparison",

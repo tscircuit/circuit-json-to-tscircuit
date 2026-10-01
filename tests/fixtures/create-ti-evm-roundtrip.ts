@@ -13,6 +13,7 @@ import { runTscircuitCode } from "tscircuit"
 
 interface TiEvmRoundtripResult {
   generatedTscircuit: string
+  renderedPcbSvg: string
   pcbComparisonSvg: string
   schematicComparisonSvg: string
 }
@@ -62,6 +63,7 @@ export async function createTiEvmRoundtrip({
 
   return {
     generatedTscircuit,
+    renderedPcbSvg,
     pcbComparisonSvg: createComparisonSvg({
       fixtureName,
       kind: "PCB",
