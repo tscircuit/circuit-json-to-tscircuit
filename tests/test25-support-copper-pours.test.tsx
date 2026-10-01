@@ -26,11 +26,35 @@ test("preserves authored PCB copper pour geometry", async () => {
       pcb_copper_pour_id: "pcb_copper_pour_0",
       source_net_id: "source_net_0",
       layer: "top",
-      shape: "rect",
-      center: { x: 0, y: 0 },
-      width: 6,
-      height: 4,
-      rotation: 0,
+      shape: "brep",
+      brep_shape: {
+        outer_ring: {
+          vertices: [
+            { x: -4, y: -2 },
+            { x: 4, y: -2 },
+            { x: 4, y: 2 },
+            { x: -4, y: 2 },
+          ],
+        },
+        inner_rings: [
+          {
+            vertices: [
+              { x: -2, y: -1 },
+              { x: -2, y: 1 },
+              { x: -1, y: 1 },
+              { x: -1, y: -1 },
+            ],
+          },
+          {
+            vertices: [
+              { x: 1, y: -1 },
+              { x: 1, y: 1 },
+              { x: 2, y: 1 },
+              { x: 2, y: -1 },
+            ],
+          },
+        ],
+      },
       covered_with_solder_mask: false,
     },
   ]
@@ -54,10 +78,28 @@ test("preserves authored PCB copper pour geometry", async () => {
   })
   expect(copperPour.brep_shape.outer_ring.vertices).toEqual(
     expect.arrayContaining([
-      { x: -3, y: -2 },
-      { x: 3, y: -2 },
-      { x: 3, y: 2 },
-      { x: -3, y: 2 },
+      { x: -4, y: -2 },
+      { x: 4, y: -2 },
+      { x: 4, y: 2 },
+      { x: -4, y: 2 },
     ]),
   )
+  expect(copperPour.brep_shape.inner_rings).toEqual([
+    {
+      vertices: expect.arrayContaining([
+        { x: -2, y: -1 },
+        { x: -2, y: 1 },
+        { x: -1, y: 1 },
+        { x: -1, y: -1 },
+      ]),
+    },
+    {
+      vertices: expect.arrayContaining([
+        { x: 1, y: -1 },
+        { x: 1, y: 1 },
+        { x: 2, y: 1 },
+        { x: 2, y: -1 },
+      ]),
+    },
+  ])
 })
