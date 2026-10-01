@@ -4,9 +4,9 @@ import { su } from "@tscircuit/soup-util"
 const escapeJsxText = (text: string) =>
   text.replace(/\\/g, "\\\\").replace(/"/g, '\\"')
 
-export const generateSymbolTsx = (
+export const generateSymbolElements = (
   circuitJson: AnyCircuitElement[],
-): string | null => {
+): string[] => {
   const schematicArcs = su(circuitJson).schematic_arc.list()
   const schematicLines = su(circuitJson).schematic_line.list()
   const schematicPaths = su(circuitJson).schematic_path.list()
@@ -245,6 +245,13 @@ export const generateSymbolTsx = (
     )
   }
 
+  return elementStrings
+}
+
+export const generateSymbolTsx = (
+  circuitJson: AnyCircuitElement[],
+): string | null => {
+  const elementStrings = generateSymbolElements(circuitJson)
   if (elementStrings.length === 0) {
     return null
   }
