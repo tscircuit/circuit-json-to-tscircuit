@@ -108,13 +108,16 @@ export const convertFabrication: FootprintElementConverter = (circuitJson) => {
     if (fabDimension.arrow_size !== undefined) {
       attrs.push(`arrowSize={${fabDimension.arrow_size}}`)
     }
-    if (fabDimension.offset !== undefined) {
-      attrs.push(`offset={${fabDimension.offset}}`)
-    } else if (
-      "offset_distance" in fabDimension &&
-      fabDimension.offset_distance !== undefined
-    ) {
-      attrs.push(`offset={${fabDimension.offset_distance}}`)
+    // Circuit JSON uses offset_distance for the magnitude and offset_direction
+    // for the vector. Keep legacy offset input working when no magnitude exists.
+    const offset = fabDimension.offset_distance ?? fabDimension.offset
+    if (offset !== undefined) {
+      attrs.push(`offset={${offset}}`)
+    }
+    if (fabDimension.offset_direction !== undefined) {
+      attrs.push(
+        `offsetDirection={${JSON.stringify(fabDimension.offset_direction)}}`,
+      )
     }
     if (fabDimension.layer === "bottom") {
       attrs.push(`layer="bottom"`)

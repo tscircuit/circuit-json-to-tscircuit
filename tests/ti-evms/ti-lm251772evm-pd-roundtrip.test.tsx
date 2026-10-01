@@ -848,9 +848,9 @@ test(
       <fabricationnotetext pcbX={77.04440014} pcbY={56.63159869999999} anchorAlignment="center" text="D4" font="tscircuit2024" fontSize={1.016} color="#ec4899" layer="bottom" />
       <fabricationnotetext pcbX={60.600800819999996} pcbY={122.46559962} anchorAlignment="center" text="R40" font="tscircuit2024" fontSize={0.4572} color="#ec4899" layer="bottom" />
       <fabricationnotetext pcbX={59.076800819999995} pcbY={122.46559962} anchorAlignment="center" text="R39" font="tscircuit2024" fontSize={0.4572} color="#ec4899" layer="bottom" />
-      <fabricationnotedimension from={{ x: 17.5768, y: 28.8036 }} to={{ x: 42.9768, y: 28.8036 }} text="1000.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={1.524} />
-      <fabricationnotedimension from={{ x: 17.5768, y: 130.40359999999998 }} to={{ x: 17.576799999999995, y: 38.96360000000001 }} text="3600.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={2.54} />
-      <fabricationnotedimension from={{ x: 121.71679999999999, y: 38.9636 }} to={{ x: 17.5768, y: 38.9636 }} text="4100.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={2.5654} />
+      <fabricationnotedimension from={{ x: 17.5768, y: 28.8036 }} to={{ x: 42.9768, y: 28.8036 }} text="1000.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={1.524} offsetDirection={{"x":0,"y":-1}} />
+      <fabricationnotedimension from={{ x: 17.5768, y: 130.40359999999998 }} to={{ x: 17.576799999999995, y: 38.96360000000001 }} text="3600.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={2.54} offsetDirection={{"x":-1,"y":6.123233995736766e-17}} />
+      <fabricationnotedimension from={{ x: 121.71679999999999, y: 38.9636 }} to={{ x: 17.5768, y: 38.9636 }} text="4100.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={2.5654} offsetDirection={{"x":0,"y":-1}} />
       <silkscreentext pcbX={37.0580412} pcbY={121.54144093999999} anchorAlignment="bottom_left" fontSize={0.508} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="USB2ANY
       5: VBUS
       6: GND

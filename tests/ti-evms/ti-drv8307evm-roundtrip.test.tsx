@@ -587,8 +587,8 @@ test(
       <fabricationnotetext pcbX={42.230634359999996} pcbY={51.07118818} anchorAlignment="center" text="U5" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
       <fabricationnotetext pcbX={90.41079962} pcbY={62.55759903999999} anchorAlignment="center" text="C1" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
       <fabricationnotetext pcbX={91.7448} pcbY={61.315599999999996} anchorAlignment="center" text="+" font="tscircuit2024" fontSize={1.499997} color="#ec4899" />
-      <fabricationnotedimension from={{ x: 17.5641, y: 27.139899999999997 }} to={{ x: 42.964099999999995, y: 27.139899999999997 }} text="1000.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={0} />
-      <fabricationnotedimension from={{ x: 17.5768, y: 38.9636 }} to={{ x: 17.5768, y: 38.96360000000001 }} text="0.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={2.54} />
+      <fabricationnotedimension from={{ x: 17.5641, y: 27.139899999999997 }} to={{ x: 42.964099999999995, y: 27.139899999999997 }} text="1000.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={0} offsetDirection={{"x":0,"y":1}} />
+      <fabricationnotedimension from={{ x: 17.5768, y: 38.9636 }} to={{ x: 17.5768, y: 38.96360000000001 }} text="0.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={2.54} offsetDirection={{"x":-1,"y":6.123233995736766e-17}} />
       <silkscreentext pcbX={80.0608} pcbY={87.22359999999999} anchorAlignment="center" fontSize={1.397} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="R29" />
       <silkscreentext pcbX={82.3468} pcbY={95.35159999999999} anchorAlignment="center" fontSize={1.397} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="R28" />
       <silkscreentext pcbX={84.1248} pcbY={80.1116} anchorAlignment="center" fontSize={1.397} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="R27" />
