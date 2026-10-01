@@ -1,6 +1,7 @@
 import { mmStr } from "@tscircuit/mm"
 import { su } from "@tscircuit/soup-util"
 import type { AnyCircuitElement } from "circuit-json"
+import { generateCopperPoursTsx } from "./generate-copper-pours-tsx"
 import { generateFootprintTsx } from "./generate-footprint-tsx"
 
 export interface BoardTemplateParams {
@@ -61,8 +62,14 @@ export const getBoardUsingTemplate = ({
 
   const boardPropsStr = boardProps.join(" ")
   const footprintTsx = generateFootprintTsx(circuitJson)
+  const copperPoursTsx = generateCopperPoursTsx(circuitJson)
 
-  const children = footprintTsx ? `<chip footprint={${footprintTsx}} />` : ""
+  const children = [
+    footprintTsx ? `<chip footprint={${footprintTsx}} />` : "",
+    ...copperPoursTsx,
+  ]
+    .filter(Boolean)
+    .join("\n")
 
   return `
 ${componentName ? `export const ${componentName} =` : "export default"} () => (
