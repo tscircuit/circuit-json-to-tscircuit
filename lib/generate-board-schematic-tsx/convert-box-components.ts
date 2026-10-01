@@ -7,9 +7,11 @@ import {
 import { convertRect } from "./convert-rect"
 import { formatElement } from "./format-attributes"
 
-const BOX_BODY_STROKE_WIDTH = 0.02
-const BOX_BODY_STROKE_COLOR = "#840000"
-const BOX_BODY_FILL_COLOR = "#ffffc2"
+// Circuit JSON does not encode box body styling. These values mirror the
+// circuit-to-svg defaults so reconstructed boxes keep the compiled view.
+const DEFAULT_BOX_BODY_STROKE_WIDTH = 0.02
+const DEFAULT_BOX_BODY_STROKE_COLOR = "#840000"
+const DEFAULT_BOX_BODY_FILL_COLOR = "#ffffc2"
 
 export const convertBoxComponent = ({
   circuitJson,
@@ -23,9 +25,9 @@ export const convertBoxComponent = ({
       center: schematicComponent.center,
       width: schematicComponent.size.width,
       height: schematicComponent.size.height,
-      strokeWidth: BOX_BODY_STROKE_WIDTH,
-      color: BOX_BODY_STROKE_COLOR,
-      fillColor: BOX_BODY_FILL_COLOR,
+      strokeWidth: DEFAULT_BOX_BODY_STROKE_WIDTH,
+      color: DEFAULT_BOX_BODY_STROKE_COLOR,
+      fillColor: DEFAULT_BOX_BODY_FILL_COLOR,
       isFilled: true,
     }),
   ]
