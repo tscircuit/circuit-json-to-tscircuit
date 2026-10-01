@@ -2,6 +2,7 @@ import { expect, test } from "bun:test"
 import type { CircuitJson, PcbVia } from "circuit-json"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
+import { convertVias } from "../lib/generate-footprint-tsx/convert-vias"
 
 test("preserves via geometry, copper layers and tenting", async () => {
   const vias: (PcbVia & { is_tented?: boolean })[] = [
@@ -71,4 +72,20 @@ test("preserves via geometry, copper layers and tenting", async () => {
       tented_on_bottom: via.tented_on_bottom ?? via.is_tented,
     })
   }
+})
+
+test("rejects vias without copper layer endpoints", () => {
+  expect(() =>
+    convertVias([
+      {
+        type: "pcb_via",
+        pcb_via_id: "missing_layers",
+        x: 0,
+        y: 0,
+        hole_diameter: 0.3,
+        outer_diameter: 0.6,
+        layers: [],
+      },
+    ]),
+  ).toThrow("Via missing_layers has no copper layer endpoints")
 })
