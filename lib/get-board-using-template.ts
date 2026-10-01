@@ -44,9 +44,14 @@ export const getBoardUsingTemplate = ({
     if (pcbBoard.silkscreen_color !== undefined) {
       boardProps.push(`silkscreenColor="${pcbBoard.silkscreen_color}"`)
     }
-    if (pcbBoard.anchor_position !== undefined) {
+    const boardAnchorPosition = pcbBoard.anchor_position ?? pcbBoard.center
+    if (
+      pcbBoard.anchor_position !== undefined ||
+      boardAnchorPosition.x !== 0 ||
+      boardAnchorPosition.y !== 0
+    ) {
       boardProps.push(
-        `boardAnchorPosition={{ x: ${pcbBoard.anchor_position.x}, y: ${pcbBoard.anchor_position.y} }}`,
+        `boardAnchorPosition={{ x: ${boardAnchorPosition.x}, y: ${boardAnchorPosition.y} }}`,
       )
     }
     if (pcbBoard.anchor_alignment !== undefined) {
