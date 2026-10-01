@@ -1,6 +1,7 @@
 import type { AnyCircuitElement } from "circuit-json"
 import { generateFootprintTsx } from "./generate-footprint-tsx"
 import { generateSymbolTsx } from "./generate-symbol-tsx"
+import { getPinAttributes } from "./get-pin-attributes"
 
 export interface ComponentTemplateParams {
   pinLabels?: Record<string, string[]> | Record<string, string> // ChipProps["pinLabels"]
@@ -21,6 +22,7 @@ export const getComponentUsingTemplate = ({
 }: ComponentTemplateParams) => {
   const footprintTsx = generateFootprintTsx(circuitJson)
   const symbolTsx = generateSymbolTsx(circuitJson)
+  const pinAttributes = getPinAttributes(circuitJson)
   return `
 import { type ChipProps } from "tscircuit"
 ${pinLabels ? `const pinLabels = ${JSON.stringify(pinLabels, null, "  ")} as const\n` : ""}export const ${componentName} = (props: ChipProps${pinLabels ? `<typeof pinLabels>` : ""}) => (
@@ -28,6 +30,7 @@ ${pinLabels ? `const pinLabels = ${JSON.stringify(pinLabels, null, "  ")} as con
     ${footprintTsx ? `footprint={${footprintTsx}}` : ""}
     ${symbolTsx ? `symbol={${symbolTsx}}` : ""}
     ${pinLabels ? "pinLabels={pinLabels}" : ""}
+    ${pinAttributes ? `pinAttributes={${JSON.stringify(pinAttributes, null, "  ")}}` : ""}
     ${objUrl ? `cadModel={{\n        objUrl: \"${objUrl}\",\n        rotationOffset: { x: 0, y: 0, z: 0 },\n        positionOffset: { x: 0, y: 0, z: 0 },\n      }}` : ""}
     ${supplierPartNumbers ? `supplierPartNumbers={${JSON.stringify(supplierPartNumbers, null, "  ")}}` : ""}
     ${manufacturerPartNumber ? `manufacturerPartNumber=\"${manufacturerPartNumber}\"` : ""}

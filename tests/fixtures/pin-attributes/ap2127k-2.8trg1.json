@@ -1,0 +1,91 @@
+{
+  "circuitJson": [
+    {
+      "type": "source_component",
+      "ftype": "simple_chip",
+      "source_component_id": "source_component_1",
+      "name": "U1",
+      "manufacturer_part_number": "AP2127K-28TRG1"
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_1",
+      "source_component_id": "source_component_1",
+      "name": "pin1",
+      "pin_number": 1,
+      "port_hints": ["VIN"],
+      "must_be_connected": true,
+      "requires_power": true,
+      "should_have_decoupling_capacitor": true,
+      "recommended_decoupling_capacitor_capacitance": "1uF"
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_2",
+      "source_component_id": "source_component_1",
+      "name": "pin2",
+      "pin_number": 2,
+      "port_hints": ["GND"],
+      "must_be_connected": true,
+      "requires_ground": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_3",
+      "source_component_id": "source_component_1",
+      "name": "pin3",
+      "pin_number": 3,
+      "port_hints": ["N_SHUTDOWN"],
+      "is_input": true,
+      "must_be_connected": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_4",
+      "source_component_id": "source_component_1",
+      "name": "pin4",
+      "pin_number": 4,
+      "port_hints": ["NC"],
+      "do_not_connect": true
+    },
+    {
+      "type": "source_port",
+      "source_port_id": "source_port_5",
+      "source_component_id": "source_component_1",
+      "name": "pin5",
+      "pin_number": 5,
+      "port_hints": ["VOUT"],
+      "is_output": true,
+      "provides_power": true,
+      "provides_voltage": 2.8,
+      "should_have_decoupling_capacitor": true,
+      "recommended_decoupling_capacitor_capacitance": "1uF"
+    }
+  ],
+  "pinAttributes": {
+    "pin1": {
+      "requiresPower": true,
+      "mustBeConnected": true,
+      "shouldHaveDecouplingCapacitor": true,
+      "recommendedDecouplingCapacitorCapacitance": "1uF"
+    },
+    "pin2": {
+      "requiresGround": true,
+      "mustBeConnected": true
+    },
+    "pin3": {
+      "isInput": true,
+      "mustBeConnected": true
+    },
+    "pin4": {
+      "doNotConnect": true
+    },
+    "pin5": {
+      "isOutput": true,
+      "providesPower": true,
+      "providesVoltage": 2.8,
+      "shouldHaveDecouplingCapacitor": true,
+      "recommendedDecouplingCapacitorCapacitance": "1uF"
+    }
+  }
+}
