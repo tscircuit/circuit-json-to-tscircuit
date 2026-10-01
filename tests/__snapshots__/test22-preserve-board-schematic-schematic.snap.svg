@@ -17,7 +17,7 @@
               /* Net-hover highlighting: when a trace or its overlays are hovered,
                  invert color for all traces (base + overlays) sharing the same
                  subcircuit connectivity key. Also hide crossing outline during hover. */
-              
+
               .text { font-family: sans-serif; fill: rgb(0, 150, 0); }
               .pin-number { fill: rgb(169, 0, 0); }
               .port-label { fill: rgb(0, 100, 100); }

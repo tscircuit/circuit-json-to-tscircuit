@@ -2,6 +2,7 @@ import { mmStr } from "@tscircuit/mm"
 import { su } from "@tscircuit/soup-util"
 import type { AnyCircuitElement } from "circuit-json"
 import { generateBoardSchematicTsx } from "./generate-board-schematic-tsx"
+import { generateCopperPoursTsx } from "./generate-copper-pours-tsx"
 import { generateFootprintTsx } from "./generate-footprint-tsx"
 
 export interface BoardTemplateParams {
@@ -45,9 +46,14 @@ export const getBoardUsingTemplate = ({
     if (pcbBoard.silkscreen_color !== undefined) {
       boardProps.push(`silkscreenColor="${pcbBoard.silkscreen_color}"`)
     }
-    if (pcbBoard.anchor_position !== undefined) {
+    const resolvedAnchorPosition = pcbBoard.anchor_position ?? pcbBoard.center
+    if (
+      pcbBoard.anchor_position !== undefined ||
+      resolvedAnchorPosition.x !== 0 ||
+      resolvedAnchorPosition.y !== 0
+    ) {
       boardProps.push(
-        `boardAnchorPosition={{ x: ${pcbBoard.anchor_position.x}, y: ${pcbBoard.anchor_position.y} }}`,
+        `boardAnchorPosition={{ x: ${resolvedAnchorPosition.x}, y: ${resolvedAnchorPosition.y} }}`,
       )
     }
     if (pcbBoard.anchor_alignment !== undefined) {
@@ -57,15 +63,19 @@ export const getBoardUsingTemplate = ({
 
   const boardPropsStr = boardProps.join(" ")
   const footprintTsx = generateFootprintTsx(circuitJson)
+  const copperPoursTsx = generateCopperPoursTsx(circuitJson)
 
   const symbolTsx = generateBoardSchematicTsx(circuitJson)
   const chipProps = [
     footprintTsx ? `footprint={${footprintTsx}}` : "",
     symbolTsx ? `symbol={${symbolTsx}}` : "",
   ].filter(Boolean)
-  const children = footprintTsx
-    ? `<chip ${chipProps.join(" ")} />`
-    : (symbolTsx ?? "")
+  const children = [
+    footprintTsx ? `<chip ${chipProps.join(" ")} />` : (symbolTsx ?? ""),
+    ...copperPoursTsx,
+  ]
+    .filter(Boolean)
+    .join("\n")
 
   return `
 ${componentName ? `export const ${componentName} =` : "export default"} () => (

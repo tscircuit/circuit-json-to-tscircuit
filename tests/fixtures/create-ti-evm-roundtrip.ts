@@ -39,6 +39,19 @@ export async function createTiEvmRoundtrip({
     generatedTscircuit,
   )) as CircuitJson
 
+  const sourceBoard = sourceCircuitJson.find(
+    (element) => element.type === "pcb_board",
+  )
+  const renderedBoard = renderedCircuitJson.find(
+    (element) => element.type === "pcb_board",
+  )
+  if (!sourceBoard || !renderedBoard) {
+    throw new Error(
+      `${fixtureName} must contain source and rendered PCB boards`,
+    )
+  }
+  expect(renderedBoard).toMatchObject({ center: sourceBoard.center })
+
   expect(
     renderedCircuitJson.filter((element) => element.type === "pcb_via"),
   ).toHaveLength(
@@ -87,7 +100,7 @@ function createComparisonSvg({
 }): string {
   return stackSvgsHorizontally([sourceSvg, renderedSvg], {
     gap: 24,
-    normalizeSize: true,
+    normalizeSize: kind !== "PCB",
     targetSize: 800,
     rootAttributes: {
       "aria-label": `${fixtureName} ${kind}: source Circuit JSON on left, generated tscircuit render on right`,
