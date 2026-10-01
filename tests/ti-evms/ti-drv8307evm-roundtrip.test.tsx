@@ -10,7 +10,7 @@ test(
     })
 
     expect(result.generatedTscircuit).toMatchInlineSnapshot(`
-      "export default () => (
+      "export const Drv8307Evm = () => (
         <board width="87.7316mm" height="75.00010400000001mm" outline={[{ x: 17.5768, y: 38.9636 }, { x: 17.5768, y: 113.963704 }, { x: 105.30839999999999, y: 113.963704 }, { x: 105.30839999999999, y: 38.9636 }, { x: 17.5768, y: 38.9636 }]} thickness="1.6mm" layers={2} material="fr4">
           <chip footprint={<footprint>
               <platedhole  portHints={["0"]} pcbX="21.6408mm" pcbY="43.0276mm" outerDiameter="4.318mm" holeDiameter="3.81mm" shape="circle" />
@@ -784,7 +784,8 @@ test(
       <courtyardoutline outline={[{"x":40.004634239999994,"y":48.8291886},{"x":47.50463447999999,"y":48.8291886},{"x":47.50463447999999,"y":54.329187759999996},{"x":40.004634239999994,"y":54.329187759999996}]} layer="top" />
             </footprint>} />
         </board>
-      )"
+      )
+      export default Drv8307Evm"
     `)
     await expect(result.pcbComparisonSvg).toMatchSvgSnapshot(
       import.meta.path,

@@ -10,7 +10,7 @@ test(
     })
 
     expect(result.generatedTscircuit).toMatchInlineSnapshot(`
-      "export default () => (
+      "export const Lm5155EvmFly = () => (
         <board width="85.09mm" height="41.91mm" outline={[{ x: 17.5768, y: 38.9636 }, { x: 17.5768, y: 80.8736 }, { x: 102.6668, y: 80.8736 }, { x: 102.6668, y: 38.9636 }, { x: 17.5768, y: 38.9636 }]} thickness="1.6mm" layers={2} material="fr4">
           <chip footprint={<footprint>
               <platedhole  portHints={["1"]} pcbX="73.2028mm" pcbY="51.663599999999995mm" outerDiameter="1.905mm" holeDiameter="1.3208mm" shape="circle" />
@@ -723,7 +723,8 @@ test(
       <courtyardoutline outline={[{"x":74.23580022,"y":44.87559986},{"x":74.23580022,"y":47.275600139999995},{"x":73.18579978,"y":47.275600139999995},{"x":73.18579978,"y":44.87559986}]} layer="top" />
             </footprint>} />
         </board>
-      )"
+      )
+      export default Lm5155EvmFly"
     `)
     await expect(result.pcbComparisonSvg).toMatchSvgSnapshot(
       import.meta.path,
