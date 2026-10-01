@@ -2,9 +2,11 @@ import { su } from "@tscircuit/soup-util"
 import { type AnyCircuitElement, type SchematicComponent } from "circuit-json"
 import { formatElement } from "./format-attributes"
 
-const PIN_TEXT_FONT_SIZE = 0.15
-const PIN_LABEL_DISTANCE_FROM_EDGE = 0.1
-const PIN_NUMBER_BASELINE_OFFSET = 0.02
+// Circuit JSON does not encode these presentation values. They mirror the
+// circuit-to-svg defaults so reconstructed box pins keep the compiled view.
+const DEFAULT_PIN_TEXT_FONT_SIZE = 0.15
+const DEFAULT_PIN_LABEL_DISTANCE_FROM_EDGE = 0.1
+const DEFAULT_PIN_NUMBER_BASELINE_OFFSET = 0.02
 
 export const convertBoxComponent = ({
   circuitJson,
@@ -61,24 +63,24 @@ export const convertBoxComponent = ({
     let rotation = 0
     switch (schematicPort.side_of_component) {
       case "left":
-        labelPosition.x += PIN_LABEL_DISTANCE_FROM_EDGE
-        pinNumberPosition.y += PIN_NUMBER_BASELINE_OFFSET
+        labelPosition.x += DEFAULT_PIN_LABEL_DISTANCE_FROM_EDGE
+        pinNumberPosition.y += DEFAULT_PIN_NUMBER_BASELINE_OFFSET
         anchor = "center_left"
         break
       case "right":
-        labelPosition.x -= PIN_LABEL_DISTANCE_FROM_EDGE
-        pinNumberPosition.y += PIN_NUMBER_BASELINE_OFFSET
+        labelPosition.x -= DEFAULT_PIN_LABEL_DISTANCE_FROM_EDGE
+        pinNumberPosition.y += DEFAULT_PIN_NUMBER_BASELINE_OFFSET
         anchor = "center_right"
         break
       case "top":
-        labelPosition.y -= PIN_LABEL_DISTANCE_FROM_EDGE
-        pinNumberPosition.x -= PIN_NUMBER_BASELINE_OFFSET
+        labelPosition.y -= DEFAULT_PIN_LABEL_DISTANCE_FROM_EDGE
+        pinNumberPosition.x -= DEFAULT_PIN_NUMBER_BASELINE_OFFSET
         anchor = "center_right"
         rotation = -90
         break
       case "bottom":
-        labelPosition.y += PIN_LABEL_DISTANCE_FROM_EDGE
-        pinNumberPosition.x -= PIN_NUMBER_BASELINE_OFFSET
+        labelPosition.y += DEFAULT_PIN_LABEL_DISTANCE_FROM_EDGE
+        pinNumberPosition.x -= DEFAULT_PIN_NUMBER_BASELINE_OFFSET
         anchor = "center_left"
         rotation = -90
         break
@@ -90,7 +92,7 @@ export const convertBoxComponent = ({
           schX: labelPosition.x,
           schY: labelPosition.y,
           anchor,
-          fontSize: PIN_TEXT_FONT_SIZE,
+          fontSize: DEFAULT_PIN_TEXT_FONT_SIZE,
           schRotation: rotation || undefined,
         }),
       )
@@ -101,7 +103,7 @@ export const convertBoxComponent = ({
           schX: pinNumberPosition.x,
           schY: pinNumberPosition.y,
           anchor: "bottom_center",
-          fontSize: PIN_TEXT_FONT_SIZE,
+          fontSize: DEFAULT_PIN_TEXT_FONT_SIZE,
           schRotation: rotation || undefined,
         }),
       )
