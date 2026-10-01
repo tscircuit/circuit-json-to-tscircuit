@@ -1073,7 +1073,7 @@ test(
     `)
     await expect(result.pcbComparisonSvg).toMatchSvgSnapshot(
       import.meta.path,
-      "full-board",
+      "pcb-comparison",
     )
     await expect(result.schematicComparisonSvg).toMatchSvgSnapshot(
       import.meta.path,
