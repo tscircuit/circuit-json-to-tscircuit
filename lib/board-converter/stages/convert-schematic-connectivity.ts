@@ -1,5 +1,6 @@
 import type { AnyCircuitElement, SourcePort, SourceTrace } from "circuit-json"
 import type { BoardConverterStage } from "../BoardConverterContext"
+import { getSafeNetName } from "../get-safe-net-name"
 
 type SourceComponent = Extract<AnyCircuitElement, { type: "source_component" }>
 type SourceComponentId = NonNullable<SourceComponent["source_component_id"]>
@@ -26,33 +27,13 @@ const getPortSelector = ({
   return `.${sourceComponent.name} > .${portName}`
 }
 
-const getSafeNetName = ({
-  sourceNetName,
-  usedNetNames,
-}: {
-  sourceNetName: string
-  usedNetNames: Set<string>
-}): string => {
-  const normalizedNetName = sourceNetName.replace(/[^A-Za-z0-9_]/g, "_")
-  const prefixedNetName = /^[0-9]/.test(normalizedNetName)
-    ? `NET_${normalizedNetName}`
-    : normalizedNetName || "NET"
-  let safeNetName = prefixedNetName
-  let suffix = 2
-
-  while (usedNetNames.has(safeNetName)) {
-    safeNetName = `${prefixedNetName}_${suffix}`
-    suffix += 1
-  }
-
-  usedNetNames.add(safeNetName)
-  return safeNetName
-}
-
 export const convertSchematicConnectivity: BoardConverterStage = ({
   boardChildren,
   boardProps,
   circuitJson,
+  emittedNetNames,
+  netNamesBySourceName,
+  usedNetNames,
 }) => {
   const schematicSourceTraceIds = new Set<SourceTraceId>(
     circuitJson.flatMap((element) =>
@@ -107,9 +88,6 @@ export const convertSchematicConnectivity: BoardConverterStage = ({
       return sourceComponent?.name ? [sourceComponent.name] : []
     }),
   )
-  const safeNetNamesBySourceName = new Map<string, string>()
-  const usedNetNames = new Set<string>()
-  const emittedNetNames = new Set<string>()
   const traceElements: string[] = []
 
   for (const sourceTrace of sourceTraces) {
@@ -143,25 +121,25 @@ export const convertSchematicConnectivity: BoardConverterStage = ({
     const tracePath = [...portSelectors]
 
     if (sourceNet?.name) {
-      let safeNetName = safeNetNamesBySourceName.get(sourceNet.name)
-      if (!safeNetName) {
-        safeNetName = getSafeNetName({
+      let netName = netNamesBySourceName.get(sourceNet.name)
+      if (!netName) {
+        netName = getSafeNetName({
           sourceNetName: sourceNet.name,
           usedNetNames,
         })
-        safeNetNamesBySourceName.set(sourceNet.name, safeNetName)
+        netNamesBySourceName.set(sourceNet.name, netName)
       }
-      tracePath.push(`net.${safeNetName}`)
+      tracePath.push(`net.${netName}`)
     }
 
     if (tracePath.length < 2) continue
 
-    const safeNetName = sourceNet?.name
-      ? safeNetNamesBySourceName.get(sourceNet.name)
+    const netName = sourceNet?.name
+      ? netNamesBySourceName.get(sourceNet.name)
       : undefined
-    if (safeNetName && !emittedNetNames.has(safeNetName)) {
-      boardChildren.push(`<net name=${JSON.stringify(safeNetName)} />`)
-      emittedNetNames.add(safeNetName)
+    if (netName && !emittedNetNames.has(netName)) {
+      boardChildren.push(`<net name=${JSON.stringify(netName)} />`)
+      emittedNetNames.add(netName)
     }
 
     traceElements.push(`<trace path={${JSON.stringify(tracePath)}} />`)

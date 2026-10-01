@@ -33,6 +33,19 @@ const replaceSilkscreenGraphicGeometryWithHashes = (
     },
   )
 
+const replaceCopperPourGeometryWithHashes = (
+  generatedTscircuit: string,
+): string =>
+  generatedTscircuit.replace(/<copperpour\b[^>]*\/>/g, (copperPourElement) => {
+    const geometryHash = createHash("sha256")
+      .update(copperPourElement)
+      .digest("hex")
+      .slice(0, 12)
+    const layer = /\blayer=\{("[^"]+")\}/u.exec(copperPourElement)?.[1]
+
+    return `<copperpour${layer ? ` layer={${layer}}` : ""} geometryHash="${geometryHash}" />`
+  })
+
 const replaceCustomSymbolGeometryWithHashes = (
   generatedTscircuit: string,
 ): string =>
@@ -98,8 +111,10 @@ export async function createTiEvmRoundtrip({
   return {
     generatedTscircuit,
     generatedTscircuitSnapshot: replaceStandaloneSchematicPrimitivesWithHash(
-      replaceCustomSymbolGeometryWithHashes(
-        replaceSilkscreenGraphicGeometryWithHashes(generatedTscircuit),
+      replaceCopperPourGeometryWithHashes(
+        replaceCustomSymbolGeometryWithHashes(
+          replaceSilkscreenGraphicGeometryWithHashes(generatedTscircuit),
+        ),
       ),
     ),
     pcbComparisonSvg: createComparisonSvg({

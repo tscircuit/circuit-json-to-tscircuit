@@ -4,6 +4,7 @@ import type {
   BoardConverterStage,
 } from "./BoardConverterContext"
 import { convertBoardProperties } from "./stages/convert-board-properties"
+import { convertCopperPours } from "./stages/convert-copper-pours"
 import { convertPcbComponents } from "./stages/convert-pcb-components"
 import { convertSchematicConnectivity } from "./stages/convert-schematic-connectivity"
 import { convertStandalonePcbPrimitives } from "./stages/convert-standalone-pcb-primitives"
@@ -13,6 +14,7 @@ const conversionStages: BoardConverterStage[] = [
   convertBoardProperties,
   convertPcbComponents,
   convertSchematicConnectivity,
+  convertCopperPours,
   convertStandaloneSchematicPrimitives,
   convertStandalonePcbPrimitives,
 ]
@@ -31,6 +33,9 @@ export const convertBoardCircuitJson = (
     pcbBoard,
     boardProps: [],
     boardChildren: [],
+    emittedNetNames: new Set(),
+    netNamesBySourceName: new Map(),
+    usedNetNames: new Set(),
   }
 
   for (const convertStage of conversionStages) {
