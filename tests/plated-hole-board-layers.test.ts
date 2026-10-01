@@ -39,7 +39,7 @@ test("through-hole ports use only layers present in the converted board", async 
     const rendered = await runTscircuitCode(tsx)
     const ports = rendered.filter((el) => el.type === "pcb_port")
     expect(ports).toHaveLength(1)
-    expect([...ports[0].layers].sort()).toEqual([...layers].sort())
+    expect(ports[0].layers.map(String).sort()).toEqual([...layers].sort())
     expect(rendered.filter((el) => el.type === "pcb_board")[0].num_layers).toBe(
       num_layers,
     )
