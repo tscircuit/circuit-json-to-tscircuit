@@ -11,7 +11,7 @@ test(
 
     expect(result.generatedTscircuit).toMatchInlineSnapshot(`
       "export const Lmg342xBbEvm = () => (
-        <board width="162.56mm" height="92.837mm" outline={[{ x: 17.5768, y: 38.9636 }, { x: 180.1368, y: 38.9636 }, { x: 180.1368, y: 131.8006 }, { x: 17.5768, y: 131.8006 }, { x: 17.5768, y: 38.9636 }]} thickness="1.6mm" layers={2} material="fr4">
+        <board width="162.56mm" height="92.837mm" outline={[{ x: 17.5768, y: 38.9636 }, { x: 180.1368, y: 38.9636 }, { x: 180.1368, y: 131.8006 }, { x: 17.5768, y: 131.8006 }, { x: 17.5768, y: 38.9636 }]} thickness="1.6mm" layers={2} material="fr4" boardAnchorPosition={{ x: 98.85679999999999, y: 85.3821 }}>
           <chip footprint={<footprint>
               <platedhole  portHints={["2"]} pcbX="43.78880752mm" pcbY="43.0735994mm" outerDiameter="2.25000058mm" holeDiameter="1.49999954mm" shape="circle" />
       <platedhole  portHints={["1"]} pcbX="43.7888126mm" pcbY="80.57360059999999mm" holeShape="circle" padShape="rect" holeDiameter="1.49999954mm" rectPadWidth="2.25000058mm" rectPadHeight="2.25000058mm" rectBorderRadius="0.562500145mm" holeOffsetX="0mm" holeOffsetY="0mm" pcbRotation="270deg" shape="circular_hole_with_rect_pad" />
