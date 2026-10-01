@@ -193,7 +193,7 @@ export const generateSymbolElements = (
         const text = cell.text ?? ""
 
         if (text.length > 0) {
-          props.push(`text="${escapeJsxText(text)}"`)
+          props.push(`text={${JSON.stringify(text)}}`)
         }
         if (cell.horizontal_align) {
           props.push(`horizontalAlign="${cell.horizontal_align}"`)
