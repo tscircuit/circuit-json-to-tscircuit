@@ -9,6 +9,7 @@ import { convertKeepouts } from "./generate-footprint-tsx/convert-keepouts"
 import { convertNotes } from "./generate-footprint-tsx/convert-notes"
 import { convertPlatedHoles } from "./generate-footprint-tsx/convert-plated-holes"
 import { convertSilkscreen } from "./generate-footprint-tsx/convert-silkscreen"
+import { convertSilkscreenGraphics } from "./generate-footprint-tsx/convert-silkscreen-graphics"
 import { convertSilkscreenText } from "./generate-footprint-tsx/convert-silkscreen-text"
 import { convertSmtPads } from "./generate-footprint-tsx/convert-smt-pads"
 
@@ -20,6 +21,7 @@ export const generateFootprintTsx = (
     convertPlatedHoles,
     convertSmtPads,
     convertSilkscreen,
+    convertSilkscreenGraphics,
     convertFabrication,
     convertSilkscreenText,
     convertCopperText,

@@ -1,3 +1,4 @@
+import { expect } from "bun:test"
 import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 import { gunzipSync } from "node:zlib"
@@ -35,6 +36,16 @@ export async function createTiEvmRoundtrip({
   const renderedCircuitJson = (await runTscircuitCode(
     generatedTscircuit,
   )) as CircuitJson
+
+  expect(
+    renderedCircuitJson.filter(
+      (element) => element.type === "pcb_silkscreen_graphic",
+    ),
+  ).toHaveLength(
+    sourceCircuitJson.filter(
+      (element) => element.type === "pcb_silkscreen_graphic",
+    ).length,
+  )
 
   const sourcePcbSvg = convertCircuitJsonToPcbSvg(sourceCircuitJson, {
     matchBoardAspectRatio: true,
