@@ -22,17 +22,16 @@ export const convertComponents: SchematicElementConverter = (circuitJson) =>
         const symbolToSchematicTransform = getSymbolToSchematicTransform({
           symbol,
           schematic_component,
-          schematicPorts: su(circuitJson).schematic_port.list({
+          schematic_port_list: su(circuitJson).schematic_port.list({
             schematic_component_id: schematic_component.schematic_component_id,
           }),
-          sourcePorts: su(circuitJson).source_port.list(),
+          source_port_list: su(circuitJson).source_port.list(),
         })
         return convertSymbolPrimitives({
           symbol,
           symbolToSchematicTransform,
-          reference:
-            source_component?.display_name ?? source_component?.name ?? "",
-          displayText: schematic_component.symbol_display_value ?? "",
+          source_component,
+          symbol_display_value: schematic_component.symbol_display_value,
         })
       }
       // Imported custom components already carry their drawing primitives.

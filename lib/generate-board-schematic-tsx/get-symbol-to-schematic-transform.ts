@@ -11,19 +11,20 @@ import { getPortPairTriangle } from "./get-port-pair-triangle"
 export const getSymbolToSchematicTransform = ({
   symbol,
   schematic_component,
-  schematicPorts,
-  sourcePorts,
+  schematic_port_list,
+  source_port_list,
 }: {
   symbol: SchSymbol
   schematic_component: SchematicComponent
-  schematicPorts: SchematicPort[]
-  sourcePorts: SourcePort[]
+  schematic_port_list: SchematicPort[]
+  source_port_list: SourcePort[]
 }) => {
   // Match declared pin identities, never inferred angles or array order.
   const matches = symbol.ports.flatMap((symbolPort) => {
-    const candidates = schematicPorts.filter((schematic_port) => {
-      const source_port = sourcePorts.find(
-        (port) => port.source_port_id === schematic_port.source_port_id,
+    const candidates = schematic_port_list.filter((schematic_port) => {
+      const source_port = source_port_list.find(
+        (source_port) =>
+          source_port.source_port_id === schematic_port.source_port_id,
       )
       const pin_number = schematic_port.pin_number ?? source_port?.pin_number
       const labels = [

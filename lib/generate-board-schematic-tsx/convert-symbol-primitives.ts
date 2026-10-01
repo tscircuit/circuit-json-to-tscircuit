@@ -18,13 +18,15 @@ const anchors = {
 export const convertSymbolPrimitives = ({
   symbol,
   symbolToSchematicTransform,
-  reference,
-  displayText,
+  source_component,
+  symbol_display_value,
+  text,
 }: {
   symbol: SchSymbol
   symbolToSchematicTransform: Matrix
-  reference: string
-  displayText: string
+  source_component?: { display_name?: string; name?: string } | null
+  symbol_display_value?: string | null
+  text?: string
 }): string[] =>
   symbol.primitives.map((primitive) => {
     if (primitive.type === "path") {
@@ -40,14 +42,14 @@ export const convertSymbolPrimitives = ({
     }
     const center = applyToPoint(symbolToSchematicTransform, primitive)
     if (primitive.type === "text") {
-      const text =
+      const renderedText =
         primitive.text === "{REF}"
-          ? reference
+          ? (source_component?.display_name ?? source_component?.name ?? "")
           : primitive.text === "{VAL}"
-            ? displayText
+            ? (symbol_display_value ?? text ?? "")
             : primitive.text
       return formatElement("schematictext", {
-        text,
+        text: renderedText,
         schX: center.x,
         schY: center.y,
         anchor: anchors[primitive.anchor],

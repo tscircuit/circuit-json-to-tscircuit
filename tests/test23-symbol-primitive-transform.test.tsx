@@ -26,8 +26,6 @@ test("transforms symbol circle and box dimensions through a rotated matrix", asy
       rotateDEG(90),
       scale(2),
     ),
-    reference: "",
-    displayText: "",
   })
   const circuitJson = await runTscircuitCode(
     `export default () => <board><symbol>${elementStrings.join("\n")}</symbol></board>`,

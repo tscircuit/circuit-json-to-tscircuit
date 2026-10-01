@@ -22,8 +22,7 @@ export const convertNetLabels: SchematicElementConverter = (circuitJson) =>
               anchor_position.x,
               anchor_position.y,
             ),
-            reference: "",
-            displayText: schematic_net_label.text,
+            text: schematic_net_label.text,
           })
       }
       return [
