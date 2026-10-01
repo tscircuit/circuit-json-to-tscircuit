@@ -2103,6 +2103,14 @@ test(
       <silkscreentext pcbX={92.06300103999999} pcbY={62.636399999999995} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={true} layer="bottom" text="CIN3" />
       <coppertext pcbX={32.2326} pcbY={17.1578651} anchorAlignment="center" text=".Layer_Name" font="tscircuit2024" fontSize={1.524} pcbRotation="0deg" mirrored={false} />
       <coppertext pcbX={32.2326} pcbY={17.1578651} anchorAlignment="center" text=".Layer_Name" font="tscircuit2024" fontSize={1.524} pcbRotation="0deg" mirrored={false} layer="bottom" />
+      <keepout shape="circle" pcbX="177.59679999999997mm" pcbY="41.50359999999999mm" radius="1.0888992700000166mm" />
+      <keepout shape="circle" pcbX="19.9898mm" pcbY="41.376599999999996mm" radius="1.0888992699999989mm" />
+      <keepout shape="circle" pcbX="20.116799999999998mm" pcbY="129.2606mm" radius="1.0888992700000166mm" />
+      <keepout shape="circle" pcbX="177.59679999999997mm" pcbY="129.2606mm" radius="1.0888992700000166mm" />
+      <keepout shape="circle" pcbX="20.116799999999998mm" pcbY="129.2606mm" radius="1.0888992700000166mm" layer="bottom" />
+      <keepout shape="circle" pcbX="177.59679999999997mm" pcbY="41.50359999999999mm" radius="1.0888992700000166mm" layer="bottom" />
+      <keepout shape="circle" pcbX="177.59679999999997mm" pcbY="129.2606mm" radius="1.0888992700000166mm" layer="bottom" />
+      <keepout shape="circle" pcbX="19.9898mm" pcbY="41.376599999999996mm" radius="1.0888992699999989mm" layer="bottom" />
       <courtyardoutline outline={[{"x":58.498800960000004,"y":114.73159934},{"x":58.498800960000004,"y":129.08659984},{"x":47.79880204,"y":129.08659984},{"x":47.79880204,"y":114.73159934}]} layer="top" />
       <courtyardoutline outline={[{"x":32.929799519999996,"y":118.24860017999998},{"x":32.929799519999996,"y":119.69859982},{"x":36.02980094,"y":119.69859982},{"x":36.02980094,"y":118.24860017999998}]} layer="top" />
       <courtyardoutline outline={[{"x":53.43980168,"y":113.41160197999999},{"x":54.889801320000004,"y":113.41160197999999},{"x":54.889801320000004,"y":110.31160055999999},{"x":53.43980168,"y":110.31160055999999}]} layer="top" />
@@ -2210,6 +2218,24 @@ test(
     await expect(result.schematicComparisonSvg).toMatchSvgSnapshot(
       import.meta.path,
       "schematic-comparison",
+    )
+
+    // All 8 keepouts on this board are circular mounting-screw keepouts
+    // expressed as shape:"outline" with a closed 49-point circular
+    // centerline. They must survive the round trip as shape:"circle".
+    const keepouts = result.renderedCircuitJson.filter(
+      (element) => element.type === "pcb_keepout",
+    )
+    expect(keepouts).toHaveLength(8)
+    expect(
+      keepouts.every((keepout) => keepout.shape === "circle"),
+    ).toBe(true)
+    // 4 of the 8 are bottom-layer; they must not be promoted to top.
+    expect(
+      keepouts.filter((keepout) => keepout.layers.includes("bottom")),
+    ).toHaveLength(4)
+    expect(keepouts.filter((keepout) => keepout.layers.includes("top"))).toHaveLength(
+      4,
     )
   },
   { timeout: 120_000 },

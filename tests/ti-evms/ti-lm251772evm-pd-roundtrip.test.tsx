@@ -2406,6 +2406,10 @@ test(
       <coppertext pcbX={32.2326} pcbY={17.1578651} anchorAlignment="center" text=".Layer_Name" font="tscircuit2024" fontSize={1.524} pcbRotation="0deg" mirrored={false} layer="bottom" />
       <coppertext pcbX={32.2326} pcbY={17.1578651} anchorAlignment="center" text=".Layer_Name" font="tscircuit2024" fontSize={1.524} pcbRotation="0deg" mirrored={false} layer="inner2" />
       <coppertext pcbX={32.2326} pcbY={17.1578651} anchorAlignment="center" text=".Layer_Name" font="tscircuit2024" fontSize={1.524} pcbRotation="0deg" mirrored={false} layer="inner1" />
+      <keepout shape="circle" pcbX="101.3968mm" pcbY="115.26210119999999mm" radius="1.0888992700000095mm" />
+      <keepout shape="circle" pcbX="98.425mm" pcbY="42.5196mm" radius="1.0888992700000024mm" />
+      <keepout shape="circle" pcbX="39.4325475mm" pcbY="42.5196mm" radius="1.0888992699999989mm" />
+      <keepout shape="circle" pcbX="30.973560099999997mm" pcbY="123.86136009999998mm" radius="1.0888992700000095mm" />
       <courtyardoutline outline={[{"x":70.87579932,"y":83.20062354},{"x":70.87579932,"y":79.20062138},{"x":68.92580068,"y":79.20062138},{"x":68.92580068,"y":83.20062354}]} layer="top" />
       <courtyardoutline outline={[{"x":58.91111916,"y":86.188423},{"x":58.91111916,"y":82.18842083999999},{"x":56.961120519999994,"y":82.18842083999999},{"x":56.961120519999994,"y":86.188423}]} layer="top" />
       <courtyardoutline outline={[{"x":26.04879982,"y":59.817599439999995},{"x":24.598800179999998,"y":59.817599439999995},{"x":24.598800179999998,"y":56.71759801999999},{"x":26.04879982,"y":56.71759801999999}]} layer="top" />
@@ -2470,6 +2474,14 @@ test(
       import.meta.path,
       "schematic-comparison",
     )
+
+    // These 4 keepouts are circular mounting-screw keepouts expressed as
+    // shape:"outline"; they must survive the round trip as shape:"circle".
+    const keepouts = result.renderedCircuitJson.filter(
+      (element) => element.type === "pcb_keepout",
+    )
+    expect(keepouts).toHaveLength(4)
+    expect(keepouts.every((keepout) => keepout.shape === "circle")).toBe(true)
   },
   { timeout: 120_000 },
 )
