@@ -4,7 +4,12 @@ import {
   type AnyCircuitElement,
   type SchematicComponent,
 } from "circuit-json"
+import { convertRect } from "./convert-rect"
 import { formatElement } from "./format-attributes"
+
+const BOX_BODY_STROKE_WIDTH = 0.02
+const BOX_BODY_STROKE_COLOR = "#840000"
+const BOX_BODY_FILL_COLOR = "#ffffc2"
 
 export const convertBoxComponent = ({
   circuitJson,
@@ -14,11 +19,14 @@ export const convertBoxComponent = ({
   schematicComponent: SchematicComponent
 }): string[] => {
   const primitives = [
-    formatElement("schematicrect", {
-      schX: schematicComponent.center.x,
-      schY: schematicComponent.center.y,
+    convertRect({
+      center: schematicComponent.center,
       width: schematicComponent.size.width,
       height: schematicComponent.size.height,
+      strokeWidth: BOX_BODY_STROKE_WIDTH,
+      color: BOX_BODY_STROKE_COLOR,
+      fillColor: BOX_BODY_FILL_COLOR,
+      isFilled: true,
     }),
   ]
   for (const schematicPort of su(circuitJson).schematic_port.list({
