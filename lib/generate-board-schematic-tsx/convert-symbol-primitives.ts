@@ -42,8 +42,35 @@ export const convertSymbolPrimitives = ({
             : primitive.text
       return `<schematictext text={${JSON.stringify(text)}} schX={${center.x}} schY={${center.y}} anchor="${anchors[primitive.anchor]}" fontSize={0.18} color="#006464" />`
     }
-    if (primitive.type === "circle") {
-      return `<schematiccircle center={${JSON.stringify(center)}} radius={${primitive.radius * Math.abs(symbolToSchematicTransform.a)}} color="#840000" strokeWidth={0.02} isFilled={${primitive.fill}} />`
+    // Transform displacement vectors without translation to measure lengths in
+    // schematic coordinates, including when the symbol transform has rotation.
+    const symbolToSchematicVectorTransform = {
+      ...symbolToSchematicTransform,
+      e: 0,
+      f: 0,
     }
-    return `<schematicrect schX={${center.x}} schY={${center.y}} width={${primitive.width * Math.abs(symbolToSchematicTransform.a)}} height={${primitive.height * Math.abs(symbolToSchematicTransform.d)}} color="#840000" strokeWidth={0.02} />`
+    if (primitive.type === "circle") {
+      const radiusVector = applyToPoint(symbolToSchematicVectorTransform, {
+        x: primitive.radius,
+        y: 0,
+      })
+      const radius = Math.hypot(radiusVector.x, radiusVector.y)
+      return `<schematiccircle center={${JSON.stringify(center)}} radius={${radius}} color="#840000" strokeWidth={0.02} isFilled={${primitive.fill}} />`
+    }
+    const widthVector = applyToPoint(symbolToSchematicVectorTransform, {
+      x: primitive.width,
+      y: 0,
+    })
+    const heightVector = applyToPoint(symbolToSchematicVectorTransform, {
+      x: 0,
+      y: primitive.height,
+    })
+    const width = Math.hypot(widthVector.x, widthVector.y)
+    const height = Math.hypot(heightVector.x, heightVector.y)
+    const ccwRotationDegrees =
+      (Math.atan2(widthVector.y, widthVector.x) * 180) / Math.PI
+    const rotationAttribute = ccwRotationDegrees
+      ? ` rotation={${ccwRotationDegrees}}`
+      : ""
+    return `<schematicrect schX={${center.x}} schY={${center.y}} width={${width}} height={${height}} color="#840000" strokeWidth={0.02}${rotationAttribute} />`
   })
