@@ -3,6 +3,11 @@ import type { CircuitJson } from "circuit-json"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
 
+type SourceComponent = Extract<
+  CircuitJson[number],
+  { type: "source_component" }
+>
+
 test("serializes quoted component string props as valid TSX", async () => {
   const displayValue = 'Size: 1.25" x 0.25"'
   const manufacturerPartNumber = 'LABEL-1"-BLACK'
@@ -37,7 +42,8 @@ test("serializes quoted component string props as valid TSX", async () => {
     generatedTscircuit,
   )) as CircuitJson
   const renderedSourceComponent = renderedCircuitJson.find(
-    (element) => element.type === "source_component" && element.name === "LBL1",
+    (element): element is SourceComponent =>
+      element.type === "source_component" && element.name === "LBL1",
   )
   const renderedSchematicComponent = renderedCircuitJson.find(
     (element) => element.type === "schematic_component",
