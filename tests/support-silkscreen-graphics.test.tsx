@@ -3,7 +3,7 @@ import type { CircuitJson, PcbSilkscreenGraphic } from "circuit-json"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
 
-test("preserves filled silkscreen graphics, cutouts and both layers", async () => {
+test("preserves native silkscreen rings, bulges, assets and both layers", async () => {
   const graphics: PcbSilkscreenGraphic[] = [
     {
       type: "pcb_silkscreen_graphic",
@@ -30,6 +30,27 @@ test("preserves filled silkscreen graphics, cutouts and both layers", async () =
             ],
           },
         ],
+      },
+    },
+    {
+      type: "pcb_silkscreen_graphic",
+      pcb_silkscreen_graphic_id: "curved_top",
+      pcb_component_id: "component",
+      shape: "brep",
+      layer: "top",
+      brep_shape: {
+        outer_ring: {
+          vertices: [
+            { x: -4, y: 2, bulge: 1 },
+            { x: -2, y: 2, bulge: 1 },
+          ],
+        },
+        inner_rings: [],
+      },
+      image_asset: {
+        mimetype: "image/svg+xml",
+        project_relative_path: "logo.svg",
+        url: "/assets/logo.svg",
       },
     },
     {
@@ -63,41 +84,18 @@ test("preserves filled silkscreen graphics, cutouts and both layers", async () =
     },
     ...graphics,
   ]
-  const rendered = (await runTscircuitCode(
-    convertCircuitJsonToTscircuit(circuitJson, {
-      componentName: "GraphicBoard",
-    }),
-  )) as CircuitJson
+  const generatedTscircuit = convertCircuitJsonToTscircuit(circuitJson, {
+    componentName: "GraphicBoard",
+  })
+  expect(generatedTscircuit).not.toContain("data:image/svg+xml")
+  const rendered = (await runTscircuitCode(generatedTscircuit)) as CircuitJson
   const renderedGraphics = rendered.filter(
     (element) => element.type === "pcb_silkscreen_graphic",
   )
   expect(renderedGraphics).toHaveLength(graphics.length)
-  for (const graphic of graphics) {
-    const actual = renderedGraphics.find(
-      (element) => element.layer === graphic.layer,
-    )
-    expect(actual).toBeDefined()
-    if (!actual)
-      throw new Error("Silkscreen graphic missing from rendered board")
-    const expectedRings = [
-      graphic.brep_shape.outer_ring,
-      ...graphic.brep_shape.inner_rings,
-    ]
-    const actualRings = [
-      actual.brep_shape.outer_ring,
-      ...actual.brep_shape.inner_rings,
-    ]
-    expect(actualRings).toHaveLength(expectedRings.length)
-    for (const [index, ring] of expectedRings.entries()) {
-      expect(actualRings[index]?.vertices).toHaveLength(ring.vertices.length)
-      for (const vertex of ring.vertices) {
-        expect(
-          actualRings[index]?.vertices.some(
-            (point) =>
-              Math.hypot(point.x - vertex.x, point.y - vertex.y) < 1e-6,
-          ),
-        ).toBe(true)
-      }
-    }
+  for (const [index, graphic] of graphics.entries()) {
+    expect(renderedGraphics[index]?.layer).toBe(graphic.layer)
+    expect(renderedGraphics[index]?.brep_shape).toEqual(graphic.brep_shape)
+    expect(renderedGraphics[index]?.image_asset).toEqual(graphic.image_asset)
   }
 })
