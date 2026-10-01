@@ -33,7 +33,7 @@
     "prettier": "^3.9.5",
     "shiki": "^4.3.1",
     "stack-svgs": "^0.0.1",
-    "tscircuit": "^0.0.2696",
+    "tscircuit": "0.0.2703-libonly",
     "tsup": "^8.3.5",
     "zod": "^3.25.76"
   },
