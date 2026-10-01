@@ -2,6 +2,7 @@ import { su } from "@tscircuit/soup-util"
 import { formatPcbRotationAttr } from "./footprint-tsx-attribute-formatters/format-pcb-rotation-attr"
 import type { FootprintElementConverter } from "./converter-types"
 import { escapeJsxText } from "./footprint-tsx-attribute-formatters/escape-jsx-text"
+import { convertFabricationNoteDimension } from "./convert-fabrication-note-dimension"
 
 export const convertFabrication: FootprintElementConverter = (circuitJson) => {
   const fabricationNotePaths = su(circuitJson).pcb_fabrication_note_path.list()
@@ -89,41 +90,7 @@ export const convertFabrication: FootprintElementConverter = (circuitJson) => {
   }
 
   for (const fabDimension of fabricationNoteDimensions) {
-    const fromPoint = fabDimension.from ?? { x: 0, y: 0 }
-    const toPoint = fabDimension.to ?? { x: 0, y: 0 }
-    const attrs = [
-      `from={{ x: ${fromPoint.x}, y: ${fromPoint.y} }}`,
-      `to={{ x: ${toPoint.x}, y: ${toPoint.y} }}`,
-    ]
-
-    if (fabDimension.text !== undefined) {
-      attrs.push(`text="${escapeJsxText(fabDimension.text)}"`)
-    }
-    if (fabDimension.font !== undefined) {
-      attrs.push(`font="${fabDimension.font}"`)
-    }
-    if (fabDimension.font_size !== undefined) {
-      attrs.push(`fontSize={${fabDimension.font_size}}`)
-    }
-    if (fabDimension.color !== undefined) {
-      attrs.push(`color="${fabDimension.color}"`)
-    }
-    if (fabDimension.arrow_size !== undefined) {
-      attrs.push(`arrowSize={${fabDimension.arrow_size}}`)
-    }
-    if (fabDimension.offset !== undefined) {
-      attrs.push(`offset={${fabDimension.offset}}`)
-    } else if (
-      "offset_distance" in fabDimension &&
-      fabDimension.offset_distance !== undefined
-    ) {
-      attrs.push(`offset={${fabDimension.offset_distance}}`)
-    }
-    if (fabDimension.layer === "bottom") {
-      attrs.push(`layer="bottom"`)
-    }
-
-    elementStrings.push(`<fabricationnotedimension ${attrs.join(" ")} />`)
+    elementStrings.push(...convertFabricationNoteDimension(fabDimension))
   }
 
   return elementStrings
