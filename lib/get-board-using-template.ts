@@ -6,9 +6,13 @@ import { generateFootprintTsx } from "./generate-footprint-tsx"
 
 export interface BoardTemplateParams {
   circuitJson: AnyCircuitElement[]
+  componentName?: string
 }
 
-export const getBoardUsingTemplate = ({ circuitJson }: BoardTemplateParams) => {
+export const getBoardUsingTemplate = ({
+  circuitJson,
+  componentName,
+}: BoardTemplateParams) => {
   const pcbBoard = su(circuitJson).pcb_board.list()[0]
 
   const boardProps: string[] = []
@@ -64,11 +68,12 @@ export const getBoardUsingTemplate = ({ circuitJson }: BoardTemplateParams) => {
     : (symbolTsx ?? "")
 
   return `
-export default () => (
+${componentName ? `export const ${componentName} =` : "export default"} () => (
   <board${boardPropsStr ? ` ${boardPropsStr}` : ""}>
     ${children}
   </board>
 )
+${componentName ? `export default ${componentName}` : ""}
 `
     .replace(/\n\s*\n/g, "\n")
     .trim()

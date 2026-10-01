@@ -37,7 +37,7 @@ test(
     ).toBe(true)
 
     expect(result.generatedTscircuit).toMatchInlineSnapshot(`
-      "export default () => (
+      "export const Lm5155EvmFly = () => (
         <board width="85.09mm" height="41.91mm" outline={[{ x: 17.5768, y: 38.9636 }, { x: 17.5768, y: 80.8736 }, { x: 102.6668, y: 80.8736 }, { x: 102.6668, y: 38.9636 }, { x: 17.5768, y: 38.9636 }]} thickness="1.6mm" layers={2} material="fr4">
           <chip footprint={<footprint>
               <platedhole  portHints={["1"]} pcbX="73.2028mm" pcbY="51.663599999999995mm" outerDiameter="1.905mm" holeDiameter="1.3208mm" shape="circle" />
@@ -56,6 +56,115 @@ test(
       <platedhole  portHints={["1"]} pcbX="19.8628mm" pcbY="54.203599999999994mm" outerDiameter="2.032mm" holeDiameter="1.016mm" shape="circle" />
       <platedhole  portHints={["1"]} pcbX="99.1108mm" pcbY="48.6156mm" outerDiameter="2.032mm" holeDiameter="1.016mm" shape="circle" />
       <platedhole  portHints={["1"]} pcbX="44.6278mm" pcbY="42.9514mm" outerDiameter="2.032mm" holeDiameter="1.016mm" shape="circle" />
+      <via pcbX="38.5647946mm" pcbY="49.8505988mm" holeDiameter="0.19999959999999997mm" outerDiameter="0.49999899999999997mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+      <via pcbX="40.714797919999995mm" pcbY="49.8505988mm" holeDiameter="0.19999959999999997mm" outerDiameter="0.49999899999999997mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+      <via pcbX="39.639796260000004mm" pcbY="49.8505988mm" holeDiameter="0.19999959999999997mm" outerDiameter="0.49999899999999997mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+      <via pcbX="50.7238mm" pcbY="54.584599999999995mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="51.9938mm" pcbY="54.584599999999995mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="51.9938mm" pcbY="55.6006mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="30.784799999999997mm" pcbY="42.1386mm" holeDiameter="0.254mm" outerDiameter="0.5588mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="33.4518mm" pcbY="42.1386mm" holeDiameter="0.254mm" outerDiameter="0.5588mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="32.94279924mm" pcbY="45.94820376mm" holeDiameter="0.254mm" outerDiameter="0.5588mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="39.623999999999995mm" pcbY="59.1312mm" holeDiameter="0.254mm" outerDiameter="0.5588mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="39.2176mm" pcbY="58.2168mm" holeDiameter="0.254mm" outerDiameter="0.5588mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="39.2176mm" pcbY="57.1246mm" holeDiameter="0.254mm" outerDiameter="0.5588mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="40.3352mm" pcbY="59.8424mm" holeDiameter="0.254mm" outerDiameter="0.5588mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="41.1226mm" pcbY="60.6044mm" holeDiameter="0.254mm" outerDiameter="0.5588mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="33.0708mm" pcbY="50.901599999999995mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="52.120799999999996mm" pcbY="68.4276mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="49.580799999999996mm" pcbY="71.9836mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="48.3108mm" pcbY="71.9836mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="49.580799999999996mm" pcbY="70.96759999999999mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="43.4848mm" pcbY="59.5376mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="43.4848mm" pcbY="58.0136mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="44.2468mm" pcbY="56.7436mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="45.7708mm" pcbY="56.7436mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="47.294799999999995mm" pcbY="56.7436mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="64.05879999999999mm" pcbY="52.9336mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="82.0928mm" pcbY="40.7416mm" holeDiameter="0.6095999999999999mm" outerDiameter="0.9144mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+      <via pcbX="88.1888mm" pcbY="40.7162mm" holeDiameter="0.6095999999999999mm" outerDiameter="0.9144mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+      <via pcbX="33.0708mm" pcbY="54.4576mm" holeDiameter="0.254mm" outerDiameter="0.6604mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="71.42479999999999mm" pcbY="42.773599999999995mm" holeDiameter="0.254mm" outerDiameter="0.6604mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="72.4408mm" pcbY="42.773599999999995mm" holeDiameter="0.254mm" outerDiameter="0.6604mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="39.090599999999995mm" pcbY="70.0532mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="39.090599999999995mm" pcbY="67.5132mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="44.97379626mm" pcbY="53.8226mm" holeDiameter="0.254mm" outerDiameter="0.6604mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="38.11579626mm" pcbY="52.5526mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="41.41779626mm" pcbY="46.9646mm" holeDiameter="0.254mm" outerDiameter="0.6604mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="41.43319628mm" pcbY="53.8226mm" holeDiameter="0.254mm" outerDiameter="0.6604mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="39.89379626mm" pcbY="45.9486mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="45.22779626mm" pcbY="49.2506mm" holeDiameter="0.254mm" outerDiameter="0.6604mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="80.8228mm" pcbY="68.9356mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="64.6938mm" pcbY="78.71459999999999mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="64.82079999999999mm" pcbY="77.0636mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="86.4108mm" pcbY="53.4416mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="84.1248mm" pcbY="53.4416mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="89.99879892mm" pcbY="72.8185996mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="86.15679999999999mm" pcbY="72.7456mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="42.9006mm" pcbY="68.7832mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="42.9006mm" pcbY="67.5132mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="42.9006mm" pcbY="70.0532mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="41.6306mm" pcbY="70.0532mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="41.6306mm" pcbY="68.7832mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="41.6306mm" pcbY="67.5132mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="40.3606mm" pcbY="70.0532mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="40.3606mm" pcbY="68.7832mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="49.580799999999996mm" pcbY="68.4276mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="49.580799999999996mm" pcbY="67.1576mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="48.3108mm" pcbY="68.4276mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="48.3108mm" pcbY="67.1576mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="48.3108mm" pcbY="70.96759999999999mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="50.7238mm" pcbY="55.6006mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="49.580799999999996mm" pcbY="69.6976mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="48.3108mm" pcbY="69.6976mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="71.1708mm" pcbY="55.4736mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="73.2028mm" pcbY="55.4736mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="72.18679999999999mm" pcbY="55.4736mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="74.47279999999999mm" pcbY="55.4736mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="75.4888mm" pcbY="55.4736mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="76.5048mm" pcbY="55.4736mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="71.1708mm" pcbY="56.7436mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="73.2028mm" pcbY="56.7436mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="72.18679999999999mm" pcbY="56.7436mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="74.47279999999999mm" pcbY="56.7436mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="75.4888mm" pcbY="56.7436mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="76.5048mm" pcbY="56.7436mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="56.6928mm" pcbY="52.9336mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="36.8808mm" pcbY="65.6336mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="36.8808mm" pcbY="61.8236mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="36.8808mm" pcbY="63.093599999999995mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="36.8808mm" pcbY="64.36359999999999mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="38.1508mm" pcbY="61.8236mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="38.1508mm" pcbY="65.6336mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="38.1508mm" pcbY="63.093599999999995mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="38.1508mm" pcbY="64.36359999999999mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="43.495137799999995mm" pcbY="44.90654468mm" holeDiameter="0.254mm" outerDiameter="0.6604mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="34.30579626mm" pcbY="51.7906mm" holeDiameter="0.254mm" outerDiameter="0.6604mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="44.97379626mm" pcbY="52.2986mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="40.3606mm" pcbY="67.5132mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="39.090599999999995mm" pcbY="68.7832mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="34.0868mm" pcbY="66.1416mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="32.3088mm" pcbY="66.1416mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="50.8508mm" pcbY="68.4276mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="50.8508mm" pcbY="71.9836mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="33.8328mm" pcbY="74.01559999999999mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="32.3088mm" pcbY="74.01559999999999mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="38.36979626mm" pcbY="43.916599999999995mm" holeDiameter="0.254mm" outerDiameter="0.6604mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="56.6928mm" pcbY="78.33359999999999mm" holeDiameter="0.254mm" outerDiameter="0.6604mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="56.6928mm" pcbY="77.3176mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="55.6768mm" pcbY="77.3176mm" holeDiameter="0.254mm" outerDiameter="0.6604mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="55.6768mm" pcbY="78.33359999999999mm" holeDiameter="0.254mm" outerDiameter="0.6604mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="75.6158mm" pcbY="65.6336mm" holeDiameter="0.254mm" outerDiameter="0.5588mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+      <via pcbX="76.90829932mm" pcbY="65.63359745999999mm" holeDiameter="0.254mm" outerDiameter="0.5588mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+      <via pcbX="76.90829932mm" pcbY="64.36359746mm" holeDiameter="0.254mm" outerDiameter="0.5588mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+      <via pcbX="76.90829932mm" pcbY="66.90359745999999mm" holeDiameter="0.254mm" outerDiameter="0.5588mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+      <via pcbX="75.63829932mm" pcbY="64.36359746mm" holeDiameter="0.254mm" outerDiameter="0.5588mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+      <via pcbX="74.36829931999999mm" pcbY="64.36359746mm" holeDiameter="0.254mm" outerDiameter="0.5588mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+      <via pcbX="74.36829931999999mm" pcbY="66.90359745999999mm" holeDiameter="0.254mm" outerDiameter="0.5588mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+      <via pcbX="74.36829931999999mm" pcbY="65.63359745999999mm" holeDiameter="0.254mm" outerDiameter="0.5588mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+      <via pcbX="75.63829932mm" pcbY="66.90359745999999mm" holeDiameter="0.254mm" outerDiameter="0.5588mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+      <via pcbX="35.1028mm" pcbY="54.3929824mm" holeDiameter="0.254mm" outerDiameter="0.6604mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
+      <via pcbX="52.57179986mm" pcbY="48.79734207999999mm" holeDiameter="0.254mm" outerDiameter="0.6095999999999999mm" fromLayer="top" toLayer="bottom" tented="both_sides" />
       <smtpad portHints={["1"]} pcbX="40.88979629999999mm" pcbY="50.800596899999995mm" layer="top" solderMaskMargin="0.04999989999999999mm" cornerRadius="0.04999989999999999mm" width="0.24999949999999999mm" height="0.49999899999999997mm" shape="rect" />
       <smtpad portHints={["2"]} pcbX="40.38979476mm" pcbY="50.800596899999995mm" layer="top" solderMaskMargin="0.04999989999999999mm" cornerRadius="0.04999989999999999mm" width="0.24999949999999999mm" height="0.49999899999999997mm" shape="rect" />
       <smtpad portHints={["3"]} pcbX="39.88979576mm" pcbY="50.800596899999995mm" layer="top" solderMaskMargin="0.04999989999999999mm" cornerRadius="0.04999989999999999mm" width="0.24999949999999999mm" height="0.49999899999999997mm" shape="rect" />
@@ -529,83 +638,83 @@ test(
       <silkscreenline x1={41.549601939999995} y1={53.12440226} x2={41.85438162} y2={52.81962258} strokeWidth={0.254} />
       <silkscreenline x1={41.56262451999999} y1={52.81962258} x2={41.85438162} y2={52.81962258} strokeWidth={0.254} />
       <fabricationnotepath route={[{"x":45.0088,"y":28.2956},{"x":45.0088,"y":28.549599999999998}]} strokeWidth={0.254} color="#ec4899" />
-      <fabricationnotetext pcbX={40.439797199999994} pcbY={49.8505988} anchorAlignment="center" text="U1" font="tscircuit2024" fontSize={0.4572} color="#ec4899" />
-      <fabricationnotetext pcbX={20.243700939999997} pcbY={51.842136599999996} anchorAlignment="center" text="TP3" font="tscircuit2024" fontSize={0.4572} color="#ec4899" />
-      <fabricationnotetext pcbX={99.49170093999999} pcbY={61.0115366} anchorAlignment="center" text="TP2" font="tscircuit2024" fontSize={0.4572} color="#ec4899" />
-      <fabricationnotetext pcbX={45.00870094} pcbY={40.5899366} anchorAlignment="center" text="TP8" font="tscircuit2024" fontSize={0.4572} color="#ec4899" />
-      <fabricationnotetext pcbX={20.243700939999997} pcbY={66.5741366} anchorAlignment="center" text="TP1" font="tscircuit2024" fontSize={0.4572} color="#ec4899" />
-      <fabricationnotetext pcbX={99.49170093999999} pcbY={46.254136599999995} anchorAlignment="center" text="TP4" font="tscircuit2024" fontSize={0.4572} color="#ec4899" />
-      <fabricationnotetext pcbX={23.418799999999997} pcbY={100.1776} anchorAlignment="center" text="Install label in silkscreened box after final wash.  Text shall be 8 pt font.  Text shall be per the Label Table in the PDF schematic." font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={49.94079928} pcbY={50.42760044} anchorAlignment="center" text="R26" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={60.5217992} pcbY={60.47760066} anchorAlignment="center" text="T1" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={36.60579928} pcbY={56.77760044} anchorAlignment="center" text="R11" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={84.21779955999999} pcbY={40.491999279999995} anchorAlignment="center" text="R7" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={80.33580072} pcbY={66.10759956} anchorAlignment="center" text="C13" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={91.72379928} pcbY={57.15860044} anchorAlignment="center" text="C11" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={36.60579928} pcbY={51.06260044} anchorAlignment="center" text="C25" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={67.59379928} pcbY={42.42660044} anchorAlignment="center" text="R15" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={33.936800299999994} pcbY={45.26859628} anchorAlignment="center" text="Q2" font="tscircuit2024" fontSize={0.635} color="#ec4899" />
-      <fabricationnotetext pcbX={49.80580082} pcbY={53.977600960000004} anchorAlignment="center" text="D2" font="tscircuit2024" fontSize={0.762} color="#ec4899" />
-      <fabricationnotetext pcbX={74.47279999999999} pcbY={51.9176} anchorAlignment="center" text="TP9" font="tscircuit2024" fontSize={0.635} color="#ec4899" />
-      <fabricationnotetext pcbX={30.657799999999998} pcbY={58.7756} anchorAlignment="center" text="J3" font="tscircuit2024" fontSize={0.635} color="#ec4899" />
-      <fabricationnotetext pcbX={27.998801} pcbY={50.107601079999995} anchorAlignment="center" text="J4" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={50.8298196} pcbY={53.952373679999994} anchorAlignment="center" text="R2" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={36.55499928} pcbY={53.72960044} anchorAlignment="center" text="R10" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={42.39979582} pcbY={50.49959928} anchorAlignment="center" text="R5" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={41.69279698} pcbY={43.21259836} anchorAlignment="center" text="R17" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={42.39979582} pcbY={53.54759928} anchorAlignment="center" text="R3" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={38.09479554} pcbY={46.74460044} anchorAlignment="center" text="R23" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={37.120796979999994} pcbY={43.120599559999995} anchorAlignment="center" text="R24" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={47.3964} pcbY={68.3514} anchorAlignment="center" text="C5" font="tscircuit2024" fontSize={0.889} color="#ec4899" />
-      <fabricationnotetext pcbX={47.3964} pcbY={72.4252044} anchorAlignment="center" text="C3" font="tscircuit2024" fontSize={0.889} color="#ec4899" />
-      <fabricationnotetext pcbX={47.3964} pcbY={70.3834} anchorAlignment="center" text="C4" font="tscircuit2024" fontSize={0.889} color="#ec4899" />
-      <fabricationnotetext pcbX={33.76379582} pcbY={48.72159928} anchorAlignment="center" text="C26" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={39.61879554} pcbY={45.312599240000004} anchorAlignment="center" text="C22" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={35.863796699999995} pcbY={50.795600719999996} anchorAlignment="center" text="R20" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={39.958599279999994} pcbY={56.16800044} anchorAlignment="center" text="R8" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={35.59679697999999} pcbY={51.50259956} anchorAlignment="center" text="R18" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={42.39979582} pcbY={48.97559928} anchorAlignment="center" text="R6" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={44.4997967} pcbY={48.00160072} anchorAlignment="center" text="R16" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={51.636800459999996} pcbY={70.5676008} anchorAlignment="center" text="C16" font="tscircuit2024" fontSize={0.8128} color="#ec4899" />
-      <fabricationnotetext pcbX={32.85080044} pcbY={53.46260071999999} anchorAlignment="center" text="R9" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={74.95979928} pcbY={47.12560044} anchorAlignment="center" text="R19" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={73.98580071999999} pcbY={42.48559956} anchorAlignment="center" text="C20" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={73.42279956} pcbY={41.22859928} anchorAlignment="center" text="R13" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={68.15680044} pcbY={47.493600719999996} anchorAlignment="center" text="R21" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={68.14380071999999} pcbY={43.89660004} anchorAlignment="center" text="C23" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={75.36779947999999} pcbY={61.44559974} anchorAlignment="center" text="C10" font="tscircuit2024" fontSize={0.762} color="#ec4899" />
-      <fabricationnotetext pcbX={71.81179947999999} pcbY={61.44559974} anchorAlignment="center" text="C9" font="tscircuit2024" fontSize={0.762} color="#ec4899" />
-      <fabricationnotetext pcbX={78.00779928} pcbY={61.09560044} anchorAlignment="center" text="C12" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={21.6408} pcbY={62.8396} anchorAlignment="center" text="J1" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={32.562799999999996} pcbY={68.6816} anchorAlignment="center" text="C2" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={89.08880074} pcbY={65.30360066} anchorAlignment="center" text="C8" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={38.73000636} pcbY={51.93040414} anchorAlignment="center" text="C17" font="tscircuit2024" fontSize={0.635} color="#ec4899" />
-      <fabricationnotetext pcbX={70.69579968} pcbY={46.06160206} anchorAlignment="center" text="U3" font="tscircuit2024" fontSize={0.508} color="#ec4899" />
-      <fabricationnotetext pcbX={74.210799} pcbY={63.83360105999999} anchorAlignment="center" text="D1" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={65.05379928} pcbY={42.55360044} anchorAlignment="center" text="R14" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={62.42779996} pcbY={43.34860012} anchorAlignment="center" text="U2" font="tscircuit2024" fontSize={1.143} color="#ec4899" />
-      <fabricationnotetext pcbX={43.77079892} pcbY={61.88559886} anchorAlignment="center" text="Q1" font="tscircuit2024" fontSize={1.8499988399999998} color="#ec4899" />
-      <fabricationnotetext pcbX={98.6028} pcbY={54.203599999999994} anchorAlignment="center" text="J2" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={47.403628839999996} pcbY={74.60929959999999} anchorAlignment="center" text="C6" font="tscircuit2024" fontSize={0.8128} color="#ec4899" />
-      <fabricationnotetext pcbX={42.41142901999999} pcbY={52.02359928} anchorAlignment="center" text="C18" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={37.975496820000004} pcbY={55.38060044} anchorAlignment="center" text="C19" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={42.39979582} pcbY={45.927599279999995} anchorAlignment="center" text="C21" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={84.49479926} pcbY={56.057599339999996} anchorAlignment="center" text="C7" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={70.41280049999999} pcbY={42.403600739999995} anchorAlignment="center" text="D4" font="tscircuit2024" fontSize={0.8000009399999999} color="#ec4899" />
-      <fabricationnotetext pcbX={45.681999059999995} pcbY={58.347000400000006} anchorAlignment="bottom_left" text="TP5" font="tscircuit2024" fontSize={0.49999899999999997} color="#ec4899" />
-      <fabricationnotetext pcbX={62.377800060000006} pcbY={53.052598999999994} anchorAlignment="center" text="C28" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={62.377800060000006} pcbY={78.579599} anchorAlignment="center" text="C27" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={57.1246} pcbY={75.2602} anchorAlignment="center" text="D3" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={81.85980072} pcbY={66.10759956} anchorAlignment="center" text="C14" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={47.56099708} pcbY={55.27965576} anchorAlignment="center" text="C15" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={40.31579948} pcbY={64.74759974} anchorAlignment="center" text="R12" font="tscircuit2024" fontSize={0.762} color="#ec4899" />
-      <fabricationnotetext pcbX={69.26280025999999} pcbY={70.84659948} anchorAlignment="center" text="R1" font="tscircuit2024" fontSize={0.762} color="#ec4899" />
-      <fabricationnotetext pcbX={53.84379884} pcbY={74.64259899999999} anchorAlignment="center" text="R4" font="tscircuit2024" fontSize={1.016} color="#ec4899" />
-      <fabricationnotetext pcbX={74.15519585999999} pcbY={68.5338101} anchorAlignment="center" text="C1" font="tscircuit2024" fontSize={0.635} color="#ec4899" />
-      <fabricationnotetext pcbX={66.61980071999999} pcbY={43.89660004} anchorAlignment="center" text="C24" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
-      <fabricationnotetext pcbX={54.46380014} pcbY={52.4836009} anchorAlignment="center" text="R25" font="tscircuit2024" fontSize={0.635} color="#ec4899" />
-      <fabricationnotetext pcbX={48.214399379999996} pcbY={51.01260054} anchorAlignment="center" text="D5" font="tscircuit2024" fontSize={0.762} color="#ec4899" />
-      <fabricationnotetext pcbX={73.98580071999999} pcbY={45.025599559999996} anchorAlignment="center" text="R22" font="tscircuit2024" fontSize={0.5588} color="#ec4899" />
+      <fabricationnotetext pcbX={40.439797199999994} pcbY={49.8505988} anchorAlignment="center" text="U1" font="tscircuit2024" fontSize={0.4572} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={20.243700939999997} pcbY={51.842136599999996} anchorAlignment="center" text="TP3" font="tscircuit2024" fontSize={0.4572} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={99.49170093999999} pcbY={61.0115366} anchorAlignment="center" text="TP2" font="tscircuit2024" fontSize={0.4572} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={45.00870094} pcbY={40.5899366} anchorAlignment="center" text="TP8" font="tscircuit2024" fontSize={0.4572} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={20.243700939999997} pcbY={66.5741366} anchorAlignment="center" text="TP1" font="tscircuit2024" fontSize={0.4572} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={99.49170093999999} pcbY={46.254136599999995} anchorAlignment="center" text="TP4" font="tscircuit2024" fontSize={0.4572} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={23.418799999999997} pcbY={100.1776} anchorAlignment="center" text="Install label in silkscreened box after final wash.  Text shall be 8 pt font.  Text shall be per the Label Table in the PDF schematic." font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={49.94079928} pcbY={50.42760044} anchorAlignment="center" text="R26" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={60.5217992} pcbY={60.47760066} anchorAlignment="center" text="T1" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={36.60579928} pcbY={56.77760044} anchorAlignment="center" text="R11" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={84.21779955999999} pcbY={40.491999279999995} anchorAlignment="center" text="R7" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={80.33580072} pcbY={66.10759956} anchorAlignment="center" text="C13" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={91.72379928} pcbY={57.15860044} anchorAlignment="center" text="C11" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={36.60579928} pcbY={51.06260044} anchorAlignment="center" text="C25" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={67.59379928} pcbY={42.42660044} anchorAlignment="center" text="R15" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={33.936800299999994} pcbY={45.26859628} anchorAlignment="center" text="Q2" font="tscircuit2024" fontSize={0.635} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={49.80580082} pcbY={53.977600960000004} anchorAlignment="center" text="D2" font="tscircuit2024" fontSize={0.762} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={74.47279999999999} pcbY={51.9176} anchorAlignment="center" text="TP9" font="tscircuit2024" fontSize={0.635} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={30.657799999999998} pcbY={58.7756} anchorAlignment="center" text="J3" font="tscircuit2024" fontSize={0.635} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={27.998801} pcbY={50.107601079999995} anchorAlignment="center" text="J4" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={50.8298196} pcbY={53.952373679999994} anchorAlignment="center" text="R2" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={36.55499928} pcbY={53.72960044} anchorAlignment="center" text="R10" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={42.39979582} pcbY={50.49959928} anchorAlignment="center" text="R5" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={41.69279698} pcbY={43.21259836} anchorAlignment="center" text="R17" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={42.39979582} pcbY={53.54759928} anchorAlignment="center" text="R3" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={38.09479554} pcbY={46.74460044} anchorAlignment="center" text="R23" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={37.120796979999994} pcbY={43.120599559999995} anchorAlignment="center" text="R24" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={47.3964} pcbY={68.3514} anchorAlignment="center" text="C5" font="tscircuit2024" fontSize={0.889} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={47.3964} pcbY={72.4252044} anchorAlignment="center" text="C3" font="tscircuit2024" fontSize={0.889} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={47.3964} pcbY={70.3834} anchorAlignment="center" text="C4" font="tscircuit2024" fontSize={0.889} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={33.76379582} pcbY={48.72159928} anchorAlignment="center" text="C26" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={39.61879554} pcbY={45.312599240000004} anchorAlignment="center" text="C22" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={35.863796699999995} pcbY={50.795600719999996} anchorAlignment="center" text="R20" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={39.958599279999994} pcbY={56.16800044} anchorAlignment="center" text="R8" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={35.59679697999999} pcbY={51.50259956} anchorAlignment="center" text="R18" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={42.39979582} pcbY={48.97559928} anchorAlignment="center" text="R6" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={44.4997967} pcbY={48.00160072} anchorAlignment="center" text="R16" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={51.636800459999996} pcbY={70.5676008} anchorAlignment="center" text="C16" font="tscircuit2024" fontSize={0.8128} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={32.85080044} pcbY={53.46260071999999} anchorAlignment="center" text="R9" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={74.95979928} pcbY={47.12560044} anchorAlignment="center" text="R19" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={73.98580071999999} pcbY={42.48559956} anchorAlignment="center" text="C20" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={73.42279956} pcbY={41.22859928} anchorAlignment="center" text="R13" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={68.15680044} pcbY={47.493600719999996} anchorAlignment="center" text="R21" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={68.14380071999999} pcbY={43.89660004} anchorAlignment="center" text="C23" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={75.36779947999999} pcbY={61.44559974} anchorAlignment="center" text="C10" font="tscircuit2024" fontSize={0.762} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={71.81179947999999} pcbY={61.44559974} anchorAlignment="center" text="C9" font="tscircuit2024" fontSize={0.762} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={78.00779928} pcbY={61.09560044} anchorAlignment="center" text="C12" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={21.6408} pcbY={62.8396} anchorAlignment="center" text="J1" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={32.562799999999996} pcbY={68.6816} anchorAlignment="center" text="C2" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={89.08880074} pcbY={65.30360066} anchorAlignment="center" text="C8" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={38.73000636} pcbY={51.93040414} anchorAlignment="center" text="C17" font="tscircuit2024" fontSize={0.635} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={70.69579968} pcbY={46.06160206} anchorAlignment="center" text="U3" font="tscircuit2024" fontSize={0.508} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={74.210799} pcbY={63.83360105999999} anchorAlignment="center" text="D1" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={65.05379928} pcbY={42.55360044} anchorAlignment="center" text="R14" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={62.42779996} pcbY={43.34860012} anchorAlignment="center" text="U2" font="tscircuit2024" fontSize={1.143} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={43.77079892} pcbY={61.88559886} anchorAlignment="center" text="Q1" font="tscircuit2024" fontSize={1.8499988399999998} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={98.6028} pcbY={54.203599999999994} anchorAlignment="center" text="J2" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={47.403628839999996} pcbY={74.60929959999999} anchorAlignment="center" text="C6" font="tscircuit2024" fontSize={0.8128} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={42.41142901999999} pcbY={52.02359928} anchorAlignment="center" text="C18" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={37.975496820000004} pcbY={55.38060044} anchorAlignment="center" text="C19" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={42.39979582} pcbY={45.927599279999995} anchorAlignment="center" text="C21" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={84.49479926} pcbY={56.057599339999996} anchorAlignment="center" text="C7" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={70.41280049999999} pcbY={42.403600739999995} anchorAlignment="center" text="D4" font="tscircuit2024" fontSize={0.8000009399999999} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={45.681999059999995} pcbY={58.347000400000006} anchorAlignment="bottom_left" text="TP5" font="tscircuit2024" fontSize={0.49999899999999997} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={62.377800060000006} pcbY={53.052598999999994} anchorAlignment="center" text="C28" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={62.377800060000006} pcbY={78.579599} anchorAlignment="center" text="C27" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={57.1246} pcbY={75.2602} anchorAlignment="center" text="D3" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={81.85980072} pcbY={66.10759956} anchorAlignment="center" text="C14" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={47.56099708} pcbY={55.27965576} anchorAlignment="center" text="C15" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={40.31579948} pcbY={64.74759974} anchorAlignment="center" text="R12" font="tscircuit2024" fontSize={0.762} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={69.26280025999999} pcbY={70.84659948} anchorAlignment="center" text="R1" font="tscircuit2024" fontSize={0.762} color="#ec4899" pcbRotation="0deg" />
+      <fabricationnotetext pcbX={53.84379884} pcbY={74.64259899999999} anchorAlignment="center" text="R4" font="tscircuit2024" fontSize={1.016} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={74.15519585999999} pcbY={68.5338101} anchorAlignment="center" text="C1" font="tscircuit2024" fontSize={0.635} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={66.61980071999999} pcbY={43.89660004} anchorAlignment="center" text="C24" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="90deg" />
+      <fabricationnotetext pcbX={54.46380014} pcbY={52.4836009} anchorAlignment="center" text="R25" font="tscircuit2024" fontSize={0.635} color="#ec4899" pcbRotation="180deg" />
+      <fabricationnotetext pcbX={48.214399379999996} pcbY={51.01260054} anchorAlignment="center" text="D5" font="tscircuit2024" fontSize={0.762} color="#ec4899" pcbRotation="270deg" />
+      <fabricationnotetext pcbX={73.98580071999999} pcbY={45.025599559999996} anchorAlignment="center" text="R22" font="tscircuit2024" fontSize={0.5588} color="#ec4899" pcbRotation="90deg" />
       <fabricationnotedimension from={{ x: 19.6088, y: 28.549599999999998 }} to={{ x: 45.0088, y: 28.549599999999998 }} text="1000.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={1.27} />
       <fabricationnotedimension from={{ x: 17.5768, y: 38.9636 }} to={{ x: 102.6668, y: 38.9636 }} text="3350.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={1.778} />
       <fabricationnotedimension from={{ x: 17.5768, y: 38.9636 }} to={{ x: 17.576800000000002, y: 80.8736 }} text="1650.00 mil" font="tscircuit2024" fontSize={1.524} color="#ec4899" arrowSize={1.524} offset={1.524} />
@@ -1183,50 +1292,63 @@ test(
       <schematicpath svgPath={"M7.494037-8.956288L7.494037-9.139069"} strokeWidth={0.05} strokeColor={"#1f2937"} isFilled={false} fillColor={"none"} />
       <schematicpath svgPath={"M5.666223-8.773506L8.407943-8.773506"} strokeWidth={0.05} strokeColor={"#1f2937"} isFilled={false} fillColor={"none"} />
       <schematicpath svgPath={"M5.666223-8.590725L8.407943-8.590725"} strokeWidth={0.05} strokeColor={"#1f2937"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"Symbol not found: n_channel_e_mosfet_transistor_gate_left_drain_top"} schX={1.0327147985178335} schY={2.7417207040296443} fontSize={0.05} color={"red"} anchor="center" schRotation={0} />
-      <schematicpath svgPath={"M-2.01803 2.718993L-2.170758 2.718993"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-2.459848 2.718993L-2.61803 2.718993"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-2.31803 2.648084L-2.459848 2.648084-2.459848 2.795357-2.170758 2.795357-2.170758 2.648084-2.31803 2.648084"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R8"} schX={-2.307121141942819} schY={2.8550599858478263} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
-      <schematictext text={"0"} schX={-2.307121141942819} schY={2.599290513120553} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
-      <schematicpath svgPath={"M0.72369 1.987868L0.570963 1.987868"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M0.281872 1.987868L0.12369 1.987868"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M0.42369 1.916959L0.281872 1.916959 0.281872 2.064232 0.570963 2.064232 0.570963 1.916959 0.42369 1.916959"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R11"} schX={0.4345995620868237} schY={2.1239344647732556} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
-      <schematictext text={"100"} schX={0.4345995620868237} schY={1.8681649920459833} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
-      <schematicpath svgPath={"M-0.913907 0.811769L-0.913907 1.073588"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-0.913907 1.16086L-0.913907 1.411769"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-0.772089 1.073588L-1.06118 1.073588"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-0.772089 1.16086L-1.06118 1.16086"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C19"} schX={-0.8620887195250333} schY={1.2208603520148236} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"470pF"} schX={-0.8620887195250333} schY={1.002678533833004} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
-      <schematicpath svgPath={"M-2.01803 1.987868L-2.170758 1.987868"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-2.459848 1.987868L-2.61803 1.987868"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-2.31803 1.916959L-2.459848 1.916959-2.459848 2.064232-2.170758 2.064232-2.170758 1.916959-2.31803 1.916959"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R10"} schX={-2.307121141942819} schY={2.1239344647732556} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
-      <schematictext text={"0"} schX={-2.307121141942819} schY={1.8681649920459824} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
-      <schematicpath svgPath={"M-4.386753 4.336272L-4.386753 4.074453"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-4.386753 3.987181L-4.386753 3.736272"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-4.528571 4.074453L-4.23948 4.074453"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-4.528571 3.987181L-4.23948 3.987181"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C17"} schX={-4.324025853720158} schY={4.14536243631311} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"1uF"} schX={-4.324025853720158} schY={3.927180618131291} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
-      <schematicpath svgPath={"M-10.975974 2.900119L-10.975974 3.052846"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-10.975974 3.341937L-10.975974 3.500119"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-11.046883 3.200119L-11.046883 3.341937-10.89961 3.341937-10.89961 3.052846-11.046883 3.052846-11.046883 3.200119"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R6"} schX={-10.823543534300395} schY={3.2764825887405813} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematictext text={"100k"} schX={-10.823543534300395} schY={3.1019371341951256} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematicpath svgPath={"M-10.975974-0.572727L-10.975974-0.42"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-10.975974-0.130909L-10.975974 0.027273"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-11.046883-0.272727L-11.046883-0.130909-10.89961-0.130909-10.89961-0.42-11.046883-0.42-11.046883-0.272727"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R16"} schX={-10.823543534300395} schY={-0.1963636363636354} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematictext text={"9.76k"} schX={-10.823543534300395} schY={-0.3709090909090911} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematicpath svgPath={"M-11.698008-0.4677L-11.698008-0.205882"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-11.698008-0.118609L-11.698008 0.1323"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-11.55619-0.205882L-11.845281-0.205882"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-11.55619-0.118609L-11.845281-0.118609"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C21"} schX={-11.646190155374967} schY={-0.05860930986567858} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"220pF"} schX={-11.646190155374967} schY={-0.2767911280474973} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M0.612715 2.641721L1.082715 2.631721"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M1.332715 3.291721L1.332715 2.851721"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M1.342715 2.191721L1.342715 2.731721"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M1.122715 2.851721L1.342715 2.851721"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M1.122715 2.891721L1.122715 2.811721"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M1.122715 2.641721L1.342715 2.641721"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M1.122715 2.661721L1.122715 2.591721"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M1.122715 2.771721L1.122715 2.701721"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M1.302715 2.701721L1.302715 2.771721 1.232715 2.741721 1.302715 2.701721"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M1.122715 2.741721L1.342715 2.731721"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M1.082715 2.851721L1.082715 2.631721"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"Q1"} schX={1.0327147985178335} schY={3.1017207040296437} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_right" schRotation={0} />
+      <schematictext text={"100V"} schX={1.0327147985178335} schY={2.3217207040296435} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_right" schRotation={0} />
+      <schematiccircle center={{"x":1.1927147985178337,"y":2.7417207040296443}} radius={NaN} strokeWidth={0.020000000000000004} color={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-2.258939 2.741721L-2.358959 2.741721"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-2.758919 2.741721L-2.858939 2.741721"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-2.358959 2.661741L-2.758919 2.661741-2.758919 2.821701-2.358959 2.821701-2.358959 2.661741"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R8"} schX={-2.5589393237610025} schY={2.9017207040296444} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
+      <schematictext text={"0"} schX={-2.5589393237610025} schY={2.5817207040296433} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
+      <schematicpath svgPath={"M0.482781 2.010595L0.382761 2.010595"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-0.017199 2.010595L-0.117219 2.010595"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M0.382761 1.930615L-0.017199 1.930615-0.017199 2.090575 0.382761 2.090575 0.382761 1.930615"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R11"} schX={0.18278138026864} schY={2.170595182955074} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
+      <schematictext text={"100"} schX={0.18278138026864} schY={1.8505951829550726} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
+      <schematicpath svgPath={"M-0.913907 1.07086L-0.913907 1.31086"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-0.913907 1.43086L-0.913907 1.67086"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-0.753887 1.31086L-1.073927 1.31086"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-0.753887 1.43086L-1.073927 1.43086"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C19"} schX={-0.7989069013432122} schY={1.570860352014824} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"470pF"} schX={-0.7989069013432122} schY={1.1708603520148229} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M-2.258939 2.010595L-2.358959 2.010595"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-2.758919 2.010595L-2.858939 2.010595"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-2.358959 1.930615L-2.758919 1.930615-2.758919 2.090575-2.358959 2.090575-2.358959 1.930615"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R10"} schX={-2.5589393237610025} schY={2.170595182955074} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
+      <schematictext text={"0"} schX={-2.5589393237610025} schY={1.8505951829550726} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
+      <schematicpath svgPath={"M-4.386753 4.595362L-4.386753 4.355362"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-4.386753 4.235362L-4.386753 3.995362"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-4.546773 4.355362L-4.226733 4.355362"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-4.546773 4.235362L-4.226733 4.235362"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C17"} schX={-4.291753126447432} schY={4.495362436313111} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"1uF"} schX={-4.291753126447432} schY={4.09536243631311} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M-10.966883 3.172846L-10.966883 3.272866"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-10.966883 3.672826L-10.966883 3.772846"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-11.046863 3.272866L-11.046863 3.672826-10.886903 3.672826-10.886903 3.272866-11.046863 3.272866"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R6"} schX={-10.806882816118575} schY={3.6328462251042186} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematictext text={"100k"} schX={-10.806882816118575} schY={3.3128462251042174} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematicpath svgPath={"M-10.966883-0.3L-10.966883-0.19998"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-10.966883 0.19998L-10.966883 0.3"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-11.046863-0.19998L-11.046863 0.19998-10.886903 0.19998-10.886903-0.19998-11.046863-0.19998"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R16"} schX={-10.806882816118575} schY={0.16000000000000014} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematictext text={"9.76k"} schX={-10.806882816118575} schY={-0.16000000000000192} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematicpath svgPath={"M-11.698008-0.208609L-11.698008 0.031391"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-11.698008 0.151391L-11.698008 0.391391"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-11.537988 0.031391L-11.858028 0.031391"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-11.537988 0.151391L-11.858028 0.151391"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C21"} schX={-11.58300833719315} schY={0.29139069013432284} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"220pF"} schX={-11.58300833719315} schY={-0.1086093098656793} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
       <schematicpath svgPath={"M-3.855628 0.017219h0.4v-0.4h-0.4Z"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={true} fillColor={"rgb(255, 255, 194)"} />
       <schematictext text={"NT1"} schX={-3.8556276053728595} schY={0.1472186197313583} fontSize={0.18000000000000002} color={"#006464"} anchor="bottom_left" schRotation={0} />
       <schematictext text={"Net-Tie"} schX={-3.8556276053728595} schY={-0.5127813802686418} fontSize={0.18000000000000002} color={"#006464"} anchor="top_left" schRotation={0} />
@@ -1234,34 +1356,34 @@ test(
       <schematictext text={"1"} schX={-3.929799675775822} schY={-0.1627813802686422} fontSize={0.15} color={"rgb(169, 0, 0)"} anchor="bottom_center" schRotation={0} />
       <schematicpath svgPath={"M-3.472846-0.182781L-3.290065-0.182781"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematictext text={"2"} schX={-3.381455534969895} schY={-0.1627813802686422} fontSize={0.15} color={"rgb(169, 0, 0)"} anchor="bottom_center" schRotation={0} />
-      <schematicpath svgPath={"M-10.062067-0.572727L-10.062067-0.42"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-10.062067-0.130909L-10.062067 0.027273"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-10.132976-0.272727L-10.132976-0.130909-9.985703-0.130909-9.985703-0.42-10.132976-0.42-10.132976-0.272727"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R17"} schX={-9.909636632957177} schY={-0.1963636363636354} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematictext text={"86.6k"} schX={-9.909636632957177} schY={-0.3709090909090911} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematicpath svgPath={"M-8.956288-0.4677L-8.956288-0.205882"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-8.956288-0.118609L-8.956288 0.1323"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-8.814469-0.205882L-9.10356-0.205882"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-8.814469-0.118609L-9.10356-0.118609"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C22"} schX={-8.904469451345323} schY={-0.05860930986567858} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"0.01uF"} schX={-8.904469451345323} schY={-0.2767911280474973} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
-      <schematicpath svgPath={"M-8.59816 4.181244L-8.750887 4.181244"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-9.039978 4.181244L-9.19816 4.181244"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-8.89816 4.110335L-9.039978 4.110335-9.039978 4.257608-8.750887 4.257608-8.750887 4.110335-8.89816 4.110335"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R5"} schX={-8.887250831613965} schY={4.317311027996969} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
-      <schematictext text={"0"} schX={-8.887250831613965} schY={4.061541555269698} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
-      <schematicpath svgPath={"M-8.590725 3.187927L-8.590725 3.449746"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-8.590725 3.537018L-8.590725 3.787927"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-8.448907 3.449746L-8.737998 3.449746"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-8.448907 3.537018L-8.737998 3.537018"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C18"} schX={-8.538906690808036} schY={3.5970182955071808} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"0.1uF"} schX={-8.538906690808036} schY={3.378836477325362} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
-      <schematicpath svgPath={"M-6.031786 5.81084L-6.031786 6.072658"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-6.031786 6.159931L-6.031786 6.41084"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-5.889967 6.072658L-6.179058 6.072658"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-5.889967 6.159931L-6.179058 6.159931"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C2"} schX={-5.979967367047035} schY={6.219931102362207} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"100uF"} schX={-5.979967367047035} schY={6.001749284180388} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M-10.052976-0.3L-10.052976-0.19998"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-10.052976 0.19998L-10.052976 0.3"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-10.132956-0.19998L-10.132956 0.19998-9.972996 0.19998-9.972996-0.19998-10.132956-0.19998"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R17"} schX={-9.89297591477536} schY={0.16000000000000014} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematictext text={"86.6k"} schX={-9.89297591477536} schY={-0.16000000000000192} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematicpath svgPath={"M-8.956288-0.208609L-8.956288 0.031391"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-8.956288 0.151391L-8.956288 0.391391"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-8.796268 0.031391L-9.116308 0.031391"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-8.796268 0.151391L-9.116308 0.151391"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C22"} schX={-8.841287633163505} schY={0.29139069013432284} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"0.01uF"} schX={-8.841287633163505} schY={-0.1086093098656793} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M-8.839069 4.203972L-8.939089 4.203972"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-9.339049 4.203972L-9.439069 4.203972"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-8.939089 4.123992L-9.339049 4.123992-9.339049 4.283952-8.939089 4.283952-8.939089 4.123992"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R5"} schX={-9.139069013432145} schY={4.3639717461787875} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
+      <schematictext text={"0"} schX={-9.139069013432145} schY={4.043971746178787} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
+      <schematicpath svgPath={"M-8.590725 3.447018L-8.590725 3.687018"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-8.590725 3.807018L-8.590725 4.047018"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-8.430705 3.687018L-8.750745 3.687018"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-8.430705 3.807018L-8.750745 3.807018"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C18"} schX={-8.475724872626218} schY={3.9470182955071813} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"0.1uF"} schX={-8.475724872626218} schY={3.54701829550718} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M-6.031786 6.069931L-6.031786 6.309931"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-6.031786 6.429931L-6.031786 6.669931"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-5.871766 6.309931L-6.191806 6.309931"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-5.871766 6.429931L-6.191806 6.429931"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C2"} schX={-5.916785548865217} schY={6.569931102362206} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"100uF"} schX={-5.916785548865217} schY={6.169931102362206} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
       <schematicpath svgPath={"M5.117879 6.945692h0.731125v-0.731125h-0.731125Z"} strokeWidth={0.05} strokeColor={"#1f2937"} isFilled={true} fillColor={"#ffffff"} />
       <schematicpath svgPath={"M5.337216 6.397348L5.629667 6.58013 5.337216 6.762911"} strokeWidth={0.05} strokeColor={"#0000ff"} isFilled={true} fillColor={"#0000ff"} />
       <schematicpath svgPath={"M5.117879 6.762911L4.752316 6.762911"} strokeWidth={0.1} strokeColor={"#1f2937"} isFilled={false} fillColor={"none"} />
@@ -1286,16 +1408,16 @@ test(
       <schematictext text={"2"} schX={7.291255210745721} schY={-2.8331113941639643} fontSize={0.15} color={"rgb(169, 0, 0)"} anchor="bottom_center" schRotation={90} />
       <schematicpath svgPath={"M7.311255-3.290065L7.311255-3.472846"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematictext text={"3"} schX={7.291255210745719} schY={-3.381455534969895} fontSize={0.15} color={"rgb(169, 0, 0)"} anchor="bottom_center" schRotation={90} />
-      <schematicpath svgPath={"M11.871699-1.669416L11.871699-1.516688"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M11.871699-1.227597L11.871699-1.069416"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M11.80079-1.369416L11.80079-1.227597 11.948062-1.227597 11.948062-1.516688 11.80079-1.516688 11.80079-1.369416"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R19"} schX={12.024128999279974} schY={-1.2930519179754931} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematictext text={"30.0k"} schX={12.024128999279974} schY={-1.467597372520947} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematicpath svgPath={"M3.463755-0.93829L3.463755-0.785563"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M3.463755-0.496472L3.463755-0.33829"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M3.392846-0.63829L3.392846-0.496472 3.540119-0.496472 3.540119-0.785563 3.392846-0.785563 3.392846-0.63829"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R18"} schX={3.6161855069224025} schY={-0.5619263969009225} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematictext text={"4.99k"} schX={3.6161855069224025} schY={-0.7364718514463764} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematicpath svgPath={"M11.88079-1.396688L11.88079-1.296668"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M11.88079-0.896708L11.88079-0.796688"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M11.80081-1.296668L11.80081-0.896708 11.96077-0.896708 11.96077-1.296668 11.80081-1.296668"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R19"} schX={12.040789717461784} schY={-0.936688281611854} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematictext text={"30.0k"} schX={12.040789717461784} schY={-1.256688281611856} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematicpath svgPath={"M3.472846-0.665563L3.472846-0.565543"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M3.472846-0.165583L3.472846-0.065563"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M3.392866-0.565543L3.392866-0.165583 3.552826-0.165583 3.552826-0.565543 3.392866-0.565543"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R18"} schX={3.6328462251042204} schY={-0.2055627605372834} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematictext text={"4.99k"} schX={3.6328462251042204} schY={-0.5255627605372855} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
       <schematicpath svgPath={"M6.305958-1.37086L6.013507-1.37086 6.159733-1.517085"} strokeWidth={0.05} strokeColor={"#0000ff"} isFilled={true} fillColor={"#0000ff"} />
       <schematicpath svgPath={"M6.013507-1.535364L6.013507-1.553642 6.305958-1.553642 6.305958-1.535364"} strokeWidth={0.05} strokeColor={"#0000ff"} isFilled={true} fillColor={"#0000ff"} />
       <schematicpath svgPath={"M5.830726-1.498807L5.79417-1.498807 5.79417-1.462251"} strokeWidth={0.05} strokeColor={"#0000ff"} isFilled={true} fillColor={"#0000ff"} />
@@ -1321,34 +1443,34 @@ test(
       <schematicpath svgPath={"M6.397348-1.27947L6.397348-1.096688"} strokeWidth={0.05} strokeColor={"#0000ff"} isFilled={false} fillColor={"none"} />
       <schematicpath svgPath={"M4.935097-1.645032L5.117879-1.645032"} strokeWidth={0.05} strokeColor={"#0000ff"} isFilled={false} fillColor={"none"} />
       <schematicpath svgPath={"M5.117879-1.27947L4.935097-1.27947"} strokeWidth={0.05} strokeColor={"#0000ff"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-6.031786-3.392202L-6.031786-3.130384"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-6.031786-3.043111L-6.031786-2.792202"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-5.889967-3.130384L-6.179058-3.130384"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-5.889967-3.043111L-6.179058-3.043111"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C26"} schX={-5.979967367047035} schY={-2.9831113941639646} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"0.22uF"} schX={-5.979967367047035} schY={-3.2012932123457833} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
-      <schematicpath svgPath={"M7.119383-0.389946L7.119383-0.237219"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M7.119383 0.051872L7.119383 0.210054"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M7.048474-0.089946L7.048474 0.051872 7.195747 0.051872 7.195747-0.237219 7.048474-0.237219 7.048474-0.089946"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R14"} schX={7.271813112295256} schY={-0.013582256094991862} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematictext text={"1.00k"} schX={7.271813112295256} schY={-0.18812771064044753} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematicpath svgPath={"M9.597678-2.56803L9.33586-2.56803"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M9.248587-2.56803L8.997678-2.56803"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M9.33586-2.426212L9.33586-2.715303"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M9.248587-2.426212L9.248587-2.715303"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C24"} schX={9.29222377784328} schY={-2.34984841467009} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
-      <schematictext text={"0.22uF"} schX={9.297678323297824} schY={-2.808030232851909} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
-      <schematicpath svgPath={"M10.959448-2.581667L10.80672-2.581667"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M10.51763-2.581667L10.359448-2.581667"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M10.659448-2.652576L10.51763-2.652576 10.51763-2.505303 10.80672-2.505303 10.80672-2.652576 10.659448-2.652576"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R21"} schX={10.670356857130827} schY={-2.445600041942818} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
-      <schematictext text={"1.00k"} schX={10.670356857130827} schY={-2.7013695146700893} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
-      <schematicpath svgPath={"M6.307613 7.850508L6.045795 7.850508"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M5.958523 7.850508L5.707613 7.850508"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M6.045795 7.992327L6.045795 7.703236"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M5.958523 7.992327L5.958523 7.703236"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C1"} schX={6.002158933007706} schY={8.068690260642558} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
-      <schematictext text={"680pF"} schX={6.00761347846225} schY={7.6105084424607385} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
+      <schematicpath svgPath={"M-6.031786-3.133111L-6.031786-2.893111"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-6.031786-2.773111L-6.031786-2.533111"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-5.871766-2.893111L-6.191806-2.893111"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-5.871766-2.773111L-6.191806-2.773111"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C26"} schX={-5.916785548865217} schY={-2.6331113941639632} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"0.22uF"} schX={-5.916785548865217} schY={-3.0331113941639654} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M7.128474-0.117219L7.128474-0.017199"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M7.128474 0.382761L7.128474 0.482781"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M7.048494-0.017199L7.048494 0.382761 7.208454 0.382761 7.208454-0.017199 7.048494-0.017199"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R14"} schX={7.2884738304770735} schY={0.34278138026864546} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematictext text={"1.00k"} schX={7.2884738304770735} schY={0.022781380268643403} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematicpath svgPath={"M9.347678-2.558939L9.107678-2.558939"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M8.987678-2.558939L8.747678-2.558939"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M9.107678-2.398919L9.107678-2.718959"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M8.987678-2.398919L8.987678-2.718959"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C24"} schX={9.047678323297824} schY={-2.3189393237610005} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
+      <schematictext text={"0.22uF"} schX={9.047678323297824} schY={-2.798939323761001} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
+      <schematicpath svgPath={"M10.718539-2.558939L10.618519-2.558939"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M10.218559-2.558939L10.118539-2.558939"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M10.618519-2.638919L10.218559-2.638919 10.218559-2.478959 10.618519-2.478959 10.618519-2.638919"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R21"} schX={10.418538675312647} schY={-2.398939323760999} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
+      <schematictext text={"1.00k"} schX={10.418538675312647} schY={-2.718939323761001} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
+      <schematicpath svgPath={"M6.057613 7.859599L5.817613 7.859599"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M5.697613 7.859599L5.457613 7.859599"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M5.817613 8.019619L5.817613 7.699579"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M5.697613 8.019619L5.697613 7.699579"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C1"} schX={5.75761347846225} schY={8.099599351551648} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
+      <schematictext text={"680pF"} schX={5.75761347846225} schY={7.619599351551647} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
       <schematicpath svgPath={"M0.322781 3.655628L0.062781 3.525628"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematicpath svgPath={"M0.062781 3.795628L0.322781 3.655628"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematicpath svgPath={"M0.062781 3.525628L0.062781 3.795628"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
@@ -1357,22 +1479,22 @@ test(
       <schematicpath svgPath={"M0.702781 3.655628L0.332781 3.655628"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematictext text={"D3"} schX={0.17278138026864198} schY={3.885627605372859} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
       <schematictext text={"150V"} schX={0.18278138026864} schY={3.345627605372858} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
-      <schematicpath svgPath={"M-6.040876-1.983322L-6.040876-2.13605"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-6.040876-2.425141L-6.040876-2.583322"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-5.969967-2.283322L-5.969967-2.425141-6.11724-2.425141-6.11724-2.13605-5.969967-2.13605-5.969967-2.283322"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R20"} schX={-5.94299172159249} schY={-2.185140637500524} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematictext text={"1.00k"} schX={-5.94299172159249} schY={-2.3596860920459797} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematicpath svgPath={"M8.947197 0.706742L8.947197 0.85947"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M8.947197 1.148561L8.947197 1.306742"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M8.876288 1.006742L8.876288 1.148561 9.02356 1.148561 9.02356 0.85947 8.876288 0.85947 8.876288 1.006742"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R13"} schX={9.099626914981684} schY={1.0831060255168659} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematictext text={"100k"} schX={9.099626914981684} schY={0.9085605709714102} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematicpath svgPath={"M8.956288-0.284919L8.956288-0.023101"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M8.956288 0.064172L8.956288 0.315081"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M9.098106-0.023101L8.809015-0.023101"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M9.098106 0.064172L8.809015 0.064172"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C20"} schX={9.008105814981683} schY={0.12417207040296674} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"4.7uF"} schX={9.008105814981683} schY={-0.09400974777885196} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M-6.031786-1.710595L-6.031786-1.810615"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-6.031786-2.210575L-6.031786-2.310595"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-5.951806-1.810615L-5.951806-2.210575-6.111766-2.210575-6.111766-1.810615-5.951806-1.810615"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R20"} schX={-5.871785548865217} schY={-1.8505951829550717} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematictext text={"1.00k"} schX={-5.871785548865217} schY={-2.170595182955072} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematicpath svgPath={"M8.956288 0.97947L8.956288 1.07949"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M8.956288 1.47945L8.956288 1.57947"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M8.876308 1.07949L8.876308 1.47945 9.036268 1.47945 9.036268 1.07949 8.876308 1.07949"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R13"} schX={9.116287633163505} schY={1.4394696618805023} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematictext text={"100k"} schX={9.116287633163505} schY={1.1194696618805011} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematicpath svgPath={"M8.956288-0.025828L8.956288 0.214172"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M8.956288 0.334172L8.956288 0.574172"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M9.116308 0.214172L8.796268 0.214172"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M9.116308 0.334172L8.796268 0.334172"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C20"} schX={9.071287633163504} schY={0.4741720704029664} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"4.7uF"} schX={9.071287633163504} schY={0.07417207040296603} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
       <schematicpath svgPath={"M10.218539 1.133245h0.4v-0.767682h-0.4Z"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={true} fillColor={"rgb(255, 255, 194)"} />
       <schematictext text={"D4"} schX={10.21853867531265} schY={1.2632445576655886} fontSize={0.18000000000000002} color={"#006464"} anchor="bottom_left" schRotation={0} />
       <schematictext text={"30V"} schX={10.21853867531265} schY={0.2355627605372863} fontSize={0.18000000000000002} color={"#006464"} anchor="top_left" schRotation={0} />
@@ -1396,114 +1518,118 @@ test(
       <schematicpath svgPath={"M-14.074166 6.397348L-14.202113 6.397348"} strokeWidth={0.05} strokeColor={"#0000ff"} isFilled={false} fillColor={"none"} />
       <schematicpath svgPath={"M-14.074166 6.397348L-13.708604 6.397348"} strokeWidth={0.1} strokeColor={"#1f2937"} isFilled={false} fillColor={"none"} />
       <schematicpath svgPath={"M-14.074166 6.214567L-13.708604 6.214567"} strokeWidth={0.1} strokeColor={"#1f2937"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M6.597857 6.10149L6.597857 5.828762"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M6.597857 5.774217L6.597857 5.50149"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M6.440281 5.828762L6.761493 5.828762"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M6.755433 5.743914L6.755433 5.743914 6.755433 5.743914 6.755433 5.743914 6.755433 5.743914 6.755433 5.743914 6.755433 5.743914 6.755433 5.743914 6.755433 5.743914 6.749372 5.743914 6.749372 5.743914 6.749372 5.743914 6.749372 5.743914 6.749372 5.749974 6.749372 5.749974 6.749372 5.749974 6.749372 5.749974 6.743312 5.749974 6.743312 5.749974 6.743312 5.749974 6.743312 5.749974 6.743312 5.749974 6.743312 5.749974 6.743312 5.749974 6.743312 5.749974 6.737251 5.749974 6.737251 5.749974 6.737251 5.749974 6.737251 5.756035 6.737251 5.756035 6.737251 5.756035 6.737251 5.756035 6.737251 5.756035 6.73119 5.756035 6.73119 5.756035 6.73119 5.756035 6.73119 5.756035 6.73119 5.756035 6.73119 5.756035 6.73119 5.756035 6.73119 5.756035 6.72513 5.756035 6.72513 5.756035 6.72513 5.756035 6.72513 5.756035 6.72513 5.762096 6.72513 5.762096 6.72513 5.762096 6.719069 5.762096 6.719069 5.762096 6.719069 5.762096 6.719069 5.762096 6.719069 5.762096 6.719069 5.762096 6.719069 5.762096 6.719069 5.762096 6.713008 5.762096 6.713008 5.762096 6.713008 5.762096 6.713008 5.762096 6.713008 5.762096 6.713008 5.762096 6.713008 5.762096 6.713008 5.762096 6.706948 5.768156 6.706948 5.768156 6.706948 5.768156 6.706948 5.768156 6.706948 5.768156 6.706948 5.768156 6.706948 5.768156 6.706948 5.768156 6.700887 5.768156 6.700887 5.768156 6.700887 5.768156 6.700887 5.768156 6.700887 5.768156 6.700887 5.768156 6.700887 5.768156 6.694827 5.768156 6.694827 5.768156 6.694827 5.768156 6.694827 5.768156 6.694827 5.768156 6.694827 5.768156 6.694827 5.768156 6.694827 5.774217 6.688766 5.774217 6.688766 5.774217 6.688766 5.774217 6.688766 5.774217 6.688766 5.774217 6.688766 5.774217 6.688766 5.774217 6.688766 5.774217 6.682705 5.774217 6.682705 5.774217 6.682705 5.774217 6.682705 5.774217 6.682705 5.774217 6.682705 5.774217 6.682705 5.774217 6.682705 5.774217 6.676645 5.774217 6.676645 5.774217 6.676645 5.774217 6.676645 5.774217 6.676645 5.774217 6.676645 5.774217 6.670584 5.774217 6.670584 5.774217 6.670584 5.774217 6.670584 5.774217 6.670584 5.774217 6.670584 5.774217 6.664524 5.780277 6.664524 5.780277 6.664524 5.780277 6.664524 5.780277 6.664524 5.780277 6.664524 5.780277 6.658463 5.780277 6.658463 5.780277 6.658463 5.780277 6.658463 5.780277 6.658463 5.780277 6.658463 5.780277 6.652402 5.780277 6.652402 5.780277 6.652402 5.780277 6.652402 5.780277 6.652402 5.780277 6.652402 5.780277 6.646342 5.780277 6.646342 5.780277 6.646342 5.780277 6.646342 5.780277 6.646342 5.780277 6.640281 5.780277 6.640281 5.780277 6.640281 5.780277 6.640281 5.780277 6.640281 5.780277 6.640281 5.780277 6.634221 5.780277 6.634221 5.780277 6.634221 5.780277 6.634221 5.780277 6.634221 5.780277 6.634221 5.780277 6.62816 5.780277 6.62816 5.780277 6.62816 5.780277 6.62816 5.780277 6.62816 5.780277 6.62816 5.780277 6.622099 5.780277 6.622099 5.780277 6.622099 5.780277 6.622099 5.780277 6.622099 5.780277 6.622099 5.780277 6.616039 5.780277 6.616039 5.780277 6.616039 5.780277 6.616039 5.780277 6.616039 5.780277 6.609978 5.780277 6.609978 5.780277 6.609978 5.780277 6.609978 5.780277 6.609978 5.780277 6.609978 5.780277 6.603918 5.780277 6.603918 5.786338 6.603918 5.786338 6.603918 5.786338 6.603918 5.786338 6.603918 5.786338 6.597857 5.780277 6.597857 5.780277 6.597857 5.780277 6.597857 5.780277 6.597857 5.780277 6.597857 5.780277 6.591796 5.780277 6.591796 5.780277 6.591796 5.780277 6.591796 5.780277 6.591796 5.780277 6.591796 5.780277 6.585736 5.780277 6.585736 5.780277 6.585736 5.780277 6.585736 5.780277 6.585736 5.780277 6.579675 5.780277 6.579675 5.780277 6.579675 5.780277 6.579675 5.780277 6.579675 5.780277 6.579675 5.780277 6.573615 5.780277 6.573615 5.780277 6.573615 5.780277 6.573615 5.780277 6.573615 5.780277 6.573615 5.780277 6.573615 5.780277 6.573615 5.780277 6.567554 5.780277 6.567554 5.780277 6.567554 5.780277 6.567554 5.780277 6.567554 5.780277 6.567554 5.780277 6.567554 5.780277 6.561493 5.780277 6.561493 5.780277 6.561493 5.780277 6.561493 5.780277 6.561493 5.780277 6.561493 5.780277 6.555433 5.780277 6.555433 5.780277 6.555433 5.780277 6.555433 5.780277 6.555433 5.780277 6.555433 5.780277 6.555433 5.780277 6.549372 5.780277 6.549372 5.780277 6.549372 5.780277 6.549372 5.780277 6.549372 5.780277 6.549372 5.780277 6.549372 5.780277 6.543312 5.780277 6.543312 5.780277 6.543312 5.780277 6.543312 5.780277 6.543312 5.780277 6.543312 5.780277 6.543312 5.780277 6.537251 5.780277 6.537251 5.780277 6.537251 5.780277 6.537251 5.780277 6.537251 5.774217 6.537251 5.774217 6.537251 5.774217 6.53119 5.774217 6.53119 5.774217 6.53119 5.774217 6.53119 5.774217 6.53119 5.774217 6.53119 5.774217 6.52513 5.774217 6.52513 5.774217 6.52513 5.774217 6.52513 5.774217 6.52513 5.774217 6.52513 5.774217 6.52513 5.774217 6.519069 5.774217 6.519069 5.774217 6.519069 5.774217 6.519069 5.774217 6.519069 5.774217 6.519069 5.774217 6.519069 5.774217 6.513008 5.774217 6.513008 5.774217 6.513008 5.774217 6.513008 5.774217 6.513008 5.774217 6.513008 5.774217 6.513008 5.774217 6.506948 5.774217 6.506948 5.774217 6.506948 5.768156 6.506948 5.768156 6.506948 5.768156 6.506948 5.768156 6.506948 5.768156 6.500887 5.768156 6.500887 5.768156 6.500887 5.768156 6.500887 5.768156 6.500887 5.768156 6.500887 5.768156 6.500887 5.768156 6.494827 5.768156 6.494827 5.768156 6.494827 5.768156 6.494827 5.768156 6.494827 5.768156 6.494827 5.768156 6.494827 5.768156 6.488766 5.768156 6.488766 5.768156 6.488766 5.768156 6.488766 5.768156 6.488766 5.768156 6.488766 5.768156 6.488766 5.762096 6.488766 5.762096 6.488766 5.762096 6.482705 5.762096 6.482705 5.762096 6.482705 5.762096 6.482705 5.762096 6.482705 5.762096 6.482705 5.762096 6.482705 5.762096 6.482705 5.762096 6.482705 5.762096 6.482705 5.762096 6.482705 5.762096 6.482705 5.762096 6.482705 5.762096 6.476645 5.762096 6.476645 5.762096 6.476645 5.762096 6.476645 5.762096 6.476645 5.762096 6.476645 5.762096 6.476645 5.762096 6.476645 5.762096 6.476645 5.762096 6.476645 5.762096 6.476645 5.762096 6.476645 5.762096 6.470584 5.762096 6.470584 5.762096 6.470584 5.762096 6.470584 5.762096 6.470584 5.756035 6.470584 5.756035 6.470584 5.756035 6.470584 5.756035 6.470584 5.756035 6.470584 5.756035 6.470584 5.756035 6.470584 5.756035 6.464524 5.756035 6.464524 5.756035 6.464524 5.756035 6.464524 5.756035 6.464524 5.756035 6.464524 5.756035 6.464524 5.756035 6.464524 5.756035 6.464524 5.756035 6.464524 5.756035 6.464524 5.756035 6.464524 5.756035 6.458463 5.756035 6.458463 5.756035 6.458463 5.756035 6.458463 5.756035 6.458463 5.756035 6.458463 5.756035 6.458463 5.749974 6.458463 5.749974 6.458463 5.749974 6.458463 5.749974 6.458463 5.749974 6.458463 5.749974 6.458463 5.749974 6.452402 5.749974 6.452402 5.749974 6.452402 5.749974 6.452402 5.749974 6.452402 5.749974 6.452402 5.749974 6.452402 5.749974 6.452402 5.749974 6.452402 5.749974 6.452402 5.749974 6.452402 5.749974 6.452402 5.749974 6.452402 5.749974 6.446342 5.749974 6.446342 5.749974 6.446342 5.749974 6.446342 5.749974 6.446342 5.743914 6.446342 5.743914 6.446342 5.743914 6.446342 5.743914 6.446342 5.743914 6.446342 5.743914 6.446342 5.743914 6.446342 5.743914 6.446342 5.743914 6.440281 5.743914 6.440281 5.743914 6.440281 5.743914 6.440281 5.743914 6.440281 5.743914 6.440281 5.743914 6.440281 5.743914 6.440281 5.743914 6.440281 5.743914"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M6.458463 5.986338L6.458463 5.90149 6.458463 5.90149 6.458463 5.986338"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M6.416039 5.949974L6.500887 5.949974 6.500887 5.943914 6.416039 5.943914"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C7"} schX={6.736920810883266} schY={5.889368341824923} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"270uF"} schX={6.736920810883266} schY={5.7075501600067415} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
-      <schematicpath svgPath={"M7.328982 6.10149L7.328982 5.828762"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M7.328982 5.774217L7.328982 5.50149"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M7.171407 5.828762L7.492619 5.828762"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M7.486558 5.743914L7.486558 5.743914 7.486558 5.743914 7.486558 5.743914 7.486558 5.743914 7.486558 5.743914 7.486558 5.743914 7.486558 5.743914 7.486558 5.743914 7.480498 5.743914 7.480498 5.743914 7.480498 5.743914 7.480498 5.743914 7.480498 5.749974 7.480498 5.749974 7.480498 5.749974 7.480498 5.749974 7.474437 5.749974 7.474437 5.749974 7.474437 5.749974 7.474437 5.749974 7.474437 5.749974 7.474437 5.749974 7.474437 5.749974 7.474437 5.749974 7.468376 5.749974 7.468376 5.749974 7.468376 5.749974 7.468376 5.756035 7.468376 5.756035 7.468376 5.756035 7.468376 5.756035 7.468376 5.756035 7.462316 5.756035 7.462316 5.756035 7.462316 5.756035 7.462316 5.756035 7.462316 5.756035 7.462316 5.756035 7.462316 5.756035 7.462316 5.756035 7.456255 5.756035 7.456255 5.756035 7.456255 5.756035 7.456255 5.756035 7.456255 5.762096 7.456255 5.762096 7.456255 5.762096 7.450195 5.762096 7.450195 5.762096 7.450195 5.762096 7.450195 5.762096 7.450195 5.762096 7.450195 5.762096 7.450195 5.762096 7.450195 5.762096 7.444134 5.762096 7.444134 5.762096 7.444134 5.762096 7.444134 5.762096 7.444134 5.762096 7.444134 5.762096 7.444134 5.762096 7.444134 5.762096 7.438073 5.768156 7.438073 5.768156 7.438073 5.768156 7.438073 5.768156 7.438073 5.768156 7.438073 5.768156 7.438073 5.768156 7.438073 5.768156 7.432013 5.768156 7.432013 5.768156 7.432013 5.768156 7.432013 5.768156 7.432013 5.768156 7.432013 5.768156 7.432013 5.768156 7.425952 5.768156 7.425952 5.768156 7.425952 5.768156 7.425952 5.768156 7.425952 5.768156 7.425952 5.768156 7.425952 5.768156 7.425952 5.774217 7.419892 5.774217 7.419892 5.774217 7.419892 5.774217 7.419892 5.774217 7.419892 5.774217 7.419892 5.774217 7.419892 5.774217 7.419892 5.774217 7.413831 5.774217 7.413831 5.774217 7.413831 5.774217 7.413831 5.774217 7.413831 5.774217 7.413831 5.774217 7.413831 5.774217 7.413831 5.774217 7.40777 5.774217 7.40777 5.774217 7.40777 5.774217 7.40777 5.774217 7.40777 5.774217 7.40777 5.774217 7.40171 5.774217 7.40171 5.774217 7.40171 5.774217 7.40171 5.774217 7.40171 5.774217 7.40171 5.774217 7.395649 5.780277 7.395649 5.780277 7.395649 5.780277 7.395649 5.780277 7.395649 5.780277 7.395649 5.780277 7.389589 5.780277 7.389589 5.780277 7.389589 5.780277 7.389589 5.780277 7.389589 5.780277 7.389589 5.780277 7.383528 5.780277 7.383528 5.780277 7.383528 5.780277 7.383528 5.780277 7.383528 5.780277 7.383528 5.780277 7.377467 5.780277 7.377467 5.780277 7.377467 5.780277 7.377467 5.780277 7.377467 5.780277 7.371407 5.780277 7.371407 5.780277 7.371407 5.780277 7.371407 5.780277 7.371407 5.780277 7.371407 5.780277 7.365346 5.780277 7.365346 5.780277 7.365346 5.780277 7.365346 5.780277 7.365346 5.780277 7.365346 5.780277 7.359286 5.780277 7.359286 5.780277 7.359286 5.780277 7.359286 5.780277 7.359286 5.780277 7.359286 5.780277 7.353225 5.780277 7.353225 5.780277 7.353225 5.780277 7.353225 5.780277 7.353225 5.780277 7.353225 5.780277 7.347164 5.780277 7.347164 5.780277 7.347164 5.780277 7.347164 5.780277 7.347164 5.780277 7.341104 5.780277 7.341104 5.780277 7.341104 5.780277 7.341104 5.780277 7.341104 5.780277 7.341104 5.780277 7.335043 5.780277 7.335043 5.786338 7.335043 5.786338 7.335043 5.786338 7.335043 5.786338 7.335043 5.786338 7.328982 5.780277 7.328982 5.780277 7.328982 5.780277 7.328982 5.780277 7.328982 5.780277 7.328982 5.780277 7.322922 5.780277 7.322922 5.780277 7.322922 5.780277 7.322922 5.780277 7.322922 5.780277 7.322922 5.780277 7.316861 5.780277 7.316861 5.780277 7.316861 5.780277 7.316861 5.780277 7.316861 5.780277 7.310801 5.780277 7.310801 5.780277 7.310801 5.780277 7.310801 5.780277 7.310801 5.780277 7.310801 5.780277 7.30474 5.780277 7.30474 5.780277 7.30474 5.780277 7.30474 5.780277 7.30474 5.780277 7.30474 5.780277 7.30474 5.780277 7.30474 5.780277 7.298679 5.780277 7.298679 5.780277 7.298679 5.780277 7.298679 5.780277 7.298679 5.780277 7.298679 5.780277 7.298679 5.780277 7.292619 5.780277 7.292619 5.780277 7.292619 5.780277 7.292619 5.780277 7.292619 5.780277 7.292619 5.780277 7.286558 5.780277 7.286558 5.780277 7.286558 5.780277 7.286558 5.780277 7.286558 5.780277 7.286558 5.780277 7.286558 5.780277 7.280498 5.780277 7.280498 5.780277 7.280498 5.780277 7.280498 5.780277 7.280498 5.780277 7.280498 5.780277 7.280498 5.780277 7.274437 5.780277 7.274437 5.780277 7.274437 5.780277 7.274437 5.780277 7.274437 5.780277 7.274437 5.780277 7.274437 5.780277 7.268376 5.780277 7.268376 5.780277 7.268376 5.780277 7.268376 5.780277 7.268376 5.774217 7.268376 5.774217 7.268376 5.774217 7.262316 5.774217 7.262316 5.774217 7.262316 5.774217 7.262316 5.774217 7.262316 5.774217 7.262316 5.774217 7.256255 5.774217 7.256255 5.774217 7.256255 5.774217 7.256255 5.774217 7.256255 5.774217 7.256255 5.774217 7.256255 5.774217 7.250195 5.774217 7.250195 5.774217 7.250195 5.774217 7.250195 5.774217 7.250195 5.774217 7.250195 5.774217 7.250195 5.774217 7.244134 5.774217 7.244134 5.774217 7.244134 5.774217 7.244134 5.774217 7.244134 5.774217 7.244134 5.774217 7.244134 5.774217 7.238073 5.774217 7.238073 5.774217 7.238073 5.768156 7.238073 5.768156 7.238073 5.768156 7.238073 5.768156 7.238073 5.768156 7.232013 5.768156 7.232013 5.768156 7.232013 5.768156 7.232013 5.768156 7.232013 5.768156 7.232013 5.768156 7.232013 5.768156 7.225952 5.768156 7.225952 5.768156 7.225952 5.768156 7.225952 5.768156 7.225952 5.768156 7.225952 5.768156 7.225952 5.768156 7.219892 5.768156 7.219892 5.768156 7.219892 5.768156 7.219892 5.768156 7.219892 5.768156 7.219892 5.768156 7.219892 5.762096 7.219892 5.762096 7.219892 5.762096 7.213831 5.762096 7.213831 5.762096 7.213831 5.762096 7.213831 5.762096 7.213831 5.762096 7.213831 5.762096 7.213831 5.762096 7.213831 5.762096 7.213831 5.762096 7.213831 5.762096 7.213831 5.762096 7.213831 5.762096 7.213831 5.762096 7.20777 5.762096 7.20777 5.762096 7.20777 5.762096 7.20777 5.762096 7.20777 5.762096 7.20777 5.762096 7.20777 5.762096 7.20777 5.762096 7.20777 5.762096 7.20777 5.762096 7.20777 5.762096 7.20777 5.762096 7.20171 5.762096 7.20171 5.762096 7.20171 5.762096 7.20171 5.762096 7.20171 5.756035 7.20171 5.756035 7.20171 5.756035 7.20171 5.756035 7.20171 5.756035 7.20171 5.756035 7.20171 5.756035 7.20171 5.756035 7.195649 5.756035 7.195649 5.756035 7.195649 5.756035 7.195649 5.756035 7.195649 5.756035 7.195649 5.756035 7.195649 5.756035 7.195649 5.756035 7.195649 5.756035 7.195649 5.756035 7.195649 5.756035 7.195649 5.756035 7.189589 5.756035 7.189589 5.756035 7.189589 5.756035 7.189589 5.756035 7.189589 5.756035 7.189589 5.756035 7.189589 5.749974 7.189589 5.749974 7.189589 5.749974 7.189589 5.749974 7.189589 5.749974 7.189589 5.749974 7.189589 5.749974 7.183528 5.749974 7.183528 5.749974 7.183528 5.749974 7.183528 5.749974 7.183528 5.749974 7.183528 5.749974 7.183528 5.749974 7.183528 5.749974 7.183528 5.749974 7.183528 5.749974 7.183528 5.749974 7.183528 5.749974 7.183528 5.749974 7.177467 5.749974 7.177467 5.749974 7.177467 5.749974 7.177467 5.749974 7.177467 5.743914 7.177467 5.743914 7.177467 5.743914 7.177467 5.743914 7.177467 5.743914 7.177467 5.743914 7.177467 5.743914 7.177467 5.743914 7.177467 5.743914 7.171407 5.743914 7.171407 5.743914 7.171407 5.743914 7.171407 5.743914 7.171407 5.743914 7.171407 5.743914 7.171407 5.743914 7.171407 5.743914 7.171407 5.743914"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M7.189589 5.986338L7.189589 5.90149 7.189589 5.90149 7.189589 5.986338"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M7.147164 5.949974L7.232013 5.949974 7.232013 5.943914 7.147164 5.943914"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C8"} schX={7.46804633195784} schY={5.889368341824923} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"270uF"} schX={7.46804633195784} schY={5.7075501600067415} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
-      <schematicpath svgPath={"M-10.052976 5.746867L-10.052976 6.008685"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-10.052976 6.095958L-10.052976 6.346867"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-9.911158 6.008685L-10.200249 6.008685"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-9.911158 6.095958L-10.200249 6.095958"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C3"} schX={-10.001157732957177} schY={6.1559576192681815} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"0.1uF"} schX={-10.001157732957177} schY={5.937775801086363} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
-      <schematicpath svgPath={"M8.042381 5.381304L8.042381 5.643122"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M8.042381 5.730395L8.042381 5.981304"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M8.184199 5.643122L7.895108 5.643122"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M8.184199 5.730395L7.895108 5.730395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C9"} schX={8.094198913638468} schY={5.790394858730895} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"10uF"} schX={8.094198913638468} schY={5.572213040549077} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
-      <schematicpath svgPath={"M8.773506 5.381304L8.773506 5.643122"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M8.773506 5.730395L8.773506 5.981304"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M8.915324 5.643122L8.626234 5.643122"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M8.915324 5.730395L8.626234 5.730395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C10"} schX={8.825324434713039} schY={5.790394858730895} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"10uF"} schX={8.825324434713039} schY={5.572213040549077} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
-      <schematicpath svgPath={"M9.504632 5.381304L9.504632 5.643122"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M9.504632 5.730395L9.504632 5.981304"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M9.64645 5.643122L9.357359 5.643122"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M9.64645 5.730395L9.357359 5.730395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C11"} schX={9.556449955787613} schY={5.790394858730895} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"0.1uF"} schX={9.556449955787613} schY={5.572213040549077} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
-      <schematicpath svgPath={"M10.418539 5.381304L10.418539 5.643122"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M10.418539 5.730395L10.418539 5.981304"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M10.560357 5.643122L10.271266 5.643122"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M10.560357 5.730395L10.271266 5.730395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C12"} schX={10.470356857130831} schY={5.790394858730895} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"1000pF"} schX={10.470356857130831} schY={5.572213040549077} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
-      <schematicpath svgPath={"M10.328804-1.836905L10.066986-1.836905"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M9.979713-1.836905L9.728804-1.836905"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M10.066986-1.695087L10.066986-1.984177"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M9.979713-1.695087L9.979713-1.984177"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C23"} schX={10.023349298917847} schY={-1.6187228935955194} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
-      <schematictext text={"0.01uF"} schX={10.028803844372394} schY={-2.0769047117773383} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
-      <schematicpath svgPath={"M2.103642-4.944188L1.841824-4.944188"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M1.754551-4.944188L1.503642-4.944188"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M1.841824-4.80237L1.841824-5.091461"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M1.754551-4.80237L1.754551-5.091461"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C28"} schX={1.798187186828919} schY={-4.726006358162449} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
-      <schematictext text={"1000pF"} schX={1.803641732283463} schY={-5.184188176344268} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
-      <schematicpath svgPath={"M-3.290065 5.250178L-3.290065 4.98836"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-3.290065 4.901088L-3.290065 4.650178"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-3.431883 4.98836L-3.142792 4.98836"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-3.431883 4.901088L-3.142792 4.901088"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C15"} schX={-3.2273375721083006} schY={5.059269337656325} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"4.7uF"} schX={-3.2273375721083006} schY={4.841087519474506} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
-      <schematicpath svgPath={"M-8.965379-6.604513L-8.965379-6.451786"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-8.965379-6.162695L-8.965379-6.004513"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-9.036288-6.304513L-9.036288-6.162695-8.889015-6.162695-8.889015-6.451786-9.036288-6.451786-9.036288-6.304513"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R24"} schX={-8.812948351345321} schY={-6.228149185228853} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematictext text={"9.76k"} schX={-8.812948351345321} schY={-6.402694639774307} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematicpath svgPath={"M-8.965379-5.325043L-8.965379-5.172316"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-8.965379-4.883225L-8.965379-4.725043"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-9.036288-5.025043L-9.036288-4.883225-8.889015-4.883225-8.889015-5.172316-9.036288-5.172316-9.036288-5.025043"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R23"} schX={-8.812948351345321} schY={-4.948679523348353} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematictext text={"30.0k"} schX={-8.812948351345321} schY={-5.123224977893809} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematicpath svgPath={"M-4.395844 4.910714L-4.395844 5.063441"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-4.395844 5.352532L-4.395844 5.510714"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-4.466753 5.210714L-4.466753 5.352532-4.31948 5.352532-4.31948 5.063441-4.466753 5.063441-4.466753 5.210714"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R3"} schX={-4.243413844629249} schY={5.287077771695653} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematictext text={"0"} schX={-4.243413844629249} schY={5.112532317150199} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematicpath svgPath={"M-8.042381 5.746867L-8.042381 6.008685"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-8.042381 6.095958L-8.042381 6.346867"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-7.900563 6.008685L-8.189653 6.008685"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-7.900563 6.095958L-8.189653 6.095958"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C5"} schX={-7.990562550002105} schY={6.1559576192681815} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"1uF"} schX={-7.990562550002105} schY={5.937775801086363} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
-      <schematicpath svgPath={"M-6.945692 5.746867L-6.945692 6.008685"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-6.945692 6.095958L-6.945692 6.346867"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-6.803874 6.008685L-7.092965 6.008685"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-6.803874 6.095958L-7.092965 6.095958"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C6"} schX={-6.893874268390251} schY={6.1559576192681815} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"4.7uF"} schX={-6.893874268390251} schY={5.937775801086363} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
-      <schematicpath svgPath={"M-8.956288 5.746867L-8.956288 6.008685"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-8.956288 6.095958L-8.956288 6.346867"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-8.814469 6.008685L-9.10356 6.008685"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-8.814469 6.095958L-9.10356 6.095958"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C4"} schX={-8.904469451345323} schY={6.1559576192681815} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"1uF"} schX={-8.904469451345323} schY={5.937775801086363} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
-      <schematicpath svgPath={"M-0.365563 4.101834L-0.365563 4.363652"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-0.365563 4.450925L-0.365563 4.701834"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-0.223745 4.363652L-0.512835 4.363652"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-0.223745 4.450925L-0.512835 4.450925"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C16"} schX={-0.3137445787191062} schY={4.510925196850395} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"0.33uF"} schX={-0.3137445787191062} schY={4.292743378668576} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
-      <schematicpath svgPath={"M-9.015379 1.987868L-8.862651 1.987868"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-8.57356 1.987868L-8.415379 1.987868"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-8.715379 2.058777L-8.57356 2.058777-8.57356 1.911504-8.862651 1.911504-8.862651 2.058777-8.715379 2.058777"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R9"} schX={-8.726287633163503} schY={2.0857526465914367} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
-      <schematictext text={"100k"} schX={-8.726287633163503} schY={1.8736195375005291} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
+      <schematicpath svgPath={"M6.58013 6.304368L6.58013 6.005025"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M6.58013 5.965685L6.58013 5.704368"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M6.42011 5.930113L6.42011 5.930113 6.430778 5.934824 6.441446 5.939242 6.452114 5.943363 6.462782 5.947186 6.47345 5.950705 6.484118 5.953918 6.494786 5.956821 6.505454 5.959411 6.516122 5.961684 6.52679 5.963636 6.537458 5.965265 6.548126 5.966567 6.558794 5.967538 6.569462 5.968175 6.58013 5.968475 6.590798 5.968175 6.601466 5.967538 6.612134 5.966567 6.622802 5.965265 6.63347 5.963636 6.644138 5.961684 6.654806 5.959411 6.665474 5.956821 6.676142 5.953918 6.68681 5.950705 6.697478 5.947186 6.708146 5.943363 6.718814 5.939242 6.729482 5.934824 6.74015 5.930113 6.74015 5.930113"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M6.42011 6.003983L6.74015 6.003983"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M6.38013 6.160394L6.38013 6.090214"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M6.41522 6.125304L6.34504 6.125304"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C7"} schX={6.86012968967114} schY={6.304368341824924} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematictext text={"270uF"} schX={6.88012968967114} schY={5.704368341824922} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematiccircle center={{"x":7.1301296896711435,"y":5.704368341824922}} radius={NaN} strokeWidth={0.020000000000000004} color={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematiccircle center={{"x":6.0301296896711385,"y":6.304368341824924}} radius={NaN} strokeWidth={0.020000000000000004} color={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M7.311255 6.304368L7.311255 6.005025"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M7.311255 5.965685L7.311255 5.704368"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M7.151235 5.930113L7.151235 5.930113 7.161903 5.934824 7.172571 5.939242 7.183239 5.943363 7.193907 5.947186 7.204575 5.950705 7.215243 5.953918 7.225911 5.956821 7.236579 5.959411 7.247247 5.961684 7.257915 5.963636 7.268583 5.965265 7.279251 5.966567 7.289919 5.967538 7.300587 5.968175 7.311255 5.968475 7.321923 5.968175 7.332591 5.967538 7.343259 5.966567 7.353927 5.965265 7.364595 5.963636 7.375263 5.961684 7.385931 5.959411 7.396599 5.956821 7.407267 5.953918 7.417935 5.950705 7.428603 5.947186 7.439271 5.943363 7.449939 5.939242 7.460607 5.934824 7.471275 5.930113 7.471275 5.930113"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M7.151235 6.003983L7.471275 6.003983"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M7.111255 6.160394L7.111255 6.090214"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M7.146345 6.125304L7.076165 6.125304"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C8"} schX={7.591255210745718} schY={6.304368341824924} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematictext text={"270uF"} schX={7.611255210745718} schY={5.704368341824922} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematiccircle center={{"x":7.861255210745721,"y":5.704368341824922}} radius={NaN} strokeWidth={0.020000000000000004} color={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematiccircle center={{"x":6.761255210745716,"y":6.304368341824924}} radius={NaN} strokeWidth={0.020000000000000004} color={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-10.052976 6.005958L-10.052976 6.245958"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-10.052976 6.365958L-10.052976 6.605958"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-9.892956 6.245958L-10.212996 6.245958"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-9.892956 6.365958L-10.212996 6.365958"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C3"} schX={-9.93797591477536} schY={6.505957619268182} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"0.1uF"} schX={-9.93797591477536} schY={6.105957619268181} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M8.042381 5.640395L8.042381 5.880395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M8.042381 6.000395L8.042381 6.240395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M8.202401 5.880395L7.882361 5.880395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M8.202401 6.000395L7.882361 6.000395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C9"} schX={8.157380731820286} schY={6.140394858730894} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"10uF"} schX={8.157380731820286} schY={5.740394858730895} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M8.773506 5.640395L8.773506 5.880395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M8.773506 6.000395L8.773506 6.240395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M8.933526 5.880395L8.613486 5.880395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M8.933526 6.000395L8.613486 6.000395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C10"} schX={8.888506252894857} schY={6.140394858730894} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"10uF"} schX={8.888506252894857} schY={5.740394858730895} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M9.504632 5.640395L9.504632 5.880395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M9.504632 6.000395L9.504632 6.240395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M9.664652 5.880395L9.344612 5.880395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M9.664652 6.000395L9.344612 6.000395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C11"} schX={9.61963177396943} schY={6.140394858730894} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"0.1uF"} schX={9.61963177396943} schY={5.740394858730895} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M10.418539 5.640395L10.418539 5.880395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M10.418539 6.000395L10.418539 6.240395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M10.578559 5.880395L10.258519 5.880395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M10.578559 6.000395L10.258519 6.000395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C12"} schX={10.533538675312649} schY={6.140394858730894} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"1000pF"} schX={10.533538675312649} schY={5.740394858730895} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M10.078804-1.827814L9.838804-1.827814"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M9.718804-1.827814L9.478804-1.827814"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M9.838804-1.667794L9.838804-1.987834"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M9.718804-1.667794L9.718804-1.987834"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C23"} schX={9.778803844372398} schY={-1.5878138026864281} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
+      <schematictext text={"0.01uF"} schX={9.778803844372398} schY={-2.0678138026864286} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
+      <schematicpath svgPath={"M1.853642-4.935097L1.613642-4.935097"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M1.493642-4.935097L1.253642-4.935097"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M1.613642-4.775077L1.613642-5.095117"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M1.493642-4.775077L1.493642-5.095117"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C28"} schX={1.553641732283463} schY={-4.695097267253358} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
+      <schematictext text={"1000pF"} schX={1.553641732283463} schY={-5.175097267253358} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
+      <schematicpath svgPath={"M-3.290065 5.509269L-3.290065 5.269269"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-3.290065 5.149269L-3.290065 4.909269"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-3.450085 5.269269L-3.130045 5.269269"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-3.450085 5.149269L-3.130045 5.149269"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C15"} schX={-3.1950648448355743} schY={5.409269337656325} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"4.7uF"} schX={-3.1950648448355743} schY={5.009269337656324} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M-8.956288-6.331786L-8.956288-6.231766"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-8.956288-5.831806L-8.956288-5.731786"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-9.036268-6.231766L-9.036268-5.831806-8.876308-5.831806-8.876308-6.231766-9.036268-6.231766"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R24"} schX={-8.796287633163505} schY={-5.8717855488652155} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematictext text={"9.76k"} schX={-8.796287633163505} schY={-6.191785548865214} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematicpath svgPath={"M-8.956288-5.052316L-8.956288-4.952296"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-8.956288-4.552336L-8.956288-4.452316"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-9.036268-4.952296L-9.036268-4.552336-8.876308-4.552336-8.876308-4.952296-9.036268-4.952296"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R23"} schX={-8.796287633163505} schY={-4.592315886984716} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematictext text={"30.0k"} schX={-8.796287633163505} schY={-4.9123158869847146} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematicpath svgPath={"M-4.386753 5.183441L-4.386753 5.283461"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-4.386753 5.683421L-4.386753 5.783441"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-4.466733 5.283461L-4.466733 5.683421-4.306773 5.683421-4.306773 5.283461-4.466733 5.283461"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R3"} schX={-4.226753126447431} schY={5.6434414080592905} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematictext text={"0"} schX={-4.226753126447431} schY={5.323441408059289} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematicpath svgPath={"M-8.042381 6.005958L-8.042381 6.245958"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-8.042381 6.365958L-8.042381 6.605958"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-7.882361 6.245958L-8.202401 6.245958"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-7.882361 6.365958L-8.202401 6.365958"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C5"} schX={-7.927380731820287} schY={6.505957619268182} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"1uF"} schX={-7.927380731820287} schY={6.105957619268181} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M-6.945692 6.005958L-6.945692 6.245958"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-6.945692 6.365958L-6.945692 6.605958"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-6.785672 6.245958L-7.105712 6.245958"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-6.785672 6.365958L-7.105712 6.365958"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C6"} schX={-6.830692450208433} schY={6.505957619268182} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"4.7uF"} schX={-6.830692450208433} schY={6.105957619268181} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M-8.956288 6.005958L-8.956288 6.245958"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-8.956288 6.365958L-8.956288 6.605958"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-8.796268 6.245958L-9.116308 6.245958"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-8.796268 6.365958L-9.116308 6.365958"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C4"} schX={-8.841287633163505} schY={6.505957619268182} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"1uF"} schX={-8.841287633163505} schY={6.105957619268181} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M-0.365563 4.360925L-0.365563 4.600925"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-0.365563 4.720925L-0.365563 4.960925"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-0.205543 4.600925L-0.525583 4.600925"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-0.205543 4.720925L-0.525583 4.720925"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C16"} schX={-0.2505627605372851} schY={4.8609251968503955} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"0.33uF"} schX={-0.2505627605372851} schY={4.460925196850395} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M-9.256288 2.010595L-9.156268 2.010595"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-8.756308 2.010595L-8.656288 2.010595"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-9.156268 2.090575L-8.756308 2.090575-8.756308 1.930615-9.156268 1.930615-9.156268 2.090575"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R9"} schX={-8.956287633163504} schY={2.170595182955073} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
+      <schematictext text={"100k"} schX={-8.956287633163504} schY={1.8505951829550735} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
       <schematicpath svgPath={"M-0.956688 6.031786L-1.216688 5.901786"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematicpath svgPath={"M-1.216688 6.171786L-0.956688 6.031786"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematicpath svgPath={"M-1.216688 5.901786L-1.216688 6.171786"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
@@ -1556,42 +1682,42 @@ test(
       <schematicpath svgPath={"M-5.30066 0L-4.935097 0"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematictext text={"13"} schX={-5.117878647522005} schY={0.019999999999999574} fontSize={0.15} color={"rgb(169, 0, 0)"} anchor="bottom_center" schRotation={0} />
       <schematictext text={"EP"} schX={-5.4006600277906465} schY={0} fontSize={0.15} color={"rgb(169, 0, 0)"} anchor="center_right" schRotation={0} />
-      <schematicpath svgPath={"M1.087597 0.889524L1.087597 1.042251"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M1.087597 1.331342L1.087597 1.489524"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M1.016688 1.189524L1.016688 1.331342 1.163961 1.331342 1.163961 1.042251 1.016688 1.042251 1.016688 1.189524"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R12"} schX={1.24002756343004} schY={1.2658874057855094} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematictext text={"0.02"} schX={1.24002756343004} schY={1.0913419512400537} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematicpath svgPath={"M1.096688 1.162251L1.096688 1.262271"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M1.096688 1.662231L1.096688 1.762251"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M1.016708 1.262271L1.016708 1.662231 1.176668 1.662231 1.176668 1.262271 1.016708 1.262271"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R12"} schX={1.2566882816118579} schY={1.6222510421491458} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematictext text={"0.02"} schX={1.2566882816118579} schY={1.3022510421491456} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
       <schematicpath svgPath={"M1.645032 3.711522L1.645032 3.911522"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M1.545032 4.011522L1.554936 3.968133 1.582683 3.933338 1.62278 3.914029 1.667285 3.914029 1.707381 3.933338 1.735129 3.968133 1.745032 4.011522"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M1.545032 4.011522L1.545545 4.001405 1.547079 3.991392 1.549618 3.981585 1.553137 3.972086 1.557598 3.962991 1.562956 3.954395 1.569157 3.946384 1.576136 3.939042 1.583822 3.932444 1.592136 3.926657 1.600993 3.921741 1.610302 3.917746 1.619967 3.914714 1.62989 3.912675 1.639968 3.91165 1.650097 3.91165 1.660175 3.912675 1.670098 3.914714 1.679763 3.917746 1.689072 3.921741 1.697929 3.926657 1.706243 3.932444 1.713929 3.939042 1.720908 3.946384 1.727109 3.954395 1.732467 3.962991 1.736928 3.972086 1.740446 3.981585 1.742985 3.991392 1.744519 4.001405 1.745032 4.011522"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematictext text={"TP5"} schX={1.6450324224177848} schY={4.036521537748959} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
       <schematicpath svgPath={"M11.515227 6.818805L11.515227 7.018805"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M11.415227 7.118805L11.42513 7.075417 11.452878 7.040622 11.492975 7.021312 11.537479 7.021312 11.577576 7.040622 11.605324 7.075417 11.615227 7.118805"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M11.415227 7.118805L11.41574 7.108688 11.417274 7.098675 11.419813 7.088869 11.423331 7.079369 11.427792 7.070275 11.433151 7.061678 11.439351 7.053668 11.44633 7.046326 11.454016 7.039727 11.462331 7.033941 11.471188 7.029025 11.480496 7.02503 11.490162 7.021997 11.500084 7.019958 11.510162 7.018933 11.520292 7.018933 11.53037 7.019958 11.540292 7.021997 11.549957 7.02503 11.559266 7.029025 11.568123 7.033941 11.576438 7.039727 11.584124 7.046326 11.591103 7.053668 11.597303 7.061678 11.602662 7.070275 11.607123 7.079369 11.610641 7.088869 11.61318 7.098675 11.614714 7.108688 11.615227 7.118805"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematictext text={"TP2"} schX={11.515226956924508} schY={7.14380500231589} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
       <schematicpath svgPath={"M11.515227 4.879203L11.515227 4.679203"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M11.615227 4.579203L11.605324 4.622592 11.577576 4.657386 11.537479 4.676696 11.492975 4.676696 11.452878 4.657386 11.42513 4.622592 11.415227 4.579203"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M11.615227 4.579203L11.614714 4.58932 11.61318 4.599333 11.610641 4.60914 11.607123 4.618639 11.602662 4.627734 11.597303 4.63633 11.591103 4.644341 11.584124 4.651683 11.576438 4.658281 11.568123 4.664068 11.559266 4.668984 11.549957 4.672979 11.540292 4.676011 11.53037 4.67805 11.520292 4.679075 11.510162 4.679075 11.500084 4.67805 11.490162 4.676011 11.480496 4.672979 11.471188 4.668984 11.462331 4.664068 11.454016 4.658281 11.44633 4.651683 11.439351 4.644341 11.433151 4.63633 11.427792 4.627734 11.423331 4.618639 11.419813 4.60914 11.417274 4.599333 11.41574 4.58932 11.415227 4.579203"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematictext text={"TP4"} schX={11.515226956924508} schY={4.5542033348772595} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
       <schematicpath svgPath={"M-12.429134 7.367149L-12.429134 7.567149"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-12.529134 7.667149L-12.519231 7.623761-12.491483 7.588966-12.451386 7.569656-12.406882 7.569656-12.366785 7.588966-12.339037 7.623761-12.329134 7.667149"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-12.529134 7.667149L-12.528621 7.657032-12.527087 7.647019-12.524548 7.637213-12.52103 7.627714-12.516569 7.618619-12.51121 7.610022-12.50501 7.602012-12.498031 7.59467-12.490344 7.588072-12.48203 7.582285-12.473173 7.577369-12.463864 7.573374-12.454199 7.570341-12.444277 7.568302-12.434199 7.567277-12.424069 7.567277-12.413991 7.568302-12.404069 7.570341-12.394403 7.573374-12.385094 7.577369-12.376237 7.582285-12.367923 7.588072-12.360237 7.59467-12.353258 7.602012-12.347058 7.610022-12.341699 7.618619-12.337238 7.627714-12.33372 7.637213-12.331181 7.647019-12.329647 7.657032-12.329134 7.667149"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematictext text={"TP1"} schX={-12.42913385826772} schY={7.692149143121817} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
       <schematicpath svgPath={"M-12.429134 5.244766L-12.429134 5.044766"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-12.329134 4.944766L-12.339037 4.988154-12.366785 5.022949-12.406882 5.042259-12.451386 5.042259-12.491483 5.022949-12.519231 4.988154-12.529134 4.944766"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-12.329134 4.944766L-12.329647 4.954883-12.331181 4.964896-12.33372 4.974702-12.337238 4.984202-12.341699 4.993296-12.347058 5.001893-12.353258 5.009903-12.360237 5.017245-12.367923 5.023844-12.376237 5.029631-12.385094 5.034547-12.394403 5.038541-12.404069 5.041574-12.413991 5.043613-12.424069 5.044638-12.434199 5.044638-12.444277 5.043613-12.454199 5.041574-12.463864 5.038541-12.473173 5.034547-12.48203 5.029631-12.490344 5.023844-12.498031 5.017245-12.50501 5.009903-12.51121 5.001893-12.516569 4.993296-12.52103 4.984202-12.524548 4.974702-12.527087 4.964896-12.528621 4.954883-12.529134 4.944766"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematictext text={"TP3"} schX={-12.42913385826772} schY={4.919766095414546} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
-      <schematicpath svgPath={"M11.871699 2.534556L11.871699 2.687283"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M11.871699 2.976374L11.871699 3.134556"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M11.80079 2.834556L11.80079 2.976374 11.948062 2.976374 11.948062 2.687283 11.80079 2.687283 11.80079 2.834556"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R7"} schX={12.024128999279974} schY={2.910919828203294} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematictext text={"10.0"} schX={12.024128999279974} schY={2.7363743736578385} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematicpath svgPath={"M11.88079 2.807283L11.88079 2.907303"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M11.88079 3.307263L11.88079 3.407283"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M11.80081 2.907303L11.80081 3.307263 11.96077 3.307263 11.96077 2.907303 11.80081 2.907303"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R7"} schX={12.040789717461784} schY={3.2672834645669306} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematictext text={"10.0"} schX={12.040789717461784} schY={2.9472834645669295} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
       <schematicpath svgPath={"M-3.965296-0.731126L-3.765296-0.731126"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-3.665296-0.631126L-3.708685-0.641029-3.74348-0.668777-3.762789-0.708873-3.762789-0.753378-3.74348-0.793475-3.708685-0.821222-3.665296-0.831126"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-3.665296-0.631126L-3.675413-0.631639-3.685426-0.633173-3.695233-0.635712-3.704732-0.63923-3.713827-0.643691-3.722423-0.649049-3.730434-0.65525-3.737776-0.662229-3.744374-0.669915-3.750161-0.678229-3.755077-0.687086-3.759072-0.696395-3.762104-0.70606-3.764143-0.715983-3.765168-0.726061-3.765168-0.73619-3.764143-0.746268-3.762104-0.756191-3.759072-0.765856-3.755077-0.775165-3.750161-0.784022-3.744374-0.792336-3.737776-0.800022-3.730434-0.807001-3.722423-0.813202-3.713827-0.81856-3.704732-0.823021-3.695233-0.826539-3.685426-0.829079-3.675413-0.830612-3.665296-0.831126"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematictext text={"TP8"} schX={-3.640296433534047} schY={-0.7311255210745706} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
       <schematicpath svgPath={"M8.207943-4.02119L8.407943-4.02119"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M8.507943-3.92119L8.464555-3.931093 8.42976-3.958841 8.410451-3.998938 8.410451-4.043442 8.42976-4.083539 8.464555-4.111287 8.507943-4.12119"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M8.507943-3.92119L8.497827-3.921703 8.487814-3.923237 8.478007-3.925776 8.468508-3.929295 8.459413-3.933756 8.450817-3.939114 8.442806-3.945315 8.435464-3.952294 8.428866-3.95998 8.423079-3.968294 8.418163-3.977151 8.414168-3.98646 8.411136-3.996125 8.409097-4.006048 8.408072-4.016125 8.408072-4.026255 8.409097-4.036333 8.411136-4.046256 8.414168-4.055921 8.418163-4.06523 8.423079-4.074087 8.428866-4.082401 8.435464-4.090087 8.442806-4.097066 8.450817-4.103267 8.459413-4.108625 8.468508-4.113086 8.478007-4.116604 8.487814-4.119143 8.497827-4.120677 8.507943-4.12119"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematictext text={"TP9"} schX={8.532943492357575} schY={-4.021190365910144} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
       <schematicpath svgPath={"M12.485028 3.655628L12.685028 3.655628"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M12.785028 3.755628L12.741639 3.745724 12.706845 3.717977 12.687535 3.67788 12.687535 3.633376 12.706845 3.593279 12.741639 3.565531 12.785028 3.555628"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M12.785028 3.755628L12.774911 3.755115 12.764898 3.753581 12.755091 3.751042 12.745592 3.747523 12.736498 3.743062 12.727901 3.737704 12.719891 3.731503 12.712549 3.724524 12.70595 3.716838 12.700163 3.708524 12.695247 3.699667 12.691253 3.690358 12.68822 3.680693 12.686181 3.67077 12.685156 3.660693 12.685156 3.650563 12.686181 3.640485 12.68822 3.630562 12.691253 3.620897 12.695247 3.611588 12.700163 3.602731 12.70595 3.594417 12.712549 3.586731 12.719891 3.579752 12.727901 3.573551 12.736498 3.568193 12.745592 3.563732 12.755091 3.560214 12.764898 3.557675 12.774911 3.556141 12.785028 3.555628"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematictext text={"TP6"} schX={12.810027790643822} schY={3.6556276053728585} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
       <schematicpath svgPath={"M12.485028 2.558939L12.685028 2.558939"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M12.785028 2.658939L12.741639 2.649036 12.706845 2.621288 12.687535 2.581191 12.687535 2.536687 12.706845 2.49659 12.741639 2.468842 12.785028 2.458939"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M12.785028 2.658939L12.774911 2.658426 12.764898 2.656892 12.755091 2.654353 12.745592 2.650835 12.736498 2.646374 12.727901 2.641016 12.719891 2.634815 12.712549 2.627836 12.70595 2.62015 12.700163 2.611836 12.695247 2.602979 12.691253 2.59367 12.68822 2.584005 12.686181 2.574082 12.685156 2.564004 12.685156 2.553874 12.686181 2.543797 12.68822 2.533874 12.691253 2.524209 12.695247 2.5149 12.700163 2.506043 12.70595 2.497729 12.712549 2.490043 12.719891 2.483064 12.727901 2.476863 12.736498 2.471505 12.745592 2.467044 12.755091 2.463525 12.764898 2.460986 12.774911 2.459452 12.785028 2.458939"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematictext text={"TP7"} schX={12.810027790643822} schY={2.5589393237610008} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
       <schematicpath svgPath={"M-13.708604-4.386753h0.365563v-1.096688h-0.365563Z"} strokeWidth={0.05} strokeColor={"#0000ff"} isFilled={true} fillColor={"#ffffff"} />
       <schematiccircle center={{"x":-13.525822139879576,"y":-4.752315886984716}} radius={0.054834414080592885} strokeWidth={0.05} color={"#0000ff"} isFilled={true} fillColor={"#0000ff"} />
@@ -1615,12 +1741,12 @@ test(
       <schematictext text={"1040"} schX={1.9933765632237161} schY={0.03556276053728702} fontSize={0.18000000000000002} color={"#006464"} anchor="top_left" schRotation={0} />
       <schematicpath svgPath={"M2.010595 0.365563L1.645032 0.365563"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematictext text={"1"} schX={1.8278138026864283} schY={0.38556276053728666} fontSize={0.15} color={"rgb(169, 0, 0)"} anchor="bottom_center" schRotation={0} />
-      <schematicpath svgPath={"M2.103642-4.030281L1.841824-4.030281"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M1.754551-4.030281L1.503642-4.030281"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M1.841824-3.888463L1.841824-4.177554"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M1.754551-3.888463L1.754551-4.177554"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C27"} schX={1.798187186828919} schY={-3.812099456819233} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
-      <schematictext text={"1000pF"} schX={1.803641732283463} schY={-4.270281275001052} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
+      <schematicpath svgPath={"M1.853642-4.02119L1.613642-4.02119"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M1.493642-4.02119L1.253642-4.02119"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M1.613642-3.86117L1.613642-4.18121"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M1.493642-3.86117L1.493642-4.18121"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C27"} schX={1.553641732283463} schY={-3.7811903659101436} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
+      <schematictext text={"1000pF"} schX={1.553641732283463} schY={-4.261190365910144} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
       <schematicpath svgPath={"M4.369535-2.358939h0.4v-0.4h-0.4Z"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={true} fillColor={"rgb(255, 255, 194)"} />
       <schematictext text={"NT2"} schX={4.369534506716072} schY={-2.2289393237610007} fontSize={0.18000000000000002} color={"#006464"} anchor="bottom_left" schRotation={0} />
       <schematictext text={"Net-Tie"} schX={4.369534506716072} schY={-2.888939323761001} fontSize={0.18000000000000002} color={"#006464"} anchor="top_left" schRotation={0} />
@@ -1628,29 +1754,29 @@ test(
       <schematictext text={"1"} schX={4.549534506716071} schY={-2.8331113941639643} fontSize={0.15} color={"rgb(169, 0, 0)"} anchor="bottom_center" schRotation={90} />
       <schematicpath svgPath={"M4.569535-2.376158L4.569535-2.193377"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematictext text={"2"} schX={4.549534506716071} schY={-2.2847672533580337} fontSize={0.15} color={"rgb(169, 0, 0)"} anchor="bottom_center" schRotation={90} />
-      <schematicpath svgPath={"M11.332446 5.381304L11.332446 5.643122"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M11.332446 5.730395L11.332446 5.981304"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M11.474264 5.643122L11.185173 5.643122"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M11.474264 5.730395L11.185173 5.730395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C13"} schX={11.384263758474042} schY={5.790394858730895} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"0.1uF"} schX={11.384263758474042} schY={5.572213040549077} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
-      <schematicpath svgPath={"M12.246352 5.381304L12.246352 5.643122"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M12.246352 5.730395L12.246352 5.981304"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M12.388171 5.643122L12.09908 5.643122"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M12.388171 5.730395L12.09908 5.730395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C14"} schX={12.29817065981726} schY={5.790394858730895} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"0.01uF"} schX={12.29817065981726} schY={5.572213040549077} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
-      <schematicpath svgPath={"M4.693225 7.836872L4.845952 7.836872"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M5.135043 7.836872L5.293225 7.836872"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M4.993225 7.907781L5.135043 7.907781 5.135043 7.760508 4.845952 7.760508 4.845952 7.907781 4.993225 7.907781"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R1"} schX={4.982315886984711} schY={7.9347568151880115} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
-      <schematictext text={"15.0"} schX={4.982315886984711} schY={7.722623706097102} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
-      <schematicpath svgPath={"M-7.128474-3.02664L-7.128474-2.764821"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-7.128474-2.677549L-7.128474-2.42664"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-6.986656-2.764821L-7.275747-2.764821"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-6.986656-2.677549L-7.275747-2.677549"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"C25"} schX={-7.076655648658891} schY={-2.6175486336266793} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
-      <schematictext text={"0.01uF"} schX={-7.076655648658891} schY={-2.835730451808498} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M11.332446 5.640395L11.332446 5.880395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M11.332446 6.000395L11.332446 6.240395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M11.492466 5.880395L11.172426 5.880395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M11.492466 6.000395L11.172426 6.000395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C13"} schX={11.44744557665586} schY={6.140394858730894} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"0.1uF"} schX={11.44744557665586} schY={5.740394858730895} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M12.246352 5.640395L12.246352 5.880395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M12.246352 6.000395L12.246352 6.240395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M12.406372 5.880395L12.086332 5.880395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M12.406372 6.000395L12.086332 6.000395"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C14"} schX={12.361352477999077} schY={6.140394858730894} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"0.01uF"} schX={12.361352477999077} schY={5.740394858730895} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
+      <schematicpath svgPath={"M4.452316 7.859599L4.552336 7.859599"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M4.952296 7.859599L5.052316 7.859599"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M4.552336 7.939579L4.952296 7.939579 4.952296 7.779619 4.552336 7.779619 4.552336 7.939579"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R1"} schX={4.752315886984714} schY={8.019599351551648} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
+      <schematictext text={"15.0"} schX={4.752315886984714} schY={7.699599351551647} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
+      <schematicpath svgPath={"M-7.128474-2.767549L-7.128474-2.527549"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-7.128474-2.407549L-7.128474-2.167549"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-6.968454-2.527549L-7.288494-2.527549"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-6.968454-2.407549L-7.288494-2.407549"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"C25"} schX={-7.013473830477073} schY={-2.2675486336266797} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_left" schRotation={0} />
+      <schematictext text={"0.01uF"} schX={-7.013473830477073} schY={-2.66754863362668} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_left" schRotation={0} />
       <schematicpath svgPath={"M-3.655628-2.321324L-3.545959-2.303045-3.600793-2.229933"} strokeWidth={0.05} strokeColor={"#0000ff"} isFilled={true} fillColor={"#0000ff"} />
       <schematicpath svgPath={"M-3.472846-2.558939L-3.472846-2.924502"} strokeWidth={0.1} strokeColor={"#1f2937"} isFilled={false} fillColor={"none"} />
       <schematicpath svgPath={"M-3.655628-2.376158L-4.02119-2.376158"} strokeWidth={0.1} strokeColor={"#1f2937"} isFilled={false} fillColor={"none"} />
@@ -1658,11 +1784,11 @@ test(
       <schematicpath svgPath={"M-3.655628-2.540661L-3.655628-2.211655"} strokeWidth={0.05} strokeColor={"#0000ff"} isFilled={false} fillColor={"none"} />
       <schematicpath svgPath={"M-3.472846-2.558939L-3.655628-2.430992"} strokeWidth={0.05} strokeColor={"#0000ff"} isFilled={false} fillColor={"none"} />
       <schematicpath svgPath={"M-3.600793-2.284767L-3.472846-2.193377"} strokeWidth={0.05} strokeColor={"#0000ff"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M8.03329-0.389946L8.03329-0.237219"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M8.03329 0.051872L8.03329 0.210054"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M7.962381-0.089946L7.962381 0.051872 8.109653 0.051872 8.109653-0.237219 7.962381-0.237219 7.962381-0.089946"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R15"} schX={8.18572001363847} schY={-0.013582256094991862} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematictext text={"10.2k"} schX={8.18572001363847} schY={-0.18812771064044753} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematicpath svgPath={"M8.042381-0.117219L8.042381-0.017199"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M8.042381 0.382761L8.042381 0.482781"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M7.962401-0.017199L7.962401 0.382761 8.122361 0.382761 8.122361-0.017199 7.962401-0.017199"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R15"} schX={8.202380731820288} schY={0.34278138026864546} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematictext text={"10.2k"} schX={8.202380731820288} schY={0.022781380268643403} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
       <schematicpath svgPath={"M2.010595 7.128474h1.096688v-2.010595h-1.096688Z"} strokeWidth={0.05} strokeColor={"#1f2937"} isFilled={true} fillColor={"#ffffb0"} />
       <schematicpath svgPath={"M2.010595 6.031786L1.645032 6.031786"} strokeWidth={0.1} strokeColor={"#1f2937"} isFilled={false} fillColor={"none"} />
       <schematicpath svgPath={"M3.107283 6.762911L3.472846 6.762911"} strokeWidth={0.1} strokeColor={"#1f2937"} isFilled={false} fillColor={"none"} />
@@ -1712,31 +1838,31 @@ test(
       <schematicpath svgPath={"M-10.755757 4.203972L-10.385757 4.203972"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematictext text={"D5"} schX={-10.225757295044005} schY={3.973971746178788} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
       <schematictext text={"100V"} schX={-10.235757295044005} schY={4.513971746178788} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
-      <schematicpath svgPath={"M-2.56803 4.36237L-2.56803 4.515097"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-2.56803 4.804188L-2.56803 4.96237"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-2.638939 4.66237L-2.638939 4.804188-2.491667 4.804188-2.491667 4.515097-2.638939 4.515097-2.638939 4.66237"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R25"} schX={-2.4156000419428203} schY={4.738733630889725} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematictext text={"10.0k"} schX={-2.4156000419428203} schY={4.5641881763442695} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematicpath svgPath={"M-1.288561 4.179589L-1.288561 4.332316"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-1.288561 4.621407L-1.288561 4.779589"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-1.35947 4.479589L-1.35947 4.621407-1.212197 4.621407-1.212197 4.332316-1.35947 4.332316-1.35947 4.479589"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R4"} schX={-1.136130380062319} schY={4.555952250621082} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematictext text={"30.1k"} schX={-1.136130380062319} schY={4.381406796075626} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematicpath svgPath={"M11.871699-4.228355L11.871699-4.075628"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M11.871699-3.786537L11.871699-3.628355"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M11.80079-3.928355L11.80079-3.786537 11.948062-3.786537 11.948062-4.075628 11.80079-4.075628 11.80079-3.928355"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R22"} schX={12.024128999279966} schY={-3.8519912417364957} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematictext text={"9.76k"} schX={12.024128999279966} schY={-4.0265366962819495} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
-      <schematicpath svgPath={"M-1.652467 6.009058L-1.805195 6.009058"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-2.094286 6.009058L-2.252467 6.009058"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-1.952467 5.938149L-2.094286 5.938149-2.094286 6.085422-1.805195 6.085422-1.805195 5.938149-1.952467 5.938149"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R2"} schX={-1.9415583814055353} schY={6.1451248306833985} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
-      <schematictext text={"100"} schX={-1.9415583814055353} schY={5.889355357956125} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
-      <schematicpath svgPath={"M-9.512067 4.91237L-9.664794 4.91237"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-9.953885 4.91237L-10.112067 4.91237"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematicpath svgPath={"M-9.812067 4.841461L-9.953885 4.841461-9.953885 4.988734-9.664794 4.988734-9.664794 4.841461-9.812067 4.841461"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
-      <schematictext text={"R26"} schX={-9.801157732957181} schY={5.048436549071542} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
-      <schematictext text={"0"} schX={-9.801157732957181} schY={4.792667076344269} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
+      <schematicpath svgPath={"M-2.558939 4.635097L-2.558939 4.735117"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-2.558939 5.135077L-2.558939 5.235097"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-2.638919 4.735117L-2.638919 5.135077-2.478959 5.135077-2.478959 4.735117-2.638919 4.735117"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R25"} schX={-2.398939323760999} schY={5.095097267253361} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematictext text={"10.0k"} schX={-2.398939323760999} schY={4.77509726725336} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematicpath svgPath={"M-1.27947 4.452316L-1.27947 4.552336"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-1.27947 4.952296L-1.27947 5.052316"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-1.35945 4.552336L-1.35945 4.952296-1.19949 4.952296-1.19949 4.552336-1.35945 4.552336"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R4"} schX={-1.1194696618805011} schY={4.912315886984718} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematictext text={"30.1k"} schX={-1.1194696618805011} schY={4.592315886984717} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematicpath svgPath={"M11.88079-3.955628L11.88079-3.855608"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M11.88079-3.455648L11.88079-3.355628"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M11.80081-3.855608L11.80081-3.455648 11.96077-3.455648 11.96077-3.855608 11.80081-3.855608"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R22"} schX={12.040789717461784} schY={-3.4956276053728583} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematictext text={"9.76k"} schX={12.040789717461784} schY={-3.815627605372857} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="center_left" schRotation={0} />
+      <schematicpath svgPath={"M-1.893377 6.031786L-1.993397 6.031786"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-2.393357 6.031786L-2.493377 6.031786"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-1.993397 5.951806L-2.393357 5.951806-2.393357 6.111766-1.993397 6.111766-1.993397 5.951806"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R2"} schX={-2.1933765632237154} schY={6.191785548865216} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
+      <schematictext text={"100"} schX={-2.1933765632237154} schY={5.8717855488652155} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
+      <schematicpath svgPath={"M-9.752976 4.935097L-9.852996 4.935097"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-10.252956 4.935097L-10.352976 4.935097"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematicpath svgPath={"M-9.852996 4.855117L-10.252956 4.855117-10.252956 5.015077-9.852996 5.015077-9.852996 4.855117"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
+      <schematictext text={"R26"} schX={-10.05297591477536} schY={5.09509726725336} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="bottom_center" schRotation={0} />
+      <schematictext text={"0"} schX={-10.05297591477536} schY={4.77509726725336} fontSize={0.18000000000000002} color={"rgb(15, 15, 15)"} anchor="top_center" schRotation={0} />
       <schematicpath svgPath={"M-2.924502-0.365563L-2.934502-0.695563"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematicpath svgPath={"M-3.154502-0.695563L-2.714502-0.695563"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
       <schematicpath svgPath={"M-3.104502-0.775563L-2.764502-0.775563"} strokeWidth={0.020000000000000004} strokeColor={"rgb(132, 0, 0)"} isFilled={false} fillColor={"none"} />
@@ -1985,7 +2111,8 @@ test(
       <schematictext text={"=EVM_orderable"} schX={6.580129689671143} schY={-8.682115562760538} fontSize={0.18278138026864293} color={"#000080"} anchor="center_left" schRotation={0} />
       </symbol>} />
         </board>
-      )"
+      )
+      export default Lm5155EvmFly"
     `)
     await expect(result.pcbComparisonSvg).toMatchSvgSnapshot(
       import.meta.path,

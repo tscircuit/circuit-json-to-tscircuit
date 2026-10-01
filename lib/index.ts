@@ -15,7 +15,10 @@ export const convertCircuitJsonToTscircuit = (
   const hasBoard = circuitJson.some((el) => el.type === "pcb_board")
 
   if (hasBoard) {
-    return getBoardUsingTemplate({ circuitJson })
+    return getBoardUsingTemplate({
+      circuitJson,
+      componentName: opts.componentName,
+    })
   }
 
   return getComponentUsingTemplate({
