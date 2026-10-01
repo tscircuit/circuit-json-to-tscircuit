@@ -1,5 +1,5 @@
 import type { PcbSilkscreenGraphicBRep } from "circuit-json"
-import { getBulgeArc, type BulgePoint } from "./get-bulge-arc"
+import { getBulgeArc, type BulgePoint } from "../get-bulge-arc"
 
 type SilkscreenRing = PcbSilkscreenGraphicBRep["brep_shape"]["outer_ring"]
 

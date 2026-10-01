@@ -1,6 +1,6 @@
 import type { PcbSilkscreenGraphicBRep } from "circuit-json"
 import { getBrepRingsBounds } from "./get-brep-rings-bounds"
-import { getBulgeArc } from "./get-bulge-arc"
+import { getBulgeArc } from "../get-bulge-arc"
 
 interface SilkscreenGraphicImage {
   center: { x: number; y: number }
