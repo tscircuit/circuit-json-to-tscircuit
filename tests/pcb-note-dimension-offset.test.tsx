@@ -15,32 +15,16 @@ test("preserves PCB note dimension offset direction", async () => {
   const renderedDimension = renderedCircuitJson.find(
     (element) => element.type === "pcb_note_dimension",
   )
-  const extensionPaths = renderedCircuitJson.filter(
-    (element) => element.type === "pcb_note_path",
-  )
-
   expect(renderedDimension).toMatchObject({
-    from: { x: -3, y: -3 },
-    to: { x: 3, y: -3 },
+    from: { x: -3, y: 0 },
+    to: { x: 3, y: 0 },
     layer: "bottom",
+    offset_distance: 0.25,
+    offset_direction: { x: 1, y: -1 },
   })
-  expect(extensionPaths).toHaveLength(2)
-  expect(extensionPaths).toEqual([
-    expect.objectContaining({
-      layer: "bottom",
-      route: [
-        { x: -3, y: 0 },
-        { x: -3, y: -3.5 },
-      ],
-    }),
-    expect.objectContaining({
-      layer: "bottom",
-      route: [
-        { x: 3, y: 0 },
-        { x: 3, y: -3.5 },
-      ],
-    }),
-  ])
+  expect(
+    renderedCircuitJson.filter((element) => element.type === "pcb_note_path"),
+  ).toHaveLength(0)
 
   const comparisonSvg = stackSvgsHorizontally(
     [
@@ -82,7 +66,7 @@ const sourceCircuitJson: CircuitJson = [
     font_size: 0.8,
     color: "#facc15",
     arrow_size: 0.5,
-    offset_distance: 3,
-    offset_direction: { x: 0, y: -1 },
+    offset_distance: 0.25,
+    offset_direction: { x: 1, y: -1 },
   },
 ]
