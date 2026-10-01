@@ -16,6 +16,7 @@ for (const ccwRotationDegrees of [0, 90, 180, 270]) {
         layer: "top",
         is_filled: true,
         stroke_width: 0.1,
+        has_stroke: false,
         ccw_rotation: ccwRotationDegrees,
       },
     ]
@@ -33,5 +34,6 @@ circuit.add(<board width="10mm" height="10mm"><PolarityBar /></board>)
     expect(rectangle?.width).toBe(isQuarterTurn ? 3 : 0.5)
     expect(rectangle?.height).toBe(isQuarterTurn ? 0.5 : 3)
     expect(rectangle?.is_filled).toBe(true)
+    expect(rectangle?.stroke_width).toBe(0)
   })
 }

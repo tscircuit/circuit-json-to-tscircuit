@@ -32,7 +32,9 @@ export const convertSilkscreen: FootprintElementConverter = (circuitJson) => {
       `layer="${silkscreenRect.layer}"`,
     ]
 
-    if (silkscreenRect.stroke_width !== undefined) {
+    if (silkscreenRect.has_stroke === false) {
+      attrs.push("strokeWidth={0}")
+    } else if (silkscreenRect.stroke_width !== undefined) {
       attrs.push(`strokeWidth={${silkscreenRect.stroke_width}}`)
     }
     if (silkscreenRect.is_filled !== undefined) {
