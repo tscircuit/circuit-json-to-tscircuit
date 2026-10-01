@@ -40,14 +40,22 @@ export async function createTiEvmRoundtrip({
   const sourceBoard = sourceCircuitJson.find(
     (element) => element.type === "pcb_board",
   )
-  expect(
-    renderedCircuitJson.find((element) => element.type === "pcb_board"),
-  ).toMatchObject({ center: sourceBoard?.center })
+  const renderedBoard = renderedCircuitJson.find(
+    (element) => element.type === "pcb_board",
+  )
+  if (!sourceBoard || !renderedBoard) {
+    throw new Error(
+      `${fixtureName} must contain source and rendered PCB boards`,
+    )
+  }
+  expect(renderedBoard).toMatchObject({ center: sourceBoard.center })
 
   const sourcePcbSvg = convertCircuitJsonToPcbSvg(sourceCircuitJson, {
+    viewportTarget: { pcb_board_id: sourceBoard.pcb_board_id },
     matchBoardAspectRatio: true,
   })
   const renderedPcbSvg = convertCircuitJsonToPcbSvg(renderedCircuitJson, {
+    viewportTarget: { pcb_board_id: renderedBoard.pcb_board_id },
     matchBoardAspectRatio: true,
   })
   const sourceSchematicSvg = convertCircuitJsonToSchematicSvg(sourceCircuitJson)
