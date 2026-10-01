@@ -1,6 +1,7 @@
 import { su } from "@tscircuit/soup-util"
 import type { FootprintElementConverter } from "./converter-types"
 import { escapeJsxText } from "./footprint-tsx-attribute-formatters/escape-jsx-text"
+import { convertPcbNoteDimension } from "./convert-pcb-note-dimension"
 
 export const convertNotes: FootprintElementConverter = (circuitJson) => {
   const noteTexts = su(circuitJson).pcb_note_text.list()
@@ -80,34 +81,7 @@ export const convertNotes: FootprintElementConverter = (circuitJson) => {
   }
 
   for (const noteDimension of noteDimensions) {
-    const fromPoint = noteDimension.from ?? { x: 0, y: 0 }
-    const toPoint = noteDimension.to ?? { x: 0, y: 0 }
-    const attrs = [
-      `from={{ x: ${fromPoint.x}, y: ${fromPoint.y} }}`,
-      `to={{ x: ${toPoint.x}, y: ${toPoint.y} }}`,
-      `font="${noteDimension.font ?? "tscircuit2024"}"`,
-      `fontSize={${noteDimension.font_size ?? 0}}`,
-    ]
-
-    if (noteDimension.arrow_size !== undefined) {
-      attrs.push(`arrowSize={${noteDimension.arrow_size}}`)
-    }
-
-    if ("offset" in noteDimension) {
-      const offsetValue = (noteDimension as { offset?: number }).offset
-      if (offsetValue !== undefined) {
-        attrs.push(`offset={${offsetValue}}`)
-      }
-    }
-
-    if (noteDimension.text !== undefined) {
-      attrs.push(`text="${escapeJsxText(noteDimension.text)}"`)
-    }
-    if (noteDimension.color !== undefined) {
-      attrs.push(`color="${noteDimension.color}"`)
-    }
-
-    elementStrings.push(`<pcbnotedimension ${attrs.join(" ")} />`)
+    elementStrings.push(...convertPcbNoteDimension(noteDimension))
   }
 
   return elementStrings
