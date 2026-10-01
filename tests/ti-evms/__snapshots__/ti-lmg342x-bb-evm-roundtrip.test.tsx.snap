@@ -2174,10 +2174,10 @@ HVP049A1" />
 <schematictext text={"30V"} schX={-6.1648911533} schY={-0.3673737842} anchor={"top_center"} fontSize={0.18} />
 <schematicpath points={[{"x":-10.444650301065307,"y":0.43686892079666534},{"x":-9.68040759610931,"y":0.43686892079666534},{"x":-9.68040759610931,"y":0.8368689207966653},{"x":-10.444650301065307,"y":0.8368689207966653},{"x":-10.444650301065307,"y":0.43686892079666534}]} strokeWidth={0.02} strokeColor={"#840000"} fillColor={"#ffffc2"} isFilled={true} />
 <schematicline x1={-9.68040759610931} y1={0.6368689207966653} x2={-9.425660027790643} y2={0.6368689207966653} />
-<schematictext text={"1"} schX={-9.78040759610931} schY={0.6368689207966653} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"GND"} schX={-9.78040759610931} schY={0.6368689207966653} anchor={"center_right"} fontSize={0.15} />
 <schematictext text={"4"} schX={-9.553033811949977} schY={0.6568689207966654} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={-10.444650301065307} y1={0.6368689207966653} x2={-10.699397869383974} y2={0.6368689207966653} />
-<schematictext text={"3"} schX={-10.344650301065307} schY={0.6368689207966653} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"VCC"} schX={-10.344650301065307} schY={0.6368689207966653} anchor={"center_left"} fontSize={0.15} />
 <schematictext text={"8"} schX={-10.57202408522464} schY={0.6568689207966654} anchor={"bottom_center"} fontSize={0.15} />
 <schematicpath points={[{"x":7.4698008337,"y":1.4011116258},{"x":7.5698208337,"y":1.4011116258}]} strokeWidth={0.012} isFilled={false} />
 <schematicpath points={[{"x":7.9697808337,"y":1.4011116258},{"x":8.0698008337,"y":1.4011116258}]} strokeWidth={0.012} isFilled={false} />

@@ -3012,10 +3012,10 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematictext text={"LO2"} schX={-2.0106067623899944} schY={-1.5284854099119976} anchor={"center_right"} fontSize={0.15} />
 <schematictext text={"30"} schX={-1.7832329782306617} schY={-1.5084854099119975} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={-4.203334877257989} y1={-0.8916164891153322} x2={-4.458082445576656} y2={-0.8916164891153322} />
-<schematictext text={"F\\\\L\\\\T\\\\"} schX={-4.103334877257989} schY={-0.8916164891153322} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"FLT"} schX={-4.103334877257989} schY={-0.8916164891153322} anchor={"center_left"} fontSize={0.15} />
 <schematictext text={"11"} schX={-4.330708661417322} schY={-0.8716164891153322} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={-4.203334877257989} y1={-3.184344603983326} x2={-4.458082445576656} y2={-3.184344603983326} />
-<schematictext text={"R\\\\S\\\\T\\\\"} schX={-4.103334877257989} schY={-3.184344603983326} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"RST"} schX={-4.103334877257989} schY={-3.184344603983326} anchor={"center_left"} fontSize={0.15} />
 <schematictext text={"38"} schX={-4.330708661417322} schY={-3.164344603983326} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={-4.203334877257989} y1={-2.674849467345993} x2={-4.458082445576656} y2={-2.674849467345993} />
 <schematictext text={"ADDR(CFG1)"} schX={-4.103334877257989} schY={-2.674849467345993} anchor={"center_left"} fontSize={0.15} />
@@ -3048,7 +3048,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematictext text={"EN/UVLO"} schX={-4.103334877257989} schY={0.3821213524779985} anchor={"center_left"} fontSize={0.15} />
 <schematictext text={"37"} schX={-4.330708661417322} schY={0.4021213524779985} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={-1.9106067623899943} y1={0.8916164891153304} x2={-1.6558591940713292} y2={0.8916164891153304} />
-<schematictext text={"FB/I\\\\N\\\\T\\\\"} schX={-2.0106067623899944} schY={0.8916164891153304} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"FB/INT"} schX={-2.0106067623899944} schY={0.8916164891153304} anchor={"center_right"} fontSize={0.15} />
 <schematictext text={"14"} schX={-1.7832329782306617} schY={0.9116164891153304} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={-4.203334877257989} y1={-1.1463640574339973} x2={-4.458082445576656} y2={-1.1463640574339973} />
 <schematictext text={"ILIMCOMP"} schX={-4.103334877257989} schY={-1.1463640574339973} anchor={"center_left"} fontSize={0.15} />
