@@ -2155,11 +2155,11 @@ HVP049A1" />
 <schematictext text={"30V"} schX={-6.1648911533} schY={3.3264659565} anchor={"top_center"} fontSize={0.18} />
 <schematicrect schX={-9.935155164427975} schY={4.075961093098655} width={0.7642427049559981} height={0.4} />
 <schematicline x1={-9.553033811949977} y1={4.075961093098655} x2={-9.29828624363131} y2={4.075961093098655} />
-<schematictext text={"GND"} schX={-9.553033811949977} schY={4.075961093098655} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"4"} schX={-9.425660027790643} schY={4.075961093098655} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"GND"} schX={-9.653033811949976} schY={4.075961093098655} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"4"} schX={-9.425660027790643} schY={4.095961093098655} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={-10.317276516905974} y1={4.075961093098655} x2={-10.57202408522464} y2={4.075961093098655} />
-<schematictext text={"VCC"} schX={-10.317276516905974} schY={4.075961093098655} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"8"} schX={-10.444650301065307} schY={4.075961093098655} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"VCC"} schX={-10.217276516905974} schY={4.075961093098655} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"8"} schX={-10.444650301065307} schY={4.095961093098655} anchor={"bottom_center"} fontSize={0.15} />
 <schematicpath points={[{"x":-6.3048911533,"y":-0.1273737842},{"x":-6.0448911533,"y":0.0026262158000000257}]} isFilled={false} />
 <schematicpath points={[{"x":-6.0448911533,"y":-0.26737378419999996},{"x":-6.3048911533,"y":-0.1273737842}]} isFilled={false} />
 <schematicpath points={[{"x":-6.0448911533,"y":0.0026262158000000257},{"x":-6.0448911533,"y":-0.26737378419999996}]} isFilled={false} />
@@ -2174,11 +2174,11 @@ HVP049A1" />
 <schematictext text={"30V"} schX={-6.1648911533} schY={-0.3673737842} anchor={"top_center"} fontSize={0.18} />
 <schematicrect schX={-10.062528948587309} schY={0.6368689207966653} width={0.7642427049559981} height={0.4} />
 <schematicline x1={-9.68040759610931} y1={0.6368689207966653} x2={-9.425660027790643} y2={0.6368689207966653} />
-<schematictext text={"1"} schX={-9.68040759610931} schY={0.6368689207966653} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"4"} schX={-9.553033811949977} schY={0.6368689207966653} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={-9.78040759610931} schY={0.6368689207966653} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"4"} schX={-9.553033811949977} schY={0.6568689207966654} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={-10.444650301065307} y1={0.6368689207966653} x2={-10.699397869383974} y2={0.6368689207966653} />
-<schematictext text={"3"} schX={-10.444650301065307} schY={0.6368689207966653} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"8"} schX={-10.57202408522464} schY={0.6368689207966653} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"3"} schX={-10.344650301065307} schY={0.6368689207966653} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"8"} schX={-10.57202408522464} schY={0.6568689207966654} anchor={"bottom_center"} fontSize={0.15} />
 <schematicpath points={[{"x":7.4698008337,"y":1.4011116258},{"x":7.5698208337,"y":1.4011116258}]} strokeWidth={0.012} isFilled={false} />
 <schematicpath points={[{"x":7.9697808337,"y":1.4011116258},{"x":8.0698008337,"y":1.4011116258}]} strokeWidth={0.012} isFilled={false} />
 <schematicpath points={[{"x":7.5698208337,"y":1.4810916258},{"x":7.9697808337,"y":1.4810916258},{"x":7.9697808337,"y":1.3211316258},{"x":7.5698208337,"y":1.3211316258},{"x":7.5698208337,"y":1.4810916258}]} strokeWidth={0.012} isFilled={false} />
@@ -2270,60 +2270,60 @@ HVP049A1" />
 <schematictext text={"HS_FLT"} schX={9.937725798999999} schY={3.6290921723} anchor={"center_left"} fontSize={0.18} />
 <schematicrect schX={-10.189902732746642} schY={-2.878647522000927} width={0.4} height={0.4} />
 <schematicline x1={-10.189902732746642} y1={-3.078647522000927} x2={-10.189902732746642} y2={-3.0569708198239933} />
-<schematictext text={"1"} schX={-10.189902732746642} schY={-3.078647522000927} anchor={"center"} fontSize={0.18} />
-<schematictext text={"1"} schX={-10.189902732746642} schY={-3.06780917091246} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={-10.189902732746642} schY={-2.978647522000927} anchor={"center_left"} fontSize={0.15} schRotation={-90} />
+<schematictext text={"1"} schX={-10.209902732746642} schY={-3.06780917091246} anchor={"bottom_center"} fontSize={0.15} schRotation={-90} />
 <schematicrect schX={-10.699397869383974} schY={-2.878647522000927} width={0.4} height={0.4} />
 <schematicline x1={-10.699397869383974} y1={-3.078647522000927} x2={-10.699397869383974} y2={-3.0569708198239933} />
-<schematictext text={"1"} schX={-10.699397869383974} schY={-3.078647522000927} anchor={"center"} fontSize={0.18} />
-<schematictext text={"1"} schX={-10.699397869383974} schY={-3.06780917091246} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={-10.699397869383974} schY={-2.978647522000927} anchor={"center_left"} fontSize={0.15} schRotation={-90} />
+<schematictext text={"1"} schX={-10.719397869383974} schY={-3.06780917091246} anchor={"bottom_center"} fontSize={0.15} schRotation={-90} />
 <schematicrect schX={-10.699397869383974} schY={-4.254284390921724} width={0.4} height={0.4} />
 <schematicline x1={-10.699397869383974} y1={-4.054284390921723} x2={-10.699397869383974} y2={-4.075961093098657} />
-<schematictext text={"1"} schX={-10.699397869383974} schY={-4.054284390921723} anchor={"center"} fontSize={0.18} />
-<schematictext text={"1"} schX={-10.699397869383974} schY={-4.065122742010191} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={-10.699397869383974} schY={-4.154284390921723} anchor={"center_right"} fontSize={0.15} schRotation={-90} />
+<schematictext text={"1"} schX={-10.719397869383974} schY={-4.065122742010191} anchor={"bottom_center"} fontSize={0.15} schRotation={-90} />
 <schematicrect schX={-10.189902732746642} schY={-4.254284390921724} width={0.4} height={0.4} />
 <schematicline x1={-10.189902732746642} y1={-4.054284390921723} x2={-10.189902732746642} y2={-4.075961093098657} />
-<schematictext text={"1"} schX={-10.189902732746642} schY={-4.054284390921723} anchor={"center"} fontSize={0.18} />
-<schematictext text={"1"} schX={-10.189902732746642} schY={-4.065122742010191} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={-10.189902732746642} schY={-4.154284390921723} anchor={"center_right"} fontSize={0.15} schRotation={-90} />
+<schematictext text={"1"} schX={-10.209902732746642} schY={-4.065122742010191} anchor={"bottom_center"} fontSize={0.15} schRotation={-90} />
 <schematicrect schX={-0.2547475683186651} schY={-4.7637795275590555} width={0.4} height={0.4} />
 <schematicline x1={-0.2547475683186651} y1={-4.563779527559055} x2={-0.2547475683186651} y2={-4.585456229735989} />
-<schematictext text={"1"} schX={-0.2547475683186651} schY={-4.563779527559055} anchor={"center"} fontSize={0.18} />
-<schematictext text={"1"} schX={-0.2547475683186651} schY={-4.574617878647523} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={-0.2547475683186651} schY={-4.663779527559055} anchor={"center_right"} fontSize={0.15} schRotation={-90} />
+<schematictext text={"1"} schX={-0.2747475683186651} schY={-4.574617878647523} anchor={"bottom_center"} fontSize={0.15} schRotation={-90} />
 <schematicrect schX={4.458082445576656} schY={-4.534506716072256} width={0.4} height={0.4} />
 <schematicline x1={4.458082445576656} y1={-4.734506716072256} x2={4.458082445576656} y2={-4.7128300138953225} />
-<schematictext text={"1"} schX={4.458082445576656} schY={-4.734506716072256} anchor={"center"} fontSize={0.18} />
-<schematictext text={"1"} schX={4.458082445576656} schY={-4.723668364983789} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={4.458082445576656} schY={-4.634506716072257} anchor={"center_left"} fontSize={0.15} schRotation={-90} />
+<schematictext text={"1"} schX={4.438082445576656} schY={-4.723668364983789} anchor={"bottom_center"} fontSize={0.15} schRotation={-90} />
 <schematicrect schX={3.5664659564613235} schY={-6.190365910143585} width={0.4} height={0.4} />
 <schematicline x1={3.5664659564613235} y1={-6.3903659101435855} x2={3.5664659564613235} y2={-6.368689207966652} />
-<schematictext text={"1"} schX={3.5664659564613235} schY={-6.3903659101435855} anchor={"center"} fontSize={0.18} />
-<schematictext text={"1"} schX={3.5664659564613235} schY={-6.379527559055118} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={3.5664659564613235} schY={-6.290365910143586} anchor={"center_left"} fontSize={0.15} schRotation={-90} />
+<schematictext text={"1"} schX={3.5464659564613235} schY={-6.379527559055118} anchor={"bottom_center"} fontSize={0.15} schRotation={-90} />
 <schematicrect schX={3.5664659564613235} schY={-7.1838814265863835} width={0.4} height={0.4} />
 <schematicline x1={3.5664659564613235} y1={-6.983881426586383} x2={3.5664659564613235} y2={-7.005558128763317} />
-<schematictext text={"1"} schX={3.5664659564613235} schY={-6.983881426586383} anchor={"center"} fontSize={0.18} />
-<schematictext text={"1"} schX={3.5664659564613235} schY={-6.994719777674851} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={3.5664659564613235} schY={-7.083881426586383} anchor={"center_right"} fontSize={0.15} schRotation={-90} />
+<schematictext text={"1"} schX={3.5464659564613235} schY={-6.994719777674851} anchor={"bottom_center"} fontSize={0.15} schRotation={-90} />
 <schematicrect schX={8.202871699861047} schY={-6.878184344603984} width={0.4} height={0.4} />
 <schematicline x1={8.002871699861048} y1={-6.878184344603984} x2={8.024548402037981} y2={-6.878184344603984} />
-<schematictext text={"1"} schX={8.002871699861048} schY={-6.878184344603984} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"1"} schX={8.013710050949514} schY={-6.878184344603984} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={8.102871699861048} schY={-6.878184344603984} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"1"} schX={8.013710050949514} schY={-6.858184344603984} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={8.737841593330247} schY={-6.878184344603984} width={0.4} height={0.4} />
 <schematicline x1={8.937841593330246} y1={-6.878184344603984} x2={8.916164891153313} y2={-6.878184344603984} />
-<schematictext text={"1"} schX={8.937841593330246} schY={-6.878184344603984} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"1"} schX={8.92700324224178} schY={-6.878184344603984} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={8.837841593330246} schY={-6.878184344603984} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"1"} schX={8.92700324224178} schY={-6.858184344603984} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={-9.680407596109308} schY={3.235294117647058} width={0.4} height={0.4} />
 <schematicline x1={-9.680407596109308} y1={3.035294117647058} x2={-9.680407596109308} y2={3.0569708198239915} />
-<schematictext text={"1"} schX={-9.680407596109308} schY={3.035294117647058} anchor={"center"} fontSize={0.18} />
-<schematictext text={"1"} schX={-9.680407596109308} schY={3.0461324687355247} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={-9.680407596109308} schY={3.135294117647058} anchor={"center_left"} fontSize={0.15} schRotation={-90} />
+<schematictext text={"1"} schX={-9.700407596109308} schY={3.0461324687355247} anchor={"bottom_center"} fontSize={0.15} schRotation={-90} />
 <schematicrect schX={-9.680407596109308} schY={-0.4585456229735989} width={0.4} height={0.4} />
 <schematicline x1={-9.680407596109308} y1={-0.6585456229735989} x2={-9.680407596109308} y2={-0.6368689207966653} />
-<schematictext text={"1"} schX={-9.680407596109308} schY={-0.6585456229735989} anchor={"center"} fontSize={0.18} />
-<schematictext text={"1"} schX={-9.680407596109308} schY={-0.6477072718851321} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={-9.680407596109308} schY={-0.5585456229735989} anchor={"center_left"} fontSize={0.15} schRotation={-90} />
+<schematictext text={"1"} schX={-9.700407596109308} schY={-0.6477072718851321} anchor={"bottom_center"} fontSize={0.15} schRotation={-90} />
 <schematicrect schX={1.1973135710977303} schY={2.92959703566466} width={0.4} height={0.4} />
 <schematicline x1={0.9973135710977303} y1={2.92959703566466} x2={1.0189902732746638} y2={2.92959703566466} />
-<schematictext text={"1"} schX={0.9973135710977303} schY={2.92959703566466} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"1"} schX={1.008151922186197} schY={2.92959703566466} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={1.0973135710977304} schY={2.92959703566466} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"1"} schX={1.008151922186197} schY={2.94959703566466} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={1.1973135710977303} schY={-0.7642427049559988} width={0.4} height={0.4} />
 <schematicline x1={0.9973135710977303} y1={-0.7642427049559988} x2={1.0189902732746638} y2={-0.7642427049559988} />
-<schematictext text={"1"} schX={0.9973135710977303} schY={-0.7642427049559988} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"1"} schX={1.008151922186197} schY={-0.7642427049559988} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={1.0973135710977304} schY={-0.7642427049559988} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"1"} schX={1.008151922186197} schY={-0.7442427049559988} anchor={"bottom_center"} fontSize={0.15} />
 <schematicpath points={[{"x":9.737725799,"y":0.2421213525},{"x":9.877725799,"y":0.5121213525}]} isFilled={false} />
 <schematicpath points={[{"x":9.737725799,"y":0.2521213525},{"x":9.737725799,"y":-0.15787864750000002}]} isFilled={false} />
 <schematicpath points={[{"x":9.607725798999999,"y":0.5121213525},{"x":9.737725799,"y":0.2421213525}]} isFilled={false} />
@@ -2338,28 +2338,28 @@ HVP049A1" />
 <schematictext text={"LS_FLT"} schX={9.937725798999999} schY={0.5721213525} anchor={"center_left"} fontSize={0.18} />
 <schematicrect schX={-6.113941639647985} schY={3.0060213061602585} width={0.4} height={0.4} />
 <schematicline x1={-5.913941639647985} y1={3.0569708198239915} x2={-5.859194071329318} y2={3.0569708198239915} />
-<schematictext text={"CW"} schX={-5.913941639647985} schY={3.0569708198239915} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"3"} schX={-5.886567855488652} schY={3.0569708198239915} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"CW"} schX={-6.013941639647984} schY={3.0569708198239915} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"3"} schX={-5.886567855488652} schY={3.0769708198239916} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={-6.313941639647985} y1={3.0569708198239915} x2={-6.368689207966651} y2={3.0569708198239915} />
-<schematictext text={"CCW"} schX={-6.313941639647985} schY={3.0569708198239915} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"1"} schX={-6.341315423807318} schY={3.0569708198239915} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"CCW"} schX={-6.213941639647985} schY={3.0569708198239915} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"1"} schX={-6.341315423807318} schY={3.0769708198239916} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={-6.113941639647985} y1={2.8060213061602584} x2={-6.113941639647985} y2={2.8022232515053265} />
-<schematictext text={"WIPER"} schX={-6.113941639647985} schY={2.8060213061602584} anchor={"center"} fontSize={0.18} />
-<schematictext text={"2"} schX={-6.113941639647985} schY={2.8041222788327924} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"WIPER"} schX={-6.113941639647985} schY={2.9060213061602584} anchor={"center_left"} fontSize={0.15} schRotation={-90} />
+<schematictext text={"2"} schX={-6.1339416396479844} schY={2.8041222788327924} anchor={"bottom_center"} fontSize={0.15} schRotation={-90} />
 <schematicrect schX={-6.113941639647985} schY={-0.6878184344603984} width={0.4} height={0.4} />
 <schematicline x1={-5.913941639647985} y1={-0.6368689207966653} x2={-5.859194071329318} y2={-0.6368689207966653} />
-<schematictext text={"CW"} schX={-5.913941639647985} schY={-0.6368689207966653} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"3"} schX={-5.886567855488652} schY={-0.6368689207966653} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"CW"} schX={-6.013941639647984} schY={-0.6368689207966653} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"3"} schX={-5.886567855488652} schY={-0.6168689207966653} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={-6.313941639647985} y1={-0.6368689207966653} x2={-6.368689207966651} y2={-0.6368689207966653} />
-<schematictext text={"CCW"} schX={-6.313941639647985} schY={-0.6368689207966653} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"1"} schX={-6.341315423807318} schY={-0.6368689207966653} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"CCW"} schX={-6.213941639647985} schY={-0.6368689207966653} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"1"} schX={-6.341315423807318} schY={-0.6168689207966653} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={-6.113941639647985} y1={-0.8878184344603983} x2={-6.113941639647985} y2={-0.8916164891153322} />
-<schematictext text={"WIPER"} schX={-6.113941639647985} schY={-0.8878184344603983} anchor={"center"} fontSize={0.18} />
-<schematictext text={"2"} schX={-6.113941639647985} schY={-0.8897174617878653} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"WIPER"} schX={-6.113941639647985} schY={-0.7878184344603983} anchor={"center_left"} fontSize={0.15} schRotation={-90} />
+<schematictext text={"2"} schX={-6.1339416396479844} schY={-0.8897174617878653} anchor={"bottom_center"} fontSize={0.15} schRotation={-90} />
 <schematicrect schX={-0.2547475683186651} schY={-2.2417786012042615} width={0.4} height={0.4} />
 <schematicline x1={-0.2547475683186651} y1={-2.4417786012042617} x2={-0.2547475683186651} y2={-2.420101899027328} />
-<schematictext text={"1"} schX={-0.2547475683186651} schY={-2.4417786012042617} anchor={"center"} fontSize={0.18} />
-<schematictext text={"1"} schX={-0.2547475683186651} schY={-2.430940250115795} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={-0.2547475683186651} schY={-2.3417786012042616} anchor={"center_left"} fontSize={0.15} schRotation={-90} />
+<schematictext text={"1"} schX={-0.2747475683186651} schY={-2.430940250115795} anchor={"bottom_center"} fontSize={0.15} schRotation={-90} />
 <schematicpath points={[{"x":-9.1709124595,"y":-3.8027790643999997},{"x":-9.1709124595,"y":-3.5627790644}]} strokeWidth={0.012} isFilled={false} />
 <schematicpath points={[{"x":-9.1709124595,"y":-3.4427790644},{"x":-9.1709124595,"y":-3.2027790644}]} strokeWidth={0.012} isFilled={false} />
 <schematicpath points={[{"x":-9.0108924595,"y":-3.5627790644},{"x":-9.3309324595,"y":-3.5627790644}]} strokeWidth={0.012} isFilled={false} />
@@ -2411,16 +2411,16 @@ HVP049A1" />
 <schematictext text={"3.3k"} schX={9.8404075961} schY={-0.5421213525} anchor={"center_left"} fontSize={0.18} />
 <schematicrect schX={8.024548402037981} schY={-6.368689207966652} width={0.4} height={0.4} />
 <schematicline x1={8.22454840203798} y1={-6.368689207966652} x2={8.024548402037981} y2={-6.368689207966652} />
-<schematictext text={"1"} schX={8.22454840203798} schY={-6.368689207966652} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"1"} schX={8.12454840203798} schY={-6.368689207966652} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={8.12454840203798} schY={-6.368689207966652} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"1"} schX={8.12454840203798} schY={-6.348689207966652} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={6.878184344603982} schY={-6.368689207966652} width={0.4} height={0.4} />
 <schematicline x1={6.678184344603982} y1={-6.368689207966652} x2={6.878184344603982} y2={-6.368689207966652} />
-<schematictext text={"1"} schX={6.678184344603982} schY={-6.368689207966652} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"1"} schX={6.778184344603982} schY={-6.368689207966652} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={6.778184344603981} schY={-6.368689207966652} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"1"} schX={6.778184344603982} schY={-6.348689207966652} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={6.878184344603982} schY={-7.13293191292265} width={0.4} height={0.4} />
 <schematicline x1={6.678184344603982} y1={-7.13293191292265} x2={6.878184344603982} y2={-7.13293191292265} />
-<schematictext text={"1"} schX={6.678184344603982} schY={-7.13293191292265} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"1"} schX={6.778184344603982} schY={-7.13293191292265} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={6.778184344603981} schY={-7.13293191292265} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"1"} schX={6.778184344603982} schY={-7.11293191292265} anchor={"bottom_center"} fontSize={0.15} />
 <schematicpath points={[{"x":-2.9295970357,"y":1.2284854099},{"x":-2.9295970357,"y":1.3285054099}]} strokeWidth={0.012} isFilled={false} />
 <schematicpath points={[{"x":-2.9295970357,"y":1.7284654099},{"x":-2.9295970357,"y":1.8284854099}]} strokeWidth={0.012} isFilled={false} />
 <schematicpath points={[{"x":-3.0095770357,"y":1.3285054099},{"x":-3.0095770357,"y":1.7284654099},{"x":-2.8496170357,"y":1.7284654099},{"x":-2.8496170357,"y":1.3285054099},{"x":-3.0095770357,"y":1.3285054099}]} strokeWidth={0.012} isFilled={false} />
@@ -2606,119 +2606,119 @@ HVP049A1" />
 <schematictext text={"100"} schX={3.5664659565} schY={-1.4337378416} anchor={"top_center"} fontSize={0.18} />
 <schematicrect schX={-10.113478462251042} schY={-2.0379805465493295} width={0.4} height={0.4} />
 <schematicline x1={-9.913478462251042} y1={-2.0379805465493295} x2={-9.935155164427975} y2={-2.0379805465493295} />
-<schematictext text={"1"} schX={-9.913478462251042} schY={-2.0379805465493295} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"1"} schX={-9.924316813339509} schY={-2.0379805465493295} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={-10.013478462251042} schY={-2.0379805465493295} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"1"} schX={-9.924316813339509} schY={-2.0179805465493295} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={8.330245484020379} schY={-4.7128300138953225} width={0.4} height={0.4} />
 <schematicline x1={8.13024548402038} y1={-4.7128300138953225} x2={8.151922186197313} y2={-4.7128300138953225} />
-<schematictext text={"1"} schX={8.13024548402038} schY={-4.7128300138953225} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"1"} schX={8.141083835108846} schY={-4.7128300138953225} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={8.23024548402038} schY={-4.7128300138953225} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"1"} schX={8.141083835108846} schY={-4.692830013895323} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={8.330245484020379} schY={-5.094951366373321} width={0.4} height={0.4} />
 <schematicline x1={8.13024548402038} y1={-5.094951366373321} x2={8.151922186197313} y2={-5.094951366373321} />
-<schematictext text={"1"} schX={8.13024548402038} schY={-5.094951366373321} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"1"} schX={8.141083835108846} schY={-5.094951366373321} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={8.23024548402038} schY={-5.094951366373321} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"1"} schX={8.141083835108846} schY={-5.0749513663733214} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={8.457619268179714} schY={-6.368689207966652} width={0.4} height={0.4} />
 <schematicline x1={8.257619268179715} y1={-6.368689207966652} x2={8.279295970356648} y2={-6.368689207966652} />
-<schematictext text={"1"} schX={8.257619268179715} schY={-6.368689207966652} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"1"} schX={8.268457619268181} schY={-6.368689207966652} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={8.357619268179715} schY={-6.368689207966652} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"1"} schX={8.268457619268181} schY={-6.348689207966652} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={8.457619268179714} schY={-6.75081056044465} width={0.4} height={0.4} />
 <schematicline x1={8.257619268179715} y1={-6.75081056044465} x2={8.279295970356648} y2={-6.75081056044465} />
-<schematictext text={"1"} schX={8.257619268179715} schY={-6.75081056044465} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"1"} schX={8.268457619268181} schY={-6.75081056044465} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={8.357619268179715} schY={-6.75081056044465} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"1"} schX={8.268457619268181} schY={-6.730810560444651} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={8.457619268179714} schY={-7.769800833719315} width={0.4} height={0.4} />
 <schematicline x1={8.257619268179715} y1={-7.769800833719315} x2={8.279295970356648} y2={-7.769800833719315} />
-<schematictext text={"1"} schX={8.257619268179715} schY={-7.769800833719315} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"1"} schX={8.268457619268181} schY={-7.769800833719315} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={8.357619268179715} schY={-7.769800833719315} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"1"} schX={8.268457619268181} schY={-7.749800833719315} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={8.457619268179714} schY={-8.151922186197314} width={0.4} height={0.4} />
 <schematicline x1={8.257619268179715} y1={-8.151922186197314} x2={8.279295970356648} y2={-8.151922186197314} />
-<schematictext text={"1"} schX={8.257619268179715} schY={-8.151922186197314} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"1"} schX={8.268457619268181} schY={-8.151922186197314} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={8.357619268179715} schY={-8.151922186197314} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"1"} schX={8.268457619268181} schY={-8.131922186197315} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={-4.203334877257989} schY={-3.439092172301992} width={1.2737378415933303} height={1.2737378415933303} />
 <schematicline x1={-4.840203798054654} y1={-3.0569708198239933} x2={-5.094951366373321} y2={-3.0569708198239933} />
-<schematictext text={"VIN"} schX={-4.840203798054654} schY={-3.0569708198239933} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"1"} schX={-4.967577582213988} schY={-3.0569708198239933} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"VIN"} schX={-4.7402037980546545} schY={-3.0569708198239933} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"1"} schX={-4.967577582213988} schY={-3.0369708198239933} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={-4.840203798054654} y1={-3.3117183881426593} x2={-5.094951366373321} y2={-3.3117183881426593} />
-<schematictext text={"EN"} schX={-4.840203798054654} schY={-3.3117183881426593} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"3"} schX={-4.967577582213988} schY={-3.3117183881426593} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"EN"} schX={-4.7402037980546545} schY={-3.3117183881426593} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"3"} schX={-4.967577582213988} schY={-3.2917183881426593} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={-4.840203798054654} y1={-3.5664659564613252} x2={-5.094951366373321} y2={-3.5664659564613252} />
-<schematictext text={"SS"} schX={-4.840203798054654} schY={-3.5664659564613252} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"5"} schX={-4.967577582213988} schY={-3.5664659564613252} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"SS"} schX={-4.7402037980546545} schY={-3.5664659564613252} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"5"} schX={-4.967577582213988} schY={-3.5464659564613252} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={-3.5664659564613235} y1={-3.5664659564613252} x2={-3.3117183881426584} y2={-3.5664659564613252} />
-<schematictext text={"GND"} schX={-3.5664659564613235} schY={-3.5664659564613252} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"4"} schX={-3.439092172301991} schY={-3.5664659564613252} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"GND"} schX={-3.6664659564613236} schY={-3.5664659564613252} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"4"} schX={-3.439092172301991} schY={-3.5464659564613252} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={-3.5664659564613235} y1={-3.3117183881426593} x2={-3.3117183881426584} y2={-3.3117183881426593} />
-<schematictext text={"FB"} schX={-3.5664659564613235} schY={-3.3117183881426593} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"6"} schX={-3.439092172301991} schY={-3.3117183881426593} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"FB"} schX={-3.6664659564613236} schY={-3.3117183881426593} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"6"} schX={-3.439092172301991} schY={-3.2917183881426593} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={-4.840203798054654} y1={-3.821213524779991} x2={-5.094951366373321} y2={-3.821213524779991} />
-<schematictext text={"RON"} schX={-4.840203798054654} schY={-3.821213524779991} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"2"} schX={-4.967577582213988} schY={-3.821213524779991} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"RON"} schX={-4.7402037980546545} schY={-3.821213524779991} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"2"} schX={-4.967577582213988} schY={-3.801213524779991} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={-3.5664659564613235} y1={-3.0569708198239933} x2={-3.3117183881426584} y2={-3.0569708198239933} />
-<schematictext text={"VOUT"} schX={-3.5664659564613235} schY={-3.0569708198239933} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"7"} schX={-3.439092172301991} schY={-3.0569708198239933} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"VOUT"} schX={-3.6664659564613236} schY={-3.0569708198239933} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"7"} schX={-3.439092172301991} schY={-3.0369708198239933} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={-3.5664659564613235} y1={-3.821213524779991} x2={-3.3117183881426584} y2={-3.821213524779991} />
-<schematictext text={"EP"} schX={-3.5664659564613235} schY={-3.821213524779991} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"8"} schX={-3.439092172301991} schY={-3.821213524779991} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"EP"} schX={-3.6664659564613236} schY={-3.821213524779991} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"8"} schX={-3.439092172301991} schY={-3.801213524779991} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={2.5474756831866596} schY={3.8212135247799903} width={0.4} height={0.5094951366373321} />
 <schematicline x1={2.74747568318666} y1={3.8212135247799903} x2={2.929597035664658} y2={3.8212135247799903} />
-<schematictext text={"1"} schX={2.74747568318666} schY={3.8212135247799903} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"1"} schX={2.838536359425659} schY={3.8212135247799903} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={2.6474756831866597} schY={3.8212135247799903} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"1"} schX={2.838536359425659} schY={3.8412135247799903} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={2.5474756831866596} schY={3.184344603983325} width={0.4} height={0.5094951366373321} />
 <schematicline x1={2.74747568318666} y1={3.184344603983325} x2={2.929597035664658} y2={3.184344603983325} />
-<schematictext text={"1"} schX={2.74747568318666} schY={3.184344603983325} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"1"} schX={2.838536359425659} schY={3.184344603983325} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={2.6474756831866597} schY={3.184344603983325} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"1"} schX={2.838536359425659} schY={3.204344603983325} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={2.5474756831866596} schY={2.5474756831866596} width={0.4} height={0.5094951366373321} />
 <schematicline x1={2.74747568318666} y1={2.5474756831866596} x2={2.929597035664658} y2={2.5474756831866596} />
-<schematictext text={"1"} schX={2.74747568318666} schY={2.5474756831866596} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"1"} schX={2.838536359425659} schY={2.5474756831866596} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={2.6474756831866597} schY={2.5474756831866596} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"1"} schX={2.838536359425659} schY={2.5674756831866596} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={2.5474756831866596} schY={1.9106067623899943} width={0.4} height={0.5094951366373321} />
 <schematicline x1={2.74747568318666} y1={1.9106067623899943} x2={2.929597035664658} y2={1.9106067623899943} />
-<schematictext text={"1"} schX={2.74747568318666} schY={1.9106067623899943} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"1"} schX={2.838536359425659} schY={1.9106067623899943} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={2.6474756831866597} schY={1.9106067623899943} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"1"} schX={2.838536359425659} schY={1.9306067623899943} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={2.5474756831866596} schY={1.273737841593329} width={0.4} height={0.5094951366373321} />
 <schematicline x1={2.74747568318666} y1={1.273737841593329} x2={2.929597035664658} y2={1.273737841593329} />
-<schematictext text={"1"} schX={2.74747568318666} schY={1.273737841593329} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"1"} schX={2.838536359425659} schY={1.273737841593329} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={2.6474756831866597} schY={1.273737841593329} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"1"} schX={2.838536359425659} schY={1.293737841593329} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={2.5474756831866596} schY={0.6368689207966653} width={0.4} height={0.5094951366373321} />
 <schematicline x1={2.74747568318666} y1={0.6368689207966653} x2={2.929597035664658} y2={0.6368689207966653} />
-<schematictext text={"1"} schX={2.74747568318666} schY={0.6368689207966653} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"1"} schX={2.838536359425659} schY={0.6368689207966653} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={2.6474756831866597} schY={0.6368689207966653} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"1"} schX={2.838536359425659} schY={0.6568689207966654} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={2.5474756831866596} schY={0} width={0.4} height={0.5094951366373321} />
 <schematicline x1={2.74747568318666} y1={0} x2={2.929597035664658} y2={0} />
-<schematictext text={"1"} schX={2.74747568318666} schY={0} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"1"} schX={2.838536359425659} schY={0} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={2.6474756831866597} schY={0} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"1"} schX={2.838536359425659} schY={0.02} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={2.5474756831866596} schY={-0.6368689207966653} width={0.4} height={0.5094951366373321} />
 <schematicline x1={2.74747568318666} y1={-0.6368689207966653} x2={2.929597035664658} y2={-0.6368689207966653} />
-<schematictext text={"1"} schX={2.74747568318666} schY={-0.6368689207966653} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"1"} schX={2.838536359425659} schY={-0.6368689207966653} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={2.6474756831866597} schY={-0.6368689207966653} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"1"} schX={2.838536359425659} schY={-0.6168689207966653} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={2.5474756831866596} schY={4.458082445576656} width={0.4} height={0.5094951366373321} />
 <schematicline x1={2.74747568318666} y1={4.458082445576656} x2={2.929597035664658} y2={4.458082445576656} />
-<schematictext text={"1"} schX={2.74747568318666} schY={4.458082445576656} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"1"} schX={2.838536359425659} schY={4.458082445576656} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={2.6474756831866597} schY={4.458082445576656} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"1"} schX={2.838536359425659} schY={4.478082445576655} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={2.5474756831866596} schY={5.094951366373321} width={0.4} height={0.5094951366373321} />
 <schematicline x1={2.74747568318666} y1={5.094951366373321} x2={2.929597035664658} y2={5.094951366373321} />
-<schematictext text={"1"} schX={2.74747568318666} schY={5.094951366373321} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"1"} schX={2.838536359425659} schY={5.094951366373321} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={2.6474756831866597} schY={5.094951366373321} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"1"} schX={2.838536359425659} schY={5.114951366373321} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={2.5474756831866596} schY={-1.2737378415933307} width={0.4} height={0.5094951366373321} />
 <schematicline x1={2.74747568318666} y1={-1.2737378415933307} x2={2.929597035664658} y2={-1.2737378415933307} />
-<schematictext text={"1"} schX={2.74747568318666} schY={-1.2737378415933307} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"1"} schX={2.838536359425659} schY={-1.2737378415933307} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={2.6474756831866597} schY={-1.2737378415933307} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"1"} schX={2.838536359425659} schY={-1.2537378415933307} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={2.5474756831866596} schY={-1.910606762389996} width={0.4} height={0.5094951366373321} />
 <schematicline x1={2.74747568318666} y1={-1.910606762389996} x2={2.929597035664658} y2={-1.910606762389996} />
-<schematictext text={"1"} schX={2.74747568318666} schY={-1.910606762389996} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"1"} schX={2.838536359425659} schY={-1.910606762389996} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"1"} schX={2.6474756831866597} schY={-1.910606762389996} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"1"} schX={2.838536359425659} schY={-1.890606762389996} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={0} schY={3.9485873089393237} width={0.7642427049559981} height={0.4} />
 <schematicline x1={-0.38212135247799905} y1={3.9485873089393237} x2={-0.6368689207966653} y2={3.9485873089393237} />
-<schematictext text={"VCC"} schX={-0.38212135247799905} schY={3.9485873089393237} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"8"} schX={-0.5094951366373321} schY={3.9485873089393237} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"VCC"} schX={-0.2821213524779991} schY={3.9485873089393237} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"8"} schX={-0.5094951366373321} schY={3.9685873089393238} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={0.38212135247799905} y1={3.9485873089393237} x2={0.6368689207966653} y2={3.9485873089393237} />
-<schematictext text={"GND"} schX={0.38212135247799905} schY={3.9485873089393237} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"4"} schX={0.5094951366373321} schY={3.9485873089393237} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"GND"} schX={0.2821213524779991} schY={3.9485873089393237} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"4"} schX={0.5094951366373321} schY={3.9685873089393238} anchor={"bottom_center"} fontSize={0.15} />
 <schematicrect schX={-2.2927281148679945} schY={3.9485873089393237} width={0.7642427049559981} height={0.4} />
 <schematicline x1={-2.6748494673459935} y1={3.9485873089393237} x2={-2.92959703566466} y2={3.9485873089393237} />
-<schematictext text={"VCC"} schX={-2.6748494673459935} schY={3.9485873089393237} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"8"} schX={-2.8022232515053265} schY={3.9485873089393237} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"VCC"} schX={-2.5748494673459934} schY={3.9485873089393237} anchor={"center_left"} fontSize={0.15} />
+<schematictext text={"8"} schX={-2.8022232515053265} schY={3.9685873089393238} anchor={"bottom_center"} fontSize={0.15} />
 <schematicline x1={-1.9106067623899956} y1={3.9485873089393237} x2={-1.6558591940713292} y2={3.9485873089393237} />
-<schematictext text={"GND"} schX={-1.9106067623899956} schY={3.9485873089393237} anchor={"center_right"} fontSize={0.18} />
-<schematictext text={"4"} schX={-1.7832329782306624} schY={3.9485873089393237} anchor={"bottom_center"} fontSize={0.18} />
+<schematictext text={"GND"} schX={-2.0106067623899957} schY={3.9485873089393237} anchor={"center_right"} fontSize={0.15} />
+<schematictext text={"4"} schX={-1.7832329782306624} schY={3.9685873089393238} anchor={"bottom_center"} fontSize={0.15} />
 <schematicpath points={[{"x":8.671417322834646,"y":2.2006067623899943},{"x":8.661417322834646,"y":1.8706067623899942}]} isFilled={true} />
 <schematicpath points={[{"x":8.441417322834646,"y":1.8706067623899942},{"x":8.881417322834647,"y":1.8706067623899942}]} isFilled={true} />
 <schematicpath points={[{"x":8.491417322834646,"y":1.7906067623899942},{"x":8.831417322834646,"y":1.7906067623899944}]} isFilled={true} />
