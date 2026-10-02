@@ -58,6 +58,43 @@ export const getPinAttributes = (circuitJson: AnyCircuitElement[]) => {
   // attributes into a single chip.
   if (components.length > 1) return undefined
   const componentId = components[0]?.source_component_id
+  const schematicComponentIds = new Set(
+    circuitJson
+      .filter((element) => element.type === "schematic_component")
+      .filter(
+        (element) =>
+          !componentId || element.source_component_id === componentId,
+      )
+      .map(
+        (element) =>
+          (element as { schematic_component_id?: string })
+            .schematic_component_id,
+      )
+      .filter((id): id is string => id !== undefined),
+  )
+  // Arrowheads are the only place some imported boards record power pins:
+  // core derives has_output_arrow/has_input_arrow from providesPower/
+  // requiresPower, so reading them back lets the arrow survive the round trip.
+  // Only ports belonging to this component count; a scoped circuit can still
+  // carry another component's schematic elements.
+  const arrowPins = new Map<
+    string,
+    { has_output_arrow: boolean; has_input_arrow: boolean }
+  >()
+  for (const port of circuitJson) {
+    if (port.type !== "schematic_port") continue
+    if (
+      !port.schematic_component_id ||
+      !schematicComponentIds.has(port.schematic_component_id)
+    )
+      continue
+    if (port.has_output_arrow || port.has_input_arrow) {
+      arrowPins.set(port.source_port_id, {
+        has_output_arrow: port.has_output_arrow === true,
+        has_input_arrow: port.has_input_arrow === true,
+      })
+    }
+  }
   const pins = new Map<string, Record<string, unknown>>()
   for (const port of circuitJson) {
     if (port.type !== "source_port") continue
@@ -82,6 +119,18 @@ export const getPinAttributes = (circuitJson: AnyCircuitElement[]) => {
     )
     if (supported.length) attributes.capabilities = supported
     if (active.length) attributes.activeCapabilities = active
+    // Only ever add power flags the source port left unstated, and only from a
+    // positive arrow. A missing arrow is not evidence of absent power behavior,
+    // so nothing is inferred or removed when the schematic is silent.
+    const arrows = arrowPins.get(port.source_port_id)
+    if (arrows) {
+      if (arrows.has_output_arrow && attributes.providesPower === undefined) {
+        attributes.providesPower = true
+      }
+      if (arrows.has_input_arrow && attributes.requiresPower === undefined) {
+        attributes.requiresPower = true
+      }
+    }
     if (Object.keys(attributes).length === 0) continue
     const key =
       port.pin_number !== undefined ? `pin${port.pin_number}` : port.name
