@@ -3,6 +3,14 @@ import { mmStr } from "@tscircuit/mm"
 import type { FootprintElementConverter } from "./converter-types"
 import { escapeJsxText } from "./footprint-tsx-attribute-formatters/escape-jsx-text"
 
+const formatJsxProp = (
+  name: string,
+  value: string | number | boolean,
+): string =>
+  typeof value === "string"
+    ? `${name}=${JSON.stringify(value)}`
+    : `${name}={${JSON.stringify(value)}}`
+
 export const convertSilkscreenText: FootprintElementConverter = (
   circuitJson,
 ) => {
