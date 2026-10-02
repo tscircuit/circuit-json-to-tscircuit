@@ -39,6 +39,9 @@ test("preserves board schematic trace junction markers", async () => {
         element.center.x === 0 &&
         element.center.y === 0 &&
         element.radius === 0.03 &&
+        element.stroke_width === 0 &&
+        element.color === "#009600" &&
+        element.fill_color === "#009600" &&
         element.is_filled,
     ),
   ).toBe(true)

@@ -97,10 +97,11 @@ export const convertBoxComponent = ({
         rotation = -90
         break
     }
-    if (sourcePort?.name)
+    const displayPinLabel = schematicPort.display_pin_label ?? sourcePort?.name
+    if (displayPinLabel)
       primitives.push(
         formatElement("schematictext", {
-          text: sourcePort.name,
+          text: displayPinLabel,
           schX: labelPosition.x,
           schY: labelPosition.y,
           anchor,
