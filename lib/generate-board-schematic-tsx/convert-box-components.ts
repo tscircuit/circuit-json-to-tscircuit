@@ -60,6 +60,8 @@ export const convertBoxComponent = ({
         y1: edge.y,
         x2: schematicPort.center.x,
         y2: schematicPort.center.y,
+        strokeWidth: DEFAULT_BOX_BODY_STROKE_WIDTH,
+        color: DEFAULT_BOX_BODY_STROKE_COLOR,
       }),
     )
     const sourcePort = su(circuitJson).source_port.get(
@@ -96,10 +98,11 @@ export const convertBoxComponent = ({
         rotation = -90
         break
     }
-    if (sourcePort?.name)
+    const displayPinLabel = schematicPort.display_pin_label ?? sourcePort?.name
+    if (displayPinLabel)
       primitives.push(
         formatElement("schematictext", {
-          text: sourcePort.name,
+          text: displayPinLabel,
           schX: labelPosition.x,
           schY: labelPosition.y,
           anchor,
