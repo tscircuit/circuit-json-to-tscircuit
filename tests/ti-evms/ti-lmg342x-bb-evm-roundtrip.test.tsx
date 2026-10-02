@@ -19,5 +19,10 @@ test(
       "schematic-comparison",
     )
   },
-  { timeout: 120_000 },
+  // Raised from 120s: this board's conversion and render time grew to ~160s
+  // after upstream began preserving board schematics with native primitives
+  // (starting in #131). Confirmed on a pristine e25350f checkout with no
+  // keepout changes: 162s against this test's existing 120s budget. Unrelated
+  // to the pcb_keepout work in this branch.
+  { timeout: 240_000 },
 )
