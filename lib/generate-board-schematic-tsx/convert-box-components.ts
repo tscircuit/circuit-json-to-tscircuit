@@ -59,6 +59,8 @@ export const convertBoxComponent = ({
         y1: edge.y,
         x2: schematicPort.center.x,
         y2: schematicPort.center.y,
+        strokeWidth: DEFAULT_BOX_BODY_STROKE_WIDTH,
+        color: DEFAULT_BOX_BODY_STROKE_COLOR,
       }),
     )
     const sourcePort = su(circuitJson).source_port.get(
