@@ -87,7 +87,7 @@ export async function createTiEvmRoundtrip({
   }
 }
 
-function createComparisonSvg({
+export function createComparisonSvg({
   fixtureName,
   kind,
   renderedSvg,
@@ -100,8 +100,8 @@ function createComparisonSvg({
 }): string {
   return stackSvgsHorizontally([sourceSvg, renderedSvg], {
     gap: 24,
-    normalizeSize: kind !== "PCB",
-    targetSize: 800,
+    // Schematic SVGs have no viewBox; normalizing only their canvas clips them.
+    normalizeSize: false,
     rootAttributes: {
       "aria-label": `${fixtureName} ${kind}: source Circuit JSON on left, generated tscircuit render on right`,
       role: "img",
