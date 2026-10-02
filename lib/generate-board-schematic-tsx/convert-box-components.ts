@@ -12,6 +12,7 @@ const DEFAULT_BOX_BODY_FILL_COLOR = "#ffffc2"
 // Circuit JSON does not encode these presentation values. They mirror the
 // circuit-to-svg defaults so reconstructed box pins keep the compiled view.
 const DEFAULT_PIN_TEXT_FONT_SIZE = 0.15
+const DEFAULT_PIN_TEXT_COLOR = "#a90000"
 const DEFAULT_PIN_LABEL_DISTANCE_FROM_EDGE = 0.1
 const DEFAULT_PIN_NUMBER_BASELINE_OFFSET = 0.02
 
@@ -103,6 +104,7 @@ export const convertBoxComponent = ({
           schY: labelPosition.y,
           anchor,
           fontSize: DEFAULT_PIN_TEXT_FONT_SIZE,
+          color: DEFAULT_PIN_TEXT_COLOR,
           schRotation: rotation || undefined,
         }),
       )
@@ -114,6 +116,7 @@ export const convertBoxComponent = ({
           schY: pinNumberPosition.y,
           anchor: "bottom_center",
           fontSize: DEFAULT_PIN_TEXT_FONT_SIZE,
+          color: DEFAULT_PIN_TEXT_COLOR,
           schRotation: rotation || undefined,
         }),
       )
