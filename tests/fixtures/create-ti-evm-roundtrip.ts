@@ -58,6 +58,25 @@ export async function createTiEvmRoundtrip({
     sourceCircuitJson.filter((element) => element.type === "pcb_via").length,
   )
 
+  const sourceGraphics = sourceCircuitJson.filter(
+    (element) => element.type === "schematic_graphic",
+  )
+  const renderedGraphics = renderedCircuitJson.filter(
+    (element) => element.type === "schematic_graphic",
+  )
+  expect(renderedGraphics).toHaveLength(sourceGraphics.length)
+  for (const graphic of sourceGraphics) {
+    expect(renderedGraphics).toContainEqual(
+      expect.objectContaining({
+        asset: expect.objectContaining({
+          url:
+            graphic.asset?.url ??
+            `data:image/svg+xml,${encodeURIComponent(graphic.svg_content!)}`,
+        }),
+      }),
+    )
+  }
+
   const sourcePcbSvg = convertCircuitJsonToPcbSvg(sourceCircuitJson, {
     matchBoardAspectRatio: true,
   })
