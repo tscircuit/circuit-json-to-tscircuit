@@ -3069,6 +3069,8 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematictext text={"SCL"} schX={-4.103334877257989} schY={-0.5094951366373319} anchor={"center_left"} fontSize={0.15} color={"#a90000"} />
 <schematictext text={"6"} schX={-4.330708661417322} schY={-0.4894951366373319} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
 <schematicline x1={-4.203334877257989} y1={-0.6368689207966653} x2={-4.458082445576656} y2={-0.6368689207966653} strokeWidth={0.02} color={"#840000"} />
+<schematicpath points={[{"x":-4.203334877257989,"y":-0.6368689207966653},{"x":-4.289937417636433,"y":-0.5868689207966653},{"x":-4.289937417636433,"y":-0.6868689207966654},{"x":-4.203334877257989,"y":-0.6368689207966653}]} strokeWidth={0.006666666666666667} strokeColor={"#840000"} fillColor={"#ffffff"} isFilled={true} />
+<schematicpath points={[{"x":-4.389937417636433,"y":-0.6368689207966653},{"x":-4.3033348772579885,"y":-0.6868689207966654},{"x":-4.3033348772579885,"y":-0.5868689207966653},{"x":-4.389937417636433,"y":-0.6368689207966653}]} strokeWidth={0.006666666666666667} strokeColor={"#840000"} fillColor={"#ffffff"} isFilled={true} />
 <schematictext text={"SDA"} schX={-4.103334877257989} schY={-0.6368689207966653} anchor={"center_left"} fontSize={0.15} color={"#a90000"} />
 <schematictext text={"5"} schX={-4.330708661417322} schY={-0.6168689207966653} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
 <schematicline x1={-4.203334877257989} y1={-2.165354330708661} x2={-4.458082445576656} y2={-2.165354330708661} strokeWidth={0.02} color={"#840000"} />
