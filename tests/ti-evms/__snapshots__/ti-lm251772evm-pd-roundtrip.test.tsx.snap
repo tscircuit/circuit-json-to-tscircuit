@@ -4141,7 +4141,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":-1.5284854099119958,"y":4.394395553496988},{"x":-1.5284854099119958,"y":4.267021769337656}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.5284854099119958,"y":4.267021769337656},{"x":-2.1016674386289953,"y":4.267021769337656}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-2.1016674386289953,"y":4.267021769337656},{"x":-2.165354330708661,"y":4.267021769337656}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-0.8916164891153304,"y":1.5284854099119958}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-0.8916164891153304,"y":1.5284854099119958}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-0.8916164891153304,"y":1.5284854099119958},{"x":-0.8916164891153304,"y":1.9106067623899943}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.6558591940713292,"y":0.8916164891153304},{"x":-1.5284854099119958,"y":0.8916164891153304}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.5284854099119958,"y":0.8916164891153304},{"x":-1.5284854099119958,"y":1.5284854099119958}]} strokeColor={"#009600"} />
@@ -4150,19 +4150,19 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":-0.8916164891153304,"y":1.5737378415933296},{"x":-0.8916164891153304,"y":1.5284854099119958}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-0.8916164891153304,"y":1.8653543307086604},{"x":-0.8916164891153304,"y":1.9106067623899943}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":8.59773043075498,"y":3.884900416859656},{"x":8.59773043075498,"y":3.3117183881426584}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":4.649143121815657,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":4.90389069013432,"y":3.0569708198239915}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":4.90389069013432,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":5.604446503010655,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":5.986567855488653,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":6.368689207966652,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":6.496062992125983,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":6.75081056044465,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":7.132931912922649,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":7.515053265400647,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":7.960861509958315,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":8.40666975451598,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":8.59773043075498,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":4.649143121815657,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":4.90389069013432,"y":3.0569708198239915}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":4.90389069013432,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":5.604446503010655,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":5.986567855488653,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":6.368689207966652,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":6.496062992125983,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":6.75081056044465,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":7.132931912922649,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":7.515053265400647,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":7.960861509958315,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":8.40666975451598,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":8.59773043075498,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":12.61000463177397,"y":2.8022232515053265},{"x":11.909448818897639,"y":2.8022232515053265}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":11.909448818897639,"y":2.8022232515053265},{"x":11.909448818897639,"y":1.0189902732746638}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":11.909448818897639,"y":1.0189902732746638},{"x":5.413385826771654,"y":1.0189902732746638}]} strokeColor={"#009600"} />
@@ -4208,20 +4208,20 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":6.75081056044465,"y":3.09585456229736},{"x":6.75081056044465,"y":2.9932839277443257}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":4.649143121815657,"y":-0.1458082445576654},{"x":4.649143121815657,"y":-0.19106067623899925}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":9.10722556739231,"y":3.884900416859656},{"x":9.10722556739231,"y":3.3117183881426584}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":8.151922186197313,"y":7.196618805002316}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":9.10722556739231,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":9.298286243631312,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":9.425660027790643,"y":7.196618805002316}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":9.616720704029644,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":9.616720704029644,"y":3.7575266327003245}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":9.616720704029644,"y":5.731820287169985}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":9.935155164427977,"y":7.196618805002316}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":10.18990273274664,"y":6.050254747568317}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":10.317276516905975,"y":7.196618805002316}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":11.654701250578972,"y":3.7575266327003245}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":12.482630847614635,"y":2.92959703566466}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":12.482630847614635,"y":3.0569708198239915}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":12.482630847614635,"y":3.7575266327003245}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":8.151922186197313,"y":7.196618805002316}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":9.10722556739231,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":9.298286243631312,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":9.425660027790643,"y":7.196618805002316}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":9.616720704029644,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":9.616720704029644,"y":3.7575266327003245}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":9.616720704029644,"y":5.731820287169985}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":9.935155164427977,"y":7.196618805002316}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":10.18990273274664,"y":6.050254747568317}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":10.317276516905975,"y":7.196618805002316}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":11.654701250578972,"y":3.7575266327003245}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":12.482630847614635,"y":2.92959703566466}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":12.482630847614635,"y":3.0569708198239915}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":12.482630847614635,"y":3.7575266327003245}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":12.61000463177397,"y":3.0569708198239915},{"x":12.482630847614635,"y":3.0569708198239915}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":12.482630847614635,"y":2.8659101435849923},{"x":12.482630847614635,"y":2.92959703566466}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":9.298286243631312,"y":2.229041222788327},{"x":9.298286243631312,"y":3.3117183881426584}]} strokeColor={"#009600"} />
@@ -4260,21 +4260,21 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":9.935155164427977,"y":7.24187123668365},{"x":9.935155164427977,"y":7.196618805002316}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":9.425660027790643,"y":7.299189439555349},{"x":9.425660027790643,"y":7.196618805002316}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.4011116257526623,"y":4.203334877257989},{"x":-1.4011116257526623,"y":4.394395553496988}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-9.48934691987031,"y":-0.3821213524780003}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-8.725104214914312,"y":-5.413385826771654}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-7.005558128763316,"y":-3.9485873089393237}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-6.75081056044465,"y":0.8279295970356646}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-6.6871236683649835,"y":-3.9485873089393237}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-6.305002315886984,"y":-3.9485873089393237}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-5.859194071329318,"y":-3.9485873089393237}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-4.840203798054654,"y":-3.9485873089393237}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-1.6558591940713292,"y":-2.92959703566466}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-1.0189902732746638,"y":-3.184344603983326}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-1.0189902732746638,"y":-2.92959703566466}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-0.3821213524779985,"y":-7.960861509958314}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-0.3821213524779985,"y":-6.432376100046318}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":1.5284854099119958,"y":-7.960861509958314}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":1.5284854099119958,"y":-6.432376100046318}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-9.48934691987031,"y":-0.3821213524780003}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-8.725104214914312,"y":-5.413385826771654}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-7.005558128763316,"y":-3.9485873089393237}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-6.75081056044465,"y":0.8279295970356646}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-6.6871236683649835,"y":-3.9485873089393237}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-6.305002315886984,"y":-3.9485873089393237}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-5.859194071329318,"y":-3.9485873089393237}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-4.840203798054654,"y":-3.9485873089393237}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-1.6558591940713292,"y":-2.92959703566466}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-1.0189902732746638,"y":-3.184344603983326}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-1.0189902732746638,"y":-2.92959703566466}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-0.3821213524779985,"y":-7.960861509958314}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-0.3821213524779985,"y":-6.432376100046318}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":1.5284854099119958,"y":-7.960861509958314}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":1.5284854099119958,"y":-6.432376100046318}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-3.3754052802223242,"y":2.165354330708661},{"x":-3.3754052802223242,"y":2.2927281148679945}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-3.3754052802223242,"y":2.2927281148679945},{"x":-3.693839740620657,"y":2.2927281148679945}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-2.2927281148679945,"y":2.2927281148679945},{"x":-2.420101899027328,"y":2.2927281148679945}]} strokeColor={"#009600"} />
@@ -4348,24 +4348,24 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":-10.826771653543307,"y":3.693839740620657},{"x":-11.208893006021306,"y":3.693839740620657}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-11.208893006021306,"y":3.693839740620657},{"x":-11.399953682260305,"y":3.693839740620657}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-11.399953682260305,"y":3.693839740620657},{"x":-11.527327466419639,"y":3.693839740620657}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-11.399953682260305,"y":2.92959703566466}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-11.399953682260305,"y":3.0569708198239915}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-11.399953682260305,"y":3.693839740620657}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-11.208893006021306,"y":3.693839740620657}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-10.826771653543307,"y":3.693839740620657}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-9.29828624363131,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-9.043538675312645,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-8.534043538675313,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-8.02454840203798,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-7.387679481241316,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-6.75081056044465,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-6.177628531727652,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-5.540759610930987,"y":2.92959703566466}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-5.540759610930987,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-4.458082445576656,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-0.5731820287169977,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-0.2547475683186651,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":8.916164891153313,"y":-6.1776285317276525}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-11.399953682260305,"y":2.92959703566466}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-11.399953682260305,"y":3.0569708198239915}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-11.399953682260305,"y":3.693839740620657}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-11.208893006021306,"y":3.693839740620657}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-10.826771653543307,"y":3.693839740620657}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-9.29828624363131,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-9.043538675312645,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-8.534043538675313,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-8.02454840203798,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-7.387679481241316,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-6.75081056044465,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-6.177628531727652,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-5.540759610930987,"y":2.92959703566466}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-5.540759610930987,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-4.458082445576656,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-0.5731820287169977,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-0.2547475683186651,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":8.916164891153313,"y":-6.1776285317276525}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-11.654701250578972,"y":3.0569708198239915},{"x":-11.399953682260305,"y":3.0569708198239915}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-11.399953682260305,"y":3.0569708198239915},{"x":-11.399953682260305,"y":3.693839740620657}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-11.654701250578972,"y":2.92959703566466},{"x":-11.399953682260305,"y":2.92959703566466}]} strokeColor={"#009600"} />
@@ -4426,39 +4426,39 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":-5.522325150532655,"y":-5.2223251505326544},{"x":-5.4770727188513195,"y":-5.2223251505326544}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-11.654701250578972,"y":2.674849467345993},{"x":-5.668133395090319,"y":2.674849467345993}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-5.668133395090319,"y":2.674849467345993},{"x":-5.540759610930987,"y":2.5474756831866596}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-11.399953682260305,"y":1.9106067623899943}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-11.399953682260305,"y":2.420101899027326}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-11.399953682260305,"y":2.5474756831866596}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-10.890458545622973,"y":1.9106067623899943}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-8.534043538675313,"y":2.0379805465493277}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-8.02454840203798,"y":2.0379805465493277}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-7.387679481241316,"y":2.0379805465493277}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-6.75081056044465,"y":2.0379805465493277}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-6.177628531727652,"y":2.0379805465493277}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-5.540759610930987,"y":2.5474756831866596}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-1.5284854099119958,"y":-3.184344603983326}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":3.248031496062991,"y":-4.075961093098657}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":3.375405280222326,"y":-4.075961093098657}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":3.5027790643816576,"y":-4.075961093098657}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":3.630152848540993,"y":-4.075961093098657}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":4.012274201018991,"y":-4.075961093098657}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":4.458082445576656,"y":-4.075961093098657}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":4.585456229735987,"y":-4.075961093098657}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":4.90389069013432,"y":2.5474756831866596}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":5.604446503010655,"y":2.0379805465493277}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":5.986567855488653,"y":2.0379805465493277}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":6.368689207966652,"y":2.0379805465493277}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":6.75081056044465,"y":2.0379805465493277}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":6.941871236683651,"y":2.0379805465493277}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":7.132931912922649,"y":2.0379805465493277}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":7.515053265400647,"y":2.0379805465493277}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":8.151922186197313,"y":-6.94187123668365}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":8.151922186197313,"y":-6.814497452524317}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":8.279295970356648,"y":-8.725104214914312}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":8.279295970356648,"y":-8.597730430754979}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":12.482630847614635,"y":1.8469198703103284}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":12.482630847614635,"y":2.420101899027326}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":12.482630847614635,"y":2.5474756831866596}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-11.399953682260305,"y":1.9106067623899943}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-11.399953682260305,"y":2.420101899027326}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-11.399953682260305,"y":2.5474756831866596}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-10.890458545622973,"y":1.9106067623899943}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-8.534043538675313,"y":2.0379805465493277}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-8.02454840203798,"y":2.0379805465493277}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-7.387679481241316,"y":2.0379805465493277}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-6.75081056044465,"y":2.0379805465493277}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-6.177628531727652,"y":2.0379805465493277}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-5.540759610930987,"y":2.5474756831866596}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-1.5284854099119958,"y":-3.184344603983326}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":3.248031496062991,"y":-4.075961093098657}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":3.375405280222326,"y":-4.075961093098657}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":3.5027790643816576,"y":-4.075961093098657}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":3.630152848540993,"y":-4.075961093098657}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":4.012274201018991,"y":-4.075961093098657}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":4.458082445576656,"y":-4.075961093098657}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":4.585456229735987,"y":-4.075961093098657}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":4.90389069013432,"y":2.5474756831866596}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":5.604446503010655,"y":2.0379805465493277}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":5.986567855488653,"y":2.0379805465493277}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":6.368689207966652,"y":2.0379805465493277}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":6.75081056044465,"y":2.0379805465493277}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":6.941871236683651,"y":2.0379805465493277}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":7.132931912922649,"y":2.0379805465493277}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":7.515053265400647,"y":2.0379805465493277}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":8.151922186197313,"y":-6.94187123668365}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":8.151922186197313,"y":-6.814497452524317}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":8.279295970356648,"y":-8.725104214914312}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":8.279295970356648,"y":-8.597730430754979}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":12.482630847614635,"y":1.8469198703103284}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":12.482630847614635,"y":2.420101899027326}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":12.482630847614635,"y":2.5474756831866596}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-11.399953682260305,"y":2.6111625752663272},{"x":-11.399953682260305,"y":2.5474756831866596}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-11.654701250578972,"y":2.5474756831866596},{"x":-11.399953682260305,"y":2.5474756831866596}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-11.399953682260305,"y":2.5474756831866596},{"x":-11.399953682260305,"y":2.420101899027326}]} strokeColor={"#009600"} />
@@ -4571,7 +4571,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":12.418943955534969,"y":6.444441871236684},{"x":12.418943955534969,"y":6.559749884205651}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-0.8916164891153304,"y":2.674849467345993},{"x":-0.8916164891153304,"y":2.5474756831866596}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-0.8916164891153304,"y":2.5474756831866596},{"x":-0.8916164891153304,"y":2.420101899027326}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-0.8916164891153304,"y":2.5474756831866596}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-0.8916164891153304,"y":2.5474756831866596}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-0.8916164891153304,"y":2.5474756831866596},{"x":-1.1463640574339973,"y":2.5474756831866596}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.1463640574339973,"y":2.5474756831866596},{"x":-1.1463640574339973,"y":4.267021769337656}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.1463640574339973,"y":4.267021769337656},{"x":-1.2737378415933307,"y":4.267021769337656}]} strokeColor={"#009600"} />
@@ -4579,14 +4579,14 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":-0.8916164891153304,"y":2.629597035664659},{"x":-0.8916164891153304,"y":2.674849467345993}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-0.8916164891153304,"y":2.465354330708662},{"x":-0.8916164891153304,"y":2.420101899027326}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":1.2737378415933307,"y":1.7832329782306626},{"x":1.2737378415933307,"y":3.3117183881426584}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":0.06368689207966582,"y":-0.5094951366373319}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":0.8279295970356646,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":0.8916164891153304,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":1.0189902732746638,"y":-0.5094951366373319}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":1.0189902732746638,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":1.1463640574339973,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":1.2737378415933307,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":1.4011116257526641,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":0.06368689207966582,"y":-0.5094951366373319}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":0.8279295970356646,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":0.8916164891153304,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":1.0189902732746638,"y":-0.5094951366373319}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":1.0189902732746638,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":1.1463640574339973,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":1.2737378415933307,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":1.4011116257526641,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-1.6558591940713292,"y":-0.5094951366373319},{"x":-1.5284854099119958,"y":-0.5094951366373319}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.5284854099119958,"y":-0.5094951366373319},{"x":0.06368689207966582,"y":-0.5094951366373319}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":0.06368689207966582,"y":-0.5094951366373319},{"x":0.8916164891153304,"y":-0.5094951366373319}]} strokeColor={"#009600"} />
@@ -4612,7 +4612,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":1.3622278832792958,"y":3.3117183881426584},{"x":1.4011116257526641,"y":3.3117183881426584}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":1.3622278832792958,"y":2.9932839277443257},{"x":1.4011116257526641,"y":2.9932839277443257}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":8.661417322834646,"y":1.5284854099119958},{"x":8.40666975451598,"y":1.5284854099119958}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":8.40666975451598,"y":1.5284854099119958}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":8.40666975451598,"y":1.5284854099119958}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-1.6558591940713292,"y":0.5094951366373319},{"x":-1.5284854099119958,"y":0.5094951366373319}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.5284854099119958,"y":0.5094951366373319},{"x":8.40666975451598,"y":0.5094951366373319}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":8.40666975451598,"y":0.5094951366373319},{"x":8.40666975451598,"y":1.5284854099119958}]} strokeColor={"#009600"} />
@@ -4620,7 +4620,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":8.552477999073643,"y":1.5284854099119958},{"x":8.661417322834646,"y":1.5284854099119958}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":8.40666975451598,"y":1.6742936544696612},{"x":8.40666975451598,"y":1.719546086150995}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":9.043538675312645,"y":1.5284854099119958},{"x":9.298286243631312,"y":1.5284854099119958}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":9.298286243631312,"y":1.5284854099119958}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":9.298286243631312,"y":1.5284854099119958}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-1.6558591940713292,"y":0.3821213524779985},{"x":-1.5284854099119958,"y":0.3821213524779985}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.5284854099119958,"y":0.3821213524779985},{"x":9.298286243631312,"y":0.3821213524779985}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":9.298286243631312,"y":0.3821213524779985},{"x":9.298286243631312,"y":1.5284854099119958}]} strokeColor={"#009600"} />
@@ -4628,7 +4628,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":9.152477999073644,"y":1.5284854099119958},{"x":9.043538675312645,"y":1.5284854099119958}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":9.298286243631312,"y":1.6742936544696612},{"x":9.298286243631312,"y":1.719546086150995}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":1.46479851783233,"y":1.0826771653543297},{"x":1.2737378415933307,"y":1.0826771653543297}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":1.2737378415933307,"y":1.0826771653543297}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":1.2737378415933307,"y":1.0826771653543297}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-1.6558591940713292,"y":0.12737378415933343},{"x":-1.5284854099119958,"y":0.12737378415933343}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.5284854099119958,"y":0.12737378415933343},{"x":1.2737378415933307,"y":0.12737378415933343}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":1.2737378415933307,"y":0.12737378415933343},{"x":1.2737378415933307,"y":1.0826771653543297}]} strokeColor={"#009600"} />
@@ -4636,7 +4636,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":1.3558591940713285,"y":1.0826771653543297},{"x":1.46479851783233,"y":1.0826771653543297}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":1.2737378415933307,"y":1.228485409911995},{"x":1.2737378415933307,"y":1.273737841593329}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":1.8469198703103284,"y":1.0826771653543297},{"x":2.0379805465493295,"y":1.0826771653543297}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":2.0379805465493295,"y":1.0826771653543297}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":2.0379805465493295,"y":1.0826771653543297}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-1.6558591940713292,"y":0},{"x":-1.5284854099119958,"y":0}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.5284854099119958,"y":0},{"x":2.0379805465493295,"y":0}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":2.0379805465493295,"y":0},{"x":2.0379805465493295,"y":1.0826771653543297}]} strokeColor={"#009600"} />
@@ -4648,9 +4648,9 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":1.9927281148679956,"y":-0.5094951366373319},{"x":2.0379805465493295,"y":-0.5094951366373319}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.458082445576656,"y":-0.5094951366373319},{"x":-4.776516905974988,"y":-0.5094951366373319}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.776516905974988,"y":-0.5094951366373319},{"x":-4.967577582213988,"y":-0.5094951366373319}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-3.8212135247799903,"y":-7.069245020842983}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":1.2737378415933307,"y":-7.451366373320982}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":1.5284854099119958,"y":-7.451366373320982}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-3.8212135247799903,"y":-7.069245020842983}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":1.2737378415933307,"y":-7.451366373320982}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":1.5284854099119958,"y":-7.451366373320982}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-3.8212135247799903,"y":-6.94187123668365},{"x":-3.8212135247799903,"y":-7.069245020842983}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.203334877257989,"y":-7.069245020842983},{"x":-3.8212135247799903,"y":-7.069245020842983}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-3.8212135247799903,"y":-7.069245020842983},{"x":-3.0569708198239915,"y":-7.069245020842983}]} strokeColor={"#009600"} />
@@ -4667,9 +4667,9 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":1.5284854099119958,"y":-7.406113941639648},{"x":1.5284854099119958,"y":-7.451366373320982}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.458082445576656,"y":-0.6368689207966653},{"x":-4.776516905974988,"y":-0.6368689207966653}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.776516905974988,"y":-0.6368689207966653},{"x":-4.967577582213988,"y":-0.6368689207966653}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-3.439092172301992,"y":-7.32399258916165}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-0.6368689207966653,"y":-7.451366373320982}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-0.3821213524779985,"y":-7.451366373320982}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-3.439092172301992,"y":-7.32399258916165}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-0.6368689207966653,"y":-7.451366373320982}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-0.3821213524779985,"y":-7.451366373320982}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-3.439092172301992,"y":-7.32399258916165},{"x":-3.439092172301992,"y":-6.94187123668365}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-5.2223251505326544,"y":-7.069245020842983},{"x":-5.2223251505326544,"y":-7.32399258916165}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-5.2223251505326544,"y":-7.32399258916165},{"x":-3.439092172301992,"y":-7.32399258916165}]} strokeColor={"#009600"} />
@@ -4687,8 +4687,8 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":-0.3821213524779985,"y":-7.406113941639648},{"x":-0.3821213524779985,"y":-7.451366373320982}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-10.76308476146364,"y":-0.8279295970356646},{"x":-11.081519221861972,"y":-0.8279295970356646}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-11.081519221861972,"y":-0.8279295970356646},{"x":-11.14520611394164,"y":-0.8279295970356646}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-5.540759610930987,"y":1.210050949513663}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":1.5284854099119958,"y":-5.349698934691987}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-5.540759610930987,"y":1.210050949513663}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":1.5284854099119958,"y":-5.349698934691987}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-4.458082445576656,"y":0.8916164891153304},{"x":-5.28601204261232,"y":0.8916164891153304}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-5.28601204261232,"y":0.8916164891153304},{"x":-5.540759610930987,"y":0.8916164891153304}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-5.540759610930987,"y":0.8916164891153304},{"x":-5.540759610930987,"y":1.210050949513663}]} strokeColor={"#009600"} />
@@ -4718,7 +4718,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":-0.6368689207966653,"y":-1.5284854099119976},{"x":-0.6368689207966653,"y":-3.5664659564613252}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-0.6368689207966653,"y":-3.5664659564613252},{"x":1.5921723019916634,"y":-3.5664659564613252}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":1.5921723019916634,"y":-3.5664659564613252},{"x":1.910606762389996,"y":-3.5664659564613252}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":1.5921723019916634,"y":-3.5664659564613252}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":1.5921723019916634,"y":-3.5664659564613252}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":1.5921723019916634,"y":-3.5664659564613252},{"x":1.5921723019916634,"y":-4.7128300138953225}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":1.5921723019916634,"y":-4.7128300138953225},{"x":1.910606762389996,"y":-4.7128300138953225}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":1.8653543307086604,"y":-3.5664659564613252},{"x":1.910606762389996,"y":-3.5664659564613252}]} strokeColor={"#009600"} />
@@ -4728,7 +4728,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":-4.858638258452986,"y":-1.6558591940713292},{"x":-4.903890690134322,"y":-1.6558591940713292}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.458082445576656,"y":-2.674849467345993},{"x":-4.840203798054654,"y":-2.674849467345993}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.840203798054654,"y":-2.674849467345993},{"x":-4.967577582213988,"y":-2.674849467345993}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":1.5284854099119958,"y":-5.922880963408986}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":1.5284854099119958,"y":-5.922880963408986}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":2.165354330708661,"y":-5.922880963408986},{"x":1.7832329782306626,"y":-5.922880963408986}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":1.7832329782306626,"y":-5.922880963408986},{"x":1.5284854099119958,"y":-5.922880963408986}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":1.5284854099119958,"y":-5.922880963408986},{"x":1.2737378415933307,"y":-5.922880963408986}]} strokeColor={"#009600"} />
@@ -4738,13 +4738,13 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":-6.6871236683649835,"y":-3.075405280222326},{"x":-6.6871236683649835,"y":-3.184344603983326}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-6.6871236683649835,"y":-3.1022232515053263},{"x":-6.6871236683649835,"y":-3.0569708198239933}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":2.420101899027328,"y":-3.5664659564613252},{"x":2.8022232515053265,"y":-3.5664659564613252}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":2.8022232515053265,"y":-3.5664659564613252}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":2.8022232515053265,"y":-3.5664659564613252}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":2.8022232515053265,"y":-3.5664659564613252},{"x":2.8659101435849923,"y":-3.5664659564613252}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":2.465354330708662,"y":-3.5664659564613252},{"x":2.420101899027328,"y":-3.5664659564613252}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":2.8022232515053265,"y":-3.4575266327003247},{"x":2.8022232515053265,"y":-3.5664659564613252}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-3.693839740620657,"y":-6.432376100046318},{"x":-3.693839740620657,"y":-6.305002315886985}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-3.8212135247799903,"y":-6.432376100046318}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-3.693839740620657,"y":-6.432376100046318}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-3.8212135247799903,"y":-6.432376100046318}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-3.693839740620657,"y":-6.432376100046318}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-4.203334877257989,"y":-6.814497452524317},{"x":-4.075961093098657,"y":-6.814497452524317}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.075961093098657,"y":-6.814497452524317},{"x":-4.075961093098657,"y":-6.432376100046318}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.075961093098657,"y":-6.432376100046318},{"x":-3.8212135247799903,"y":-6.432376100046318}]} strokeColor={"#009600"} />
@@ -4762,8 +4762,8 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":-6.305002315886984,"y":-2.5474756831866614},{"x":-6.305002315886984,"y":-1.910606762389996}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-6.305002315886984,"y":-1.910606762389996},{"x":-4.840203798054654,"y":-1.910606762389996}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.840203798054654,"y":-1.910606762389996},{"x":-4.458082445576656,"y":-1.910606762389996}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-6.305002315886984,"y":-2.5474756831866614}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-6.305002315886984,"y":-1.910606762389996}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-6.305002315886984,"y":-2.5474756831866614}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-6.305002315886984,"y":-1.910606762389996}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-6.305002315886984,"y":-2.865910143584993},{"x":-6.305002315886984,"y":-2.5474756831866614}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-6.6871236683649835,"y":-2.5022232515053258},{"x":-6.6871236683649835,"y":-2.5474756831866614}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-6.305002315886984,"y":-1.932283464566929},{"x":-6.305002315886984,"y":-1.910606762389996}]} strokeColor={"#009600"} />
@@ -4774,7 +4774,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":-4.637742403890691,"y":-2.92959703566466},{"x":-4.458082445576656,"y":-2.92959703566466}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.840203798054654,"y":-3.075405280222326},{"x":-4.840203798054654,"y":-3.120657711903659}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.458082445576656,"y":2.2927281148679945},{"x":-4.075961093098657,"y":2.2927281148679945}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-4.458082445576656,"y":2.2927281148679945}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-4.458082445576656,"y":2.2927281148679945}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-4.458082445576656,"y":1.4011116257526623},{"x":-4.458082445576656,"y":2.2927281148679945}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.458082445576656,"y":2.2927281148679945},{"x":-4.458082445576656,"y":2.674849467345993}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.184900416859659,"y":2.2927281148679945},{"x":-4.075961093098657,"y":2.2927281148679945}]} strokeColor={"#009600"} />
@@ -4786,14 +4786,14 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":3.375405280222326,"y":-1.2737378415933307},{"x":3.375405280222326,"y":-1.4011116257526641}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":3.375405280222326,"y":-1.4011116257526641},{"x":3.375405280222326,"y":-2.483788791106994}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":3.375405280222326,"y":-2.483788791106994},{"x":3.375405280222326,"y":-3.0569708198239933}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":0.5731820287169995,"y":-1.2737378415933307}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":3.248031496062991,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":3.375405280222326,"y":-2.483788791106994}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":3.375405280222326,"y":-1.4011116257526641}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":3.375405280222326,"y":-1.2737378415933307}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":3.375405280222326,"y":2.8022232515053265}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":3.375405280222326,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":3.5027790643816576,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":0.5731820287169995,"y":-1.2737378415933307}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":3.248031496062991,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":3.375405280222326,"y":-2.483788791106994}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":3.375405280222326,"y":-1.4011116257526641}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":3.375405280222326,"y":-1.2737378415933307}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":3.375405280222326,"y":2.8022232515053265}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":3.375405280222326,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":3.5027790643816576,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-1.6558591940713292,"y":-1.2737378415933307},{"x":-1.5284854099119958,"y":-1.2737378415933307}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.5284854099119958,"y":-1.2737378415933307},{"x":0.5731820287169995,"y":-1.2737378415933307}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":0.5731820287169995,"y":-1.2737378415933307},{"x":0.5731820287169995,"y":-1.4011116257526641}]} strokeColor={"#009600"} />
@@ -4815,7 +4815,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":3.330152848540992,"y":2.8022232515053265},{"x":3.439092172301992,"y":2.8022232515053265}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-5.859194071329318,"y":-2.165354330708661},{"x":-4.967577582213988,"y":-2.165354330708661}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.967577582213988,"y":-2.165354330708661},{"x":-4.458082445576656,"y":-2.165354330708661}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-5.859194071329318,"y":-2.165354330708661}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-5.859194071329318,"y":-2.165354330708661}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-5.859194071329318,"y":-2.165354330708661},{"x":-5.859194071329318,"y":-3.184344603983326}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-5.859194071329318,"y":-2.1870310328855957},{"x":-5.859194071329318,"y":-2.165354330708661}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-5.859194071329318,"y":-3.075405280222326},{"x":-5.859194071329318,"y":-3.184344603983326}]} strokeColor={"#009600"} />
@@ -4824,7 +4824,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":-8.40666975451598,"y":-0.25474756831866685},{"x":-6.559749884205651,"y":-0.25474756831866685}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-6.559749884205651,"y":-0.25474756831866685},{"x":-4.840203798054654,"y":-0.25474756831866685}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.840203798054654,"y":-0.25474756831866685},{"x":-4.458082445576656,"y":-0.25474756831866685}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-6.559749884205651,"y":-0.25474756831866685}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-6.559749884205651,"y":-0.25474756831866685}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-6.559749884205651,"y":-0.5731820287169995},{"x":-6.559749884205651,"y":-0.25474756831866685}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-6.514497452524317,"y":-0.5731820287169995},{"x":-6.559749884205651,"y":-0.5731820287169995}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.6558591940713292,"y":-1.1463640574339973},{"x":-1.5284854099119958,"y":-1.1463640574339973}]} strokeColor={"#009600"} />
@@ -4838,8 +4838,8 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":-1.5284854099119958,"y":-0.6368689207966653},{"x":-1.0189902732746638,"y":-0.6368689207966653}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.1279295970356653,"y":-0.6368689207966653},{"x":-1.0189902732746638,"y":-0.6368689207966653}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-0.8916164891153304,"y":3.7575266327003245},{"x":-0.8916164891153304,"y":3.184344603983325}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-1.0189902732746638,"y":3.7575266327003245}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-0.8916164891153304,"y":3.7575266327003245}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-1.0189902732746638,"y":3.7575266327003245}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-0.8916164891153304,"y":3.7575266327003245}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-1.0189902732746638,"y":3.7575266327003245},{"x":-1.0189902732746638,"y":4.394395553496988}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.0189902732746638,"y":4.394395553496988},{"x":-1.1463640574339973,"y":4.394395553496988}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.6558591940713292,"y":3.0569708198239915},{"x":-1.6558591940713292,"y":3.7575266327003245}]} strokeColor={"#009600"} />
@@ -4853,8 +4853,8 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":-1.6558591940713292,"y":3.102223251505327},{"x":-1.6558591940713292,"y":3.0569708198239915}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-7.005558128763316,"y":-2.7385363594256606},{"x":-7.387679481241316,"y":-2.7385363594256606}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-7.387679481241316,"y":-2.7385363594256606},{"x":-7.387679481241316,"y":-3.184344603983326}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-7.005558128763316,"y":-2.7385363594256606}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-7.005558128763316,"y":-1.4011116257526641}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-7.005558128763316,"y":-2.7385363594256606}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-7.005558128763316,"y":-1.4011116257526641}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-4.458082445576656,"y":-1.4011116257526641},{"x":-4.7128300138953225,"y":-1.4011116257526641}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.7128300138953225,"y":-1.4011116257526641},{"x":-7.005558128763316,"y":-1.4011116257526641}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-7.005558128763316,"y":-1.4011116257526641},{"x":-7.6424270495599815,"y":-1.4011116257526641}]} strokeColor={"#009600"} />
@@ -4869,14 +4869,14 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":-7.005558128763316,"y":-2.7569708198239926},{"x":-7.005558128763316,"y":-2.8022232515053265}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.910606762389996,"y":2.2927281148679945},{"x":-1.6558591940713292,"y":2.2927281148679945}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.6558591940713292,"y":2.2927281148679945},{"x":-1.6558591940713292,"y":1.4011116257526623}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-1.6558591940713292,"y":2.2927281148679945}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-1.6558591940713292,"y":2.2927281148679945}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-1.6558591940713292,"y":2.5474756831866596},{"x":-1.6558591940713292,"y":2.2927281148679945}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.8016674386289946,"y":2.2927281148679945},{"x":-1.910606762389996,"y":2.2927281148679945}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.6558591940713292,"y":2.5022232515053258},{"x":-1.6558591940713292,"y":2.5474756831866596}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-9.29828624363131,"y":0.3821213524779985},{"x":-9.29828624363131,"y":0.2547475683186651}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-10.126215840666976,"y":0.2547475683186651}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-9.48934691987031,"y":0.2547475683186651}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-9.29828624363131,"y":0.2547475683186651}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-10.126215840666976,"y":0.2547475683186651}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-9.48934691987031,"y":0.2547475683186651}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-9.29828624363131,"y":0.2547475683186651}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-11.14520611394164,"y":0.2547475683186651},{"x":-11.017832329782307,"y":0.2547475683186651}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-11.017832329782307,"y":0.2547475683186651},{"x":-10.126215840666976,"y":0.2547475683186651}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-10.126215840666976,"y":0.2547475683186651},{"x":-9.48934691987031,"y":0.2547475683186651}]} strokeColor={"#009600"} />
@@ -4893,14 +4893,14 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":-10.126215840666976,"y":0.2363131079203331},{"x":-10.126215840666976,"y":0.12737378415933343}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-9.48934691987031,"y":0.17262621584066729},{"x":-9.48934691987031,"y":0.12737378415933343}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":11.463640574339971,"y":5.85919407132932},{"x":11.463640574339971,"y":6.050254747568317}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":8.916164891153313,"y":-7.960861509958314}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":10.95414543770264,"y":6.050254747568317}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":11.081519221861972,"y":6.050254747568317}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":11.081519221861972,"y":7.196618805002316}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":11.463640574339971,"y":6.050254747568317}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":11.591014358499306,"y":7.196618805002316}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":12.100509495136636,"y":7.196618805002316}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":12.418943955534969,"y":7.196618805002316}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":8.916164891153313,"y":-7.960861509958314}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":10.95414543770264,"y":6.050254747568317}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":11.081519221861972,"y":6.050254747568317}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":11.081519221861972,"y":7.196618805002316}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":11.463640574339971,"y":6.050254747568317}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":11.591014358499306,"y":7.196618805002316}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":12.100509495136636,"y":7.196618805002316}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":12.418943955534969,"y":7.196618805002316}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":11.081519221861972,"y":6.050254747568317},{"x":11.081519221861972,"y":5.9865678554886514}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":6.75081056044465,"y":5.2223251505326544},{"x":6.75081056044465,"y":4.840203798054654}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":6.75081056044465,"y":4.840203798054654},{"x":12.100509495136636,"y":4.840203798054654}]} strokeColor={"#009600"} />
@@ -4925,8 +4925,8 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":10.95414543770264,"y":6.315673923112552},{"x":10.95414543770264,"y":6.050254747568317}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":8.916164891153313,"y":-7.822982862436314},{"x":8.916164891153313,"y":-7.960861509958314}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":11.081519221861972,"y":5.349698934691986},{"x":11.081519221861972,"y":5.2223251505326544}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":10.572024085224642,"y":5.2223251505326544}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":11.081519221861972,"y":5.2223251505326544}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":10.572024085224642,"y":5.2223251505326544}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":11.081519221861972,"y":5.2223251505326544}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":10.572024085224642,"y":5.540759610930987},{"x":10.572024085224642,"y":5.2223251505326544}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":10.508337193144973,"y":5.2223251505326544},{"x":10.572024085224642,"y":5.2223251505326544}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":10.572024085224642,"y":5.2223251505326544},{"x":11.081519221861972,"y":5.2223251505326544}]} strokeColor={"#009600"} />
@@ -4938,8 +4938,8 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":10.55358962482631,"y":5.2223251505326544},{"x":10.508337193144973,"y":5.2223251505326544}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":11.463640574339971,"y":5.304446503010652},{"x":11.463640574339971,"y":5.349698934691986}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":2.0379805465493295,"y":3.3117183881426584},{"x":2.0379805465493295,"y":1.7832329782306626}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":1.910606762389996,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":2.0379805465493295,"y":3.3117183881426584}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":1.910606762389996,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":2.0379805465493295,"y":3.3117183881426584}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":1.910606762389996,"y":2.9932839277443257},{"x":1.910606762389996,"y":3.3117183881426584}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":1.910606762389996,"y":3.3117183881426584},{"x":2.0379805465493295,"y":3.3117183881426584}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":2.0379805465493295,"y":3.3117183881426584},{"x":2.356415006947662,"y":3.3117183881426584}]} strokeColor={"#009600"} />
@@ -4955,7 +4955,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":0.6368689207966653,"y":3.884900416859656},{"x":0.19106067623899925,"y":3.884900416859656}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":0.6368689207966653,"y":2.465354330708662},{"x":0.6368689207966653,"y":2.420101899027326}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":0.25474756831866685,"y":1.8469198703103284},{"x":0.25474756831866685,"y":1.9106067623899943}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":0.25474756831866685,"y":1.8469198703103284}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":0.25474756831866685,"y":1.8469198703103284}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-1.6558591940713292,"y":-0.3821213524780003},{"x":-1.5284854099119958,"y":-0.3821213524780003}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-1.5284854099119958,"y":-0.3821213524780003},{"x":0.25474756831866685,"y":-0.3821213524780003}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":0.25474756831866685,"y":-0.3821213524780003},{"x":0.25474756831866685,"y":1.8469198703103284}]} strokeColor={"#009600"} />
@@ -4970,7 +4970,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":-5.349698934691986,"y":1.3374247336729965},{"x":-5.349698934691986,"y":1.0189902732746638}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-5.349698934691986,"y":1.0189902732746638},{"x":-5.28601204261232,"y":1.0189902732746638}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-5.28601204261232,"y":1.0189902732746638},{"x":-4.458082445576656,"y":1.0189902732746638}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-6.496062992125984,"y":1.3374247336729965}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-6.496062992125984,"y":1.3374247336729965}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-6.496062992125984,"y":1.5921723019916616},{"x":-6.496062992125984,"y":1.3374247336729965}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":8.916164891153313,"y":-2.420101899027328},{"x":9.10722556739231,"y":-2.420101899027328}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":9.10722556739231,"y":-2.420101899027328},{"x":9.425660027790643,"y":-2.420101899027328}]} strokeColor={"#009600"} />
@@ -4989,20 +4989,20 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":-4.458082445576656,"y":-3.821213524779991},{"x":-4.458082445576656,"y":-5.2223251505326544}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.458082445576656,"y":-5.2223251505326544},{"x":-4.649143121815655,"y":-5.2223251505326544}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.649143121815655,"y":-5.2223251505326544},{"x":-4.967577582213988,"y":-5.2223251505326544}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-4.649143121815655,"y":-5.2223251505326544}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-4.649143121815655,"y":-5.2223251505326544}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-4.649143121815655,"y":-5.2223251505326544},{"x":-4.649143121815655,"y":-5.158638258452988}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.922325150532654,"y":-5.2223251505326544},{"x":-4.967577582213988,"y":-5.2223251505326544}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.649143121815655,"y":-5.1803149606299215},{"x":-4.649143121815655,"y":-5.158638258452988}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.458082445576656,"y":-2.420101899027328},{"x":-4.776516905974988,"y":-2.420101899027328}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.776516905974988,"y":-2.420101899027328},{"x":-4.967577582213988,"y":-2.420101899027328}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-0.3821213524779985,"y":-5.922880963408986}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-0.3821213524779985,"y":-5.922880963408986}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":0.25474756831866685,"y":-5.922880963408986},{"x":0.06368689207966582,"y":-5.922880963408986}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":0.06368689207966582,"y":-5.922880963408986},{"x":-0.3821213524779985,"y":-5.922880963408986}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-0.6368689207966653,"y":-6.305002315886985},{"x":-0.6368689207966653,"y":-5.922880963408986}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-0.6368689207966653,"y":-5.922880963408986},{"x":-0.3821213524779985,"y":-5.922880963408986}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-0.3821213524779985,"y":-5.877628531727653},{"x":-0.3821213524779985,"y":-5.922880963408986}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-7.069245020842983,"y":1.5284854099119958},{"x":-7.069245020842983,"y":1.210050949513663}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-7.069245020842983,"y":1.5284854099119958}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-7.069245020842983,"y":1.5284854099119958}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-4.458082445576656,"y":0.6368689207966653},{"x":-4.776516905974988,"y":0.6368689207966653}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.776516905974988,"y":0.6368689207966653},{"x":-4.903890690134322,"y":0.6368689207966653}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-4.903890690134322,"y":0.6368689207966653},{"x":-4.903890690134322,"y":1.5284854099119958}]} strokeColor={"#009600"} />
@@ -5014,8 +5014,8 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":9.425660027790643,"y":6.814497452524318},{"x":9.425660027790643,"y":6.687123668364983}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":9.425660027790643,"y":6.687123668364983},{"x":9.935155164427977,"y":6.687123668364983}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":9.935155164427977,"y":6.687123668364983},{"x":10.699397869383974,"y":6.687123668364983}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":9.425660027790643,"y":6.687123668364983}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":9.935155164427977,"y":6.687123668364983}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":9.425660027790643,"y":6.687123668364983}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":9.935155164427977,"y":6.687123668364983}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":9.425660027790643,"y":6.699189439555347},{"x":9.425660027790643,"y":6.814497452524318}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":9.935155164427977,"y":6.641871236683649},{"x":9.935155164427977,"y":6.687123668364983}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":10.599397869383973,"y":6.732037980546547},{"x":10.599397869383973,"y":6.687123668364983}]} strokeColor={"#009600"} />
@@ -5024,8 +5024,8 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":8.788791106993978,"y":6.241315423807318},{"x":8.788791106993978,"y":6.432376100046316}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":8.572927281148681,"y":6.241315423807318},{"x":8.470356646595645,"y":6.241315423807318}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-8.979851783232977,"y":-4.330708661417323},{"x":-8.979851783232977,"y":-4.585456229735989}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":-8.979851783232977,"y":-4.330708661417323}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
-<schematiccircle center={{"x":-8.534043538675313,"y":-4.330708661417323}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":-8.979851783232977,"y":-4.330708661417323}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
+<schematiccircle center={{"x":-8.534043538675313,"y":-4.330708661417323}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":-11.081519221861972,"y":-4.330708661417323},{"x":-9.807781380268644,"y":-4.330708661417323}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-9.807781380268644,"y":-4.330708661417323},{"x":-8.979851783232977,"y":-4.330708661417323}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-8.979851783232977,"y":-4.330708661417323},{"x":-8.534043538675313,"y":-4.330708661417323}]} strokeColor={"#009600"} />
@@ -5039,7 +5039,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":9.030059981472904,"y":-2.2927281148679945},{"x":9.425660027790643,"y":-2.2927281148679945}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":8.470356646595645,"y":-3.0569708198239933},{"x":9.425660027790643,"y":-3.0569708198239933}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":9.425660027790643,"y":-3.0569708198239933},{"x":9.68040759610931,"y":-3.0569708198239933}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":9.425660027790643,"y":-3.0569708198239933}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":9.425660027790643,"y":-3.0569708198239933}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":9.425660027790643,"y":-3.0569708198239933},{"x":9.425660027790643,"y":-3.693839740620658}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":9.425660027790643,"y":-3.693839740620658},{"x":9.043538675312645,"y":-3.693839740620658}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":9.043538675312645,"y":-3.693839740620658},{"x":8.916164891153313,"y":-3.693839740620658}]} strokeColor={"#009600"} />
@@ -5058,7 +5058,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":3.8212135247799903,"y":-4.7128300138953225},{"x":3.8212135247799903,"y":-3.5664659564613252}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":3.8212135247799903,"y":-3.5664659564613252},{"x":4.012274201018991,"y":-3.5664659564613252}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":4.012274201018991,"y":-3.5664659564613252},{"x":4.075961093098657,"y":-3.5664659564613252}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":4.012274201018991,"y":-3.5664659564613252}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":4.012274201018991,"y":-3.5664659564613252}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":2.465354330708662,"y":-4.7128300138953225},{"x":2.420101899027328,"y":-4.7128300138953225}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":4.012274201018991,"y":-3.4575266327003247},{"x":4.012274201018991,"y":-3.5664659564613252}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":4.649143121815657,"y":-0.700555812876333},{"x":4.649143121815657,"y":-0.8279295970356646}]} strokeColor={"#009600"} />
@@ -5068,7 +5068,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":-8.534043538675313,"y":-4.794951366373321},{"x":-8.534043538675313,"y":-4.903890690134322}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":-8.534043538675313,"y":-4.885456229735989},{"x":-8.534043538675313,"y":-4.840203798054655}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":3.884900416859656,"y":2.8022232515053265},{"x":3.884900416859656,"y":2.0379805465493277}]} strokeColor={"#009600"} />
-<schematiccircle center={{"x":3.884900416859656,"y":2.8022232515053265}} radius={0.03} color={"#008800"} fillColor={"#008800"} isFilled={true} />
+<schematiccircle center={{"x":3.884900416859656,"y":2.8022232515053265}} radius={0.03} strokeWidth={0} color={"#009600"} fillColor={"#009600"} isFilled={true} />
 <schematicpath points={[{"x":3.8212135247799903,"y":2.8022232515053265},{"x":3.884900416859656,"y":2.8022232515053265}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":3.884900416859656,"y":2.0832329782306633},{"x":3.884900416859656,"y":2.0379805465493277}]} strokeColor={"#009600"} />
 <schematicpath points={[{"x":3.9301528485409936,"y":2.8022232515053265},{"x":3.8212135247799903,"y":2.8022232515053265}]} strokeColor={"#009600"} />

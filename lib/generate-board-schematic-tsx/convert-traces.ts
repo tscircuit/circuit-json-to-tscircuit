@@ -18,8 +18,9 @@ export const convertTraces: SchematicElementConverter = (circuitJson) =>
         formatElement("schematiccircle", {
           center,
           radius: 0.03,
-          color: "#008800",
-          fillColor: "#008800",
+          strokeWidth: 0,
+          color: "#009600",
+          fillColor: "#009600",
           isFilled: true,
         }),
       ),
