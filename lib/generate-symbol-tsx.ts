@@ -150,9 +150,13 @@ export const generateSymbolElements = (
     const color = circle.color ?? "black"
     const isFilled = circle.is_filled ?? false
     const isDashed = circle.is_dashed ?? false
+    const fillColorAttr =
+      circle.fill_color === undefined
+        ? ""
+        : ` fillColor={${JSON.stringify(circle.fill_color)}}`
 
     elementStrings.push(
-      `<schematiccircle center={{ x: ${x}, y: ${y} }} radius={${radius}} strokeWidth={${strokeWidth}} color="${color}" isFilled={${isFilled}} isDashed={${isDashed}} />`,
+      `<schematiccircle center={{ x: ${x}, y: ${y} }} radius={${radius}} strokeWidth={${strokeWidth}} color="${color}" isFilled={${isFilled}}${fillColorAttr} isDashed={${isDashed}} />`,
     )
   }
 
