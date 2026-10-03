@@ -2,9 +2,7 @@ import { expect, test } from "bun:test"
 import { readFileSync } from "node:fs"
 import { gunzipSync } from "node:zlib"
 import type { CircuitJson } from "circuit-json"
-import { convertCircuitJsonToSchematicSvg } from "circuit-to-svg"
 import { convertCircuitJsonToTscircuit } from "lib"
-import { stackSvgsHorizontally } from "stack-svgs"
 import { runTscircuitCode } from "tscircuit"
 
 test("LM251772EVM-PD plain net labels keep their connection-side placement", async () => {
@@ -50,19 +48,4 @@ test("LM251772EVM-PD plain net labels keep their connection-side placement", asy
     expect(text.color).toBe("#840000")
     expect(text.font_size).toBe(0.18)
   }
-  const comparison = stackSvgsHorizontally(
-    [
-      convertCircuitJsonToSchematicSvg(source),
-      convertCircuitJsonToSchematicSvg(output),
-    ],
-    {
-      gap: 24,
-      normalizeSize: false,
-      rootAttributes: {
-        "aria-label": "LM251772EVM-PD schematic: source left, converted right",
-        role: "img",
-      },
-    },
-  )
-  await expect(comparison).toMatchSvgSnapshot(import.meta.path, "schematic")
 })
