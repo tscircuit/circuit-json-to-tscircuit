@@ -4,6 +4,7 @@ import type { AnyCircuitElement } from "circuit-json"
 import { generateBoardSchematicTsx } from "./generate-board-schematic-tsx"
 import { generateCopperPoursTsx } from "./generate-copper-pours-tsx"
 import { generateFootprintTsx } from "./generate-footprint-tsx"
+import { getCopperPourPadConnections } from "./get-copper-pour-pad-connections"
 
 export interface BoardTemplateParams {
   circuitJson: AnyCircuitElement[]
@@ -61,14 +62,29 @@ export const getBoardUsingTemplate = ({
     }
   }
 
+  const { footprintCircuitJson, connections, pinLabels } =
+    getCopperPourPadConnections(circuitJson)
+  const hasCopperPourConnections = Object.keys(connections).length > 0
+  // Imported PCB routes are already drawn by the footprint converter.
+  if (hasCopperPourConnections) boardProps.push("routingDisabled")
   const boardPropsStr = boardProps.join(" ")
-  const footprintTsx = generateFootprintTsx(circuitJson)
+  const footprintTsx = generateFootprintTsx(footprintCircuitJson)
   const copperPoursTsx = generateCopperPoursTsx(circuitJson)
 
   const symbolTsx = generateBoardSchematicTsx(circuitJson)
   const chipProps = [
+    hasCopperPourConnections ? 'name="ImportedBoard"' : "",
+    hasCopperPourConnections ? `pinLabels={${JSON.stringify(pinLabels)}}` : "",
+    // The imported symbol already draws its ports; do not generate new ones
+    // for the connections needed by the copper pour solver.
+    hasCopperPourConnections
+      ? "schPinArrangement={{leftSide:[],rightSide:[],topSide:[],bottomSide:[]}}"
+      : "",
     footprintTsx ? `footprint={${footprintTsx}}` : "",
     symbolTsx ? `symbol={${symbolTsx}}` : "",
+    hasCopperPourConnections
+      ? `connections={${JSON.stringify(connections)}}`
+      : "",
   ].filter(Boolean)
   const children = [
     footprintTsx ? `<chip ${chipProps.join(" ")} />` : (symbolTsx ?? ""),
