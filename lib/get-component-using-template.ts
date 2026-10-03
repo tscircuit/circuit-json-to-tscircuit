@@ -33,7 +33,7 @@ ${pinLabels ? `const pinLabels = ${JSON.stringify(pinLabels, null, "  ")} as con
     ${pinAttributes ? `pinAttributes={${JSON.stringify(pinAttributes, null, "  ")}}` : ""}
     ${objUrl ? `cadModel={{\n        objUrl: \"${objUrl}\",\n        rotationOffset: { x: 0, y: 0, z: 0 },\n        positionOffset: { x: 0, y: 0, z: 0 },\n      }}` : ""}
     ${supplierPartNumbers ? `supplierPartNumbers={${JSON.stringify(supplierPartNumbers, null, "  ")}}` : ""}
-    ${manufacturerPartNumber ? `manufacturerPartNumber=\"${manufacturerPartNumber}\"` : ""}
+    ${manufacturerPartNumber ? `manufacturerPartNumber={${JSON.stringify(manufacturerPartNumber)}}` : ""}
     {...props}
   />
 )
