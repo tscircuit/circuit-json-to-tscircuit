@@ -3,8 +3,8 @@ import type { SchSymbol } from "schematic-symbols"
 import { applyToPoint, type Matrix } from "transformation-matrix"
 import { formatElement } from "./format-attributes"
 
-// Circuit JSON symbol primitives do not encode this presentation value. It
-// matches the component outline width used by circuit-to-svg.
+// Circuit JSON symbol primitives do not encode a stroke width. This matches
+// the component outline width used by circuit-to-svg.
 const DEFAULT_SYMBOL_CIRCLE_STROKE_WIDTH = 0.02
 
 const anchors = {
