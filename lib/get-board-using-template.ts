@@ -4,6 +4,7 @@ import type { AnyCircuitElement } from "circuit-json"
 import { generateBoardSchematicTsx } from "./generate-board-schematic-tsx"
 import { generateCopperPoursTsx } from "./generate-copper-pours-tsx"
 import { generateFootprintTsx } from "./generate-footprint-tsx"
+import { getBoardNetConnections } from "./get-board-net-connections"
 
 export interface BoardTemplateParams {
   circuitJson: AnyCircuitElement[]
@@ -61,17 +62,25 @@ export const getBoardUsingTemplate = ({
     }
   }
 
+  const { footprintCircuitJson, connections, netNames } =
+    getBoardNetConnections(circuitJson)
+  // Imported PCB routes are already drawn by the footprint converter.
+  if (netNames.length) boardProps.push("routingDisabled")
   const boardPropsStr = boardProps.join(" ")
-  const footprintTsx = generateFootprintTsx(circuitJson)
-  const copperPoursTsx = generateCopperPoursTsx(circuitJson)
+  const footprintTsx = generateFootprintTsx(footprintCircuitJson)
+  const copperPoursTsx = generateCopperPoursTsx(circuitJson, netNames)
 
   const symbolTsx = generateBoardSchematicTsx(circuitJson)
   const chipProps = [
+    netNames.length ? 'name="ImportedBoard"' : "",
+    netNames.length ? "noSchematicRepresentation" : "",
     footprintTsx ? `footprint={${footprintTsx}}` : "",
-    symbolTsx ? `symbol={${symbolTsx}}` : "",
+    symbolTsx && !netNames.length ? `symbol={${symbolTsx}}` : "",
+    netNames.length ? `connections={${JSON.stringify(connections)}}` : "",
   ].filter(Boolean)
   const children = [
     footprintTsx ? `<chip ${chipProps.join(" ")} />` : (symbolTsx ?? ""),
+    footprintTsx && netNames.length ? (symbolTsx ?? "") : "",
     ...copperPoursTsx,
   ]
     .filter(Boolean)

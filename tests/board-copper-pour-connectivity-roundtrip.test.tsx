@@ -1,5 +1,6 @@
 import { beforeAll, expect, test } from "bun:test"
 import type { CircuitJson } from "circuit-json"
+import { getSourcePortConnectivityMapFromCircuitJson } from "circuit-json-to-connectivity-map"
 import { convertCircuitJsonToPcbSvg } from "circuit-to-svg"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
@@ -70,18 +71,134 @@ test("compares a connected plated pad before and after board conversion", async 
   await expect(comparisonSvg).toMatchSvgSnapshot(import.meta.path, "comparison")
 })
 
-// Remove .failing when board conversion preserves the pad-to-net connection.
-test.failing(
-  "preserves the plated pad connection to its copper pour net",
-  () => {
-    expect(isPadConnectedToPour(convertedCircuitJson)).toBe(true)
-  },
-)
+test("preserves the plated pad connection to its copper pour net", () => {
+  expect(isPadConnectedToPour(convertedCircuitJson)).toBe(true)
+})
 
-test.failing("preserves copper around a plated pad on the same net", () => {
+test("preserves copper around a plated pad on the same net", () => {
   expect(
     getCopperPour(convertedCircuitJson).brep_shape.inner_rings,
   ).toHaveLength(getCopperPour(sourceCircuitJson).brep_shape.inner_rings.length)
+})
+
+test("keeps different components' pin1 pads on separate nets", async () => {
+  const source = await runTscircuitCode(`export default () => (
+    <board width={10} height={8} routingDisabled>
+      <net name="GND" />
+      <net name="SIGNAL" />
+      <chip name="J1" pcbX={-2} pcbY={0} connections={{ pin1: "net.GND" }} footprint={<footprint>
+        <smtpad portHints={["pin1"]}
+          shape="rect" width={1} height={1} layer="top" />
+      </footprint>} />
+      <chip name="J2" pcbX={2} pcbY={0} connections={{ pin1: "net.SIGNAL" }} footprint={<footprint>
+        <smtpad portHints={["pin1"]}
+          shape="rect" width={1} height={1} layer="top" />
+      </footprint>} />
+      <copperpour connectsTo="net.GND" layer="top"
+        outline={[{x:-4,y:-3},{x:4,y:-3},{x:4,y:3},{x:-4,y:3}]}
+        padMargin={0} traceMargin={0} clearance={0} boardEdgeMargin={0}
+        cutoutMargin={0} useThermalReliefs={false} coveredWithSolderMask={false} />
+    </board>
+  )`)
+  const original = structuredClone(source)
+  const converted = await runTscircuitCode(
+    convertCircuitJsonToTscircuit(source, { componentName: "SeparatePins" }),
+  )
+  expect(source).toEqual(original)
+  const connectivityMap = getSourcePortConnectivityMapFromCircuitJson(converted)
+  const pads = converted.filter((element) => element.type === "pcb_smtpad")
+  expect(pads).toHaveLength(2)
+  for (const pad of pads) {
+    if (pad.shape !== "rect") throw new Error("Expected a rectangular pad")
+    const port = converted.find(
+      (element) =>
+        element.type === "pcb_port" && element.pcb_port_id === pad.pcb_port_id,
+    )
+    if (port?.type !== "pcb_port") throw new Error("Expected a PCB port")
+    for (const net of converted.filter(
+      (element) => element.type === "source_net",
+    )) {
+      expect(
+        connectivityMap.areIdsConnected(port.source_port_id, net.source_net_id),
+      ).toBe(net.name === (pad.x === -2 ? "GND" : "SIGNAL"))
+    }
+  }
+  expect(
+    converted.filter((element) => element.type === "pcb_trace"),
+  ).toHaveLength(0)
+  expect(getCopperPour(converted).brep_shape.inner_rings).toEqual(
+    getCopperPour(source).brep_shape.inner_rings,
+  )
+  expect(
+    converted.filter((element) => element.type.endsWith("_error")),
+  ).toEqual([])
+})
+
+test("still renders nets that core cannot reference in trace selectors", async () => {
+  for (const name of ["HU+", "HU-", "2V", "V3.3", "ENABLE#", "SS/ATRK"]) {
+    const source = sourceCircuitJson.map((element) =>
+      element.type === "source_net" && element.name === "GND"
+        ? { ...element, name }
+        : element,
+    )
+    const converted = await runTscircuitCode(
+      convertCircuitJsonToTscircuit(source, {
+        componentName: "UnsupportedNetName",
+      }),
+    )
+    expect(
+      converted.filter(
+        (element) =>
+          element.type === "source_trace_not_connected_error" ||
+          element.type === "source_runtime_error",
+      ),
+    ).toEqual([])
+    expect(
+      converted.filter((element) => element.type === "source_net"),
+    ).toContainEqual(expect.objectContaining({ name }))
+  }
+})
+
+test("preserves indirect net connections without a pour", async () => {
+  const source = await runTscircuitCode(`export default () => (
+    <board width={10} height={8} routingDisabled>
+      <net name="GND" />
+      <chip name="J1" pcbX={-2} pcbY={0} connections={{ pin1: "net.GND" }} footprint={<footprint>
+        <smtpad portHints={["pin1"]} pcbX={0} pcbY={0} shape="rect" width={1} height={1} layer="top" />
+      </footprint>} />
+      <chip name="J2" pcbX={2} pcbY={0} footprint={<footprint>
+        <smtpad portHints={["pin1"]} shape="rect" width={1} height={1} layer="top" />
+      </footprint>} />
+      <trace from=".J1 > .pin1" to=".J2 > .pin1" />
+    </board>
+  )`)
+  const converted = await runTscircuitCode(
+    convertCircuitJsonToTscircuit(source, {
+      componentName: "IndirectConnections",
+    }),
+  )
+  const nets = converted.filter((element) => element.type === "source_net")
+  expect(nets).toHaveLength(1)
+  expect(nets[0]!.name).toBe("GND")
+  const pads = converted.filter((element) => element.type === "pcb_smtpad")
+  expect(pads).toHaveLength(2)
+  const ports = converted.filter((element) => element.type === "pcb_port")
+  expect(new Set(ports.map((port) => port.source_port_id)).size).toBe(2)
+  const connectivityMap = getSourcePortConnectivityMapFromCircuitJson(converted)
+  for (const port of ports) {
+    expect(
+      connectivityMap.areIdsConnected(
+        port.source_port_id,
+        nets[0]!.source_net_id,
+      ),
+    ).toBe(true)
+  }
+  expect(
+    converted.filter((element) => element.type === "pcb_trace"),
+  ).toHaveLength(0)
+  expect(
+    converted.filter((element) => element.type === "schematic_trace"),
+  ).toHaveLength(0)
 })
 
 const createCopperPourBoard = (padNetName: "GND" | "SIGNAL") =>

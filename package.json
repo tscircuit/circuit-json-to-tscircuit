@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@tscircuit/math-utils": "^0.0.36",
     "@tscircuit/mm": "^0.0.8",
     "@tscircuit/soup-util": "^0.0.41",
     "@types/bun": "latest",
@@ -28,6 +29,7 @@
     "@types/react-dom": "18",
     "bun-match-svg": "^0.0.15",
     "circuit-json": "^0.0.507",
+    "circuit-json-to-connectivity-map": "^0.0.33",
     "circuit-to-svg": "^0.0.353",
     "commander": "^13.1.0",
     "prettier": "^3.9.5",
