@@ -5,14 +5,28 @@ type SourcePortId = SourcePort["source_port_id"]
 type PcbPortId = PcbPort["pcb_port_id"]
 type BoardPinName = `pin${number}`
 
-export const getBoardNetConnections = (circuitJson: AnyCircuitElement[]) => {
+export const getCopperPourPadConnections = (
+  circuitJson: AnyCircuitElement[],
+) => {
+  const copperPourNetIds = new Set(
+    circuitJson
+      .filter((element) => element.type === "pcb_copper_pour")
+      .flatMap((pour) => (pour.source_net_id ? [pour.source_net_id] : [])),
+  )
+  if (copperPourNetIds.size === 0) {
+    return { footprintCircuitJson: circuitJson, connections: {}, pinLabels: {} }
+  }
   const connectivityMap =
     getSourcePortConnectivityMapFromCircuitJson(circuitJson)
   // Core's literal net selectors support identifier names. Other imported
   // names still use attribute selectors for pours, without invalid traces.
   const sourceNets = circuitJson
     .filter((element) => element.type === "source_net")
-    .filter((net) => /^[A-Za-z_][A-Za-z0-9_]*$/.test(net.name))
+    .filter(
+      (net) =>
+        copperPourNetIds.has(net.source_net_id) &&
+        /^[A-Za-z_][A-Za-z0-9_]*$/.test(net.name),
+    )
   const pcbPortById = new Map<PcbPortId, PcbPort>(
     circuitJson
       .filter((element) => element.type === "pcb_port")
@@ -20,6 +34,7 @@ export const getBoardNetConnections = (circuitJson: AnyCircuitElement[]) => {
   )
   const pinNameBySourcePortId = new Map<SourcePortId, BoardPinName>()
   const pinNameByPcbPortId = new Map<PcbPortId, BoardPinName>()
+  const pinLabels: Partial<Record<BoardPinName, string>> = {}
   let nextPinNumber = 1
 
   // Pin numbers are local to each source component, but the board template
@@ -38,11 +53,11 @@ export const getBoardNetConnections = (circuitJson: AnyCircuitElement[]) => {
       `pin${nextPinNumber++}`
     if (sourcePortId) pinNameBySourcePortId.set(sourcePortId, pinName)
     if (pcbPortId) pinNameByPcbPortId.set(pcbPortId, pinName)
+    pinLabels[pinName] = pinName
     return { ...element, port_hints: [pinName] }
   })
 
   const connections: Partial<Record<BoardPinName, string[]>> = {}
-  const netNames = new Set<string>()
   for (const [sourcePortId, pinName] of pinNameBySourcePortId) {
     const connectedNets = sourceNets.filter((net) =>
       connectivityMap.areIdsConnected(sourcePortId, net.source_net_id),
@@ -51,13 +66,12 @@ export const getBoardNetConnections = (circuitJson: AnyCircuitElement[]) => {
     connections[pinName] = [
       ...new Set(connectedNets.map((net) => `net.${net.name}`)),
     ]
-    for (const net of connectedNets) netNames.add(net.name)
   }
 
   return {
     footprintCircuitJson:
-      netNames.size > 0 ? footprintCircuitJson : circuitJson,
+      Object.keys(connections).length > 0 ? footprintCircuitJson : circuitJson,
     connections,
-    netNames: [...netNames],
+    pinLabels,
   }
 }

@@ -4,7 +4,6 @@ import { getCopperPourOutline } from "./get-copper-pour-outline"
 
 export function generateCopperPoursTsx(
   circuitJson: AnyCircuitElement[],
-  additionalNetNames: string[] = [],
 ): string[] {
   const sourceNetNameById = new Map(
     su(circuitJson)
@@ -12,7 +11,7 @@ export function generateCopperPoursTsx(
       .map((sourceNet) => [sourceNet.source_net_id, sourceNet.name]),
   )
   const reservedNetNames = new Set(sourceNetNameById.values())
-  const usedNetNames = new Set(additionalNetNames)
+  const usedNetNames = new Set<string>()
   const copperPours = su(circuitJson)
     .pcb_copper_pour.list()
     .flatMap((pour) => {

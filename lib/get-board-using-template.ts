@@ -4,7 +4,7 @@ import type { AnyCircuitElement } from "circuit-json"
 import { generateBoardSchematicTsx } from "./generate-board-schematic-tsx"
 import { generateCopperPoursTsx } from "./generate-copper-pours-tsx"
 import { generateFootprintTsx } from "./generate-footprint-tsx"
-import { getBoardNetConnections } from "./get-board-net-connections"
+import { getCopperPourPadConnections } from "./get-copper-pour-pad-connections"
 
 export interface BoardTemplateParams {
   circuitJson: AnyCircuitElement[]
@@ -62,25 +62,32 @@ export const getBoardUsingTemplate = ({
     }
   }
 
-  const { footprintCircuitJson, connections, netNames } =
-    getBoardNetConnections(circuitJson)
+  const { footprintCircuitJson, connections, pinLabels } =
+    getCopperPourPadConnections(circuitJson)
+  const hasCopperPourConnections = Object.keys(connections).length > 0
   // Imported PCB routes are already drawn by the footprint converter.
-  if (netNames.length) boardProps.push("routingDisabled")
+  if (hasCopperPourConnections) boardProps.push("routingDisabled")
   const boardPropsStr = boardProps.join(" ")
   const footprintTsx = generateFootprintTsx(footprintCircuitJson)
-  const copperPoursTsx = generateCopperPoursTsx(circuitJson, netNames)
+  const copperPoursTsx = generateCopperPoursTsx(circuitJson)
 
   const symbolTsx = generateBoardSchematicTsx(circuitJson)
   const chipProps = [
-    netNames.length ? 'name="ImportedBoard"' : "",
-    netNames.length ? "noSchematicRepresentation" : "",
+    hasCopperPourConnections ? 'name="ImportedBoard"' : "",
+    hasCopperPourConnections ? `pinLabels={${JSON.stringify(pinLabels)}}` : "",
+    // The imported symbol already draws its ports; do not generate new ones
+    // for the connections needed by the copper pour solver.
+    hasCopperPourConnections
+      ? "schPinArrangement={{leftSide:[],rightSide:[],topSide:[],bottomSide:[]}}"
+      : "",
     footprintTsx ? `footprint={${footprintTsx}}` : "",
-    symbolTsx && !netNames.length ? `symbol={${symbolTsx}}` : "",
-    netNames.length ? `connections={${JSON.stringify(connections)}}` : "",
+    symbolTsx ? `symbol={${symbolTsx}}` : "",
+    hasCopperPourConnections
+      ? `connections={${JSON.stringify(connections)}}`
+      : "",
   ].filter(Boolean)
   const children = [
     footprintTsx ? `<chip ${chipProps.join(" ")} />` : (symbolTsx ?? ""),
-    footprintTsx && netNames.length ? (symbolTsx ?? "") : "",
     ...copperPoursTsx,
   ]
     .filter(Boolean)
