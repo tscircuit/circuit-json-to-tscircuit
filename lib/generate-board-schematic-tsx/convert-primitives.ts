@@ -9,7 +9,8 @@ export const convertPrimitives: SchematicElementConverter = (circuitJson) => [
     circuitJson.filter(
       (element) =>
         element.type === "schematic_table" ||
-        element.type === "schematic_table_cell",
+        element.type === "schematic_table_cell" ||
+        element.type === "schematic_graphic",
     ),
   ),
   ...circuitJson.flatMap((element) => {
