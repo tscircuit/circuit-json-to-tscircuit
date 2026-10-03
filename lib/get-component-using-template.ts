@@ -20,6 +20,8 @@ export const getComponentUsingTemplate = ({
   supplierPartNumbers,
   manufacturerPartNumber,
 }: ComponentTemplateParams) => {
+  const mpn = manufacturerPartNumber?.trim()
+  const partNumberExpression = `props.mpn ?? props.manufacturerPartNumber ?? props.mfn ?? ${JSON.stringify(mpn)}`
   const footprintTsx = generateFootprintTsx(circuitJson)
   const symbolTsx = generateSymbolTsx(circuitJson)
   const pinAttributes = getPinAttributes(circuitJson)
@@ -33,7 +35,7 @@ ${pinLabels ? `const pinLabels = ${JSON.stringify(pinLabels, null, "  ")} as con
     ${pinAttributes ? `pinAttributes={${JSON.stringify(pinAttributes, null, "  ")}}` : ""}
     ${objUrl ? `cadModel={{\n        objUrl: \"${objUrl}\",\n        rotationOffset: { x: 0, y: 0, z: 0 },\n        positionOffset: { x: 0, y: 0, z: 0 },\n      }}` : ""}
     ${supplierPartNumbers ? `supplierPartNumbers={${JSON.stringify(supplierPartNumbers, null, "  ")}}` : ""}
-    ${manufacturerPartNumber ? `manufacturerPartNumber=\"${manufacturerPartNumber}\"` : ""}
+    ${mpn ? `mpn={${partNumberExpression}}\n    manufacturerPartNumber={${partNumberExpression}}` : ""}
     {...props}
   />
 )
