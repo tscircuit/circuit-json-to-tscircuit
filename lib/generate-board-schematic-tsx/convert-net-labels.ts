@@ -1,3 +1,4 @@
+import { canRenderNativeNetLabel } from "./can-render-native-net-label"
 import { su } from "@tscircuit/soup-util"
 import { schematic_text } from "circuit-json"
 import { symbols } from "schematic-symbols"
@@ -32,7 +33,7 @@ export const convertNetLabels: SchematicElementConverter = (circuitJson) =>
       if (
         !symbolName &&
         schematicNetLabel.anchor_position &&
-        /^[A-Za-z0-9_/-]+$/.test(schematicNetLabel.text)
+        canRenderNativeNetLabel(schematicNetLabel.text)
       ) {
         return [
           formatElement("netlabel", {

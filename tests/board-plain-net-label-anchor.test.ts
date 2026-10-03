@@ -14,22 +14,39 @@ test("native plain labels preserve rendering on every connection side", async ()
     const output = await runTscircuitCode(
       convertCircuitJsonToTscircuit(input, { componentName: "LabelBoard" }),
     )
-    const labels = (json: CircuitJson) =>
-      json.filter((e) => e.type === "schematic_net_label")
-    expect(labels(output)).toHaveLength(1)
-    const original = labels(input)[0]
-    expect(labels(output)[0]).toMatchObject({
+    const sourceLabels = input.filter((e) => e.type === "schematic_net_label")
+    const renderedLabels = output.filter(
+      (e) => e.type === "schematic_net_label",
+    )
+    expect(renderedLabels).toHaveLength(1)
+    const original = sourceLabels[0]!
+    expect(renderedLabels[0]).toMatchObject({
       text: original.text,
       anchor_side: original.anchor_side,
       anchor_position: original.anchor_position,
       center: original.center,
     })
-    // Compare actual renderer output, not a copy of converter constants.
-    const render = (json: CircuitJson) =>
-      convertCircuitJsonToSchematicSvg(labels(json), { includeVersion: false })
-    expect(render(output)).toBe(render(input))
+    expect(
+      convertCircuitJsonToSchematicSvg(renderedLabels, {
+        includeVersion: false,
+      }),
+    ).toBe(
+      convertCircuitJsonToSchematicSvg(sourceLabels, { includeVersion: false }),
+    )
   }
-  for (const name of ["HV VSYS", "net.name", "", 'A"B', "CENTER_ONLY"]) {
+  for (const name of [
+    "HV VSYS",
+    "BUS/DATA",
+    "net.name",
+    "",
+    'A"B',
+    "CENTER_ONLY",
+    "VCC-P",
+    "VCC+P",
+    "3V3",
+    "1",
+    "-VCC",
+  ]) {
     const input: CircuitJson = [
       {
         type: "pcb_board",
