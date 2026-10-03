@@ -1,13 +1,13 @@
 import { su } from "@tscircuit/soup-util"
 import { type AnyCircuitElement, type SchematicComponent } from "circuit-json"
 import { convertRect } from "./convert-rect"
-import { COMPILED_SCHEMATIC_COMPONENT_OUTLINE_STROKE_WIDTH } from "./compiled-schematic-style"
 import { formatElement } from "./format-attributes"
 
 // Circuit JSON does not encode box body styling. These values mirror the
 // circuit-to-svg defaults so reconstructed boxes keep the compiled view.
 const DEFAULT_BOX_BODY_STROKE_COLOR = "#840000"
 const DEFAULT_BOX_BODY_FILL_COLOR = "#ffffc2"
+const DEFAULT_BOX_BODY_STROKE_WIDTH = 0.02
 
 // Circuit JSON does not encode these presentation values. They mirror the
 // circuit-to-svg defaults so reconstructed box pins keep the compiled view.
@@ -28,7 +28,7 @@ export const convertBoxComponent = ({
       center: schematicComponent.center,
       width: schematicComponent.size.width,
       height: schematicComponent.size.height,
-      strokeWidth: COMPILED_SCHEMATIC_COMPONENT_OUTLINE_STROKE_WIDTH,
+      strokeWidth: DEFAULT_BOX_BODY_STROKE_WIDTH,
       color: DEFAULT_BOX_BODY_STROKE_COLOR,
       fillColor: DEFAULT_BOX_BODY_FILL_COLOR,
       isFilled: true,
@@ -60,7 +60,7 @@ export const convertBoxComponent = ({
         y1: edge.y,
         x2: schematicPort.center.x,
         y2: schematicPort.center.y,
-        strokeWidth: COMPILED_SCHEMATIC_COMPONENT_OUTLINE_STROKE_WIDTH,
+        strokeWidth: DEFAULT_BOX_BODY_STROKE_WIDTH,
         color: DEFAULT_BOX_BODY_STROKE_COLOR,
       }),
     )

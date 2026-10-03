@@ -1,8 +1,11 @@
 import { schematic_text } from "circuit-json"
 import type { SchSymbol } from "schematic-symbols"
 import { applyToPoint, type Matrix } from "transformation-matrix"
-import { COMPILED_SCHEMATIC_COMPONENT_OUTLINE_STROKE_WIDTH } from "./compiled-schematic-style"
 import { formatElement } from "./format-attributes"
+
+// Circuit JSON symbol primitives do not encode this presentation value. It
+// matches the component outline width used by circuit-to-svg.
+const DEFAULT_SYMBOL_CIRCLE_STROKE_WIDTH = 0.02
 
 const anchors = {
   middle_top: "top_center",
@@ -69,7 +72,7 @@ export const convertSymbolPrimitives = ({
       return formatElement("schematiccircle", {
         center,
         radius: Math.hypot(radiusVector.x, radiusVector.y),
-        strokeWidth: COMPILED_SCHEMATIC_COMPONENT_OUTLINE_STROKE_WIDTH,
+        strokeWidth: DEFAULT_SYMBOL_CIRCLE_STROKE_WIDTH,
         isFilled: primitive.fill,
       })
     }
