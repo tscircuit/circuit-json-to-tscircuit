@@ -5,6 +5,7 @@ import type { CircuitJson } from "circuit-json"
 import { convertCircuitJsonToSchematicSvg } from "circuit-to-svg"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
+import { applyToPoint, compose, scale, translate } from "transformation-matrix"
 
 // Compare stroke/segment-length ratios so SVG auto-fit does not affect the test.
 const firstPathStrokeRatio = (svg: string) => {
@@ -25,14 +26,14 @@ const firstPathStrokeRatio = (svg: string) => {
   )
 }
 
-for (const [fixture, symbolName, scale] of [
+for (const [fixture, symbolName, scaleFactor] of [
   ["drv8307evm", "boxresistor_up", 1],
   ["lm251772evm-pd", "boxresistor_right", 2],
   ["lm5155evm-fly", "capacitor_down", 0.5],
   ["lmg342x-bb-evm", "capacitor_polarized_down", 1],
   ["drv8307evm", "diode_down", 1],
 ] as const) {
-  test(`${fixture} ${symbolName} keeps rendered outline width at scale ${scale}`, async () => {
+  test(`${fixture} ${symbolName} keeps rendered outline width at scale ${scaleFactor}`, async () => {
     const source = JSON.parse(
       gunzipSync(
         readFileSync(
@@ -59,14 +60,22 @@ for (const [fixture, symbolName, scale] of [
         (e.type === "schematic_port" &&
           e.schematic_component_id === component.schematic_component_id),
     )
-    component.size.width *= scale
-    component.size.height *= scale
-    for (const e of subset) {
-      if (e.type === "schematic_port") {
-        e.center.x =
-          component.center.x + (e.center.x - component.center.x) * scale
-        e.center.y =
-          component.center.y + (e.center.y - component.center.y) * scale
+    const schematicToScaledSchematicTransform = compose(
+      translate(component.center.x, component.center.y),
+      scale(scaleFactor),
+      translate(-component.center.x, -component.center.y),
+    )
+    const scaledSize = applyToPoint(scale(scaleFactor), {
+      x: component.size.width,
+      y: component.size.height,
+    })
+    component.size = { width: scaledSize.x, height: scaledSize.y }
+    for (const element of subset) {
+      if (element.type === "schematic_port") {
+        element.center = applyToPoint(
+          schematicToScaledSchematicTransform,
+          element.center,
+        )
       }
     }
     const output = await runTscircuitCode(
