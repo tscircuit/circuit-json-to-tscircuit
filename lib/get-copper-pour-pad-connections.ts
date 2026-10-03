@@ -1,5 +1,6 @@
 import type { AnyCircuitElement, PcbPort, SourcePort } from "circuit-json"
 import { getSourcePortConnectivityMapFromCircuitJson } from "circuit-json-to-connectivity-map"
+import { getConnectableCopperPourNets } from "./get-connectable-copper-pour-nets"
 
 type SourcePortId = SourcePort["source_port_id"]
 type PcbPortId = PcbPort["pcb_port_id"]
@@ -8,25 +9,12 @@ type BoardPinName = `pin${number}`
 export const getCopperPourPadConnections = (
   circuitJson: AnyCircuitElement[],
 ) => {
-  const copperPourNetIds = new Set(
-    circuitJson
-      .filter((element) => element.type === "pcb_copper_pour")
-      .flatMap((pour) => (pour.source_net_id ? [pour.source_net_id] : [])),
-  )
-  if (copperPourNetIds.size === 0) {
+  const sourceNets = getConnectableCopperPourNets(circuitJson)
+  if (sourceNets.length === 0) {
     return { footprintCircuitJson: circuitJson, connections: {}, pinLabels: {} }
   }
   const connectivityMap =
     getSourcePortConnectivityMapFromCircuitJson(circuitJson)
-  // Core's literal net selectors support identifier names. Other imported
-  // names still use attribute selectors for pours, without invalid traces.
-  const sourceNets = circuitJson
-    .filter((element) => element.type === "source_net")
-    .filter(
-      (net) =>
-        copperPourNetIds.has(net.source_net_id) &&
-        /^[A-Za-z_][A-Za-z0-9_]*$/.test(net.name),
-    )
   const pcbPortById = new Map<PcbPortId, PcbPort>(
     circuitJson
       .filter((element) => element.type === "pcb_port")

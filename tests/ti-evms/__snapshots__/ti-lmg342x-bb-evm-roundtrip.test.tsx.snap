@@ -103,33 +103,33 @@ exports[`TI LMG342X-BB-EVM Circuit JSON to tscircuit round trip 1`] = `
 <platedhole  portHints={["pin95"]} pcbX="31.710142320000003mm" pcbY="113.89359999999999mm" outerDiameter="2.2098mm" holeDiameter="1.6001999999999998mm" shape="circle" />
 <platedhole  portHints={["pin96"]} pcbX="118.9228mm" pcbY="75.0316mm" outerDiameter="11.99999886mm" holeDiameter="6.858mm" shape="circle" />
 <platedhole  portHints={["pin97"]} pcbX="118.9228mm" pcbY="47.599599999999995mm" outerDiameter="11.99999886mm" holeDiameter="6.858mm" shape="circle" />
-<via pcbX="98.2359986mm" pcbY="115.58445768mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="84.89313476mm" pcbY="100.55324822mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="85.9028mm" pcbY="104.4956mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="69.47844626mm" pcbY="122.71509874mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="106.67999999999999mm" pcbY="116.83999999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="109.22mm" pcbY="111.75999999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="96.52mm" pcbY="116.83999999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="91.44mm" pcbY="106.67999999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="93.97999999999999mm" pcbY="91.44mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="91.44mm" pcbY="86.36mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="88.89999999999999mm" pcbY="111.75999999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="86.36mm" pcbY="96.52mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="76.2mm" pcbY="116.83999999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="78.74mm" pcbY="91.44mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="66.03999999999999mm" pcbY="116.83999999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="66.03999999999999mm" pcbY="96.52mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="68.58mm" pcbY="91.44mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="60.96mm" pcbY="106.67999999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="60.96mm" pcbY="96.52mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="55.879999999999995mm" pcbY="106.67999999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="58.419999999999995mm" pcbY="101.6mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="50.8mm" pcbY="106.67999999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="53.339999999999996mm" pcbY="101.6mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="53.339999999999996mm" pcbY="91.44mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="48.26mm" pcbY="101.6mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="45.72mm" pcbY="96.52mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="48.26mm" pcbY="91.44mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+<via pcbX="98.2359986mm" pcbY="115.58445768mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="84.89313476mm" pcbY="100.55324822mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="85.9028mm" pcbY="104.4956mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="69.47844626mm" pcbY="122.71509874mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="106.67999999999999mm" pcbY="116.83999999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="109.22mm" pcbY="111.75999999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="96.52mm" pcbY="116.83999999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="91.44mm" pcbY="106.67999999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="93.97999999999999mm" pcbY="91.44mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="91.44mm" pcbY="86.36mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="88.89999999999999mm" pcbY="111.75999999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="86.36mm" pcbY="96.52mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="76.2mm" pcbY="116.83999999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="78.74mm" pcbY="91.44mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="66.03999999999999mm" pcbY="116.83999999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="66.03999999999999mm" pcbY="96.52mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="68.58mm" pcbY="91.44mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="60.96mm" pcbY="106.67999999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="60.96mm" pcbY="96.52mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="55.879999999999995mm" pcbY="106.67999999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="58.419999999999995mm" pcbY="101.6mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="50.8mm" pcbY="106.67999999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="53.339999999999996mm" pcbY="101.6mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="53.339999999999996mm" pcbY="91.44mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="48.26mm" pcbY="101.6mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="45.72mm" pcbY="96.52mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="48.26mm" pcbY="91.44mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
 <via pcbX="104.92739999999999mm" pcbY="107.11130723999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
 <via pcbX="104.68088538mm" pcbY="102.86442978mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
 <via pcbX="103.8098mm" pcbY="99.0346mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
@@ -144,16 +144,16 @@ exports[`TI LMG342X-BB-EVM Circuit JSON to tscircuit round trip 1`] = `
 <via pcbX="88.81407688mm" pcbY="95.3008762mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
 <via pcbX="99.38952689999999mm" pcbY="112.68932503999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
 <via pcbX="109.2098019mm" pcbY="86.71729164mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="110.41691404mm" pcbY="88.49325964mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="110.42139205999999mm" pcbY="104.61120048mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="110.42139205999999mm" pcbY="101.88212542mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="110.42139205999999mm" pcbY="90.96582518mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="110.42139205999999mm" pcbY="99.15305036mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="110.42139205999999mm" pcbY="96.4239753mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="110.42139205999999mm" pcbY="93.69490024mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="110.42139205999999mm" pcbY="107.34027554mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+<via pcbX="110.41691404mm" pcbY="88.49325964mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="110.42139205999999mm" pcbY="104.61120048mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="110.42139205999999mm" pcbY="101.88212542mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="110.42139205999999mm" pcbY="90.96582518mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="110.42139205999999mm" pcbY="99.15305036mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="110.42139205999999mm" pcbY="96.4239753mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="110.42139205999999mm" pcbY="93.69490024mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="110.42139205999999mm" pcbY="107.34027554mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
 <via pcbX="98.2523054mm" pcbY="84.7441663mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="110.4138mm" pcbY="85.50767506mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+<via pcbX="110.4138mm" pcbY="85.50767506mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
 <via pcbX="95.69201588mm" pcbY="105.72449772mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
 <via pcbX="93.63622115999999mm" pcbY="101.91682435999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
 <via pcbX="108.37423842mm" pcbY="83.85836669999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
@@ -181,323 +181,323 @@ exports[`TI LMG342X-BB-EVM Circuit JSON to tscircuit round trip 1`] = `
 <via pcbX="78.3082mm" pcbY="112.1156mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
 <via pcbX="85.68601608mm" pcbY="125.35054178mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
 <via pcbX="94.364048mm" pcbY="125.35039446mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="107.47455264mm" pcbY="82.6516mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+<via pcbX="107.47455264mm" pcbY="82.6516mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
 <via pcbX="78.3082mm" pcbY="102.10563017999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
 <via pcbX="78.38327732mm" pcbY="99.0346762mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
 <via pcbX="110.7948mm" pcbY="109.5756mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="91.25238544mm" pcbY="64.36359999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="145.0848mm" pcbY="62.712599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="147.49779999999998mm" pcbY="62.712599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="149.9108mm" pcbY="62.712599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="157.1498mm" pcbY="62.712599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="154.7368mm" pcbY="62.712599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="152.3238mm" pcbY="62.712599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="153.7208mm" pcbY="73.1266mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="156.13379999999998mm" pcbY="73.1266mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="158.5468mm" pcbY="73.1266mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="151.3078mm" pcbY="73.1266mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="148.8948mm" pcbY="73.1266mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="144.06879999999998mm" pcbY="73.1266mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="146.4818mm" pcbY="73.1266mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="141.78279999999998mm" pcbY="65.88759999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="141.70659999999998mm" pcbY="68.3006mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="141.70659999999998mm" pcbY="73.1266mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="141.70659999999998mm" pcbY="70.7136mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="113.7158mm" pcbY="104.4956mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="113.7158mm" pcbY="101.8286mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="113.7158mm" pcbY="99.16159999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="113.7158mm" pcbY="96.49459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="113.7158mm" pcbY="93.82759999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="113.7158mm" pcbY="91.1606mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="113.7158mm" pcbY="88.4936mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="113.7158mm" pcbY="85.8266mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="113.7158mm" pcbY="83.1596mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="113.7158mm" pcbY="80.4926mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="123.6218mm" pcbY="126.2126mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="122.79629999999999mm" pcbY="128.2446mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="120.22455mm" pcbY="128.2446mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="117.6528mm" pcbY="128.2446mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="117.6528mm" pcbY="125.6683034mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="117.6528mm" pcbY="122.9650195mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="117.6528mm" pcbY="120.2617356mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="117.6528mm" pcbY="117.55845169999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="167.0558mm" pcbY="120.7516mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="167.0558mm" pcbY="123.24926582mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="167.0558mm" pcbY="125.74693163999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="167.0558mm" pcbY="128.24459746mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="162.0266mm" pcbY="128.2446mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="164.5412mm" pcbY="128.2446mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="161.08679999999998mm" pcbY="126.2126mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="161.08679999999998mm" pcbY="123.67259999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="171.6024mm" pcbY="119.24029999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="169.0878mm" pcbY="119.24029999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.117mm" pcbY="119.24029746mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.1805mm" pcbY="78.3463mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.1805mm" pcbY="80.88629999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.1805mm" pcbY="83.4263mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.1805mm" pcbY="85.96629999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.1805mm" pcbY="88.5063mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.1805mm" pcbY="91.0463mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.1805mm" pcbY="93.5863mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.1805mm" pcbY="96.1263mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.1805mm" pcbY="98.66629999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.1805mm" pcbY="101.2063mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.1805mm" pcbY="103.74629999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.1805mm" pcbY="106.2863mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.1805mm" pcbY="108.82629999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.1805mm" pcbY="111.3663mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.1805mm" pcbY="113.9063mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.1805mm" pcbY="116.4463mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="28.49633112mm" pcbY="51.5366mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="30.9118mm" pcbY="51.5366mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="26.08086224mm" pcbY="51.5366mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="32.3088mm" pcbY="47.72906888mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="32.3088mm" pcbY="45.3136mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="32.3088mm" pcbY="50.14453776mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="92.50926888mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="90.0938mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="85.40714439999999mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="80.57620664mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="82.99167552mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="87.82261328mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="78.16073775999999mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="73.32979999999999mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="75.74526888mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="68.51614439999999mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="63.68520664mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="66.10067552mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="70.93161328mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="61.26973775999999mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="56.4388mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="58.85426888mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="48.8311444mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="46.41567551999999mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="51.24661328mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="41.58473776mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="36.7538mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="39.16926888mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="102.2858mm" pcbY="55.727599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="112.22808135999999mm" pcbY="55.727599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="109.74251101999998mm" pcbY="55.727599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="104.77137034mm" pcbY="55.727599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="107.25694068mm" pcbY="55.727599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="114.7136517mm" pcbY="55.727599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="117.19922204mm" pcbY="55.727599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="100.88879999999999mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="100.88879999999999mm" pcbY="61.8236mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="100.88879999999999mm" pcbY="56.9976mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="98.6028mm" pcbY="61.8236mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="91.76285431999999mm" pcbY="67.5386mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="99.6188mm" pcbY="67.82960018mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="102.03426888mm" pcbY="67.82960018mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="84.2518mm" pcbY="54.584599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="86.73606224mm" pcbY="54.584599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="91.567mm" pcbY="54.584599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="89.15153111999999mm" pcbY="54.584599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="82.21979999999999mm" pcbY="56.34207425999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="79.80433111999999mm" pcbY="52.5526mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="82.21979999999999mm" pcbY="52.5526mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="77.38886224mm" pcbY="52.5526mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="72.48913112mm" pcbY="52.5526mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="74.9046mm" pcbY="52.5526mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="70.07366224mm" pcbY="52.5526mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="67.60816552mm" pcbY="54.968068880000004mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="67.60816552mm" pcbY="52.5526mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="67.60816552mm" pcbY="57.383537759999996mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="35.70570456mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="33.29023568mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="38.12117344mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="28.459297919999997mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="26.043829040000002mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="30.874766799999996mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="50.19851784mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="47.78304896mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="52.61398672mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="42.9521112mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="40.53664232mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="45.367580079999996mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="59.860393359999996mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="55.0294556mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="57.44492447999999mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="67.10679999999999mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="62.27586224mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="64.69133111999999mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="72.31626888mm" pcbY="64.36359999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="69.9008mm" pcbY="64.36359999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="79.56267552mm" pcbY="64.36359999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="74.73173775999999mm" pcbY="64.36359999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="77.14720664mm" pcbY="64.36359999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="84.51644768mm" pcbY="64.36359999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="82.1009788mm" pcbY="64.36359999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="86.93191655999999mm" pcbY="64.36359999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="89.34738544mm" pcbY="64.36359999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="127.3048mm" pcbY="53.568599999999996mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="125.36805mm" pcbY="55.346599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="118.97722204mm" pcbY="59.029599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="116.49165169999999mm" pcbY="59.029599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="121.46279238mm" pcbY="59.029599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="123.4948mm" pcbY="57.1246mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="109.03494068mm" pcbY="59.029599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="106.54937034mm" pcbY="59.029599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="111.52051101999999mm" pcbY="59.029599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="114.00608136mm" pcbY="59.029599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="168.6306mm" pcbY="51.9176mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="171.24679999999998mm" pcbY="51.9176mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="166.23665mm" pcbY="51.9176mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="164.7698mm" pcbY="48.5648mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="164.7698mm" pcbY="45.9486mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="164.7698mm" pcbY="50.958749999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="164.7698mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="159.893mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="157.27679999999998mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="162.28695mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="154.7876mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="141.92884999999998mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="144.54505mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="147.16125mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="149.77745mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="152.39364999999998mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="131.4958mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="134.112mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="136.7282mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="139.3444mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="22.6568mm" pcbY="83.28659999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="30.40873776mm" pcbY="86.08059999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="25.5778mm" pcbY="86.08059999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="27.99326888mm" pcbY="86.08059999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="38.11700784mm" pcbY="90.0176mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="33.634784139999994mm" pcbY="92.23788257999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="35.87927292mm" pcbY="92.23788257999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="31.39029536mm" pcbY="89.7636mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="31.39029536mm" pcbY="92.23788257999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="31.39029536mm" pcbY="87.3506mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="22.6568mm" pcbY="78.0796mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="22.6568mm" pcbY="80.4926mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="22.6568mm" pcbY="75.6666mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="129.0828mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="129.0066mm" pcbY="45.6946mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="129.0066mm" pcbY="50.520599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="129.0066mm" pcbY="48.1076mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="104.0638mm" pcbY="59.029599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="103.9876mm" pcbY="61.4426mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="103.9876mm" pcbY="66.26859999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="103.9876mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="64.69133111999999mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="62.27586224mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="67.10679999999999mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="57.44492447999999mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="55.0294556mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="59.860393359999996mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="45.367580079999996mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="40.53664232mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="42.9521112mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="52.61398672mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="47.78304896mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="50.19851784mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="30.874766799999996mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="26.043829040000002mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="28.459297919999997mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="38.12117344mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="33.29023568mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="35.70570456mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="88.12811939999999mm" pcbY="81.73871892mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="85.9400364mm" pcbY="83.89771892mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="83.78103639999999mm" pcbY="86.18371891999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="50.699883359999994mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="48.284414479999995mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="53.11535224mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="43.45347672mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="41.03800784mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="45.868945599999996mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="65.19269664mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="62.77722776mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="67.60816552mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="57.94629mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="55.530821120000006mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="60.36175888mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="74.85457216mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="70.02363439999999mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="72.43910328mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="82.1009788mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="77.27004104mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="79.68550992mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="94.92897701999999mm" pcbY="79.7306mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="90.10297702mm" pcbY="79.7306mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="92.51597702mm" pcbY="79.7306mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="102.59222306mm" pcbY="79.7306mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="97.76622306mm" pcbY="79.7306mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="100.17922306mm" pcbY="79.7306mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="110.54079999999999mm" pcbY="79.7306mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="105.7148mm" pcbY="79.7306mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="108.1278mm" pcbY="79.7306mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="110.54079999999999mm" pcbY="72.9996mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="110.54079999999999mm" pcbY="77.8256mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="110.54079999999999mm" pcbY="75.4126mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="110.6678mm" pcbY="70.4596mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="122.78359999999999mm" pcbY="66.1416mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="120.1674mm" pcbY="66.1416mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="117.5512mm" pcbY="66.1416mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="114.935mm" pcbY="66.1416mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="112.5728mm" pcbY="68.4276mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="135.83285mm" pcbY="66.1416mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="133.21665mm" pcbY="66.1416mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="130.60045mm" pcbY="66.1416mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="127.98424999999999mm" pcbY="66.1416mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="125.36805mm" pcbY="66.1416mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="138.2268mm" pcbY="63.7286mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="138.2268mm" pcbY="66.1416mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="138.2268mm" pcbY="61.315599999999996mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="138.303mm" pcbY="58.9026mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="140.8176mm" pcbY="58.9026mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="143.3322mm" pcbY="58.9026mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="145.97379999999998mm" pcbY="58.9026mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="148.48839999999998mm" pcbY="58.9026mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="151.003mm" pcbY="58.9026mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="153.5176mm" pcbY="58.9026mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="156.0322mm" pcbY="58.9026mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="168.2242mm" pcbY="57.1246mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="165.7096mm" pcbY="57.1246mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="163.195mm" pcbY="57.1246mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="160.6804mm" pcbY="57.1246mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="158.1658mm" pcbY="57.1246mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="168.2242mm" pcbY="66.64959999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="165.7096mm" pcbY="66.64959999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="163.195mm" pcbY="66.64959999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="160.6804mm" pcbY="66.64959999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.1805mm" pcbY="68.1863mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.1805mm" pcbY="70.7263mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.1805mm" pcbY="73.2663mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="174.1805mm" pcbY="75.8063mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="112.82679999999999mm" pcbY="114.57309572mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="112.6998mm" pcbY="110.16959931999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="110.4138mm" pcbY="82.7786mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="46.52222852mm" pcbY="102.54065598mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="41.7068mm" pcbY="102.54065598mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="41.7068mm" pcbY="96.9911573mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="41.7068mm" pcbY="91.44165862mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="55.422799999999995mm" pcbY="91.54816081999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="57.8358mm" pcbY="91.54816081999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="60.629799999999996mm" pcbY="91.54816081999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="63.542682160000005mm" pcbY="91.53171686mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="77.51260849999998mm" pcbY="92.17942194mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="80.38836856mm" pcbY="92.17942194mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="83.26412862mm" pcbY="92.17942194mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="85.9028mm" pcbY="89.47301892mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="88.06179999999999mm" pcbY="87.18701892mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="90.249883mm" pcbY="85.02801892mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="92.41776791999999mm" pcbY="82.6516mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="94.92723204mm" pcbY="82.6516mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="97.43669616mm" pcbY="82.6516mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="99.94616027999999mm" pcbY="82.6516mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="102.4556244mm" pcbY="82.6516mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="104.96508852mm" pcbY="82.6516mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="77.88880028mm" pcbY="124.31077754mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+<via pcbX="91.25238544mm" pcbY="64.36359999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="145.0848mm" pcbY="62.712599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="147.49779999999998mm" pcbY="62.712599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="149.9108mm" pcbY="62.712599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="157.1498mm" pcbY="62.712599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="154.7368mm" pcbY="62.712599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="152.3238mm" pcbY="62.712599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="153.7208mm" pcbY="73.1266mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="156.13379999999998mm" pcbY="73.1266mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="158.5468mm" pcbY="73.1266mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="151.3078mm" pcbY="73.1266mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="148.8948mm" pcbY="73.1266mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="144.06879999999998mm" pcbY="73.1266mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="146.4818mm" pcbY="73.1266mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="141.78279999999998mm" pcbY="65.88759999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="141.70659999999998mm" pcbY="68.3006mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="141.70659999999998mm" pcbY="73.1266mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="141.70659999999998mm" pcbY="70.7136mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="113.7158mm" pcbY="104.4956mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.NetJ16_1"} />
+<via pcbX="113.7158mm" pcbY="101.8286mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.NetJ16_1"} />
+<via pcbX="113.7158mm" pcbY="99.16159999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.NetJ16_1"} />
+<via pcbX="113.7158mm" pcbY="96.49459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.NetJ16_1"} />
+<via pcbX="113.7158mm" pcbY="93.82759999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.NetJ16_1"} />
+<via pcbX="113.7158mm" pcbY="91.1606mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.NetJ16_1"} />
+<via pcbX="113.7158mm" pcbY="88.4936mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.NetJ16_1"} />
+<via pcbX="113.7158mm" pcbY="85.8266mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.NetJ16_1"} />
+<via pcbX="113.7158mm" pcbY="83.1596mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.NetJ16_1"} />
+<via pcbX="113.7158mm" pcbY="80.4926mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.NetJ16_1"} />
+<via pcbX="123.6218mm" pcbY="126.2126mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.NetJ16_1"} />
+<via pcbX="122.79629999999999mm" pcbY="128.2446mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.NetJ16_1"} />
+<via pcbX="120.22455mm" pcbY="128.2446mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.NetJ16_1"} />
+<via pcbX="117.6528mm" pcbY="128.2446mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.NetJ16_1"} />
+<via pcbX="117.6528mm" pcbY="125.6683034mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.NetJ16_1"} />
+<via pcbX="117.6528mm" pcbY="122.9650195mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.NetJ16_1"} />
+<via pcbX="117.6528mm" pcbY="120.2617356mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.NetJ16_1"} />
+<via pcbX="117.6528mm" pcbY="117.55845169999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.NetJ16_1"} />
+<via pcbX="167.0558mm" pcbY="120.7516mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="167.0558mm" pcbY="123.24926582mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="167.0558mm" pcbY="125.74693163999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="167.0558mm" pcbY="128.24459746mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="162.0266mm" pcbY="128.2446mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="164.5412mm" pcbY="128.2446mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="161.08679999999998mm" pcbY="126.2126mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="161.08679999999998mm" pcbY="123.67259999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="171.6024mm" pcbY="119.24029999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="169.0878mm" pcbY="119.24029999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.117mm" pcbY="119.24029746mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.1805mm" pcbY="78.3463mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.1805mm" pcbY="80.88629999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.1805mm" pcbY="83.4263mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.1805mm" pcbY="85.96629999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.1805mm" pcbY="88.5063mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.1805mm" pcbY="91.0463mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.1805mm" pcbY="93.5863mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.1805mm" pcbY="96.1263mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.1805mm" pcbY="98.66629999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.1805mm" pcbY="101.2063mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.1805mm" pcbY="103.74629999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.1805mm" pcbY="106.2863mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.1805mm" pcbY="108.82629999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.1805mm" pcbY="111.3663mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.1805mm" pcbY="113.9063mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.1805mm" pcbY="116.4463mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="28.49633112mm" pcbY="51.5366mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="30.9118mm" pcbY="51.5366mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="26.08086224mm" pcbY="51.5366mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="32.3088mm" pcbY="47.72906888mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="32.3088mm" pcbY="45.3136mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="32.3088mm" pcbY="50.14453776mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="92.50926888mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="90.0938mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="85.40714439999999mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="80.57620664mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="82.99167552mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="87.82261328mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="78.16073775999999mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="73.32979999999999mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="75.74526888mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="68.51614439999999mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="63.68520664mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="66.10067552mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="70.93161328mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="61.26973775999999mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="56.4388mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="58.85426888mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="48.8311444mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="46.41567551999999mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="51.24661328mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="41.58473776mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="36.7538mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="39.16926888mm" pcbY="42.773599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="102.2858mm" pcbY="55.727599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.SW_2"} />
+<via pcbX="112.22808135999999mm" pcbY="55.727599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.SW_2"} />
+<via pcbX="109.74251101999998mm" pcbY="55.727599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.SW_2"} />
+<via pcbX="104.77137034mm" pcbY="55.727599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.SW_2"} />
+<via pcbX="107.25694068mm" pcbY="55.727599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.SW_2"} />
+<via pcbX="114.7136517mm" pcbY="55.727599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.SW_2"} />
+<via pcbX="117.19922204mm" pcbY="55.727599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.SW_2"} />
+<via pcbX="100.88879999999999mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.SW_2"} />
+<via pcbX="100.88879999999999mm" pcbY="61.8236mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.SW_2"} />
+<via pcbX="100.88879999999999mm" pcbY="56.9976mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.SW_2"} />
+<via pcbX="98.6028mm" pcbY="61.8236mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.SW_2"} />
+<via pcbX="91.76285431999999mm" pcbY="67.5386mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="99.6188mm" pcbY="67.82960018mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="102.03426888mm" pcbY="67.82960018mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="84.2518mm" pcbY="54.584599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="86.73606224mm" pcbY="54.584599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="91.567mm" pcbY="54.584599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="89.15153111999999mm" pcbY="54.584599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="82.21979999999999mm" pcbY="56.34207425999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="79.80433111999999mm" pcbY="52.5526mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="82.21979999999999mm" pcbY="52.5526mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="77.38886224mm" pcbY="52.5526mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="72.48913112mm" pcbY="52.5526mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="74.9046mm" pcbY="52.5526mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="70.07366224mm" pcbY="52.5526mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="67.60816552mm" pcbY="54.968068880000004mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="67.60816552mm" pcbY="52.5526mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="67.60816552mm" pcbY="57.383537759999996mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="35.70570456mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="33.29023568mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="38.12117344mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="28.459297919999997mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="26.043829040000002mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="30.874766799999996mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="50.19851784mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="47.78304896mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="52.61398672mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="42.9521112mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="40.53664232mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="45.367580079999996mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="59.860393359999996mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="55.0294556mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="57.44492447999999mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="67.10679999999999mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="62.27586224mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="64.69133111999999mm" pcbY="59.410599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVBUS_2"} />
+<via pcbX="72.31626888mm" pcbY="64.36359999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="69.9008mm" pcbY="64.36359999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="79.56267552mm" pcbY="64.36359999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="74.73173775999999mm" pcbY="64.36359999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="77.14720664mm" pcbY="64.36359999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="84.51644768mm" pcbY="64.36359999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="82.1009788mm" pcbY="64.36359999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="86.93191655999999mm" pcbY="64.36359999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="89.34738544mm" pcbY="64.36359999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="127.3048mm" pcbY="53.568599999999996mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="125.36805mm" pcbY="55.346599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="118.97722204mm" pcbY="59.029599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="116.49165169999999mm" pcbY="59.029599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="121.46279238mm" pcbY="59.029599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="123.4948mm" pcbY="57.1246mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="109.03494068mm" pcbY="59.029599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="106.54937034mm" pcbY="59.029599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="111.52051101999999mm" pcbY="59.029599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="114.00608136mm" pcbY="59.029599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="168.6306mm" pcbY="51.9176mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="171.24679999999998mm" pcbY="51.9176mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="166.23665mm" pcbY="51.9176mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="164.7698mm" pcbY="48.5648mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="164.7698mm" pcbY="45.9486mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="164.7698mm" pcbY="50.958749999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="164.7698mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="159.893mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="157.27679999999998mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="162.28695mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="154.7876mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="141.92884999999998mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="144.54505mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="147.16125mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="149.77745mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="152.39364999999998mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="131.4958mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="134.112mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="136.7282mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="139.3444mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="22.6568mm" pcbY="83.28659999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="30.40873776mm" pcbY="86.08059999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="25.5778mm" pcbY="86.08059999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="27.99326888mm" pcbY="86.08059999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="38.11700784mm" pcbY="90.0176mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="33.634784139999994mm" pcbY="92.23788257999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="35.87927292mm" pcbY="92.23788257999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="31.39029536mm" pcbY="89.7636mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="31.39029536mm" pcbY="92.23788257999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="31.39029536mm" pcbY="87.3506mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="22.6568mm" pcbY="78.0796mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="22.6568mm" pcbY="80.4926mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="22.6568mm" pcbY="75.6666mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="129.0828mm" pcbY="43.2816mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="129.0066mm" pcbY="45.6946mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="129.0066mm" pcbY="50.520599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="129.0066mm" pcbY="48.1076mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="104.0638mm" pcbY="59.029599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="103.9876mm" pcbY="61.4426mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="103.9876mm" pcbY="66.26859999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="103.9876mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="64.69133111999999mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="62.27586224mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="67.10679999999999mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="57.44492447999999mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="55.0294556mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="59.860393359999996mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="45.367580079999996mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="40.53664232mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="42.9521112mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="52.61398672mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="47.78304896mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="50.19851784mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="30.874766799999996mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="26.043829040000002mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="28.459297919999997mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="38.12117344mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="33.29023568mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="35.70570456mm" pcbY="63.855599999999995mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="88.12811939999999mm" pcbY="81.73871892mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="85.9400364mm" pcbY="83.89771892mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="83.78103639999999mm" pcbY="86.18371891999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="50.699883359999994mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="48.284414479999995mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="53.11535224mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="43.45347672mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="41.03800784mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="45.868945599999996mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="65.19269664mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="62.77722776mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="67.60816552mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="57.94629mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="55.530821120000006mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="60.36175888mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="74.85457216mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="70.02363439999999mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="72.43910328mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="82.1009788mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="77.27004104mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="79.68550992mm" pcbY="87.60459999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="94.92897701999999mm" pcbY="79.7306mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="90.10297702mm" pcbY="79.7306mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="92.51597702mm" pcbY="79.7306mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="102.59222306mm" pcbY="79.7306mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="97.76622306mm" pcbY="79.7306mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="100.17922306mm" pcbY="79.7306mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="110.54079999999999mm" pcbY="79.7306mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="105.7148mm" pcbY="79.7306mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="108.1278mm" pcbY="79.7306mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="110.54079999999999mm" pcbY="72.9996mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="110.54079999999999mm" pcbY="77.8256mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="110.54079999999999mm" pcbY="75.4126mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="110.6678mm" pcbY="70.4596mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="122.78359999999999mm" pcbY="66.1416mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="120.1674mm" pcbY="66.1416mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="117.5512mm" pcbY="66.1416mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="114.935mm" pcbY="66.1416mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="112.5728mm" pcbY="68.4276mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="135.83285mm" pcbY="66.1416mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="133.21665mm" pcbY="66.1416mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="130.60045mm" pcbY="66.1416mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="127.98424999999999mm" pcbY="66.1416mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="125.36805mm" pcbY="66.1416mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="138.2268mm" pcbY="63.7286mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="138.2268mm" pcbY="66.1416mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="138.2268mm" pcbY="61.315599999999996mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="138.303mm" pcbY="58.9026mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="140.8176mm" pcbY="58.9026mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="143.3322mm" pcbY="58.9026mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="145.97379999999998mm" pcbY="58.9026mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="148.48839999999998mm" pcbY="58.9026mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="151.003mm" pcbY="58.9026mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="153.5176mm" pcbY="58.9026mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="156.0322mm" pcbY="58.9026mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="168.2242mm" pcbY="57.1246mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="165.7096mm" pcbY="57.1246mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="163.195mm" pcbY="57.1246mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="160.6804mm" pcbY="57.1246mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="158.1658mm" pcbY="57.1246mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.PGND"} />
+<via pcbX="168.2242mm" pcbY="66.64959999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="165.7096mm" pcbY="66.64959999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="163.195mm" pcbY="66.64959999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="160.6804mm" pcbY="66.64959999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.1805mm" pcbY="68.1863mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.1805mm" pcbY="70.7263mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.1805mm" pcbY="73.2663mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="174.1805mm" pcbY="75.8063mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.HVOUT_2"} />
+<via pcbX="112.82679999999999mm" pcbY="114.57309572mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="112.6998mm" pcbY="110.16959931999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="110.4138mm" pcbY="82.7786mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="46.52222852mm" pcbY="102.54065598mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="41.7068mm" pcbY="102.54065598mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="41.7068mm" pcbY="96.9911573mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="41.7068mm" pcbY="91.44165862mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="55.422799999999995mm" pcbY="91.54816081999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="57.8358mm" pcbY="91.54816081999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="60.629799999999996mm" pcbY="91.54816081999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="63.542682160000005mm" pcbY="91.53171686mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="77.51260849999998mm" pcbY="92.17942194mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="80.38836856mm" pcbY="92.17942194mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="83.26412862mm" pcbY="92.17942194mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="85.9028mm" pcbY="89.47301892mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="88.06179999999999mm" pcbY="87.18701892mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="90.249883mm" pcbY="85.02801892mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="92.41776791999999mm" pcbY="82.6516mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="94.92723204mm" pcbY="82.6516mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="97.43669616mm" pcbY="82.6516mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="99.94616027999999mm" pcbY="82.6516mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="102.4556244mm" pcbY="82.6516mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="104.96508852mm" pcbY="82.6516mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
+<via pcbX="77.88880028mm" pcbY="124.31077754mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
 <via pcbX="77.06619841999999mm" pcbY="126.61294717999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="70.10294590000001mm" pcbY="119.77714678mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+<via pcbX="70.10294590000001mm" pcbY="119.77714678mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
 <via pcbX="69.94840468mm" pcbY="125.35054178mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
 <via pcbX="92.5068mm" pcbY="113.7666mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
 <via pcbX="66.8528mm" pcbY="108.3056mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="103.43699658mm" pcbY="113.76718927999998mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+<via pcbX="103.43699658mm" pcbY="113.76718927999998mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
 <via pcbX="87.67780026mm" pcbY="121.7676mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
 <via pcbX="89.96679999999999mm" pcbY="125.35054178mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
 <via pcbX="89.96679999999999mm" pcbY="123.4186mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
@@ -508,11 +508,11 @@ exports[`TI LMG342X-BB-EVM Circuit JSON to tscircuit round trip 1`] = `
 <via pcbX="105.8164mm" pcbY="115.77319999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
 <via pcbX="86.993349mm" pcbY="119.77714678mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
 <via pcbX="84.5442556mm" pcbY="121.22114439999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="63.542682160000005mm" pcbY="106.06148968mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+<via pcbX="63.542682160000005mm" pcbY="106.06148968mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
 <via pcbX="71.71219846mm" pcbY="106.17999846000001mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
 <via pcbX="72.8177995mm" pcbY="104.87259949999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
 <via pcbX="99.11080254mm" pcbY="120.02760094mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
-<via pcbX="42.5958mm" pcbY="117.06859999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
+<via pcbX="42.5958mm" pcbY="117.06859999999999mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" connectsTo={"net.AGND"} />
 <via pcbX="31.028294559999996mm" pcbY="97.41671144mm" holeDiameter="0.4064mm" outerDiameter="0.8635999999999999mm" fromLayer="top" toLayer="bottom" tented="exposed" />
 <smtpad portHints={["pin98"]} pcbX="165.65879999999999mm" pcbY="63.2206mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.524mm" height="3.556mm" ccwRotation={270} shape="rotated_rect" />
 <smtpad portHints={["pin99"]} pcbX="165.65879999999999mm" pcbY="58.9026mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.524mm" height="3.556mm" ccwRotation={270} shape="rotated_rect" />

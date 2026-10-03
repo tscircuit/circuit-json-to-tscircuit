@@ -9,6 +9,15 @@ test(
       fixtureName: "drv8307evm",
     })
 
+    expect(
+      result.renderedCircuitJson.filter(
+        (element) => element.type === "pcb_copper_pour",
+      ),
+    ).toHaveLength(
+      result.sourceCircuitJson.filter(
+        (element) => element.type === "pcb_copper_pour",
+      ).length,
+    )
     expect(result.generatedTscircuit).toMatchSnapshot()
     await expect(result.pcbComparisonSvg).toMatchSvgSnapshot(
       import.meta.path,

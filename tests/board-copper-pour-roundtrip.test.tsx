@@ -112,6 +112,51 @@ test("preserves copper around same-net and unrelated pads", async () => {
   ).toEqual([])
 })
 
+test("preserves copper on both layers around an imported via", async () => {
+  for (const viaSelector of ["net.GND", ".J1 > .pin1"]) {
+    const source = await runTscircuitCode(`export default () => (
+    <board width={10} height={8} routingDisabled>
+      <net name="GND" />
+      <chip name="J1" pcbX={-2} connections={{ pin1: "net.GND" }} footprint={<footprint>
+        <smtpad portHints={["pin1"]} shape="rect" width={1} height={1} layer="top" />
+      </footprint>} />
+      <via pcbX={0} pcbY={0} fromLayer="top" toLayer="bottom"
+        holeDiameter={0.3} outerDiameter={0.6} connectsTo={${JSON.stringify(viaSelector)}} />
+      {(["top", "bottom"] as const).map(layer => (
+        <copperpour key={layer} connectsTo="net.GND" layer={layer}
+          outline={[{x:-4,y:-3},{x:4,y:-3},{x:4,y:3},{x:-4,y:3}]}
+          padMargin={0} traceMargin={0} clearance={0} boardEdgeMargin={0}
+          cutoutMargin={0} useThermalReliefs={false} coveredWithSolderMask={false} />
+      ))}
+    </board>
+  )`)
+    const converted = await runTscircuitCode(
+      convertCircuitJsonToTscircuit(source, { componentName: "ViaCopperPour" }),
+    )
+    expect(
+      source.filter((element) => element.type === "pcb_copper_pour"),
+    ).toHaveLength(2)
+    expect(
+      converted.filter((element) => element.type === "pcb_copper_pour"),
+    ).toHaveLength(2)
+    for (const layer of ["top", "bottom"]) {
+      const sourcePour = getCopperPour(
+        source.filter(
+          (element) =>
+            element.type === "pcb_copper_pour" && element.layer === layer,
+        ),
+      )
+      const convertedPour = getCopperPour(
+        converted.filter(
+          (element) =>
+            element.type === "pcb_copper_pour" && element.layer === layer,
+        ),
+      )
+      expect(convertedPour.brep_shape).toEqual(sourcePour.brep_shape)
+    }
+  }
+})
+
 test("preserves non-identifier copper pour net names", async () => {
   for (const name of ["HU+", "HU-", "2V", "V3.3", "ENABLE#", "SS/ATRK"]) {
     const source = sourceCircuitJson.map((element) =>
