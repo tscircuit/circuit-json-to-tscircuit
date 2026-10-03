@@ -26,27 +26,20 @@ export const convertNetLabels: SchematicElementConverter = (circuitJson) =>
             displayText: schematicNetLabel.text,
           })
       }
-      // Plain labels grow away from the connection anchor. Centering the text
-      // on that anchor puts half of the name on the wire (notably SDA/SCL).
-      if (!symbolName && schematicNetLabel.anchor_position) {
-        const side = schematicNetLabel.anchor_side
-        const direction = {
-          left: { x: 1, y: 0, rotation: 0, anchor: "center_left" },
-          right: { x: -1, y: 0, rotation: 0, anchor: "center_right" },
-          top: { x: 0, y: -1, rotation: -90, anchor: "center_left" },
-          bottom: { x: 0, y: 1, rotation: 90, anchor: "center_left" },
-        }[side]
-        // Match circuit-to-svg's net-label font and half-font-size inset.
-        const fontSize = 0.18
+      // Native labels own their outline, typography and anchor-side layout.
+      // Core resolves net names through selectors; retain the text fallback
+      // for names that cannot safely be used by that runtime path.
+      if (
+        !symbolName &&
+        schematicNetLabel.anchor_position &&
+        /^[A-Za-z0-9_/-]+$/.test(schematicNetLabel.text)
+      ) {
         return [
-          formatElement("schematictext", {
-            text: schematicNetLabel.text,
-            schX: anchorPosition.x + direction.x * fontSize * 0.5,
-            schY: anchorPosition.y + direction.y * fontSize * 0.5,
-            anchor: direction.anchor,
-            schRotation: direction.rotation,
-            fontSize,
-            color: "#840000",
+          formatElement("netlabel", {
+            net: schematicNetLabel.text,
+            schX: anchorPosition.x,
+            schY: anchorPosition.y,
+            anchorSide: schematicNetLabel.anchor_side,
           }),
         ]
       }

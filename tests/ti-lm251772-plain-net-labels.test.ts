@@ -30,22 +30,18 @@ test("LM251772EVM-PD plain net labels keep their connection-side placement", asy
   expect(labels).toHaveLength(6)
   for (const label of labels) {
     if (label.type !== "schematic_net_label") continue
-    const sign = label.anchor_side === "left" ? 1 : -1
-    const text = output.find(
+    const rendered = output.filter(
       (e) =>
-        e.type === "schematic_text" &&
+        e.type === "schematic_net_label" &&
         e.text === label.text &&
-        Math.abs(e.position.y - label.anchor_position!.y) < 1e-6,
+        e.anchor_position?.x === label.anchor_position!.x &&
+        e.anchor_position?.y === label.anchor_position!.y,
     )
-    expect(text?.type).toBe("schematic_text")
-    if (text?.type !== "schematic_text")
-      throw new Error(`Missing ${label.text}`)
-    expect(text.position.x).toBeCloseTo(
-      label.anchor_position!.x + sign * 0.09,
-      6,
-    )
-    expect(text.anchor).toBe(sign === 1 ? "center_left" : "center_right")
-    expect(text.color).toBe("#840000")
-    expect(text.font_size).toBe(0.18)
+    expect(rendered).toHaveLength(1)
+    expect(rendered[0]).toMatchObject({
+      text: label.text,
+      anchor_side: label.anchor_side,
+      anchor_position: label.anchor_position,
+    })
   }
 })

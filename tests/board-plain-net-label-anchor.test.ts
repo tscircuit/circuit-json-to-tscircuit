@@ -1,17 +1,36 @@
 import { expect, test } from "bun:test"
 import type { CircuitJson } from "circuit-json"
+import { convertCircuitJsonToSchematicSvg } from "circuit-to-svg"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
 
-test("plain label anchors support all connection sides", async () => {
-  const cases = [
-    { side: "left", x: 0.09, y: 0, rotation: 0, anchor: "center_left" },
-    { side: "right", x: -0.09, y: 0, rotation: 0, anchor: "center_right" },
-    { side: "top", x: 0, y: -0.09, rotation: -90, anchor: "center_left" },
-    { side: "bottom", x: 0, y: 0.09, rotation: 90, anchor: "center_left" },
-  ] as const
-  for (const c of cases) {
-    const source: CircuitJson = [
+test("native plain labels preserve rendering on every connection side", async () => {
+  for (const side of ["left", "right", "top", "bottom"] as const) {
+    const input = await runTscircuitCode(`export default () => (
+      <board width={10} height={10}>
+        <netlabel net="DATA" schX={2} schY={3} anchorSide="${side}" />
+      </board>
+    )`)
+    const output = await runTscircuitCode(
+      convertCircuitJsonToTscircuit(input, { componentName: "LabelBoard" }),
+    )
+    const labels = (json: CircuitJson) =>
+      json.filter((e) => e.type === "schematic_net_label")
+    expect(labels(output)).toHaveLength(1)
+    const original = labels(input)[0]
+    expect(labels(output)[0]).toMatchObject({
+      text: original.text,
+      anchor_side: original.anchor_side,
+      anchor_position: original.anchor_position,
+      center: original.center,
+    })
+    // Compare actual renderer output, not a copy of converter constants.
+    const render = (json: CircuitJson) =>
+      convertCircuitJsonToSchematicSvg(labels(json), { includeVersion: false })
+    expect(render(output)).toBe(render(input))
+  }
+  for (const name of ["HV VSYS", "net.name", "", 'A"B', "CENTER_ONLY"]) {
+    const input: CircuitJson = [
       {
         type: "pcb_board",
         pcb_board_id: "board",
@@ -25,25 +44,22 @@ test("plain label anchors support all connection sides", async () => {
       {
         type: "schematic_net_label",
         schematic_net_label_id: "label",
-        text: "DATA",
+        text: name,
         center: { x: 2, y: 3 },
-        anchor_position: { x: 2, y: 3 },
-        anchor_side: c.side,
+        anchor_position: name === "CENTER_ONLY" ? undefined : { x: 2, y: 3 },
+        anchor_side: "left",
         source_net_id: "net",
       },
     ]
-    const output = await runTscircuitCode(
-      convertCircuitJsonToTscircuit(source, { componentName: "LabelBoard" }),
-    )
-    const text = output.find(
-      (e) => e.type === "schematic_text" && e.text === "DATA",
-    )
-    if (text?.type !== "schematic_text") throw new Error("Missing label")
-    expect(text.position.x).toBeCloseTo(2 + c.x, 6)
-    expect(text.position.y).toBeCloseTo(3 + c.y, 6)
-    expect(text.anchor).toBe(c.anchor)
-    expect((((text.rotation ?? 0) % 360) + 360) % 360).toBe(
-      (c.rotation + 360) % 360,
+    const tsx = convertCircuitJsonToTscircuit(input, {
+      componentName: "Fallback",
+    })
+    expect(tsx).not.toContain("<netlabel")
+    const fallback = await runTscircuitCode(tsx)
+    expect(fallback).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ type: "schematic_text", text: name }),
+      ]),
     )
   }
 })
