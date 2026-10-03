@@ -1,6 +1,7 @@
 import { schematic_text } from "circuit-json"
 import type { SchSymbol } from "schematic-symbols"
 import { applyToPoint, type Matrix } from "transformation-matrix"
+import { COMPILED_SCHEMATIC_COMPONENT_OUTLINE_STROKE_WIDTH } from "./compiled-schematic-style"
 import { formatElement } from "./format-attributes"
 
 const anchors = {
@@ -68,6 +69,7 @@ export const convertSymbolPrimitives = ({
       return formatElement("schematiccircle", {
         center,
         radius: Math.hypot(radiusVector.x, radiusVector.y),
+        strokeWidth: COMPILED_SCHEMATIC_COMPONENT_OUTLINE_STROKE_WIDTH,
         isFilled: primitive.fill,
       })
     }
