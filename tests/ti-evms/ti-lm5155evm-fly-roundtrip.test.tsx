@@ -1408,6 +1408,7 @@ test(
       <schematictext text={"VCC"} schX={-5.400660027790645} schY={3.4728462251042167} anchor={"center_right"} fontSize={0.15} color={"#a90000"} />
       <schematictext text={"2"} schX={-5.117878647522002} schY={3.4928462251042167} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
       <schematicline x1={-5.300660027790645} y1={2.924502084298288} x2={-4.93509726725336} y2={2.924502084298288} strokeWidth={0.02} color={"#840000"} />
+      <schematicpath points={[{"x":-5.200660027790645,"y":2.924502084298288},{"x":-5.28726256816909,"y":2.9745020842982877},{"x":-5.28726256816909,"y":2.874502084298288},{"x":-5.200660027790645,"y":2.924502084298288}]} strokeWidth={0.006666666666666667} strokeColor={"#840000"} fillColor={"#ffffff"} isFilled={true} />
       <schematictext text={"GATE"} schX={-5.400660027790645} schY={2.924502084298288} anchor={"center_right"} fontSize={0.15} color={"#a90000"} />
       <schematictext text={"3"} schX={-5.117878647522002} schY={2.944502084298288} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
       <schematicline x1={-5.300660027790645} y1={1.2794696618805013} x2={-4.93509726725336} y2={1.2794696618805013} strokeWidth={0.02} color={"#840000"} />
@@ -1417,6 +1418,7 @@ test(
       <schematictext text={"CS"} schX={-5.400660027790645} schY={2.0105951829550737} anchor={"center_right"} fontSize={0.15} color={"#a90000"} />
       <schematictext text={"5"} schX={-5.117878647522002} schY={2.0305951829550737} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
       <schematicline x1={-7.4940365910143605} y1={-0.18278138026864177} x2={-7.859599351551646} y2={-0.18278138026864177} strokeWidth={0.02} color={"#840000"} />
+      <schematicpath points={[{"x":-7.59403659101436,"y":-0.18278138026864177},{"x":-7.507434050635916,"y":-0.23278138026864176},{"x":-7.507434050635916,"y":-0.13278138026864178},{"x":-7.59403659101436,"y":-0.18278138026864177}]} strokeWidth={0.006666666666666667} strokeColor={"#840000"} fillColor={"#ffffff"} isFilled={true} />
       <schematictext text={"COMP"} schX={-7.394036591014361} schY={-0.18278138026864177} anchor={"center_left"} fontSize={0.15} color={"#a90000"} />
       <schematictext text={"6"} schX={-7.676817971283003} schY={-0.16278138026864178} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
       <schematicline x1={-5.300660027790645} y1={-0.18278138026864177} x2={-4.93509726725336} y2={-0.18278138026864177} strokeWidth={0.02} color={"#840000"} />
