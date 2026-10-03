@@ -2697,7 +2697,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":10.542024085200001,"y":6.2056739231},{"x":10.6120240852,"y":6.2056739231},{"x":10.5820240852,"y":6.275673923099999},{"x":10.542024085200001,"y":6.2056739231}]} isFilled={true} />
 <schematicpath points={[{"x":10.5720240852,"y":6.0956739231},{"x":10.5820240852,"y":6.315673923099999}]} isFilled={false} />
 <schematicpath points={[{"x":10.462024085200001,"y":6.0556739231},{"x":10.6820240852,"y":6.0556739231}]} isFilled={false} />
-<schematiccircle center={{"x":10.5720240852,"y":6.1656739231}} radius={0.29} isFilled={false} />
+<schematiccircle center={{"x":10.5720240852,"y":6.1656739231}} radius={0.29} strokeWidth={0.02} isFilled={false} />
 <schematictext text={"Q3"} schX={10.222024085200001} schY={6.0056739231} anchor={"center_right"} fontSize={0.18} />
 <schematictext text={"-60V"} schX={10.9220240852} schY={6.0056739231} anchor={"center_left"} fontSize={0.18} />
 <schematicpath points={[{"x":-9.4893469199,"y":-0.4273737842},{"x":-9.4893469199,"y":-0.3273537842}]} strokeWidth={0.012} isFilled={false} />
@@ -2898,7 +2898,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":10.659397869400001,"y":7.422037980500001},{"x":10.7293978694,"y":7.422037980500001},{"x":10.6993978694,"y":7.3520379805000005},{"x":10.659397869400001,"y":7.422037980500001}]} isFilled={true} />
 <schematicpath points={[{"x":10.6993978694,"y":7.2420379805},{"x":10.6893978694,"y":7.4620379805}]} isFilled={false} />
 <schematicpath points={[{"x":10.8093978694,"y":7.2020379805},{"x":10.5893978694,"y":7.2020379805}]} isFilled={false} />
-<schematiccircle center={{"x":10.6993978694,"y":7.3120379805}} radius={0.29} isFilled={false} />
+<schematiccircle center={{"x":10.6993978694,"y":7.3120379805}} radius={0.29} strokeWidth={0.02} isFilled={false} />
 <schematictext text={"Q1"} schX={11.0493978694} schY={7.1520379805} anchor={"center_left"} fontSize={0.18} />
 <schematictext text={"60V"} schX={10.3493978694} schY={7.1520379805} anchor={"center_right"} fontSize={0.18} />
 <schematicpath points={[{"x":10.2351551644,"y":-3.0569708198},{"x":10.1351351644,"y":-3.0569708198}]} strokeWidth={0.012} isFilled={false} />
