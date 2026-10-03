@@ -5,9 +5,9 @@ import { formatElement } from "./format-attributes"
 
 // Circuit JSON does not encode box body styling. These values mirror the
 // circuit-to-svg defaults so reconstructed boxes keep the compiled view.
+const DEFAULT_BOX_BODY_STROKE_WIDTH = 0.02
 const DEFAULT_BOX_BODY_STROKE_COLOR = "#840000"
 const DEFAULT_BOX_BODY_FILL_COLOR = "#ffffc2"
-const DEFAULT_BOX_BODY_STROKE_WIDTH = 0.02
 
 // Circuit JSON does not encode these presentation values. They mirror the
 // circuit-to-svg defaults so reconstructed box pins keep the compiled view.
