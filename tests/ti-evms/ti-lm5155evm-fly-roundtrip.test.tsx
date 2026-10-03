@@ -1106,61 +1106,61 @@ test(
       <courtyardoutline outline={[{"x":51.838801579999995,"y":52.958598679999994},{"x":51.838801579999995,"y":51.35859934},{"x":54.68880096,"y":51.35859934},{"x":54.68880096,"y":52.958598679999994}]} layer="top" />
       <courtyardoutline outline={[{"x":74.23580022,"y":44.87559986},{"x":74.23580022,"y":47.275600139999995},{"x":73.18579978,"y":47.275600139999995},{"x":73.18579978,"y":44.87559986}]} layer="top" />
             </footprint>} symbol={<symbol>
-      <schematicpath points={[{"x":0.6127147985000001,"y":2.641720704},{"x":1.0827147985,"y":2.631720704}]} isFilled={false} />
-      <schematicpath points={[{"x":1.3327147985,"y":3.2917207040000003},{"x":1.3327147985,"y":2.851720704}]} isFilled={false} />
-      <schematicpath points={[{"x":1.3427147985,"y":2.1917207039999997},{"x":1.3427147985,"y":2.731720704}]} isFilled={false} />
-      <schematicpath points={[{"x":1.1227147985,"y":2.851720704},{"x":1.3427147985,"y":2.851720704}]} isFilled={false} />
-      <schematicpath points={[{"x":1.1227147985,"y":2.891720704},{"x":1.1227147985,"y":2.811720704}]} isFilled={false} />
-      <schematicpath points={[{"x":1.1227147985,"y":2.641720704},{"x":1.3427147985,"y":2.641720704}]} isFilled={false} />
-      <schematicpath points={[{"x":1.1227147985,"y":2.661720704},{"x":1.1227147985,"y":2.591720704}]} isFilled={false} />
-      <schematicpath points={[{"x":1.1227147985,"y":2.771720704},{"x":1.1227147985,"y":2.701720704}]} isFilled={false} />
-      <schematicpath points={[{"x":1.3027147985,"y":2.701720704},{"x":1.3027147985,"y":2.771720704},{"x":1.2327147985,"y":2.741720704},{"x":1.3027147985,"y":2.701720704}]} isFilled={true} />
-      <schematicpath points={[{"x":1.1227147985,"y":2.741720704},{"x":1.3427147985,"y":2.731720704}]} isFilled={false} />
-      <schematicpath points={[{"x":1.0827147985,"y":2.851720704},{"x":1.0827147985,"y":2.631720704}]} isFilled={false} />
+      <schematicpath points={[{"x":0.6127147985000001,"y":2.641720704},{"x":1.0827147985,"y":2.631720704}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":1.3327147985,"y":3.2917207040000003},{"x":1.3327147985,"y":2.851720704}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":1.3427147985,"y":2.1917207039999997},{"x":1.3427147985,"y":2.731720704}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":1.1227147985,"y":2.851720704},{"x":1.3427147985,"y":2.851720704}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":1.1227147985,"y":2.891720704},{"x":1.1227147985,"y":2.811720704}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":1.1227147985,"y":2.641720704},{"x":1.3427147985,"y":2.641720704}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":1.1227147985,"y":2.661720704},{"x":1.1227147985,"y":2.591720704}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":1.1227147985,"y":2.771720704},{"x":1.1227147985,"y":2.701720704}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":1.3027147985,"y":2.701720704},{"x":1.3027147985,"y":2.771720704},{"x":1.2327147985,"y":2.741720704},{"x":1.3027147985,"y":2.701720704}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":1.1227147985,"y":2.741720704},{"x":1.3427147985,"y":2.731720704}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":1.0827147985,"y":2.851720704},{"x":1.0827147985,"y":2.631720704}]} strokeWidth={0.02} isFilled={false} />
       <schematiccircle center={{"x":1.1927147985,"y":2.741720704}} radius={0.29} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"Q1"} schX={1.0327147985} schY={3.101720704} anchor={"center_right"} fontSize={0.18} />
       <schematictext text={"100V"} schX={1.0327147985} schY={2.321720704} anchor={"center_right"} fontSize={0.18} />
-      <schematicpath points={[{"x":-2.2589393238000004,"y":2.741720704},{"x":-2.3589593238,"y":2.741720704}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-2.7589193238000003,"y":2.741720704},{"x":-2.8589393238,"y":2.741720704}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-2.3589593238,"y":2.661740704},{"x":-2.7589193238000003,"y":2.661740704},{"x":-2.7589193238000003,"y":2.821700704},{"x":-2.3589593238,"y":2.821700704},{"x":-2.3589593238,"y":2.661740704}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-2.2589393238000004,"y":2.741720704},{"x":-2.3589593238,"y":2.741720704}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-2.7589193238000003,"y":2.741720704},{"x":-2.8589393238,"y":2.741720704}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-2.3589593238,"y":2.661740704},{"x":-2.7589193238000003,"y":2.661740704},{"x":-2.7589193238000003,"y":2.821700704},{"x":-2.3589593238,"y":2.821700704},{"x":-2.3589593238,"y":2.661740704}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R8"} schX={-2.5589393238} schY={2.901720704} anchor={"bottom_center"} fontSize={0.18} />
       <schematictext text={"0"} schX={-2.5589393238} schY={2.581720704} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":0.48278138029999995,"y":2.010595183},{"x":0.38276138029999995,"y":2.010595183}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-0.0171986197,"y":2.010595183},{"x":-0.1172186197,"y":2.010595183}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":0.38276138029999995,"y":1.930615183},{"x":-0.0171986197,"y":1.930615183},{"x":-0.0171986197,"y":2.090575183},{"x":0.38276138029999995,"y":2.090575183},{"x":0.38276138029999995,"y":1.930615183}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":0.48278138029999995,"y":2.010595183},{"x":0.38276138029999995,"y":2.010595183}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-0.0171986197,"y":2.010595183},{"x":-0.1172186197,"y":2.010595183}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":0.38276138029999995,"y":1.930615183},{"x":-0.0171986197,"y":1.930615183},{"x":-0.0171986197,"y":2.090575183},{"x":0.38276138029999995,"y":2.090575183},{"x":0.38276138029999995,"y":1.930615183}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R11"} schX={0.18278138029999996} schY={2.170595183} anchor={"bottom_center"} fontSize={0.18} />
       <schematictext text={"100"} schX={0.18278138030000002} schY={1.850595183} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-0.9139069013,"y":1.070860352},{"x":-0.9139069013,"y":1.310860352}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-0.9139069013,"y":1.430860352},{"x":-0.9139069013,"y":1.670860352}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-0.7538869013,"y":1.310860352},{"x":-1.0739269013,"y":1.310860352}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-0.7538869013,"y":1.430860352},{"x":-1.0739269013,"y":1.430860352}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-0.9139069013,"y":1.070860352},{"x":-0.9139069013,"y":1.310860352}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-0.9139069013,"y":1.430860352},{"x":-0.9139069013,"y":1.670860352}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-0.7538869013,"y":1.310860352},{"x":-1.0739269013,"y":1.310860352}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-0.7538869013,"y":1.430860352},{"x":-1.0739269013,"y":1.430860352}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C19"} schX={-0.7989069013} schY={1.570860352} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"470pF"} schX={-0.7989069013} schY={1.170860352} anchor={"top_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-2.2589393238000004,"y":2.010595183},{"x":-2.3589593238,"y":2.010595183}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-2.7589193238000003,"y":2.010595183},{"x":-2.8589393238,"y":2.010595183}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-2.3589593238,"y":1.930615183},{"x":-2.7589193238000003,"y":1.930615183},{"x":-2.7589193238000003,"y":2.090575183},{"x":-2.3589593238,"y":2.090575183},{"x":-2.3589593238,"y":1.930615183}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-2.2589393238000004,"y":2.010595183},{"x":-2.3589593238,"y":2.010595183}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-2.7589193238000003,"y":2.010595183},{"x":-2.8589393238,"y":2.010595183}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-2.3589593238,"y":1.930615183},{"x":-2.7589193238000003,"y":1.930615183},{"x":-2.7589193238000003,"y":2.090575183},{"x":-2.3589593238,"y":2.090575183},{"x":-2.3589593238,"y":1.930615183}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R10"} schX={-2.5589393238} schY={2.170595183} anchor={"bottom_center"} fontSize={0.18} />
       <schematictext text={"0"} schX={-2.5589393238} schY={1.850595183} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-4.3867531264,"y":4.595362436299999},{"x":-4.3867531264,"y":4.355362436299999}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-4.3867531264,"y":4.2353624363},{"x":-4.3867531264,"y":3.9953624362999998}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-4.546773126400001,"y":4.355362436299999},{"x":-4.2267331264,"y":4.355362436299999}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-4.546773126400001,"y":4.2353624363},{"x":-4.2267331264,"y":4.2353624363}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-4.3867531264,"y":4.595362436299999},{"x":-4.3867531264,"y":4.355362436299999}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-4.3867531264,"y":4.2353624363},{"x":-4.3867531264,"y":3.9953624362999998}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-4.546773126400001,"y":4.355362436299999},{"x":-4.2267331264,"y":4.355362436299999}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-4.546773126400001,"y":4.2353624363},{"x":-4.2267331264,"y":4.2353624363}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C17"} schX={-4.291753126400001} schY={4.4953624363} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"1uF"} schX={-4.291753126400001} schY={4.095362436299999} anchor={"top_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-10.9668828161,"y":3.1728462251000003},{"x":-10.9668828161,"y":3.2728662251}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-10.9668828161,"y":3.6728262251},{"x":-10.9668828161,"y":3.7728462251}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-11.0468628161,"y":3.2728662251},{"x":-11.0468628161,"y":3.6728262251},{"x":-10.8869028161,"y":3.6728262251},{"x":-10.8869028161,"y":3.2728662251},{"x":-11.0468628161,"y":3.2728662251}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-10.9668828161,"y":3.1728462251000003},{"x":-10.9668828161,"y":3.2728662251}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-10.9668828161,"y":3.6728262251},{"x":-10.9668828161,"y":3.7728462251}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-11.0468628161,"y":3.2728662251},{"x":-11.0468628161,"y":3.6728262251},{"x":-10.8869028161,"y":3.6728262251},{"x":-10.8869028161,"y":3.2728662251},{"x":-11.0468628161,"y":3.2728662251}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R6"} schX={-10.8068828161} schY={3.6328462251} anchor={"center_left"} fontSize={0.18} />
       <schematictext text={"100k"} schX={-10.8068828161} schY={3.3128462251} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-10.9668828161,"y":-0.3},{"x":-10.9668828161,"y":-0.19998}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-10.9668828161,"y":0.19998},{"x":-10.9668828161,"y":0.3}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-11.0468628161,"y":-0.19998},{"x":-11.0468628161,"y":0.19998},{"x":-10.8869028161,"y":0.19998},{"x":-10.8869028161,"y":-0.19998},{"x":-11.0468628161,"y":-0.19998}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-10.9668828161,"y":-0.3},{"x":-10.9668828161,"y":-0.19998}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-10.9668828161,"y":0.19998},{"x":-10.9668828161,"y":0.3}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-11.0468628161,"y":-0.19998},{"x":-11.0468628161,"y":0.19998},{"x":-10.8869028161,"y":0.19998},{"x":-10.8869028161,"y":-0.19998},{"x":-11.0468628161,"y":-0.19998}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R16"} schX={-10.8068828161} schY={0.16} anchor={"center_left"} fontSize={0.18} />
       <schematictext text={"9.76k"} schX={-10.8068828161} schY={-0.16} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-11.6980083372,"y":-0.20860930989999998},{"x":-11.6980083372,"y":0.03139069010000001}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-11.6980083372,"y":0.1513906901},{"x":-11.6980083372,"y":0.3913906901}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-11.5379883372,"y":0.031390690100000014},{"x":-11.858028337199999,"y":0.0313906901}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-11.5379883372,"y":0.1513906901},{"x":-11.858028337199999,"y":0.1513906901}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-11.6980083372,"y":-0.20860930989999998},{"x":-11.6980083372,"y":0.03139069010000001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-11.6980083372,"y":0.1513906901},{"x":-11.6980083372,"y":0.3913906901}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-11.5379883372,"y":0.031390690100000014},{"x":-11.858028337199999,"y":0.0313906901}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-11.5379883372,"y":0.1513906901},{"x":-11.858028337199999,"y":0.1513906901}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C21"} schX={-11.583008337199999} schY={0.2913906901} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"220pF"} schX={-11.583008337199999} schY={-0.1086093099} anchor={"top_left"} fontSize={0.18} />
       <schematicpath points={[{"x":-3.8556276053728586,"y":-0.3827813802686418},{"x":-3.4556276053728583,"y":-0.3827813802686418},{"x":-3.4556276053728583,"y":0.017218619731358242},{"x":-3.8556276053728586,"y":0.017218619731358242},{"x":-3.8556276053728586,"y":-0.3827813802686418}]} strokeWidth={0.02} strokeColor={"#840000"} fillColor={"#ffffc2"} isFilled={true} />
@@ -1170,32 +1170,32 @@ test(
       <schematicline x1={-3.4556276053728583} y1={-0.18278138026864177} x2={-3.290064844835573} y2={-0.18278138026864177} strokeWidth={0.02} color={"#840000"} />
       <schematictext text={"1"} schX={-3.5556276053728584} schY={-0.18278138026864177} anchor={"center_right"} fontSize={0.15} color={"#a90000"} />
       <schematictext text={"2"} schX={-3.3728462251042157} schY={-0.16278138026864178} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
-      <schematicpath points={[{"x":-10.0529759148,"y":-0.3},{"x":-10.0529759148,"y":-0.19998}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-10.0529759148,"y":0.19998},{"x":-10.0529759148,"y":0.3}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-10.1329559148,"y":-0.19998},{"x":-10.1329559148,"y":0.19998},{"x":-9.972995914799998,"y":0.19998},{"x":-9.972995914799998,"y":-0.19998},{"x":-10.1329559148,"y":-0.19998}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-10.0529759148,"y":-0.3},{"x":-10.0529759148,"y":-0.19998}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-10.0529759148,"y":0.19998},{"x":-10.0529759148,"y":0.3}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-10.1329559148,"y":-0.19998},{"x":-10.1329559148,"y":0.19998},{"x":-9.972995914799998,"y":0.19998},{"x":-9.972995914799998,"y":-0.19998},{"x":-10.1329559148,"y":-0.19998}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R17"} schX={-9.8929759148} schY={0.16} anchor={"center_left"} fontSize={0.18} />
       <schematictext text={"86.6k"} schX={-9.8929759148} schY={-0.16} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-8.9562876332,"y":-0.20860930989999998},{"x":-8.9562876332,"y":0.03139069010000001}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-8.9562876332,"y":0.1513906901},{"x":-8.9562876332,"y":0.3913906901}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-8.796267633200001,"y":0.031390690100000014},{"x":-9.1163076332,"y":0.0313906901}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-8.796267633200001,"y":0.1513906901},{"x":-9.1163076332,"y":0.1513906901}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-8.9562876332,"y":-0.20860930989999998},{"x":-8.9562876332,"y":0.03139069010000001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-8.9562876332,"y":0.1513906901},{"x":-8.9562876332,"y":0.3913906901}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-8.796267633200001,"y":0.031390690100000014},{"x":-9.1163076332,"y":0.0313906901}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-8.796267633200001,"y":0.1513906901},{"x":-9.1163076332,"y":0.1513906901}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C22"} schX={-8.8412876332} schY={0.2913906901} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"0.01uF"} schX={-8.8412876332} schY={-0.1086093099} anchor={"top_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-8.8390690134,"y":4.2039717462},{"x":-8.9390890134,"y":4.2039717462}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-9.3390490134,"y":4.2039717462},{"x":-9.439069013400001,"y":4.2039717462}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-8.9390890134,"y":4.1239917462},{"x":-9.3390490134,"y":4.1239917462},{"x":-9.3390490134,"y":4.2839517462},{"x":-8.9390890134,"y":4.2839517462},{"x":-8.9390890134,"y":4.1239917462}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-8.8390690134,"y":4.2039717462},{"x":-8.9390890134,"y":4.2039717462}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-9.3390490134,"y":4.2039717462},{"x":-9.439069013400001,"y":4.2039717462}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-8.9390890134,"y":4.1239917462},{"x":-9.3390490134,"y":4.1239917462},{"x":-9.3390490134,"y":4.2839517462},{"x":-8.9390890134,"y":4.2839517462},{"x":-8.9390890134,"y":4.1239917462}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R5"} schX={-9.1390690134} schY={4.3639717462} anchor={"bottom_center"} fontSize={0.18} />
       <schematictext text={"0"} schX={-9.1390690134} schY={4.0439717461999996} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-8.5907248726,"y":3.4470182955000004},{"x":-8.5907248726,"y":3.6870182955}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-8.5907248726,"y":3.8070182955000003},{"x":-8.5907248726,"y":4.0470182955}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-8.4307048726,"y":3.6870182955},{"x":-8.750744872599999,"y":3.6870182955}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-8.4307048726,"y":3.8070182955000003},{"x":-8.750744872599999,"y":3.8070182955000003}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-8.5907248726,"y":3.4470182955000004},{"x":-8.5907248726,"y":3.6870182955}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-8.5907248726,"y":3.8070182955000003},{"x":-8.5907248726,"y":4.0470182955}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-8.4307048726,"y":3.6870182955},{"x":-8.750744872599999,"y":3.6870182955}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-8.4307048726,"y":3.8070182955000003},{"x":-8.750744872599999,"y":3.8070182955000003}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C18"} schX={-8.475724872599999} schY={3.9470182955000004} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"0.1uF"} schX={-8.475724872599999} schY={3.5470182955} anchor={"top_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-6.0317855489,"y":6.0699311024},{"x":-6.0317855489,"y":6.3099311024}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-6.0317855489,"y":6.429931102399999},{"x":-6.0317855489,"y":6.6699311024}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-5.8717655489,"y":6.3099311024},{"x":-6.191805548900001,"y":6.3099311024}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-5.8717655489,"y":6.429931102399999},{"x":-6.191805548900001,"y":6.429931102399999}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-6.0317855489,"y":6.0699311024},{"x":-6.0317855489,"y":6.3099311024}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-6.0317855489,"y":6.429931102399999},{"x":-6.0317855489,"y":6.6699311024}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-5.8717655489,"y":6.3099311024},{"x":-6.191805548900001,"y":6.3099311024}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-5.8717655489,"y":6.429931102399999},{"x":-6.191805548900001,"y":6.429931102399999}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C2"} schX={-5.9167855489} schY={6.5699311024} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"100uF"} schX={-5.9167855489} schY={6.1699311024} anchor={"top_left"} fontSize={0.18} />
       <schematicpath points={[{"x":7.138672417786011,"y":-3.307283464566929},{"x":7.538672417786011,"y":-3.307283464566929},{"x":7.538672417786011,"y":-2.9072834645669285},{"x":7.138672417786011,"y":-2.9072834645669285},{"x":7.138672417786011,"y":-3.307283464566929}]} strokeWidth={0.02} strokeColor={"#840000"} fillColor={"#ffffc2"} isFilled={true} />
@@ -1208,66 +1208,66 @@ test(
       <schematicline x1={7.311255210745717} y1={-3.307283464566929} x2={7.311255210745717} y2={-3.472846225104215} strokeWidth={0.02} color={"#840000"} />
       <schematictext text={"A"} schX={7.311255210745717} schY={-3.207283464566929} anchor={"center_left"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
       <schematictext text={"3"} schX={7.291255210745717} schY={-3.390064844835572} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
-      <schematicpath points={[{"x":11.8807897175,"y":-1.3966882816000001},{"x":11.8807897175,"y":-1.2966682816000001}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":11.8807897175,"y":-0.8967082816},{"x":11.8807897175,"y":-0.7966882816}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":11.8008097175,"y":-1.2966682816000001},{"x":11.8008097175,"y":-0.8967082816},{"x":11.960769717500002,"y":-0.8967082816},{"x":11.960769717500002,"y":-1.2966682816000001},{"x":11.8008097175,"y":-1.2966682816000001}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":11.8807897175,"y":-1.3966882816000001},{"x":11.8807897175,"y":-1.2966682816000001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":11.8807897175,"y":-0.8967082816},{"x":11.8807897175,"y":-0.7966882816}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":11.8008097175,"y":-1.2966682816000001},{"x":11.8008097175,"y":-0.8967082816},{"x":11.960769717500002,"y":-0.8967082816},{"x":11.960769717500002,"y":-1.2966682816000001},{"x":11.8008097175,"y":-1.2966682816000001}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R19"} schX={12.040789717500001} schY={-0.9366882816000001} anchor={"center_left"} fontSize={0.18} />
       <schematictext text={"30.0k"} schX={12.040789717500001} schY={-1.2566882816} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":3.4728462251,"y":-0.6655627605},{"x":3.4728462251,"y":-0.5655427605}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":3.4728462251,"y":-0.16558276049999998},{"x":3.4728462251,"y":-0.06556276049999998}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":3.3928662251,"y":-0.5655427605},{"x":3.3928662251,"y":-0.16558276049999998},{"x":3.5528262251,"y":-0.16558276049999998},{"x":3.5528262251,"y":-0.5655427605},{"x":3.3928662251,"y":-0.5655427605}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":3.4728462251,"y":-0.6655627605},{"x":3.4728462251,"y":-0.5655427605}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":3.4728462251,"y":-0.16558276049999998},{"x":3.4728462251,"y":-0.06556276049999998}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":3.3928662251,"y":-0.5655427605},{"x":3.3928662251,"y":-0.16558276049999998},{"x":3.5528262251,"y":-0.16558276049999998},{"x":3.5528262251,"y":-0.5655427605},{"x":3.3928662251,"y":-0.5655427605}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R18"} schX={3.6328462251} schY={-0.20556276049999997} anchor={"center_left"} fontSize={0.18} />
       <schematictext text={"4.99k"} schX={3.6328462251} schY={-0.5255627605} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-6.0317855489,"y":-3.1331113941999997},{"x":-6.0317855489,"y":-2.8931113942}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-6.0317855489,"y":-2.7731113942},{"x":-6.0317855489,"y":-2.5331113942}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-5.8717655489,"y":-2.8931113942},{"x":-6.191805548900001,"y":-2.8931113942}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-5.8717655489,"y":-2.7731113942},{"x":-6.191805548900001,"y":-2.7731113942}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-6.0317855489,"y":-3.1331113941999997},{"x":-6.0317855489,"y":-2.8931113942}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-6.0317855489,"y":-2.7731113942},{"x":-6.0317855489,"y":-2.5331113942}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-5.8717655489,"y":-2.8931113942},{"x":-6.191805548900001,"y":-2.8931113942}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-5.8717655489,"y":-2.7731113942},{"x":-6.191805548900001,"y":-2.7731113942}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C26"} schX={-5.9167855489} schY={-2.6331113941999997} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"0.22uF"} schX={-5.9167855489} schY={-3.0331113942} anchor={"top_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":7.1284738305,"y":-0.1172186197},{"x":7.1284738305,"y":-0.0171986197}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":7.1284738305,"y":0.38276138029999995},{"x":7.1284738305,"y":0.48278138029999995}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":7.0484938305,"y":-0.0171986197},{"x":7.0484938305,"y":0.38276138029999995},{"x":7.2084538305,"y":0.38276138029999995},{"x":7.2084538305,"y":-0.0171986197},{"x":7.0484938305,"y":-0.0171986197}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":7.1284738305,"y":-0.1172186197},{"x":7.1284738305,"y":-0.0171986197}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":7.1284738305,"y":0.38276138029999995},{"x":7.1284738305,"y":0.48278138029999995}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":7.0484938305,"y":-0.0171986197},{"x":7.0484938305,"y":0.38276138029999995},{"x":7.2084538305,"y":0.38276138029999995},{"x":7.2084538305,"y":-0.0171986197},{"x":7.0484938305,"y":-0.0171986197}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R14"} schX={7.2884738305} schY={0.3427813803} anchor={"center_left"} fontSize={0.18} />
       <schematictext text={"1.00k"} schX={7.2884738305} schY={0.022781380299999987} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":9.3476783233,"y":-2.5589393238},{"x":9.1076783233,"y":-2.5589393238}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":8.987678323299999,"y":-2.5589393238},{"x":8.747678323299999,"y":-2.5589393238}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":9.1076783233,"y":-2.3989193238000004},{"x":9.1076783233,"y":-2.7189593238}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":8.987678323299999,"y":-2.3989193238000004},{"x":8.987678323299999,"y":-2.7189593238}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":9.3476783233,"y":-2.5589393238},{"x":9.1076783233,"y":-2.5589393238}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":8.987678323299999,"y":-2.5589393238},{"x":8.747678323299999,"y":-2.5589393238}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":9.1076783233,"y":-2.3989193238000004},{"x":9.1076783233,"y":-2.7189593238}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":8.987678323299999,"y":-2.3989193238000004},{"x":8.987678323299999,"y":-2.7189593238}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C24"} schX={9.0476783233} schY={-2.3189393238000005} anchor={"bottom_center"} fontSize={0.18} />
       <schematictext text={"0.22uF"} schX={9.0476783233} schY={-2.7989393238} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":10.718538675300001,"y":-2.5589393238},{"x":10.6185186753,"y":-2.5589393238}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":10.2185586753,"y":-2.5589393238},{"x":10.1185386753,"y":-2.5589393238}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":10.6185186753,"y":-2.6389193238},{"x":10.2185586753,"y":-2.6389193238},{"x":10.2185586753,"y":-2.4789593238000003},{"x":10.6185186753,"y":-2.4789593238000003},{"x":10.6185186753,"y":-2.6389193238}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":10.718538675300001,"y":-2.5589393238},{"x":10.6185186753,"y":-2.5589393238}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":10.2185586753,"y":-2.5589393238},{"x":10.1185386753,"y":-2.5589393238}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":10.6185186753,"y":-2.6389193238},{"x":10.2185586753,"y":-2.6389193238},{"x":10.2185586753,"y":-2.4789593238000003},{"x":10.6185186753,"y":-2.4789593238000003},{"x":10.6185186753,"y":-2.6389193238}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R21"} schX={10.4185386753} schY={-2.3989393238} anchor={"bottom_center"} fontSize={0.18} />
       <schematictext text={"1.00k"} schX={10.4185386753} schY={-2.7189393238000004} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":6.0576134784999995,"y":7.8595993516},{"x":5.817613478499999,"y":7.8595993516}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":5.6976134785,"y":7.8595993516},{"x":5.4576134785,"y":7.8595993516}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":5.817613478499999,"y":8.0196193516},{"x":5.817613478499999,"y":7.6995793516}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":5.6976134785,"y":8.0196193516},{"x":5.6976134785,"y":7.6995793516}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":6.0576134784999995,"y":7.8595993516},{"x":5.817613478499999,"y":7.8595993516}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":5.6976134785,"y":7.8595993516},{"x":5.4576134785,"y":7.8595993516}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":5.817613478499999,"y":8.0196193516},{"x":5.817613478499999,"y":7.6995793516}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":5.6976134785,"y":8.0196193516},{"x":5.6976134785,"y":7.6995793516}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C1"} schX={5.7576134785} schY={8.0995993516} anchor={"bottom_center"} fontSize={0.18} />
       <schematictext text={"680pF"} schX={5.7576134785} schY={7.6195993516} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":0.32278138030000003,"y":3.6556276054},{"x":0.0627813803,"y":3.5256276054}]} isFilled={false} />
-      <schematicpath points={[{"x":0.0627813803,"y":3.7956276054},{"x":0.32278138030000003,"y":3.6556276054}]} isFilled={false} />
-      <schematicpath points={[{"x":0.0627813803,"y":3.5256276054},{"x":0.0627813803,"y":3.7956276054}]} isFilled={false} />
-      <schematicpath points={[{"x":0.32278138030000003,"y":3.7956276054},{"x":0.32278138030000003,"y":3.5256276054}]} isFilled={false} />
-      <schematicpath points={[{"x":0.0627813803,"y":3.6556276054},{"x":-0.3372186197,"y":3.6556276054}]} isFilled={false} />
-      <schematicpath points={[{"x":0.7027813803,"y":3.6556276054},{"x":0.3327813803,"y":3.6556276054}]} isFilled={false} />
+      <schematicpath points={[{"x":0.32278138030000003,"y":3.6556276054},{"x":0.0627813803,"y":3.5256276054}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":0.0627813803,"y":3.7956276054},{"x":0.32278138030000003,"y":3.6556276054}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":0.0627813803,"y":3.5256276054},{"x":0.0627813803,"y":3.7956276054}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":0.32278138030000003,"y":3.7956276054},{"x":0.32278138030000003,"y":3.5256276054}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":0.0627813803,"y":3.6556276054},{"x":-0.3372186197,"y":3.6556276054}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":0.7027813803,"y":3.6556276054},{"x":0.3327813803,"y":3.6556276054}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"D3"} schX={0.17278138029999998} schY={3.8856276054} anchor={"bottom_center"} fontSize={0.18} />
       <schematictext text={"150V"} schX={0.1827813803} schY={3.3456276054} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-6.0317855489,"y":-1.710595183},{"x":-6.0317855489,"y":-1.810615183}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-6.0317855489,"y":-2.210575183},{"x":-6.0317855489,"y":-2.3105951829999998}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-5.9518055489,"y":-1.810615183},{"x":-5.9518055489,"y":-2.210575183},{"x":-6.1117655489,"y":-2.210575183},{"x":-6.1117655489,"y":-1.810615183},{"x":-5.9518055489,"y":-1.810615183}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-6.0317855489,"y":-1.710595183},{"x":-6.0317855489,"y":-1.810615183}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-6.0317855489,"y":-2.210575183},{"x":-6.0317855489,"y":-2.3105951829999998}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-5.9518055489,"y":-1.810615183},{"x":-5.9518055489,"y":-2.210575183},{"x":-6.1117655489,"y":-2.210575183},{"x":-6.1117655489,"y":-1.810615183},{"x":-5.9518055489,"y":-1.810615183}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R20"} schX={-5.8717855489} schY={-1.850595183} anchor={"center_left"} fontSize={0.18} />
       <schematictext text={"1.00k"} schX={-5.8717855489} schY={-2.170595183} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":8.9562876332,"y":0.9794696619000001},{"x":8.9562876332,"y":1.0794896619}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":8.9562876332,"y":1.4794496619000002},{"x":8.9562876332,"y":1.5794696619000002}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":8.8763076332,"y":1.0794896619},{"x":8.8763076332,"y":1.4794496619000002},{"x":9.036267633200001,"y":1.4794496619000002},{"x":9.036267633200001,"y":1.0794896619},{"x":8.8763076332,"y":1.0794896619}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":8.9562876332,"y":0.9794696619000001},{"x":8.9562876332,"y":1.0794896619}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":8.9562876332,"y":1.4794496619000002},{"x":8.9562876332,"y":1.5794696619000002}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":8.8763076332,"y":1.0794896619},{"x":8.8763076332,"y":1.4794496619000002},{"x":9.036267633200001,"y":1.4794496619000002},{"x":9.036267633200001,"y":1.0794896619},{"x":8.8763076332,"y":1.0794896619}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R13"} schX={9.1162876332} schY={1.4394696619} anchor={"center_left"} fontSize={0.18} />
       <schematictext text={"100k"} schX={9.1162876332} schY={1.1194696619000002} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":8.9562876332,"y":-0.025827929599999966},{"x":8.9562876332,"y":0.21417207040000003}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":8.9562876332,"y":0.3341720704},{"x":8.9562876332,"y":0.5741720704}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":9.1163076332,"y":0.21417207040000003},{"x":8.796267633200001,"y":0.21417207040000003}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":9.1163076332,"y":0.3341720704},{"x":8.796267633200001,"y":0.3341720704}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":8.9562876332,"y":-0.025827929599999966},{"x":8.9562876332,"y":0.21417207040000003}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":8.9562876332,"y":0.3341720704},{"x":8.9562876332,"y":0.5741720704}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":9.1163076332,"y":0.21417207040000003},{"x":8.796267633200001,"y":0.21417207040000003}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":9.1163076332,"y":0.3341720704},{"x":8.796267633200001,"y":0.3341720704}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C20"} schX={9.0712876332} schY={0.47417207040000003} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"4.7uF"} schX={9.0712876332} schY={0.07417207040000001} anchor={"top_left"} fontSize={0.18} />
       <schematicpath points={[{"x":10.218538675312647,"y":0.36556276053728737},{"x":10.618538675312646,"y":0.36556276053728737},{"x":10.618538675312646,"y":1.1332445576655876},{"x":10.218538675312647,"y":1.1332445576655876},{"x":10.218538675312647,"y":0.36556276053728737}]} strokeWidth={0.02} strokeColor={"#840000"} fillColor={"#ffffc2"} isFilled={true} />
@@ -1280,124 +1280,124 @@ test(
       <schematicline x1={10.418538675312647} y1={1.1332445576655876} x2={10.418538675312647} y2={1.4622510421491448} strokeWidth={0.02} color={"#840000"} />
       <schematictext text={"K"} schX={10.418538675312647} schY={1.0332445576655875} anchor={"center_right"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
       <schematictext text={"2"} schX={10.398538675312647} schY={1.2977477999073663} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
-      <schematicpath points={[{"x":6.5801296897,"y":6.3043683418},{"x":6.5801296897,"y":6.005025341800001}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":6.5801296897,"y":5.9656853418},{"x":6.5801296897,"y":5.7043683418}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":6.420109689699999,"y":5.9301133418},{"x":6.420109689699999,"y":5.9301133418},{"x":6.430777689699999,"y":5.934824341800001},{"x":6.4414456897,"y":5.9392423418},{"x":6.4521136897,"y":5.9433633418000005},{"x":6.4627816897,"y":5.9471863418},{"x":6.4734496897,"y":5.9507053418},{"x":6.4841176897,"y":5.953918341800001},{"x":6.4947856897,"y":5.9568213418000004},{"x":6.5054536896999995,"y":5.9594113418},{"x":6.516121689699999,"y":5.9616843418},{"x":6.526789689699999,"y":5.9636363418},{"x":6.5374576897,"y":5.9652653418},{"x":6.5481256897,"y":5.9665673418},{"x":6.5587936897,"y":5.9675383418},{"x":6.5694616897,"y":5.9681753418},{"x":6.5801296897,"y":5.9684753418000005},{"x":6.5907976897,"y":5.9681753418},{"x":6.6014656896999995,"y":5.9675383418},{"x":6.612133689699999,"y":5.9665673418},{"x":6.622801689699999,"y":5.9652653418},{"x":6.6334696897,"y":5.9636363418},{"x":6.6441376897,"y":5.9616843418},{"x":6.6548056897,"y":5.9594113418},{"x":6.6654736897,"y":5.9568213418000004},{"x":6.6761416897,"y":5.953918341800001},{"x":6.6868096897,"y":5.9507053418},{"x":6.6974776896999995,"y":5.9471863418},{"x":6.708145689699999,"y":5.9433633418000005},{"x":6.718813689699999,"y":5.9392423418},{"x":6.7294816897,"y":5.934824341800001},{"x":6.7401496897,"y":5.9301133418},{"x":6.7401496897,"y":5.9301133418}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":6.420109689699999,"y":6.003983341800001},{"x":6.7401496897,"y":6.003983341800001}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":6.3801296896999995,"y":6.1603943418},{"x":6.3801296896999995,"y":6.0902143418}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":6.4152196897,"y":6.125304341800001},{"x":6.3450396897,"y":6.125304341800001}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":6.5801296897,"y":6.3043683418},{"x":6.5801296897,"y":6.005025341800001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":6.5801296897,"y":5.9656853418},{"x":6.5801296897,"y":5.7043683418}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":6.420109689699999,"y":5.9301133418},{"x":6.420109689699999,"y":5.9301133418},{"x":6.430777689699999,"y":5.934824341800001},{"x":6.4414456897,"y":5.9392423418},{"x":6.4521136897,"y":5.9433633418000005},{"x":6.4627816897,"y":5.9471863418},{"x":6.4734496897,"y":5.9507053418},{"x":6.4841176897,"y":5.953918341800001},{"x":6.4947856897,"y":5.9568213418000004},{"x":6.5054536896999995,"y":5.9594113418},{"x":6.516121689699999,"y":5.9616843418},{"x":6.526789689699999,"y":5.9636363418},{"x":6.5374576897,"y":5.9652653418},{"x":6.5481256897,"y":5.9665673418},{"x":6.5587936897,"y":5.9675383418},{"x":6.5694616897,"y":5.9681753418},{"x":6.5801296897,"y":5.9684753418000005},{"x":6.5907976897,"y":5.9681753418},{"x":6.6014656896999995,"y":5.9675383418},{"x":6.612133689699999,"y":5.9665673418},{"x":6.622801689699999,"y":5.9652653418},{"x":6.6334696897,"y":5.9636363418},{"x":6.6441376897,"y":5.9616843418},{"x":6.6548056897,"y":5.9594113418},{"x":6.6654736897,"y":5.9568213418000004},{"x":6.6761416897,"y":5.953918341800001},{"x":6.6868096897,"y":5.9507053418},{"x":6.6974776896999995,"y":5.9471863418},{"x":6.708145689699999,"y":5.9433633418000005},{"x":6.718813689699999,"y":5.9392423418},{"x":6.7294816897,"y":5.934824341800001},{"x":6.7401496897,"y":5.9301133418},{"x":6.7401496897,"y":5.9301133418}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":6.420109689699999,"y":6.003983341800001},{"x":6.7401496897,"y":6.003983341800001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":6.3801296896999995,"y":6.1603943418},{"x":6.3801296896999995,"y":6.0902143418}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":6.4152196897,"y":6.125304341800001},{"x":6.3450396897,"y":6.125304341800001}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C7"} schX={6.8601296897} schY={6.3043683418} anchor={"center_left"} fontSize={0.18} />
       <schematictext text={"270uF"} schX={6.8801296896999995} schY={5.7043683418} anchor={"center_left"} fontSize={0.18} />
       <schematiccircle center={{"x":7.1301296896999995,"y":5.7043683418}} radius={0} strokeWidth={0.02} isFilled={false} />
       <schematiccircle center={{"x":6.0301296897,"y":6.3043683418}} radius={0} strokeWidth={0.02} isFilled={false} />
-      <schematicpath points={[{"x":7.3112552107,"y":6.3043683418},{"x":7.3112552107,"y":6.005025341800001}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":7.3112552107,"y":5.9656853418},{"x":7.3112552107,"y":5.7043683418}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":7.1512352106999995,"y":5.9301133418},{"x":7.1512352106999995,"y":5.9301133418},{"x":7.161903210699999,"y":5.934824341800001},{"x":7.1725712107,"y":5.9392423418},{"x":7.1832392107,"y":5.9433633418000005},{"x":7.1939072107,"y":5.9471863418},{"x":7.2045752107,"y":5.9507053418},{"x":7.2152432107,"y":5.953918341800001},{"x":7.2259112107,"y":5.9568213418000004},{"x":7.2365792106999995,"y":5.9594113418},{"x":7.247247210699999,"y":5.9616843418},{"x":7.257915210699999,"y":5.9636363418},{"x":7.2685832107,"y":5.9652653418},{"x":7.2792512107,"y":5.9665673418},{"x":7.2899192107,"y":5.9675383418},{"x":7.3005872107,"y":5.9681753418},{"x":7.3112552107,"y":5.9684753418000005},{"x":7.3219232107,"y":5.9681753418},{"x":7.3325912106999995,"y":5.9675383418},{"x":7.343259210699999,"y":5.9665673418},{"x":7.353927210699999,"y":5.9652653418},{"x":7.3645952107,"y":5.9636363418},{"x":7.3752632107,"y":5.9616843418},{"x":7.3859312107,"y":5.9594113418},{"x":7.3965992107,"y":5.9568213418000004},{"x":7.4072672107,"y":5.953918341800001},{"x":7.4179352107,"y":5.9507053418},{"x":7.4286032106999995,"y":5.9471863418},{"x":7.439271210699999,"y":5.9433633418000005},{"x":7.449939210699999,"y":5.9392423418},{"x":7.4606072107,"y":5.934824341800001},{"x":7.4712752107,"y":5.9301133418},{"x":7.4712752107,"y":5.9301133418}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":7.1512352106999995,"y":6.003983341800001},{"x":7.4712752107,"y":6.003983341800001}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":7.1112552106999996,"y":6.1603943418},{"x":7.1112552106999996,"y":6.0902143418}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":7.1463452107,"y":6.125304341800001},{"x":7.0761652107,"y":6.125304341800001}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":7.3112552107,"y":6.3043683418},{"x":7.3112552107,"y":6.005025341800001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":7.3112552107,"y":5.9656853418},{"x":7.3112552107,"y":5.7043683418}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":7.1512352106999995,"y":5.9301133418},{"x":7.1512352106999995,"y":5.9301133418},{"x":7.161903210699999,"y":5.934824341800001},{"x":7.1725712107,"y":5.9392423418},{"x":7.1832392107,"y":5.9433633418000005},{"x":7.1939072107,"y":5.9471863418},{"x":7.2045752107,"y":5.9507053418},{"x":7.2152432107,"y":5.953918341800001},{"x":7.2259112107,"y":5.9568213418000004},{"x":7.2365792106999995,"y":5.9594113418},{"x":7.247247210699999,"y":5.9616843418},{"x":7.257915210699999,"y":5.9636363418},{"x":7.2685832107,"y":5.9652653418},{"x":7.2792512107,"y":5.9665673418},{"x":7.2899192107,"y":5.9675383418},{"x":7.3005872107,"y":5.9681753418},{"x":7.3112552107,"y":5.9684753418000005},{"x":7.3219232107,"y":5.9681753418},{"x":7.3325912106999995,"y":5.9675383418},{"x":7.343259210699999,"y":5.9665673418},{"x":7.353927210699999,"y":5.9652653418},{"x":7.3645952107,"y":5.9636363418},{"x":7.3752632107,"y":5.9616843418},{"x":7.3859312107,"y":5.9594113418},{"x":7.3965992107,"y":5.9568213418000004},{"x":7.4072672107,"y":5.953918341800001},{"x":7.4179352107,"y":5.9507053418},{"x":7.4286032106999995,"y":5.9471863418},{"x":7.439271210699999,"y":5.9433633418000005},{"x":7.449939210699999,"y":5.9392423418},{"x":7.4606072107,"y":5.934824341800001},{"x":7.4712752107,"y":5.9301133418},{"x":7.4712752107,"y":5.9301133418}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":7.1512352106999995,"y":6.003983341800001},{"x":7.4712752107,"y":6.003983341800001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":7.1112552106999996,"y":6.1603943418},{"x":7.1112552106999996,"y":6.0902143418}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":7.1463452107,"y":6.125304341800001},{"x":7.0761652107,"y":6.125304341800001}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C8"} schX={7.5912552107} schY={6.3043683418} anchor={"center_left"} fontSize={0.18} />
       <schematictext text={"270uF"} schX={7.6112552106999996} schY={5.7043683418} anchor={"center_left"} fontSize={0.18} />
       <schematiccircle center={{"x":7.8612552106999996,"y":5.7043683418}} radius={0} strokeWidth={0.02} isFilled={false} />
       <schematiccircle center={{"x":6.7612552107,"y":6.3043683418}} radius={0} strokeWidth={0.02} isFilled={false} />
-      <schematicpath points={[{"x":-10.0529759148,"y":6.0059576193},{"x":-10.0529759148,"y":6.2459576193}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-10.0529759148,"y":6.3659576193},{"x":-10.0529759148,"y":6.6059576193}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-9.8929559148,"y":6.2459576193},{"x":-10.212995914799999,"y":6.2459576193}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-9.8929559148,"y":6.3659576193},{"x":-10.212995914799999,"y":6.3659576193}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-10.0529759148,"y":6.0059576193},{"x":-10.0529759148,"y":6.2459576193}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-10.0529759148,"y":6.3659576193},{"x":-10.0529759148,"y":6.6059576193}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-9.8929559148,"y":6.2459576193},{"x":-10.212995914799999,"y":6.2459576193}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-9.8929559148,"y":6.3659576193},{"x":-10.212995914799999,"y":6.3659576193}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C3"} schX={-9.937975914799999} schY={6.5059576193} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"0.1uF"} schX={-9.937975914799999} schY={6.1059576193} anchor={"top_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":8.0423807318,"y":5.640394858700001},{"x":8.0423807318,"y":5.880394858700001}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":8.0423807318,"y":6.0003948587},{"x":8.0423807318,"y":6.2403948587}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":8.2024007318,"y":5.880394858700001},{"x":7.8823607317999995,"y":5.880394858700001}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":8.2024007318,"y":6.0003948587},{"x":7.8823607317999995,"y":6.0003948587}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":8.0423807318,"y":5.640394858700001},{"x":8.0423807318,"y":5.880394858700001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":8.0423807318,"y":6.0003948587},{"x":8.0423807318,"y":6.2403948587}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":8.2024007318,"y":5.880394858700001},{"x":7.8823607317999995,"y":5.880394858700001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":8.2024007318,"y":6.0003948587},{"x":7.8823607317999995,"y":6.0003948587}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C9"} schX={8.1573807318} schY={6.140394858700001} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"10uF"} schX={8.1573807318} schY={5.7403948587} anchor={"top_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":8.7735062529,"y":5.640394858700001},{"x":8.7735062529,"y":5.880394858700001}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":8.7735062529,"y":6.0003948587},{"x":8.7735062529,"y":6.2403948587}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":8.9335262529,"y":5.880394858700001},{"x":8.613486252900001,"y":5.880394858700001}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":8.9335262529,"y":6.0003948587},{"x":8.613486252900001,"y":6.0003948587}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":8.7735062529,"y":5.640394858700001},{"x":8.7735062529,"y":5.880394858700001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":8.7735062529,"y":6.0003948587},{"x":8.7735062529,"y":6.2403948587}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":8.9335262529,"y":5.880394858700001},{"x":8.613486252900001,"y":5.880394858700001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":8.9335262529,"y":6.0003948587},{"x":8.613486252900001,"y":6.0003948587}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C10"} schX={8.888506252900001} schY={6.140394858700001} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"10uF"} schX={8.888506252900001} schY={5.7403948587} anchor={"top_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":9.504631774,"y":5.640394858700001},{"x":9.504631774,"y":5.880394858700001}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":9.504631774,"y":6.0003948587},{"x":9.504631774,"y":6.2403948587}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":9.664651774,"y":5.880394858700001},{"x":9.344611774,"y":5.880394858700001}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":9.664651774,"y":6.0003948587},{"x":9.344611774,"y":6.0003948587}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":9.504631774,"y":5.640394858700001},{"x":9.504631774,"y":5.880394858700001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":9.504631774,"y":6.0003948587},{"x":9.504631774,"y":6.2403948587}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":9.664651774,"y":5.880394858700001},{"x":9.344611774,"y":5.880394858700001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":9.664651774,"y":6.0003948587},{"x":9.344611774,"y":6.0003948587}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C11"} schX={9.619631774} schY={6.140394858700001} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"0.1uF"} schX={9.619631774} schY={5.7403948587} anchor={"top_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":10.4185386753,"y":5.640394858700001},{"x":10.4185386753,"y":5.880394858700001}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":10.4185386753,"y":6.0003948587},{"x":10.4185386753,"y":6.2403948587}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":10.5785586753,"y":5.880394858700001},{"x":10.258518675300001,"y":5.880394858700001}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":10.5785586753,"y":6.0003948587},{"x":10.258518675300001,"y":6.0003948587}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":10.4185386753,"y":5.640394858700001},{"x":10.4185386753,"y":5.880394858700001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":10.4185386753,"y":6.0003948587},{"x":10.4185386753,"y":6.2403948587}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":10.5785586753,"y":5.880394858700001},{"x":10.258518675300001,"y":5.880394858700001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":10.5785586753,"y":6.0003948587},{"x":10.258518675300001,"y":6.0003948587}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C12"} schX={10.5335386753} schY={6.140394858700001} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"1000pF"} schX={10.5335386753} schY={5.7403948587} anchor={"top_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":10.078803844400001,"y":-1.8278138027},{"x":9.838803844400001,"y":-1.8278138027}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":9.7188038444,"y":-1.8278138027},{"x":9.4788038444,"y":-1.8278138027}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":9.838803844400001,"y":-1.6677938026999999},{"x":9.838803844400001,"y":-1.9878338027}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":9.7188038444,"y":-1.6677938026999999},{"x":9.7188038444,"y":-1.9878338027}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":10.078803844400001,"y":-1.8278138027},{"x":9.838803844400001,"y":-1.8278138027}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":9.7188038444,"y":-1.8278138027},{"x":9.4788038444,"y":-1.8278138027}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":9.838803844400001,"y":-1.6677938026999999},{"x":9.838803844400001,"y":-1.9878338027}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":9.7188038444,"y":-1.6677938026999999},{"x":9.7188038444,"y":-1.9878338027}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C23"} schX={9.7788038444} schY={-1.5878138027} anchor={"bottom_center"} fontSize={0.18} />
       <schematictext text={"0.01uF"} schX={9.7788038444} schY={-2.0678138027} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":1.8536417323,"y":-4.9350972673},{"x":1.6136417323,"y":-4.9350972673}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":1.4936417323,"y":-4.9350972673},{"x":1.2536417323,"y":-4.9350972673}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":1.6136417323,"y":-4.7750772672999995},{"x":1.6136417323,"y":-5.0951172673}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":1.4936417323,"y":-4.7750772672999995},{"x":1.4936417323,"y":-5.0951172673}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":1.8536417323,"y":-4.9350972673},{"x":1.6136417323,"y":-4.9350972673}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":1.4936417323,"y":-4.9350972673},{"x":1.2536417323,"y":-4.9350972673}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":1.6136417323,"y":-4.7750772672999995},{"x":1.6136417323,"y":-5.0951172673}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":1.4936417323,"y":-4.7750772672999995},{"x":1.4936417323,"y":-5.0951172673}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C28"} schX={1.5536417323} schY={-4.6950972672999995} anchor={"bottom_center"} fontSize={0.18} />
       <schematictext text={"1000pF"} schX={1.5536417323} schY={-5.1750972673} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-3.2900648448,"y":5.5092693377},{"x":-3.2900648448,"y":5.2692693377}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-3.2900648448,"y":5.149269337700001},{"x":-3.2900648448,"y":4.9092693377000005}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-3.4500848447999997,"y":5.2692693377},{"x":-3.1300448448,"y":5.2692693377}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-3.4500848447999997,"y":5.149269337700001},{"x":-3.1300448448,"y":5.149269337700001}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-3.2900648448,"y":5.5092693377},{"x":-3.2900648448,"y":5.2692693377}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-3.2900648448,"y":5.149269337700001},{"x":-3.2900648448,"y":4.9092693377000005}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-3.4500848447999997,"y":5.2692693377},{"x":-3.1300448448,"y":5.2692693377}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-3.4500848447999997,"y":5.149269337700001},{"x":-3.1300448448,"y":5.149269337700001}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C15"} schX={-3.1950648447999996} schY={5.4092693377000005} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"4.7uF"} schX={-3.1950648447999996} schY={5.0092693377} anchor={"top_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-8.9562876332,"y":-6.3317855489},{"x":-8.9562876332,"y":-6.2317655489}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-8.9562876332,"y":-5.8318055489},{"x":-8.9562876332,"y":-5.7317855489000005}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-9.036267633200001,"y":-6.2317655489},{"x":-9.036267633200001,"y":-5.8318055489},{"x":-8.8763076332,"y":-5.8318055489},{"x":-8.8763076332,"y":-6.2317655489},{"x":-9.036267633200001,"y":-6.2317655489}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-8.9562876332,"y":-6.3317855489},{"x":-8.9562876332,"y":-6.2317655489}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-8.9562876332,"y":-5.8318055489},{"x":-8.9562876332,"y":-5.7317855489000005}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-9.036267633200001,"y":-6.2317655489},{"x":-9.036267633200001,"y":-5.8318055489},{"x":-8.8763076332,"y":-5.8318055489},{"x":-8.8763076332,"y":-6.2317655489},{"x":-9.036267633200001,"y":-6.2317655489}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R24"} schX={-8.7962876332} schY={-5.8717855489} anchor={"center_left"} fontSize={0.18} />
       <schematictext text={"9.76k"} schX={-8.7962876332} schY={-6.1917855489} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-8.9562876332,"y":-5.052315887},{"x":-8.9562876332,"y":-4.952295887}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-8.9562876332,"y":-4.552335887},{"x":-8.9562876332,"y":-4.452315887}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-9.036267633200001,"y":-4.952295887},{"x":-9.036267633200001,"y":-4.552335887},{"x":-8.8763076332,"y":-4.552335887},{"x":-8.8763076332,"y":-4.952295887},{"x":-9.036267633200001,"y":-4.952295887}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-8.9562876332,"y":-5.052315887},{"x":-8.9562876332,"y":-4.952295887}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-8.9562876332,"y":-4.552335887},{"x":-8.9562876332,"y":-4.452315887}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-9.036267633200001,"y":-4.952295887},{"x":-9.036267633200001,"y":-4.552335887},{"x":-8.8763076332,"y":-4.552335887},{"x":-8.8763076332,"y":-4.952295887},{"x":-9.036267633200001,"y":-4.952295887}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R23"} schX={-8.7962876332} schY={-4.592315887} anchor={"center_left"} fontSize={0.18} />
       <schematictext text={"30.0k"} schX={-8.7962876332} schY={-4.912315887} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-4.3867531264,"y":5.1834414081},{"x":-4.3867531264,"y":5.2834614081}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-4.3867531264,"y":5.6834214081},{"x":-4.3867531264,"y":5.7834414081}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-4.4667331264,"y":5.2834614081},{"x":-4.4667331264,"y":5.6834214081},{"x":-4.3067731264,"y":5.6834214081},{"x":-4.3067731264,"y":5.2834614081},{"x":-4.4667331264,"y":5.2834614081}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-4.3867531264,"y":5.1834414081},{"x":-4.3867531264,"y":5.2834614081}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-4.3867531264,"y":5.6834214081},{"x":-4.3867531264,"y":5.7834414081}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-4.4667331264,"y":5.2834614081},{"x":-4.4667331264,"y":5.6834214081},{"x":-4.3067731264,"y":5.6834214081},{"x":-4.3067731264,"y":5.2834614081},{"x":-4.4667331264,"y":5.2834614081}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R3"} schX={-4.2267531264} schY={5.6434414081} anchor={"center_left"} fontSize={0.18} />
       <schematictext text={"0"} schX={-4.2267531264} schY={5.3234414081} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-8.0423807318,"y":6.0059576193},{"x":-8.0423807318,"y":6.2459576193}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-8.0423807318,"y":6.3659576193},{"x":-8.0423807318,"y":6.6059576193}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-7.8823607317999995,"y":6.2459576193},{"x":-8.2024007318,"y":6.2459576193}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-7.8823607317999995,"y":6.3659576193},{"x":-8.2024007318,"y":6.3659576193}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-8.0423807318,"y":6.0059576193},{"x":-8.0423807318,"y":6.2459576193}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-8.0423807318,"y":6.3659576193},{"x":-8.0423807318,"y":6.6059576193}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-7.8823607317999995,"y":6.2459576193},{"x":-8.2024007318,"y":6.2459576193}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-7.8823607317999995,"y":6.3659576193},{"x":-8.2024007318,"y":6.3659576193}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C5"} schX={-7.9273807318} schY={6.5059576193} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"1uF"} schX={-7.9273807318} schY={6.1059576193} anchor={"top_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-6.9456924502,"y":6.0059576193},{"x":-6.9456924502,"y":6.2459576193}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-6.9456924502,"y":6.3659576193},{"x":-6.9456924502,"y":6.6059576193}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-6.7856724502,"y":6.2459576193},{"x":-7.1057124502,"y":6.2459576193}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-6.7856724502,"y":6.3659576193},{"x":-7.1057124502,"y":6.3659576193}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-6.9456924502,"y":6.0059576193},{"x":-6.9456924502,"y":6.2459576193}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-6.9456924502,"y":6.3659576193},{"x":-6.9456924502,"y":6.6059576193}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-6.7856724502,"y":6.2459576193},{"x":-7.1057124502,"y":6.2459576193}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-6.7856724502,"y":6.3659576193},{"x":-7.1057124502,"y":6.3659576193}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C6"} schX={-6.8306924502} schY={6.5059576193} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"4.7uF"} schX={-6.8306924502} schY={6.1059576193} anchor={"top_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-8.9562876332,"y":6.0059576193},{"x":-8.9562876332,"y":6.2459576193}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-8.9562876332,"y":6.3659576193},{"x":-8.9562876332,"y":6.6059576193}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-8.796267633200001,"y":6.2459576193},{"x":-9.1163076332,"y":6.2459576193}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-8.796267633200001,"y":6.3659576193},{"x":-9.1163076332,"y":6.3659576193}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-8.9562876332,"y":6.0059576193},{"x":-8.9562876332,"y":6.2459576193}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-8.9562876332,"y":6.3659576193},{"x":-8.9562876332,"y":6.6059576193}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-8.796267633200001,"y":6.2459576193},{"x":-9.1163076332,"y":6.2459576193}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-8.796267633200001,"y":6.3659576193},{"x":-9.1163076332,"y":6.3659576193}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C4"} schX={-8.8412876332} schY={6.5059576193} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"1uF"} schX={-8.8412876332} schY={6.1059576193} anchor={"top_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-0.3655627605,"y":4.3609251969},{"x":-0.3655627605,"y":4.6009251969000005}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-0.3655627605,"y":4.7209251969},{"x":-0.3655627605,"y":4.9609251969}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-0.20554276049999998,"y":4.6009251969000005},{"x":-0.5255827605,"y":4.6009251969000005}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-0.20554276049999998,"y":4.7209251969},{"x":-0.5255827605,"y":4.7209251969}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-0.3655627605,"y":4.3609251969},{"x":-0.3655627605,"y":4.6009251969000005}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-0.3655627605,"y":4.7209251969},{"x":-0.3655627605,"y":4.9609251969}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-0.20554276049999998,"y":4.6009251969000005},{"x":-0.5255827605,"y":4.6009251969000005}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-0.20554276049999998,"y":4.7209251969},{"x":-0.5255827605,"y":4.7209251969}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C16"} schX={-0.2505627605} schY={4.8609251969} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"0.33uF"} schX={-0.2505627604999999} schY={4.4609251969} anchor={"top_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-9.256287633200001,"y":2.010595183},{"x":-9.1562676332,"y":2.010595183}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-8.7563076332,"y":2.010595183},{"x":-8.6562876332,"y":2.010595183}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-9.1562676332,"y":2.090575183},{"x":-8.7563076332,"y":2.090575183},{"x":-8.7563076332,"y":1.930615183},{"x":-9.1562676332,"y":1.930615183},{"x":-9.1562676332,"y":2.090575183}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-9.256287633200001,"y":2.010595183},{"x":-9.1562676332,"y":2.010595183}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-8.7563076332,"y":2.010595183},{"x":-8.6562876332,"y":2.010595183}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-9.1562676332,"y":2.090575183},{"x":-8.7563076332,"y":2.090575183},{"x":-8.7563076332,"y":1.930615183},{"x":-9.1562676332,"y":1.930615183},{"x":-9.1562676332,"y":2.090575183}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R9"} schX={-8.9562876332} schY={2.170595183} anchor={"bottom_center"} fontSize={0.18} />
       <schematictext text={"100k"} schX={-8.9562876332} schY={1.850595183} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-0.9566882816000001,"y":6.0317855489},{"x":-1.2166882816000002,"y":5.9017855489}]} isFilled={false} />
-      <schematicpath points={[{"x":-1.2166882816000002,"y":6.1717855489},{"x":-0.9566882816000001,"y":6.0317855489}]} isFilled={false} />
-      <schematicpath points={[{"x":-1.2166882816000002,"y":5.9017855489},{"x":-1.2166882816000002,"y":6.1717855489}]} isFilled={false} />
-      <schematicpath points={[{"x":-0.9566882816000001,"y":6.1717855489},{"x":-0.9566882816000001,"y":5.9017855489}]} isFilled={false} />
-      <schematicpath points={[{"x":-1.2166882816000002,"y":6.0317855489},{"x":-1.6166882816,"y":6.0317855489}]} isFilled={false} />
-      <schematicpath points={[{"x":-0.5766882816000001,"y":6.0317855489},{"x":-0.9466882816000001,"y":6.0317855489}]} isFilled={false} />
+      <schematicpath points={[{"x":-0.9566882816000001,"y":6.0317855489},{"x":-1.2166882816000002,"y":5.9017855489}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-1.2166882816000002,"y":6.1717855489},{"x":-0.9566882816000001,"y":6.0317855489}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-1.2166882816000002,"y":5.9017855489},{"x":-1.2166882816000002,"y":6.1717855489}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-0.9566882816000001,"y":6.1717855489},{"x":-0.9566882816000001,"y":5.9017855489}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-1.2166882816000002,"y":6.0317855489},{"x":-1.6166882816,"y":6.0317855489}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-0.5766882816000001,"y":6.0317855489},{"x":-0.9466882816000001,"y":6.0317855489}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"D2"} schX={-1.1066882816} schY={6.261785548900001} anchor={"bottom_center"} fontSize={0.18} />
       <schematictext text={"100V"} schX={-1.0966882816} schY={5.7217855489} anchor={"top_center"} fontSize={0.18} />
       <schematicpath points={[{"x":-7.4940365910143605,"y":-0.5483441408059284},{"x":-5.300660027790645,"y":-0.5483441408059284},{"x":-5.300660027790645,"y":3.8384089856415016},{"x":-7.4940365910143605,"y":3.8384089856415016},{"x":-7.4940365910143605,"y":-0.5483441408059284}]} strokeWidth={0.02} strokeColor={"#840000"} fillColor={"#ffffc2"} isFilled={true} />
@@ -1440,51 +1440,51 @@ test(
       <schematicline x1={-5.300660027790645} y1={0} x2={-4.93509726725336} y2={0} strokeWidth={0.02} color={"#840000"} />
       <schematictext text={"EP"} schX={-5.400660027790645} schY={0} anchor={"center_right"} fontSize={0.15} color={"#a90000"} />
       <schematictext text={"13"} schX={-5.117878647522002} schY={0.02} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
-      <schematicpath points={[{"x":1.0966882816,"y":1.1622510420999999},{"x":1.0966882816,"y":1.2622710420999999}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":1.0966882816,"y":1.6622310421},{"x":1.0966882816,"y":1.7622510421}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":1.0167082816000002,"y":1.2622710420999999},{"x":1.0167082816000002,"y":1.6622310421},{"x":1.1766682816,"y":1.6622310421},{"x":1.1766682816,"y":1.2622710420999999},{"x":1.0167082816000002,"y":1.2622710420999999}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":1.0966882816,"y":1.1622510420999999},{"x":1.0966882816,"y":1.2622710420999999}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":1.0966882816,"y":1.6622310421},{"x":1.0966882816,"y":1.7622510421}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":1.0167082816000002,"y":1.2622710420999999},{"x":1.0167082816000002,"y":1.6622310421},{"x":1.1766682816,"y":1.6622310421},{"x":1.1766682816,"y":1.2622710420999999},{"x":1.0167082816000002,"y":1.2622710420999999}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R12"} schX={1.2566882816} schY={1.6222510420999998} anchor={"center_left"} fontSize={0.18} />
       <schematictext text={"0.02"} schX={1.2566882816} schY={1.3022510421} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":1.6450324224,"y":3.7115215377},{"x":1.6450324224,"y":3.9115215377}]} isFilled={false} />
-      <schematicpath points={[{"x":1.5450324223999998,"y":4.0115215377},{"x":1.5455454900608103,"y":4.0014047055012565},{"x":1.5470794282747504,"y":3.9913916856911342},{"x":1.549618496759995,"y":3.9815852254026645},{"x":1.5531366412379768,"y":3.9720859521886682},{"x":1.5575977607855418,"y":3.962991341446892},{"x":1.5629560782792722,"y":3.954394716190521},{"x":1.5691566101307208,"y":3.946384289427778},{"x":1.5761357304924313,"y":3.939042258977088},{"x":1.5838218241452335,"y":3.93244396400623},{"x":1.5921360213673037,"y":3.926657111950525},{"x":1.6009930072442364,"y":3.921741083742926},{"x":1.6103018971155179,"y":3.917746324485292},{"x":1.619967169174128,"y":3.91471382581338},{"x":1.6298896446495423,"y":3.912674705267189},{"x":1.6399675055161287,"y":3.911649886982895},{"x":1.6500973392838711,"y":3.911649886982895},{"x":1.6601752001504575,"y":3.912674705267189},{"x":1.6700976756258719,"y":3.91471382581338},{"x":1.679762947684482,"y":3.917746324485292},{"x":1.6890718375557634,"y":3.921741083742926},{"x":1.6979288234326961,"y":3.926657111950525},{"x":1.706243020654766,"y":3.93244396400623},{"x":1.7139291143075686,"y":3.939042258977088},{"x":1.720908234669279,"y":3.946384289427778},{"x":1.7271087665207276,"y":3.954394716190521},{"x":1.732467084014458,"y":3.962991341446892},{"x":1.736928203562023,"y":3.9720859521886682},{"x":1.7404463480400048,"y":3.9815852254026645},{"x":1.7429854165252494,"y":3.9913916856911342},{"x":1.7445193547391895,"y":4.0014047055012565},{"x":1.7450324224,"y":4.0115215377}]} isFilled={false} />
+      <schematicpath points={[{"x":1.6450324224,"y":3.7115215377},{"x":1.6450324224,"y":3.9115215377}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":1.5450324223999998,"y":4.0115215377},{"x":1.5455454900608103,"y":4.0014047055012565},{"x":1.5470794282747504,"y":3.9913916856911342},{"x":1.549618496759995,"y":3.9815852254026645},{"x":1.5531366412379768,"y":3.9720859521886682},{"x":1.5575977607855418,"y":3.962991341446892},{"x":1.5629560782792722,"y":3.954394716190521},{"x":1.5691566101307208,"y":3.946384289427778},{"x":1.5761357304924313,"y":3.939042258977088},{"x":1.5838218241452335,"y":3.93244396400623},{"x":1.5921360213673037,"y":3.926657111950525},{"x":1.6009930072442364,"y":3.921741083742926},{"x":1.6103018971155179,"y":3.917746324485292},{"x":1.619967169174128,"y":3.91471382581338},{"x":1.6298896446495423,"y":3.912674705267189},{"x":1.6399675055161287,"y":3.911649886982895},{"x":1.6500973392838711,"y":3.911649886982895},{"x":1.6601752001504575,"y":3.912674705267189},{"x":1.6700976756258719,"y":3.91471382581338},{"x":1.679762947684482,"y":3.917746324485292},{"x":1.6890718375557634,"y":3.921741083742926},{"x":1.6979288234326961,"y":3.926657111950525},{"x":1.706243020654766,"y":3.93244396400623},{"x":1.7139291143075686,"y":3.939042258977088},{"x":1.720908234669279,"y":3.946384289427778},{"x":1.7271087665207276,"y":3.954394716190521},{"x":1.732467084014458,"y":3.962991341446892},{"x":1.736928203562023,"y":3.9720859521886682},{"x":1.7404463480400048,"y":3.9815852254026645},{"x":1.7429854165252494,"y":3.9913916856911342},{"x":1.7445193547391895,"y":4.0014047055012565},{"x":1.7450324224,"y":4.0115215377}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"TP5"} schX={1.6450324224} schY={4.0365215377000006} anchor={"bottom_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":11.5152269569,"y":6.8188050022999995},{"x":11.5152269569,"y":7.0188050023}]} isFilled={false} />
-      <schematicpath points={[{"x":11.4152269569,"y":7.118805002299999},{"x":11.41574002456081,"y":7.1086881701012565},{"x":11.41727396277475,"y":7.098675150291133},{"x":11.419813031259995,"y":7.088868690002664},{"x":11.423331175737976,"y":7.079369416788668},{"x":11.427792295285542,"y":7.070274806046892},{"x":11.433150612779272,"y":7.061678180790521},{"x":11.43935114463072,"y":7.053667754027778},{"x":11.446330264992431,"y":7.0463257235770875},{"x":11.454016358645234,"y":7.03972742860623},{"x":11.462330555867304,"y":7.033940576550525},{"x":11.471187541744236,"y":7.0290245483429254},{"x":11.480496431615517,"y":7.025029789085291},{"x":11.490161703674127,"y":7.021997290413379},{"x":11.500084179149543,"y":7.019958169867189},{"x":11.510162040016128,"y":7.018933351582894},{"x":11.52029187378387,"y":7.018933351582894},{"x":11.530369734650456,"y":7.019958169867189},{"x":11.540292210125871,"y":7.021997290413379},{"x":11.549957482184482,"y":7.025029789085291},{"x":11.559266372055763,"y":7.0290245483429254},{"x":11.568123357932695,"y":7.033940576550525},{"x":11.576437555154765,"y":7.03972742860623},{"x":11.584123648807568,"y":7.0463257235770875},{"x":11.591102769169279,"y":7.053667754027778},{"x":11.597303301020727,"y":7.061678180790521},{"x":11.602661618514457,"y":7.070274806046892},{"x":11.607122738062023,"y":7.079369416788668},{"x":11.610640882540004,"y":7.088868690002664},{"x":11.613179951025248,"y":7.098675150291133},{"x":11.614713889239189,"y":7.1086881701012565},{"x":11.615226956899999,"y":7.118805002299999}]} isFilled={false} />
+      <schematicpath points={[{"x":11.5152269569,"y":6.8188050022999995},{"x":11.5152269569,"y":7.0188050023}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":11.4152269569,"y":7.118805002299999},{"x":11.41574002456081,"y":7.1086881701012565},{"x":11.41727396277475,"y":7.098675150291133},{"x":11.419813031259995,"y":7.088868690002664},{"x":11.423331175737976,"y":7.079369416788668},{"x":11.427792295285542,"y":7.070274806046892},{"x":11.433150612779272,"y":7.061678180790521},{"x":11.43935114463072,"y":7.053667754027778},{"x":11.446330264992431,"y":7.0463257235770875},{"x":11.454016358645234,"y":7.03972742860623},{"x":11.462330555867304,"y":7.033940576550525},{"x":11.471187541744236,"y":7.0290245483429254},{"x":11.480496431615517,"y":7.025029789085291},{"x":11.490161703674127,"y":7.021997290413379},{"x":11.500084179149543,"y":7.019958169867189},{"x":11.510162040016128,"y":7.018933351582894},{"x":11.52029187378387,"y":7.018933351582894},{"x":11.530369734650456,"y":7.019958169867189},{"x":11.540292210125871,"y":7.021997290413379},{"x":11.549957482184482,"y":7.025029789085291},{"x":11.559266372055763,"y":7.0290245483429254},{"x":11.568123357932695,"y":7.033940576550525},{"x":11.576437555154765,"y":7.03972742860623},{"x":11.584123648807568,"y":7.0463257235770875},{"x":11.591102769169279,"y":7.053667754027778},{"x":11.597303301020727,"y":7.061678180790521},{"x":11.602661618514457,"y":7.070274806046892},{"x":11.607122738062023,"y":7.079369416788668},{"x":11.610640882540004,"y":7.088868690002664},{"x":11.613179951025248,"y":7.098675150291133},{"x":11.614713889239189,"y":7.1086881701012565},{"x":11.615226956899999,"y":7.118805002299999}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"TP2"} schX={11.5152269569} schY={7.1438050023} anchor={"bottom_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":11.5152269569,"y":4.879203334900001},{"x":11.5152269569,"y":4.6792033349}]} isFilled={false} />
-      <schematicpath points={[{"x":11.615226956899999,"y":4.579203334900001},{"x":11.614713889239189,"y":4.589320167098744},{"x":11.613179951025248,"y":4.599333186908867},{"x":11.610640882540004,"y":4.6091396471973365},{"x":11.607122738062023,"y":4.618638920411332},{"x":11.602661618514457,"y":4.627733531153108},{"x":11.597303301020727,"y":4.636330156409479},{"x":11.591102769169279,"y":4.644340583172222},{"x":11.584123648807568,"y":4.651682613622913},{"x":11.576437555154765,"y":4.65828090859377},{"x":11.568123357932695,"y":4.664067760649475},{"x":11.559266372055763,"y":4.668983788857075},{"x":11.549957482184482,"y":4.672978548114709},{"x":11.540292210125871,"y":4.676011046786621},{"x":11.530369734650456,"y":4.678050167332811},{"x":11.52029187378387,"y":4.679074985617106},{"x":11.510162040016128,"y":4.679074985617106},{"x":11.500084179149543,"y":4.678050167332811},{"x":11.490161703674127,"y":4.676011046786621},{"x":11.480496431615517,"y":4.672978548114709},{"x":11.471187541744236,"y":4.668983788857075},{"x":11.462330555867304,"y":4.664067760649475},{"x":11.454016358645234,"y":4.65828090859377},{"x":11.446330264992431,"y":4.651682613622913},{"x":11.43935114463072,"y":4.644340583172222},{"x":11.433150612779272,"y":4.636330156409479},{"x":11.427792295285542,"y":4.627733531153108},{"x":11.423331175737976,"y":4.618638920411332},{"x":11.419813031259995,"y":4.6091396471973365},{"x":11.41727396277475,"y":4.599333186908867},{"x":11.41574002456081,"y":4.589320167098744},{"x":11.4152269569,"y":4.579203334900001}]} isFilled={false} />
+      <schematicpath points={[{"x":11.5152269569,"y":4.879203334900001},{"x":11.5152269569,"y":4.6792033349}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":11.615226956899999,"y":4.579203334900001},{"x":11.614713889239189,"y":4.589320167098744},{"x":11.613179951025248,"y":4.599333186908867},{"x":11.610640882540004,"y":4.6091396471973365},{"x":11.607122738062023,"y":4.618638920411332},{"x":11.602661618514457,"y":4.627733531153108},{"x":11.597303301020727,"y":4.636330156409479},{"x":11.591102769169279,"y":4.644340583172222},{"x":11.584123648807568,"y":4.651682613622913},{"x":11.576437555154765,"y":4.65828090859377},{"x":11.568123357932695,"y":4.664067760649475},{"x":11.559266372055763,"y":4.668983788857075},{"x":11.549957482184482,"y":4.672978548114709},{"x":11.540292210125871,"y":4.676011046786621},{"x":11.530369734650456,"y":4.678050167332811},{"x":11.52029187378387,"y":4.679074985617106},{"x":11.510162040016128,"y":4.679074985617106},{"x":11.500084179149543,"y":4.678050167332811},{"x":11.490161703674127,"y":4.676011046786621},{"x":11.480496431615517,"y":4.672978548114709},{"x":11.471187541744236,"y":4.668983788857075},{"x":11.462330555867304,"y":4.664067760649475},{"x":11.454016358645234,"y":4.65828090859377},{"x":11.446330264992431,"y":4.651682613622913},{"x":11.43935114463072,"y":4.644340583172222},{"x":11.433150612779272,"y":4.636330156409479},{"x":11.427792295285542,"y":4.627733531153108},{"x":11.423331175737976,"y":4.618638920411332},{"x":11.419813031259995,"y":4.6091396471973365},{"x":11.41727396277475,"y":4.599333186908867},{"x":11.41574002456081,"y":4.589320167098744},{"x":11.4152269569,"y":4.579203334900001}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"TP4"} schX={11.5152269569} schY={4.5542033349} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-12.4291338583,"y":7.3671491431},{"x":-12.4291338583,"y":7.5671491431}]} isFilled={false} />
-      <schematicpath points={[{"x":-12.5291338583,"y":7.6671491431},{"x":-12.52862079063919,"y":7.657032310901257},{"x":-12.52708685242525,"y":7.647019291091134},{"x":-12.524547783940005,"y":7.637212830802664},{"x":-12.521029639462023,"y":7.6277135575886685},{"x":-12.516568519914458,"y":7.618618946846892},{"x":-12.511210202420727,"y":7.610022321590521},{"x":-12.50500967056928,"y":7.602011894827778},{"x":-12.498030550207568,"y":7.594669864377088},{"x":-12.490344456554766,"y":7.58807156940623},{"x":-12.482030259332696,"y":7.582284717350525},{"x":-12.473173273455764,"y":7.577368689142926},{"x":-12.463864383584482,"y":7.573373929885292},{"x":-12.454199111525872,"y":7.57034143121338},{"x":-12.444276636050457,"y":7.568302310667189},{"x":-12.434198775183871,"y":7.567277492382894},{"x":-12.42406894141613,"y":7.567277492382894},{"x":-12.413991080549543,"y":7.568302310667189},{"x":-12.404068605074128,"y":7.57034143121338},{"x":-12.394403333015518,"y":7.573373929885292},{"x":-12.385094443144236,"y":7.577368689142926},{"x":-12.376237457267305,"y":7.582284717350525},{"x":-12.367923260045234,"y":7.58807156940623},{"x":-12.360237166392432,"y":7.594669864377088},{"x":-12.35325804603072,"y":7.602011894827778},{"x":-12.347057514179273,"y":7.610022321590521},{"x":-12.341699196685543,"y":7.618618946846892},{"x":-12.337238077137977,"y":7.6277135575886685},{"x":-12.333719932659996,"y":7.637212830802664},{"x":-12.331180864174751,"y":7.647019291091134},{"x":-12.32964692596081,"y":7.657032310901257},{"x":-12.3291338583,"y":7.6671491431}]} isFilled={false} />
+      <schematicpath points={[{"x":-12.4291338583,"y":7.3671491431},{"x":-12.4291338583,"y":7.5671491431}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-12.5291338583,"y":7.6671491431},{"x":-12.52862079063919,"y":7.657032310901257},{"x":-12.52708685242525,"y":7.647019291091134},{"x":-12.524547783940005,"y":7.637212830802664},{"x":-12.521029639462023,"y":7.6277135575886685},{"x":-12.516568519914458,"y":7.618618946846892},{"x":-12.511210202420727,"y":7.610022321590521},{"x":-12.50500967056928,"y":7.602011894827778},{"x":-12.498030550207568,"y":7.594669864377088},{"x":-12.490344456554766,"y":7.58807156940623},{"x":-12.482030259332696,"y":7.582284717350525},{"x":-12.473173273455764,"y":7.577368689142926},{"x":-12.463864383584482,"y":7.573373929885292},{"x":-12.454199111525872,"y":7.57034143121338},{"x":-12.444276636050457,"y":7.568302310667189},{"x":-12.434198775183871,"y":7.567277492382894},{"x":-12.42406894141613,"y":7.567277492382894},{"x":-12.413991080549543,"y":7.568302310667189},{"x":-12.404068605074128,"y":7.57034143121338},{"x":-12.394403333015518,"y":7.573373929885292},{"x":-12.385094443144236,"y":7.577368689142926},{"x":-12.376237457267305,"y":7.582284717350525},{"x":-12.367923260045234,"y":7.58807156940623},{"x":-12.360237166392432,"y":7.594669864377088},{"x":-12.35325804603072,"y":7.602011894827778},{"x":-12.347057514179273,"y":7.610022321590521},{"x":-12.341699196685543,"y":7.618618946846892},{"x":-12.337238077137977,"y":7.6277135575886685},{"x":-12.333719932659996,"y":7.637212830802664},{"x":-12.331180864174751,"y":7.647019291091134},{"x":-12.32964692596081,"y":7.657032310901257},{"x":-12.3291338583,"y":7.6671491431}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"TP1"} schX={-12.4291338583} schY={7.6921491431} anchor={"bottom_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-12.4291338583,"y":5.2447660954},{"x":-12.4291338583,"y":5.0447660954}]} isFilled={false} />
-      <schematicpath points={[{"x":-12.3291338583,"y":4.9447660954},{"x":-12.32964692596081,"y":4.954882927598743},{"x":-12.331180864174751,"y":4.964895947408866},{"x":-12.333719932659996,"y":4.974702407697336},{"x":-12.337238077137977,"y":4.984201680911331},{"x":-12.341699196685543,"y":4.993296291653108},{"x":-12.347057514179273,"y":5.001892916909479},{"x":-12.35325804603072,"y":5.009903343672222},{"x":-12.360237166392432,"y":5.017245374122912},{"x":-12.367923260045234,"y":5.02384366909377},{"x":-12.376237457267305,"y":5.029630521149475},{"x":-12.385094443144236,"y":5.034546549357074},{"x":-12.394403333015518,"y":5.038541308614708},{"x":-12.404068605074128,"y":5.04157380728662},{"x":-12.413991080549543,"y":5.043612927832811},{"x":-12.42406894141613,"y":5.044637746117106},{"x":-12.434198775183871,"y":5.044637746117106},{"x":-12.444276636050457,"y":5.043612927832811},{"x":-12.454199111525872,"y":5.04157380728662},{"x":-12.463864383584482,"y":5.038541308614708},{"x":-12.473173273455764,"y":5.034546549357074},{"x":-12.482030259332696,"y":5.029630521149475},{"x":-12.490344456554766,"y":5.02384366909377},{"x":-12.498030550207568,"y":5.017245374122912},{"x":-12.50500967056928,"y":5.009903343672222},{"x":-12.511210202420727,"y":5.001892916909479},{"x":-12.516568519914458,"y":4.993296291653108},{"x":-12.521029639462023,"y":4.984201680911331},{"x":-12.524547783940005,"y":4.974702407697336},{"x":-12.52708685242525,"y":4.964895947408866},{"x":-12.52862079063919,"y":4.954882927598743},{"x":-12.5291338583,"y":4.9447660954}]} isFilled={false} />
+      <schematicpath points={[{"x":-12.4291338583,"y":5.2447660954},{"x":-12.4291338583,"y":5.0447660954}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-12.3291338583,"y":4.9447660954},{"x":-12.32964692596081,"y":4.954882927598743},{"x":-12.331180864174751,"y":4.964895947408866},{"x":-12.333719932659996,"y":4.974702407697336},{"x":-12.337238077137977,"y":4.984201680911331},{"x":-12.341699196685543,"y":4.993296291653108},{"x":-12.347057514179273,"y":5.001892916909479},{"x":-12.35325804603072,"y":5.009903343672222},{"x":-12.360237166392432,"y":5.017245374122912},{"x":-12.367923260045234,"y":5.02384366909377},{"x":-12.376237457267305,"y":5.029630521149475},{"x":-12.385094443144236,"y":5.034546549357074},{"x":-12.394403333015518,"y":5.038541308614708},{"x":-12.404068605074128,"y":5.04157380728662},{"x":-12.413991080549543,"y":5.043612927832811},{"x":-12.42406894141613,"y":5.044637746117106},{"x":-12.434198775183871,"y":5.044637746117106},{"x":-12.444276636050457,"y":5.043612927832811},{"x":-12.454199111525872,"y":5.04157380728662},{"x":-12.463864383584482,"y":5.038541308614708},{"x":-12.473173273455764,"y":5.034546549357074},{"x":-12.482030259332696,"y":5.029630521149475},{"x":-12.490344456554766,"y":5.02384366909377},{"x":-12.498030550207568,"y":5.017245374122912},{"x":-12.50500967056928,"y":5.009903343672222},{"x":-12.511210202420727,"y":5.001892916909479},{"x":-12.516568519914458,"y":4.993296291653108},{"x":-12.521029639462023,"y":4.984201680911331},{"x":-12.524547783940005,"y":4.974702407697336},{"x":-12.52708685242525,"y":4.964895947408866},{"x":-12.52862079063919,"y":4.954882927598743},{"x":-12.5291338583,"y":4.9447660954}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"TP3"} schX={-12.4291338583} schY={4.9197660954} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":11.8807897175,"y":2.8072834646000002},{"x":11.8807897175,"y":2.9073034646}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":11.8807897175,"y":3.3072634646},{"x":11.8807897175,"y":3.4072834646}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":11.8008097175,"y":2.9073034646},{"x":11.8008097175,"y":3.3072634646},{"x":11.960769717500002,"y":3.3072634646},{"x":11.960769717500002,"y":2.9073034646},{"x":11.8008097175,"y":2.9073034646}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":11.8807897175,"y":2.8072834646000002},{"x":11.8807897175,"y":2.9073034646}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":11.8807897175,"y":3.3072634646},{"x":11.8807897175,"y":3.4072834646}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":11.8008097175,"y":2.9073034646},{"x":11.8008097175,"y":3.3072634646},{"x":11.960769717500002,"y":3.3072634646},{"x":11.960769717500002,"y":2.9073034646},{"x":11.8008097175,"y":2.9073034646}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R7"} schX={12.040789717500001} schY={3.2672834646} anchor={"center_left"} fontSize={0.18} />
       <schematictext text={"10.0"} schX={12.040789717500001} schY={2.9472834646} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-3.9652964335000003,"y":-0.7311255211},{"x":-3.7652964335,"y":-0.7311255211}]} isFilled={false} />
-      <schematicpath points={[{"x":-3.6652964335,"y":-0.6311255211},{"x":-3.6754132656987433,"y":-0.6316385887608105},{"x":-3.685426285508866,"y":-0.6331725269747505},{"x":-3.6952327457973357,"y":-0.635711595459995},{"x":-3.704732019011332,"y":-0.6392297399379769},{"x":-3.7138266297531084,"y":-0.6436908594855417},{"x":-3.7224232550094793,"y":-0.6490491769792723},{"x":-3.7304336817722223,"y":-0.6552497088307209},{"x":-3.7377757122229123,"y":-0.6622288291924313},{"x":-3.74437400719377,"y":-0.6699149228452337},{"x":-3.7501608592494753,"y":-0.6782291200673037},{"x":-3.7550768874570744,"y":-0.6870861059442365},{"x":-3.759071646714708,"y":-0.6963949958155179},{"x":-3.7621041453866204,"y":-0.7060602678741279},{"x":-3.764143265932811,"y":-0.7159827433495423},{"x":-3.7651680842171054,"y":-0.7260606042161286},{"x":-3.7651680842171054,"y":-0.7361904379838712},{"x":-3.764143265932811,"y":-0.7462682988504576},{"x":-3.7621041453866204,"y":-0.756190774325872},{"x":-3.759071646714708,"y":-0.765856046384482},{"x":-3.7550768874570744,"y":-0.7751649362557634},{"x":-3.7501608592494753,"y":-0.7840219221326962},{"x":-3.74437400719377,"y":-0.7923361193547662},{"x":-3.7377757122229123,"y":-0.8000222130075686},{"x":-3.7304336817722223,"y":-0.807001333369279},{"x":-3.7224232550094793,"y":-0.8132018652207276},{"x":-3.7138266297531084,"y":-0.8185601827144582},{"x":-3.704732019011332,"y":-0.823021302262023},{"x":-3.6952327457973357,"y":-0.8265394467400049},{"x":-3.685426285508866,"y":-0.8290785152252494},{"x":-3.6754132656987433,"y":-0.8306124534391894},{"x":-3.6652964335,"y":-0.8311255210999999}]} isFilled={false} />
+      <schematicpath points={[{"x":-3.9652964335000003,"y":-0.7311255211},{"x":-3.7652964335,"y":-0.7311255211}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-3.6652964335,"y":-0.6311255211},{"x":-3.6754132656987433,"y":-0.6316385887608105},{"x":-3.685426285508866,"y":-0.6331725269747505},{"x":-3.6952327457973357,"y":-0.635711595459995},{"x":-3.704732019011332,"y":-0.6392297399379769},{"x":-3.7138266297531084,"y":-0.6436908594855417},{"x":-3.7224232550094793,"y":-0.6490491769792723},{"x":-3.7304336817722223,"y":-0.6552497088307209},{"x":-3.7377757122229123,"y":-0.6622288291924313},{"x":-3.74437400719377,"y":-0.6699149228452337},{"x":-3.7501608592494753,"y":-0.6782291200673037},{"x":-3.7550768874570744,"y":-0.6870861059442365},{"x":-3.759071646714708,"y":-0.6963949958155179},{"x":-3.7621041453866204,"y":-0.7060602678741279},{"x":-3.764143265932811,"y":-0.7159827433495423},{"x":-3.7651680842171054,"y":-0.7260606042161286},{"x":-3.7651680842171054,"y":-0.7361904379838712},{"x":-3.764143265932811,"y":-0.7462682988504576},{"x":-3.7621041453866204,"y":-0.756190774325872},{"x":-3.759071646714708,"y":-0.765856046384482},{"x":-3.7550768874570744,"y":-0.7751649362557634},{"x":-3.7501608592494753,"y":-0.7840219221326962},{"x":-3.74437400719377,"y":-0.7923361193547662},{"x":-3.7377757122229123,"y":-0.8000222130075686},{"x":-3.7304336817722223,"y":-0.807001333369279},{"x":-3.7224232550094793,"y":-0.8132018652207276},{"x":-3.7138266297531084,"y":-0.8185601827144582},{"x":-3.704732019011332,"y":-0.823021302262023},{"x":-3.6952327457973357,"y":-0.8265394467400049},{"x":-3.685426285508866,"y":-0.8290785152252494},{"x":-3.6754132656987433,"y":-0.8306124534391894},{"x":-3.6652964335,"y":-0.8311255210999999}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"TP8"} schX={-3.6402964335} schY={-0.7311255211} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":8.2079434924,"y":-4.0211903659},{"x":8.4079434924,"y":-4.0211903659}]} isFilled={false} />
-      <schematicpath points={[{"x":8.507943492399999,"y":-3.9211903659},{"x":8.497826660201255,"y":-3.9217034335608103},{"x":8.487813640391133,"y":-3.9232373717747504},{"x":8.478007180102663,"y":-3.925776440259995},{"x":8.468507906888668,"y":-3.9292945847379768},{"x":8.459413296146892,"y":-3.9337557042855416},{"x":8.45081667089052,"y":-3.939114021779272},{"x":8.442806244127777,"y":-3.9453145536307206},{"x":8.435464213677088,"y":-3.9522936739924313},{"x":8.42886591870623,"y":-3.9599797676452337},{"x":8.423079066650525,"y":-3.9682939648673035},{"x":8.418163038442925,"y":-3.9771509507442366},{"x":8.414168279185292,"y":-3.986459840615518},{"x":8.411135780513378,"y":-3.996125112674128},{"x":8.409096659967188,"y":-4.006047588149542},{"x":8.408071841682894,"y":-4.016125449016129},{"x":8.408071841682894,"y":-4.026255282783871},{"x":8.409096659967188,"y":-4.036333143650458},{"x":8.411135780513378,"y":-4.046255619125872},{"x":8.414168279185292,"y":-4.055920891184482},{"x":8.418163038442925,"y":-4.065229781055764},{"x":8.423079066650525,"y":-4.074086766932696},{"x":8.42886591870623,"y":-4.0824009641547665},{"x":8.435464213677088,"y":-4.090087057807568},{"x":8.442806244127777,"y":-4.097066178169279},{"x":8.45081667089052,"y":-4.103266710020727},{"x":8.459413296146892,"y":-4.108625027514458},{"x":8.468507906888668,"y":-4.113086147062023},{"x":8.478007180102663,"y":-4.116604291540005},{"x":8.487813640391133,"y":-4.119143360025249},{"x":8.497826660201255,"y":-4.1206772982391895},{"x":8.507943492399999,"y":-4.1211903658999995}]} isFilled={false} />
+      <schematicpath points={[{"x":8.2079434924,"y":-4.0211903659},{"x":8.4079434924,"y":-4.0211903659}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":8.507943492399999,"y":-3.9211903659},{"x":8.497826660201255,"y":-3.9217034335608103},{"x":8.487813640391133,"y":-3.9232373717747504},{"x":8.478007180102663,"y":-3.925776440259995},{"x":8.468507906888668,"y":-3.9292945847379768},{"x":8.459413296146892,"y":-3.9337557042855416},{"x":8.45081667089052,"y":-3.939114021779272},{"x":8.442806244127777,"y":-3.9453145536307206},{"x":8.435464213677088,"y":-3.9522936739924313},{"x":8.42886591870623,"y":-3.9599797676452337},{"x":8.423079066650525,"y":-3.9682939648673035},{"x":8.418163038442925,"y":-3.9771509507442366},{"x":8.414168279185292,"y":-3.986459840615518},{"x":8.411135780513378,"y":-3.996125112674128},{"x":8.409096659967188,"y":-4.006047588149542},{"x":8.408071841682894,"y":-4.016125449016129},{"x":8.408071841682894,"y":-4.026255282783871},{"x":8.409096659967188,"y":-4.036333143650458},{"x":8.411135780513378,"y":-4.046255619125872},{"x":8.414168279185292,"y":-4.055920891184482},{"x":8.418163038442925,"y":-4.065229781055764},{"x":8.423079066650525,"y":-4.074086766932696},{"x":8.42886591870623,"y":-4.0824009641547665},{"x":8.435464213677088,"y":-4.090087057807568},{"x":8.442806244127777,"y":-4.097066178169279},{"x":8.45081667089052,"y":-4.103266710020727},{"x":8.459413296146892,"y":-4.108625027514458},{"x":8.468507906888668,"y":-4.113086147062023},{"x":8.478007180102663,"y":-4.116604291540005},{"x":8.487813640391133,"y":-4.119143360025249},{"x":8.497826660201255,"y":-4.1206772982391895},{"x":8.507943492399999,"y":-4.1211903658999995}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"TP9"} schX={8.5329434924} schY={-4.0211903659} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":12.4850277906,"y":3.6556276054},{"x":12.6850277906,"y":3.6556276054}]} isFilled={false} />
-      <schematicpath points={[{"x":12.7850277906,"y":3.7556276054},{"x":12.774910958401255,"y":3.7551145377391895},{"x":12.764897938591133,"y":3.7535805995252494},{"x":12.755091478302663,"y":3.7510415310400047},{"x":12.745592205088668,"y":3.747523386562023},{"x":12.736497594346892,"y":3.743062267014458},{"x":12.72790096909052,"y":3.7377039495207276},{"x":12.719890542327777,"y":3.7315034176692787},{"x":12.712548511877088,"y":3.7245242973075685},{"x":12.70595021690623,"y":3.716838203654766},{"x":12.700163364850525,"y":3.7085240064326963},{"x":12.695247336642925,"y":3.699667020555763},{"x":12.691252577385292,"y":3.6903581306844817},{"x":12.688220078713378,"y":3.680692858625872},{"x":12.686180958167188,"y":3.6707703831504577},{"x":12.685156139882894,"y":3.6606925222838713},{"x":12.685156139882894,"y":3.6505626885161284},{"x":12.686180958167188,"y":3.640484827649542},{"x":12.688220078713378,"y":3.630562352174128},{"x":12.691252577385292,"y":3.620897080115518},{"x":12.695247336642925,"y":3.6115881902442366},{"x":12.700163364850525,"y":3.6027312043673034},{"x":12.70595021690623,"y":3.5944170071452337},{"x":12.712548511877088,"y":3.5867309134924312},{"x":12.719890542327777,"y":3.5797517931307206},{"x":12.72790096909052,"y":3.573551261279272},{"x":12.736497594346892,"y":3.5681929437855415},{"x":12.745592205088668,"y":3.5637318242379767},{"x":12.755091478302663,"y":3.560213679759995},{"x":12.764897938591133,"y":3.5576746112747504},{"x":12.774910958401255,"y":3.5561406730608103},{"x":12.7850277906,"y":3.5556276054}]} isFilled={false} />
+      <schematicpath points={[{"x":12.4850277906,"y":3.6556276054},{"x":12.6850277906,"y":3.6556276054}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":12.7850277906,"y":3.7556276054},{"x":12.774910958401255,"y":3.7551145377391895},{"x":12.764897938591133,"y":3.7535805995252494},{"x":12.755091478302663,"y":3.7510415310400047},{"x":12.745592205088668,"y":3.747523386562023},{"x":12.736497594346892,"y":3.743062267014458},{"x":12.72790096909052,"y":3.7377039495207276},{"x":12.719890542327777,"y":3.7315034176692787},{"x":12.712548511877088,"y":3.7245242973075685},{"x":12.70595021690623,"y":3.716838203654766},{"x":12.700163364850525,"y":3.7085240064326963},{"x":12.695247336642925,"y":3.699667020555763},{"x":12.691252577385292,"y":3.6903581306844817},{"x":12.688220078713378,"y":3.680692858625872},{"x":12.686180958167188,"y":3.6707703831504577},{"x":12.685156139882894,"y":3.6606925222838713},{"x":12.685156139882894,"y":3.6505626885161284},{"x":12.686180958167188,"y":3.640484827649542},{"x":12.688220078713378,"y":3.630562352174128},{"x":12.691252577385292,"y":3.620897080115518},{"x":12.695247336642925,"y":3.6115881902442366},{"x":12.700163364850525,"y":3.6027312043673034},{"x":12.70595021690623,"y":3.5944170071452337},{"x":12.712548511877088,"y":3.5867309134924312},{"x":12.719890542327777,"y":3.5797517931307206},{"x":12.72790096909052,"y":3.573551261279272},{"x":12.736497594346892,"y":3.5681929437855415},{"x":12.745592205088668,"y":3.5637318242379767},{"x":12.755091478302663,"y":3.560213679759995},{"x":12.764897938591133,"y":3.5576746112747504},{"x":12.774910958401255,"y":3.5561406730608103},{"x":12.7850277906,"y":3.5556276054}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"TP6"} schX={12.8100277906} schY={3.6556276054} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":12.4850277906,"y":2.5589393238},{"x":12.6850277906,"y":2.5589393238}]} isFilled={false} />
-      <schematicpath points={[{"x":12.7850277906,"y":2.6589393238000003},{"x":12.774910958401255,"y":2.65842625613919},{"x":12.764897938591133,"y":2.6568923179252497},{"x":12.755091478302663,"y":2.654353249440005},{"x":12.745592205088668,"y":2.6508351049620233},{"x":12.736497594346892,"y":2.6463739854144586},{"x":12.72790096909052,"y":2.641015667920728},{"x":12.719890542327777,"y":2.634815136069279},{"x":12.712548511877088,"y":2.627836015707569},{"x":12.70595021690623,"y":2.6201499220547664},{"x":12.700163364850525,"y":2.6118357248326967},{"x":12.695247336642925,"y":2.6029787389557635},{"x":12.691252577385292,"y":2.593669849084482},{"x":12.688220078713378,"y":2.584004577025872},{"x":12.686180958167188,"y":2.574082101550458},{"x":12.685156139882894,"y":2.5640042406838717},{"x":12.685156139882894,"y":2.5538744069161288},{"x":12.686180958167188,"y":2.5437965460495424},{"x":12.688220078713378,"y":2.5338740705741283},{"x":12.691252577385292,"y":2.5242087985155184},{"x":12.695247336642925,"y":2.514899908644237},{"x":12.700163364850525,"y":2.506042922767304},{"x":12.70595021690623,"y":2.497728725545234},{"x":12.712548511877088,"y":2.4900426318924316},{"x":12.719890542327777,"y":2.483063511530721},{"x":12.72790096909052,"y":2.4768629796792725},{"x":12.736497594346892,"y":2.471504662185542},{"x":12.745592205088668,"y":2.467043542637977},{"x":12.755091478302663,"y":2.4635253981599954},{"x":12.764897938591133,"y":2.4609863296747507},{"x":12.774910958401255,"y":2.4594523914608106},{"x":12.7850277906,"y":2.4589393238}]} isFilled={false} />
+      <schematicpath points={[{"x":12.4850277906,"y":2.5589393238},{"x":12.6850277906,"y":2.5589393238}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":12.7850277906,"y":2.6589393238000003},{"x":12.774910958401255,"y":2.65842625613919},{"x":12.764897938591133,"y":2.6568923179252497},{"x":12.755091478302663,"y":2.654353249440005},{"x":12.745592205088668,"y":2.6508351049620233},{"x":12.736497594346892,"y":2.6463739854144586},{"x":12.72790096909052,"y":2.641015667920728},{"x":12.719890542327777,"y":2.634815136069279},{"x":12.712548511877088,"y":2.627836015707569},{"x":12.70595021690623,"y":2.6201499220547664},{"x":12.700163364850525,"y":2.6118357248326967},{"x":12.695247336642925,"y":2.6029787389557635},{"x":12.691252577385292,"y":2.593669849084482},{"x":12.688220078713378,"y":2.584004577025872},{"x":12.686180958167188,"y":2.574082101550458},{"x":12.685156139882894,"y":2.5640042406838717},{"x":12.685156139882894,"y":2.5538744069161288},{"x":12.686180958167188,"y":2.5437965460495424},{"x":12.688220078713378,"y":2.5338740705741283},{"x":12.691252577385292,"y":2.5242087985155184},{"x":12.695247336642925,"y":2.514899908644237},{"x":12.700163364850525,"y":2.506042922767304},{"x":12.70595021690623,"y":2.497728725545234},{"x":12.712548511877088,"y":2.4900426318924316},{"x":12.719890542327777,"y":2.483063511530721},{"x":12.72790096909052,"y":2.4768629796792725},{"x":12.736497594346892,"y":2.471504662185542},{"x":12.745592205088668,"y":2.467043542637977},{"x":12.755091478302663,"y":2.4635253981599954},{"x":12.764897938591133,"y":2.4609863296747507},{"x":12.774910958401255,"y":2.4594523914608106},{"x":12.7850277906,"y":2.4589393238}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"TP7"} schX={12.8100277906} schY={2.5589393238} anchor={"center_left"} fontSize={0.18} />
       <schematicpath points={[{"x":1.9933765632237155,"y":0.16556276053728708},{"x":2.3933765632237156,"y":0.16556276053728708},{"x":2.3933765632237156,"y":0.565562760537287},{"x":1.9933765632237155,"y":0.565562760537287},{"x":1.9933765632237155,"y":0.16556276053728708}]} strokeWidth={0.02} strokeColor={"#840000"} fillColor={"#ffffc2"} isFilled={true} />
       <schematicline x1={1.9933765632237155} y1={0.3655627605372871} x2={1.6450324224177848} y2={0.3655627605372871} strokeWidth={0.02} color={"#840000"} />
       <schematictext text={"1"} schX={2.0933765632237153} schY={0.3655627605372871} anchor={"center_left"} fontSize={0.15} color={"#a90000"} />
       <schematictext text={"1"} schX={1.81920449282075} schY={0.3855627605372871} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
-      <schematicpath points={[{"x":1.8536417323,"y":-4.0211903659},{"x":1.6136417323,"y":-4.0211903659}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":1.4936417323,"y":-4.0211903659},{"x":1.2536417323,"y":-4.0211903659}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":1.6136417323,"y":-3.8611703659},{"x":1.6136417323,"y":-4.1812103659}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":1.4936417323,"y":-3.8611703659},{"x":1.4936417323,"y":-4.1812103659}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":1.8536417323,"y":-4.0211903659},{"x":1.6136417323,"y":-4.0211903659}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":1.4936417323,"y":-4.0211903659},{"x":1.2536417323,"y":-4.0211903659}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":1.6136417323,"y":-3.8611703659},{"x":1.6136417323,"y":-4.1812103659}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":1.4936417323,"y":-3.8611703659},{"x":1.4936417323,"y":-4.1812103659}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C27"} schX={1.5536417323} schY={-3.7811903658999997} anchor={"bottom_center"} fontSize={0.18} />
       <schematictext text={"1000pF"} schX={1.5536417323} schY={-4.2611903659} anchor={"top_center"} fontSize={0.18} />
       <schematicpath points={[{"x":4.369534506716071,"y":-2.758939323761},{"x":4.769534506716071,"y":-2.758939323761},{"x":4.769534506716071,"y":-2.3589393237609997},{"x":4.369534506716071,"y":-2.3589393237609997},{"x":4.369534506716071,"y":-2.758939323761}]} strokeWidth={0.02} strokeColor={"#840000"} fillColor={"#ffffc2"} isFilled={true} />
@@ -1494,232 +1494,232 @@ test(
       <schematicline x1={4.569534506716071} y1={-2.3589393237609997} x2={4.569534506716071} y2={-2.1933765632237145} strokeWidth={0.02} color={"#840000"} />
       <schematictext text={"2"} schX={4.569534506716071} schY={-2.4589393237609998} anchor={"center_right"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
       <schematictext text={"2"} schX={4.549534506716071} schY={-2.276157943492357} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
-      <schematicpath points={[{"x":11.3324455767,"y":5.640394858700001},{"x":11.3324455767,"y":5.880394858700001}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":11.3324455767,"y":6.0003948587},{"x":11.3324455767,"y":6.2403948587}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":11.492465576699999,"y":5.880394858700001},{"x":11.1724255767,"y":5.880394858700001}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":11.492465576699999,"y":6.0003948587},{"x":11.1724255767,"y":6.0003948587}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":11.3324455767,"y":5.640394858700001},{"x":11.3324455767,"y":5.880394858700001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":11.3324455767,"y":6.0003948587},{"x":11.3324455767,"y":6.2403948587}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":11.492465576699999,"y":5.880394858700001},{"x":11.1724255767,"y":5.880394858700001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":11.492465576699999,"y":6.0003948587},{"x":11.1724255767,"y":6.0003948587}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C13"} schX={11.4474455767} schY={6.140394858700001} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"0.1uF"} schX={11.4474455767} schY={5.7403948587} anchor={"top_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":12.246352478,"y":5.640394858700001},{"x":12.246352478,"y":5.880394858700001}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":12.246352478,"y":6.0003948587},{"x":12.246352478,"y":6.2403948587}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":12.406372478,"y":5.880394858700001},{"x":12.086332478000001,"y":5.880394858700001}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":12.406372478,"y":6.0003948587},{"x":12.086332478000001,"y":6.0003948587}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":12.246352478,"y":5.640394858700001},{"x":12.246352478,"y":5.880394858700001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":12.246352478,"y":6.0003948587},{"x":12.246352478,"y":6.2403948587}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":12.406372478,"y":5.880394858700001},{"x":12.086332478000001,"y":5.880394858700001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":12.406372478,"y":6.0003948587},{"x":12.086332478000001,"y":6.0003948587}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C14"} schX={12.361352478} schY={6.140394858700001} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"0.01uF"} schX={12.361352478} schY={5.7403948587} anchor={"top_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":4.452315887,"y":7.8595993516},{"x":4.552335887,"y":7.8595993516}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":4.952295887,"y":7.8595993516},{"x":5.052315887,"y":7.8595993516}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":4.552335887,"y":7.9395793516},{"x":4.952295887,"y":7.9395793516},{"x":4.952295887,"y":7.7796193516},{"x":4.552335887,"y":7.7796193516},{"x":4.552335887,"y":7.9395793516}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":4.452315887,"y":7.8595993516},{"x":4.552335887,"y":7.8595993516}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":4.952295887,"y":7.8595993516},{"x":5.052315887,"y":7.8595993516}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":4.552335887,"y":7.9395793516},{"x":4.952295887,"y":7.9395793516},{"x":4.952295887,"y":7.7796193516},{"x":4.552335887,"y":7.7796193516},{"x":4.552335887,"y":7.9395793516}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R1"} schX={4.752315887} schY={8.0195993516} anchor={"bottom_center"} fontSize={0.18} />
       <schematictext text={"15.0"} schX={4.752315887} schY={7.6995993516} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-7.1284738305,"y":-2.7675486335999997},{"x":-7.1284738305,"y":-2.5275486336}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-7.1284738305,"y":-2.4075486336},{"x":-7.1284738305,"y":-2.1675486336}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-6.9684538305,"y":-2.5275486336},{"x":-7.2884938305,"y":-2.5275486336}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-6.9684538305,"y":-2.4075486336},{"x":-7.2884938305,"y":-2.4075486336}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-7.1284738305,"y":-2.7675486335999997},{"x":-7.1284738305,"y":-2.5275486336}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-7.1284738305,"y":-2.4075486336},{"x":-7.1284738305,"y":-2.1675486336}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-6.9684538305,"y":-2.5275486336},{"x":-7.2884938305,"y":-2.5275486336}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-6.9684538305,"y":-2.4075486336},{"x":-7.2884938305,"y":-2.4075486336}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"C25"} schX={-7.0134738305} schY={-2.2675486335999997} anchor={"bottom_left"} fontSize={0.18} />
       <schematictext text={"0.01uF"} schX={-7.0134738305} schY={-2.6675486336} anchor={"top_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":8.0423807318,"y":-0.1172186197},{"x":8.0423807318,"y":-0.0171986197}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":8.0423807318,"y":0.38276138029999995},{"x":8.0423807318,"y":0.48278138029999995}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":7.9624007318,"y":-0.0171986197},{"x":7.9624007318,"y":0.38276138029999995},{"x":8.1223607318,"y":0.38276138029999995},{"x":8.1223607318,"y":-0.0171986197},{"x":7.9624007318,"y":-0.0171986197}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":8.0423807318,"y":-0.1172186197},{"x":8.0423807318,"y":-0.0171986197}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":8.0423807318,"y":0.38276138029999995},{"x":8.0423807318,"y":0.48278138029999995}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":7.9624007318,"y":-0.0171986197},{"x":7.9624007318,"y":0.38276138029999995},{"x":8.1223607318,"y":0.38276138029999995},{"x":8.1223607318,"y":-0.0171986197},{"x":7.9624007318,"y":-0.0171986197}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R15"} schX={8.2023807318} schY={0.3427813803} anchor={"center_left"} fontSize={0.18} />
       <schematictext text={"10.2k"} schX={8.2023807318} schY={0.022781380299999987} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-10.375757295000001,"y":4.2039717462},{"x":-10.115757295000002,"y":4.3339717462}]} isFilled={false} />
-      <schematicpath points={[{"x":-10.115757295000002,"y":4.0639717462},{"x":-10.375757295000001,"y":4.2039717462}]} isFilled={false} />
-      <schematicpath points={[{"x":-10.115757295000002,"y":4.3339717462},{"x":-10.115757295000002,"y":4.0639717462}]} isFilled={false} />
-      <schematicpath points={[{"x":-10.375757295000001,"y":4.0639717462},{"x":-10.375757295000001,"y":4.3339717462}]} isFilled={false} />
-      <schematicpath points={[{"x":-10.115757295000002,"y":4.2039717462},{"x":-9.715757295000001,"y":4.2039717462}]} isFilled={false} />
-      <schematicpath points={[{"x":-10.755757295,"y":4.2039717462},{"x":-10.385757295000001,"y":4.2039717462}]} isFilled={false} />
+      <schematicpath points={[{"x":-10.375757295000001,"y":4.2039717462},{"x":-10.115757295000002,"y":4.3339717462}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-10.115757295000002,"y":4.0639717462},{"x":-10.375757295000001,"y":4.2039717462}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-10.115757295000002,"y":4.3339717462},{"x":-10.115757295000002,"y":4.0639717462}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-10.375757295000001,"y":4.0639717462},{"x":-10.375757295000001,"y":4.3339717462}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-10.115757295000002,"y":4.2039717462},{"x":-9.715757295000001,"y":4.2039717462}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-10.755757295,"y":4.2039717462},{"x":-10.385757295000001,"y":4.2039717462}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"D5"} schX={-10.225757295000001} schY={3.9739717461999997} anchor={"top_center"} fontSize={0.18} />
       <schematictext text={"100V"} schX={-10.235757295} schY={4.513971746199999} anchor={"bottom_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-2.5589393238,"y":4.6350972673},{"x":-2.5589393238,"y":4.7351172673}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-2.5589393238,"y":5.1350772673},{"x":-2.5589393238,"y":5.2350972673}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-2.6389193238,"y":4.7351172673},{"x":-2.6389193238,"y":5.1350772673},{"x":-2.4789593238000003,"y":5.1350772673},{"x":-2.4789593238000003,"y":4.7351172673},{"x":-2.6389193238,"y":4.7351172673}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-2.5589393238,"y":4.6350972673},{"x":-2.5589393238,"y":4.7351172673}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-2.5589393238,"y":5.1350772673},{"x":-2.5589393238,"y":5.2350972673}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-2.6389193238,"y":4.7351172673},{"x":-2.6389193238,"y":5.1350772673},{"x":-2.4789593238000003,"y":5.1350772673},{"x":-2.4789593238000003,"y":4.7351172673},{"x":-2.6389193238,"y":4.7351172673}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R25"} schX={-2.3989393238} schY={5.0950972673} anchor={"center_left"} fontSize={0.18} />
       <schematictext text={"10.0k"} schX={-2.3989393238} schY={4.7750972673} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-1.2794696619,"y":4.452315887},{"x":-1.2794696619,"y":4.552335887}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-1.2794696619,"y":4.952295887},{"x":-1.2794696619,"y":5.052315887}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-1.3594496619,"y":4.552335887},{"x":-1.3594496619,"y":4.952295887},{"x":-1.1994896619000002,"y":4.952295887},{"x":-1.1994896619000002,"y":4.552335887},{"x":-1.3594496619,"y":4.552335887}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-1.2794696619,"y":4.452315887},{"x":-1.2794696619,"y":4.552335887}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-1.2794696619,"y":4.952295887},{"x":-1.2794696619,"y":5.052315887}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-1.3594496619,"y":4.552335887},{"x":-1.3594496619,"y":4.952295887},{"x":-1.1994896619000002,"y":4.952295887},{"x":-1.1994896619000002,"y":4.552335887},{"x":-1.3594496619,"y":4.552335887}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R4"} schX={-1.1194696619000002} schY={4.912315887} anchor={"center_left"} fontSize={0.18} />
       <schematictext text={"30.1k"} schX={-1.1194696619000002} schY={4.592315887} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":11.8807897175,"y":-3.9556276053999997},{"x":11.8807897175,"y":-3.8556076054}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":11.8807897175,"y":-3.4556476054},{"x":11.8807897175,"y":-3.3556276054}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":11.8008097175,"y":-3.8556076054},{"x":11.8008097175,"y":-3.4556476054},{"x":11.960769717500002,"y":-3.4556476054},{"x":11.960769717500002,"y":-3.8556076054},{"x":11.8008097175,"y":-3.8556076054}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":11.8807897175,"y":-3.9556276053999997},{"x":11.8807897175,"y":-3.8556076054}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":11.8807897175,"y":-3.4556476054},{"x":11.8807897175,"y":-3.3556276054}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":11.8008097175,"y":-3.8556076054},{"x":11.8008097175,"y":-3.4556476054},{"x":11.960769717500002,"y":-3.4556476054},{"x":11.960769717500002,"y":-3.8556076054},{"x":11.8008097175,"y":-3.8556076054}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R22"} schX={12.040789717500001} schY={-3.4956276053999997} anchor={"center_left"} fontSize={0.18} />
       <schematictext text={"9.76k"} schX={12.040789717500001} schY={-3.8156276054} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-1.8933765632000001,"y":6.0317855489},{"x":-1.9933965632000001,"y":6.0317855489}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-2.3933565632000002,"y":6.0317855489},{"x":-2.4933765632,"y":6.0317855489}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-1.9933965632000001,"y":5.9518055489},{"x":-2.3933565632000002,"y":5.9518055489},{"x":-2.3933565632000002,"y":6.1117655489},{"x":-1.9933965632000001,"y":6.1117655489},{"x":-1.9933965632000001,"y":5.9518055489}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-1.8933765632000001,"y":6.0317855489},{"x":-1.9933965632000001,"y":6.0317855489}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-2.3933565632000002,"y":6.0317855489},{"x":-2.4933765632,"y":6.0317855489}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-1.9933965632000001,"y":5.9518055489},{"x":-2.3933565632000002,"y":5.9518055489},{"x":-2.3933565632000002,"y":6.1117655489},{"x":-1.9933965632000001,"y":6.1117655489},{"x":-1.9933965632000001,"y":5.9518055489}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R2"} schX={-2.1933765632} schY={6.1917855489} anchor={"bottom_center"} fontSize={0.18} />
       <schematictext text={"100"} schX={-2.1933765632} schY={5.8717855489} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-9.752975914799999,"y":4.9350972673},{"x":-9.8529959148,"y":4.9350972673}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-10.2529559148,"y":4.9350972673},{"x":-10.3529759148,"y":4.9350972673}]} strokeWidth={0.012} isFilled={false} />
-      <schematicpath points={[{"x":-9.8529959148,"y":4.8551172673},{"x":-10.2529559148,"y":4.8551172673},{"x":-10.2529559148,"y":5.0150772673},{"x":-9.8529959148,"y":5.0150772673},{"x":-9.8529959148,"y":4.8551172673}]} strokeWidth={0.012} isFilled={false} />
+      <schematicpath points={[{"x":-9.752975914799999,"y":4.9350972673},{"x":-9.8529959148,"y":4.9350972673}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-10.2529559148,"y":4.9350972673},{"x":-10.3529759148,"y":4.9350972673}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-9.8529959148,"y":4.8551172673},{"x":-10.2529559148,"y":4.8551172673},{"x":-10.2529559148,"y":5.0150772673},{"x":-9.8529959148,"y":5.0150772673},{"x":-9.8529959148,"y":4.8551172673}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={"R26"} schX={-10.0529759148} schY={5.0950972673} anchor={"bottom_center"} fontSize={0.18} />
       <schematictext text={"0"} schX={-10.0529759148} schY={4.7750972673} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-2.914502084298288,"y":-0.07556276053728533},{"x":-2.924502084298288,"y":-0.4055627605372853}]} isFilled={true} />
-      <schematicpath points={[{"x":-3.144502084298288,"y":-0.40556276053728535},{"x":-2.7045020842982876,"y":-0.4055627605372853}]} isFilled={true} />
-      <schematicpath points={[{"x":-3.0945020842982878,"y":-0.4855627605372853},{"x":-2.754502084298288,"y":-0.4855627605372853}]} isFilled={true} />
-      <schematicpath points={[{"x":-2.984502084298288,"y":-0.5555627605372853},{"x":-2.864502084298288,"y":-0.5555627605372853}]} isFilled={true} />
+      <schematicpath points={[{"x":-2.914502084298288,"y":-0.07556276053728533},{"x":-2.924502084298288,"y":-0.4055627605372853}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-3.144502084298288,"y":-0.40556276053728535},{"x":-2.7045020842982876,"y":-0.4055627605372853}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-3.0945020842982878,"y":-0.4855627605372853},{"x":-2.754502084298288,"y":-0.4855627605372853}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-2.984502084298288,"y":-0.5555627605372853},{"x":-2.864502084298288,"y":-0.5555627605372853}]} strokeWidth={0.02} isFilled={true} />
       <schematictext text={""} schX={-2.944502084298288} schY={-0.6755627605372854} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-4.93509726725336,"y":5.026138933920026},{"x":-5.05509726725336,"y":4.93509726725336}]} isFilled={false} />
-      <schematicpath points={[{"x":-4.93509726725336,"y":5.026138933920026},{"x":-4.81509726725336,"y":4.93509726725336}]} isFilled={false} />
-      <schematicpath points={[{"x":-4.93509726725336,"y":5.026138933920026},{"x":-4.93509726725336,"y":4.824888933920026}]} isFilled={false} />
+      <schematicpath points={[{"x":-4.93509726725336,"y":5.026138933920026},{"x":-5.05509726725336,"y":4.93509726725336}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-4.93509726725336,"y":5.026138933920026},{"x":-4.81509726725336,"y":4.93509726725336}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-4.93509726725336,"y":5.026138933920026},{"x":-4.93509726725336,"y":4.824888933920026}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={-4.93509726725336} schY={5.054888933920027} anchor={"bottom_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-3.2800648448355734,"y":3.9456276053728585},{"x":-3.290064844835573,"y":3.6156276053728584}]} isFilled={true} />
-      <schematicpath points={[{"x":-3.5100648448355733,"y":3.6156276053728584},{"x":-3.070064844835573,"y":3.6156276053728584}]} isFilled={true} />
-      <schematicpath points={[{"x":-3.460064844835573,"y":3.5356276053728584},{"x":-3.1200648448355732,"y":3.5356276053728584}]} isFilled={true} />
-      <schematicpath points={[{"x":-3.350064844835573,"y":3.4656276053728585},{"x":-3.230064844835573,"y":3.4656276053728585}]} isFilled={true} />
+      <schematicpath points={[{"x":-3.2800648448355734,"y":3.9456276053728585},{"x":-3.290064844835573,"y":3.6156276053728584}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-3.5100648448355733,"y":3.6156276053728584},{"x":-3.070064844835573,"y":3.6156276053728584}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-3.460064844835573,"y":3.5356276053728584},{"x":-3.1200648448355732,"y":3.5356276053728584}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-3.350064844835573,"y":3.4656276053728585},{"x":-3.230064844835573,"y":3.4656276053728585}]} strokeWidth={0.02} isFilled={true} />
       <schematictext text={""} schX={-3.310064844835573} schY={3.3456276053728584} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":1.4722510421491413,"y":5.22509726725336},{"x":1.4622510421491413,"y":4.89509726725336}]} isFilled={true} />
-      <schematicpath points={[{"x":1.2422510421491413,"y":4.89509726725336},{"x":1.6822510421491412,"y":4.89509726725336}]} isFilled={true} />
-      <schematicpath points={[{"x":1.2922510421491413,"y":4.81509726725336},{"x":1.6322510421491412,"y":4.81509726725336}]} isFilled={true} />
-      <schematicpath points={[{"x":1.4022510421491412,"y":4.745097267253359},{"x":1.5222510421491413,"y":4.745097267253359}]} isFilled={true} />
+      <schematicpath points={[{"x":1.4722510421491413,"y":5.22509726725336},{"x":1.4622510421491413,"y":4.89509726725336}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":1.2422510421491413,"y":4.89509726725336},{"x":1.6822510421491412,"y":4.89509726725336}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":1.2922510421491413,"y":4.81509726725336},{"x":1.6322510421491412,"y":4.81509726725336}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":1.4022510421491412,"y":4.745097267253359},{"x":1.5222510421491413,"y":4.745097267253359}]} strokeWidth={0.02} isFilled={true} />
       <schematictext text={""} schX={1.4422510421491412} schY={4.62509726725336} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-8.946287633163504,"y":-0.8066882816118559},{"x":-8.956287633163504,"y":-1.136688281611856}]} isFilled={true} />
-      <schematicpath points={[{"x":-9.176287633163504,"y":-1.136688281611856},{"x":-8.736287633163503,"y":-1.136688281611856}]} isFilled={true} />
-      <schematicpath points={[{"x":-9.126287633163503,"y":-1.216688281611856},{"x":-8.786287633163504,"y":-1.2166882816118558}]} isFilled={true} />
-      <schematicpath points={[{"x":-9.016287633163504,"y":-1.2866882816118559},{"x":-8.896287633163503,"y":-1.2866882816118559}]} isFilled={true} />
+      <schematicpath points={[{"x":-8.946287633163504,"y":-0.8066882816118559},{"x":-8.956287633163504,"y":-1.136688281611856}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-9.176287633163504,"y":-1.136688281611856},{"x":-8.736287633163503,"y":-1.136688281611856}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-9.126287633163503,"y":-1.216688281611856},{"x":-8.786287633163504,"y":-1.2166882816118558}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-9.016287633163504,"y":-1.2866882816118559},{"x":-8.896287633163503,"y":-1.2866882816118559}]} strokeWidth={0.02} isFilled={true} />
       <schematictext text={""} schX={-8.976287633163503} schY={-1.406688281611856} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":1.1066882816118577,"y":0.4727813802686435},{"x":1.0966882816118577,"y":0.14278138026864354}]} isFilled={true} />
-      <schematicpath points={[{"x":0.8766882816118577,"y":0.14278138026864354},{"x":1.3166882816118577,"y":0.14278138026864357}]} isFilled={true} />
-      <schematicpath points={[{"x":0.9266882816118577,"y":0.06278138026864354},{"x":1.2666882816118576,"y":0.06278138026864356}]} isFilled={true} />
-      <schematicpath points={[{"x":1.0366882816118577,"y":-0.007218619731356457},{"x":1.1566882816118578,"y":-0.007218619731356457}]} isFilled={true} />
+      <schematicpath points={[{"x":1.1066882816118577,"y":0.4727813802686435},{"x":1.0966882816118577,"y":0.14278138026864354}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":0.8766882816118577,"y":0.14278138026864354},{"x":1.3166882816118577,"y":0.14278138026864357}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":0.9266882816118577,"y":0.06278138026864354},{"x":1.2666882816118576,"y":0.06278138026864356}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":1.0366882816118577,"y":-0.007218619731356457},{"x":1.1566882816118578,"y":-0.007218619731356457}]} strokeWidth={0.02} isFilled={true} />
       <schematictext text={""} schX={1.0766882816118577} schY={-0.12721861973135645} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-4.559534506716073,"y":-0.2583441408059271},{"x":-4.569534506716073,"y":-0.5883441408059271}]} isFilled={true} />
-      <schematicpath points={[{"x":-4.789534506716072,"y":-0.5883441408059271},{"x":-4.349534506716073,"y":-0.5883441408059271}]} isFilled={true} />
-      <schematicpath points={[{"x":-4.739534506716073,"y":-0.6683441408059271},{"x":-4.399534506716073,"y":-0.6683441408059271}]} isFilled={true} />
-      <schematicpath points={[{"x":-4.629534506716072,"y":-0.738344140805927},{"x":-4.509534506716073,"y":-0.738344140805927}]} isFilled={true} />
+      <schematicpath points={[{"x":-4.559534506716073,"y":-0.2583441408059271},{"x":-4.569534506716073,"y":-0.5883441408059271}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-4.789534506716072,"y":-0.5883441408059271},{"x":-4.349534506716073,"y":-0.5883441408059271}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-4.739534506716073,"y":-0.6683441408059271},{"x":-4.399534506716073,"y":-0.6683441408059271}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-4.629534506716072,"y":-0.738344140805927},{"x":-4.509534506716073,"y":-0.738344140805927}]} strokeWidth={0.02} isFilled={true} />
       <schematictext text={""} schX={-4.589534506716072} schY={-0.8583441408059271} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-8.580724872626218,"y":3.7628462251042167},{"x":-8.590724872626218,"y":3.4328462251042167}]} isFilled={true} />
-      <schematicpath points={[{"x":-8.810724872626219,"y":3.4328462251042167},{"x":-8.370724872626218,"y":3.4328462251042167}]} isFilled={true} />
-      <schematicpath points={[{"x":-8.760724872626218,"y":3.3528462251042166},{"x":-8.420724872626218,"y":3.3528462251042166}]} isFilled={true} />
-      <schematicpath points={[{"x":-8.650724872626219,"y":3.2828462251042168},{"x":-8.530724872626218,"y":3.2828462251042168}]} isFilled={true} />
+      <schematicpath points={[{"x":-8.580724872626218,"y":3.7628462251042167},{"x":-8.590724872626218,"y":3.4328462251042167}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-8.810724872626219,"y":3.4328462251042167},{"x":-8.370724872626218,"y":3.4328462251042167}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-8.760724872626218,"y":3.3528462251042166},{"x":-8.420724872626218,"y":3.3528462251042166}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-8.650724872626219,"y":3.2828462251042168},{"x":-8.530724872626218,"y":3.2828462251042168}]} strokeWidth={0.02} isFilled={true} />
       <schematictext text={""} schX={-8.610724872626218} schY={3.1628462251042166} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-11.505226956924504,"y":5.590660027790645},{"x":-11.515226956924504,"y":5.260660027790645}]} isFilled={true} />
-      <schematicpath points={[{"x":-11.735226956924505,"y":5.260660027790645},{"x":-11.295226956924504,"y":5.260660027790645}]} isFilled={true} />
-      <schematicpath points={[{"x":-11.685226956924504,"y":5.180660027790645},{"x":-11.345226956924504,"y":5.180660027790645}]} isFilled={true} />
-      <schematicpath points={[{"x":-11.575226956924505,"y":5.110660027790645},{"x":-11.455226956924504,"y":5.110660027790645}]} isFilled={true} />
+      <schematicpath points={[{"x":-11.505226956924504,"y":5.590660027790645},{"x":-11.515226956924504,"y":5.260660027790645}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-11.735226956924505,"y":5.260660027790645},{"x":-11.295226956924504,"y":5.260660027790645}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-11.685226956924504,"y":5.180660027790645},{"x":-11.345226956924504,"y":5.180660027790645}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-11.575226956924505,"y":5.110660027790645},{"x":-11.455226956924504,"y":5.110660027790645}]} strokeWidth={0.02} isFilled={true} />
       <schematictext text={""} schX={-11.535226956924504} schY={4.990660027790645} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":3.8384089856415002,"y":4.66127422031805},{"x":3.9584089856415003,"y":4.752315886984716}]} isFilled={false} />
-      <schematicpath points={[{"x":3.8384089856415002,"y":4.66127422031805},{"x":3.7184089856415,"y":4.752315886984716}]} isFilled={false} />
-      <schematicpath points={[{"x":3.8384089856415002,"y":4.66127422031805},{"x":3.8384089856415002,"y":4.86252422031805}]} isFilled={false} />
+      <schematicpath points={[{"x":3.8384089856415002,"y":4.66127422031805},{"x":3.9584089856415003,"y":4.752315886984716}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":3.8384089856415002,"y":4.66127422031805},{"x":3.7184089856415,"y":4.752315886984716}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":3.8384089856415002,"y":4.66127422031805},{"x":3.8384089856415002,"y":4.86252422031805}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={3.8384089856415002} schY={4.632524220318049} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":9.139069013432145,"y":7.036734116875096},{"x":9.019069013432146,"y":6.94569245020843}]} isFilled={false} />
-      <schematicpath points={[{"x":9.139069013432145,"y":7.036734116875096},{"x":9.259069013432145,"y":6.94569245020843}]} isFilled={false} />
-      <schematicpath points={[{"x":9.139069013432145,"y":7.036734116875096},{"x":9.139069013432145,"y":6.835484116875096}]} isFilled={false} />
+      <schematicpath points={[{"x":9.139069013432145,"y":7.036734116875096},{"x":9.019069013432146,"y":6.94569245020843}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":9.139069013432145,"y":7.036734116875096},{"x":9.259069013432145,"y":6.94569245020843}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":9.139069013432145,"y":7.036734116875096},{"x":9.139069013432145,"y":6.835484116875096}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={9.139069013432145} schY={7.065484116875097} anchor={"bottom_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":11.880789717461788,"y":-4.295013412845453},{"x":12.000789717461787,"y":-4.203971746178786}]} isFilled={false} />
-      <schematicpath points={[{"x":11.880789717461788,"y":-4.295013412845453},{"x":11.760789717461789,"y":-4.203971746178786}]} isFilled={false} />
-      <schematicpath points={[{"x":11.880789717461788,"y":-4.295013412845453},{"x":11.880789717461788,"y":-4.093763412845453}]} isFilled={false} />
+      <schematicpath points={[{"x":11.880789717461788,"y":-4.295013412845453},{"x":12.000789717461787,"y":-4.203971746178786}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":11.880789717461788,"y":-4.295013412845453},{"x":11.760789717461789,"y":-4.203971746178786}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":11.880789717461788,"y":-4.295013412845453},{"x":11.880789717461788,"y":-4.093763412845453}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={11.880789717461788} schY={-4.323763412845453} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":7.311255210745717,"y":-4.295013412845453},{"x":7.431255210745717,"y":-4.203971746178786}]} isFilled={false} />
-      <schematicpath points={[{"x":7.311255210745717,"y":-4.295013412845453},{"x":7.191255210745717,"y":-4.203971746178786}]} isFilled={false} />
-      <schematicpath points={[{"x":7.311255210745717,"y":-4.295013412845453},{"x":7.311255210745717,"y":-4.093763412845453}]} isFilled={false} />
+      <schematicpath points={[{"x":7.311255210745717,"y":-4.295013412845453},{"x":7.431255210745717,"y":-4.203971746178786}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":7.311255210745717,"y":-4.295013412845453},{"x":7.191255210745717,"y":-4.203971746178786}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":7.311255210745717,"y":-4.295013412845453},{"x":7.311255210745717,"y":-4.093763412845453}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={7.311255210745717} schY={-4.323763412845453} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":3.4728462251042167,"y":0.27382304693531023},{"x":3.3528462251042166,"y":0.18278138026864355}]} isFilled={false} />
-      <schematicpath points={[{"x":3.4728462251042167,"y":0.27382304693531023},{"x":3.592846225104217,"y":0.18278138026864355}]} isFilled={false} />
-      <schematicpath points={[{"x":3.4728462251042167,"y":0.27382304693531023},{"x":3.4728462251042167,"y":0.0725730469353102}]} isFilled={false} />
+      <schematicpath points={[{"x":3.4728462251042167,"y":0.27382304693531023},{"x":3.3528462251042166,"y":0.18278138026864355}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":3.4728462251042167,"y":0.27382304693531023},{"x":3.592846225104217,"y":0.18278138026864355}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":3.4728462251042167,"y":0.27382304693531023},{"x":3.4728462251042167,"y":0.0725730469353102}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={3.4728462251042167} schY={0.30257304693531023} anchor={"bottom_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":11.880789717461788,"y":3.9294506523081685},{"x":11.760789717461789,"y":3.838408985641502}]} isFilled={false} />
-      <schematicpath points={[{"x":11.880789717461788,"y":3.9294506523081685},{"x":12.000789717461787,"y":3.838408985641502}]} isFilled={false} />
-      <schematicpath points={[{"x":11.880789717461788,"y":3.9294506523081685},{"x":11.880789717461788,"y":3.7282006523081686}]} isFilled={false} />
+      <schematicpath points={[{"x":11.880789717461788,"y":3.9294506523081685},{"x":11.760789717461789,"y":3.838408985641502}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":11.880789717461788,"y":3.9294506523081685},{"x":12.000789717461787,"y":3.838408985641502}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":11.880789717461788,"y":3.9294506523081685},{"x":11.880789717461788,"y":3.7282006523081686}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={11.880789717461788} schY={3.9582006523081685} anchor={"bottom_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":8.956287633163502,"y":-0.27382304693530846},{"x":9.076287633163501,"y":-0.18278138026864177}]} isFilled={false} />
-      <schematicpath points={[{"x":8.956287633163502,"y":-0.27382304693530846},{"x":8.836287633163503,"y":-0.18278138026864177}]} isFilled={false} />
-      <schematicpath points={[{"x":8.956287633163502,"y":-0.27382304693530846},{"x":8.956287633163502,"y":-0.07257304693530843}]} isFilled={false} />
+      <schematicpath points={[{"x":8.956287633163502,"y":-0.27382304693530846},{"x":9.076287633163501,"y":-0.18278138026864177}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":8.956287633163502,"y":-0.27382304693530846},{"x":8.836287633163503,"y":-0.18278138026864177}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":8.956287633163502,"y":-0.27382304693530846},{"x":8.956287633163502,"y":-0.07257304693530843}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={8.956287633163502} schY={-0.30257304693530845} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":0.3755627605372853,"y":-5.193441408059287},{"x":0.3655627605372853,"y":-5.523441408059287}]} isFilled={true} />
-      <schematicpath points={[{"x":0.1455627605372853,"y":-5.523441408059287},{"x":0.5855627605372853,"y":-5.523441408059287}]} isFilled={true} />
-      <schematicpath points={[{"x":0.1955627605372853,"y":-5.603441408059287},{"x":0.5355627605372854,"y":-5.603441408059287}]} isFilled={true} />
-      <schematicpath points={[{"x":0.3055627605372853,"y":-5.673441408059287},{"x":0.4255627605372853,"y":-5.673441408059287}]} isFilled={true} />
+      <schematicpath points={[{"x":0.3755627605372853,"y":-5.193441408059287},{"x":0.3655627605372853,"y":-5.523441408059287}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":0.1455627605372853,"y":-5.523441408059287},{"x":0.5855627605372853,"y":-5.523441408059287}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":0.1955627605372853,"y":-5.603441408059287},{"x":0.5355627605372854,"y":-5.603441408059287}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":0.3055627605372853,"y":-5.673441408059287},{"x":0.4255627605372853,"y":-5.673441408059287}]} strokeWidth={0.02} isFilled={true} />
       <schematictext text={""} schX={0.34556276053728535} schY={-5.793441408059286} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":2.558939323760999,"y":-5.574483074725953},{"x":2.678939323760999,"y":-5.483441408059287}]} isFilled={false} />
-      <schematicpath points={[{"x":2.558939323760999,"y":-5.574483074725953},{"x":2.438939323760999,"y":-5.483441408059287}]} isFilled={false} />
-      <schematicpath points={[{"x":2.558939323760999,"y":-5.574483074725953},{"x":2.558939323760999,"y":-5.373233074725953}]} isFilled={false} />
+      <schematicpath points={[{"x":2.558939323760999,"y":-5.574483074725953},{"x":2.678939323760999,"y":-5.483441408059287}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":2.558939323760999,"y":-5.574483074725953},{"x":2.438939323760999,"y":-5.483441408059287}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":2.558939323760999,"y":-5.574483074725953},{"x":2.558939323760999,"y":-5.373233074725953}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={2.558939323760999} schY={-5.603233074725954} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-8.946287633163504,"y":-6.2901296896711445},{"x":-8.956287633163504,"y":-6.620129689671145}]} isFilled={true} />
-      <schematicpath points={[{"x":-9.176287633163504,"y":-6.620129689671145},{"x":-8.736287633163503,"y":-6.620129689671145}]} isFilled={true} />
-      <schematicpath points={[{"x":-9.126287633163503,"y":-6.700129689671145},{"x":-8.786287633163504,"y":-6.700129689671145}]} isFilled={true} />
-      <schematicpath points={[{"x":-9.016287633163504,"y":-6.770129689671145},{"x":-8.896287633163503,"y":-6.770129689671145}]} isFilled={true} />
+      <schematicpath points={[{"x":-8.946287633163504,"y":-6.2901296896711445},{"x":-8.956287633163504,"y":-6.620129689671145}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-9.176287633163504,"y":-6.620129689671145},{"x":-8.736287633163503,"y":-6.620129689671145}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-9.126287633163503,"y":-6.700129689671145},{"x":-8.786287633163504,"y":-6.700129689671145}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-9.016287633163504,"y":-6.770129689671145},{"x":-8.896287633163503,"y":-6.770129689671145}]} strokeWidth={0.02} isFilled={true} />
       <schematictext text={""} schX={-8.976287633163503} schY={-6.890129689671144} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-3.290064844835573,"y":6.305608595800526},{"x":-3.4100648448355733,"y":6.214566929133859}]} isFilled={false} />
-      <schematicpath points={[{"x":-3.290064844835573,"y":6.305608595800526},{"x":-3.170064844835573,"y":6.214566929133859}]} isFilled={false} />
-      <schematicpath points={[{"x":-3.290064844835573,"y":6.305608595800526},{"x":-3.290064844835573,"y":6.104358595800526}]} isFilled={false} />
+      <schematicpath points={[{"x":-3.290064844835573,"y":6.305608595800526},{"x":-3.4100648448355733,"y":6.214566929133859}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-3.290064844835573,"y":6.305608595800526},{"x":-3.170064844835573,"y":6.214566929133859}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-3.290064844835573,"y":6.305608595800526},{"x":-3.290064844835573,"y":6.104358595800526}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={-3.290064844835573} schY={6.334358595800526} anchor={"bottom_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-8.956287633163504,"y":-4.11293007951212},{"x":-9.076287633163503,"y":-4.203971746178786}]} isFilled={false} />
-      <schematicpath points={[{"x":-8.956287633163504,"y":-4.11293007951212},{"x":-8.836287633163504,"y":-4.203971746178786}]} isFilled={false} />
-      <schematicpath points={[{"x":-8.956287633163504,"y":-4.11293007951212},{"x":-8.956287633163504,"y":-4.31418007951212}]} isFilled={false} />
+      <schematicpath points={[{"x":-8.956287633163504,"y":-4.11293007951212},{"x":-9.076287633163503,"y":-4.203971746178786}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-8.956287633163504,"y":-4.11293007951212},{"x":-8.836287633163504,"y":-4.203971746178786}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-8.956287633163504,"y":-4.11293007951212},{"x":-8.956287633163504,"y":-4.31418007951212}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={-8.956287633163504} schY={-4.0841800795121195} anchor={"bottom_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-6.021785548865216,"y":-3.3656276053728575},{"x":-6.031785548865216,"y":-3.6956276053728576}]} isFilled={true} />
-      <schematicpath points={[{"x":-6.251785548865215,"y":-3.6956276053728576},{"x":-5.811785548865216,"y":-3.6956276053728576}]} isFilled={true} />
-      <schematicpath points={[{"x":-6.201785548865216,"y":-3.7756276053728577},{"x":-5.861785548865216,"y":-3.7756276053728577}]} isFilled={true} />
-      <schematicpath points={[{"x":-6.091785548865215,"y":-3.8456276053728575},{"x":-5.971785548865216,"y":-3.8456276053728575}]} isFilled={true} />
+      <schematicpath points={[{"x":-6.021785548865216,"y":-3.3656276053728575},{"x":-6.031785548865216,"y":-3.6956276053728576}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-6.251785548865215,"y":-3.6956276053728576},{"x":-5.811785548865216,"y":-3.6956276053728576}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-6.201785548865216,"y":-3.7756276053728577},{"x":-5.861785548865216,"y":-3.7756276053728577}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-6.091785548865215,"y":-3.8456276053728575},{"x":-5.971785548865216,"y":-3.8456276053728575}]} strokeWidth={0.02} isFilled={true} />
       <schematictext text={""} schX={-6.051785548865215} schY={-3.9656276053728576} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-9.687413154238076,"y":2.284418229890382},{"x":-9.807413154238075,"y":2.1933765632237154}]} isFilled={false} />
-      <schematicpath points={[{"x":-9.687413154238076,"y":2.284418229890382},{"x":-9.567413154238077,"y":2.1933765632237154}]} isFilled={false} />
-      <schematicpath points={[{"x":-9.687413154238076,"y":2.284418229890382},{"x":-9.687413154238076,"y":2.083168229890382}]} isFilled={false} />
+      <schematicpath points={[{"x":-9.687413154238076,"y":2.284418229890382},{"x":-9.807413154238075,"y":2.1933765632237154}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-9.687413154238076,"y":2.284418229890382},{"x":-9.567413154238077,"y":2.1933765632237154}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-9.687413154238076,"y":2.284418229890382},{"x":-9.687413154238076,"y":2.083168229890382}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={-9.687413154238076} schY={2.313168229890382} anchor={"bottom_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":4.579534506716071,"y":-3.3656276053728575},{"x":4.569534506716071,"y":-3.6956276053728576}]} isFilled={true} />
-      <schematicpath points={[{"x":4.349534506716071,"y":-3.6956276053728576},{"x":4.789534506716071,"y":-3.6956276053728576}]} isFilled={true} />
-      <schematicpath points={[{"x":4.399534506716071,"y":-3.7756276053728577},{"x":4.739534506716071,"y":-3.7756276053728577}]} isFilled={true} />
-      <schematicpath points={[{"x":4.509534506716071,"y":-3.8456276053728575},{"x":4.6295345067160705,"y":-3.8456276053728575}]} isFilled={true} />
+      <schematicpath points={[{"x":4.579534506716071,"y":-3.3656276053728575},{"x":4.569534506716071,"y":-3.6956276053728576}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":4.349534506716071,"y":-3.6956276053728576},{"x":4.789534506716071,"y":-3.6956276053728576}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":4.399534506716071,"y":-3.7756276053728577},{"x":4.739534506716071,"y":-3.7756276053728577}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":4.509534506716071,"y":-3.8456276053728575},{"x":4.6295345067160705,"y":-3.8456276053728575}]} strokeWidth={0.02} isFilled={true} />
       <schematictext text={""} schX={4.549534506716071} schY={-3.9656276053728576} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-11.789748050795122,"y":-4.203971746178786},{"x":-11.88078971746179,"y":-4.083971746178786}]} isFilled={false} />
-      <schematicpath points={[{"x":-11.789748050795122,"y":-4.203971746178786},{"x":-11.88078971746179,"y":-4.3239717461787865}]} isFilled={false} />
-      <schematicpath points={[{"x":-11.789748050795122,"y":-4.203971746178786},{"x":-11.990998050795122,"y":-4.203971746178786}]} isFilled={false} />
+      <schematicpath points={[{"x":-11.789748050795122,"y":-4.203971746178786},{"x":-11.88078971746179,"y":-4.083971746178786}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-11.789748050795122,"y":-4.203971746178786},{"x":-11.88078971746179,"y":-4.3239717461787865}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-11.789748050795122,"y":-4.203971746178786},{"x":-11.990998050795122,"y":-4.203971746178786}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={-11.760998050795124} schY={-4.203971746178786} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-11.789748050795122,"y":-4.569534506716072},{"x":-11.88078971746179,"y":-4.449534506716072}]} isFilled={false} />
-      <schematicpath points={[{"x":-11.789748050795122,"y":-4.569534506716072},{"x":-11.88078971746179,"y":-4.689534506716072}]} isFilled={false} />
-      <schematicpath points={[{"x":-11.789748050795122,"y":-4.569534506716072},{"x":-11.990998050795122,"y":-4.569534506716072}]} isFilled={false} />
+      <schematicpath points={[{"x":-11.789748050795122,"y":-4.569534506716072},{"x":-11.88078971746179,"y":-4.449534506716072}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-11.789748050795122,"y":-4.569534506716072},{"x":-11.88078971746179,"y":-4.689534506716072}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-11.789748050795122,"y":-4.569534506716072},{"x":-11.990998050795122,"y":-4.569534506716072}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={-11.760998050795124} schY={-4.569534506716072} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-11.789748050795122,"y":-4.935097267253358},{"x":-11.88078971746179,"y":-4.815097267253358}]} isFilled={false} />
-      <schematicpath points={[{"x":-11.789748050795122,"y":-4.935097267253358},{"x":-11.88078971746179,"y":-5.055097267253358}]} isFilled={false} />
-      <schematicpath points={[{"x":-11.789748050795122,"y":-4.935097267253358},{"x":-11.990998050795122,"y":-4.935097267253358}]} isFilled={false} />
+      <schematicpath points={[{"x":-11.789748050795122,"y":-4.935097267253358},{"x":-11.88078971746179,"y":-4.815097267253358}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-11.789748050795122,"y":-4.935097267253358},{"x":-11.88078971746179,"y":-5.055097267253358}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-11.789748050795122,"y":-4.935097267253358},{"x":-11.990998050795122,"y":-4.935097267253358}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={-11.760998050795124} schY={-4.935097267253358} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-9.230110680098813,"y":1.6450324224177866},{"x":-9.139069013432145,"y":1.5250324224177865}]} isFilled={false} />
-      <schematicpath points={[{"x":-9.230110680098813,"y":1.6450324224177866},{"x":-9.139069013432145,"y":1.7650324224177867}]} isFilled={false} />
-      <schematicpath points={[{"x":-9.230110680098813,"y":1.6450324224177866},{"x":-9.028860680098813,"y":1.6450324224177866}]} isFilled={false} />
+      <schematicpath points={[{"x":-9.230110680098813,"y":1.6450324224177866},{"x":-9.139069013432145,"y":1.5250324224177865}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-9.230110680098813,"y":1.6450324224177866},{"x":-9.139069013432145,"y":1.7650324224177867}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-9.230110680098813,"y":1.6450324224177866},{"x":-9.028860680098813,"y":1.6450324224177866}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={-9.258860680098811} schY={1.6450324224177866} anchor={"center_right"} fontSize={0.18} />
-      <schematicpath points={[{"x":-9.04732929983017,"y":-2.1933765632237145},{"x":-8.956287633163504,"y":-2.3133765632237147}]} isFilled={false} />
-      <schematicpath points={[{"x":-9.04732929983017,"y":-2.1933765632237145},{"x":-8.956287633163504,"y":-2.0733765632237144}]} isFilled={false} />
-      <schematicpath points={[{"x":-9.04732929983017,"y":-2.1933765632237145},{"x":-8.846079299830171,"y":-2.1933765632237145}]} isFilled={false} />
+      <schematicpath points={[{"x":-9.04732929983017,"y":-2.1933765632237145},{"x":-8.956287633163504,"y":-2.3133765632237147}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-9.04732929983017,"y":-2.1933765632237145},{"x":-8.956287633163504,"y":-2.0733765632237144}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-9.04732929983017,"y":-2.1933765632237145},{"x":-8.846079299830171,"y":-2.1933765632237145}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={-9.07607929983017} schY={-2.1933765632237145} anchor={"center_right"} fontSize={0.18} />
-      <schematicpath points={[{"x":-9.230110680098813,"y":0.5483441408059289},{"x":-9.139069013432145,"y":0.42834414080592886}]} isFilled={false} />
-      <schematicpath points={[{"x":-9.230110680098813,"y":0.5483441408059289},{"x":-9.139069013432145,"y":0.6683441408059289}]} isFilled={false} />
-      <schematicpath points={[{"x":-9.230110680098813,"y":0.5483441408059289},{"x":-9.028860680098813,"y":0.5483441408059289}]} isFilled={false} />
+      <schematicpath points={[{"x":-9.230110680098813,"y":0.5483441408059289},{"x":-9.139069013432145,"y":0.42834414080592886}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-9.230110680098813,"y":0.5483441408059289},{"x":-9.139069013432145,"y":0.6683441408059289}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-9.230110680098813,"y":0.5483441408059289},{"x":-9.028860680098813,"y":0.5483441408059289}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={-9.258860680098811} schY={0.5483441408059289} anchor={"center_right"} fontSize={0.18} />
-      <schematicpath points={[{"x":-10.784101435849932,"y":-5.026836980855334},{"x":-10.904101435849931,"y":-5.117878647522001}]} isFilled={false} />
-      <schematicpath points={[{"x":-10.784101435849932,"y":-5.026836980855334},{"x":-10.664101435849933,"y":-5.117878647522001}]} isFilled={false} />
-      <schematicpath points={[{"x":-10.784101435849932,"y":-5.026836980855334},{"x":-10.784101435849932,"y":-5.228086980855334}]} isFilled={false} />
+      <schematicpath points={[{"x":-10.784101435849932,"y":-5.026836980855334},{"x":-10.904101435849931,"y":-5.117878647522001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-10.784101435849932,"y":-5.026836980855334},{"x":-10.664101435849933,"y":-5.117878647522001}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-10.784101435849932,"y":-5.026836980855334},{"x":-10.784101435849932,"y":-5.228086980855334}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={-10.784101435849932} schY={-4.998086980855334} anchor={"bottom_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-10.774101435849932,"y":-5.741785548865216},{"x":-10.784101435849932,"y":-6.071785548865216}]} isFilled={true} />
-      <schematicpath points={[{"x":-11.004101435849932,"y":-6.071785548865216},{"x":-10.564101435849931,"y":-6.071785548865216}]} isFilled={true} />
-      <schematicpath points={[{"x":-10.954101435849932,"y":-6.151785548865216},{"x":-10.614101435849932,"y":-6.151785548865216}]} isFilled={true} />
-      <schematicpath points={[{"x":-10.844101435849932,"y":-6.221785548865216},{"x":-10.724101435849931,"y":-6.221785548865216}]} isFilled={true} />
+      <schematicpath points={[{"x":-10.774101435849932,"y":-5.741785548865216},{"x":-10.784101435849932,"y":-6.071785548865216}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-11.004101435849932,"y":-6.071785548865216},{"x":-10.564101435849931,"y":-6.071785548865216}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-10.954101435849932,"y":-6.151785548865216},{"x":-10.614101435849932,"y":-6.151785548865216}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-10.844101435849932,"y":-6.221785548865216},{"x":-10.724101435849931,"y":-6.221785548865216}]} strokeWidth={0.02} isFilled={true} />
       <schematictext text={""} schX={-10.804101435849931} schY={-6.341785548865215} anchor={"top_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-7.2202135440790505,"y":-5.483441408059287},{"x":-7.311255210745717,"y":-5.363441408059287}]} isFilled={false} />
-      <schematicpath points={[{"x":-7.2202135440790505,"y":-5.483441408059287},{"x":-7.311255210745717,"y":-5.603441408059287}]} isFilled={false} />
-      <schematicpath points={[{"x":-7.2202135440790505,"y":-5.483441408059287},{"x":-7.42146354407905,"y":-5.483441408059287}]} isFilled={false} />
+      <schematicpath points={[{"x":-7.2202135440790505,"y":-5.483441408059287},{"x":-7.311255210745717,"y":-5.363441408059287}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-7.2202135440790505,"y":-5.483441408059287},{"x":-7.311255210745717,"y":-5.603441408059287}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-7.2202135440790505,"y":-5.483441408059287},{"x":-7.42146354407905,"y":-5.483441408059287}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={-7.19146354407905} schY={-5.483441408059287} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-4.478492840049406,"y":0.5483441408059289},{"x":-4.569534506716073,"y":0.6683441408059289}]} isFilled={false} />
-      <schematicpath points={[{"x":-4.478492840049406,"y":0.5483441408059289},{"x":-4.569534506716073,"y":0.42834414080592886}]} isFilled={false} />
-      <schematicpath points={[{"x":-4.478492840049406,"y":0.5483441408059289},{"x":-4.679742840049406,"y":0.5483441408059289}]} isFilled={false} />
+      <schematicpath points={[{"x":-4.478492840049406,"y":0.5483441408059289},{"x":-4.569534506716073,"y":0.6683441408059289}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-4.478492840049406,"y":0.5483441408059289},{"x":-4.569534506716073,"y":0.42834414080592886}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-4.478492840049406,"y":0.5483441408059289},{"x":-4.679742840049406,"y":0.5483441408059289}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={-4.449742840049406} schY={0.5483441408059289} anchor={"center_left"} fontSize={0.18} />
-      <schematicpath points={[{"x":-10.60132005558129,"y":7.402296877412383},{"x":-10.72132005558129,"y":7.311255210745717}]} isFilled={false} />
-      <schematicpath points={[{"x":-10.60132005558129,"y":7.402296877412383},{"x":-10.48132005558129,"y":7.311255210745717}]} isFilled={false} />
-      <schematicpath points={[{"x":-10.60132005558129,"y":7.402296877412383},{"x":-10.60132005558129,"y":7.2010468774123835}]} isFilled={false} />
+      <schematicpath points={[{"x":-10.60132005558129,"y":7.402296877412383},{"x":-10.72132005558129,"y":7.311255210745717}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-10.60132005558129,"y":7.402296877412383},{"x":-10.48132005558129,"y":7.311255210745717}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-10.60132005558129,"y":7.402296877412383},{"x":-10.60132005558129,"y":7.2010468774123835}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={-10.60132005558129} schY={7.431046877412384} anchor={"bottom_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":0.3655627605372853,"y":-3.7473673189748338},{"x":0.24556276053728532,"y":-3.8384089856415002}]} isFilled={false} />
-      <schematicpath points={[{"x":0.3655627605372853,"y":-3.7473673189748338},{"x":0.4855627605372853,"y":-3.8384089856415002}]} isFilled={false} />
-      <schematicpath points={[{"x":0.3655627605372853,"y":-3.7473673189748338},{"x":0.3655627605372853,"y":-3.9486173189748337}]} isFilled={false} />
+      <schematicpath points={[{"x":0.3655627605372853,"y":-3.7473673189748338},{"x":0.24556276053728532,"y":-3.8384089856415002}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":0.3655627605372853,"y":-3.7473673189748338},{"x":0.4855627605372853,"y":-3.8384089856415002}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":0.3655627605372853,"y":-3.7473673189748338},{"x":0.3655627605372853,"y":-3.9486173189748337}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={0.3655627605372853} schY={-3.7186173189748337} anchor={"bottom_center"} fontSize={0.18} />
-      <schematicpath points={[{"x":-4.477794793114097,"y":-2.376157943492357},{"x":-4.386753126447431,"y":-2.4961579434923573}]} isFilled={false} />
-      <schematicpath points={[{"x":-4.477794793114097,"y":-2.376157943492357},{"x":-4.386753126447431,"y":-2.256157943492357}]} isFilled={false} />
-      <schematicpath points={[{"x":-4.477794793114097,"y":-2.376157943492357},{"x":-4.276544793114097,"y":-2.376157943492357}]} isFilled={false} />
+      <schematicpath points={[{"x":-4.477794793114097,"y":-2.376157943492357},{"x":-4.386753126447431,"y":-2.4961579434923573}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-4.477794793114097,"y":-2.376157943492357},{"x":-4.386753126447431,"y":-2.256157943492357}]} strokeWidth={0.02} isFilled={false} />
+      <schematicpath points={[{"x":-4.477794793114097,"y":-2.376157943492357},{"x":-4.276544793114097,"y":-2.376157943492357}]} strokeWidth={0.02} isFilled={false} />
       <schematictext text={""} schX={-4.506544793114098} schY={-2.376157943492357} anchor={"center_right"} fontSize={0.18} />
-      <schematicpath points={[{"x":-3.462846225104215,"y":-3.3656276053728575},{"x":-3.472846225104215,"y":-3.6956276053728576}]} isFilled={true} />
-      <schematicpath points={[{"x":-3.692846225104215,"y":-3.6956276053728576},{"x":-3.2528462251042147,"y":-3.6956276053728576}]} isFilled={true} />
-      <schematicpath points={[{"x":-3.642846225104215,"y":-3.7756276053728577},{"x":-3.302846225104215,"y":-3.7756276053728577}]} isFilled={true} />
-      <schematicpath points={[{"x":-3.532846225104215,"y":-3.8456276053728575},{"x":-3.412846225104215,"y":-3.8456276053728575}]} isFilled={true} />
+      <schematicpath points={[{"x":-3.462846225104215,"y":-3.3656276053728575},{"x":-3.472846225104215,"y":-3.6956276053728576}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-3.692846225104215,"y":-3.6956276053728576},{"x":-3.2528462251042147,"y":-3.6956276053728576}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-3.642846225104215,"y":-3.7756276053728577},{"x":-3.302846225104215,"y":-3.7756276053728577}]} strokeWidth={0.02} isFilled={true} />
+      <schematicpath points={[{"x":-3.532846225104215,"y":-3.8456276053728575},{"x":-3.412846225104215,"y":-3.8456276053728575}]} strokeWidth={0.02} isFilled={true} />
       <schematictext text={""} schX={-3.492846225104215} schY={-3.9656276053728576} anchor={"top_center"} fontSize={0.18} />
       <schematictext text={"NT1"} schX={-3.8556276053728578} schY={0.1472186197313583} anchor={"bottom_left"} fontSize={0.18} color={"#006464"} schRotation={0} />
       <schematictext text={"Net-Tie"} schX={-3.8556276053728578} schY={-0.5127813802686418} anchor={"top_left"} fontSize={0.18} color={"#006464"} schRotation={0} />
