@@ -66,15 +66,14 @@ test("preserves netless pours and special-character net names", async () => {
   ).toBe(true)
 
   const netlessPour = renderedPours.find((pour) => pour.layer === "bottom")
-  if (!netlessPour || netlessPour.shape !== "brep") {
-    throw new Error("Expected the netless pour to render as BRep copper")
+  if (!netlessPour || netlessPour.shape !== "polygon") {
+    throw new Error("Expected the netless polygon pour to retain its shape")
   }
-  expect(netlessPour.brep_shape.outer_ring.vertices).toEqual(
-    expect.arrayContaining([
-      { x: 1, y: -2 },
-      { x: 5, y: -2 },
-      { x: 5, y: 2 },
-      { x: 1, y: 2 },
-    ]),
-  )
+  expect(netlessPour.source_net_id).toBeUndefined()
+  expect(netlessPour.points).toEqual([
+    { x: 1, y: -2 },
+    { x: 5, y: -2 },
+    { x: 5, y: 2 },
+    { x: 1, y: 2 },
+  ])
 })

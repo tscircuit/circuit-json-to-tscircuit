@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test"
-import type { CircuitJson, Point } from "circuit-json"
+import type { CircuitJson } from "circuit-json"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
 
@@ -59,19 +59,20 @@ test("preserves curved copper pour boundaries and cutouts", async () => {
     throw new Error("Expected a rendered curved BRep copper pour")
   }
 
-  expect(copperPour.brep_shape.outer_ring.vertices.length).toBeGreaterThan(12)
-  expectBounds(copperPour.brep_shape.outer_ring.vertices, 4)
-  expect(copperPour.brep_shape.inner_rings).toHaveLength(1)
-  const holeVertices = copperPour.brep_shape.inner_rings[0]!.vertices
-  expect(holeVertices.length).toBeGreaterThan(12)
-  expectBounds(holeVertices, 1.5)
+  expect(copperPour.brep_shape).toEqual({
+    outer_ring: {
+      vertices: [
+        { x: -4, y: 0, bulge: 1 },
+        { x: 4, y: 0, bulge: 1 },
+      ],
+    },
+    inner_rings: [
+      {
+        vertices: [
+          { x: -1.5, y: 0, bulge: 1 },
+          { x: 1.5, y: 0, bulge: 1 },
+        ],
+      },
+    ],
+  })
 })
-
-const expectBounds = (points: Point[], radius: number): void => {
-  const xs = points.map((point) => point.x)
-  const ys = points.map((point) => point.y)
-  expect(Math.min(...xs)).toBeCloseTo(-radius, 3)
-  expect(Math.max(...xs)).toBeCloseTo(radius, 3)
-  expect(Math.min(...ys)).toBeCloseTo(-radius, 3)
-  expect(Math.max(...ys)).toBeCloseTo(radius, 3)
-}

@@ -1,37 +1,36 @@
 import { su } from "@tscircuit/soup-util"
-import type { AnyCircuitElement } from "circuit-json"
-import { getCopperPourOutline } from "./get-copper-pour-outline"
+import type { AnyCircuitElement, PcbCopperPour } from "circuit-json"
 
 export function generateCopperPoursTsx(
   circuitJson: AnyCircuitElement[],
 ): string[] {
-  const sourceNetNameById = new Map(
+  const sourceNetNameById = Object.fromEntries(
     su(circuitJson)
       .source_net.list()
       .map((sourceNet) => [sourceNet.source_net_id, sourceNet.name]),
   )
-  const reservedNetNames = new Set(sourceNetNameById.values())
   const usedNetNames = new Set<string>()
   const copperPours = su(circuitJson)
     .pcb_copper_pour.list()
     .flatMap((pour) => {
-      const resolvedSourceNetName = pour.source_net_id
-        ? sourceNetNameById.get(pour.source_net_id)
+      const sourceNetName = pour.source_net_id
+        ? sourceNetNameById[pour.source_net_id]
         : undefined
-      const sourceNetName =
-        resolvedSourceNetName ??
-        getUnassignedCopperPourNetName({
-          pcbCopperPourId: pour.pcb_copper_pour_id,
-          reservedNetNames,
-        })
 
-      const outline = getCopperPourOutline(pour)
-      if (!outline || outline.length < 3) return []
-      usedNetNames.add(sourceNetName)
-      const netSelector = `net[name=${JSON.stringify(sourceNetName)}]`
+      if (pour.source_net_id && !sourceNetName) {
+        throw new Error(
+          `Copper pour ${pour.pcb_copper_pour_id} references missing source net ${pour.source_net_id}`,
+        )
+      }
+      if (sourceNetName) usedNetNames.add(sourceNetName)
 
       return [
-        `<copperpour layer={${JSON.stringify(pour.layer)}} connectsTo={${JSON.stringify(netSelector)}} outline={${JSON.stringify(outline)}} padMargin={0} traceMargin={0} clearance={0} boardEdgeMargin={0} cutoutMargin={0} useThermalReliefs={false} coveredWithSolderMask={${pour.covered_with_solder_mask ?? true}} />`,
+        getPcbCopperPourTsx({
+          connectsTo: sourceNetName
+            ? `net[name=${JSON.stringify(sourceNetName)}]`
+            : undefined,
+          pcbCopperPour: pour,
+        }),
       ]
     })
   const nets = [...usedNetNames].map(
@@ -41,22 +40,30 @@ export function generateCopperPoursTsx(
   return [...nets, ...copperPours]
 }
 
-const getUnassignedCopperPourNetName = ({
-  pcbCopperPourId,
-  reservedNetNames,
+const getPcbCopperPourTsx = ({
+  connectsTo,
+  pcbCopperPour,
 }: {
-  pcbCopperPourId: string
-  reservedNetNames: Set<string>
+  connectsTo?: string
+  pcbCopperPour: PcbCopperPour
 }): string => {
-  const baseName = `__circuit_json_unassigned_${pcbCopperPourId}`
-  let name = baseName
-  let suffix = 2
+  const commonAttributes = [
+    `layer={${JSON.stringify(pcbCopperPour.layer)}}`,
+    ...(connectsTo ? [`connectsTo={${JSON.stringify(connectsTo)}}`] : []),
+    `coveredWithSolderMask={${pcbCopperPour.covered_with_solder_mask ?? true}}`,
+  ].join(" ")
 
-  while (reservedNetNames.has(name)) {
-    name = `${baseName}_${suffix}`
-    suffix += 1
+  if (pcbCopperPour.shape === "polygon") {
+    return `<pcbcopperpour shape="polygon" ${commonAttributes} points={${JSON.stringify(pcbCopperPour.points)}} />`
   }
 
-  reservedNetNames.add(name)
-  return name
+  if (pcbCopperPour.shape === "brep") {
+    return `<pcbcopperpour shape="brep" ${commonAttributes} brepShape={${JSON.stringify(pcbCopperPour.brep_shape)}} />`
+  }
+
+  const pcbRotationAttribute =
+    pcbCopperPour.rotation === undefined
+      ? ""
+      : ` pcbRotation={${pcbCopperPour.rotation}}`
+  return `<pcbcopperpour shape="rect" ${commonAttributes} pcbX={${pcbCopperPour.center.x}} pcbY={${pcbCopperPour.center.y}} width={${pcbCopperPour.width}} height={${pcbCopperPour.height}}${pcbRotationAttribute} />`
 }
