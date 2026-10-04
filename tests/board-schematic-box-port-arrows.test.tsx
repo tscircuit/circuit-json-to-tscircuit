@@ -31,6 +31,7 @@ test("preserves input and output arrows on imported box pins", async () => {
       side_of_component: "left",
       facing_direction: "left",
       has_output_arrow: true,
+      is_drawn_with_inversion_circle: true,
       pin_number: 1,
     },
     {
@@ -42,6 +43,7 @@ test("preserves input and output arrows on imported box pins", async () => {
       side_of_component: "right",
       facing_direction: "right",
       has_input_arrow: true,
+      is_drawn_with_inversion_circle: true,
       pin_number: 2,
     },
   ]
@@ -62,15 +64,40 @@ test("preserves input and output arrows on imported box pins", async () => {
   expect(
     arrowPaths.some((path) =>
       path.points.some(
-        (point) => Math.abs(point.x + 1.1) < 0.000001 && point.y === 0,
+        (point) => Math.abs(point.x + 1.22) < 0.000001 && point.y === 0,
       ),
     ),
   ).toBe(true)
   expect(
     arrowPaths.some((path) =>
       path.points.some(
-        (point) => point.x === 1 && Math.abs(point.y - 0.4) < 0.000001,
+        (point) =>
+          Math.abs(point.x - 1.12) < 0.000001 &&
+          Math.abs(point.y - 0.4) < 0.000001,
       ),
     ),
   ).toBe(true)
+
+  const inversionCircles = renderedCircuitJson.flatMap((element) =>
+    element.type === "schematic_circle" &&
+    element.is_filled &&
+    element.fill_color === "#ffffff" &&
+    element.radius === 0.06
+      ? [element]
+      : [],
+  )
+  expect(inversionCircles).toHaveLength(2)
+  expect(inversionCircles.map((circle) => circle.center.x).sort()).toEqual([
+    -1.06, 1.06,
+  ])
+
+  const shiftedPinLines = renderedCircuitJson.flatMap((element) =>
+    element.type === "schematic_line" &&
+    ((Math.abs(element.x1 + 1.12) < 0.000001 && element.y1 === 0) ||
+      (Math.abs(element.x1 - 1.12) < 0.000001 &&
+        Math.abs(element.y1 - 0.4) < 0.000001))
+      ? [element]
+      : [],
+  )
+  expect(shiftedPinLines).toHaveLength(2)
 })

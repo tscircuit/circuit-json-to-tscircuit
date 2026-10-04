@@ -1,7 +1,7 @@
 import { su } from "@tscircuit/soup-util"
 import { type AnyCircuitElement, type SchematicComponent } from "circuit-json"
 import { convertRect } from "./convert-rect"
-import { convertBoxPortArrowMarkers } from "./convert-box-port-arrow-markers"
+import { convertBoxPortMarkers } from "./convert-box-port-markers"
 import { formatElement } from "./format-attributes"
 
 // Circuit JSON does not encode box body styling. These values mirror the
@@ -55,17 +55,21 @@ export const convertBoxComponent = ({
           schematicComponent.center.y - schematicComponent.size.height / 2
         break
     }
+    const { markers, pinLineStart } = convertBoxPortMarkers({
+      schematicPort,
+      edge,
+    })
     primitives.push(
       formatElement("schematicline", {
-        x1: edge.x,
-        y1: edge.y,
+        x1: pinLineStart.x,
+        y1: pinLineStart.y,
         x2: schematicPort.center.x,
         y2: schematicPort.center.y,
         strokeWidth: DEFAULT_BOX_BODY_STROKE_WIDTH,
         color: DEFAULT_BOX_BODY_STROKE_COLOR,
       }),
     )
-    primitives.push(...convertBoxPortArrowMarkers({ schematicPort, edge }))
+    primitives.push(...markers)
     const sourcePort = su(circuitJson).source_port.get(
       schematicPort.source_port_id,
     )

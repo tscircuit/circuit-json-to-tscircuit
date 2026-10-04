@@ -5,9 +5,10 @@ const ARROW_SIZE = 0.1
 const ARROW_HALF_ANGLE_RADIANS = Math.PI / 6
 const ARROW_AXIAL_LENGTH = ARROW_SIZE * Math.cos(ARROW_HALF_ANGLE_RADIANS)
 const ARROW_HALF_WIDTH = ARROW_SIZE * Math.sin(ARROW_HALF_ANGLE_RADIANS)
-const ARROW_STROKE_WIDTH = 0.02 / 3
-const ARROW_STROKE_COLOR = "#840000"
-const ARROW_FILL_COLOR = "#ffffff"
+const MARKER_STROKE_WIDTH = 0.02 / 3
+const MARKER_STROKE_COLOR = "#840000"
+const MARKER_FILL_COLOR = "#ffffff"
+const INVERSION_BUBBLE_RADIUS = 0.06
 
 const getOutwardDirection = (
   side: SchematicPort["side_of_component"],
@@ -48,43 +49,66 @@ const createArrowPath = ({
   }
   return formatElement("schematicpath", {
     points: [tip, firstBaseCorner, secondBaseCorner, tip],
-    strokeWidth: ARROW_STROKE_WIDTH,
-    strokeColor: ARROW_STROKE_COLOR,
-    fillColor: ARROW_FILL_COLOR,
+    strokeWidth: MARKER_STROKE_WIDTH,
+    strokeColor: MARKER_STROKE_COLOR,
+    fillColor: MARKER_FILL_COLOR,
     isFilled: true,
   })
 }
 
-export const convertBoxPortArrowMarkers = ({
+export const convertBoxPortMarkers = ({
   schematicPort,
   edge,
 }: {
   schematicPort: SchematicPort
   edge: Point
-}): string[] => {
+}): { markers: string[]; pinLineStart: Point } => {
   const outward = getOutwardDirection(schematicPort.side_of_component)
-  if (!outward) return []
+  if (!outward) return { markers: [], pinLineStart: edge }
 
-  const arrows: string[] = []
+  const inversionOffset = schematicPort.is_drawn_with_inversion_circle
+    ? INVERSION_BUBBLE_RADIUS * 2
+    : 0
+  const pinLineStart = {
+    x: edge.x + outward.x * inversionOffset,
+    y: edge.y + outward.y * inversionOffset,
+  }
+  const markers: string[] = []
+
+  if (schematicPort.is_drawn_with_inversion_circle) {
+    markers.push(
+      formatElement("schematiccircle", {
+        center: {
+          x: edge.x + outward.x * INVERSION_BUBBLE_RADIUS,
+          y: edge.y + outward.y * INVERSION_BUBBLE_RADIUS,
+        },
+        radius: INVERSION_BUBBLE_RADIUS,
+        strokeWidth: MARKER_STROKE_WIDTH * 3,
+        color: MARKER_STROKE_COLOR,
+        fillColor: MARKER_FILL_COLOR,
+        isFilled: true,
+      }),
+    )
+  }
   if (schematicPort.has_input_arrow) {
-    arrows.push(
+    markers.push(
       createArrowPath({
-        tip: edge,
+        tip: pinLineStart,
         direction: { x: -outward.x, y: -outward.y },
       }),
     )
   }
   if (schematicPort.has_output_arrow) {
     const separation = schematicPort.has_input_arrow ? ARROW_AXIAL_LENGTH : 0
-    arrows.push(
+    markers.push(
       createArrowPath({
         tip: {
-          x: edge.x + outward.x * (separation + ARROW_SIZE),
-          y: edge.y + outward.y * (separation + ARROW_SIZE),
+          x: pinLineStart.x + outward.x * (separation + ARROW_SIZE),
+          y: pinLineStart.y + outward.y * (separation + ARROW_SIZE),
         },
         direction: outward,
       }),
     )
   }
-  return arrows
+  return { markers, pinLineStart }
 }
