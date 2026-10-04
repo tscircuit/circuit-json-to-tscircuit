@@ -71,9 +71,6 @@ export const convertBoxComponent = ({
       }),
     )
     primitives.push(...markers)
-    const sourcePort = su(circuitJson).source_port.get(
-      schematicPort.source_port_id,
-    )
     const labelPosition = { ...edge }
     const pinNumberPosition = {
       x: (edge.x + schematicPort.center.x) / 2,
@@ -106,8 +103,8 @@ export const convertBoxComponent = ({
         break
     }
     const displayPinLabel = getBoxPinDisplayLabel({
+      schematicComponent,
       schematicPort,
-      sourcePort,
     })
     if (displayPinLabel)
       primitives.push(

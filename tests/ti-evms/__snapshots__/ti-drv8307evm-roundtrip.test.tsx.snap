@@ -2548,17 +2548,13 @@ exports[`TI DRV8307EVM Circuit JSON to tscircuit round trip 1`] = `
 <schematictext text={"220uF"} schX={9.4426801938} schY={8.686281041800001} anchor={"top_left"} fontSize={0.18} />
 <schematicpath points={[{"x":0.4996971532404614,"y":8.211568746214418},{"x":1.9987886129618424,"y":8.211568746214418},{"x":1.9987886129618424,"y":8.611568746214417},{"x":0.4996971532404614,"y":8.611568746214417},{"x":0.4996971532404614,"y":8.211568746214418}]} strokeWidth={0.02} strokeColor={"#840000"} fillColor={"#ffffc2"} isFilled={true} />
 <schematicline x1={0.4996971532404614} y1={8.411568746214417} x2={0.16656571774681872} y2={8.411568746214417} strokeWidth={0.02} color={"#840000"} />
-<schematictext text={"GND"} schX={0.5996971532404614} schY={8.411568746214417} anchor={"center_left"} fontSize={0.15} color={"#a90000"} />
 <schematictext text={"1"} schX={0.33313143549364005} schY={8.431568746214417} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
 <schematicline x1={1.9987886129618424} y1={8.411568746214417} x2={2.3319200484554816} y2={8.411568746214417} strokeWidth={0.02} color={"#840000"} />
-<schematictext text={"GND"} schX={1.8987886129618423} schY={8.411568746214417} anchor={"center_right"} fontSize={0.15} color={"#a90000"} />
 <schematictext text={"2"} schX={2.165354330708662} schY={8.431568746214417} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
 <schematicpath points={[{"x":0.4996971532404614,"y":7.462023016353725},{"x":1.9987886129618424,"y":7.462023016353725},{"x":1.9987886129618424,"y":7.862023016353725},{"x":0.4996971532404614,"y":7.862023016353725},{"x":0.4996971532404614,"y":7.462023016353725}]} strokeWidth={0.02} strokeColor={"#840000"} fillColor={"#ffffc2"} isFilled={true} />
 <schematicline x1={0.4996971532404614} y1={7.662023016353725} x2={0.16656571774681872} y2={7.662023016353725} strokeWidth={0.02} color={"#840000"} />
-<schematictext text={"GND"} schX={0.5996971532404614} schY={7.662023016353725} anchor={"center_left"} fontSize={0.15} color={"#a90000"} />
 <schematictext text={"1"} schX={0.33313143549364005} schY={7.682023016353725} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
 <schematicline x1={1.9987886129618424} y1={7.662023016353725} x2={2.3319200484554816} y2={7.662023016353725} strokeWidth={0.02} color={"#840000"} />
-<schematictext text={"GND"} schX={1.8987886129618423} schY={7.662023016353725} anchor={"center_right"} fontSize={0.15} color={"#a90000"} />
 <schematictext text={"2"} schX={2.165354330708662} schY={7.682023016353725} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
 <schematicpath points={[{"x":7.7954572986,"y":8.3282858873},{"x":7.6954372986,"y":8.3282858873}]} strokeWidth={0.012} isFilled={false} />
 <schematicpath points={[{"x":7.2954772986,"y":8.3282858873},{"x":7.1954572986,"y":8.3282858873}]} strokeWidth={0.012} isFilled={false} />

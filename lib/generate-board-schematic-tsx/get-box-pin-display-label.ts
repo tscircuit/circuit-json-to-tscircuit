@@ -1,15 +1,11 @@
-import type { SchematicPort, SourcePort } from "circuit-json"
+import type { SchematicComponent, SchematicPort } from "circuit-json"
 
 export const getBoxPinDisplayLabel = ({
+  schematicComponent,
   schematicPort,
-  sourcePort,
 }: {
+  schematicComponent: SchematicComponent
   schematicPort: SchematicPort
-  sourcePort: SourcePort | null
-}): string | undefined => {
-  if (schematicPort.display_pin_label !== undefined)
-    return schematicPort.display_pin_label
-
-  const sourceName = sourcePort?.name
-  return sourceName && !/^\d+$/.test(sourceName) ? sourceName : undefined
-}
+}): string | undefined =>
+  schematicPort.display_pin_label ??
+  schematicComponent.port_labels?.[String(schematicPort.pin_number)]
