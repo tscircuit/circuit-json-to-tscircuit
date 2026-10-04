@@ -2,6 +2,7 @@ import { su } from "@tscircuit/soup-util"
 import { type AnyCircuitElement, type SchematicComponent } from "circuit-json"
 import { convertRect } from "./convert-rect"
 import { formatElement } from "./format-attributes"
+import { getBoxPinDisplayLabel } from "./get-box-pin-display-label"
 
 // Circuit JSON does not encode box body styling. These values mirror the
 // circuit-to-svg defaults so reconstructed boxes keep the compiled view.
@@ -98,7 +99,10 @@ export const convertBoxComponent = ({
         rotation = -90
         break
     }
-    const displayPinLabel = schematicPort.display_pin_label ?? sourcePort?.name
+    const displayPinLabel = getBoxPinDisplayLabel({
+      schematicPort,
+      sourcePort,
+    })
     if (displayPinLabel)
       primitives.push(
         formatElement("schematictext", {
