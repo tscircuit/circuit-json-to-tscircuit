@@ -28,8 +28,10 @@ export const generateSchematicPrimitiveTsx = ({
   const schematicTables = su(circuitJson).schematic_table.list()
   const schematicTableCells = su(circuitJson).schematic_table_cell.list()
   const elementStrings: string[] = []
+  const emittedSourcePortIds = new Set<string>()
 
   for (const schematicPort of includePorts ? schematicPorts : []) {
+    if (emittedSourcePortIds.has(schematicPort.source_port_id)) continue
     const sourcePort = sourcePorts.find(
       (candidateSourcePort) =>
         candidateSourcePort.source_port_id === schematicPort.source_port_id,
@@ -40,6 +42,7 @@ export const generateSchematicPrimitiveTsx = ({
       (pinNumber !== undefined ? `pin${pinNumber}` : undefined)
 
     if (!portName) continue
+    emittedSourcePortIds.add(schematicPort.source_port_id)
 
     const aliases = [
       ...(sourcePort?.port_hints ?? []),
