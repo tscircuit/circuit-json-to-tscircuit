@@ -2627,6 +2627,7 @@ HVP049A1" />
 <schematictext text={"RON"} schX={-4.7402037980546545} schY={-3.821213524779991} anchor={"center_left"} fontSize={0.15} color={"#a90000"} />
 <schematictext text={"2"} schX={-4.967577582213988} schY={-3.801213524779991} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
 <schematicline x1={-3.5664659564613235} y1={-3.0569708198239933} x2={-3.3117183881426584} y2={-3.0569708198239933} strokeWidth={0.02} color={"#840000"} />
+<schematicpath points={[{"x":-3.4664659564613234,"y":-3.0569708198239933},{"x":-3.553068496839767,"y":-3.0069708198239935},{"x":-3.553068496839767,"y":-3.106970819823993},{"x":-3.4664659564613234,"y":-3.0569708198239933}]} strokeWidth={0.006666666666666667} strokeColor={"#840000"} fillColor={"#ffffff"} isFilled={true} />
 <schematictext text={"VOUT"} schX={-3.6664659564613236} schY={-3.0569708198239933} anchor={"center_right"} fontSize={0.15} color={"#a90000"} />
 <schematictext text={"7"} schX={-3.439092172301991} schY={-3.0369708198239933} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
 <schematicline x1={-3.5664659564613235} y1={-3.821213524779991} x2={-3.3117183881426584} y2={-3.821213524779991} strokeWidth={0.02} color={"#840000"} />

@@ -2442,12 +2442,14 @@ exports[`TI DRV8307EVM Circuit JSON to tscircuit round trip 1`] = `
 <schematictext text={"1.5SMC33"} schX={8.461720169600001} schY={8.6279224712} anchor={"center_left"} fontSize={0.18} />
 <schematicpath points={[{"x":9.244397334948516,"y":6.246214415505755},{"x":10.243791641429436,"y":6.246214415505755},{"x":10.243791641429436,"y":7.079043004239856},{"x":9.244397334948516,"y":7.079043004239856},{"x":9.244397334948516,"y":6.246214415505755}]} strokeWidth={0.02} strokeColor={"#840000"} fillColor={"#ffffc2"} isFilled={true} />
 <schematicline x1={9.244397334948516} y1={6.912477286493036} x2={8.744700181708057} y2={6.912477286493036} strokeWidth={0.02} color={"#840000"} />
+<schematicpath points={[{"x":9.144397334948517,"y":6.912477286493036},{"x":9.23099987532696,"y":6.862477286493037},{"x":9.23099987532696,"y":6.962477286493036},{"x":9.144397334948517,"y":6.912477286493036}]} strokeWidth={0.006666666666666667} strokeColor={"#840000"} fillColor={"#ffffff"} isFilled={true} />
 <schematictext text={"S1"} schX={9.344397334948516} schY={6.912477286493036} anchor={"center_left"} fontSize={0.15} color={"#a90000"} />
 <schematictext text={"1"} schX={8.994548758328285} schY={6.932477286493036} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
 <schematicline x1={9.244397334948516} y1={6.745911568746216} x2={8.744700181708057} y2={6.745911568746216} strokeWidth={0.02} color={"#840000"} />
 <schematictext text={"G1"} schX={9.344397334948516} schY={6.745911568746216} anchor={"center_left"} fontSize={0.15} color={"#a90000"} />
 <schematictext text={"2"} schX={8.994548758328285} schY={6.7659115687462155} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
 <schematicline x1={9.244397334948516} y1={6.579345850999395} x2={8.744700181708057} y2={6.579345850999395} strokeWidth={0.02} color={"#840000"} />
+<schematicpath points={[{"x":9.144397334948517,"y":6.579345850999395},{"x":9.23099987532696,"y":6.529345850999396},{"x":9.23099987532696,"y":6.629345850999395},{"x":9.144397334948517,"y":6.579345850999395}]} strokeWidth={0.006666666666666667} strokeColor={"#840000"} fillColor={"#ffffff"} isFilled={true} />
 <schematictext text={"S2"} schX={9.344397334948516} schY={6.579345850999395} anchor={"center_left"} fontSize={0.15} color={"#a90000"} />
 <schematictext text={"3"} schX={8.994548758328285} schY={6.599345850999395} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
 <schematicline x1={9.244397334948516} y1={6.412780133252575} x2={8.744700181708057} y2={6.412780133252575} strokeWidth={0.02} color={"#840000"} />
@@ -2467,12 +2469,14 @@ exports[`TI DRV8307EVM Circuit JSON to tscircuit round trip 1`] = `
 <schematictext text={"8"} schX={10.493640218049666} schY={6.932477286493036} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
 <schematicpath points={[{"x":9.244397334948516,"y":4.330708661417323},{"x":10.243791641429436,"y":4.330708661417323},{"x":10.243791641429436,"y":5.163537250151424},{"x":9.244397334948516,"y":5.163537250151424},{"x":9.244397334948516,"y":4.330708661417323}]} strokeWidth={0.02} strokeColor={"#840000"} fillColor={"#ffffc2"} isFilled={true} />
 <schematicline x1={9.244397334948516} y1={4.996971532404604} x2={8.744700181708057} y2={4.996971532404604} strokeWidth={0.02} color={"#840000"} />
+<schematicpath points={[{"x":9.144397334948517,"y":4.996971532404604},{"x":9.23099987532696,"y":4.946971532404604},{"x":9.23099987532696,"y":5.046971532404604},{"x":9.144397334948517,"y":4.996971532404604}]} strokeWidth={0.006666666666666667} strokeColor={"#840000"} fillColor={"#ffffff"} isFilled={true} />
 <schematictext text={"S1"} schX={9.344397334948516} schY={4.996971532404604} anchor={"center_left"} fontSize={0.15} color={"#a90000"} />
 <schematictext text={"1"} schX={8.994548758328285} schY={5.016971532404604} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
 <schematicline x1={9.244397334948516} y1={4.830405814657784} x2={8.744700181708057} y2={4.830405814657784} strokeWidth={0.02} color={"#840000"} />
 <schematictext text={"G1"} schX={9.344397334948516} schY={4.830405814657784} anchor={"center_left"} fontSize={0.15} color={"#a90000"} />
 <schematictext text={"2"} schX={8.994548758328285} schY={4.850405814657783} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
 <schematicline x1={9.244397334948516} y1={4.663840096910963} x2={8.744700181708057} y2={4.663840096910963} strokeWidth={0.02} color={"#840000"} />
+<schematicpath points={[{"x":9.144397334948517,"y":4.663840096910963},{"x":9.23099987532696,"y":4.613840096910963},{"x":9.23099987532696,"y":4.713840096910963},{"x":9.144397334948517,"y":4.663840096910963}]} strokeWidth={0.006666666666666667} strokeColor={"#840000"} fillColor={"#ffffff"} isFilled={true} />
 <schematictext text={"S2"} schX={9.344397334948516} schY={4.663840096910963} anchor={"center_left"} fontSize={0.15} color={"#a90000"} />
 <schematictext text={"3"} schX={8.994548758328285} schY={4.683840096910963} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
 <schematicline x1={9.244397334948516} y1={4.497274379164143} x2={8.744700181708057} y2={4.497274379164143} strokeWidth={0.02} color={"#840000"} />
@@ -2492,12 +2496,14 @@ exports[`TI DRV8307EVM Circuit JSON to tscircuit round trip 1`] = `
 <schematictext text={"8"} schX={10.493640218049666} schY={5.016971532404604} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
 <schematicpath points={[{"x":9.244397334948516,"y":2.415202907328891},{"x":10.243791641429436,"y":2.415202907328891},{"x":10.243791641429436,"y":3.2480314960629917},{"x":9.244397334948516,"y":3.2480314960629917},{"x":9.244397334948516,"y":2.415202907328891}]} strokeWidth={0.02} strokeColor={"#840000"} fillColor={"#ffffc2"} isFilled={true} />
 <schematicline x1={9.244397334948516} y1={3.081465778316172} x2={8.744700181708057} y2={3.081465778316172} strokeWidth={0.02} color={"#840000"} />
+<schematicpath points={[{"x":9.144397334948517,"y":3.081465778316172},{"x":9.23099987532696,"y":3.0314657783161723},{"x":9.23099987532696,"y":3.131465778316172},{"x":9.144397334948517,"y":3.081465778316172}]} strokeWidth={0.006666666666666667} strokeColor={"#840000"} fillColor={"#ffffff"} isFilled={true} />
 <schematictext text={"S1"} schX={9.344397334948516} schY={3.081465778316172} anchor={"center_left"} fontSize={0.15} color={"#a90000"} />
 <schematictext text={"1"} schX={8.994548758328285} schY={3.101465778316172} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
 <schematicline x1={9.244397334948516} y1={2.9149000605693516} x2={8.744700181708057} y2={2.9149000605693516} strokeWidth={0.02} color={"#840000"} />
 <schematictext text={"G1"} schX={9.344397334948516} schY={2.9149000605693516} anchor={"center_left"} fontSize={0.15} color={"#a90000"} />
 <schematictext text={"2"} schX={8.994548758328285} schY={2.9349000605693516} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
 <schematicline x1={9.244397334948516} y1={2.748334342822531} x2={8.744700181708057} y2={2.748334342822531} strokeWidth={0.02} color={"#840000"} />
+<schematicpath points={[{"x":9.144397334948517,"y":2.748334342822531},{"x":9.23099987532696,"y":2.6983343428225313},{"x":9.23099987532696,"y":2.798334342822531},{"x":9.144397334948517,"y":2.748334342822531}]} strokeWidth={0.006666666666666667} strokeColor={"#840000"} fillColor={"#ffffff"} isFilled={true} />
 <schematictext text={"S2"} schX={9.344397334948516} schY={2.748334342822531} anchor={"center_left"} fontSize={0.15} color={"#a90000"} />
 <schematictext text={"3"} schX={8.994548758328285} schY={2.768334342822531} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
 <schematicline x1={9.244397334948516} y1={2.5817686250757124} x2={8.744700181708057} y2={2.5817686250757124} strokeWidth={0.02} color={"#840000"} />
