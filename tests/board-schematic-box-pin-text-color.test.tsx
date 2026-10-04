@@ -38,6 +38,7 @@ test("uses the compiled schematic color for box pin text", async () => {
       side_of_component: "left",
       facing_direction: "left",
       pin_number: 1,
+      display_pin_label: "FB",
     },
   ]
   const renderedCircuitJson = await runTscircuitCode(
