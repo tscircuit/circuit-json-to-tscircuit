@@ -103,6 +103,7 @@ export const convertBoxComponent = ({
         break
     }
     const displayPinLabel = getBoxPinDisplayLabel({
+      schematicComponent,
       schematicPort,
     })
     if (displayPinLabel)
