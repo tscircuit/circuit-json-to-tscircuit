@@ -3,6 +3,10 @@ import type { SchSymbol } from "schematic-symbols"
 import { applyToPoint, type Matrix } from "transformation-matrix"
 import { formatElement } from "./format-attributes"
 
+// Circuit JSON symbol primitives do not encode a stroke width. This matches
+// the component outline width used by circuit-to-svg.
+const DEFAULT_SYMBOL_CIRCLE_STROKE_WIDTH = 0.02
+
 const anchors = {
   middle_top: "top_center",
   middle_bottom: "bottom_center",
@@ -68,6 +72,7 @@ export const convertSymbolPrimitives = ({
       return formatElement("schematiccircle", {
         center,
         radius: Math.hypot(radiusVector.x, radiusVector.y),
+        strokeWidth: DEFAULT_SYMBOL_CIRCLE_STROKE_WIDTH,
         isFilled: primitive.fill,
       })
     }
