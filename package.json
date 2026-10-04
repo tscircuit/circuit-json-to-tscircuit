@@ -16,6 +16,7 @@
     "build:site": "bun build ./site/index.html --outdir site-build",
     "dev:site": "bun --hot ./site/index.html",
     "test": "bun test",
+    "prepare": "bun run scripts/prepare-git-dependency.ts",
     "format": "biome format --write .",
     "format:check": "biome format ."
   },
