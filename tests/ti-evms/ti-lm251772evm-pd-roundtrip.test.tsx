@@ -55,6 +55,19 @@ test(
       import.meta.path,
       "schematic-comparison",
     )
+
+    // These 4 keepouts are circular mounting-screw keepouts expressed as
+    // shape:"outline"; they must survive the round trip as shape:"circle".
+    const keepouts = result.renderedCircuitJson.filter(
+      (element) => element.type === "pcb_keepout",
+    )
+    expect(keepouts).toHaveLength(4)
+    expect(keepouts.every((keepout) => keepout.shape === "circle")).toBe(true)
   },
-  { timeout: 120_000 },
+  // Raised from 120s: this board's conversion and render time grew to ~160s
+  // after upstream began preserving board schematics with native primitives
+  // (starting in #131). Confirmed on a pristine e25350f checkout with no
+  // keepout changes: 162s against this test's existing 120s budget. Unrelated
+  // to the pcb_keepout work in this branch.
+  { timeout: 240_000 },
 )
