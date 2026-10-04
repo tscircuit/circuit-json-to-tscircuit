@@ -1,12 +1,18 @@
 import { su } from "@tscircuit/soup-util"
 import type { FootprintElementConverter } from "./converter-types"
 import { formatPcbRotationAttr } from "./footprint-tsx-attribute-formatters/format-pcb-rotation-attr"
+import { getSilkscreenOvalRoute } from "./get-silkscreen-oval-route"
+import { getSilkscreenPillRoute } from "./get-silkscreen-pill-route"
+
+const DEFAULT_SHAPE_STROKE_WIDTH = 0.1
 
 export const convertSilkscreen: FootprintElementConverter = (circuitJson) => {
   const silkscreenLines = su(circuitJson).pcb_silkscreen_line.list()
   const silkscreenPaths = su(circuitJson).pcb_silkscreen_path.list()
   const silkscreenRects = su(circuitJson).pcb_silkscreen_rect.list()
   const silkscreenCircles = su(circuitJson).pcb_silkscreen_circle.list()
+  const silkscreenOvals = su(circuitJson).pcb_silkscreen_oval.list()
+  const silkscreenPills = su(circuitJson).pcb_silkscreen_pill.list()
   const elementStrings: string[] = []
 
   for (const silkscreenPath of silkscreenPaths) {
@@ -66,6 +72,36 @@ export const convertSilkscreen: FootprintElementConverter = (circuitJson) => {
     }
 
     elementStrings.push(`<silkscreencircle ${attrs.join(" ")} />`)
+  }
+
+  for (const silkscreenOval of silkscreenOvals) {
+    const route = getSilkscreenOvalRoute({
+      center: silkscreenOval.center,
+      radiusX: silkscreenOval.radius_x,
+      radiusY: silkscreenOval.radius_y,
+      ccwRotationDegrees: silkscreenOval.ccw_rotation ?? 0,
+    })
+    const attrs = [
+      `route={${JSON.stringify(route)}}`,
+      `strokeWidth={${DEFAULT_SHAPE_STROKE_WIDTH}}`,
+    ]
+    if (silkscreenOval.layer === "bottom") attrs.push('layer="bottom"')
+    elementStrings.push(`<silkscreenpath ${attrs.join(" ")} />`)
+  }
+
+  for (const silkscreenPill of silkscreenPills) {
+    const route = getSilkscreenPillRoute({
+      center: silkscreenPill.center,
+      width: silkscreenPill.width,
+      height: silkscreenPill.height,
+      ccwRotationDegrees: silkscreenPill.ccw_rotation ?? 0,
+    })
+    const attrs = [
+      `route={${JSON.stringify(route)}}`,
+      `strokeWidth={${DEFAULT_SHAPE_STROKE_WIDTH}}`,
+    ]
+    if (silkscreenPill.layer === "bottom") attrs.push('layer="bottom"')
+    elementStrings.push(`<silkscreenpath ${attrs.join(" ")} />`)
   }
 
   for (const silkscreenLine of silkscreenLines) {
