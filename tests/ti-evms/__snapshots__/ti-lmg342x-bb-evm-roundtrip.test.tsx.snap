@@ -2397,8 +2397,8 @@ HVP049A1" />
 <schematicpath points={[{"x":3.9110510931,"y":-6.5216068439},{"x":3.8408710931,"y":-6.5216068439}]} strokeWidth={0.012} isFilled={false} />
 <schematictext text={"C25"} schX={4.3559610931} schY={-6.3425428439000004} anchor={"center_left"} fontSize={0.18} />
 <schematictext text={"150uF"} schX={4.3759610931} schY={-6.9425428439} anchor={"center_left"} fontSize={0.18} />
-<schematiccircle center={{"x":4.6259610931,"y":-6.9425428439}} radius={0} isFilled={false} />
-<schematiccircle center={{"x":3.5259610931000003,"y":-6.3425428439000004}} radius={0} isFilled={false} />
+<schematiccircle center={{"x":4.6259610931,"y":-6.9425428439}} radius={0} strokeWidth={0.02} isFilled={false} />
+<schematiccircle center={{"x":3.5259610931000003,"y":-6.3425428439000004}} radius={0} strokeWidth={0.02} isFilled={false} />
 <schematicpath points={[{"x":9.6804075961,"y":2.3748494673000002},{"x":9.6804075961,"y":2.4748694673}]} strokeWidth={0.012} isFilled={false} />
 <schematicpath points={[{"x":9.6804075961,"y":2.8748294673},{"x":9.6804075961,"y":2.9748494673}]} strokeWidth={0.012} isFilled={false} />
 <schematicpath points={[{"x":9.6004275961,"y":2.4748694673},{"x":9.6004275961,"y":2.8748294673},{"x":9.760387596100001,"y":2.8748294673},{"x":9.760387596100001,"y":2.4748694673},{"x":9.6004275961,"y":2.4748694673}]} strokeWidth={0.012} isFilled={false} />

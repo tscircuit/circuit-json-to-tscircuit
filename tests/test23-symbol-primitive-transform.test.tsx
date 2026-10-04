@@ -3,7 +3,7 @@ import { convertSymbolPrimitives } from "../lib/generate-board-schematic-tsx/con
 import { compose, rotateDEG, scale, translate } from "transformation-matrix"
 import { runTscircuitCode } from "tscircuit"
 
-test("transforms symbol circle and box dimensions through a rotated matrix", async () => {
+test("transforms symbol primitives with compiled circle styling", async () => {
   const elementStrings = convertSymbolPrimitives({
     symbol: {
       center: { x: 0, y: 0 },
@@ -41,6 +41,7 @@ test("transforms symbol circle and box dimensions through a rotated matrix", asy
   expect(circle.center.x).toBeCloseTo(6)
   expect(circle.center.y).toBeCloseTo(22)
   expect(circle.radius).toBeCloseTo(4)
+  expect(circle.stroke_width).toBe(0.02)
   expect(rect.center.x).toBeCloseTo(6)
   expect(rect.center.y).toBeCloseTo(22)
   expect(rect.width).toBeCloseTo(6)
