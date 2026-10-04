@@ -1,5 +1,6 @@
 import type { AnyCircuitElement } from "circuit-json"
 import { su } from "@tscircuit/soup-util"
+import { formatElement } from "./generate-board-schematic-tsx/format-attributes"
 
 const escapeJsxText = (text: string) =>
   text.replace(/\\/g, "\\\\").replace(/"/g, '\\"')
@@ -14,6 +15,7 @@ export const generateSymbolElements = (
   const schematicCircles = su(circuitJson).schematic_circle.list()
   const schematicBoxes = su(circuitJson).schematic_box.list()
   const schematicRects = su(circuitJson).schematic_rect.list()
+  const schematicGraphics = su(circuitJson).schematic_graphic.list()
   const schematicTables = su(circuitJson).schematic_table.list()
   const schematicTableCells = su(circuitJson).schematic_table_cell.list()
   const elementStrings: string[] = []
@@ -153,6 +155,17 @@ export const generateSymbolElements = (
 
     elementStrings.push(
       `<schematiccircle center={{ x: ${x}, y: ${y} }} radius={${radius}} strokeWidth={${strokeWidth}} color="${color}" isFilled={${isFilled}} isDashed={${isDashed}} />`,
+    )
+  }
+
+  for (const graphic of schematicGraphics) {
+    elementStrings.push(
+      formatElement("schematicgraphic", {
+        svgContent: graphic.svg_content,
+        imageUrl: graphic.asset?.url,
+        width: graphic.width,
+        height: graphic.height,
+      }),
     )
   }
 
