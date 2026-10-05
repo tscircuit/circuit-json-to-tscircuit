@@ -7,13 +7,19 @@ import { convertTraces } from "./generate-board-schematic-tsx/convert-traces"
 export const generateBoardSchematicTsx = (
   circuitJson: AnyCircuitElement[],
 ): string | null => {
-  const elementStrings = [
+  const elementStrings = generateBoardSchematicElements(circuitJson)
+  return elementStrings.length
+    ? `<symbol>\n${elementStrings.join("\n")}\n</symbol>`
+    : null
+}
+
+export const generateBoardSchematicElements = (
+  circuitJson: AnyCircuitElement[],
+): string[] => {
+  return [
     ...convertComponents(circuitJson),
     ...convertNetLabels(circuitJson),
     ...convertPrimitives(circuitJson),
     ...convertTraces(circuitJson),
   ]
-  return elementStrings.length
-    ? `<symbol>\n${elementStrings.join("\n")}\n</symbol>`
-    : null
 }

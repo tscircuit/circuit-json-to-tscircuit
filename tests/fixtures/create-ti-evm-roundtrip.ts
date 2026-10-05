@@ -57,6 +57,22 @@ export async function createTiEvmRoundtrip({
   ).toHaveLength(
     sourceCircuitJson.filter((element) => element.type === "pcb_via").length,
   )
+  expect(
+    renderedCircuitJson.filter(
+      (element) => element.type === "pcb_via" && element.source_net_id,
+    ),
+  ).toHaveLength(
+    sourceCircuitJson.filter(
+      (element) => element.type === "pcb_via" && element.source_net_id,
+    ).length,
+  )
+
+  const isPortedPad = (element: CircuitJson[number]) =>
+    (element.type === "pcb_smtpad" || element.type === "pcb_plated_hole") &&
+    Boolean(element.pcb_port_id)
+  expect(renderedCircuitJson.filter(isPortedPad)).toHaveLength(
+    sourceCircuitJson.filter(isPortedPad).length,
+  )
 
   for (const circuitJson of [sourceCircuitJson, renderedCircuitJson]) {
     const unresolvedProjectStrings = circuitJson.filter(
@@ -76,6 +92,9 @@ export async function createTiEvmRoundtrip({
   const sourceSchematicSvg = convertCircuitJsonToSchematicSvg(sourceCircuitJson)
   const renderedSchematicSvg =
     convertCircuitJsonToSchematicSvg(renderedCircuitJson)
+  expect(getSchematicViewportTransform(renderedSchematicSvg)).toBe(
+    getSchematicViewportTransform(sourceSchematicSvg),
+  )
 
   return {
     generatedTscircuit,
@@ -94,6 +113,12 @@ export async function createTiEvmRoundtrip({
       sourceSvg: sourceSchematicSvg,
     }),
   }
+}
+
+const getSchematicViewportTransform = (svg: string): string => {
+  const transform = svg.match(/data-real-to-screen-transform="([^"]+)"/u)?.[1]
+  if (!transform) throw new Error("Schematic SVG is missing its viewport")
+  return transform
 }
 
 export function createComparisonSvg({

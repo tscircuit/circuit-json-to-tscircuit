@@ -2,7 +2,10 @@ import { mmStr } from "@tscircuit/mm"
 import { su } from "@tscircuit/soup-util"
 import type { FootprintElementConverter } from "./converter-types"
 
-export const convertVias: FootprintElementConverter = (circuitJson) => {
+export const convertVias: FootprintElementConverter = (
+  circuitJson,
+  context,
+) => {
   return su(circuitJson)
     .pcb_via.list()
     .map((via) => {
@@ -29,6 +32,12 @@ export const convertVias: FootprintElementConverter = (circuitJson) => {
         tentedOnTop !== undefined || tentedOnBottom !== undefined
           ? ` tented="${tented}"`
           : ""
-      return `<via pcbX="${mmStr(via.x)}" pcbY="${mmStr(via.y)}" holeDiameter="${mmStr(via.hole_diameter)}" outerDiameter="${mmStr(via.outer_diameter)}" fromLayer="${fromLayer}" toLayer="${toLayer}"${tentedAttr} />`
+      const runtimeNetName = via.source_net_id
+        ? context?.runtimeNetNameBySourceNetId.get(via.source_net_id)
+        : undefined
+      const connectsToAttr = runtimeNetName
+        ? ` connectsTo={${JSON.stringify(`net.${runtimeNetName}`)}}`
+        : ""
+      return `<via pcbX="${mmStr(via.x)}" pcbY="${mmStr(via.y)}" holeDiameter="${mmStr(via.hole_diameter)}" outerDiameter="${mmStr(via.outer_diameter)}" fromLayer="${fromLayer}" toLayer="${toLayer}"${tentedAttr}${connectsToAttr} />`
     })
 }

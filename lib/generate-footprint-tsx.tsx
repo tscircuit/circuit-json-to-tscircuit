@@ -1,4 +1,5 @@
 import type { AnyCircuitElement } from "circuit-json"
+import type { BoardConversionContext } from "./board-conversion-context"
 import { convertCopperText } from "./generate-footprint-tsx/convert-copper-text"
 import { convertCourtyard } from "./generate-footprint-tsx/convert-courtyard"
 import { convertCutouts } from "./generate-footprint-tsx/convert-cutouts"
@@ -17,6 +18,7 @@ import type { FootprintElementConverter } from "./generate-footprint-tsx/convert
 
 export const generateFootprintTsx = (
   circuitJson: AnyCircuitElement[],
+  context?: BoardConversionContext,
 ): string | null => {
   const converters: FootprintElementConverter[] = [
     convertHoles,
@@ -34,7 +36,9 @@ export const generateFootprintTsx = (
     convertNotes,
     convertCourtyard,
   ]
-  const elementStrings = converters.flatMap((convert) => convert(circuitJson))
+  const elementStrings = converters.flatMap((convert) =>
+    convert(circuitJson, context),
+  )
 
   if (elementStrings.length === 0) {
     return null

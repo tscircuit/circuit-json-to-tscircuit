@@ -4,8 +4,12 @@ import type { FootprintElementConverter } from "./converter-types"
 import { formatOptionalMmAttr } from "./footprint-tsx-attribute-formatters/format-optional-mm-attr"
 import { formatPcbRotationAttr } from "./footprint-tsx-attribute-formatters/format-pcb-rotation-attr"
 import { formatSolderMaskAttrs } from "./footprint-tsx-attribute-formatters/format-solder-mask-attrs"
+import { getImportedPortHints } from "./get-imported-port-hints"
 
-export const convertSmtPads: FootprintElementConverter = (circuitJson) => {
+export const convertSmtPads: FootprintElementConverter = (
+  circuitJson,
+  context,
+) => {
   const smtPads = su(circuitJson).pcb_smtpad.list()
   const elementStrings: string[] = []
 
@@ -13,8 +17,9 @@ export const convertSmtPads: FootprintElementConverter = (circuitJson) => {
     const commonAttrs: string[] = []
     const solderMaskAttrs = formatSolderMaskAttrs(smtPad)
 
-    if (smtPad.port_hints !== undefined) {
-      commonAttrs.push(`portHints={${JSON.stringify(smtPad.port_hints)}}`)
+    const portHints = getImportedPortHints(smtPad, context)
+    if (portHints !== undefined) {
+      commonAttrs.push(`portHints={${JSON.stringify(portHints)}}`)
     }
     if ("x" in smtPad && smtPad.x !== undefined) {
       commonAttrs.push(`pcbX="${mmStr(smtPad.x)}"`)

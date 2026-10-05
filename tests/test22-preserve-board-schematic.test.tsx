@@ -56,7 +56,8 @@ test("test22 preserves board schematic drawing without a PCB footprint", async (
   const generatedTscircuit = convertCircuitJsonToTscircuit(circuitJson, {
     componentName: "ImportedBoard",
   })
-  expect(generatedTscircuit).toContain("<symbol>")
+  expect(generatedTscircuit).toContain("<schematicpath")
+  expect(generatedTscircuit).not.toContain("<symbol>")
   expect(generatedTscircuit).not.toContain("footprint=")
   expect(generatedTscircuit).not.toContain("svgPath=")
   const renderedCircuitJson = await runTscircuitCode(generatedTscircuit)
