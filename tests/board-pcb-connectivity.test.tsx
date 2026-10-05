@@ -1,5 +1,11 @@
 import { expect, test } from "bun:test"
-import type { CircuitJson } from "circuit-json"
+import type {
+  CircuitJson,
+  PcbPort,
+  PcbVia,
+  SourceNet,
+  SourceTrace,
+} from "circuit-json"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
 
@@ -83,6 +89,7 @@ test("preserves imported pad and via net connectivity", async () => {
       center: { x: 0, y: 0 },
       width: 8,
       height: 4,
+      covered_with_solder_mask: true,
     },
   ]
 
@@ -91,20 +98,23 @@ test("preserves imported pad and via net connectivity", async () => {
   })
   const rendered = (await runTscircuitCode(generated)) as CircuitJson
   const net = rendered.find(
-    (element) => element.type === "source_net" && element.name === "NET_12V_",
+    (element): element is SourceNet =>
+      element.type === "source_net" && element.name === "NET_12V_",
   )
   const pad = rendered.find((element) => element.type === "pcb_smtpad")
-  const via = rendered.find((element) => element.type === "pcb_via")
+  const via = rendered.find(
+    (element): element is PcbVia => element.type === "pcb_via",
+  )
   const pour = rendered.find((element) => element.type === "pcb_copper_pour")
 
   if (!net || !pad?.pcb_port_id) throw new Error("Missing connected pad net")
   const pcbPort = rendered.find(
-    (element) =>
+    (element): element is PcbPort =>
       element.type === "pcb_port" && element.pcb_port_id === pad.pcb_port_id,
   )
   if (!pcbPort) throw new Error("Missing rendered PCB port")
   const sourceTrace = rendered.find(
-    (element) =>
+    (element): element is SourceTrace =>
       element.type === "source_trace" &&
       element.connected_source_port_ids.includes(pcbPort.source_port_id),
   )

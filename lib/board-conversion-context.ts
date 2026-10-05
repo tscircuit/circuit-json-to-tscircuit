@@ -1,11 +1,16 @@
 import type { AnyCircuitElement } from "circuit-json"
+import type {
+  BoardConversionContext,
+  ImportedPortHint,
+  PcbPortId,
+  PcbPortSelector,
+  RuntimeNetName,
+  SourceNetId,
+  SourcePortId,
+} from "./board-conversion-types"
+import { getRuntimeNetNames } from "./get-runtime-net-names"
 
-export interface BoardConversionContext {
-  pcbChipName: string
-  portHintByPcbPortId: Map<string, string>
-  runtimeNetNameBySourceNetId: Map<string, string>
-  pcbPortSelectorsByRuntimeNetName: Map<string, string[]>
-}
+export type { BoardConversionContext } from "./board-conversion-types"
 
 const PCB_CHIP_NAME = "ImportedBoard"
 
@@ -18,8 +23,8 @@ export const createBoardConversionContext = (
     circuitJson,
     sourceNetIdsRequiringSelector,
   )
-  const portHintByPcbPortId = new Map<string, string>()
-  const sourcePortIdByPcbPortId = new Map<string, string>()
+  const portHintByPcbPortId = new Map<PcbPortId, ImportedPortHint>()
+  const sourcePortIdByPcbPortId = new Map<PcbPortId, SourcePortId>()
 
   for (const element of circuitJson) {
     if (element.type !== "pcb_port") continue
@@ -32,7 +37,10 @@ export const createBoardConversionContext = (
     circuitJson,
     runtimeNetNameBySourceNetId,
   })
-  const pcbPortSelectorsByRuntimeNetName = new Map<string, string[]>()
+  const pcbPortSelectorsByRuntimeNetName = new Map<
+    RuntimeNetName,
+    PcbPortSelector[]
+  >()
   for (const [pcbPortId, sourcePortId] of sourcePortIdByPcbPortId) {
     const portHint = portHintByPcbPortId.get(pcbPortId)
     if (!portHint) continue
@@ -54,34 +62,11 @@ export const createBoardConversionContext = (
   }
 }
 
-const getRuntimeNetNames = (
-  circuitJson: AnyCircuitElement[],
-  sourceNetIdsRequiringSelector: Set<string>,
-) => {
-  const result = new Map<string, string>()
-  const runtimeNameByOriginalName = new Map<string, string>()
-  const usedNames = new Set<string>()
-
-  for (const element of circuitJson) {
-    if (element.type !== "source_net") continue
-    let runtimeName = runtimeNameByOriginalName.get(element.name)
-    if (!runtimeName) {
-      runtimeName = sourceNetIdsRequiringSelector.has(element.source_net_id)
-        ? getUniqueRuntimeNetName(element.name, usedNames)
-        : element.name
-      runtimeNameByOriginalName.set(element.name, runtimeName)
-      usedNames.add(runtimeName)
-    }
-    result.set(element.source_net_id, runtimeName)
-  }
-  return result
-}
-
 const getSourceNetIdsRequiringSelector = (
   circuitJson: AnyCircuitElement[],
-): Set<string> => {
-  const sourcePortIdsWithPcbPorts = new Set<string>()
-  const result = new Set<string>()
+): Set<SourceNetId> => {
+  const sourcePortIdsWithPcbPorts = new Set<SourcePortId>()
+  const result = new Set<SourceNetId>()
   for (const element of circuitJson) {
     if (element.type === "pcb_port") {
       sourcePortIdsWithPcbPorts.add(element.source_port_id)
@@ -104,31 +89,14 @@ const getSourceNetIdsRequiringSelector = (
   return result
 }
 
-const getUniqueRuntimeNetName = (
-  sourceName: string,
-  usedNames: Set<string>,
-): string => {
-  const normalized = sourceName.replace(/[^A-Za-z0-9_]/gu, "_")
-  const baseName = /^[A-Za-z_]/u.test(normalized)
-    ? normalized
-    : `NET_${normalized || "unnamed"}`
-  let candidate = baseName
-  let suffix = 2
-  while (usedNames.has(candidate)) {
-    candidate = `${baseName}_${suffix}`
-    suffix += 1
-  }
-  return candidate
-}
-
 const getRuntimeNetNamesBySourcePortId = ({
   circuitJson,
   runtimeNetNameBySourceNetId,
 }: {
   circuitJson: AnyCircuitElement[]
-  runtimeNetNameBySourceNetId: Map<string, string>
-}): Map<string, Set<string>> => {
-  const result = new Map<string, Set<string>>()
+  runtimeNetNameBySourceNetId: Map<SourceNetId, RuntimeNetName>
+}): Map<SourcePortId, Set<RuntimeNetName>> => {
+  const result = new Map<SourcePortId, Set<RuntimeNetName>>()
   for (const element of circuitJson) {
     if (element.type !== "source_trace") continue
     const runtimeNames = element.connected_source_net_ids.flatMap(
