@@ -3142,231 +3142,231 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":1.1463640574,"y":3.290041686},{"x":1.1463640574,"y":3.490041686}]} strokeWidth={0.02} isFilled={false} />
 <schematicpath points={[{"x":1.0463640574,"y":3.590041686},{"x":1.0468771250608104,"y":3.579924853801257},{"x":1.0484110632747505,"y":3.569911833991134},{"x":1.0509501317599952,"y":3.5601053737026644},{"x":1.054468276237977,"y":3.550606100488668},{"x":1.058929395785542,"y":3.541511489746892},{"x":1.0642877132792723,"y":3.532914864490521},{"x":1.070488245130721,"y":3.524904437727778},{"x":1.0774673654924314,"y":3.517562407277088},{"x":1.0851534591452336,"y":3.51096411230623},{"x":1.0934676563673038,"y":3.505177260250525},{"x":1.1023246422442365,"y":3.500261232042926},{"x":1.111633532115518,"y":3.496266472785292},{"x":1.121298804174128,"y":3.4932339741133798},{"x":1.1312212796495424,"y":3.491194853567189},{"x":1.1412991405161288,"y":3.490170035282895},{"x":1.1514289742838713,"y":3.490170035282895},{"x":1.1615068351504576,"y":3.491194853567189},{"x":1.171429310625872,"y":3.4932339741133798},{"x":1.181094582684482,"y":3.496266472785292},{"x":1.1904034725557635,"y":3.500261232042926},{"x":1.1992604584326962,"y":3.505177260250525},{"x":1.2075746556547662,"y":3.51096411230623},{"x":1.2152607493075687,"y":3.517562407277088},{"x":1.222239869669279,"y":3.524904437727778},{"x":1.2284404015207278,"y":3.532914864490521},{"x":1.2337987190144581,"y":3.541511489746892},{"x":1.2382598385620232,"y":3.550606100488668},{"x":1.2417779830400049,"y":3.5601053737026644},{"x":1.2443170515252495,"y":3.569911833991134},{"x":1.2458509897391896,"y":3.579924853801257},{"x":1.2463640574000001,"y":3.590041686}]} strokeWidth={0.02} isFilled={false} />
 <schematictext text={"TP5"} schX={1.1463640574} schY={3.615041686} anchor={"bottom_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-1.3911116257526623,"y":4.493334877257989},{"x":-1.4011116257526623,"y":4.163334877257989}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-1.6211116257526623,"y":4.163334877257989},{"x":-1.1811116257526624,"y":4.163334877257989}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-1.5711116257526623,"y":4.083334877257989},{"x":-1.2311116257526624,"y":4.083334877257989}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-1.4611116257526624,"y":4.013334877257988},{"x":-1.3411116257526623,"y":4.013334877257988}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-1.4211116257526624} schY={3.8933348772579888} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":9.626720704029644,"y":2.9011625752663273},{"x":9.616720704029644,"y":2.571162575266327}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":9.396720704029644,"y":2.571162575266327},{"x":9.836720704029645,"y":2.571162575266327}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":9.446720704029644,"y":2.491162575266327},{"x":9.786720704029644,"y":2.491162575266327}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":9.556720704029644,"y":2.4211625752663273},{"x":9.676720704029645,"y":2.4211625752663273}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"GND"} schX={9.596720704029645} schY={2.301162575266327} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-5.530759610930987,"y":2.8374756831866597},{"x":-5.540759610930987,"y":2.5074756831866596}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-5.760759610930987,"y":2.5074756831866596},{"x":-5.320759610930987,"y":2.5074756831866596}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-5.710759610930987,"y":2.4274756831866595},{"x":-5.370759610930987,"y":2.4274756831866595}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-5.600759610930987,"y":2.3574756831866597},{"x":-5.4807596109309875,"y":2.3574756831866597}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"GND"} schX={-5.560759610930987} schY={2.2374756831866596} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-0.2447475683186651,"y":2.6464150069476604},{"x":-0.2547475683186651,"y":2.3164150069476603}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-0.47474756831866505,"y":2.3164150069476603},{"x":-0.03474756831866507,"y":2.3164150069476603}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-0.4247475683186651,"y":2.2364150069476603},{"x":-0.08474756831866506,"y":2.2364150069476603}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-0.31474756831866507,"y":2.1664150069476604},{"x":-0.19474756831866508,"y":2.1664150069476604}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"GND"} schX={-0.27474756831866504} schY={2.0464150069476603} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":11.664701250578972,"y":3.538031496062991},{"x":11.654701250578972,"y":3.2080314960629908}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":11.434701250578971,"y":3.2080314960629908},{"x":11.874701250578973,"y":3.2080314960629908}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":11.484701250578972,"y":3.1280314960629907},{"x":11.824701250578972,"y":3.1280314960629907}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":11.594701250578971,"y":3.058031496062991},{"x":11.714701250578972,"y":3.058031496062991}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"GND"} schX={11.634701250578972} schY={2.9380314960629907} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-3.3654052802223244,"y":2.455354330708661},{"x":-3.3754052802223242,"y":2.125354330708661}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-3.5954052802223244,"y":2.125354330708661},{"x":-3.155405280222324,"y":2.125354330708661}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-3.545405280222324,"y":2.045354330708661},{"x":-3.2054052802223243,"y":2.045354330708661}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-3.4354052802223243,"y":1.9753543307086612},{"x":-3.315405280222324,"y":1.9753543307086612}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-3.3954052802223242} schY={1.855354330708661} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-6.167628531727652,"y":2.3279805465493277},{"x":-6.177628531727652,"y":1.9979805465493277}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-6.397628531727651,"y":1.9979805465493277},{"x":-5.957628531727652,"y":1.9979805465493277}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-6.3476285317276515,"y":1.9179805465493276},{"x":-6.007628531727652,"y":1.9179805465493278}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-6.237628531727651,"y":1.8479805465493278},{"x":-6.117628531727652,"y":1.8479805465493278}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"GND"} schX={-6.197628531727651} schY={1.7279805465493276} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-10.880458545622973,"y":2.2006067623899943},{"x":-10.890458545622973,"y":1.8706067623899942}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-11.110458545622974,"y":1.8706067623899942},{"x":-10.670458545622973,"y":1.8706067623899942}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-11.060458545622973,"y":1.7906067623899942},{"x":-10.720458545622973,"y":1.7906067623899944}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-10.950458545622974,"y":1.7206067623899943},{"x":-10.830458545622973,"y":1.7206067623899943}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"GND"} schX={-10.910458545622973} schY={1.6006067623899942} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":6.951871236683651,"y":2.2006067623899943},{"x":6.941871236683651,"y":1.8706067623899942}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":6.7218712366836515,"y":1.8706067623899942},{"x":7.161871236683651,"y":1.8706067623899942}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":6.771871236683651,"y":1.7906067623899942},{"x":7.111871236683651,"y":1.7906067623899944}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":6.881871236683652,"y":1.7206067623899943},{"x":7.001871236683651,"y":1.7206067623899943}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"GND"} schX={6.921871236683652} schY={1.6006067623899942} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-2.410101899027328,"y":2.455354330708661},{"x":-2.420101899027328,"y":2.125354330708661}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-2.640101899027328,"y":2.125354330708661},{"x":-2.200101899027328,"y":2.125354330708661}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-2.590101899027328,"y":2.045354330708661},{"x":-2.250101899027328,"y":2.045354330708661}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-2.480101899027328,"y":1.9753543307086612},{"x":-2.360101899027328,"y":1.9753543307086612}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-2.440101899027328} schY={1.855354330708661} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-0.8816164891153304,"y":1.245303381194998},{"x":-0.8916164891153304,"y":0.915303381194998}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-1.1116164891153304,"y":0.915303381194998},{"x":-0.6716164891153305,"y":0.915303381194998}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-1.0616164891153304,"y":0.835303381194998},{"x":-0.7216164891153304,"y":0.835303381194998}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-0.9516164891153304,"y":0.7653033811949981},{"x":-0.8316164891153304,"y":0.7653033811949981}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-0.9116164891153304} schY={0.645303381194998} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-6.040254747568318,"y":1.1179295970356646},{"x":-6.050254747568318,"y":0.7879295970356646}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-6.270254747568318,"y":0.7879295970356646},{"x":-5.830254747568318,"y":0.7879295970356646}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-6.220254747568318,"y":0.7079295970356646},{"x":-5.880254747568318,"y":0.7079295970356646}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-6.110254747568318,"y":0.6379295970356647},{"x":-5.9902547475683185,"y":0.6379295970356647}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"GND"} schX={-6.070254747568318} schY={0.5179295970356645} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":12.492630847614635,"y":1.9458591940713292},{"x":12.482630847614635,"y":1.6158591940713292}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":12.262630847614634,"y":1.6158591940713292},{"x":12.702630847614635,"y":1.6158591940713292}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":12.312630847614635,"y":1.535859194071329},{"x":12.652630847614635,"y":1.5358591940713293}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":12.422630847614634,"y":1.4658591940713293},{"x":12.542630847614635,"y":1.4658591940713293}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"GND"} schX={12.462630847614635} schY={1.3458591940713291} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-11.13520611394164,"y":0.4173737841593334},{"x":-11.14520611394164,"y":0.08737378415933342}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-11.36520611394164,"y":0.08737378415933342},{"x":-10.92520611394164,"y":0.08737378415933345}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-11.31520611394164,"y":0.007373784159333416},{"x":-10.97520611394164,"y":0.0073737841593334436}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-11.20520611394164,"y":-0.06262621584066658},{"x":-11.08520611394164,"y":-0.06262621584066658}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-11.16520611394164} schY={-0.18262621584066657} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-9.479346919870311,"y":-0.0921213524780003},{"x":-9.48934691987031,"y":-0.42212135247800026}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-9.709346919870312,"y":-0.4221213524780003},{"x":-9.26934691987031,"y":-0.42212135247800026}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-9.65934691987031,"y":-0.5021213524780003},{"x":-9.319346919870311,"y":-0.5021213524780003}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-9.549346919870311,"y":-0.5721213524780002},{"x":-9.42934691987031,"y":-0.5721213524780002}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-9.50934691987031} schY={-0.6921213524780003} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-11.13520611394164,"y":-0.7926771653543314},{"x":-11.14520611394164,"y":-1.1226771653543315}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-11.36520611394164,"y":-1.1226771653543315},{"x":-10.92520611394164,"y":-1.1226771653543315}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-11.31520611394164,"y":-1.2026771653543316},{"x":-10.97520611394164,"y":-1.2026771653543313}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-11.20520611394164,"y":-1.2726771653543314},{"x":-11.08520611394164,"y":-1.2726771653543314}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-11.16520611394164} schY={-1.3926771653543315} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":1.0289902732746639,"y":-2.575910143584993},{"x":1.0189902732746638,"y":-2.905910143584993}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":0.7989902732746639,"y":-2.905910143584993},{"x":1.2389902732746638,"y":-2.905910143584993}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":0.8489902732746638,"y":-2.9859101435849933},{"x":1.1889902732746638,"y":-2.9859101435849933}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":0.9589902732746639,"y":-3.055910143584993},{"x":1.078990273274664,"y":-3.055910143584993}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"GND"} schX={0.9989902732746638} schY={-3.1759101435849932} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-11.13520611394164,"y":-2.066415006947662},{"x":-11.14520611394164,"y":-2.396415006947662}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-11.36520611394164,"y":-2.396415006947662},{"x":-10.92520611394164,"y":-2.396415006947662}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-11.31520611394164,"y":-2.4764150069476623},{"x":-10.97520611394164,"y":-2.4764150069476623}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-11.20520611394164,"y":-2.546415006947662},{"x":-11.08520611394164,"y":-2.546415006947662}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-11.16520611394164} schY={-2.666415006947662} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-1.5184854099119958,"y":-3.6585873089393237},{"x":-1.5284854099119958,"y":-3.988587308939324}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-1.7484854099119957,"y":-3.988587308939324},{"x":-1.3084854099119958,"y":-3.988587308939324}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-1.6984854099119957,"y":-4.068587308939324},{"x":-1.3584854099119958,"y":-4.068587308939324}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-1.5884854099119958,"y":-4.138587308939324},{"x":-1.4684854099119957,"y":-4.138587308939324}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"GND"} schX={-1.5484854099119958} schY={-4.258587308939323} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-1.0089902732746638,"y":-3.6585873089393237},{"x":-1.0189902732746638,"y":-3.988587308939324}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-1.2389902732746638,"y":-3.988587308939324},{"x":-0.7989902732746639,"y":-3.988587308939324}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-1.1889902732746638,"y":-4.068587308939324},{"x":-0.8489902732746638,"y":-4.068587308939324}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-1.078990273274664,"y":-4.138587308939324},{"x":-0.9589902732746638,"y":-4.138587308939324}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-1.0389902732746639} schY={-4.258587308939323} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-4.830203798054654,"y":-3.6585873089393237},{"x":-4.840203798054654,"y":-3.988587308939324}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-5.060203798054654,"y":-3.988587308939324},{"x":-4.620203798054654,"y":-3.988587308939324}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-5.010203798054654,"y":-4.068587308939324},{"x":-4.670203798054654,"y":-4.068587308939324}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-4.900203798054654,"y":-4.138587308939324},{"x":-4.780203798054655,"y":-4.138587308939324}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-4.860203798054654} schY={-4.258587308939323} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":3.6401528485409926,"y":-3.9133348772579906},{"x":3.630152848540993,"y":-4.243334877257991}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":3.4101528485409927,"y":-4.243334877257991},{"x":3.850152848540993,"y":-4.243334877257991}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":3.460152848540993,"y":-4.323334877257991},{"x":3.800152848540993,"y":-4.323334877257991}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":3.570152848540993,"y":-4.393334877257991},{"x":3.690152848540993,"y":-4.393334877257991}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"GND"} schX={3.610152848540993} schY={-4.51333487725799} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-2.6011625752663274,"y":-4.359143121815656},{"x":-2.6111625752663272,"y":-4.689143121815656}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-2.8311625752663274,"y":-4.689143121815656},{"x":-2.391162575266327,"y":-4.689143121815656}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-2.781162575266327,"y":-4.769143121815656},{"x":-2.4411625752663273,"y":-4.769143121815656}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-2.6711625752663273,"y":-4.839143121815656},{"x":-2.551162575266327,"y":-4.839143121815656}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-2.6311625752663272} schY={-4.959143121815655} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-2.983283927744326,"y":-4.359143121815656},{"x":-2.9932839277443257,"y":-4.689143121815656}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-3.213283927744326,"y":-4.689143121815656},{"x":-2.7732839277443255,"y":-4.689143121815656}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-3.1632839277443257,"y":-4.769143121815656},{"x":-2.823283927744326,"y":-4.769143121815656}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-3.0532839277443258,"y":-4.839143121815656},{"x":-2.9332839277443257,"y":-4.839143121815656}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-3.0132839277443257} schY={-4.959143121815655} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-10.94414543770264,"y":-4.295456229735989},{"x":-10.954145437702639,"y":-4.625456229735989}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-11.17414543770264,"y":-4.625456229735989},{"x":-10.734145437702638,"y":-4.625456229735989}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-11.124145437702639,"y":-4.705456229735989},{"x":-10.78414543770264,"y":-4.705456229735989}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-11.01414543770264,"y":-4.7754562297359895},{"x":-10.894145437702639,"y":-4.7754562297359895}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-10.974145437702639} schY={-4.895456229735989} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-3.693839740620657,"y":-6.2139606492203185},{"x":-3.813839740620657,"y":-6.305002315886985}]} strokeWidth={0.02} isFilled={false} />
-<schematicpath points={[{"x":-3.693839740620657,"y":-6.2139606492203185},{"x":-3.573839740620657,"y":-6.305002315886985}]} strokeWidth={0.02} isFilled={false} />
-<schematicpath points={[{"x":-3.693839740620657,"y":-6.2139606492203185},{"x":-3.693839740620657,"y":-6.4152106492203185}]} strokeWidth={0.02} isFilled={false} />
-<schematictext text={"VBUS"} schX={-3.693839740620657} schY={-6.185210649220318} anchor={"bottom_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-5.594446503010653,"y":-6.906618805002316},{"x":-5.604446503010653,"y":-7.236618805002316}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-5.824446503010653,"y":-7.236618805002316},{"x":-5.384446503010653,"y":-7.236618805002316}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-5.774446503010653,"y":-7.316618805002316},{"x":-5.434446503010653,"y":-7.316618805002316}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-5.664446503010653,"y":-7.386618805002317},{"x":-5.544446503010653,"y":-7.386618805002317}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-5.6244465030106525} schY={-7.506618805002316} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":1.5384854099119958,"y":-7.92560907827698},{"x":1.5284854099119958,"y":-8.25560907827698}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":1.3084854099119958,"y":-8.25560907827698},{"x":1.7484854099119957,"y":-8.25560907827698}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":1.3584854099119958,"y":-8.33560907827698},{"x":1.6984854099119957,"y":-8.33560907827698}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":1.4684854099119957,"y":-8.40560907827698},{"x":1.5884854099119958,"y":-8.40560907827698}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={1.5084854099119958} schY={-8.52560907827698} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-6.74081056044465,"y":1.1179295970356646},{"x":-6.75081056044465,"y":0.7879295970356646}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-6.97081056044465,"y":0.7879295970356646},{"x":-6.5308105604446505,"y":0.7879295970356646}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-6.92081056044465,"y":0.7079295970356646},{"x":-6.58081056044465,"y":0.7079295970356646}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-6.81081056044465,"y":0.6379295970356647},{"x":-6.690810560444651,"y":0.6379295970356647}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-6.77081056044465} schY={0.5179295970356645} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-8.715104214914312,"y":-5.123385826771654},{"x":-8.725104214914312,"y":-5.453385826771654}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-8.945104214914313,"y":-5.453385826771654},{"x":-8.505104214914311,"y":-5.453385826771654}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-8.895104214914312,"y":-5.533385826771654},{"x":-8.555104214914312,"y":-5.533385826771654}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-8.785104214914313,"y":-5.603385826771654},{"x":-8.665104214914312,"y":-5.603385826771654}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-8.745104214914312} schY={-5.723385826771653} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-11.13520611394164,"y":-6.015002315886985},{"x":-11.14520611394164,"y":-6.345002315886985}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-11.36520611394164,"y":-6.345002315886985},{"x":-10.92520611394164,"y":-6.345002315886985}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-11.31520611394164,"y":-6.425002315886985},{"x":-10.97520611394164,"y":-6.425002315886985}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-11.20520611394164,"y":-6.495002315886985},{"x":-11.08520611394164,"y":-6.495002315886985}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-11.16520611394164} schY={-6.615002315886985} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-5.785507179249652,"y":-1.17479851783233},{"x":-5.795507179249652,"y":-1.50479851783233}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-6.015507179249652,"y":-1.50479851783233},{"x":-5.5755071792496524,"y":-1.50479851783233}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-5.965507179249652,"y":-1.58479851783233},{"x":-5.625507179249652,"y":-1.5847985178323298}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-5.855507179249652,"y":-1.65479851783233},{"x":-5.735507179249653,"y":-1.65479851783233}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-5.815507179249652} schY={-1.77479851783233} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-0.3721213524779985,"y":-7.92560907827698},{"x":-0.3821213524779985,"y":-8.25560907827698}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-0.6021213524779985,"y":-8.25560907827698},{"x":-0.1621213524779985,"y":-8.25560907827698}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-0.5521213524779985,"y":-8.33560907827698},{"x":-0.2121213524779985,"y":-8.33560907827698}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-0.4421213524779985,"y":-8.40560907827698},{"x":-0.3221213524779985,"y":-8.40560907827698}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-0.40212135247799846} schY={-8.52560907827698} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":-0.3721213524779985,"y":-6.397123668364984},{"x":-0.3821213524779985,"y":-6.727123668364984}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-0.6021213524779985,"y":-6.727123668364984},{"x":-0.1621213524779985,"y":-6.727123668364984}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-0.5521213524779985,"y":-6.8071236683649845},{"x":-0.2121213524779985,"y":-6.8071236683649845}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-0.4421213524779985,"y":-6.877123668364985},{"x":-0.3221213524779985,"y":-6.877123668364985}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-0.40212135247799846} schY={-6.997123668364984} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":1.5384854099119958,"y":-6.397123668364984},{"x":1.5284854099119958,"y":-6.727123668364984}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":1.3084854099119958,"y":-6.727123668364984},{"x":1.7484854099119957,"y":-6.727123668364984}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":1.3584854099119958,"y":-6.8071236683649845},{"x":1.6984854099119957,"y":-6.8071236683649845}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":1.4684854099119957,"y":-6.877123668364985},{"x":1.5884854099119958,"y":-6.877123668364985}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={1.5084854099119958} schY={-6.997123668364984} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":8.289295970356648,"y":-8.435104214914313},{"x":8.279295970356648,"y":-8.765104214914311}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":8.059295970356647,"y":-8.765104214914311},{"x":8.499295970356648,"y":-8.765104214914311}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":8.109295970356648,"y":-8.845104214914311},{"x":8.449295970356648,"y":-8.845104214914311}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":8.219295970356647,"y":-8.915104214914312},{"x":8.339295970356648,"y":-8.915104214914312}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"GND"} schX={8.259295970356648} schY={-9.035104214914313} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":8.161922186197312,"y":-6.65187123668365},{"x":8.151922186197313,"y":-6.98187123668365}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":7.931922186197313,"y":-6.98187123668365},{"x":8.371922186197313,"y":-6.98187123668365}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":7.981922186197313,"y":-7.0618712366836505},{"x":8.321922186197312,"y":-7.0618712366836505}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":8.091922186197312,"y":-7.131871236683651},{"x":8.211922186197313,"y":-7.131871236683651}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"GND"} schX={8.131922186197313} schY={-7.25187123668365} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":7.8619221861973125,"y":-5.912880963408986},{"x":8.191922186197312,"y":-5.922880963408986}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":8.191922186197312,"y":-6.142880963408985},{"x":8.191922186197312,"y":-5.702880963408986}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":8.271922186197312,"y":-6.0928809634089856},{"x":8.271922186197312,"y":-5.752880963408986}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":8.341922186197312,"y":-5.982880963408985},{"x":8.341922186197312,"y":-5.862880963408986}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"GND"} schX={8.461922186197313} schY={-5.942880963408985} anchor={"center_left"} fontSize={0.18} />
-<schematicpath points={[{"x":7.989295970356648,"y":-7.6961139416396485},{"x":8.319295970356647,"y":-7.706113941639648}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":8.319295970356647,"y":-7.926113941639648},{"x":8.319295970356647,"y":-7.4861139416396485}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":8.399295970356647,"y":-7.876113941639648},{"x":8.399295970356647,"y":-7.536113941639648}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":8.469295970356647,"y":-7.766113941639648},{"x":8.469295970356647,"y":-7.646113941639649}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"GND"} schX={8.589295970356648} schY={-7.726113941639648} anchor={"center_left"} fontSize={0.18} />
+<schematicpath points={[{"x":-1.4011116257526623,"y":4.203334877257989},{"x":-1.4111116257526624,"y":3.8733348772579888}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-1.6311116257526623,"y":3.8733348772579888},{"x":-1.1911116257526624,"y":3.8733348772579888}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-1.5811116257526623,"y":3.7933348772579887},{"x":-1.2411116257526624,"y":3.7933348772579887}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-1.4711116257526624,"y":3.723334877257989},{"x":-1.3511116257526623,"y":3.723334877257989}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-1.4311116257526624} schY={3.6033348772579887} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":9.616720704029644,"y":2.6111625752663272},{"x":9.606720704029645,"y":2.281162575266327}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":9.386720704029644,"y":2.281162575266327},{"x":9.826720704029645,"y":2.281162575266327}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":9.436720704029645,"y":2.201162575266327},{"x":9.776720704029644,"y":2.201162575266327}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":9.546720704029644,"y":2.1311625752663272},{"x":9.666720704029645,"y":2.1311625752663272}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"GND"} schX={9.586720704029645} schY={2.011162575266327} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-5.540759610930987,"y":2.5474756831866596},{"x":-5.550759610930987,"y":2.2174756831866596}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-5.770759610930987,"y":2.2174756831866596},{"x":-5.330759610930987,"y":2.2174756831866596}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-5.720759610930987,"y":2.1374756831866595},{"x":-5.380759610930987,"y":2.1374756831866595}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-5.6107596109309865,"y":2.0674756831866596},{"x":-5.490759610930987,"y":2.0674756831866596}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"GND"} schX={-5.5707596109309865} schY={1.9474756831866595} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-0.2547475683186651,"y":2.3564150069476604},{"x":-0.2647475683186651,"y":2.0264150069476603}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-0.48474756831866506,"y":2.0264150069476603},{"x":-0.04474756831866508,"y":2.0264150069476603}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-0.4347475683186651,"y":1.9464150069476602},{"x":-0.09474756831866507,"y":1.9464150069476605}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-0.3247475683186651,"y":1.8764150069476604},{"x":-0.20474756831866509,"y":1.8764150069476604}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"GND"} schX={-0.28474756831866505} schY={1.7564150069476603} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":11.654701250578972,"y":3.248031496062991},{"x":11.644701250578972,"y":2.9180314960629907}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":11.424701250578972,"y":2.9180314960629907},{"x":11.864701250578973,"y":2.9180314960629907}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":11.474701250578972,"y":2.8380314960629907},{"x":11.814701250578972,"y":2.8380314960629907}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":11.584701250578972,"y":2.768031496062991},{"x":11.704701250578973,"y":2.768031496062991}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"GND"} schX={11.624701250578973} schY={2.6480314960629907} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-3.3754052802223242,"y":2.165354330708661},{"x":-3.385405280222324,"y":1.835354330708661}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-3.605405280222324,"y":1.835354330708661},{"x":-3.165405280222324,"y":1.835354330708661}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-3.555405280222324,"y":1.755354330708661},{"x":-3.215405280222324,"y":1.7553543307086612}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-3.445405280222324,"y":1.6853543307086611},{"x":-3.325405280222324,"y":1.6853543307086611}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-3.405405280222324} schY={1.565354330708661} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-6.177628531727652,"y":2.0379805465493277},{"x":-6.187628531727651,"y":1.7079805465493276}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-6.407628531727651,"y":1.7079805465493276},{"x":-5.967628531727652,"y":1.7079805465493276}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-6.357628531727651,"y":1.6279805465493276},{"x":-6.017628531727651,"y":1.6279805465493278}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-6.247628531727651,"y":1.5579805465493277},{"x":-6.127628531727652,"y":1.5579805465493277}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"GND"} schX={-6.207628531727651} schY={1.4379805465493276} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-10.890458545622973,"y":1.9106067623899943},{"x":-10.900458545622973,"y":1.5806067623899942}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-11.120458545622974,"y":1.5806067623899942},{"x":-10.680458545622972,"y":1.5806067623899942}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-11.070458545622973,"y":1.5006067623899941},{"x":-10.730458545622973,"y":1.5006067623899944}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-10.960458545622974,"y":1.4306067623899943},{"x":-10.840458545622973,"y":1.4306067623899943}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"GND"} schX={-10.920458545622973} schY={1.3106067623899942} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":6.941871236683651,"y":1.9106067623899943},{"x":6.9318712366836515,"y":1.5806067623899942}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":6.711871236683652,"y":1.5806067623899942},{"x":7.151871236683651,"y":1.5806067623899942}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":6.7618712366836515,"y":1.5006067623899941},{"x":7.101871236683651,"y":1.5006067623899944}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":6.871871236683652,"y":1.4306067623899943},{"x":6.991871236683651,"y":1.4306067623899943}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"GND"} schX={6.911871236683652} schY={1.3106067623899942} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-2.420101899027328,"y":2.165354330708661},{"x":-2.4301018990273278,"y":1.835354330708661}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-2.650101899027328,"y":1.835354330708661},{"x":-2.2101018990273276,"y":1.835354330708661}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-2.6001018990273277,"y":1.755354330708661},{"x":-2.260101899027328,"y":1.7553543307086612}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-2.490101899027328,"y":1.6853543307086611},{"x":-2.3701018990273277,"y":1.6853543307086611}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-2.450101899027328} schY={1.565354330708661} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-0.8916164891153304,"y":0.955303381194998},{"x":-0.9016164891153304,"y":0.625303381194998}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-1.1216164891153304,"y":0.625303381194998},{"x":-0.6816164891153305,"y":0.625303381194998}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-1.0716164891153304,"y":0.545303381194998},{"x":-0.7316164891153304,"y":0.545303381194998}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-0.9616164891153304,"y":0.475303381194998},{"x":-0.8416164891153304,"y":0.475303381194998}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-0.9216164891153305} schY={0.355303381194998} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-6.050254747568318,"y":0.8279295970356646},{"x":-6.060254747568318,"y":0.4979295970356646}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-6.280254747568318,"y":0.49792959703566453},{"x":-5.840254747568318,"y":0.4979295970356646}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-6.230254747568318,"y":0.41792959703566457},{"x":-5.890254747568318,"y":0.41792959703566457}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-6.1202547475683176,"y":0.34792959703566456},{"x":-6.000254747568318,"y":0.34792959703566456}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"GND"} schX={-6.0802547475683175} schY={0.22792959703566457} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":12.482630847614635,"y":1.6558591940713292},{"x":12.472630847614635,"y":1.3258591940713291}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":12.252630847614634,"y":1.3258591940713291},{"x":12.692630847614636,"y":1.3258591940713291}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":12.302630847614635,"y":1.245859194071329},{"x":12.642630847614635,"y":1.2458591940713293}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":12.412630847614635,"y":1.1758591940713292},{"x":12.532630847614636,"y":1.1758591940713292}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"GND"} schX={12.452630847614635} schY={1.055859194071329} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-11.14520611394164,"y":0.12737378415933343},{"x":-11.15520611394164,"y":-0.20262621584066656}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-11.37520611394164,"y":-0.20262621584066656},{"x":-10.93520611394164,"y":-0.20262621584066653}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-11.32520611394164,"y":-0.28262621584066655},{"x":-10.98520611394164,"y":-0.28262621584066655}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-11.21520611394164,"y":-0.35262621584066656},{"x":-11.09520611394164,"y":-0.35262621584066656}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-11.17520611394164} schY={-0.47262621584066655} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-9.48934691987031,"y":-0.38212135247800033},{"x":-9.49934691987031,"y":-0.7121213524780003}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-9.719346919870311,"y":-0.7121213524780003},{"x":-9.27934691987031,"y":-0.7121213524780003}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-9.66934691987031,"y":-0.7921213524780003},{"x":-9.32934691987031,"y":-0.7921213524780003}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-9.559346919870311,"y":-0.8621213524780003},{"x":-9.43934691987031,"y":-0.8621213524780003}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-9.51934691987031} schY={-0.9821213524780004} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-11.14520611394164,"y":-1.0826771653543314},{"x":-11.15520611394164,"y":-1.4126771653543315}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-11.37520611394164,"y":-1.4126771653543315},{"x":-10.93520611394164,"y":-1.4126771653543315}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-11.32520611394164,"y":-1.4926771653543316},{"x":-10.98520611394164,"y":-1.4926771653543314}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-11.21520611394164,"y":-1.5626771653543314},{"x":-11.09520611394164,"y":-1.5626771653543314}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-11.17520611394164} schY={-1.6826771653543315} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":1.0189902732746638,"y":-2.865910143584993},{"x":1.0089902732746638,"y":-3.1959101435849933}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":0.7889902732746639,"y":-3.1959101435849933},{"x":1.2289902732746638,"y":-3.1959101435849933}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":0.8389902732746638,"y":-3.2759101435849933},{"x":1.1789902732746638,"y":-3.2759101435849933}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":0.9489902732746639,"y":-3.345910143584993},{"x":1.068990273274664,"y":-3.345910143584993}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"GND"} schX={0.9889902732746638} schY={-3.4659101435849933} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-11.14520611394164,"y":-2.356415006947662},{"x":-11.15520611394164,"y":-2.686415006947662}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-11.37520611394164,"y":-2.686415006947662},{"x":-10.93520611394164,"y":-2.686415006947662}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-11.32520611394164,"y":-2.7664150069476623},{"x":-10.98520611394164,"y":-2.7664150069476623}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-11.21520611394164,"y":-2.836415006947662},{"x":-11.09520611394164,"y":-2.836415006947662}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-11.17520611394164} schY={-2.9564150069476622} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-1.5284854099119958,"y":-3.9485873089393237},{"x":-1.5384854099119958,"y":-4.278587308939324}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-1.7584854099119958,"y":-4.278587308939324},{"x":-1.3184854099119958,"y":-4.278587308939324}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-1.7084854099119957,"y":-4.358587308939324},{"x":-1.3684854099119959,"y":-4.358587308939324}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-1.5984854099119958,"y":-4.428587308939324},{"x":-1.4784854099119957,"y":-4.428587308939324}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"GND"} schX={-1.5584854099119958} schY={-4.548587308939323} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-1.0189902732746638,"y":-3.9485873089393237},{"x":-1.0289902732746639,"y":-4.278587308939324}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-1.2489902732746638,"y":-4.278587308939324},{"x":-0.8089902732746639,"y":-4.278587308939324}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-1.1989902732746638,"y":-4.358587308939324},{"x":-0.8589902732746638,"y":-4.358587308939324}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-1.088990273274664,"y":-4.428587308939324},{"x":-0.9689902732746638,"y":-4.428587308939324}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-1.0489902732746639} schY={-4.548587308939323} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-4.840203798054654,"y":-3.9485873089393237},{"x":-4.850203798054654,"y":-4.278587308939324}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-5.070203798054654,"y":-4.278587308939324},{"x":-4.630203798054654,"y":-4.278587308939324}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-5.020203798054654,"y":-4.358587308939324},{"x":-4.680203798054654,"y":-4.358587308939324}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-4.910203798054654,"y":-4.428587308939324},{"x":-4.790203798054654,"y":-4.428587308939324}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-4.8702037980546535} schY={-4.548587308939323} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":3.630152848540993,"y":-4.203334877257991},{"x":3.620152848540993,"y":-4.533334877257991}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":3.400152848540993,"y":-4.533334877257991},{"x":3.8401528485409933,"y":-4.533334877257991}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":3.450152848540993,"y":-4.613334877257991},{"x":3.790152848540993,"y":-4.613334877257991}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":3.560152848540993,"y":-4.683334877257991},{"x":3.680152848540993,"y":-4.683334877257991}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"GND"} schX={3.600152848540993} schY={-4.80333487725799} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-2.6111625752663272,"y":-4.649143121815656},{"x":-2.621162575266327,"y":-4.979143121815656}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-2.841162575266327,"y":-4.979143121815656},{"x":-2.401162575266327,"y":-4.979143121815656}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-2.791162575266327,"y":-5.059143121815656},{"x":-2.451162575266327,"y":-5.059143121815656}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-2.681162575266327,"y":-5.129143121815656},{"x":-2.561162575266327,"y":-5.129143121815656}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-2.641162575266327} schY={-5.2491431218156555} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-2.9932839277443257,"y":-4.649143121815656},{"x":-3.0032839277443255,"y":-4.979143121815656}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-3.2232839277443257,"y":-4.979143121815656},{"x":-2.7832839277443253,"y":-4.979143121815656}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-3.1732839277443254,"y":-5.059143121815656},{"x":-2.8332839277443256,"y":-5.059143121815656}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-3.0632839277443256,"y":-5.129143121815656},{"x":-2.9432839277443255,"y":-5.129143121815656}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-3.0232839277443255} schY={-5.2491431218156555} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-10.954145437702639,"y":-4.585456229735989},{"x":-10.964145437702639,"y":-4.915456229735989}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-11.18414543770264,"y":-4.915456229735989},{"x":-10.744145437702638,"y":-4.915456229735989}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-11.134145437702639,"y":-4.995456229735989},{"x":-10.794145437702639,"y":-4.995456229735989}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-11.02414543770264,"y":-5.0654562297359895},{"x":-10.904145437702638,"y":-5.0654562297359895}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-10.984145437702638} schY={-5.185456229735989} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-3.693839740620657,"y":-6.103752315886985},{"x":-3.813839740620657,"y":-6.1947939825536515}]} strokeWidth={0.02} isFilled={false} />
+<schematicpath points={[{"x":-3.693839740620657,"y":-6.103752315886985},{"x":-3.573839740620657,"y":-6.1947939825536515}]} strokeWidth={0.02} isFilled={false} />
+<schematicpath points={[{"x":-3.693839740620657,"y":-6.103752315886985},{"x":-3.693839740620657,"y":-6.305002315886985}]} strokeWidth={0.02} isFilled={false} />
+<schematictext text={"VBUS"} schX={-3.693839740620657} schY={-6.075002315886985} anchor={"bottom_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-5.604446503010653,"y":-7.196618805002316},{"x":-5.614446503010653,"y":-7.526618805002316}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-5.8344465030106525,"y":-7.526618805002316},{"x":-5.394446503010653,"y":-7.526618805002316}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-5.784446503010653,"y":-7.6066188050023165},{"x":-5.444446503010653,"y":-7.6066188050023165}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-5.674446503010652,"y":-7.676618805002317},{"x":-5.554446503010653,"y":-7.676618805002317}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-5.634446503010652} schY={-7.796618805002316} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":1.5284854099119958,"y":-8.21560907827698},{"x":1.5184854099119958,"y":-8.545609078276978}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":1.2984854099119958,"y":-8.545609078276978},{"x":1.7384854099119957,"y":-8.545609078276978}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":1.3484854099119958,"y":-8.625609078276979},{"x":1.6884854099119957,"y":-8.625609078276979}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":1.4584854099119957,"y":-8.695609078276979},{"x":1.5784854099119958,"y":-8.695609078276979}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={1.4984854099119957} schY={-8.81560907827698} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-6.75081056044465,"y":0.8279295970356646},{"x":-6.76081056044465,"y":0.4979295970356646}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-6.98081056044465,"y":0.49792959703566453},{"x":-6.54081056044465,"y":0.4979295970356646}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-6.93081056044465,"y":0.41792959703566457},{"x":-6.59081056044465,"y":0.41792959703566457}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-6.82081056044465,"y":0.34792959703566456},{"x":-6.70081056044465,"y":0.34792959703566456}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-6.78081056044465} schY={0.22792959703566457} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-8.725104214914312,"y":-5.413385826771654},{"x":-8.735104214914312,"y":-5.743385826771654}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-8.955104214914313,"y":-5.743385826771654},{"x":-8.515104214914311,"y":-5.743385826771654}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-8.905104214914312,"y":-5.823385826771654},{"x":-8.565104214914312,"y":-5.823385826771654}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-8.795104214914312,"y":-5.893385826771654},{"x":-8.675104214914311,"y":-5.893385826771654}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-8.755104214914311} schY={-6.013385826771653} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-11.14520611394164,"y":-6.305002315886985},{"x":-11.15520611394164,"y":-6.635002315886985}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-11.37520611394164,"y":-6.635002315886985},{"x":-10.93520611394164,"y":-6.635002315886985}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-11.32520611394164,"y":-6.715002315886985},{"x":-10.98520611394164,"y":-6.715002315886985}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-11.21520611394164,"y":-6.785002315886985},{"x":-11.09520611394164,"y":-6.785002315886985}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-11.17520611394164} schY={-6.905002315886985} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-5.795507179249652,"y":-1.46479851783233},{"x":-5.805507179249652,"y":-1.79479851783233}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-6.025507179249652,"y":-1.79479851783233},{"x":-5.585507179249652,"y":-1.79479851783233}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-5.975507179249652,"y":-1.87479851783233},{"x":-5.635507179249652,"y":-1.8747985178323299}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-5.865507179249652,"y":-1.94479851783233},{"x":-5.745507179249652,"y":-1.94479851783233}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-5.825507179249652} schY={-2.06479851783233} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-0.3821213524779985,"y":-8.21560907827698},{"x":-0.3921213524779985,"y":-8.545609078276978}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-0.6121213524779985,"y":-8.545609078276978},{"x":-0.1721213524779985,"y":-8.545609078276978}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-0.5621213524779985,"y":-8.625609078276979},{"x":-0.2221213524779985,"y":-8.625609078276979}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-0.4521213524779985,"y":-8.695609078276979},{"x":-0.3321213524779985,"y":-8.695609078276979}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-0.41212135247799847} schY={-8.81560907827698} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-0.3821213524779985,"y":-6.687123668364984},{"x":-0.3921213524779985,"y":-7.0171236683649845}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-0.6121213524779985,"y":-7.0171236683649845},{"x":-0.1721213524779985,"y":-7.0171236683649845}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-0.5621213524779985,"y":-7.0971236683649845},{"x":-0.2221213524779985,"y":-7.0971236683649845}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-0.4521213524779985,"y":-7.167123668364985},{"x":-0.3321213524779985,"y":-7.167123668364985}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-0.41212135247799847} schY={-7.287123668364984} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":1.5284854099119958,"y":-6.687123668364984},{"x":1.5184854099119958,"y":-7.0171236683649845}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":1.2984854099119958,"y":-7.0171236683649845},{"x":1.7384854099119957,"y":-7.0171236683649845}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":1.3484854099119958,"y":-7.0971236683649845},{"x":1.6884854099119957,"y":-7.0971236683649845}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":1.4584854099119957,"y":-7.167123668364985},{"x":1.5784854099119958,"y":-7.167123668364985}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={1.4984854099119957} schY={-7.287123668364984} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":8.279295970356648,"y":-8.725104214914312},{"x":8.269295970356648,"y":-9.05510421491431}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":8.049295970356647,"y":-9.05510421491431},{"x":8.489295970356649,"y":-9.05510421491431}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":8.099295970356648,"y":-9.13510421491431},{"x":8.439295970356648,"y":-9.13510421491431}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":8.209295970356647,"y":-9.20510421491431},{"x":8.329295970356648,"y":-9.20510421491431}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"GND"} schX={8.249295970356648} schY={-9.325104214914312} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":8.151922186197313,"y":-6.94187123668365},{"x":8.141922186197313,"y":-7.27187123668365}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":7.921922186197313,"y":-7.27187123668365},{"x":8.361922186197313,"y":-7.27187123668365}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":7.971922186197313,"y":-7.3518712366836505},{"x":8.311922186197313,"y":-7.3518712366836505}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":8.081922186197312,"y":-7.421871236683651},{"x":8.201922186197313,"y":-7.421871236683651}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"GND"} schX={8.121922186197313} schY={-7.54187123668365} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":8.151922186197313,"y":-5.922880963408986},{"x":8.48192218619731,"y":-5.932880963408985}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":8.48192218619731,"y":-6.152880963408985},{"x":8.48192218619731,"y":-5.712880963408986}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":8.561922186197311,"y":-6.102880963408985},{"x":8.561922186197311,"y":-5.7628809634089855}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":8.631922186197311,"y":-5.992880963408985},{"x":8.631922186197311,"y":-5.872880963408986}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"GND"} schX={8.751922186197312} schY={-5.952880963408985} anchor={"center_left"} fontSize={0.18} />
+<schematicpath points={[{"x":8.279295970356648,"y":-7.706113941639648},{"x":8.609295970356646,"y":-7.716113941639648}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":8.609295970356646,"y":-7.936113941639648},{"x":8.609295970356646,"y":-7.496113941639648}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":8.689295970356646,"y":-7.886113941639648},{"x":8.689295970356646,"y":-7.546113941639648}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":8.759295970356646,"y":-7.776113941639648},{"x":8.759295970356646,"y":-7.656113941639648}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"GND"} schX={8.879295970356647} schY={-7.736113941639648} anchor={"center_left"} fontSize={0.18} />
 <netlabel net={"HV_VSYS"} schX={10.572024085224642} schY={-6.1776285317276525} anchorSide={"left"} />
 <netlabel net={"PPHV"} schX={10.572024085224642} schY={-7.960861509958314} anchorSide={"left"} />
 <netlabel net={"SDA"} schX={-0.7642427049559988} schY={-7.451366373320982} anchorSide={"right"} />
 <netlabel net={"SCL"} schX={1.1463640574339973} schY={-7.451366373320982} anchorSide={"right"} />
 <netlabel net={"PPHV"} schX={12.737378415933302} schY={7.196618805002316} anchorSide={"left"} />
-<schematicpath points={[{"x":-7.186618805002316,"y":-0.28318202871699955},{"x":-7.196618805002315,"y":-0.6131820287169996}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-7.416618805002315,"y":-0.6131820287169996},{"x":-6.976618805002316,"y":-0.6131820287169996}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-7.366618805002315,"y":-0.6931820287169995},{"x":-7.0266188050023155,"y":-0.6931820287169995}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":-7.256618805002315,"y":-0.7631820287169995},{"x":-7.136618805002316,"y":-0.7631820287169995}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"AGND"} schX={-7.216618805002315} schY={-0.8831820287169996} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":-7.196618805002315,"y":-0.5731820287169995},{"x":-7.206618805002315,"y":-0.9031820287169996}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-7.426618805002315,"y":-0.9031820287169996},{"x":-6.9866188050023155,"y":-0.9031820287169996}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-7.376618805002315,"y":-0.9831820287169996},{"x":-7.036618805002315,"y":-0.9831820287169996}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":-7.266618805002315,"y":-1.0531820287169995},{"x":-7.146618805002316,"y":-1.0531820287169995}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"AGND"} schX={-7.226618805002315} schY={-1.1731820287169996} anchor={"top_center"} fontSize={0.18} />
 <netlabel net={"HV_VSYS"} schX={-11.33626679018064} schY={4.075961093098655} anchorSide={"right"} />
-<schematicpath points={[{"x":9.69040759610931,"y":-4.4228300138953225},{"x":9.68040759610931,"y":-4.752830013895323}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":9.46040759610931,"y":-4.752830013895323},{"x":9.90040759610931,"y":-4.752830013895323}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":9.51040759610931,"y":-4.832830013895323},{"x":9.85040759610931,"y":-4.832830013895323}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":9.62040759610931,"y":-4.902830013895323},{"x":9.74040759610931,"y":-4.902830013895323}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"GND"} schX={9.66040759610931} schY={-5.022830013895322} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":10.19990273274664,"y":-1.7479805465493294},{"x":10.18990273274664,"y":-2.0779805465493295}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":9.96990273274664,"y":-2.0779805465493295},{"x":10.409902732746641,"y":-2.0779805465493295}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":10.01990273274664,"y":-2.1579805465493296},{"x":10.35990273274664,"y":-2.1579805465493296}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":10.12990273274664,"y":-2.2279805465493294},{"x":10.24990273274664,"y":-2.2279805465493294}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"GND"} schX={10.16990273274664} schY={-2.3479805465493295} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":7.907174617878649,"y":-3.149092172301992},{"x":7.897174617878649,"y":-3.479092172301992}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":7.6771746178786495,"y":-3.479092172301992},{"x":8.11717461787865,"y":-3.479092172301992}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":7.727174617878649,"y":-3.559092172301992},{"x":8.06717461787865,"y":-3.559092172301992}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":7.83717461787865,"y":-3.6290921723019918},{"x":7.957174617878649,"y":-3.6290921723019918}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"GND"} schX={7.87717461787865} schY={-3.749092172301992} anchor={"top_center"} fontSize={0.18} />
-<schematicpath points={[{"x":12.428943955534969,"y":6.849749884205651},{"x":12.418943955534969,"y":6.519749884205651}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":12.198943955534968,"y":6.519749884205651},{"x":12.63894395553497,"y":6.519749884205651}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":12.248943955534969,"y":6.439749884205651},{"x":12.588943955534969,"y":6.439749884205651}]} strokeWidth={0.02} isFilled={true} />
-<schematicpath points={[{"x":12.358943955534968,"y":6.369749884205651},{"x":12.47894395553497,"y":6.369749884205651}]} strokeWidth={0.02} isFilled={true} />
-<schematictext text={"GND"} schX={12.39894395553497} schY={6.249749884205651} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":9.68040759610931,"y":-4.7128300138953225},{"x":9.67040759610931,"y":-5.042830013895323}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":9.45040759610931,"y":-5.042830013895323},{"x":9.890407596109311,"y":-5.042830013895323}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":9.50040759610931,"y":-5.122830013895323},{"x":9.84040759610931,"y":-5.122830013895323}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":9.61040759610931,"y":-5.192830013895323},{"x":9.73040759610931,"y":-5.192830013895323}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"GND"} schX={9.65040759610931} schY={-5.312830013895322} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":10.18990273274664,"y":-2.0379805465493295},{"x":10.17990273274664,"y":-2.3679805465493295}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":9.95990273274664,"y":-2.3679805465493295},{"x":10.399902732746641,"y":-2.3679805465493295}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":10.00990273274664,"y":-2.4479805465493296},{"x":10.34990273274664,"y":-2.4479805465493296}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":10.11990273274664,"y":-2.5179805465493295},{"x":10.239902732746641,"y":-2.5179805465493295}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"GND"} schX={10.159902732746641} schY={-2.6379805465493296} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":7.897174617878649,"y":-3.439092172301992},{"x":7.8871746178786495,"y":-3.769092172301992}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":7.66717461787865,"y":-3.769092172301992},{"x":8.10717461787865,"y":-3.769092172301992}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":7.71717461787865,"y":-3.849092172301992},{"x":8.05717461787865,"y":-3.849092172301992}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":7.82717461787865,"y":-3.919092172301992},{"x":7.947174617878649,"y":-3.919092172301992}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"GND"} schX={7.86717461787865} schY={-4.0390921723019915} anchor={"top_center"} fontSize={0.18} />
+<schematicpath points={[{"x":12.418943955534969,"y":6.559749884205651},{"x":12.40894395553497,"y":6.229749884205651}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":12.188943955534969,"y":6.229749884205651},{"x":12.62894395553497,"y":6.229749884205651}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":12.23894395553497,"y":6.149749884205651},{"x":12.57894395553497,"y":6.149749884205651}]} strokeWidth={0.02} isFilled={true} />
+<schematicpath points={[{"x":12.348943955534969,"y":6.0797498842056505},{"x":12.46894395553497,"y":6.0797498842056505}]} strokeWidth={0.02} isFilled={true} />
+<schematictext text={"GND"} schX={12.38894395553497} schY={5.959749884205651} anchor={"top_center"} fontSize={0.18} />
 <schematictext text={"5"} schX={-1.6558591940713292} schY={4.5217693376563215} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
 <schematictext text={"4"} schX={-1.5284854099119958} schY={4.5217693376563215} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
 <schematictext text={"1"} schX={-1.1463640574339973} schY={4.5217693376563215} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
