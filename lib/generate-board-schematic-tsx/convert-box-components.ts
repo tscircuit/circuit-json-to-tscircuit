@@ -106,6 +106,8 @@ export const convertBoxComponent = ({
       schematicComponent,
       schematicPort,
     })
+    const pinLabelFontSize =
+      schematicPort.display_pin_label_font_size ?? DEFAULT_PIN_TEXT_FONT_SIZE
     if (displayPinLabel)
       primitives.push(
         formatElement("schematictext", {
@@ -113,7 +115,7 @@ export const convertBoxComponent = ({
           schX: labelPosition.x,
           schY: labelPosition.y,
           anchor,
-          fontSize: DEFAULT_PIN_TEXT_FONT_SIZE,
+          fontSize: pinLabelFontSize,
           color: DEFAULT_PIN_TEXT_COLOR,
           schRotation: rotation || undefined,
         }),
