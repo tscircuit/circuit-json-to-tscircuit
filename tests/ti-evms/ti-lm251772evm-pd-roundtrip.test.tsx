@@ -26,6 +26,8 @@ test(
     )
     if (sourcePort?.type !== "schematic_port")
       throw new Error("Missing source box port")
+    if (sourcePort.display_pin_label_font_size === undefined)
+      throw new Error("Missing source box port label font size")
     const sourcePortDefinition = result.sourceCircuitJson.find(
       (elm) =>
         elm.type === "source_port" &&
@@ -43,7 +45,7 @@ test(
     )
     expect(renderedPinLabel).toMatchObject({
       anchor: "center_left",
-      font_size: 0.15,
+      font_size: sourcePort.display_pin_label_font_size,
     })
 
     expect(result.generatedTscircuit).toMatchSnapshot()
