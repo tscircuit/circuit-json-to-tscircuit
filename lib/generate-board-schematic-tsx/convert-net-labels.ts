@@ -1,10 +1,10 @@
 import { su } from "@tscircuit/soup-util"
 import { schematic_text } from "circuit-json"
 import { symbols } from "schematic-symbols"
-import { translate } from "transformation-matrix"
 import type { SchematicElementConverter } from "./converter-types"
 import { convertSymbolPrimitives } from "./convert-symbol-primitives"
 import { formatElement } from "./format-attributes"
+import { getNetLabelSymbolToSchematicTransform } from "./get-net-label-symbol-to-schematic-transform"
 
 // Match core's preprocessSelector checks for net names. The validator is not
 // exported by @tscircuit/core; runtime regression tests keep these in sync.
@@ -35,10 +35,10 @@ export const convertNetLabels: SchematicElementConverter = (circuitJson) =>
         if (symbol)
           return convertSymbolPrimitives({
             symbol,
-            symbolToSchematicTransform: translate(
-              anchorPosition.x,
-              anchorPosition.y,
-            ),
+            symbolToSchematicTransform: getNetLabelSymbolToSchematicTransform({
+              symbol,
+              schematicAnchorPosition: anchorPosition,
+            }),
             reference: schematicNetLabel.text,
             displayText: schematicNetLabel.text,
           })
