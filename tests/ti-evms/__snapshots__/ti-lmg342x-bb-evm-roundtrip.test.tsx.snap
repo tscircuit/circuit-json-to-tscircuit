@@ -1982,7 +1982,7 @@ HVP049A1" />
 <silkscreentext pcbX={39.2938} pcbY={47.72906888} anchorAlignment="center" fontSize={1.524} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="LMG342XX-BB-EVM" />
 <silkscreentext pcbX={32.2326} pcbY={17.1578651} anchorAlignment="center" fontSize={1.524} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text=".Layer_Name" />
 <silkscreentext pcbX={45.912001139999994} pcbY={56.0578} anchorAlignment="center" fontSize={1.524} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="-" />
-<silkscreentext pcbX={43.11800114} pcbY={56.0578} anchorAlignment="center" fontSize={1.524} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text=".PCB_Rev" />
+<silkscreentext pcbX={43.11800114} pcbY={56.0578} anchorAlignment="center" fontSize={1.524} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="A1" />
 <silkscreentext pcbX={33.3368015} pcbY={106.14659999999999} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="J15" />
 <silkscreentext pcbX={41.1988} pcbY={110.49759968000001} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="TACH" />
 <silkscreentext pcbX={120.19279999999999} pcbY={126.2126} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="L2" />
