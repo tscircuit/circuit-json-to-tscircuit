@@ -58,6 +58,15 @@ export async function createTiEvmRoundtrip({
     sourceCircuitJson.filter((element) => element.type === "pcb_via").length,
   )
 
+  for (const circuitJson of [sourceCircuitJson, renderedCircuitJson]) {
+    const unresolvedProjectStrings = circuitJson.filter(
+      (element) =>
+        element.type === "pcb_silkscreen_text" &&
+        /\.(?:PRJ_[A-Za-z0-9_]+|PCB_Rev)\b/u.test(element.text),
+    )
+    expect(unresolvedProjectStrings).toEqual([])
+  }
+
   const sourcePcbSvg = convertCircuitJsonToPcbSvg(sourceCircuitJson, {
     matchBoardAspectRatio: true,
   })

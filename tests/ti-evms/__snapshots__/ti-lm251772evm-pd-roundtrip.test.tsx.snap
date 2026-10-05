@@ -2225,7 +2225,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <silkscreentext pcbX={19.81897738} pcbY={58.96999889999999} anchorAlignment="bottom_left" fontSize={0.762} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="S-" />
 <silkscreentext pcbX={18.9992} pcbY={64.51599999999999} anchorAlignment="bottom_left" fontSize={0.762} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="GND" />
 <silkscreentext pcbX={18.9992} pcbY={51.33664358} anchorAlignment="bottom_left" fontSize={0.762} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="VIN" />
-<silkscreentext pcbX={24.8048907} pcbY={113.03725424} anchorAlignment="center" fontSize={2.54} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="'.PRJ_Title'" />
+<silkscreentext pcbX={24.8048907} pcbY={113.03725424} anchorAlignment="center" fontSize={2.54} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="LM251772EVM-PD" />
 <silkscreentext pcbX={106.68090424} pcbY={110.7776931} anchorAlignment="bottom_right" fontSize={0.762} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="ADDR" />
 <silkscreentext pcbX={61.849} pcbY={40.80919702} anchorAlignment="bottom_left" fontSize={1.27} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="Input" />
 <silkscreentext pcbX={76.68520096} pcbY={40.80919702} anchorAlignment="bottom_left" fontSize={1.27} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="Output" />
@@ -2247,7 +2247,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <silkscreentext pcbX={107.05463984} pcbY={118.53112184} anchorAlignment="bottom_left" fontSize={0.762} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="MODE" />
 <silkscreentext pcbX={101.2952} pcbY={128.016} anchorAlignment="bottom_left" fontSize={0.762} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="ILIMCOMP" />
 <silkscreentext pcbX={106.80786359999999} pcbY={87.90939999999999} anchorAlignment="bottom_right" fontSize={0.762} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="BIAS" />
-<silkscreentext pcbX={24.7032907} pcbY={111.2012} anchorAlignment="center" fontSize={1.524} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="'.PRJ_Number' Rev.:.PCB_Rev" />
+<silkscreentext pcbX={24.7032907} pcbY={111.2012} anchorAlignment="center" fontSize={1.524} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="SR135 Rev.:B" />
 <silkscreentext pcbX={32.2326} pcbY={17.1578651} anchorAlignment="center" fontSize={1.524} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text=".Layer_Name" />
 <silkscreentext pcbX={84.91659419999999} pcbY={95.96950071999998} anchorAlignment="center" fontSize={1.143} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="C44" />
 <silkscreentext pcbX={84.03728684} pcbY={101.88881832} anchorAlignment="center" fontSize={1.143} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="top" text="C43" />
