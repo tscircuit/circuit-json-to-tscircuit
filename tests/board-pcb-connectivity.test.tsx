@@ -75,6 +75,15 @@ test("preserves imported pad and via net connectivity", async () => {
       layers: ["top", "bottom"],
     },
     {
+      type: "pcb_trace",
+      pcb_trace_id: "pcb_trace_power",
+      source_trace_id: "source_trace_power",
+      route: [
+        { route_type: "wire", x: 0, y: 0, width: 0.25, layer: "top" },
+        { route_type: "wire", x: 2, y: 0, width: 0.25, layer: "top" },
+      ],
+    },
+    {
       type: "pcb_copper_pour",
       pcb_copper_pour_id: "pcb_copper_pour_power",
       source_net_id: "source_net_power",
@@ -89,6 +98,7 @@ test("preserves imported pad and via net connectivity", async () => {
   const generated = convertCircuitJsonToTscircuit(source, {
     componentName: "ConnectedBoard",
   })
+  expect(generated).toContain('<pcbtrace connectsTo={"net.NET_12V_"}')
   const rendered = (await runTscircuitCode(generated)) as CircuitJson
   const net = rendered.find(
     (element) => element.type === "source_net" && element.name === "NET_12V_",
@@ -96,6 +106,7 @@ test("preserves imported pad and via net connectivity", async () => {
   const pad = rendered.find((element) => element.type === "pcb_smtpad")
   const via = rendered.find((element) => element.type === "pcb_via")
   const pour = rendered.find((element) => element.type === "pcb_copper_pour")
+  const pcbTrace = rendered.find((element) => element.type === "pcb_trace")
 
   if (!net || !pad?.pcb_port_id) throw new Error("Missing connected pad net")
   const pcbPort = rendered.find(
@@ -110,6 +121,12 @@ test("preserves imported pad and via net connectivity", async () => {
   )
 
   expect(sourceTrace?.connected_source_net_ids).toContain(net.source_net_id)
+  const pcbTraceSource = rendered.find(
+    (element) =>
+      element.type === "source_trace" &&
+      element.source_trace_id === pcbTrace?.source_trace_id,
+  )
+  expect(pcbTraceSource?.connected_source_net_ids).toContain(net.source_net_id)
   expect(via).toMatchObject({ source_net_id: net.source_net_id })
   expect(pour).toMatchObject({ source_net_id: net.source_net_id })
 })

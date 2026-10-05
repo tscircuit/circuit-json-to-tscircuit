@@ -1,9 +1,14 @@
 import type { AnyCircuitElement } from "circuit-json"
+import {
+  getRuntimeNetNamesBySourceTraceId,
+  getSourceNetIdsUsedByPcbTraces,
+} from "./get-pcb-trace-net-mappings"
 
 export interface BoardConversionContext {
   pcbChipName: string
   portHintByPcbPortId: Map<string, string>
   runtimeNetNameBySourceNetId: Map<string, string>
+  runtimeNetNameBySourceTraceId: Map<string, string>
   pcbPortSelectorsByRuntimeNetName: Map<string, string[]>
 }
 
@@ -18,6 +23,10 @@ export const createBoardConversionContext = (
     circuitJson,
     sourceNetIdsRequiringSelector,
   )
+  const runtimeNetNameBySourceTraceId = getRuntimeNetNamesBySourceTraceId({
+    circuitJson,
+    runtimeNetNameBySourceNetId,
+  })
   const portHintByPcbPortId = new Map<string, string>()
   const sourcePortIdByPcbPortId = new Map<string, string>()
 
@@ -50,6 +59,7 @@ export const createBoardConversionContext = (
     pcbChipName: PCB_CHIP_NAME,
     portHintByPcbPortId,
     runtimeNetNameBySourceNetId,
+    runtimeNetNameBySourceTraceId,
     pcbPortSelectorsByRuntimeNetName,
   }
 }
@@ -81,7 +91,7 @@ const getSourceNetIdsRequiringSelector = (
   circuitJson: AnyCircuitElement[],
 ): Set<string> => {
   const sourcePortIdsWithPcbPorts = new Set<string>()
-  const result = new Set<string>()
+  const result = getSourceNetIdsUsedByPcbTraces(circuitJson)
   for (const element of circuitJson) {
     if (element.type === "pcb_port") {
       sourcePortIdsWithPcbPorts.add(element.source_port_id)

@@ -10,6 +10,7 @@ import {
 import { convertCircuitJsonToTscircuit } from "lib"
 import { stackSvgsHorizontally } from "stack-svgs"
 import { runTscircuitCode } from "tscircuit"
+import { countNetConnectedPcbTraces } from "./count-net-connected-pcb-traces"
 
 interface TiEvmRoundtripResult {
   sourceCircuitJson: CircuitJson
@@ -72,6 +73,10 @@ export async function createTiEvmRoundtrip({
     Boolean(element.pcb_port_id)
   expect(renderedCircuitJson.filter(isPortedPad)).toHaveLength(
     sourceCircuitJson.filter(isPortedPad).length,
+  )
+
+  expect(countNetConnectedPcbTraces(renderedCircuitJson)).toBe(
+    countNetConnectedPcbTraces(sourceCircuitJson),
   )
 
   for (const circuitJson of [sourceCircuitJson, renderedCircuitJson]) {
