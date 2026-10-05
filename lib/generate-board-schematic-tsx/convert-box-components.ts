@@ -1,7 +1,9 @@
 import { su } from "@tscircuit/soup-util"
 import { type AnyCircuitElement, type SchematicComponent } from "circuit-json"
 import { convertRect } from "./convert-rect"
+import { convertBoxPortMarkers } from "./convert-box-port-markers"
 import { formatElement } from "./format-attributes"
+import { getBoxPinDisplayLabel } from "./get-box-pin-display-label"
 
 // Circuit JSON does not encode box body styling. These values mirror the
 // circuit-to-svg defaults so reconstructed boxes keep the compiled view.
@@ -54,19 +56,21 @@ export const convertBoxComponent = ({
           schematicComponent.center.y - schematicComponent.size.height / 2
         break
     }
+    const { markers, pinLineStart } = convertBoxPortMarkers({
+      schematicPort,
+      edge,
+    })
     primitives.push(
       formatElement("schematicline", {
-        x1: edge.x,
-        y1: edge.y,
+        x1: pinLineStart.x,
+        y1: pinLineStart.y,
         x2: schematicPort.center.x,
         y2: schematicPort.center.y,
         strokeWidth: DEFAULT_BOX_BODY_STROKE_WIDTH,
         color: DEFAULT_BOX_BODY_STROKE_COLOR,
       }),
     )
-    const sourcePort = su(circuitJson).source_port.get(
-      schematicPort.source_port_id,
-    )
+    primitives.push(...markers)
     const labelPosition = { ...edge }
     const pinNumberPosition = {
       x: (edge.x + schematicPort.center.x) / 2,
@@ -98,7 +102,10 @@ export const convertBoxComponent = ({
         rotation = -90
         break
     }
-    const displayPinLabel = schematicPort.display_pin_label ?? sourcePort?.name
+    const displayPinLabel = getBoxPinDisplayLabel({
+      schematicComponent,
+      schematicPort,
+    })
     if (displayPinLabel)
       primitives.push(
         formatElement("schematictext", {
