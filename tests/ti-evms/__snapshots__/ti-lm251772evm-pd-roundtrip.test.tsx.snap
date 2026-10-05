@@ -3336,17 +3336,17 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
 <schematicpath points={[{"x":8.399295970356647,"y":-7.876113941639648},{"x":8.399295970356647,"y":-7.536113941639648}]} isFilled={true} />
 <schematicpath points={[{"x":8.469295970356647,"y":-7.766113941639648},{"x":8.469295970356647,"y":-7.646113941639649}]} isFilled={true} />
 <schematictext text={"GND"} schX={8.589295970356648} schY={-7.726113941639648} anchor={"center_left"} fontSize={0.18} />
-<schematictext text={"HV_VSYS"} schX={10.572024085224642} schY={-6.1776285317276525} fontSize={0.18} />
-<schematictext text={"PPHV"} schX={10.572024085224642} schY={-7.960861509958314} fontSize={0.18} />
-<schematictext text={"SDA"} schX={-0.7642427049559988} schY={-7.451366373320982} fontSize={0.18} />
-<schematictext text={"SCL"} schX={1.1463640574339973} schY={-7.451366373320982} fontSize={0.18} />
-<schematictext text={"PPHV"} schX={12.737378415933302} schY={7.196618805002316} fontSize={0.18} />
+<netlabel net={"HV_VSYS"} schX={10.572024085224642} schY={-6.1776285317276525} anchorSide={"left"} />
+<netlabel net={"PPHV"} schX={10.572024085224642} schY={-7.960861509958314} anchorSide={"left"} />
+<netlabel net={"SDA"} schX={-0.7642427049559988} schY={-7.451366373320982} anchorSide={"right"} />
+<netlabel net={"SCL"} schX={1.1463640574339973} schY={-7.451366373320982} anchorSide={"right"} />
+<netlabel net={"PPHV"} schX={12.737378415933302} schY={7.196618805002316} anchorSide={"left"} />
 <schematicpath points={[{"x":-7.186618805002316,"y":-0.28318202871699955},{"x":-7.196618805002315,"y":-0.6131820287169996}]} isFilled={true} />
 <schematicpath points={[{"x":-7.416618805002315,"y":-0.6131820287169996},{"x":-6.976618805002316,"y":-0.6131820287169996}]} isFilled={true} />
 <schematicpath points={[{"x":-7.366618805002315,"y":-0.6931820287169995},{"x":-7.0266188050023155,"y":-0.6931820287169995}]} isFilled={true} />
 <schematicpath points={[{"x":-7.256618805002315,"y":-0.7631820287169995},{"x":-7.136618805002316,"y":-0.7631820287169995}]} isFilled={true} />
 <schematictext text={"AGND"} schX={-7.216618805002315} schY={-0.8831820287169996} anchor={"top_center"} fontSize={0.18} />
-<schematictext text={"HV_VSYS"} schX={-11.33626679018064} schY={4.075961093098655} fontSize={0.18} />
+<netlabel net={"HV_VSYS"} schX={-11.33626679018064} schY={4.075961093098655} anchorSide={"right"} />
 <schematicpath points={[{"x":9.69040759610931,"y":-4.4228300138953225},{"x":9.68040759610931,"y":-4.752830013895323}]} isFilled={true} />
 <schematicpath points={[{"x":9.46040759610931,"y":-4.752830013895323},{"x":9.90040759610931,"y":-4.752830013895323}]} isFilled={true} />
 <schematicpath points={[{"x":9.51040759610931,"y":-4.832830013895323},{"x":9.85040759610931,"y":-4.832830013895323}]} isFilled={true} />
