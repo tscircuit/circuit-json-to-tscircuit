@@ -1,7 +1,7 @@
 import { expect, test } from "bun:test"
 import { readFileSync } from "node:fs"
 import { gunzipSync } from "node:zlib"
-import type { CircuitJson } from "circuit-json"
+import type { CircuitJson, SchematicNetLabel } from "circuit-json"
 import { convertNetLabels } from "lib/generate-board-schematic-tsx/convert-net-labels"
 import { runTscircuitCode } from "tscircuit"
 
@@ -26,7 +26,11 @@ const sourceCircuitJson = fixtureNames.flatMap((fixtureName) =>
 ) as CircuitJson
 
 const symbolicNetLabels = sourceCircuitJson.filter(
-  (element) => element.type === "schematic_net_label" && element.symbol_name,
+  (
+    element,
+  ): element is SchematicNetLabel & {
+    symbol_name: string
+  } => element.type === "schematic_net_label" && Boolean(element.symbol_name),
 )
 const representativeNetLabels = symbolicNetLabels.filter(
   (label, index, labels) =>
