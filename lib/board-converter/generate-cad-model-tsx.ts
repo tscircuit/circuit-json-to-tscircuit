@@ -46,6 +46,19 @@ const getCadModelPlacement = ({
 const formatPointProp = (point: { x: number; y: number; z: number }): string =>
   `{ x: ${point.x}, y: ${point.y}, z: ${point.z} }`
 
+const getCadModelSourceProps = (
+  cadComponent: CadComponent,
+): string[] | undefined => {
+  if (cadComponent.model_step_url) {
+    const modelUrl = formatJsxStringAttribute(cadComponent.model_step_url)
+    return [`modelUrl=${modelUrl}`, `stepUrl=${modelUrl}`]
+  }
+  if (cadComponent.model_glb_url) {
+    return [`modelUrl=${formatJsxStringAttribute(cadComponent.model_glb_url)}`]
+  }
+  return undefined
+}
+
 const generateCadModelElementTsx = ({
   cadComponent,
   pcbBoard,
@@ -55,16 +68,15 @@ const generateCadModelElementTsx = ({
   pcbBoard: PcbBoard
   pcbComponent: PcbComponent
 }): string | undefined => {
-  if (!cadComponent.model_step_url) return undefined
+  const sourceProps = getCadModelSourceProps(cadComponent)
+  if (!sourceProps) return undefined
   const placement = getCadModelPlacement({
     cadComponent,
     pcbBoard,
     pcbComponent,
   })
-  const modelUrl = formatJsxStringAttribute(cadComponent.model_step_url)
   const modelProps = [
-    `modelUrl=${modelUrl}`,
-    `stepUrl=${modelUrl}`,
+    ...sourceProps,
     `positionOffset={${formatPointProp(placement.positionOffset)}}`,
     `rotationOffset={${formatPointProp(placement.rotationOffset)}}`,
   ]
