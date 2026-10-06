@@ -51,6 +51,7 @@ export const convertPrimitives: SchematicElementConverter = (circuitJson) => [
             color: element.color,
             fillColor: element.fill_color,
             isFilled: element.is_filled,
+            isDashed: element.is_dashed,
           }),
         ]
       case "schematic_line":

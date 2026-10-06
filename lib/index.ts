@@ -4,6 +4,7 @@ import {
   getComponentUsingTemplate,
   type ComponentTemplateParams,
 } from "./get-component-using-template"
+import { getSchematicUsingTemplate } from "./get-schematic-using-template"
 
 export const convertCircuitJsonToTscircuit = (
   circuitJson: CircuitJson,
@@ -16,6 +17,16 @@ export const convertCircuitJsonToTscircuit = (
 
   if (hasBoard) {
     return getBoardUsingTemplate({
+      circuitJson,
+      componentName: opts.componentName,
+    })
+  }
+
+  const hasSchematicSheet = circuitJson.some(
+    (element) => element.type === "schematic_sheet",
+  )
+  if (hasSchematicSheet) {
+    return getSchematicUsingTemplate({
       circuitJson,
       componentName: opts.componentName,
     })
