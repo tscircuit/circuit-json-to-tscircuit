@@ -1095,6 +1095,9 @@ test(
       <silkscreentext pcbX={32.2326} pcbY={17.1578651} anchorAlignment="center" fontSize={1.524} font="tscircuit2024" pcbRotation="0deg" mirrored={false} layer="bottom" text=".Layer_Name" />
       <coppertext pcbX={32.2326} pcbY={17.1578651} anchorAlignment="center" text=".Layer_Name" font="tscircuit2024" fontSize={1.524} pcbRotation="0deg" mirrored={false} />
       <coppertext pcbX={32.2326} pcbY={17.1578651} anchorAlignment="center" text=".Layer_Name" font="tscircuit2024" fontSize={1.524} pcbRotation="0deg" mirrored={false} layer="bottom" />
+      <keepout shape="circle" pcbX="22.14872888mm" pcbY="76.5556762mm" radius="1.088899269999997mm" layers={["top"]} />
+      <keepout shape="circle" pcbX="98.34872379999999mm" pcbY="76.5556762mm" radius="1.0888992699999953mm" layers={["top"]} />
+      <keepout shape="circle" pcbX="98.34872379999999mm" pcbY="43.28167619999999mm" radius="1.088899269999997mm" layers={["top"]} />
       <courtyardoutline outline={[{"x":49.69079978,"y":50.577600139999994},{"x":50.74080022,"y":50.577600139999994},{"x":50.74080022,"y":48.17759986},{"x":49.69079978,"y":48.17759986}]} layer="top" />
       <courtyardoutline outline={[{"x":36.35579978,"y":56.927600139999996},{"x":37.405800219999996,"y":56.927600139999996},{"x":37.405800219999996,"y":54.52759986},{"x":36.35579978,"y":54.52759986}]} layer="top" />
       <courtyardoutline outline={[{"x":84.06779986,"y":40.24199978},{"x":84.06779986,"y":41.29200022},{"x":86.46780014,"y":41.29200022},{"x":86.46780014,"y":40.24199978}]} layer="top" />
