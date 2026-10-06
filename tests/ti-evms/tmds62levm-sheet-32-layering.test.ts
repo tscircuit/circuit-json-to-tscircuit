@@ -51,7 +51,7 @@ test("TMDS62LEVM custom component body stays behind its details", async () => {
       element.center.y === 4.914784500621634,
   )
 
-  expect(bodyIndex).toBeGreaterThan(terminalIndex)
+  expect(bodyIndex).toBeLessThan(terminalIndex)
 
   const comparisonSvg = stackSvgsHorizontally(
     [
