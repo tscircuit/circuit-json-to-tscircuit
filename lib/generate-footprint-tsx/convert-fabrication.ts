@@ -18,6 +18,12 @@ export const convertFabrication: FootprintElementConverter = (circuitJson) => {
     if ("stroke_width" in fabPath && fabPath.stroke_width !== undefined) {
       attrs.push(`strokeWidth={${fabPath.stroke_width}}`)
     }
+    if ("is_filled" in fabPath && fabPath.is_filled !== undefined) {
+      attrs.push(`isFilled={${fabPath.is_filled}}`)
+    }
+    if ("has_stroke" in fabPath && fabPath.has_stroke !== undefined) {
+      attrs.push(`hasStroke={${fabPath.has_stroke}}`)
+    }
     if ("color" in fabPath && fabPath.color !== undefined) {
       attrs.push(`color="${fabPath.color}"`)
     }
