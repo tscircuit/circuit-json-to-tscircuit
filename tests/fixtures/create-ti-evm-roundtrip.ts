@@ -92,8 +92,8 @@ export async function createTiEvmRoundtrip({
   const sourceSchematicSvg = convertCircuitJsonToSchematicSvg(sourceCircuitJson)
   const renderedSchematicSvg =
     convertCircuitJsonToSchematicSvg(renderedCircuitJson)
-  expect(getSchematicViewportTransform(renderedSchematicSvg)).toBe(
-    getSchematicViewportTransform(sourceSchematicSvg),
+  expect(getSchematicViewportScale(renderedSchematicSvg)).toBe(
+    getSchematicViewportScale(sourceSchematicSvg),
   )
 
   return {
@@ -115,10 +115,12 @@ export async function createTiEvmRoundtrip({
   }
 }
 
-const getSchematicViewportTransform = (svg: string): string => {
-  const transform = svg.match(/data-real-to-screen-transform="([^"]+)"/u)?.[1]
-  if (!transform) throw new Error("Schematic SVG is missing its viewport")
-  return transform
+const getSchematicViewportScale = (svg: string): number => {
+  const scale = svg.match(
+    /data-real-to-screen-transform="matrix\(([^,]+)/u,
+  )?.[1]
+  if (!scale) throw new Error("Schematic SVG is missing its viewport")
+  return Number(scale)
 }
 
 export function createComparisonSvg({

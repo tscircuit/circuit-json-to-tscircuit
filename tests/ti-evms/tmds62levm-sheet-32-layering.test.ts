@@ -21,7 +21,9 @@ const loadFixture = async (): Promise<CircuitJson> => {
 }
 
 test("TMDS62LEVM custom component body stays behind its details", async () => {
-  const sourceCircuitJson = await loadFixture()
+  const sourceCircuitJson = (await loadFixture()).filter(
+    (element) => element.type !== "schematic_text",
+  )
   const schematicElements = generateBoardSchematicElements(sourceCircuitJson)
   const generatedTscircuit = `export default () => (
     <board>
@@ -31,6 +33,11 @@ test("TMDS62LEVM custom component body stays behind its details", async () => {
   const renderedCircuitJson = (await runTscircuitCode(
     generatedTscircuit,
   )) as CircuitJson
+  // Ports are not drawn, but reusing their bounds keeps both panels at one scale.
+  const renderedComparisonCircuitJson = [
+    ...renderedCircuitJson,
+    ...sourceCircuitJson.filter((element) => element.type === "schematic_port"),
+  ]
   const bodyIndex = renderedCircuitJson.findIndex(
     (element) =>
       element.type === "schematic_path" &&
@@ -48,8 +55,14 @@ test("TMDS62LEVM custom component body stays behind its details", async () => {
 
   const comparisonSvg = stackSvgsHorizontally(
     [
-      convertCircuitJsonToSchematicSvg(sourceCircuitJson),
-      convertCircuitJsonToSchematicSvg(renderedCircuitJson),
+      convertCircuitJsonToSchematicSvg(sourceCircuitJson, {
+        width: 600,
+        height: 1000,
+      }),
+      convertCircuitJsonToSchematicSvg(renderedComparisonCircuitJson, {
+        width: 600,
+        height: 1000,
+      }),
     ],
     {
       gap: 24,
