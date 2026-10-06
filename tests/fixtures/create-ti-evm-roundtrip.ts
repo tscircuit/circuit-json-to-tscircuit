@@ -10,6 +10,7 @@ import {
 import { convertCircuitJsonToTscircuit } from "lib"
 import { stackSvgsHorizontally } from "stack-svgs"
 import { runTscircuitCode } from "tscircuit"
+import { getComparablePcbTraceRoutes } from "./get-comparable-pcb-trace-routes"
 
 interface TiEvmRoundtripResult {
   sourceCircuitJson: CircuitJson
@@ -51,6 +52,10 @@ export async function createTiEvmRoundtrip({
     )
   }
   expect(renderedBoard).toMatchObject({ center: sourceBoard.center })
+
+  expect(getComparablePcbTraceRoutes(renderedCircuitJson)).toEqual(
+    getComparablePcbTraceRoutes(sourceCircuitJson),
+  )
 
   expect(
     renderedCircuitJson.filter((element) => element.type === "pcb_via"),
