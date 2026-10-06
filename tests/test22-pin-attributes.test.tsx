@@ -20,8 +20,16 @@ const getChipProps = (source: string, props = {}) => {
   return Object.values(module.exports)[0](props).props
 }
 
-const convert = (ports: Array<SourcePort & Record<string, unknown>>) =>
-  convertCircuitJsonToTscircuit(ports, { componentName: "Part" })
+// Legacy imports can contain string voltages, even though the current schema
+// types this field as a number. Preserve that raw-input regression coverage.
+type ImportedSourcePort = Omit<SourcePort, "requires_voltage"> & {
+  requires_voltage?: SourcePort["requires_voltage"] | string
+}
+
+const convert = (ports: Array<ImportedSourcePort & Record<string, unknown>>) =>
+  convertCircuitJsonToTscircuit(ports as AnyCircuitElement[], {
+    componentName: "Part",
+  })
 
 test("preserves every F1C100S and 2.8 V regulator pin's datasheet attributes", () => {
   for (const fixture of [f1c, regulator]) {

@@ -1,5 +1,6 @@
 import { expect, test } from "bun:test"
 import type { CircuitJson, PcbFabricationNotePath } from "circuit-json"
+import { pcb_fabrication_note_path } from "circuit-json"
 import { convertCircuitJsonToPcbSvg } from "circuit-to-svg"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { stackSvgsHorizontally } from "stack-svgs"
@@ -92,9 +93,9 @@ test("fabrication path fill and stroke flags survive board and component TSX", a
         ? source
         : `${source.replace("export const FabricationFill", "const FabricationFill")}\nexport default () => <board width="14mm" height="9mm"><FabricationFill /></board>`,
     )
-    const renderedPaths = rendered.filter(
-      (element) => element.type === "pcb_fabrication_note_path",
-    )
+    const renderedPaths = rendered
+      .filter((element) => element.type === "pcb_fabrication_note_path")
+      .map((element) => pcb_fabrication_note_path.parse(element))
     expect(renderedPaths).toHaveLength(paths.length)
     for (const path of paths) {
       const actual = renderedPaths.find(
