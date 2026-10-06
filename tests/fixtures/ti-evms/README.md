@@ -17,3 +17,9 @@ several megabytes of repetitive JSON; tests expand them before conversion.
 `tmds62levm-sheet-05.circuit.json.gz` contains the unchanged conversion of
 TMDS62LEVM revision B sheet 05 from `altium-to-circuit-json` v0.0.85
 (`568824fb3ff64992133378b30e88fc23bbd43f48`).
+
+The `*-cad.circuit.json.gz` fixtures retain the linked CAD component records for
+the same five TI EVMs. Their `cad-models` directories contain the referenced
+STEP files in gzip form. The tests embed those models before rendering top and
+bottom 3D snapshots, so the complete Circuit JSON to TSX round trip is visible
+without network access.
