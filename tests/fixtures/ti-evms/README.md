@@ -8,3 +8,9 @@ Texas Instruments' published Altium design files. They were generated with
 The upstream files and checksums are maintained in that repository's
 `scripts/references/reference-manifest.ts`. The gzip files only avoid committing
 several megabytes of repetitive JSON; tests expand them before conversion.
+
+The `*-cad.circuit.json.gz` fixtures retain the linked CAD component records for
+the same five TI EVMs. Their `cad-models` directories contain the referenced
+STEP files in gzip form. The tests embed those models before rendering top and
+bottom 3D snapshots, so the complete Circuit JSON to TSX round trip is visible
+without network access.
