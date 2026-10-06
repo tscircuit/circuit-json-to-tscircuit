@@ -28,7 +28,7 @@
     "@types/react-dom": "18",
     "bun-match-svg": "^0.0.15",
     "circuit-json": "0.0.516",
-    "circuit-to-svg": "^0.0.384",
+    "circuit-to-svg": "0.0.400",
     "commander": "^13.1.0",
     "prettier": "^3.9.5",
     "schematic-symbols": "0.0.248",
