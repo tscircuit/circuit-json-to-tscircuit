@@ -18,7 +18,9 @@ const loadStandaloneDrv8307Schematic = async (): Promise<CircuitJson> => {
 
   return boardCircuitJson.filter(
     (element) =>
-      !element.type.startsWith("pcb_") && !element.type.startsWith("cad_"),
+      !element.type.startsWith("pcb_") &&
+      !element.type.startsWith("cad_") &&
+      element.type !== "schematic_text",
   ) as CircuitJson
 }
 
