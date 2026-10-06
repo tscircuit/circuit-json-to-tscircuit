@@ -242,7 +242,7 @@ const circuitJson: any = [
     ccw_rotation: 180,
     pcb_component_id: "pcb_generic_component_0",
     anchor_position: {
-      x: 0,
+      x: -3,
       y: 1.05,
     },
     anchor_alignment: "center",
@@ -263,7 +263,7 @@ const circuitJson: any = [
     pcb_component_id: "pcb_generic_component_0",
     anchor_position: {
       x: 0,
-      y: -1.05,
+      y: -3.05,
     },
     anchor_alignment: "center",
     text: "R_0201_0603Metric",
