@@ -3,6 +3,7 @@ import { convertRect } from "./convert-rect"
 import { generateSymbolElements } from "../generate-symbol-tsx"
 import { formatElement } from "./format-attributes"
 import type { SchematicElementConverter } from "./converter-types"
+import { getSchematicPrimitivesInRenderOrder } from "./get-schematic-primitives-in-render-order"
 
 export const convertPrimitives: SchematicElementConverter = (circuitJson) => [
   ...generateSymbolElements(
@@ -12,7 +13,7 @@ export const convertPrimitives: SchematicElementConverter = (circuitJson) => [
         element.type === "schematic_table_cell",
     ),
   ),
-  ...circuitJson.flatMap((element) => {
+  ...getSchematicPrimitivesInRenderOrder(circuitJson).flatMap((element) => {
     switch (element.type) {
       case "schematic_text":
         return [
