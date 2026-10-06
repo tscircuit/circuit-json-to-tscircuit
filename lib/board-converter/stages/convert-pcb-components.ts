@@ -1,5 +1,6 @@
 import type {
   AnyCircuitElement,
+  CadComponent,
   PcbComponent,
   SchematicComponent,
 } from "circuit-json"
@@ -8,6 +9,7 @@ import { formatJsxStringAttribute } from "../../format-jsx-string-attribute"
 import { generateFootprintTsx } from "../../generate-footprint-tsx"
 import { generateSymbolTsx } from "../../generate-symbol-tsx"
 import type { BoardConverterStage } from "../BoardConverterContext"
+import { generateCadModelTsx } from "../generate-cad-model-tsx"
 import { getSchematicComponentsForPcbComponent } from "../get-schematic-components-for-pcb-component"
 import { localizePcbComponentElements } from "../localize-pcb-component-elements"
 import { localizeSchematicComponentElements } from "../localize-schematic-component-elements"
@@ -16,6 +18,7 @@ type PinLabelKey = `pin${number}`
 type PinLabels = Partial<Record<PinLabelKey, string[]>>
 type SourceComponent = Extract<AnyCircuitElement, { type: "source_component" }>
 type SourceComponentId = NonNullable<SourceComponent["source_component_id"]>
+type PcbComponentId = PcbComponent["pcb_component_id"]
 
 const getComponentFootprintTsx = ({
   circuitJson,
@@ -147,6 +150,17 @@ export const convertPcbComponents: BoardConverterStage = ({
   const pcbComponents = circuitJson.filter(
     (element): element is PcbComponent => element.type === "pcb_component",
   )
+  const cadComponentsByPcbComponentId = new Map<
+    PcbComponentId,
+    CadComponent[]
+  >()
+  for (const element of circuitJson) {
+    if (element.type !== "cad_component" || !element.pcb_component_id) continue
+    const cadComponents =
+      cadComponentsByPcbComponentId.get(element.pcb_component_id) ?? []
+    cadComponents.push(element)
+    cadComponentsByPcbComponentId.set(element.pcb_component_id, cadComponents)
+  }
 
   for (const [componentIndex, pcbComponent] of pcbComponents.entries()) {
     const sourceComponent = circuitJson.find(
@@ -188,6 +202,16 @@ export const convertPcbComponents: BoardConverterStage = ({
       `pcbRotation="${pcbComponent.rotation}deg"`,
       `layer="${pcbComponent.layer}"`,
     ]
+    const cadComponents =
+      cadComponentsByPcbComponentId.get(pcbComponent.pcb_component_id) ?? []
+    const cadModelTsx = generateCadModelTsx({
+      cadComponents,
+      pcbBoard,
+      pcbComponent,
+    })
+    if (cadModelTsx) {
+      componentProps.push(`cadModel={${cadModelTsx}}`)
+    }
 
     addSchematicComponentProps({
       circuitJson,
