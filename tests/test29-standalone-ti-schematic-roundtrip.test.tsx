@@ -25,7 +25,7 @@ const loadStandaloneDrv8307Schematic = async (): Promise<CircuitJson> => {
 }
 
 test(
-  "reproduces a standalone TI schematic collapsing into one chip",
+  "preserves a standalone TI schematic sheet instead of importing it as one chip",
   async () => {
     const sourceCircuitJson = await loadStandaloneDrv8307Schematic()
     const generatedTscircuit = convertCircuitJsonToTscircuit(
@@ -36,21 +36,23 @@ test(
       generatedTscircuit,
     )) as CircuitJson
 
-    expect(generatedTscircuit).toContain("<chip")
-    expect(generatedTscircuit).not.toContain("<schematicsheet")
-    expect(
-      renderedCircuitJson.filter(
-        (element) => element.type === "schematic_component",
-      ),
-    ).toHaveLength(1)
+    expect(generatedTscircuit).toContain("<schematicsheet")
+    expect(generatedTscircuit).not.toContain("<chip")
     expect(
       renderedCircuitJson.filter(
         (element) => element.type === "schematic_sheet",
       ),
-    ).toHaveLength(0)
+    ).toHaveLength(1)
+    expect(
+      renderedCircuitJson.filter(
+        (element) =>
+          element.type === "schematic_path" ||
+          element.type === "schematic_line",
+      ).length,
+    ).toBeGreaterThan(100)
 
     const comparisonSvg = createComparisonSvg({
-      fixtureName: "DRV8307EVM standalone schematic repro",
+      fixtureName: "DRV8307EVM standalone schematic",
       kind: "schematic",
       sourceSvg: convertCircuitJsonToSchematicSvg(sourceCircuitJson),
       renderedSvg: convertCircuitJsonToSchematicSvg(renderedCircuitJson),
