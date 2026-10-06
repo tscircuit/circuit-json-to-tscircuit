@@ -1,7 +1,10 @@
 import { mmStr } from "@tscircuit/mm"
 import { su } from "@tscircuit/soup-util"
 import type { AnyCircuitElement } from "circuit-json"
-import { generateBoardSchematicTsx } from "./generate-board-schematic-tsx"
+import { createBoardConversionContext } from "./board-conversion-context"
+import { generateBoardNetsTsx } from "./generate-board-nets-tsx"
+import { generateBoardSchematicElements } from "./generate-board-schematic-tsx"
+import { generateBoardSchematicSheetTsx } from "./generate-board-schematic-sheet-tsx"
 import { generateCopperPoursTsx } from "./generate-copper-pours-tsx"
 import { generateFootprintTsx } from "./generate-footprint-tsx"
 
@@ -62,17 +65,23 @@ export const getBoardUsingTemplate = ({
   }
 
   const boardPropsStr = boardProps.join(" ")
-  const footprintTsx = generateFootprintTsx(circuitJson)
-  const copperPoursTsx = generateCopperPoursTsx(circuitJson)
+  const context = createBoardConversionContext(circuitJson)
+  const footprintTsx = generateFootprintTsx(circuitJson, context)
+  const copperPoursTsx = generateCopperPoursTsx(circuitJson, context)
+  const boardNetsTsx = generateBoardNetsTsx(context)
 
-  const symbolTsx = generateBoardSchematicTsx(circuitJson)
-  const chipProps = [
-    footprintTsx ? `footprint={${footprintTsx}}` : "",
-    symbolTsx ? `symbol={${symbolTsx}}` : "",
-  ].filter(Boolean)
+  const schematicElements = generateBoardSchematicElements(circuitJson)
+  const schematicSheetTsx = generateBoardSchematicSheetTsx({
+    circuitJson,
+    schematicElements,
+  })
   const children = [
-    footprintTsx ? `<chip ${chipProps.join(" ")} />` : (symbolTsx ?? ""),
+    ...boardNetsTsx,
+    footprintTsx
+      ? `<chip name="${context.pcbChipName}" noSchematicRepresentation footprint={${footprintTsx}} />`
+      : "",
     ...copperPoursTsx,
+    schematicSheetTsx,
   ]
     .filter(Boolean)
     .join("\n")
