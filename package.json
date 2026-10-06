@@ -21,13 +21,16 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@tscircuit/core": "0.0.2096",
+    "@tscircuit/eval": "0.0.1561",
     "@tscircuit/mm": "^0.0.8",
+    "@tscircuit/props": "0.0.689",
     "@tscircuit/soup-util": "^0.0.41",
     "@types/bun": "latest",
     "@types/react": "18",
     "@types/react-dom": "18",
     "bun-match-svg": "^0.0.15",
-    "circuit-json": "^0.0.507",
+    "circuit-json": "0.0.516",
     "circuit-to-svg": "^0.0.384",
     "commander": "^13.1.0",
     "prettier": "^3.9.5",
@@ -35,11 +38,17 @@
     "shiki": "^4.3.1",
     "stack-svgs": "^0.0.1",
     "transformation-matrix": "3.1.0",
-    "tscircuit": "0.0.2703-libonly",
+    "tscircuit": "0.0.2745-libonly",
     "tsup": "^8.3.5",
     "zod": "^3.25.76"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "overrides": {
+    "@tscircuit/core": "0.0.2096",
+    "@tscircuit/eval": "0.0.1561",
+    "@tscircuit/props": "0.0.689",
+    "circuit-json": "0.0.516"
   }
 }

@@ -1,4 +1,5 @@
 import type { AnyCircuitElement } from "circuit-json"
+import type { LayerRef } from "circuit-json"
 import type {
   BoardConversionContext,
   ImportedPortHint,
@@ -25,12 +26,34 @@ export const createBoardConversionContext = (
   )
   const portHintByPcbPortId = new Map<PcbPortId, ImportedPortHint>()
   const sourcePortIdByPcbPortId = new Map<PcbPortId, SourcePortId>()
+  const pcbPortSelectorsBySourcePortId = new Map<
+    SourcePortId,
+    PcbPortSelector[]
+  >()
+  const pcbPathAnchorSelectorByLayer = new Map<LayerRef, PcbPortSelector>()
 
   for (const element of circuitJson) {
     if (element.type !== "pcb_port") continue
     const portHint = `imported_pcb_port_${portHintByPcbPortId.size + 1}`
+    const pcbPortSelector = `.${PCB_CHIP_NAME} > .${portHint}`
     portHintByPcbPortId.set(element.pcb_port_id, portHint)
     sourcePortIdByPcbPortId.set(element.pcb_port_id, element.source_port_id)
+    const sourcePortSelectors =
+      pcbPortSelectorsBySourcePortId.get(element.source_port_id) ?? []
+    sourcePortSelectors.push(pcbPortSelector)
+    pcbPortSelectorsBySourcePortId.set(
+      element.source_port_id,
+      sourcePortSelectors,
+    )
+    const firstAvailableLayer = element.layers[0]
+    // pcbPaths starts on the anchor port's first layer. Indexing every layer of
+    // a through-hole port would silently move bottom paths onto its top layer.
+    if (
+      firstAvailableLayer &&
+      !pcbPathAnchorSelectorByLayer.has(firstAvailableLayer)
+    ) {
+      pcbPathAnchorSelectorByLayer.set(firstAvailableLayer, pcbPortSelector)
+    }
   }
 
   const runtimeNetNamesBySourcePortId = getRuntimeNetNamesBySourcePortId({
@@ -57,6 +80,8 @@ export const createBoardConversionContext = (
   return {
     pcbChipName: PCB_CHIP_NAME,
     portHintByPcbPortId,
+    pcbPortSelectorsBySourcePortId,
+    pcbPathAnchorSelectorByLayer,
     runtimeNetNameBySourceNetId,
     pcbPortSelectorsByRuntimeNetName,
   }
@@ -106,7 +131,7 @@ const getRuntimeNetNamesBySourcePortId = ({
       },
     )
     for (const sourcePortId of element.connected_source_port_ids) {
-      const names = result.get(sourcePortId) ?? new Set<string>()
+      const names = result.get(sourcePortId) ?? new Set<RuntimeNetName>()
       for (const runtimeName of runtimeNames) names.add(runtimeName)
       result.set(sourcePortId, names)
     }

@@ -25,7 +25,7 @@ export const generateFootprintTsx = (
     convertPlatedHoles,
     convertVias,
     convertSmtPads,
-    convertPcbTraces,
+    ...(context ? [] : [convertPcbTraces]),
     convertSilkscreen,
     convertSilkscreenGraphics,
     convertFabrication,

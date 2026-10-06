@@ -53,7 +53,7 @@ test("preserves every F1C100S and 2.8 V regulator pin's datasheet attributes", (
   }
 })
 
-test("preserves false, zero, string voltages, capacitance and active capabilities", () => {
+test("preserves false, zero, voltages, capacitance and active capabilities", () => {
   const source = convert([
     {
       type: "source_port",
@@ -62,7 +62,7 @@ test("preserves false, zero, string voltages, capacitance and active capabilitie
       pin_number: 5,
       provides_power: false,
       provides_voltage: 0,
-      requires_voltage: "2.8V",
+      requires_voltage: 2.8,
       must_be_connected: false,
       can_use_tri_state: false,
       supports_spi_mosi: true,
@@ -80,7 +80,7 @@ test("preserves false, zero, string voltages, capacitance and active capabilitie
     pin5: {
       providesPower: false,
       providesVoltage: 0,
-      requiresVoltage: "2.8V",
+      requiresVoltage: 2.8,
       mustBeConnected: false,
       canUseTriState: false,
       capabilities: ["spi_mosi", "uart_tx"],

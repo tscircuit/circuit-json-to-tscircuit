@@ -5,6 +5,7 @@ import { createBoardConversionContext } from "./board-conversion-context"
 import { generateBoardNetsTsx } from "./generate-board-nets-tsx"
 import { generateBoardSchematicElements } from "./generate-board-schematic-tsx"
 import { generateBoardSchematicSheetTsx } from "./generate-board-schematic-sheet-tsx"
+import { generateBoardTracesTsx } from "./generate-board-traces-tsx"
 import { generateCopperPoursTsx } from "./generate-copper-pours-tsx"
 import { generateFootprintTsx } from "./generate-footprint-tsx"
 
@@ -19,7 +20,7 @@ export const getBoardUsingTemplate = ({
 }: BoardTemplateParams) => {
   const pcbBoard = su(circuitJson).pcb_board.list()[0]
 
-  const boardProps: string[] = []
+  const boardProps: string[] = ["routingDisabled"]
 
   if (pcbBoard) {
     if (pcbBoard.width !== undefined) {
@@ -68,7 +69,11 @@ export const getBoardUsingTemplate = ({
   const context = createBoardConversionContext(circuitJson)
   const footprintTsx = generateFootprintTsx(circuitJson, context)
   const copperPoursTsx = generateCopperPoursTsx(circuitJson, context)
-  const boardNetsTsx = generateBoardNetsTsx(context)
+  const boardTraces = generateBoardTracesTsx(circuitJson, context)
+  const boardNetsTsx = generateBoardNetsTsx(
+    context,
+    boardTraces.connectedRuntimeNetNames,
+  )
 
   const schematicElements = generateBoardSchematicElements(circuitJson)
   const schematicSheetTsx = generateBoardSchematicSheetTsx({
@@ -81,6 +86,7 @@ export const getBoardUsingTemplate = ({
       ? `<chip name="${context.pcbChipName}" noSchematicRepresentation footprint={${footprintTsx}} />`
       : "",
     ...copperPoursTsx,
+    ...boardTraces.elements,
     schematicSheetTsx,
   ]
     .filter(Boolean)
