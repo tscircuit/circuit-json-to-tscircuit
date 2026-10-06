@@ -1,5 +1,4 @@
 import { mmStr } from "@tscircuit/mm"
-import type { PcbPath } from "@tscircuit/props"
 import type {
   AnyCircuitElement,
   LayerRef,
@@ -8,7 +7,11 @@ import type {
 } from "circuit-json"
 import type { BoardConversionContext } from "./board-conversion-context"
 import type { RuntimeNetName, SourceTraceId } from "./board-conversion-types"
-import { getPcbTracePath, type PcbTracePath } from "./get-pcb-trace-path"
+import {
+  getPcbTracePath,
+  type PcbPath,
+  type PcbTracePath,
+} from "./get-pcb-trace-path"
 
 interface PcbTracePathGroup extends PcbTracePath {
   sourceTrace: SourceTrace

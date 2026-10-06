@@ -21,10 +21,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@tscircuit/core": "0.0.2096",
-    "@tscircuit/eval": "0.0.1561",
     "@tscircuit/mm": "^0.0.8",
-    "@tscircuit/props": "0.0.689",
     "@tscircuit/soup-util": "^0.0.41",
     "@types/bun": "latest",
     "@types/react": "18",
@@ -46,9 +43,8 @@
     "typescript": "^5.0.0"
   },
   "overrides": {
-    "@tscircuit/core": "0.0.2096",
-    "@tscircuit/eval": "0.0.1561",
-    "@tscircuit/props": "0.0.689",
-    "circuit-json": "0.0.516"
+    "@tscircuit/core": "0.0.2097",
+    "@tscircuit/eval": "0.0.1562",
+    "@tscircuit/props": "0.0.689"
   }
 }

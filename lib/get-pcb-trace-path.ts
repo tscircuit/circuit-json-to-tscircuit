@@ -1,5 +1,9 @@
-import type { PcbPath } from "@tscircuit/props"
 import type { LayerRef, PcbTrace } from "circuit-json"
+import type { Trace } from "tscircuit"
+
+export type PcbPath = NonNullable<
+  ConstructorParameters<typeof Trace>[0]["pcbPaths"]
+>[number]
 
 export interface PcbTracePath {
   path: PcbPath
