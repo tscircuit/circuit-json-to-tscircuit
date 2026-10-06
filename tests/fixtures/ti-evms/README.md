@@ -13,3 +13,7 @@ LMG342X-BB-EVM PCB fixtures were resolved from their matching `.PrjPcb` files us
 The upstream files and checksums are maintained in that repository's
 `scripts/references/reference-manifest.ts`. The gzip files only avoid committing
 several megabytes of repetitive JSON; tests expand them before conversion.
+
+The `*-cad.circuit.json.gz` fixtures retain the linked CAD component records for
+the same five TI EVMs. They are used to verify the complete Circuit JSON to TSX
+round trip rather than isolated synthetic components.
