@@ -51,6 +51,20 @@ export async function createTiEvmRoundtrip({
     )
   }
   expect(renderedBoard).toMatchObject({ center: sourceBoard.center })
+  const sourceSchematicSheet = sourceCircuitJson.find(
+    (element) => element.type === "schematic_sheet",
+  )
+  const renderedSchematicSheet = renderedCircuitJson.find(
+    (element) => element.type === "schematic_sheet",
+  )
+  if (!sourceSchematicSheet || !renderedSchematicSheet) {
+    throw new Error(
+      `${fixtureName} must contain source and rendered schematic sheets`,
+    )
+  }
+  expect(renderedSchematicSheet.center).toEqual(
+    sourceSchematicSheet.center ?? { x: 0, y: 0 },
+  )
 
   expect(
     renderedCircuitJson.filter((element) => element.type === "pcb_via"),

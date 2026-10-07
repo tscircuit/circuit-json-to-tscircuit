@@ -27,7 +27,7 @@
     "@types/react": "18",
     "@types/react-dom": "18",
     "bun-match-svg": "^0.0.15",
-    "circuit-json": "^0.0.507",
+    "circuit-json": "https://pkg.pr.new/circuit-json@dcf1191",
     "circuit-to-svg": "^0.0.442",
     "commander": "^13.1.0",
     "prettier": "^3.9.5",
@@ -41,5 +41,11 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "overrides": {
+    "@tscircuit/core": "https://pkg.pr.new/tscircuit/core/@tscircuit/core@4b0436d",
+    "@tscircuit/modelprinter": "^0.0.11",
+    "@tscircuit/props": "https://pkg.pr.new/@tscircuit/props@60b41e7",
+    "circuit-json": "https://pkg.pr.new/circuit-json@dcf1191"
   }
 }

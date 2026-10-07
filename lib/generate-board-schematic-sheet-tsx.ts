@@ -18,6 +18,9 @@ export const generateBoardSchematicSheetTsx = ({
   if (sheet.sheet_index !== undefined) {
     attrs.push(`sheetIndex={${sheet.sheet_index}}`)
   }
+  const sheetCenter = sheet.center ?? { x: 0, y: 0 }
+  attrs.push(`schX={${sheetCenter.x}}`)
+  attrs.push(`schY={${sheetCenter.y}}`)
   if (sheet.sheet_size) {
     attrs.push(`sheetSize="${sheet.sheet_size === "a4" ? "A4" : "ANSI_B"}"`)
   }
