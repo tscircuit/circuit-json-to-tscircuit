@@ -65,7 +65,6 @@ export async function createTiEvmRoundtrip({
   expect(renderedSchematicSheet.center).toEqual(
     sourceSchematicSheet.center ?? { x: 0, y: 0 },
   )
-
   expect(
     renderedCircuitJson.filter((element) => element.type === "pcb_via"),
   ).toHaveLength(

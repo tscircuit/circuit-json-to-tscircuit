@@ -35,7 +35,7 @@
     "shiki": "^4.3.1",
     "stack-svgs": "^0.0.1",
     "transformation-matrix": "3.1.0",
-    "tscircuit": "0.0.2703-libonly",
+    "tscircuit": "0.0.2759",
     "tsup": "^8.3.5",
     "zod": "^3.25.76"
   },
@@ -44,7 +44,6 @@
   },
   "overrides": {
     "@tscircuit/core": "https://pkg.pr.new/tscircuit/core/@tscircuit/core@4b0436d",
-    "@tscircuit/modelprinter": "^0.0.11",
     "@tscircuit/props": "https://pkg.pr.new/@tscircuit/props@60b41e7",
     "circuit-json": "https://pkg.pr.new/circuit-json@dcf1191"
   }
