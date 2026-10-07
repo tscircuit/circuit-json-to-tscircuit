@@ -1,6 +1,7 @@
 import type { AnyCircuitElement } from "circuit-json"
 import { convertPrimitives } from "./generate-board-schematic-tsx/convert-primitives"
 import { convertComponents } from "./generate-board-schematic-tsx/convert-components"
+import { convertSchematicGraphics } from "./generate-board-schematic-tsx/convert-schematic-graphics"
 import { convertNetLabels } from "./generate-board-schematic-tsx/convert-net-labels"
 import { convertTraces } from "./generate-board-schematic-tsx/convert-traces"
 
@@ -21,5 +22,6 @@ export const generateBoardSchematicElements = (
     ...convertNetLabels(circuitJson),
     ...convertPrimitives(circuitJson),
     ...convertTraces(circuitJson),
+    ...convertSchematicGraphics(circuitJson),
   ]
 }

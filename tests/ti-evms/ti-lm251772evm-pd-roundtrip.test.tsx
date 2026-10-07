@@ -63,6 +63,20 @@ test(
       ),
     ).toBe(true)
 
+    const sourceSchematicGraphics = result.sourceCircuitJson.filter(
+      (element) => element.type === "schematic_graphic",
+    )
+    const renderedSchematicGraphics = result.renderedCircuitJson.filter(
+      (element) => element.type === "schematic_graphic",
+    )
+    expect(sourceSchematicGraphics).toHaveLength(1)
+    expect(renderedSchematicGraphics).toHaveLength(
+      sourceSchematicGraphics.length,
+    )
+    expect(renderedSchematicGraphics[0]?.asset?.url).toStartWith(
+      "data:image/svg+xml",
+    )
+
     expect(result.generatedTscircuit).toMatchSnapshot()
     await expect(result.pcbComparisonSvg).toMatchSvgSnapshot(
       import.meta.path,
