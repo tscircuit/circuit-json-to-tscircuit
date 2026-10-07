@@ -120,7 +120,7 @@ test("preserves component-owned PCB silkscreen graphics", async () => {
   expect(generatedTscircuit).toMatchInlineSnapshot(`
     "export default () => (
       <board pcbX={10} pcbY={20} width="16mm" height="10mm" thickness="1.4mm" layers={2} material="fr4">
-        <chip name="U1" pcbX={-3} pcbY={0} pcbRotation="90deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["pin1","1"]}} footprint={<footprint>
+        <chip name="U1" pcbX={-3} pcbY={0} pcbRotation="90deg" layer="top" cadModel={null} noSchematicRepresentation pinLabels={{"pin1":["pin1","1"]}} footprint={<footprint>
                 <smtpad portHints={["1"]} pcbX="0mm" pcbY="0mm" layer="top" coveredWithSolderMask={false} width="1mm" height="1mm" shape="rect" />
         <pcbsilkscreengraphic layer="top" brepShape={{"outer_ring":{"vertices":[{"x":-2,"y":-1},{"x":2,"y":-0.9999999999999991},{"x":2,"y":1.0000000000000009},{"x":-2,"y":1}]},"inner_rings":[{"vertices":[{"x":-0.6999999999999993,"y":-0.40000000000000036},{"x":-0.6999999999999993,"y":0.40000000000000036},{"x":0.6999999999999993,"y":0.40000000000000036},{"x":0.6999999999999993,"y":-0.40000000000000036}]}]}} />
               </footprint>} />

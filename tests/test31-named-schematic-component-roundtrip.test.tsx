@@ -55,7 +55,7 @@ test("reunifies PCB and named schematic components by reference designator", asy
   expect(generatedTscircuit).toMatchInlineSnapshot(`
     "export default () => (
       <board width="20mm" height="10mm" thickness="1.4mm" layers={2} material="fr4">
-        <chip name="R1" pcbX={-2} pcbY={0} pcbRotation="0deg" layer="top" symbolName="resistor_right" schX={4} schY={0} schDisplayValue="10k" pinLabels={{"pin1":["INPUT","pin1","1","left"],"pin2":["OUTPUT","pin2","2","right"]}} supplierPartNumbers={{"jlcpcb":[]}} footprint={<footprint>
+        <chip name="R1" pcbX={-2} pcbY={0} pcbRotation="0deg" layer="top" cadModel={null} symbolName="resistor_right" schX={4} schY={0} schDisplayValue="10k" pinLabels={{"pin1":["INPUT","pin1","1","left"],"pin2":["OUTPUT","pin2","2","right"]}} supplierPartNumbers={{"jlcpcb":[]}} footprint={<footprint>
                 <smtpad portHints={["1","left"]} pcbX="-0.51mm" pcbY="0mm" layer="top" coveredWithSolderMask={false} width="0.54mm" height="0.64mm" shape="rect" />
         <smtpad portHints={["2","right"]} pcbX="0.51mm" pcbY="0mm" layer="top" coveredWithSolderMask={false} width="0.54mm" height="0.64mm" shape="rect" />
         <silkscreenpath route={[{"x":0.51,"y":0.72},{"x":-0.98,"y":0.72},{"x":-0.98,"y":-0.72},{"x":0.51,"y":-0.72}]} strokeWidth={0.1} />
