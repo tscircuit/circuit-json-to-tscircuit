@@ -1,5 +1,6 @@
 import { expect, test } from "bun:test"
 import type { CircuitJson } from "circuit-json"
+import { convertCircuitJsonToSchematicSvg } from "circuit-to-svg"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
 
@@ -44,6 +45,10 @@ test("uses the schematic port display label for imported box pins", async () => 
       facing_direction: "right",
       pin_number: 1,
       display_pin_label: "FB/INT",
+      display_pin_label_text_parts: [
+        { text: "FB/" },
+        { text: "INT", is_overlined: true },
+      ],
     },
   ]
   const renderedCircuitJson = await runTscircuitCode(
@@ -57,4 +62,13 @@ test("uses the schematic port display label for imported box pins", async () => 
 
   expect(text).toContain("FB/INT")
   expect(text).not.toContain("FB/I\\N\\T\\")
+  const renderedPinLabel = renderedCircuitJson.find(
+    (element) => element.type === "schematic_text" && element.text === "FB/INT",
+  )
+  expect(renderedPinLabel).toMatchObject({
+    text_parts: [{ text: "FB/" }, { text: "INT", is_overlined: true }],
+  })
+  await expect(
+    convertCircuitJsonToSchematicSvg(renderedCircuitJson),
+  ).toMatchSvgSnapshot(import.meta.path)
 })

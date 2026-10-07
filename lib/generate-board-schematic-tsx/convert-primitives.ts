@@ -4,6 +4,7 @@ import { generateSymbolElements } from "../generate-symbol-tsx"
 import { formatElement } from "./format-attributes"
 import type { SchematicElementConverter } from "./converter-types"
 import { getSchematicPrimitivesInRenderOrder } from "./get-schematic-primitives-in-render-order"
+import { getSchematicTextProp } from "./get-schematic-text-prop"
 
 export const convertPrimitives: SchematicElementConverter = (circuitJson) => [
   ...generateSymbolElements(
@@ -18,7 +19,10 @@ export const convertPrimitives: SchematicElementConverter = (circuitJson) => [
       case "schematic_text":
         return [
           formatElement("schematictext", {
-            text: element.text,
+            text: getSchematicTextProp({
+              text: element.text,
+              textParts: element.text_parts,
+            }),
             schX: element.position.x,
             schY: element.position.y,
             anchor: element.anchor,

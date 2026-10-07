@@ -48,6 +48,32 @@ test(
       font_size: sourcePort.display_pin_label_font_size,
     })
 
+    const styledPinLabels = result.sourceCircuitJson.filter(
+      (element) =>
+        element.type === "schematic_port" &&
+        element.display_pin_label_text_parts?.some(
+          (textPart) => textPart.is_overlined,
+        ),
+    )
+    expect(
+      styledPinLabels.map((port) => port.display_pin_label).sort(),
+    ).toEqual(["FB/INT", "FLT", "RST"])
+    const renderedStyledPinLabels = result.renderedCircuitJson.filter(
+      (element) =>
+        element.type === "schematic_text" &&
+        element.text_parts?.some((textPart) => textPart.is_overlined),
+    )
+    expect(renderedStyledPinLabels).toHaveLength(styledPinLabels.length)
+    for (const sourceStyledPinLabel of styledPinLabels) {
+      const renderedStyledPinLabel = renderedStyledPinLabels.find(
+        (schematicText) =>
+          schematicText.text === sourceStyledPinLabel.display_pin_label,
+      )
+      expect(renderedStyledPinLabel?.text_parts).toEqual(
+        sourceStyledPinLabel.display_pin_label_text_parts,
+      )
+    }
+
     const sourceKeepouts = result.sourceCircuitJson.filter(
       (element) => element.type === "pcb_keepout",
     )

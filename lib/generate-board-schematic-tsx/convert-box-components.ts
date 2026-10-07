@@ -3,7 +3,7 @@ import { type AnyCircuitElement, type SchematicComponent } from "circuit-json"
 import { convertRect } from "./convert-rect"
 import { convertBoxPortMarkers } from "./convert-box-port-markers"
 import { formatElement } from "./format-attributes"
-import { getBoxPinDisplayLabel } from "./get-box-pin-display-label"
+import { convertBoxPinLabel } from "./convert-box-pin-label"
 
 // Circuit JSON does not encode box body styling. These values mirror the
 // circuit-to-svg defaults so reconstructed boxes keep the compiled view.
@@ -15,7 +15,6 @@ const DEFAULT_BOX_BODY_FILL_COLOR = "#ffffc2"
 // circuit-to-svg defaults so reconstructed box pins keep the compiled view.
 const DEFAULT_PIN_TEXT_FONT_SIZE = 0.15
 const DEFAULT_PIN_TEXT_COLOR = "#a90000"
-const DEFAULT_PIN_LABEL_DISTANCE_FROM_EDGE = 0.1
 const DEFAULT_PIN_NUMBER_BASELINE_OFFSET = 0.02
 
 export const convertBoxComponent = ({
@@ -71,55 +70,30 @@ export const convertBoxComponent = ({
       }),
     )
     primitives.push(...markers)
-    const labelPosition = { ...edge }
     const pinNumberPosition = {
       x: (edge.x + schematicPort.center.x) / 2,
       y: (edge.y + schematicPort.center.y) / 2,
     }
-    let anchor = "center"
-    let rotation = 0
+    let ccwRotationDegrees = 0
     switch (schematicPort.side_of_component) {
       case "left":
-        labelPosition.x += DEFAULT_PIN_LABEL_DISTANCE_FROM_EDGE
         pinNumberPosition.y += DEFAULT_PIN_NUMBER_BASELINE_OFFSET
-        anchor = "center_left"
         break
       case "right":
-        labelPosition.x -= DEFAULT_PIN_LABEL_DISTANCE_FROM_EDGE
         pinNumberPosition.y += DEFAULT_PIN_NUMBER_BASELINE_OFFSET
-        anchor = "center_right"
         break
       case "top":
-        labelPosition.y -= DEFAULT_PIN_LABEL_DISTANCE_FROM_EDGE
         pinNumberPosition.x -= DEFAULT_PIN_NUMBER_BASELINE_OFFSET
-        anchor = "center_right"
-        rotation = -90
+        ccwRotationDegrees = -90
         break
       case "bottom":
-        labelPosition.y += DEFAULT_PIN_LABEL_DISTANCE_FROM_EDGE
         pinNumberPosition.x -= DEFAULT_PIN_NUMBER_BASELINE_OFFSET
-        anchor = "center_left"
-        rotation = -90
+        ccwRotationDegrees = -90
         break
     }
-    const displayPinLabel = getBoxPinDisplayLabel({
-      schematicComponent,
-      schematicPort,
-    })
-    const pinLabelFontSize =
-      schematicPort.display_pin_label_font_size ?? DEFAULT_PIN_TEXT_FONT_SIZE
-    if (displayPinLabel)
-      primitives.push(
-        formatElement("schematictext", {
-          text: displayPinLabel,
-          schX: labelPosition.x,
-          schY: labelPosition.y,
-          anchor,
-          fontSize: pinLabelFontSize,
-          color: DEFAULT_PIN_TEXT_COLOR,
-          schRotation: rotation || undefined,
-        }),
-      )
+    primitives.push(
+      ...convertBoxPinLabel({ edge, schematicComponent, schematicPort }),
+    )
     if (schematicPort.pin_number !== undefined)
       primitives.push(
         formatElement("schematictext", {
@@ -129,7 +103,7 @@ export const convertBoxComponent = ({
           anchor: "bottom_center",
           fontSize: DEFAULT_PIN_TEXT_FONT_SIZE,
           color: DEFAULT_PIN_TEXT_COLOR,
-          schRotation: rotation || undefined,
+          schRotation: ccwRotationDegrees || undefined,
         }),
       )
   }

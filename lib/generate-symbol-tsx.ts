@@ -1,5 +1,6 @@
 import type { AnyCircuitElement } from "circuit-json"
 import { su } from "@tscircuit/soup-util"
+import { getSchematicTextProp } from "./generate-board-schematic-tsx/get-schematic-text-prop"
 
 const escapeJsxText = (text: string) =>
   text.replace(/\\/g, "\\\\").replace(/"/g, '\\"')
@@ -131,14 +132,21 @@ export const generateSymbolElements = (
     const x = text.position?.x ?? 0
     const y = text.position?.y ?? 0
     const rawText = String(text.text ?? "")
-    const escapedText = escapeJsxText(rawText)
+    const textProp = getSchematicTextProp({
+      text: rawText,
+      textParts: text.text_parts,
+    })
+    const formattedTextProp =
+      typeof textProp === "string"
+        ? `text="${escapeJsxText(textProp)}"`
+        : `text={${JSON.stringify(textProp)}}`
     const anchorAlignment = text.anchor ?? "center"
     const fontSize = text.font_size ?? 0.1
     const color = text.color ?? "black"
     const rotation = text.rotation ?? 0
 
     elementStrings.push(
-      `<schematictext text="${escapedText}" x={${x}} y={${y}} anchorAlignment="${anchorAlignment}" fontSize={${fontSize}} color="${color}" rotation={${rotation}} />`,
+      `<schematictext ${formattedTextProp} x={${x}} y={${y}} anchorAlignment="${anchorAlignment}" fontSize={${fontSize}} color="${color}" rotation={${rotation}} />`,
     )
   }
 
