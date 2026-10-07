@@ -48,6 +48,21 @@ test(
       font_size: sourcePort.display_pin_label_font_size,
     })
 
+    const sourceKeepouts = result.sourceCircuitJson.filter(
+      (element) => element.type === "pcb_keepout",
+    )
+    const renderedKeepouts = result.renderedCircuitJson.filter(
+      (element) => element.type === "pcb_keepout",
+    )
+    expect(sourceKeepouts).toHaveLength(4)
+    expect(renderedKeepouts).toHaveLength(sourceKeepouts.length)
+    expect(
+      renderedKeepouts.every(
+        (keepout) =>
+          keepout.shape === "circle" && keepout.layers.includes("top"),
+      ),
+    ).toBe(true)
+
     expect(result.generatedTscircuit).toMatchSnapshot()
     await expect(result.pcbComparisonSvg).toMatchSvgSnapshot(
       import.meta.path,
