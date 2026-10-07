@@ -139,6 +139,11 @@ const generateCadModelTsx = ({
       `modelBoardNormalDirection={${JSON.stringify(cadComponent.model_board_normal_direction)}}`,
     )
   }
+  if (cadComponent.model_origin_alignment !== undefined) {
+    attributes.push(
+      `modelOriginAlignment={${JSON.stringify(cadComponent.model_origin_alignment)}}`,
+    )
+  }
   const modelOriginPosition =
     cadComponent.model_origin_position ??
     (cadComponent.model_origin_alignment === "unknown"
