@@ -1,4 +1,5 @@
 import { expect, test } from "bun:test"
+import { expectTiEvmCadModelVisualRepro } from "../fixtures/create-ti-evm-cad-model-visual-repro"
 import { createTiEvmCadPlacementRepro } from "../fixtures/create-ti-evm-cad-placement-repro"
 
 test("DP83825EVM imported CAD placement", async () => {
@@ -12,7 +13,7 @@ test("DP83825EVM imported CAD placement", async () => {
       "firstModel": {
         "renderedLayer": undefined,
         "renderedPosition": {
-          "x": 192.39471553999996,
+          "x": 192.42671572999998,
           "y": 98.10917004999999,
           "z": 0.8,
         },
@@ -36,7 +37,7 @@ test("DP83825EVM imported CAD placement", async () => {
       "layerMismatchCount": 27,
       "linkedModelCount": 27,
       "maximumAbsolutePositionErrorByAxisMm": {
-        "x": 60.568799,
+        "x": 60.6008,
         "y": 54.929089,
         "z": 0,
       },
@@ -57,4 +58,9 @@ test("DP83825EVM imported CAD placement", async () => {
       },
     }
   `)
-})
+  await expectTiEvmCadModelVisualRepro({
+    componentName: "Dp83825Evm",
+    fixtureName: "dp83825evm",
+    testPath: import.meta.path,
+  })
+}, 60_000)

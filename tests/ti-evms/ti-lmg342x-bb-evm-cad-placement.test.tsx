@@ -1,4 +1,5 @@
 import { expect, test } from "bun:test"
+import { expectTiEvmCadModelVisualRepro } from "../fixtures/create-ti-evm-cad-model-visual-repro"
 import { createTiEvmCadPlacementRepro } from "../fixtures/create-ti-evm-cad-placement-repro"
 
 test("LMG342X-BB-EVM imported CAD placement", async () => {
@@ -57,4 +58,9 @@ test("LMG342X-BB-EVM imported CAD placement", async () => {
       },
     }
   `)
-})
+  await expectTiEvmCadModelVisualRepro({
+    componentName: "Lmg342xBbEvm",
+    fixtureName: "lmg342x-bb-evm",
+    testPath: import.meta.path,
+  })
+}, 60_000)

@@ -1,4 +1,5 @@
 import { expect, test } from "bun:test"
+import { expectTiEvmCadModelVisualRepro } from "../fixtures/create-ti-evm-cad-model-visual-repro"
 import { createTiEvmCadPlacementRepro } from "../fixtures/create-ti-evm-cad-placement-repro"
 
 test("LM5155EVM-FLY imported CAD placement", async () => {
@@ -12,7 +13,7 @@ test("LM5155EVM-FLY imported CAD placement", async () => {
       "firstModel": {
         "renderedLayer": undefined,
         "renderedPosition": {
-          "x": 77.85963092,
+          "x": 78.42795591999999,
           "y": 109.203637955,
           "z": 0.8,
         },
@@ -36,7 +37,7 @@ test("LM5155EVM-FLY imported CAD placement", async () => {
       "layerMismatchCount": 24,
       "linkedModelCount": 24,
       "maximumAbsolutePositionErrorByAxisMm": {
-        "x": 59.211972,
+        "x": 59.780297,
         "y": 47.888089,
         "z": 0,
       },
@@ -57,4 +58,9 @@ test("LM5155EVM-FLY imported CAD placement", async () => {
       },
     }
   `)
-})
+  await expectTiEvmCadModelVisualRepro({
+    componentName: "Lm5155EvmFly",
+    fixtureName: "lm5155evm-fly",
+    testPath: import.meta.path,
+  })
+}, 60_000)

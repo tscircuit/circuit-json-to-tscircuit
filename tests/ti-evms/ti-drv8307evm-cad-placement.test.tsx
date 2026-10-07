@@ -1,4 +1,5 @@
 import { expect, test } from "bun:test"
+import { expectTiEvmCadModelVisualRepro } from "../fixtures/create-ti-evm-cad-model-visual-repro"
 import { createTiEvmCadPlacementRepro } from "../fixtures/create-ti-evm-cad-placement-repro"
 
 test("DRV8307EVM imported CAD placement", async () => {
@@ -13,8 +14,8 @@ test("DRV8307EVM imported CAD placement", async () => {
         "renderedLayer": undefined,
         "renderedPosition": {
           "x": 96.68928846,
-          "y": 115.92761295,
-          "z": 0.8152400000000001,
+          "y": 115.95661213,
+          "z": 2.21523974,
         },
         "renderedRotation": {
           "x": 0,
@@ -25,7 +26,7 @@ test("DRV8307EVM imported CAD placement", async () => {
         "sourcePosition": {
           "x": 35.88981646,
           "y": 51.935024399999996,
-          "z": 0.8152400000000001,
+          "z": 2.21523974,
         },
         "sourceRotation": {
           "x": 0,
@@ -37,7 +38,7 @@ test("DRV8307EVM imported CAD placement", async () => {
       "linkedModelCount": 6,
       "maximumAbsolutePositionErrorByAxisMm": {
         "x": 60.799472,
-        "y": 63.992589,
+        "y": 64.021588,
         "z": 0,
       },
       "maximumAbsoluteRotationErrorByAxisDegrees": {
@@ -57,4 +58,9 @@ test("DRV8307EVM imported CAD placement", async () => {
       },
     }
   `)
-})
+  await expectTiEvmCadModelVisualRepro({
+    componentName: "Drv8307Evm",
+    fixtureName: "drv8307evm",
+    testPath: import.meta.path,
+  })
+}, 60_000)
