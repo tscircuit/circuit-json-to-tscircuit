@@ -8,6 +8,7 @@ import { formatJsxStringAttribute } from "../../format-jsx-string-attribute"
 import { generateFootprintTsx } from "../../generate-footprint-tsx"
 import { generateSymbolTsx } from "../../generate-symbol-tsx"
 import type { BoardConverterStage } from "../BoardConverterContext"
+import { getCadModelProp } from "../get-cad-model-prop"
 import { getSchematicComponentsForPcbComponent } from "../get-schematic-components-for-pcb-component"
 import { localizePcbComponentElements } from "../localize-pcb-component-elements"
 import { localizeSchematicComponentElements } from "../localize-schematic-component-elements"
@@ -188,6 +189,13 @@ export const convertPcbComponents: BoardConverterStage = ({
       `pcbRotation="${pcbComponent.rotation}deg"`,
       `layer="${pcbComponent.layer}"`,
     ]
+
+    const cadModelProp = getCadModelProp({
+      circuitJson,
+      pcbBoard,
+      pcbComponent,
+    })
+    if (cadModelProp) componentProps.push(cadModelProp)
 
     addSchematicComponentProps({
       circuitJson,
