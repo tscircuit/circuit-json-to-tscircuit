@@ -15,7 +15,13 @@ type EmbeddedStepModelUrl = string
 type BoardViewName = "bottom" | "top"
 type SnapshotName = "generated" | "source"
 
+export interface TiEvm3dViews {
+  bottom: Uint8Array
+  top: Uint8Array
+}
+
 const MAX_SNAPSHOT_DIFFERENT_PIXEL_FRACTION = 0.06
+const MAX_ROUNDTRIP_DIFFERENT_PIXEL_FRACTION = 0.01
 const MAX_CHANNEL_DIFFERENCE = 7
 const TOP_BOARD_CAMERA_DIRECTION = [-0.7, 1.2, -0.8] as const
 const BOTTOM_BOARD_CAMERA_DIRECTION = [-0.7, -1.2, -0.8] as const
@@ -134,27 +140,44 @@ const expectPngSnapshot = async ({
   }
   expect(await Bun.file(snapshotPath).exists()).toBe(true)
 
-  const renderedImage = decode(renderedPng)
-  const snapshotImage = decode(await readFile(snapshotPath))
-  expect(renderedImage.width).toBe(snapshotImage.width)
-  expect(renderedImage.height).toBe(snapshotImage.height)
-  expect(renderedImage.channels).toBe(snapshotImage.channels)
+  const differentPixelFraction = getPngDifferentPixelFraction({
+    firstPng: renderedPng,
+    secondPng: await readFile(snapshotPath),
+  })
+  expect(differentPixelFraction).toBeLessThanOrEqual(
+    MAX_SNAPSHOT_DIFFERENT_PIXEL_FRACTION,
+  )
+}
+
+const getPngDifferentPixelFraction = ({
+  firstPng,
+  secondPng,
+}: {
+  firstPng: Uint8Array
+  secondPng: Uint8Array
+}): number => {
+  const firstImage = decode(firstPng)
+  const secondImage = decode(secondPng)
+  expect(firstImage.width).toBe(secondImage.width)
+  expect(firstImage.height).toBe(secondImage.height)
+  expect(firstImage.depth).toBe(secondImage.depth)
+  expect(firstImage.channels).toBe(secondImage.channels)
 
   let differentPixelCount = 0
-  const pixelCount = renderedImage.width * renderedImage.height
+  const pixelCount = firstImage.width * firstImage.height
   for (let pixelIndex = 0; pixelIndex < pixelCount; pixelIndex += 1) {
-    const firstChannelIndex = pixelIndex * renderedImage.channels
+    const firstChannelIndex = pixelIndex * firstImage.channels
     let pixelIsDifferent = false
     for (
       let channelIndex = 0;
-      channelIndex < renderedImage.channels;
+      channelIndex < firstImage.channels;
       channelIndex += 1
     ) {
       const sampleIndex = firstChannelIndex + channelIndex
       if (
         Math.abs(
-          (renderedImage.data[sampleIndex] ?? 0) -
-            (snapshotImage.data[sampleIndex] ?? 0),
+          (firstImage.data[sampleIndex] ?? 0) -
+            (secondImage.data[sampleIndex] ?? 0),
         ) > MAX_CHANNEL_DIFFERENCE
       ) {
         pixelIsDifferent = true
@@ -164,10 +187,38 @@ const expectPngSnapshot = async ({
     if (pixelIsDifferent) differentPixelCount += 1
   }
 
-  const differentPixelFraction = differentPixelCount / pixelCount
-  expect(differentPixelFraction).toBeLessThanOrEqual(
-    MAX_SNAPSHOT_DIFFERENT_PIXEL_FRACTION,
-  )
+  return differentPixelCount / pixelCount
+}
+
+const renderAndSnapshotBoardView = async ({
+  boardViewName,
+  cameraReferenceBoard,
+  glb,
+  snapshotName,
+  testName,
+  testPath,
+}: {
+  boardViewName: BoardViewName
+  cameraReferenceBoard: PcbBoard
+  glb: ArrayBuffer
+  snapshotName: SnapshotName
+  testName: string
+  testPath: string
+}): Promise<Uint8Array> => {
+  const renderedPng = await renderBoardView({
+    boardViewName,
+    cameraReferenceBoard,
+    glb,
+  })
+  await expectPngSnapshot({
+    renderedPng,
+    snapshotPath: join(
+      dirname(testPath),
+      "__snapshots__",
+      `${testName}-${snapshotName}-${boardViewName}-3d.snap.png`,
+    ),
+  })
+  return renderedPng
 }
 
 export const expectTiEvm3dSnapshot = async ({
@@ -182,7 +233,7 @@ export const expectTiEvm3dSnapshot = async ({
   fixtureName: string
   snapshotName: SnapshotName
   testPath: string
-}): Promise<void> => {
+}): Promise<TiEvm3dViews> => {
   const cameraReferenceBoard = cameraReferenceCircuitJson.find(
     (element): element is PcbBoard => element.type === "pcb_board",
   )
@@ -203,19 +254,39 @@ export const expectTiEvm3dSnapshot = async ({
   }
 
   const testName = basename(testPath).replace(/\.test\.tsx?$/u, "")
+  const top = await renderAndSnapshotBoardView({
+    boardViewName: "top",
+    cameraReferenceBoard,
+    glb,
+    snapshotName,
+    testName,
+    testPath,
+  })
+  const bottom = await renderAndSnapshotBoardView({
+    boardViewName: "bottom",
+    cameraReferenceBoard,
+    glb,
+    snapshotName,
+    testName,
+    testPath,
+  })
+  return { bottom, top }
+}
+
+export const expectTiEvm3dViewsToMatch = ({
+  generatedViews,
+  sourceViews,
+}: {
+  generatedViews: TiEvm3dViews
+  sourceViews: TiEvm3dViews
+}): void => {
   for (const boardViewName of ["top", "bottom"] as const) {
-    const renderedPng = await renderBoardView({
-      boardViewName,
-      cameraReferenceBoard,
-      glb,
+    const differentPixelFraction = getPngDifferentPixelFraction({
+      firstPng: generatedViews[boardViewName],
+      secondPng: sourceViews[boardViewName],
     })
-    await expectPngSnapshot({
-      renderedPng,
-      snapshotPath: join(
-        dirname(testPath),
-        "__snapshots__",
-        `${testName}-${snapshotName}-${boardViewName}-3d.snap.png`,
-      ),
-    })
+    expect(differentPixelFraction).toBeLessThanOrEqual(
+      MAX_ROUNDTRIP_DIFFERENT_PIXEL_FRACTION,
+    )
   }
 }

@@ -1,23 +1,11 @@
 import { expect, test } from "bun:test"
-import { createTiEvmCadModelLossRepro } from "../fixtures/create-ti-evm-cad-model-loss-repro"
-import { expectTiEvmCadModelVisualRepro } from "../fixtures/create-ti-evm-cad-model-visual-repro"
+import { expectTiEvmCadModelRoundtrip } from "../fixtures/expect-ti-evm-cad-model-roundtrip"
 
-test("DRV8307EVM loses imported CAD models during TSX conversion", async () => {
-  const modelCounts = await createTiEvmCadModelLossRepro({
-    componentName: "Drv8307Evm",
-    fixtureName: "drv8307evm",
-  })
-
-  expect(modelCounts).toMatchInlineSnapshot(`
-    {
-      "generatedTsxContainsCadModel": false,
-      "renderedLinkedCadModelCount": 0,
-      "sourceLinkedCadModelCount": 6,
-    }
-  `)
-  await expectTiEvmCadModelVisualRepro({
+test("DRV8307EVM preserves imported CAD models during TSX conversion", async () => {
+  const roundtripResult = await expectTiEvmCadModelRoundtrip({
     componentName: "Drv8307Evm",
     fixtureName: "drv8307evm",
     testPath: import.meta.path,
   })
+  expect(roundtripResult).toEqual({ linkedCadModelCount: 6 })
 }, 60_000)
