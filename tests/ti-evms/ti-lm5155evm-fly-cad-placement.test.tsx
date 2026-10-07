@@ -11,10 +11,10 @@ test("LM5155EVM-FLY imported CAD placement", async () => {
   expect(placementSummary).toMatchInlineSnapshot(`
     {
       "firstModel": {
-        "renderedLayer": undefined,
+        "renderedLayer": "top",
         "renderedPosition": {
-          "x": 78.42795591999999,
-          "y": 109.203637955,
+          "x": 18.64765892,
+          "y": 61.3155492,
           "z": 0.8,
         },
         "renderedRotation": {
@@ -34,11 +34,11 @@ test("LM5155EVM-FLY imported CAD placement", async () => {
           "z": 0,
         },
       },
-      "layerMismatchCount": 24,
+      "layerMismatchCount": 0,
       "linkedModelCount": 24,
       "maximumAbsolutePositionErrorByAxisMm": {
-        "x": 59.780297,
-        "y": 47.888089,
+        "x": 0,
+        "y": 0,
         "z": 0,
       },
       "maximumAbsoluteRotationErrorByAxisDegrees": {
@@ -47,8 +47,8 @@ test("LM5155EVM-FLY imported CAD placement", async () => {
         "z": 0,
       },
       "positionAxisMismatchCounts": {
-        "x": 24,
-        "y": 24,
+        "x": 0,
+        "y": 0,
         "z": 0,
       },
       "rotationAxisMismatchCounts": {

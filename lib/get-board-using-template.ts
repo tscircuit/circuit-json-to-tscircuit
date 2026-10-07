@@ -68,7 +68,10 @@ export const getBoardUsingTemplate = ({
   const boardPropsStr = boardProps.join(" ")
   const context = createBoardConversionContext(circuitJson)
   const footprintTsx = generateFootprintTsx(circuitJson, context)
-  const cadModelsTsx = generateBoardCadModelsTsx({ circuitJson, pcbBoard })
+  const cadModelComponentsTsx = generateBoardCadModelsTsx({
+    circuitJson,
+    pcbBoard,
+  })
   const copperPoursTsx = generateCopperPoursTsx(circuitJson, context)
   const boardNetsTsx = generateBoardNetsTsx(context)
 
@@ -80,8 +83,9 @@ export const getBoardUsingTemplate = ({
   const children = [
     ...boardNetsTsx,
     footprintTsx
-      ? `<chip name="${context.pcbChipName}" noSchematicRepresentation footprint={${footprintTsx}}${cadModelsTsx ? ` cadModel={${cadModelsTsx}}` : ""} />`
+      ? `<chip name="${context.pcbChipName}" noSchematicRepresentation footprint={${footprintTsx}} />`
       : "",
+    ...cadModelComponentsTsx,
     ...copperPoursTsx,
     schematicSheetTsx,
   ]

@@ -1,11 +1,11 @@
 import { expect, test } from "bun:test"
 import type { AnyCircuitElement, SourcePort } from "circuit-json"
-import ts from "typescript"
 import { convertCircuitJsonToTscircuit } from "lib"
+import ts from "typescript"
+import regulator from "./fixtures/pin-attributes/ap2127k-2.8trg1.json"
 // Source records from real EasyEDA imports enriched by parts-engine with the
 // published datasheets; pinAttributes contains the original props-shaped data.
 import f1c from "./fixtures/pin-attributes/f1c100s.json"
-import regulator from "./fixtures/pin-attributes/ap2127k-2.8trg1.json"
 
 const getChipProps = (source: string, props = {}) => {
   const js = ts.transpileModule(source, {
@@ -62,6 +62,7 @@ test("preserves false, zero, string voltages, capacitance and active capabilitie
       pin_number: 5,
       provides_power: false,
       provides_voltage: 0,
+      // @ts-expect-error Verify compatibility with legacy string voltages.
       requires_voltage: "2.8V",
       must_be_connected: false,
       can_use_tri_state: false,

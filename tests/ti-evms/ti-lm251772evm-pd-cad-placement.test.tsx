@@ -11,10 +11,10 @@ test("LM251772EVM-PD imported CAD placement", async () => {
   expect(placementSummary).toMatchInlineSnapshot(`
     {
       "firstModel": {
-        "renderedLayer": undefined,
+        "renderedLayer": "top",
         "renderedPosition": {
-          "x": 135.29399153999998,
-          "y": 155.27333817,
+          "x": 67.52780754,
+          "y": 82.96859962,
           "z": 0.8,
         },
         "renderedRotation": {
@@ -34,11 +34,11 @@ test("LM251772EVM-PD imported CAD placement", async () => {
           "z": 270,
         },
       },
-      "layerMismatchCount": 94,
+      "layerMismatchCount": 0,
       "linkedModelCount": 94,
       "maximumAbsolutePositionErrorByAxisMm": {
-        "x": 67.766184,
-        "y": 72.304739,
+        "x": 0,
+        "y": 0,
         "z": 0,
       },
       "maximumAbsoluteRotationErrorByAxisDegrees": {
@@ -47,8 +47,8 @@ test("LM251772EVM-PD imported CAD placement", async () => {
         "z": 0,
       },
       "positionAxisMismatchCounts": {
-        "x": 94,
-        "y": 94,
+        "x": 0,
+        "y": 0,
         "z": 0,
       },
       "rotationAxisMismatchCounts": {

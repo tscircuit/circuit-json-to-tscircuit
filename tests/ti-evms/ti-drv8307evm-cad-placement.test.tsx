@@ -11,10 +11,10 @@ test("DRV8307EVM imported CAD placement", async () => {
   expect(placementSummary).toMatchInlineSnapshot(`
     {
       "firstModel": {
-        "renderedLayer": undefined,
+        "renderedLayer": "top",
         "renderedPosition": {
-          "x": 96.68928846,
-          "y": 115.95661213,
+          "x": 35.88981646,
+          "y": 51.935024399999996,
           "z": 2.21523974,
         },
         "renderedRotation": {
@@ -34,11 +34,11 @@ test("DRV8307EVM imported CAD placement", async () => {
           "z": 180,
         },
       },
-      "layerMismatchCount": 6,
+      "layerMismatchCount": 0,
       "linkedModelCount": 6,
       "maximumAbsolutePositionErrorByAxisMm": {
-        "x": 60.799472,
-        "y": 64.021588,
+        "x": 0,
+        "y": 0,
         "z": 0,
       },
       "maximumAbsoluteRotationErrorByAxisDegrees": {
@@ -47,8 +47,8 @@ test("DRV8307EVM imported CAD placement", async () => {
         "z": 0,
       },
       "positionAxisMismatchCounts": {
-        "x": 6,
-        "y": 6,
+        "x": 0,
+        "y": 0,
         "z": 0,
       },
       "rotationAxisMismatchCounts": {

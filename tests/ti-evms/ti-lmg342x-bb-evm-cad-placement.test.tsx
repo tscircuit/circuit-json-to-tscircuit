@@ -11,10 +11,10 @@ test("LMG342X-BB-EVM imported CAD placement", async () => {
   expect(placementSummary).toMatchInlineSnapshot(`
     {
       "firstModel": {
-        "renderedLayer": undefined,
+        "renderedLayer": "top",
         "renderedPosition": {
-          "x": 240.013968155,
-          "y": 176.017638185,
+          "x": 141.52254652,
+          "y": 102.8446,
           "z": 0.8,
         },
         "renderedRotation": {
@@ -34,11 +34,11 @@ test("LMG342X-BB-EVM imported CAD placement", async () => {
           "z": 180,
         },
       },
-      "layerMismatchCount": 77,
+      "layerMismatchCount": 0,
       "linkedModelCount": 77,
       "maximumAbsolutePositionErrorByAxisMm": {
-        "x": 98.491422,
-        "y": 73.173038,
+        "x": 0,
+        "y": 0,
         "z": 0,
       },
       "maximumAbsoluteRotationErrorByAxisDegrees": {
@@ -47,8 +47,8 @@ test("LMG342X-BB-EVM imported CAD placement", async () => {
         "z": 0,
       },
       "positionAxisMismatchCounts": {
-        "x": 77,
-        "y": 77,
+        "x": 0,
+        "y": 0,
         "z": 0,
       },
       "rotationAxisMismatchCounts": {

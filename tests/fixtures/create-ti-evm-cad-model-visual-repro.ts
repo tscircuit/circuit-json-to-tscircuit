@@ -4,7 +4,10 @@ import { gunzipSync } from "node:zlib"
 import type { CircuitJson } from "circuit-json"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
-import { expectTiEvm3dSnapshot } from "./expect-ti-evm-3d-snapshot"
+import {
+  expectTiEvm3dSnapshot,
+  expectTiEvm3dViewsToMatch,
+} from "./expect-ti-evm-3d-snapshot"
 
 export async function expectTiEvmCadModelVisualRepro({
   componentName,
@@ -28,18 +31,19 @@ export async function expectTiEvmCadModelVisualRepro({
     generatedTsx,
   )) as CircuitJson
 
-  await expectTiEvm3dSnapshot({
+  const sourceViews = await expectTiEvm3dSnapshot({
     cameraReferenceCircuitJson: sourceCircuitJson,
     circuitJson: sourceCircuitJson,
     fixtureName,
     snapshotName: "source",
     testPath,
   })
-  await expectTiEvm3dSnapshot({
+  const generatedViews = await expectTiEvm3dSnapshot({
     cameraReferenceCircuitJson: sourceCircuitJson,
     circuitJson: renderedCircuitJson,
     fixtureName,
     snapshotName: "generated",
     testPath,
   })
+  await expectTiEvm3dViewsToMatch({ generatedViews, sourceViews })
 }
