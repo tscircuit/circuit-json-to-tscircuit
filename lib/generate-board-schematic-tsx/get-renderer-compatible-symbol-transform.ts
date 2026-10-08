@@ -36,10 +36,8 @@ export const getRendererCompatibleSymbolTransform = ({
   )
   const uniformScale = renderedDistance / originalDistance
   return compose(
-    translate(
-      firstSchematicPoint.x - uniformScale * firstSymbolPoint.x,
-      firstSchematicPoint.y - uniformScale * firstSymbolPoint.y,
-    ),
+    translate(firstSchematicPoint.x, firstSchematicPoint.y),
     scale(uniformScale),
+    translate(-firstSymbolPoint.x, -firstSymbolPoint.y),
   )
 }

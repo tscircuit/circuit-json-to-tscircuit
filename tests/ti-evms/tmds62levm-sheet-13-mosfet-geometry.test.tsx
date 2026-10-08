@@ -2,7 +2,7 @@ import { expect, test } from "bun:test"
 import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 import { gunzipSync } from "node:zlib"
-import type { CircuitJson } from "circuit-json"
+import type { CircuitJson, Point } from "circuit-json"
 import { convertCircuitJsonToSchematicSvg } from "circuit-to-svg"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { createComparisonSvg } from "tests/fixtures/create-ti-evm-roundtrip"
@@ -67,9 +67,24 @@ test("TMDS62LEVM Q2 keeps rigid standard symbol geometry", async () => {
   )
   expect(renderedCircle?.radius).toBeCloseTo(0.29)
 
-  const sourcePorts = q2CircuitJson.filter(
+  const q2SchematicPorts = q2CircuitJson.filter(
     (element) => element.type === "schematic_port",
   )
+  expect(q2SchematicPorts).toHaveLength(3)
+  const renderedPathEndpoints = renderedCircuitJson.flatMap((element) => {
+    if (element.type !== "schematic_path") return []
+    const firstPoint = element.points[0]
+    const lastPoint = element.points.at(-1)
+    return firstPoint && lastPoint ? [firstPoint, lastPoint] : []
+  })
+  for (const schematicPort of q2SchematicPorts) {
+    expect(
+      renderedPathEndpoints.some((pathEndpoint) =>
+        pointsAreEqual(pathEndpoint, schematicPort.center),
+      ),
+    ).toBe(true)
+  }
+
   const sourceComparisonCircuitJson = q2CircuitJson.filter(
     (element) => element.type !== "schematic_sheet",
   )
@@ -82,8 +97,11 @@ test("TMDS62LEVM Q2 keeps rigid standard symbol geometry", async () => {
     sourceSvg: convertCircuitJsonToSchematicSvg(sourceComparisonCircuitJson),
     renderedSvg: convertCircuitJsonToSchematicSvg([
       ...renderedComparisonCircuitJson,
-      ...sourcePorts,
+      ...q2SchematicPorts,
     ]),
   })
   await expect(comparisonSvg).toMatchSvgSnapshot(import.meta.path)
 })
+
+const pointsAreEqual = (first: Point, second: Point) =>
+  Math.hypot(first.x - second.x, first.y - second.y) < 0.000001

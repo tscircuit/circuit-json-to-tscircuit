@@ -17,16 +17,16 @@ export const getRigidPinIdentityTransform = (
     (match) =>
       match !== first &&
       match !== second &&
-      pointsAreNonCollinear(
-        first.symbolPort,
-        second.symbolPort,
-        match.symbolPort,
-      ) &&
-      pointsAreNonCollinear(
-        first.schematicPort.center,
-        second.schematicPort.center,
-        match.schematicPort.center,
-      ),
+      pointsAreNonCollinear({
+        first: first.symbolPort,
+        second: second.symbolPort,
+        third: match.symbolPort,
+      }) &&
+      pointsAreNonCollinear({
+        first: first.schematicPort.center,
+        second: second.schematicPort.center,
+        third: match.schematicPort.center,
+      }),
   )
   if (!third) {
     return fromTriangles(
@@ -63,11 +63,15 @@ export const getRigidPinIdentityTransform = (
   return fitsAllMatchedPorts ? transform : undefined
 }
 
-const pointsAreNonCollinear = (
-  first: { x: number; y: number },
-  second: { x: number; y: number },
-  third: { x: number; y: number },
-) =>
+const pointsAreNonCollinear = ({
+  first,
+  second,
+  third,
+}: {
+  first: { x: number; y: number }
+  second: { x: number; y: number }
+  third: { x: number; y: number }
+}) =>
   Math.abs(
     (second.x - first.x) * (third.y - first.y) -
       (second.y - first.y) * (third.x - first.x),
