@@ -5,7 +5,14 @@ import type {
   PcbBoard,
   PcbComponent,
 } from "circuit-json"
+import {
+  applyToPoint,
+  compose,
+  rotateDEG,
+  translate,
+} from "transformation-matrix"
 import { formatJsxStringAttribute } from "../format-jsx-string-attribute"
+import { localizePcbComponentElements } from "./localize-pcb-component-elements"
 
 interface CadModelUrl {
   extension: "glb" | "gltf" | "obj" | "step" | "stl" | "wrl"
@@ -64,19 +71,23 @@ function getRotationOffset({
   cadComponent: CadComponent
   pcbComponent: PcbComponent
 }): CadModelPlacement["rotationOffset"] {
-  const rotation = cadComponent.rotation ?? { x: 0, y: 0, z: 0 }
+  const cadModelCcwRotationDegrees = cadComponent.rotation ?? {
+    x: 0,
+    y: 0,
+    z: 0,
+  }
   if (pcbComponent.layer === "bottom") {
     return {
-      x: rotation.x,
-      y: rotation.y - 180,
-      z: 180 - rotation.z - pcbComponent.rotation,
+      x: cadModelCcwRotationDegrees.x,
+      y: cadModelCcwRotationDegrees.y - 180,
+      z: cadModelCcwRotationDegrees.z + pcbComponent.rotation,
     }
   }
 
   return {
-    x: rotation.x,
-    y: rotation.y,
-    z: rotation.z - pcbComponent.rotation,
+    x: cadModelCcwRotationDegrees.x,
+    y: cadModelCcwRotationDegrees.y,
+    z: cadModelCcwRotationDegrees.z - pcbComponent.rotation,
   }
 }
 
@@ -92,15 +103,15 @@ function getDirectCadModelPlacement({
   pcbComponent: PcbComponent
 }): CadModelPlacement {
   const boardSurfaceZ = pcbBoard.thickness / 2
-  const anchor = getRenderedPcbComponentCenter({
+  const renderedPcbComponentCenter = getRenderedPcbComponentCenter({
     circuitJson,
     pcbBoard,
     pcbComponent,
   })
   return {
     positionOffset: {
-      x: cadComponent.position.x - anchor.x,
-      y: cadComponent.position.y - anchor.y,
+      x: cadComponent.position.x - renderedPcbComponentCenter.x,
+      y: cadComponent.position.y - renderedPcbComponentCenter.y,
       z:
         pcbComponent.layer === "bottom"
           ? cadComponent.position.z + boardSurfaceZ
@@ -119,7 +130,15 @@ function getRenderedPcbComponentCenter({
   pcbBoard: PcbBoard
   pcbComponent: PcbComponent
 }): { x: number; y: number } {
-  const physicalElementBounds = circuitJson.flatMap((element) => {
+  const componentToBoardTransform = compose(
+    translate(pcbComponent.center.x, pcbComponent.center.y),
+    rotateDEG(pcbComponent.rotation),
+  )
+  const localComponentElements = localizePcbComponentElements({
+    circuitJson,
+    pcbComponent,
+  })
+  const physicalElementBounds = localComponentElements.flatMap((element) => {
     if (
       !("pcb_component_id" in element) ||
       element.pcb_component_id !== pcbComponent.pcb_component_id ||
@@ -133,8 +152,25 @@ function getRenderedPcbComponentCenter({
       return []
     }
 
-    const bounds = getPcbElementBounds(element)
-    return bounds ? [bounds] : []
+    const localBounds = getPcbElementBounds(element)
+    if (!localBounds) return []
+
+    const boardPoints = [
+      { x: localBounds.minX, y: localBounds.minY },
+      { x: localBounds.maxX, y: localBounds.minY },
+      { x: localBounds.maxX, y: localBounds.maxY },
+      { x: localBounds.minX, y: localBounds.maxY },
+    ].map((point) => applyToPoint(componentToBoardTransform, point))
+    const xs = boardPoints.map((point) => point.x)
+    const ys = boardPoints.map((point) => point.y)
+    return [
+      {
+        minX: Math.min(...xs),
+        minY: Math.min(...ys),
+        maxX: Math.max(...xs),
+        maxY: Math.max(...ys),
+      },
+    ]
   })
 
   if (physicalElementBounds.length === 0) {

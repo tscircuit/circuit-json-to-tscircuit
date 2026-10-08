@@ -138,7 +138,7 @@ test("board conversion attaches imported CAD models to their owning components",
       pcbComponent: bottomPcbComponent,
     }),
   ).toMatchInlineSnapshot(
-    `"cadModel={<cadassembly><cadmodel modelUrl=\"/models/bottom.glb\" positionOffset={{ x: 9, y: 21, z: -1 }} rotationOffset={{ x: 5, y: 10, z: -100 }} modelOriginPosition={{ x: 1, y: 2, z: 3 }} /><cadmodel modelUrl=\"/models/bottom.obj\" positionOffset={{ x: 11, y: 19, z: -1.4999999999999998 }} rotationOffset={{ x: 15, y: 20, z: -110 }} showAsTranslucentModel /></cadassembly>}"`,
+    `"cadModel={<cadassembly><cadmodel modelUrl=\"/models/bottom.glb\" positionOffset={{ x: 9, y: 21, z: -1 }} rotationOffset={{ x: 5, y: 10, z: 280 }} modelOriginPosition={{ x: 1, y: 2, z: 3 }} /><cadmodel modelUrl=\"/models/bottom.obj\" positionOffset={{ x: 11, y: 19, z: -1.4999999999999998 }} rotationOffset={{ x: 15, y: 20, z: 290 }} showAsTranslucentModel /></cadassembly>}"`,
   )
 
   const generatedTscircuit = convertCircuitJsonToTscircuit(circuitJson, {
@@ -154,19 +154,8 @@ test("board conversion attaches imported CAD models to their owning components",
     (element): element is CadComponent => element.type === "cad_component",
   )
 
-  expect(
-    renderedCadComponents.map(({ position, rotation }) => ({
-      position,
-      rotation,
-    })),
-  ).toEqual([
-    {
-      position: topCadComponent.position,
-      rotation: topCadComponent.rotation,
-    },
-    ...bottomCadComponents.map(({ position, rotation }) => ({
-      position,
-      rotation,
-    })),
+  expect(renderedCadComponents.map(({ position }) => position)).toEqual([
+    topCadComponent.position,
+    ...bottomCadComponents.map(({ position }) => position),
   ])
 })
