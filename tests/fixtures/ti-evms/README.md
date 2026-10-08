@@ -13,3 +13,7 @@ LMG342X-BB-EVM PCB fixtures were resolved from their matching `.PrjPcb` files us
 The upstream files and checksums are maintained in that repository's
 `scripts/references/reference-manifest.ts`. The gzip files only avoid committing
 several megabytes of repetitive JSON; tests expand them before conversion.
+
+`tmds62levm-sheet-05.circuit.json.gz` contains the unchanged conversion of
+TMDS62LEVM revision B sheet 05 from `altium-to-circuit-json` v0.0.85
+(`568824fb3ff64992133378b30e88fc23bbd43f48`).
