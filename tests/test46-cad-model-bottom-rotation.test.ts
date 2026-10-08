@@ -62,10 +62,10 @@ const circuitJson: AnyCircuitElement[] = [
   cadComponent,
 ]
 
-test("CAD rotation uses the existing bottom-layer transform", () => {
+test("CAD rotation accounts for the component's bottom-layer rotation", () => {
   expect(
     getCadModelProp({ circuitJson, pcbBoard, pcbComponent }),
   ).toMatchInlineSnapshot(
-    `"cadModel={<cadmodel modelUrl="/models/bottom.step" positionOffset={{ x: 0, y: 0, z: 0 }} rotationOffset={{ x: 0, y: 0, z: -180 }} />}"`,
+    `"cadModel={<cadmodel modelUrl="/models/bottom.step" positionOffset={{ x: 0, y: 0, z: 0 }} rotationOffset={{ x: 0, y: 0, z: 360 }} />}"`,
   )
 })

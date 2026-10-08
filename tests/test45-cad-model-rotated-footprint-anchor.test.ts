@@ -96,10 +96,10 @@ const circuitJson: AnyCircuitElement[] = [
   cadComponent,
 ]
 
-test("CAD offset uses absolute bounds for a rotated footprint", () => {
+test("CAD offset uses the rendered bounds of a rotated footprint", () => {
   expect(
     getCadModelProp({ circuitJson, pcbBoard, pcbComponent }),
   ).toMatchInlineSnapshot(
-    `"cadModel={<cadmodel modelUrl="/models/mosfet.step" positionOffset={{ x: 0.001249680000000808, y: 0, z: 0 }} rotationOffset={{ x: 0, y: 0, z: 0 }} />}"`,
+    `"cadModel={<cadmodel modelUrl="/models/mosfet.step" positionOffset={{ x: -0.09375012999998944, y: 0, z: 0 }} rotationOffset={{ x: 0, y: 0, z: 0 }} />}"`,
   )
 })
