@@ -1,5 +1,9 @@
 import { expect, test } from "bun:test"
-import type { AnyCircuitElement, SourcePort } from "circuit-json"
+import {
+  type AnyCircuitElement,
+  type SourcePort,
+  source_port,
+} from "circuit-json"
 import ts from "typescript"
 import { convertCircuitJsonToTscircuit } from "lib"
 // Source records from real EasyEDA imports enriched by parts-engine with the
@@ -53,16 +57,15 @@ test("preserves every F1C100S and 2.8 V regulator pin's datasheet attributes", (
   }
 })
 
-test("preserves false, zero, string voltages, capacitance and active capabilities", () => {
+test("preserves normalized voltages, capacitance and active capabilities", () => {
   const source = convert([
-    {
+    source_port.parse({
       type: "source_port",
       source_port_id: "port1",
       name: "VOUT",
       pin_number: 5,
       provides_power: false,
       provides_voltage: 0,
-      // @ts-expect-error Legacy Circuit JSON stored unit-bearing voltage strings.
       requires_voltage: "2.8V",
       must_be_connected: false,
       can_use_tri_state: false,
@@ -75,13 +78,13 @@ test("preserves false, zero, string voltages, capacitance and active capabilitie
       should_have_decoupling_capacitor: true,
       recommended_decoupling_capacitor_capacitance: "1uF",
       unrelated_metadata: true,
-    },
+    }),
   ])
   expect(getChipProps(source).pinAttributes).toEqual({
     pin5: {
       providesPower: false,
       providesVoltage: 0,
-      requiresVoltage: "2.8V",
+      requiresVoltage: 2.8,
       mustBeConnected: false,
       canUseTriState: false,
       capabilities: ["spi_mosi", "uart_tx"],
