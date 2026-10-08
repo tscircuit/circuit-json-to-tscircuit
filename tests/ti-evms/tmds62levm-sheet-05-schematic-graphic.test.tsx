@@ -34,7 +34,7 @@ const createComparisonPanel = ({
 }
 
 test(
-  "reproduces the dropped TMDS62LEVM sheet 05 block diagram",
+  "preserves the TMDS62LEVM sheet 05 block diagram",
   async () => {
     const sourceCircuitJson = await loadTmds62levmSheet05()
     const generatedTscircuit = convertCircuitJsonToTscircuit(
@@ -52,7 +52,7 @@ test(
     )
 
     expect(sourceGraphics).toHaveLength(1)
-    expect(renderedGraphics).toHaveLength(0)
+    expect(renderedGraphics).toHaveLength(sourceGraphics.length)
 
     const sourceSvg = convertCircuitJsonToSchematicSvg(sourceCircuitJson, {
       width: 800,
@@ -62,7 +62,7 @@ test(
       width: 800,
       height: 600,
     })
-    const comparisonSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1624" height="630" viewBox="0 0 1624 630" aria-label="TMDS62LEVM sheet 05: source block diagram on left, missing round-trip output on right" role="img">
+    const comparisonSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1624" height="630" viewBox="0 0 1624 630" aria-label="TMDS62LEVM sheet 05: preserved block diagram on both sides" role="img">
       <rect width="1624" height="630" fill="#fff" />
       <text x="400" y="20" text-anchor="middle" font-family="sans-serif" font-size="16">Source Circuit JSON</text>
       <text x="1224" y="20" text-anchor="middle" font-family="sans-serif" font-size="16">Round-trip output</text>
