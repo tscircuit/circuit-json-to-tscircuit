@@ -62,6 +62,7 @@ test("preserves false, zero, string voltages, capacitance and active capabilitie
       pin_number: 5,
       provides_power: false,
       provides_voltage: 0,
+      // @ts-expect-error Legacy Circuit JSON stored unit-bearing voltage strings.
       requires_voltage: "2.8V",
       must_be_connected: false,
       can_use_tri_state: false,
