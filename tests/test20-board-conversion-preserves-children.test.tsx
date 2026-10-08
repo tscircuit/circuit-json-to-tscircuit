@@ -56,7 +56,7 @@ test("test20 board conversion preserves child component geometry", async () => {
   expect(convertedTscircuit).toMatchInlineSnapshot(`
     "export default () => (
       <board width="12mm" height="8mm" thickness="1.4mm" layers={2} material="fr4">
-        <chip name="U1" pcbX={0} pcbY={0} pcbRotation="0deg" layer="top" schX={0} schY={0} symbol={<symbol>
+        <chip name="U1" pcbX={0} pcbY={0} pcbRotation="0deg" layer="top" cadModel={null} schX={0} schY={0} symbol={<symbol>
           <port name="pin1" schX={-0.6000000000000001} schY={0} direction="left" pinNumber={1} aliases={["1"]} />
           <port name="pin2" schX={0.6000000000000001} schY={0} direction="right" pinNumber={2} aliases={["2"]} />
           <schematictext text="" schX={-0.2} schY={-0.33} anchor="left" fontSize={0.18} color="#006464" schRotation={0} />

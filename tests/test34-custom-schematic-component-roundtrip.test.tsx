@@ -63,7 +63,7 @@ test("preserves custom schematic component geometry and ports", async () => {
   expect(generatedTscircuit).toMatchInlineSnapshot(`
     "export default () => (
       <board width="20mm" height="10mm" thickness="1.4mm" layers={2} material="fr4">
-        <chip name="U1" pcbX={-2} pcbY={0} pcbRotation="0deg" layer="top" schX={3} schY={-1} symbol={<symbol>
+        <chip name="U1" pcbX={-2} pcbY={0} pcbRotation="0deg" layer="top" cadModel={null} schX={3} schY={-1} symbol={<symbol>
           <port name="pin1" schX={-0.7999999999999998} schY={0} direction="left" pinNumber={1} />
           <port name="pin2" schX={0.7999999999999998} schY={0} direction="right" pinNumber={2} />
           <schematicline x1={-0.6000000000000001} y1={0} x2={0.6000000000000001} y2={0} strokeWidth={0.12} color="blue" isDashed={false}/>

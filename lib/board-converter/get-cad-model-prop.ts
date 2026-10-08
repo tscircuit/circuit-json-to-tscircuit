@@ -211,7 +211,7 @@ export function getCadModelProp({
       element.pcb_component_id === pcbComponent.pcb_component_id &&
       getCadModelUrl(element) !== undefined,
   )
-  if (cadComponents.length === 0) return undefined
+  if (cadComponents.length === 0) return "cadModel={null}"
 
   if (cadComponents.length === 1) {
     const cadComponent = cadComponents[0]
