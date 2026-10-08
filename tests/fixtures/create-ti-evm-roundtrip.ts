@@ -95,6 +95,15 @@ export async function createTiEvmRoundtrip({
   expect(getSchematicViewportScale(renderedSchematicSvg)).toBe(
     getSchematicViewportScale(sourceSchematicSvg),
   )
+  const sourceSheet = sourceCircuitJson.find(
+    (element) => element.type === "schematic_sheet",
+  )
+  const renderedSheet = renderedCircuitJson.find(
+    (element) => element.type === "schematic_sheet",
+  )
+  expect(renderedSheet?.center ?? { x: 0, y: 0 }).toEqual(
+    sourceSheet?.center ?? { x: 0, y: 0 },
+  )
 
   return {
     generatedTscircuit,
