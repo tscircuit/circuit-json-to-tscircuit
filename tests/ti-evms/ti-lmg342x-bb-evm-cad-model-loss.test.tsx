@@ -2,7 +2,7 @@ import { expect, test } from "bun:test"
 import { createTiEvmCadModelLossRepro } from "../fixtures/create-ti-evm-cad-model-loss-repro"
 import { expectTiEvmCadModelVisualRepro } from "../fixtures/create-ti-evm-cad-model-visual-repro"
 
-test("LMG342X-BB-EVM loses imported CAD models during TSX conversion", async () => {
+test("LMG342X-BB-EVM preserves imported CAD models during TSX conversion", async () => {
   const modelCounts = await createTiEvmCadModelLossRepro({
     componentName: "Lmg342xBbEvm",
     fixtureName: "lmg342x-bb-evm",
@@ -10,8 +10,9 @@ test("LMG342X-BB-EVM loses imported CAD models during TSX conversion", async () 
 
   expect(modelCounts).toMatchInlineSnapshot(`
     {
-      "generatedTsxContainsCadModel": false,
-      "renderedLinkedCadModelCount": 0,
+      "generatedTsxContainsCadModel": true,
+      "misplacedLinkedCadModelCount": 0,
+      "renderedLinkedCadModelCount": 77,
       "sourceLinkedCadModelCount": 77,
     }
   `)
