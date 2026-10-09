@@ -1,6 +1,13 @@
 import { expect, test } from "bun:test"
 import { createTiEvmRoundtrip } from "../fixtures/create-ti-evm-roundtrip"
 
+const pointsMatch = (
+  firstPoint: { x: number; y: number },
+  secondPoint: { x: number; y: number },
+) =>
+  Math.abs(firstPoint.x - secondPoint.x) < 0.00001 &&
+  Math.abs(firstPoint.y - secondPoint.y) < 0.00001
+
 test(
   "TI LM251772EVM-PD Circuit JSON to tscircuit round trip",
   async () => {
@@ -76,6 +83,35 @@ test(
     expect(renderedSchematicGraphics[0]?.asset?.url).toStartWith(
       "data:image/svg+xml",
     )
+
+    const j2Port = result.sourceCircuitJson.find(
+      (element) =>
+        element.type === "schematic_port" &&
+        element.schematic_port_id === "schematic_port_altium_326",
+    )
+    if (j2Port?.type !== "schematic_port")
+      throw new Error("Missing LM251772EVM-PD J2 port")
+    const sourceTraceEdge = result.sourceCircuitJson
+      .filter((element) => element.type === "schematic_trace")
+      .flatMap((trace) => trace.edges)
+      .find((edge) => edge.to_schematic_port_id === j2Port.schematic_port_id)
+    if (!sourceTraceEdge) throw new Error("Missing trace connected to J2")
+    const renderedWireIndex = result.renderedCircuitJson.findIndex(
+      (element) =>
+        element.type === "schematic_line" &&
+        element.color === "#009600" &&
+        pointsMatch({ x: element.x1, y: element.y1 }, sourceTraceEdge.from) &&
+        pointsMatch({ x: element.x2, y: element.y2 }, sourceTraceEdge.to),
+    )
+    const renderedPinIndex = result.renderedCircuitJson.findIndex(
+      (element) =>
+        element.type === "schematic_line" &&
+        element.color === "#840000" &&
+        (pointsMatch({ x: element.x1, y: element.y1 }, j2Port.center) ||
+          pointsMatch({ x: element.x2, y: element.y2 }, j2Port.center)),
+    )
+    expect(renderedWireIndex).toBeGreaterThanOrEqual(0)
+    expect(renderedPinIndex).toBeGreaterThan(renderedWireIndex)
 
     expect(result.generatedTscircuit).toMatchSnapshot()
     await expect(result.pcbComparisonSvg).toMatchSvgSnapshot(
