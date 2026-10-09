@@ -2,9 +2,10 @@ import { mmStr } from "@tscircuit/mm"
 import { su } from "@tscircuit/soup-util"
 import type { AnyCircuitElement } from "circuit-json"
 import { createBoardConversionContext } from "./board-conversion-context"
+import { generateBoardCadModelsTsx } from "./generate-board-cad-models-tsx"
 import { generateBoardNetsTsx } from "./generate-board-nets-tsx"
-import { generateBoardSchematicElements } from "./generate-board-schematic-tsx"
 import { generateBoardSchematicSheetTsx } from "./generate-board-schematic-sheet-tsx"
+import { generateBoardSchematicElements } from "./generate-board-schematic-tsx"
 import { generateCopperPoursTsx } from "./generate-copper-pours-tsx"
 import { generateFootprintTsx } from "./generate-footprint-tsx"
 
@@ -69,6 +70,10 @@ export const getBoardUsingTemplate = ({
   const footprintTsx = generateFootprintTsx(circuitJson, context)
   const copperPoursTsx = generateCopperPoursTsx(circuitJson, context)
   const boardNetsTsx = generateBoardNetsTsx(context)
+  const boardCadModelsTsx = generateBoardCadModelsTsx({
+    circuitJson,
+    pcbBoard,
+  })
 
   const schematicElements = generateBoardSchematicElements(circuitJson)
   const schematicSheetTsx = generateBoardSchematicSheetTsx({
@@ -81,6 +86,7 @@ export const getBoardUsingTemplate = ({
       ? `<chip name="${context.pcbChipName}" noSchematicRepresentation footprint={${footprintTsx}} />`
       : "",
     ...copperPoursTsx,
+    ...boardCadModelsTsx,
     schematicSheetTsx,
   ]
     .filter(Boolean)
