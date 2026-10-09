@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test"
-import type { CircuitJson } from "circuit-json"
+import type { CircuitJson, SchematicLine } from "circuit-json"
 import { convertCircuitJsonToSchematicSvg } from "circuit-to-svg"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
@@ -72,7 +72,8 @@ test("test22 preserves board schematic drawing without a PCB footprint", async (
   expect(controllerLabel.position.y).toBeCloseTo(5, 6)
   expect(controllerLabel.rotation).toBe(90)
   const wireLines = renderedCircuitJson.filter(
-    (elm) => elm.type === "schematic_line" && elm.color === "#009600",
+    (elm): elm is SchematicLine =>
+      elm.type === "schematic_line" && elm.color === "#009600",
   )
   expect(
     wireLines.some(

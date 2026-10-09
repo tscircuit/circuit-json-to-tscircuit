@@ -1,4 +1,5 @@
 import { expect, test } from "bun:test"
+import type { SchematicLine } from "circuit-json"
 import { createTiEvmRoundtrip } from "../fixtures/create-ti-evm-roundtrip"
 
 test(
@@ -20,7 +21,8 @@ test(
       (elm) => elm.type === "schematic_path",
     )
     const schematicWireLines = result.renderedCircuitJson.filter(
-      (elm) => elm.type === "schematic_line" && elm.color === "#009600",
+      (elm): elm is SchematicLine =>
+        elm.type === "schematic_line" && elm.color === "#009600",
     )
     expect(schematicPaths.length).toBeGreaterThan(300)
     // Direct converters must preserve source primitive coordinates and styling.
