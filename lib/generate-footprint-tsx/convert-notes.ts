@@ -42,6 +42,9 @@ export const convertNotes: FootprintElementConverter = (circuitJson) => {
     if (noteRect.color !== undefined) {
       attrs.push(`color="${noteRect.color}"`)
     }
+    if (noteRect.corner_radius !== undefined) {
+      attrs.push(`cornerRadius={${noteRect.corner_radius}}`)
+    }
 
     elementStrings.push(`<pcbnoterect ${attrs.join(" ")} />`)
   }
