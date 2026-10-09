@@ -92,8 +92,8 @@ export async function createTiEvmRoundtrip({
   const sourceSchematicSvg = convertCircuitJsonToSchematicSvg(sourceCircuitJson)
   const renderedSchematicSvg =
     convertCircuitJsonToSchematicSvg(renderedCircuitJson)
-  expect(getSchematicViewportScale(renderedSchematicSvg)).toBe(
-    getSchematicViewportScale(sourceSchematicSvg),
+  expect(getSchematicViewportTransform(renderedSchematicSvg)).toEqual(
+    getSchematicViewportTransform(sourceSchematicSvg),
   )
 
   return {
@@ -115,12 +115,21 @@ export async function createTiEvmRoundtrip({
   }
 }
 
-const getSchematicViewportScale = (svg: string): number => {
-  const scale = svg.match(
-    /data-real-to-screen-transform="matrix\(([^,]+)/u,
+const getSchematicViewportTransform = (svg: string) => {
+  const matrixText = svg.match(
+    /data-real-to-screen-transform="matrix\(([^)]+)\)"/u,
   )?.[1]
-  if (!scale) throw new Error("Schematic SVG is missing its viewport")
-  return Number(scale)
+  if (!matrixText) throw new Error("Schematic SVG is missing its viewport")
+
+  const matrixCoefficients = matrixText.split(",").map(Number)
+  if (
+    matrixCoefficients.length !== 6 ||
+    matrixCoefficients.some((coefficient) => !Number.isFinite(coefficient))
+  ) {
+    throw new Error("Schematic SVG has an invalid viewport transform")
+  }
+  const [a, b, c, d, e, f] = matrixCoefficients
+  return { a, b, c, d, e, f }
 }
 
 export function createComparisonSvg({
