@@ -31,7 +31,7 @@ export function getCadModelPlacement({
     ccwRotationOffsetDegrees = {
       x: cadModelCcwRotationDegrees.x,
       y: cadModelCcwRotationDegrees.y - 180,
-      z: -cadModelCcwRotationDegrees.z - parentPlacement.ccwRotationDegrees,
+      z: cadModelCcwRotationDegrees.z + parentPlacement.ccwRotationDegrees,
     }
   }
 
