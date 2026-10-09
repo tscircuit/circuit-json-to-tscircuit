@@ -3,7 +3,7 @@ import type { CadComponent, CircuitJson } from "circuit-json"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
 
-test("reproduces bottom CAD model rotation drift", async () => {
+test("preserves bottom CAD model rotation", async () => {
   const sourceCircuitJson: CircuitJson = [
     {
       type: "pcb_board",
@@ -63,7 +63,7 @@ test("reproduces bottom CAD model rotation drift", async () => {
       "rotation": {
         "x": 10,
         "y": 200,
-        "z": 50,
+        "z": 250,
       },
     }
   `)
