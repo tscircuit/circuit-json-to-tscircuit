@@ -91,6 +91,22 @@ test(
     )
     if (j2Port?.type !== "schematic_port")
       throw new Error("Missing LM251772EVM-PD J2 port")
+    const j2Component = result.sourceCircuitJson.find(
+      (element) =>
+        element.type === "schematic_component" &&
+        element.schematic_component_id === j2Port.schematic_component_id,
+    )
+    if (
+      j2Component?.type !== "schematic_component" ||
+      !j2Component.is_box_with_pins ||
+      j2Port.side_of_component !== "right"
+    ) {
+      throw new Error("LM251772EVM-PD J2 must be a right-facing box pin")
+    }
+    const j2BodyEdge = {
+      x: j2Component.center.x + j2Component.size.width / 2,
+      y: j2Port.center.y,
+    }
     const sourceTraceEdge = result.sourceCircuitJson
       .filter((element) => element.type === "schematic_trace")
       .flatMap((trace) => trace.edges)
@@ -106,9 +122,10 @@ test(
     const renderedPinIndex = result.renderedCircuitJson.findIndex(
       (element) =>
         element.type === "schematic_line" &&
-        element.color === "#840000" &&
-        (pointsMatch({ x: element.x1, y: element.y1 }, j2Port.center) ||
-          pointsMatch({ x: element.x2, y: element.y2 }, j2Port.center)),
+        ((pointsMatch({ x: element.x1, y: element.y1 }, j2BodyEdge) &&
+          pointsMatch({ x: element.x2, y: element.y2 }, j2Port.center)) ||
+          (pointsMatch({ x: element.x2, y: element.y2 }, j2BodyEdge) &&
+            pointsMatch({ x: element.x1, y: element.y1 }, j2Port.center))),
     )
     expect(renderedWireIndex).toBeGreaterThanOrEqual(0)
     expect(renderedPinIndex).toBeGreaterThan(renderedWireIndex)
