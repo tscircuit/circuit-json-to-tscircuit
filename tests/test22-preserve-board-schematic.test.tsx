@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test"
-import type { CircuitJson } from "circuit-json"
+import type { CircuitJson, SchematicLine } from "circuit-json"
 import { convertCircuitJsonToSchematicSvg } from "circuit-to-svg"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
@@ -56,7 +56,7 @@ test("test22 preserves board schematic drawing without a PCB footprint", async (
   const generatedTscircuit = convertCircuitJsonToTscircuit(circuitJson, {
     componentName: "ImportedBoard",
   })
-  expect(generatedTscircuit).toContain("<schematicpath")
+  expect(generatedTscircuit).toContain("<schematicline")
   expect(generatedTscircuit).not.toContain("<symbol>")
   expect(generatedTscircuit).not.toContain("footprint=")
   expect(generatedTscircuit).not.toContain("svgPath=")
@@ -71,12 +71,14 @@ test("test22 preserves board schematic drawing without a PCB footprint", async (
   expect(controllerLabel.position.x).toBeCloseTo(1, 6)
   expect(controllerLabel.position.y).toBeCloseTo(5, 6)
   expect(controllerLabel.rotation).toBe(90)
-  const paths = renderedCircuitJson.filter(
-    (elm) => elm.type === "schematic_path",
+  const wireLines = renderedCircuitJson.filter(
+    (elm): elm is SchematicLine =>
+      elm.type === "schematic_line" && elm.color === "#009600",
   )
   expect(
-    paths.some((path) =>
-      path.points.some((point) => point.x === -2 && point.y === 2),
+    wireLines.some(
+      (line) =>
+        (line.x1 === -2 && line.y1 === 2) || (line.x2 === -2 && line.y2 === 2),
     ),
   ).toBe(true)
   expect(

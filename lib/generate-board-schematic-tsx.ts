@@ -18,10 +18,10 @@ export const generateBoardSchematicElements = (
   circuitJson: AnyCircuitElement[],
 ): string[] => {
   return [
+    ...convertTraces(circuitJson),
     ...convertComponents(circuitJson),
     ...convertNetLabels(circuitJson),
     ...convertPrimitives(circuitJson),
-    ...convertTraces(circuitJson),
     ...convertSchematicGraphics(circuitJson),
   ]
 }

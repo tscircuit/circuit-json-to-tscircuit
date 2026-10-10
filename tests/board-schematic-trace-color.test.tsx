@@ -28,9 +28,13 @@ test("preserves the compiled schematic wire color", async () => {
       componentName: "WireColorBoard",
     }),
   )
-  const path = renderedCircuitJson.find(
-    (element) => element.type === "schematic_path",
+  const wireLine = renderedCircuitJson.find(
+    (element) =>
+      element.type === "schematic_line" && element.color === "#009600",
   )
 
-  expect(path).toMatchObject({ stroke_color: "#009600" })
+  expect(wireLine).toMatchObject({
+    color: "#009600",
+    stroke_width: 0.02,
+  })
 })
