@@ -135,6 +135,14 @@ test("uses tscircuit colors for imported component artwork", async () => {
   const librarySymbolLine = renderedCircuitJson.find(
     (element) => element.type === "schematic_line" && element.x1 === -1.5,
   )
+  const componentBubble = renderedCircuitJson.find(
+    (element) =>
+      element.type === "schematic_circle" &&
+      element.schematic_circle_id === "schematic_circle_0",
+  )
+  const componentArtText = renderedCircuitJson.find(
+    (element) => element.type === "schematic_text" && element.text === "CUSTOM",
+  )
 
   expect(componentBody).toMatchObject({
     stroke_color: "#840000",
@@ -142,6 +150,11 @@ test("uses tscircuit colors for imported component artwork", async () => {
   })
   expect(standaloneNote).toMatchObject({ stroke_color: "#0000ff" })
   expect(librarySymbolLine).toMatchObject({ color: "#840000" })
+  expect(componentBubble).toMatchObject({
+    color: "#840000",
+    fill_color: "#ffffff",
+  })
+  expect(componentArtText).toMatchObject({ color: "#0f0f0f" })
   expect(generatedTscircuit).toContain('color={"#840000"}')
   expect(generatedTscircuit).toContain('fillColor={"#ffffc2"}')
   expect(generatedTscircuit).toContain('color={"#006464"}')

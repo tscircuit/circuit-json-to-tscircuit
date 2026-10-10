@@ -2,6 +2,7 @@ import type { SchematicPrimitive } from "./get-schematic-primitives-in-render-or
 
 const COMPONENT_OUTLINE_COLOR = "#840000"
 const COMPONENT_BODY_COLOR = "#ffffc2"
+const COMPONENT_LOCAL_LABEL_COLOR = "#0f0f0f"
 const COMPONENT_REFERENCE_COLOR = "#006464"
 const COMPONENT_PIN_NUMBER_COLOR = "#a90000"
 
@@ -11,8 +12,22 @@ type SchematicPrimitivePaint = {
   fillColor?: string
 }
 
+type FillableSchematicPrimitiveType =
+  | "schematic_path"
+  | "schematic_rect"
+  | "schematic_circle"
+
 const normalizeCssColorSyntax = (color: string | undefined): string =>
   color?.toLowerCase().replace(/\s+/g, "") ?? ""
+
+const isWhiteColor = (color: string | undefined): boolean =>
+  [
+    "#fff",
+    "#ffffff",
+    "white",
+    "rgb(255,255,255)",
+    "rgba(255,255,255,1)",
+  ].includes(normalizeCssColorSyntax(color))
 
 const getCanonicalComponentTextColor = (
   sourceTextColor: string | undefined,
@@ -25,15 +40,17 @@ const getCanonicalComponentTextColor = (
     case "rgb(169,0,0)":
       return COMPONENT_PIN_NUMBER_COLOR
     default:
-      return COMPONENT_OUTLINE_COLOR
+      return COMPONENT_LOCAL_LABEL_COLOR
   }
 }
 
 const getCanonicalComponentFillColor = ({
+  primitiveType,
   sourceFillColor,
   sourceStrokeColor,
   isFilled,
 }: {
+  primitiveType: FillableSchematicPrimitiveType
   sourceFillColor: string | undefined
   sourceStrokeColor: string | undefined
   isFilled: boolean | undefined
@@ -41,6 +58,9 @@ const getCanonicalComponentFillColor = ({
   if (!isFilled) return undefined
   const normalizedFillColor = normalizeCssColorSyntax(sourceFillColor)
   if (normalizedFillColor === "none" || normalizedFillColor === "transparent") {
+    return sourceFillColor
+  }
+  if (primitiveType === "schematic_circle" && isWhiteColor(sourceFillColor)) {
     return sourceFillColor
   }
   if (
@@ -74,6 +94,7 @@ export const getSchematicPrimitivePaint = (
         : primitive.stroke_color,
       fillColor: isSymbolArtwork
         ? getCanonicalComponentFillColor({
+            primitiveType: primitive.type,
             sourceFillColor: primitive.fill_color,
             sourceStrokeColor: primitive.stroke_color,
             isFilled: primitive.is_filled,
@@ -89,6 +110,7 @@ export const getSchematicPrimitivePaint = (
       primitive.type === "schematic_circle"
         ? isSymbolArtwork
           ? getCanonicalComponentFillColor({
+              primitiveType: primitive.type,
               sourceFillColor: primitive.fill_color,
               sourceStrokeColor: primitive.color,
               isFilled: primitive.is_filled,
