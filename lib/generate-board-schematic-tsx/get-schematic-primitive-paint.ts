@@ -1,3 +1,4 @@
+import Color from "color"
 import type { SchematicPrimitive } from "./get-schematic-primitives-in-render-order"
 
 const COMPONENT_OUTLINE_COLOR = "#840000"
@@ -20,24 +21,38 @@ type FillableSchematicPrimitiveType =
 const normalizeCssColorSyntax = (color: string | undefined): string =>
   color?.toLowerCase().replace(/\s+/g, "") ?? ""
 
+const getCssColorFingerprint = (color: string | undefined): string => {
+  const normalizedColorSyntax = normalizeCssColorSyntax(color)
+  if (!normalizedColorSyntax) return ""
+  try {
+    return Color(normalizedColorSyntax).hexa().toLowerCase()
+  } catch {
+    return normalizedColorSyntax
+  }
+}
+
+const colorsAreEquivalent = (
+  firstColor: string | undefined,
+  secondColor: string | undefined,
+): boolean =>
+  Boolean(firstColor) &&
+  Boolean(secondColor) &&
+  getCssColorFingerprint(firstColor) === getCssColorFingerprint(secondColor)
+
 const isWhiteColor = (color: string | undefined): boolean =>
-  [
-    "#fff",
-    "#ffffff",
-    "white",
-    "rgb(255,255,255)",
-    "rgba(255,255,255,1)",
-  ].includes(normalizeCssColorSyntax(color))
+  getCssColorFingerprint(color) === "#ffffffff"
+
+const isTransparentColor = (color: string | undefined): boolean =>
+  normalizeCssColorSyntax(color) === "none" ||
+  /^#[\da-f]{6}00$/.test(getCssColorFingerprint(color))
 
 const getCanonicalComponentTextColor = (
   sourceTextColor: string | undefined,
 ): string => {
-  switch (normalizeCssColorSyntax(sourceTextColor)) {
-    case "#006464":
-    case "rgb(0,100,100)":
+  switch (getCssColorFingerprint(sourceTextColor)) {
+    case "#006464ff":
       return COMPONENT_REFERENCE_COLOR
-    case "#a90000":
-    case "rgb(169,0,0)":
+    case "#a90000ff":
       return COMPONENT_PIN_NUMBER_COLOR
     default:
       return COMPONENT_LOCAL_LABEL_COLOR
@@ -56,8 +71,7 @@ const getCanonicalComponentFillColor = ({
   isFilled: boolean | undefined
 }): string | undefined => {
   if (!isFilled) return undefined
-  const normalizedFillColor = normalizeCssColorSyntax(sourceFillColor)
-  if (normalizedFillColor === "none" || normalizedFillColor === "transparent") {
+  if (isTransparentColor(sourceFillColor)) {
     return sourceFillColor
   }
   if (primitiveType === "schematic_circle" && isWhiteColor(sourceFillColor)) {
@@ -65,7 +79,7 @@ const getCanonicalComponentFillColor = ({
   }
   if (
     !sourceFillColor ||
-    normalizedFillColor === normalizeCssColorSyntax(sourceStrokeColor)
+    colorsAreEquivalent(sourceFillColor, sourceStrokeColor)
   ) {
     return COMPONENT_OUTLINE_COLOR
   }

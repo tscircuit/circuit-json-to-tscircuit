@@ -30,6 +30,7 @@
     "circuit-json": "^0.0.521",
     "circuit-json-to-gltf": "0.0.151",
     "circuit-to-svg": "https://pkg.pr.new/tscircuit/circuit-to-svg@738ef1d",
+    "color": "^5.0.3",
     "commander": "^13.1.0",
     "fast-png": "8.0.0",
     "prettier": "^3.9.5",
