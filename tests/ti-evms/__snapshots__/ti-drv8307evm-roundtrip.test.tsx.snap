@@ -60,14 +60,9 @@ exports[`TI DRV8307EVM Circuit JSON to tscircuit round trip 1`] = `
 <net name={"NetU9_1"} connectsTo={[".ImportedBoard > .imported_pcb_port_162",".ImportedBoard > .imported_pcb_port_201"]} />
 <net name={"PWM_X"} connectsTo={[".ImportedBoard > .imported_pcb_port_27",".ImportedBoard > .imported_pcb_port_118",".ImportedBoard > .imported_pcb_port_284"]} />
 <net name={"PWM"} connectsTo={[".ImportedBoard > .imported_pcb_port_26",".ImportedBoard > .imported_pcb_port_207",".ImportedBoard > .imported_pcb_port_251"]} />
-<net name={"FAULTn"} connectsTo={[".ImportedBoard > .imported_pcb_port_203"]} />
-<net name={"UH_"} connectsTo={[".ImportedBoard > .imported_pcb_port_171"]} />
 <net name={"VH_"} connectsTo={[".ImportedBoard > .imported_pcb_port_121",".ImportedBoard > .imported_pcb_port_175",".ImportedBoard > .imported_pcb_port_277"]} />
 <net name={"UH__2"} connectsTo={[".ImportedBoard > .imported_pcb_port_103",".ImportedBoard > .imported_pcb_port_173"]} />
 <net name={"VH__2"} connectsTo={[".ImportedBoard > .imported_pcb_port_177",".ImportedBoard > .imported_pcb_port_279"]} />
-<net name={"WH_"} connectsTo={[".ImportedBoard > .imported_pcb_port_181"]} />
-<net name={"WH__2"} connectsTo={[".ImportedBoard > .imported_pcb_port_179"]} />
-<net name={"LOCKn"} connectsTo={[".ImportedBoard > .imported_pcb_port_205"]} />
 <chip name="ImportedBoard" noSchematicRepresentation footprint={<footprint>
         <platedhole portHints={["imported_pcb_port_1"]} pcbX="21.6408mm" pcbY="43.0276mm" outerDiameter="4.318mm" holeDiameter="3.81mm" shape="circle" />
 <platedhole portHints={["imported_pcb_port_2"]} pcbX="21.6408mm" pcbY="109.8296mm" outerDiameter="4.318mm" holeDiameter="3.81mm" shape="circle" />
