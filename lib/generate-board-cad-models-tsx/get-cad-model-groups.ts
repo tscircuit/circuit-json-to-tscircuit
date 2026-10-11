@@ -5,7 +5,7 @@ import type {
   CadModelParentPlacement,
   PcbComponentId,
 } from "./converter-types"
-import { getCadModelUrl } from "./get-cad-model-url"
+import { hasCadModelSource } from "./has-cad-model-source"
 
 export function getCadModelGroups(
   circuitJson: AnyCircuitElement[],
@@ -19,7 +19,21 @@ export function getCadModelGroups(
 
   const cadModelGroupByKey = new Map<CadModelGroupKey, CadModelGroup>()
   for (const element of circuitJson) {
-    if (element.type !== "cad_component" || !getCadModelUrl(element)) continue
+    if (element.type !== "cad_component" || !hasCadModelSource(element))
+      continue
+
+    if (element.model_jscad !== undefined) {
+      const layer = element.layer === "bottom" ? "bottom" : "top"
+      cadModelGroupByKey.set(element.cad_component_id, {
+        cadComponents: [element],
+        parentPlacement: {
+          center: element.position,
+          ccwRotationDegrees: 0,
+          layer,
+        },
+      })
+      continue
+    }
 
     const pcbComponent = element.pcb_component_id
       ? pcbComponentById.get(element.pcb_component_id)
