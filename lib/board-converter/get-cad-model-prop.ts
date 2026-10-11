@@ -53,6 +53,13 @@ function getCadModelUrl(cadComponent: CadComponent): CadModelUrl | undefined {
   return undefined
 }
 
+function hasCadModelSource(cadComponent: CadComponent): boolean {
+  return (
+    cadComponent.model_jscad !== undefined ||
+    getCadModelUrl(cadComponent) !== undefined
+  )
+}
+
 function getModelUrlWithExtensionHint({ extension, url }: CadModelUrl): string {
   const pathWithoutQuery = url.split(/[?#]/u)[0] ?? ""
   return pathWithoutQuery.toLowerCase().endsWith(`.${extension}`)
@@ -235,6 +242,51 @@ function getCadModelElement({
   return `<cadmodel ${attributes.join(" ")} />`
 }
 
+function getJscadCadModelProp({
+  cadComponents,
+  placement,
+}: {
+  cadComponents: CadComponent[]
+  placement: CadModelPlacement
+}): string {
+  const firstCadComponent = cadComponents[0]
+  if (!firstCadComponent) return "cadModel={null}"
+
+  const shapes = cadComponents.flatMap((cadComponent) =>
+    cadComponent.model_jscad === undefined ? [] : [cadComponent.model_jscad],
+  )
+  const jscad = shapes.length === 1 ? shapes[0] : { type: "union", shapes }
+  const properties = [
+    `jscad: ${JSON.stringify(jscad)}`,
+    `positionOffset: ${formatPoint(placement.positionOffset)}`,
+    `rotationOffset: ${formatPoint(placement.rotationOffset)}`,
+  ]
+
+  if (firstCadComponent.model_unit_to_mm_scale_factor !== undefined) {
+    properties.push(
+      `modelUnitToMmScale: ${firstCadComponent.model_unit_to_mm_scale_factor}`,
+    )
+  }
+  if (firstCadComponent.model_board_normal_direction !== undefined) {
+    properties.push(
+      `modelBoardNormalDirection: ${JSON.stringify(firstCadComponent.model_board_normal_direction)}`,
+    )
+  }
+  const modelOriginPosition =
+    firstCadComponent.model_origin_position ??
+    (firstCadComponent.model_origin_alignment === "unknown"
+      ? { x: 0, y: 0, z: 0 }
+      : undefined)
+  if (modelOriginPosition !== undefined) {
+    properties.push(`modelOriginPosition: ${formatPoint(modelOriginPosition)}`)
+  }
+  if (firstCadComponent.show_as_translucent_model === true) {
+    properties.push("showAsTranslucentModel: true")
+  }
+
+  return `cadModel={{ ${properties.join(", ")} }}`
+}
+
 export function getCadModelProp({
   circuitJson,
   pcbBoard,
@@ -248,9 +300,26 @@ export function getCadModelProp({
     (element): element is CadComponent =>
       element.type === "cad_component" &&
       element.pcb_component_id === pcbComponent.pcb_component_id &&
-      getCadModelUrl(element) !== undefined,
+      hasCadModelSource(element),
   )
   if (cadComponents.length === 0) return "cadModel={null}"
+
+  const jscadCadComponents = cadComponents.filter(
+    (cadComponent) => cadComponent.model_jscad !== undefined,
+  )
+  if (jscadCadComponents.length > 0) {
+    const firstCadComponent = jscadCadComponents[0]
+    if (!firstCadComponent) return undefined
+    return getJscadCadModelProp({
+      cadComponents: jscadCadComponents,
+      placement: getDirectCadModelPlacement({
+        cadComponent: firstCadComponent,
+        circuitJson,
+        pcbBoard,
+        pcbComponent,
+      }),
+    })
+  }
 
   if (cadComponents.length === 1) {
     const cadComponent = cadComponents[0]
