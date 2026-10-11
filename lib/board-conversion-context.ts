@@ -7,6 +7,7 @@ import type {
   RuntimeNetName,
   SourceNetId,
   SourcePortId,
+  SourceTraceId,
 } from "./board-conversion-types"
 import { getRuntimeNetNames } from "./get-runtime-net-names"
 
@@ -53,13 +54,70 @@ export const createBoardConversionContext = (
       pcbPortSelectorsByRuntimeNetName.set(runtimeNetName, selectors)
     }
   }
+  const runtimeNetNamesToEmit = getRuntimeNetNamesToEmit({
+    circuitJson,
+    pcbPortSelectorsByRuntimeNetName,
+    runtimeNetNameBySourceNetId,
+  })
 
   return {
     pcbChipName: PCB_CHIP_NAME,
     portHintByPcbPortId,
     runtimeNetNameBySourceNetId,
+    runtimeNetNamesToEmit,
     pcbPortSelectorsByRuntimeNetName,
   }
+}
+
+function getRuntimeNetNamesToEmit(params: {
+  circuitJson: AnyCircuitElement[]
+  pcbPortSelectorsByRuntimeNetName: Map<RuntimeNetName, PcbPortSelector[]>
+  runtimeNetNameBySourceNetId: Map<SourceNetId, RuntimeNetName>
+}): Set<RuntimeNetName> {
+  const runtimeNetNames = new Set<RuntimeNetName>()
+  for (const [
+    runtimeNetName,
+    selectors,
+  ] of params.pcbPortSelectorsByRuntimeNetName) {
+    if (selectors.length >= 2) runtimeNetNames.add(runtimeNetName)
+  }
+
+  const sourceNetIdsBySourceTraceId = new Map<SourceTraceId, SourceNetId[]>(
+    params.circuitJson.flatMap((element) =>
+      element.type === "source_trace"
+        ? [[element.source_trace_id, element.connected_source_net_ids] as const]
+        : [],
+    ),
+  )
+  for (const element of params.circuitJson) {
+    const sourceNetIds = getSourceNetIdsUsedByPcbElement({
+      element,
+      sourceNetIdsBySourceTraceId,
+    })
+    for (const sourceNetId of sourceNetIds) {
+      const runtimeNetName = params.runtimeNetNameBySourceNetId.get(sourceNetId)
+      if (runtimeNetName) runtimeNetNames.add(runtimeNetName)
+    }
+  }
+  return runtimeNetNames
+}
+
+function getSourceNetIdsUsedByPcbElement(params: {
+  element: AnyCircuitElement
+  sourceNetIdsBySourceTraceId: Map<SourceTraceId, SourceNetId[]>
+}): SourceNetId[] {
+  if (
+    (params.element.type === "pcb_via" ||
+      params.element.type === "pcb_copper_pour") &&
+    params.element.source_net_id
+  ) {
+    return [params.element.source_net_id]
+  }
+  if (params.element.type !== "pcb_trace" || !params.element.source_trace_id)
+    return []
+  return (
+    params.sourceNetIdsBySourceTraceId.get(params.element.source_trace_id) ?? []
+  )
 }
 
 const getSourceNetIdsRequiringSelector = (

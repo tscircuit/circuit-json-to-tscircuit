@@ -1,7 +1,7 @@
 import { su } from "@tscircuit/soup-util"
 import type { AnyCircuitElement } from "circuit-json"
-import { getCopperPourOutline } from "./get-copper-pour-outline"
 import type { BoardConversionContext } from "./board-conversion-context"
+import { getCopperPourOutline } from "./get-copper-pour-outline"
 
 export function generateCopperPoursTsx(
   circuitJson: AnyCircuitElement[],
@@ -37,9 +37,7 @@ export function generateCopperPoursTsx(
         `<copperpour layer={${JSON.stringify(pour.layer)}} connectsTo={${JSON.stringify(netSelector)}} outline={${JSON.stringify(outline)}} padMargin={0} traceMargin={0} clearance={0} boardEdgeMargin={0} cutoutMargin={0} useThermalReliefs={false} coveredWithSolderMask={${pour.covered_with_solder_mask ?? true}} />`,
       ]
     })
-  const contextNetNames = new Set(
-    context?.runtimeNetNameBySourceNetId.values() ?? [],
-  )
+  const contextNetNames = new Set(context?.runtimeNetNamesToEmit ?? [])
   const nets = [...usedNetNames]
     .filter((sourceNetName) => !contextNetNames.has(sourceNetName))
     .map((sourceNetName) => `<net name={${JSON.stringify(sourceNetName)}} />`)

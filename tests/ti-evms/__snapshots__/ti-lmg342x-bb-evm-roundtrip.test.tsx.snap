@@ -5,9 +5,6 @@ exports[`TI LMG342X-BB-EVM Circuit JSON to tscircuit round trip 1`] = `
   <board width="162.56mm" height="92.837mm" outline={[{ x: 17.5768, y: 38.9636 }, { x: 180.1368, y: 38.9636 }, { x: 180.1368, y: 131.8006 }, { x: 17.5768, y: 131.8006 }, { x: 17.5768, y: 38.9636 }]} thickness="1.6mm" layers={2} material="fr4" boardAnchorPosition={{ x: 98.85679999999999, y: 85.3821 }}>
     <net name={"NetJ29_1"} connectsTo={[".ImportedBoard > .imported_pcb_port_54",".ImportedBoard > .imported_pcb_port_240"]} />
 <net name={"NetJ22_1"} connectsTo={[".ImportedBoard > .imported_pcb_port_47",".ImportedBoard > .imported_pcb_port_264"]} />
-<net name={"NetR15_3"} connectsTo={[".ImportedBoard > .imported_pcb_port_113"]} />
-<net name={"NetR3_3"} connectsTo={[".ImportedBoard > .imported_pcb_port_138"]} />
-<net name={"NetH13_1"} connectsTo={[".ImportedBoard > .imported_pcb_port_32"]} />
 <net name={"NetJ14_3"} connectsTo={[".ImportedBoard > .imported_pcb_port_76",".ImportedBoard > .imported_pcb_port_169"]} />
 <net name={"NetLS_OC_2"} connectsTo={[".ImportedBoard > .imported_pcb_port_126",".ImportedBoard > .imported_pcb_port_185"]} />
 <net name={"NetHS_OC_2"} connectsTo={[".ImportedBoard > .imported_pcb_port_128",".ImportedBoard > .imported_pcb_port_271"]} />
@@ -66,23 +63,6 @@ exports[`TI LMG342X-BB-EVM Circuit JSON to tscircuit round trip 1`] = `
 <net name={"Net5V_EN_1"} connectsTo={[".ImportedBoard > .imported_pcb_port_130",".ImportedBoard > .imported_pcb_port_150"]} />
 <net name={"PWM_HS_2"} connectsTo={[".ImportedBoard > .imported_pcb_port_62",".ImportedBoard > .imported_pcb_port_75",".ImportedBoard > .imported_pcb_port_87"]} />
 <net name={"PGND"} connectsTo={[".ImportedBoard > .imported_pcb_port_2",".ImportedBoard > .imported_pcb_port_3",".ImportedBoard > .imported_pcb_port_5",".ImportedBoard > .imported_pcb_port_13",".ImportedBoard > .imported_pcb_port_20",".ImportedBoard > .imported_pcb_port_26",".ImportedBoard > .imported_pcb_port_41",".ImportedBoard > .imported_pcb_port_42",".ImportedBoard > .imported_pcb_port_61",".ImportedBoard > .imported_pcb_port_91",".ImportedBoard > .imported_pcb_port_101",".ImportedBoard > .imported_pcb_port_106",".ImportedBoard > .imported_pcb_port_143",".ImportedBoard > .imported_pcb_port_163",".ImportedBoard > .imported_pcb_port_164",".ImportedBoard > .imported_pcb_port_207"]} />
-<net name={"VAUX"} connectsTo={[".ImportedBoard > .imported_pcb_port_193"]} />
-<net name={"HS_FET_PWM"} />
-<net name={"LS_FET_PWM"} />
-<net name={"HS_FET_OCZ"} />
-<net name={"HS_FET_TEMP"} />
-<net name={"HS_FET_FAULTZ"} />
-<net name={"LS_FET_OCZ"} />
-<net name={"LS_FET_TEMP"} />
-<net name={"HVBUS"} />
-<net name={"LS_FET_FAULTZ"} />
-<net name={"LS_FET_TEMP_FILT"} />
-<net name={"HS_FET_TEMP_FILT"} />
-<net name={"HVOUT"} />
-<net name={"PWM_HS"} />
-<net name={"PWM_LS"} connectsTo={[".ImportedBoard > .imported_pcb_port_18"]} />
-<net name={"TACH"} />
-<net name={"SW"} />
 <chip name="ImportedBoard" noSchematicRepresentation footprint={<footprint>
         <platedhole portHints={["imported_pcb_port_1"]} pcbX="43.78880752mm" pcbY="43.0735994mm" outerDiameter="2.25000058mm" holeDiameter="1.49999954mm" shape="circle" />
 <platedhole portHints={["imported_pcb_port_2"]} pcbX="43.7888126mm" pcbY="80.57360059999999mm" holeShape="circle" padShape="rect" holeDiameter="1.49999954mm" rectPadWidth="2.25000058mm" rectPadHeight="2.25000058mm" rectBorderRadius="0.562500145mm" holeOffsetX="0mm" holeOffsetY="0mm" pcbRotation="270deg" shape="circular_hole_with_rect_pad" />
