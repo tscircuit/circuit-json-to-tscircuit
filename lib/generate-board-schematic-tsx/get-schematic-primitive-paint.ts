@@ -19,7 +19,7 @@ type FillableSchematicPrimitiveType =
   | "schematic_circle"
 
 const normalizeCssColorSyntax = (color: string | undefined): string =>
-  color?.toLowerCase().replace(/\s+/g, "") ?? ""
+  color?.trim().toLowerCase() ?? ""
 
 const getCssColorFingerprint = (color: string | undefined): string => {
   const normalizedColorSyntax = normalizeCssColorSyntax(color)
@@ -45,6 +45,13 @@ const isWhiteColor = (color: string | undefined): boolean =>
 const isTransparentColor = (color: string | undefined): boolean =>
   normalizeCssColorSyntax(color) === "none" ||
   /^#[\da-f]{6}00$/.test(getCssColorFingerprint(color))
+
+const getCanonicalComponentStrokeColor = (
+  sourceStrokeColor: string | undefined,
+): string | undefined =>
+  isTransparentColor(sourceStrokeColor)
+    ? sourceStrokeColor
+    : COMPONENT_OUTLINE_COLOR
 
 const getCanonicalComponentTextColor = (
   sourceTextColor: string | undefined,
@@ -104,7 +111,7 @@ export const getSchematicPrimitivePaint = (
   if (primitive.type === "schematic_path") {
     return {
       strokeColor: isSymbolArtwork
-        ? COMPONENT_OUTLINE_COLOR
+        ? getCanonicalComponentStrokeColor(primitive.stroke_color)
         : primitive.stroke_color,
       fillColor: isSymbolArtwork
         ? getCanonicalComponentFillColor({
@@ -118,7 +125,9 @@ export const getSchematicPrimitivePaint = (
   }
   if (primitive.type === "schematic_box") return {}
   return {
-    color: isSymbolArtwork ? COMPONENT_OUTLINE_COLOR : primitive.color,
+    color: isSymbolArtwork
+      ? getCanonicalComponentStrokeColor(primitive.color)
+      : primitive.color,
     fillColor:
       primitive.type === "schematic_rect" ||
       primitive.type === "schematic_circle"
