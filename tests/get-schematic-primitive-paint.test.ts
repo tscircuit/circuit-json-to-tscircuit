@@ -4,6 +4,7 @@ import { getSchematicPrimitivePaint } from "../lib/generate-board-schematic-tsx/
 
 type SchematicLine = Extract<AnyCircuitElement, { type: "schematic_line" }>
 type SchematicRect = Extract<AnyCircuitElement, { type: "schematic_rect" }>
+type SchematicText = Extract<AnyCircuitElement, { type: "schematic_text" }>
 
 type EquivalentPaintPair = {
   fillColor: string
@@ -56,6 +57,18 @@ const createComponentRect = (color: string): SchematicRect => ({
   is_dashed: false,
 })
 
+const createComponentText = (color: string): SchematicText => ({
+  type: "schematic_text",
+  schematic_text_id: "component_text",
+  schematic_component_id: "component_1",
+  text: "HIDDEN",
+  position: { x: 0, y: 0 },
+  anchor: "center",
+  font_size: 0.15,
+  color,
+  rotation: 0,
+})
+
 test("equivalent CSS colors remain component foreground fills", () => {
   const equivalentPaintPairs: EquivalentPaintPair[] = [
     { fillColor: "#840000", strokeColor: "rgb(132, 0, 0)" },
@@ -103,5 +116,20 @@ test("transparent component strokes remain transparent", () => {
     expect(
       getSchematicPrimitivePaint(createComponentLine(strokeColor)),
     ).toMatchObject({ color: strokeColor })
+  }
+})
+
+test("transparent component text remains transparent", () => {
+  const transparentTextColors = [
+    "none",
+    "transparent",
+    "rgba(0, 0, 0, 0)",
+    "rgb(0 0 0 / 0)",
+  ]
+
+  for (const color of transparentTextColors) {
+    expect(getSchematicPrimitivePaint(createComponentText(color))).toEqual({
+      color,
+    })
   }
 })

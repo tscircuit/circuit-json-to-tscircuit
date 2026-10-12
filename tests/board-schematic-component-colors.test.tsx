@@ -106,6 +106,17 @@ const circuitJson: CircuitJson = [
     rotation: 0,
   },
   {
+    type: "schematic_text",
+    schematic_text_id: "hidden_component_text",
+    schematic_component_id: "custom_symbol",
+    text: "HIDDEN",
+    position: { x: 0, y: -0.75 },
+    anchor: "center",
+    font_size: 0.15,
+    color: "transparent",
+    rotation: 0,
+  },
+  {
     type: "schematic_path",
     schematic_path_id: "standalone_blue_note",
     points: [
@@ -143,6 +154,9 @@ test("uses tscircuit colors for imported component artwork", async () => {
   const componentArtText = renderedCircuitJson.find(
     (element) => element.type === "schematic_text" && element.text === "CUSTOM",
   )
+  const hiddenComponentText = renderedCircuitJson.find(
+    (element) => element.type === "schematic_text" && element.text === "HIDDEN",
+  )
 
   expect(componentBody).toMatchObject({
     stroke_color: "#840000",
@@ -155,9 +169,11 @@ test("uses tscircuit colors for imported component artwork", async () => {
     fill_color: "#ffffff",
   })
   expect(componentArtText).toMatchObject({ color: "#0f0f0f" })
+  expect(hiddenComponentText).toMatchObject({ color: "transparent" })
   expect(generatedTscircuit).toContain('color={"#840000"}')
   expect(generatedTscircuit).toContain('fillColor={"#ffffc2"}')
   expect(generatedTscircuit).toContain('color={"#006464"}')
+  expect(generatedTscircuit).toContain('color={"transparent"}')
   await expect(
     convertCircuitJsonToSchematicSvg(renderedCircuitJson),
   ).toMatchSvgSnapshot(import.meta.path)

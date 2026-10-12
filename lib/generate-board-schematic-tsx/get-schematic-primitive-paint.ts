@@ -56,6 +56,9 @@ const getCanonicalComponentStrokeColor = (
 const getCanonicalComponentTextColor = (
   sourceTextColor: string | undefined,
 ): string => {
+  if (sourceTextColor && isTransparentColor(sourceTextColor)) {
+    return sourceTextColor
+  }
   switch (getCssColorFingerprint(sourceTextColor)) {
     case "#006464ff":
       return COMPONENT_REFERENCE_COLOR
