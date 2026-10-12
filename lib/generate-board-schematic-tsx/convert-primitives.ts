@@ -4,6 +4,7 @@ import { generateSymbolElements } from "../generate-symbol-tsx"
 import { formatElement } from "./format-attributes"
 import type { SchematicElementConverter } from "./converter-types"
 import { getSchematicPrimitivesInRenderOrder } from "./get-schematic-primitives-in-render-order"
+import { getSchematicPrimitivePaint } from "./get-schematic-primitive-paint"
 
 export const convertPrimitives: SchematicElementConverter = (circuitJson) => [
   ...generateSymbolElements(
@@ -14,6 +15,7 @@ export const convertPrimitives: SchematicElementConverter = (circuitJson) => [
     ),
   ),
   ...getSchematicPrimitivesInRenderOrder(circuitJson).flatMap((element) => {
+    const paint = getSchematicPrimitivePaint(element)
     switch (element.type) {
       case "schematic_text":
         return [
@@ -25,7 +27,7 @@ export const convertPrimitives: SchematicElementConverter = (circuitJson) => [
             fontSize:
               element.font_size ??
               schematic_text.shape.font_size.parse(undefined),
-            color: element.color,
+            color: paint.color,
             schRotation: element.rotation,
           }),
         ]
@@ -34,8 +36,8 @@ export const convertPrimitives: SchematicElementConverter = (circuitJson) => [
           formatElement("schematicpath", {
             points: element.points,
             strokeWidth: element.stroke_width,
-            strokeColor: element.stroke_color,
-            fillColor: element.fill_color,
+            strokeColor: paint.strokeColor,
+            fillColor: paint.fillColor,
             isFilled: element.is_filled,
             dashLength: element.dash_length,
             dashGap: element.dash_gap,
@@ -49,8 +51,8 @@ export const convertPrimitives: SchematicElementConverter = (circuitJson) => [
             height: element.height,
             ccwRotationDegrees: element.rotation ?? undefined,
             strokeWidth: element.stroke_width,
-            color: element.color,
-            fillColor: element.fill_color,
+            color: paint.color,
+            fillColor: paint.fillColor,
             isFilled: element.is_filled,
             isDashed: element.is_dashed,
           }),
@@ -63,7 +65,7 @@ export const convertPrimitives: SchematicElementConverter = (circuitJson) => [
             x2: element.x2,
             y2: element.y2,
             strokeWidth: element.stroke_width,
-            color: element.color,
+            color: paint.color,
             isDashed: element.is_dashed,
             dashLength: element.dash_length,
             dashGap: element.dash_gap,
@@ -75,8 +77,8 @@ export const convertPrimitives: SchematicElementConverter = (circuitJson) => [
             center: element.center,
             radius: element.radius,
             strokeWidth: element.stroke_width,
-            color: element.color,
-            fillColor: element.fill_color,
+            color: paint.color,
+            fillColor: paint.fillColor,
             isFilled: element.is_filled,
             isDashed: element.is_dashed,
           }),
@@ -89,7 +91,7 @@ export const convertPrimitives: SchematicElementConverter = (circuitJson) => [
             startAngleDegrees: element.start_angle_degrees,
             endAngleDegrees: element.end_angle_degrees,
             strokeWidth: element.stroke_width,
-            color: element.color,
+            color: paint.color,
             isDashed: element.is_dashed,
             direction: element.direction,
           }),

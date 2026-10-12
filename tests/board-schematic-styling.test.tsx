@@ -3,7 +3,7 @@ import type { CircuitJson } from "circuit-json"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
 
-test("preserves imported schematic styling", async () => {
+test("preserves standalone imported schematic styling", async () => {
   const styledCircuitJson: CircuitJson = [
     {
       type: "pcb_board",
