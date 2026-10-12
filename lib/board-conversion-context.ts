@@ -89,9 +89,11 @@ function getRuntimeNetNamesToEmit(params: {
         : [],
     ),
   )
+  const knownSourceNetIds = new Set(params.runtimeNetNameBySourceNetId.keys())
   for (const element of params.circuitJson) {
     const sourceNetIds = getSourceNetIdsUsedByPcbElement({
       element,
+      knownSourceNetIds,
       sourceNetIdsBySourceTraceId,
     })
     for (const sourceNetId of sourceNetIds) {
@@ -104,6 +106,7 @@ function getRuntimeNetNamesToEmit(params: {
 
 function getSourceNetIdsUsedByPcbElement(params: {
   element: AnyCircuitElement
+  knownSourceNetIds: Set<SourceNetId>
   sourceNetIdsBySourceTraceId: Map<SourceTraceId, SourceNetId[]>
 }): SourceNetId[] {
   if (
@@ -115,6 +118,9 @@ function getSourceNetIdsUsedByPcbElement(params: {
   }
   if (params.element.type !== "pcb_trace" || !params.element.source_trace_id)
     return []
+  if (params.knownSourceNetIds.has(params.element.source_trace_id)) {
+    return [params.element.source_trace_id]
+  }
   return (
     params.sourceNetIdsBySourceTraceId.get(params.element.source_trace_id) ?? []
   )
