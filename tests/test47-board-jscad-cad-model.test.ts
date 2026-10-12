@@ -1,8 +1,9 @@
 import { expect, test } from "bun:test"
-import type { AnyCircuitElement } from "circuit-json"
+import type { AnyCircuitElement, CadComponent } from "circuit-json"
+import { runTscircuitCode } from "tscircuit"
 import { convertCircuitJsonToTscircuit } from "../lib"
 
-test("board conversion preserves grouped JSCAD CAD geometry", () => {
+test("board conversion preserves grouped JSCAD CAD geometry", async () => {
   const circuitJson: AnyCircuitElement[] = [
     {
       type: "pcb_board",
@@ -63,8 +64,24 @@ test("board conversion preserves grouped JSCAD CAD geometry", () => {
   })
 
   expect(generatedTscircuit).toContain('name="R1"')
-  expect(generatedTscircuit).not.toContain('"type":"union"')
+  expect(generatedTscircuit).toContain('"type":"union"')
+  expect(generatedTscircuit).not.toContain("<cadmodel")
+  expect(generatedTscircuit).not.toContain("<cadassembly")
   expect(generatedTscircuit).toContain(
-    'cadModel={<cadassembly><cadmodel key="cad_component_1" jscad={{"type":"cuboid","size":[2,1,0.5]}} positionOffset={{ x: 0, y: 0, z: 0 }} rotationOffset={{ x: 0, y: 0, z: 0 }} modelUnitToMmScale={1} modelBoardNormalDirection={"z+"} modelOriginPosition={{ x: 0, y: 0, z: 0 }} /><cadmodel key="cad_component_2" jscad={{"type":"cuboid","size":[1,0.5,0.75]}} positionOffset={{ x: 2, y: 2, z: 1 }} rotationOffset={{ x: 10, y: 20, z: 30 }} modelUnitToMmScale={1} modelBoardNormalDirection={"z+"} modelOriginPosition={{ x: 0, y: 0, z: 0 }} /></cadassembly>}',
+    'cadModel={{ jscad: {"type":"union","shapes"',
   )
+  expect(generatedTscircuit).toContain('"type":"translate"')
+  expect(generatedTscircuit).toContain('"type":"rotateX"')
+
+  const renderedCircuitJson = (await runTscircuitCode(
+    generatedTscircuit,
+  )) as AnyCircuitElement[]
+  const renderedCadComponents = renderedCircuitJson.filter(
+    (element): element is CadComponent => element.type === "cad_component",
+  )
+
+  expect(renderedCadComponents).toHaveLength(1)
+  expect(renderedCadComponents[0]?.model_jscad).toMatchObject({
+    type: "union",
+  })
 })

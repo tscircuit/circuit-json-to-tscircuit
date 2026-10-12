@@ -12,6 +12,7 @@ import {
   translate,
 } from "transformation-matrix"
 import { formatJsxStringAttribute } from "../format-jsx-string-attribute"
+import { getJscadOperationInBaseModelFrame } from "./get-jscad-operation-in-base-model-frame"
 import { localizePcbComponentElements } from "./localize-pcb-component-elements"
 
 interface CadModelUrl {
@@ -325,11 +326,43 @@ function getJscadCadModelProp(params: {
     return `cadModel={{ ${properties} }}`
   }
 
-  const cadModelElements = models.map(
-    ({ cadComponent, properties }) =>
-      `<cadmodel key=${formatJsxStringAttribute(cadComponent.cad_component_id)} ${properties.map(({ name, value }) => `${name}={${value}}`).join(" ")} />`,
-  )
-  return `cadModel={<cadassembly>${cadModelElements.join("")}</cadassembly>}`
+  const baseCadComponent = firstModel.cadComponent
+  const basePlacement = getDirectCadModelPlacement({
+    cadComponent: baseCadComponent,
+    circuitJson: params.circuitJson,
+    pcbBoard: params.pcbBoard,
+    pcbComponent: params.pcbComponent,
+  })
+  const shapes = models.flatMap(({ cadComponent }) => {
+    const placement = getDirectCadModelPlacement({
+      cadComponent,
+      circuitJson: params.circuitJson,
+      pcbBoard: params.pcbBoard,
+      pcbComponent: params.pcbComponent,
+    })
+    const operation = getJscadOperationInBaseModelFrame({
+      baseCadComponent,
+      basePositionOffset: basePlacement.positionOffset,
+      cadComponent,
+      positionOffset: placement.positionOffset,
+    })
+    return operation ? [operation] : []
+  })
+  const properties = [
+    `jscad: ${JSON.stringify({ type: "union", shapes })}`,
+    `positionOffset: ${formatPoint(basePlacement.positionOffset)}`,
+    `rotationOffset: ${formatPoint(basePlacement.rotationOffset)}`,
+    `modelOriginPosition: ${formatPoint({ x: 0, y: 0, z: 0 })}`,
+    "modelUnitToMmScale: 1",
+    'modelBoardNormalDirection: "z+"',
+  ]
+  if (
+    models.every(({ cadComponent }) => cadComponent.show_as_translucent_model)
+  ) {
+    properties.push("showAsTranslucentModel: true")
+  }
+
+  return `cadModel={{ ${properties.join(", ")} }}`
 }
 
 export function getCadModelProp({
