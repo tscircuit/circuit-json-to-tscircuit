@@ -24,6 +24,18 @@ interface CadModelPlacement {
   rotationOffset: { x: number; y: number; z: number }
 }
 
+interface CadModelProperty {
+  name:
+    | "jscad"
+    | "modelBoardNormalDirection"
+    | "modelOriginPosition"
+    | "modelUnitToMmScale"
+    | "positionOffset"
+    | "rotationOffset"
+    | "showAsTranslucentModel"
+  value: string
+}
+
 const NON_PHYSICAL_PCB_ELEMENT_TYPE_PREFIXES = [
   "pcb_courtyard_",
   "pcb_fabrication_note_",
@@ -242,49 +254,82 @@ function getCadModelElement({
   return `<cadmodel ${attributes.join(" ")} />`
 }
 
-function getJscadCadModelProp({
-  cadComponents,
+function getJscadCadModelProperties({
+  cadComponent,
   placement,
 }: {
-  cadComponents: CadComponent[]
+  cadComponent: CadComponent
   placement: CadModelPlacement
-}): string {
-  const firstCadComponent = cadComponents[0]
-  if (!firstCadComponent) return "cadModel={null}"
-
-  const shapes = cadComponents.flatMap((cadComponent) =>
-    cadComponent.model_jscad === undefined ? [] : [cadComponent.model_jscad],
-  )
-  const jscad = shapes.length === 1 ? shapes[0] : { type: "union", shapes }
-  const properties = [
-    `jscad: ${JSON.stringify(jscad)}`,
-    `positionOffset: ${formatPoint(placement.positionOffset)}`,
-    `rotationOffset: ${formatPoint(placement.rotationOffset)}`,
+}): CadModelProperty[] {
+  if (cadComponent.model_jscad === undefined) return []
+  const properties: CadModelProperty[] = [
+    { name: "jscad", value: JSON.stringify(cadComponent.model_jscad) },
+    { name: "positionOffset", value: formatPoint(placement.positionOffset) },
+    { name: "rotationOffset", value: formatPoint(placement.rotationOffset) },
   ]
 
-  if (firstCadComponent.model_unit_to_mm_scale_factor !== undefined) {
-    properties.push(
-      `modelUnitToMmScale: ${firstCadComponent.model_unit_to_mm_scale_factor}`,
-    )
+  if (cadComponent.model_unit_to_mm_scale_factor !== undefined) {
+    properties.push({
+      name: "modelUnitToMmScale",
+      value: String(cadComponent.model_unit_to_mm_scale_factor),
+    })
   }
-  if (firstCadComponent.model_board_normal_direction !== undefined) {
-    properties.push(
-      `modelBoardNormalDirection: ${JSON.stringify(firstCadComponent.model_board_normal_direction)}`,
-    )
+  if (cadComponent.model_board_normal_direction !== undefined) {
+    properties.push({
+      name: "modelBoardNormalDirection",
+      value: JSON.stringify(cadComponent.model_board_normal_direction),
+    })
   }
   const modelOriginPosition =
-    firstCadComponent.model_origin_position ??
-    (firstCadComponent.model_origin_alignment === "unknown"
+    cadComponent.model_origin_position ??
+    (cadComponent.model_origin_alignment === "unknown"
       ? { x: 0, y: 0, z: 0 }
       : undefined)
   if (modelOriginPosition !== undefined) {
-    properties.push(`modelOriginPosition: ${formatPoint(modelOriginPosition)}`)
+    properties.push({
+      name: "modelOriginPosition",
+      value: formatPoint(modelOriginPosition),
+    })
   }
-  if (firstCadComponent.show_as_translucent_model === true) {
-    properties.push("showAsTranslucentModel: true")
+  if (cadComponent.show_as_translucent_model === true) {
+    properties.push({ name: "showAsTranslucentModel", value: "true" })
   }
 
-  return `cadModel={{ ${properties.join(", ")} }}`
+  return properties
+}
+
+function getJscadCadModelProp(params: {
+  cadComponents: CadComponent[]
+  circuitJson: AnyCircuitElement[]
+  pcbBoard: PcbBoard
+  pcbComponent: PcbComponent
+}): string {
+  const models = params.cadComponents.map((cadComponent) => ({
+    cadComponent,
+    properties: getJscadCadModelProperties({
+      cadComponent,
+      placement: getDirectCadModelPlacement({
+        cadComponent,
+        circuitJson: params.circuitJson,
+        pcbBoard: params.pcbBoard,
+        pcbComponent: params.pcbComponent,
+      }),
+    }),
+  }))
+  const firstModel = models[0]
+  if (!firstModel) return "cadModel={null}"
+  if (models.length === 1) {
+    const properties = firstModel.properties
+      .map(({ name, value }) => `${name}: ${value}`)
+      .join(", ")
+    return `cadModel={{ ${properties} }}`
+  }
+
+  const cadModelElements = models.map(
+    ({ cadComponent, properties }) =>
+      `<cadmodel key=${formatJsxStringAttribute(cadComponent.cad_component_id)} ${properties.map(({ name, value }) => `${name}={${value}}`).join(" ")} />`,
+  )
+  return `cadModel={<cadassembly>${cadModelElements.join("")}</cadassembly>}`
 }
 
 export function getCadModelProp({
@@ -308,16 +353,11 @@ export function getCadModelProp({
     (cadComponent) => cadComponent.model_jscad !== undefined,
   )
   if (jscadCadComponents.length > 0) {
-    const firstCadComponent = jscadCadComponents[0]
-    if (!firstCadComponent) return undefined
     return getJscadCadModelProp({
       cadComponents: jscadCadComponents,
-      placement: getDirectCadModelPlacement({
-        cadComponent: firstCadComponent,
-        circuitJson,
-        pcbBoard,
-        pcbComponent,
-      }),
+      circuitJson,
+      pcbBoard,
+      pcbComponent,
     })
   }
 

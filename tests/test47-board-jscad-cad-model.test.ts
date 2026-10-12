@@ -36,8 +36,9 @@ test("board conversion preserves grouped JSCAD CAD geometry", () => {
       cad_component_id: "cad_component_1",
       pcb_component_id: "pcb_component_1",
       source_component_id: "source_component_1",
-      position: { x: 2, y: 3, z: 0.8 },
+      position: { x: 4, y: 5, z: 1.8 },
       layer: "top",
+      rotation: { x: 10, y: 20, z: 30 },
       model_jscad: { type: "cuboid", size: [2, 1, 0.5] },
       model_unit_to_mm_scale_factor: 1,
       model_board_normal_direction: "z+",
@@ -62,7 +63,8 @@ test("board conversion preserves grouped JSCAD CAD geometry", () => {
   })
 
   expect(generatedTscircuit).toContain('name="R1"')
+  expect(generatedTscircuit).not.toContain('"type":"union"')
   expect(generatedTscircuit).toContain(
-    'cadModel={{ jscad: {"type":"union","shapes":[{"type":"cuboid","size":[2,1,0.5]},{"type":"cuboid","size":[1,0.5,0.75]}]}, positionOffset: { x: 0, y: 0, z: 0 }, rotationOffset: { x: 0, y: 0, z: 0 }, modelUnitToMmScale: 1, modelBoardNormalDirection: "z+", modelOriginPosition: { x: 0, y: 0, z: 0 } }}',
+    'cadModel={<cadassembly><cadmodel key="cad_component_1" jscad={{"type":"cuboid","size":[2,1,0.5]}} positionOffset={{ x: 0, y: 0, z: 0 }} rotationOffset={{ x: 0, y: 0, z: 0 }} modelUnitToMmScale={1} modelBoardNormalDirection={"z+"} modelOriginPosition={{ x: 0, y: 0, z: 0 }} /><cadmodel key="cad_component_2" jscad={{"type":"cuboid","size":[1,0.5,0.75]}} positionOffset={{ x: 2, y: 2, z: 1 }} rotationOffset={{ x: 10, y: 20, z: 30 }} modelUnitToMmScale={1} modelBoardNormalDirection={"z+"} modelOriginPosition={{ x: 0, y: 0, z: 0 }} /></cadassembly>}',
   )
 })
