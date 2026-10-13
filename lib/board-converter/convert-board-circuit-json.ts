@@ -8,6 +8,7 @@ import { convertBoardCadModels } from "./stages/convert-board-cad-models"
 import { convertBoardProperties } from "./stages/convert-board-properties"
 import { convertBoardSchematic } from "./stages/convert-board-schematic"
 import { convertBoardNets } from "./stages/convert-board-nets"
+import { convertBoardTraces } from "./stages/convert-board-traces"
 import { convertCopperPours } from "./stages/convert-copper-pours"
 import { convertPcbComponents } from "./stages/convert-pcb-components"
 import { convertStandalonePcbPrimitives } from "./stages/convert-standalone-pcb-primitives"
@@ -16,6 +17,7 @@ const conversionStages: BoardConverterStage[] = [
   convertBoardProperties,
   convertPcbComponents,
   convertBoardNets,
+  convertBoardTraces,
   convertCopperPours,
   convertBoardSchematic,
   convertStandalonePcbPrimitives,

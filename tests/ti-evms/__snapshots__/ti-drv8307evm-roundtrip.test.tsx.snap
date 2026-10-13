@@ -892,42 +892,42 @@ exports[`TI DRV8307EVM Circuit JSON to tscircuit round trip 1`] = `
     <net name={"NetD7_2"} connectsTo={[".R20 > .imported_pcb_port_33",".D7 > .imported_pcb_port_271"]} />
     <net name={"THRES"} connectsTo={[".C3 > .imported_pcb_port_59",".D8 > .imported_pcb_port_180",".D7 > .imported_pcb_port_270",".U5 > .imported_pcb_port_283",".U5 > .imported_pcb_port_288"]} />
     <net name={"NetU9_11"} connectsTo={[".U9 > .imported_pcb_port_143",".U11 > .imported_pcb_port_199"]} />
-    <net name={"BRAKE"} connectsTo={[".JP7 > .imported_pcb_port_25",".R23 > .imported_pcb_port_122",".U7 > .imported_pcb_port_209",".U1 > .imported_pcb_port_250"]} />
-    <net name={"CP1"} connectsTo={[".C13 > .imported_pcb_port_164",".U1 > .imported_pcb_port_229",".U1 > .imported_pcb_port_240"]} />
-    <net name={"CP2"} connectsTo={[".C13 > .imported_pcb_port_163",".U7 > .imported_pcb_port_227",".U1 > .imported_pcb_port_241"]} />
-    <net name={"DIR"} connectsTo={[".JP5 > .imported_pcb_port_37",".R22 > .imported_pcb_port_120",".U7 > .imported_pcb_port_211",".U1 > .imported_pcb_port_249"]} />
-    <net name={"ENABLE_"} connectsTo={[".TP7 > .imported_pcb_port_20",".R18 > .imported_pcb_port_115",".U7 > .imported_pcb_port_213",".U1 > .imported_pcb_port_248"]} />
+    <net name={"BRAKE"} connectsTo={[".JP7 > .imported_pcb_port_25",".R23 > .imported_pcb_port_122",".U1 > .imported_pcb_port_250",".U7 > .imported_pcb_port_209"]} />
+    <net name={"CP1"} connectsTo={[".C13 > .imported_pcb_port_164",".U1 > .imported_pcb_port_240",".U1 > .imported_pcb_port_229"]} />
+    <net name={"CP2"} connectsTo={[".C13 > .imported_pcb_port_163",".U1 > .imported_pcb_port_241",".U7 > .imported_pcb_port_227"]} />
+    <net name={"DIR"} connectsTo={[".JP5 > .imported_pcb_port_37",".R22 > .imported_pcb_port_120",".U1 > .imported_pcb_port_249",".U7 > .imported_pcb_port_211"]} />
+    <net name={"ENABLE_"} connectsTo={[".TP7 > .imported_pcb_port_20",".R18 > .imported_pcb_port_115",".U1 > .imported_pcb_port_248",".U7 > .imported_pcb_port_213"]} />
     <net name={"FAULTN"} connectsTo={[".TP11 > .imported_pcb_port_23",".R13 > .imported_pcb_port_112",".R14 > .imported_pcb_port_114",".U1 > .imported_pcb_port_253"]} />
-    <net name={"GND"} connectsTo={[".R14 > .imported_pcb_port_5",".R14 > .imported_pcb_port_6",".JP4 > .imported_pcb_port_17",".JP7 > .imported_pcb_port_24",".JP6a > .imported_pcb_port_28",".JP2 > .imported_pcb_port_29",".U14 > .imported_pcb_port_34",".U14 > .imported_pcb_port_35",".JP5 > .imported_pcb_port_36",".JP3 > .imported_pcb_port_38",".P1 > .imported_pcb_port_41",".TP13 > .imported_pcb_port_54",".C1 > .imported_pcb_port_56",".R15 > .imported_pcb_port_58",".C3 > .imported_pcb_port_60",".R17 > .imported_pcb_port_77",".C9 > .imported_pcb_port_86",".C8 > .imported_pcb_port_88",".C5 > .imported_pcb_port_89",".C4 > .imported_pcb_port_92",".C2 > .imported_pcb_port_93",".C15 > .imported_pcb_port_98",".C16 > .imported_pcb_port_99",".R18 > .imported_pcb_port_116",".U8 > .imported_pcb_port_133",".U9 > .imported_pcb_port_153",".C17 > .imported_pcb_port_165",".C20 > .imported_pcb_port_167",".C7 > .imported_pcb_port_169",".R10 > .imported_pcb_port_178",".C6 > .imported_pcb_port_196",".R19 > .imported_pcb_port_198",".U11 > .imported_pcb_port_203",".U7 > .imported_pcb_port_219",".U7 > .imported_pcb_port_221",".U1 > .imported_pcb_port_229",".U1 > .imported_pcb_port_244",".U1 > .imported_pcb_port_251",".D6 > .imported_pcb_port_272",".U5 > .imported_pcb_port_289"]} />
-    <net name={"HPWR"} connectsTo={[".JP1 > .imported_pcb_port_15",".JP4 > .imported_pcb_port_18",".P3 > .imported_pcb_port_46"]} />
-    <net name={"ISENSE"} connectsTo={[".U3 > .imported_pcb_port_63",".U2 > .imported_pcb_port_71",".R19 > .imported_pcb_port_197",".U1 > .imported_pcb_port_231",".U1 > .imported_pcb_port_239",".U4 > .imported_pcb_port_276"]} />
+    <net name={"GND"} connectsTo={[".R14 > .imported_pcb_port_5",".R14 > .imported_pcb_port_6",".JP4 > .imported_pcb_port_17",".JP7 > .imported_pcb_port_24",".JP6a > .imported_pcb_port_28",".JP2 > .imported_pcb_port_29",".U14 > .imported_pcb_port_34",".U14 > .imported_pcb_port_35",".JP5 > .imported_pcb_port_36",".JP3 > .imported_pcb_port_38",".P1 > .imported_pcb_port_41",".TP13 > .imported_pcb_port_54",".C1 > .imported_pcb_port_56",".R15 > .imported_pcb_port_58",".C3 > .imported_pcb_port_60",".R17 > .imported_pcb_port_77",".C9 > .imported_pcb_port_86",".C8 > .imported_pcb_port_88",".C5 > .imported_pcb_port_89",".C4 > .imported_pcb_port_92",".C2 > .imported_pcb_port_93",".C15 > .imported_pcb_port_98",".C16 > .imported_pcb_port_99",".R18 > .imported_pcb_port_116",".U8 > .imported_pcb_port_133",".U9 > .imported_pcb_port_153",".C17 > .imported_pcb_port_165",".C20 > .imported_pcb_port_167",".C7 > .imported_pcb_port_169",".R10 > .imported_pcb_port_178",".C6 > .imported_pcb_port_196",".R19 > .imported_pcb_port_198",".U11 > .imported_pcb_port_203",".U7 > .imported_pcb_port_219",".U1 > .imported_pcb_port_229",".U1 > .imported_pcb_port_244",".D6 > .imported_pcb_port_272",".U5 > .imported_pcb_port_289",".U7 > .imported_pcb_port_221",".U1 > .imported_pcb_port_251"]} />
+    <net name={"HPWR"} connectsTo={[".JP1 > .imported_pcb_port_15",".P3 > .imported_pcb_port_46",".JP4 > .imported_pcb_port_18"]} />
+    <net name={"ISENSE"} connectsTo={[".U3 > .imported_pcb_port_63",".U2 > .imported_pcb_port_71",".R19 > .imported_pcb_port_197",".U1 > .imported_pcb_port_239",".U4 > .imported_pcb_port_276",".U1 > .imported_pcb_port_231"]} />
     <net name={"LOCKN"} connectsTo={[".TP10 > .imported_pcb_port_22",".R11 > .imported_pcb_port_108",".U1 > .imported_pcb_port_252"]} />
     <net name={"NetD3_2"} connectsTo={[".R14 > .imported_pcb_port_113",".D3 > .imported_pcb_port_205"]} />
     <net name={"NetD4_2"} connectsTo={[".R15 > .imported_pcb_port_57",".D4 > .imported_pcb_port_207"]} />
     <net name={"NetJP1_1"} connectsTo={[".JP1 > .imported_pcb_port_16",".R16 > .imported_pcb_port_193"]} />
-    <net name={"HU_"} connectsTo={[".TP2 > .imported_pcb_port_10",".P3 > .imported_pcb_port_47",".C10 > .imported_pcb_port_83",".U8 > .imported_pcb_port_134",".R1 > .imported_pcb_port_171",".U7 > .imported_pcb_port_212",".U1 > .imported_pcb_port_269"]} />
-    <net name={"HU__2"} connectsTo={[".TP1 > .imported_pcb_port_9",".P3 > .imported_pcb_port_48",".C10 > .imported_pcb_port_84",".R4 > .imported_pcb_port_103",".U8 > .imported_pcb_port_126",".R2 > .imported_pcb_port_173",".U7 > .imported_pcb_port_220",".U1 > .imported_pcb_port_268"]} />
-    <net name={"UHS_GATE"} connectsTo={[".R24 > .imported_pcb_port_192",".U1 > .imported_pcb_port_233",".U1 > .imported_pcb_port_238"]} />
+    <net name={"HU_"} connectsTo={[".TP2 > .imported_pcb_port_10",".P3 > .imported_pcb_port_47",".C10 > .imported_pcb_port_83",".U8 > .imported_pcb_port_134",".U7 > .imported_pcb_port_212",".U1 > .imported_pcb_port_269",".R1 > .imported_pcb_port_171"]} />
+    <net name={"HU__2"} connectsTo={[".TP1 > .imported_pcb_port_9",".P3 > .imported_pcb_port_48",".C10 > .imported_pcb_port_84",".U8 > .imported_pcb_port_126",".U7 > .imported_pcb_port_220",".U1 > .imported_pcb_port_268",".R4 > .imported_pcb_port_103",".R2 > .imported_pcb_port_173"]} />
+    <net name={"UHS_GATE"} connectsTo={[".R24 > .imported_pcb_port_192",".U1 > .imported_pcb_port_238",".U1 > .imported_pcb_port_233"]} />
     <net name={"ULS_GATE"} connectsTo={[".R25 > .imported_pcb_port_182",".U1 > .imported_pcb_port_236",".U1 > .imported_pcb_port_237"]} />
-    <net name={"U"} connectsTo={[".P2 > .imported_pcb_port_43",".U2 > .imported_pcb_port_69",".U2 > .imported_pcb_port_75",".U2 > .imported_pcb_port_76",".U1 > .imported_pcb_port_235",".U1 > .imported_pcb_port_237"]} />
+    <net name={"U"} connectsTo={[".P2 > .imported_pcb_port_43",".U2 > .imported_pcb_port_69",".U2 > .imported_pcb_port_75",".U2 > .imported_pcb_port_76",".U1 > .imported_pcb_port_237",".U1 > .imported_pcb_port_235"]} />
     <net name={"NET_2V"} connectsTo={[".U8 > .imported_pcb_port_123",".U8 > .imported_pcb_port_125",".U8 > .imported_pcb_port_127",".C7 > .imported_pcb_port_170",".R9 > .imported_pcb_port_176",".R10 > .imported_pcb_port_177",".U7 > .imported_pcb_port_209",".U7 > .imported_pcb_port_211",".U7 > .imported_pcb_port_213"]} />
-    <net name={"VCP"} connectsTo={[".C14 > .imported_pcb_port_96",".U7 > .imported_pcb_port_225",".U1 > .imported_pcb_port_242"]} />
-    <net name={"HV_"} connectsTo={[".TP4 > .imported_pcb_port_8",".P3 > .imported_pcb_port_49",".C11 > .imported_pcb_port_81",".R23 > .imported_pcb_port_121",".U8 > .imported_pcb_port_136",".R9 > .imported_pcb_port_175",".U7 > .imported_pcb_port_214",".U1 > .imported_pcb_port_267",".U4 > .imported_pcb_port_277"]} />
-    <net name={"HV__2"} connectsTo={[".TP3 > .imported_pcb_port_11",".P3 > .imported_pcb_port_50",".C11 > .imported_pcb_port_82",".U8 > .imported_pcb_port_128",".R10 > .imported_pcb_port_177",".U7 > .imported_pcb_port_222",".U1 > .imported_pcb_port_266",".U4 > .imported_pcb_port_279"]} />
+    <net name={"VCP"} connectsTo={[".C14 > .imported_pcb_port_96",".U1 > .imported_pcb_port_242",".U7 > .imported_pcb_port_225"]} />
+    <net name={"HV_"} connectsTo={[".TP4 > .imported_pcb_port_8",".P3 > .imported_pcb_port_49",".C11 > .imported_pcb_port_81",".U8 > .imported_pcb_port_136",".U7 > .imported_pcb_port_214",".U1 > .imported_pcb_port_267",".R9 > .imported_pcb_port_175",".U4 > .imported_pcb_port_277",".R23 > .imported_pcb_port_121"]} />
+    <net name={"HV__2"} connectsTo={[".TP3 > .imported_pcb_port_11",".P3 > .imported_pcb_port_50",".C11 > .imported_pcb_port_82",".U8 > .imported_pcb_port_128",".U7 > .imported_pcb_port_222",".U1 > .imported_pcb_port_266",".U4 > .imported_pcb_port_279",".R10 > .imported_pcb_port_177"]} />
     <net name={"VHS_GATE"} connectsTo={[".R26 > .imported_pcb_port_184",".U1 > .imported_pcb_port_235",".U1 > .imported_pcb_port_239"]} />
-    <net name={"VINT"} connectsTo={[".C16 > .imported_pcb_port_100",".U7 > .imported_pcb_port_219",".U1 > .imported_pcb_port_245"]} />
+    <net name={"VINT"} connectsTo={[".C16 > .imported_pcb_port_100",".U1 > .imported_pcb_port_245",".U7 > .imported_pcb_port_219"]} />
     <net name={"VLS_GATE"} connectsTo={[".R27 > .imported_pcb_port_186",".U1 > .imported_pcb_port_233",".U1 > .imported_pcb_port_243"]} />
-    <net name={"VM"} connectsTo={[".TP9 > .imported_pcb_port_7",".P1 > .imported_pcb_port_42",".C1 > .imported_pcb_port_55",".U3 > .imported_pcb_port_65",".U3 > .imported_pcb_port_66",".U2 > .imported_pcb_port_73",".U2 > .imported_pcb_port_74",".C2 > .imported_pcb_port_94",".C14 > .imported_pcb_port_95",".C15 > .imported_pcb_port_97",".U9 > .imported_pcb_port_154",".D4 > .imported_pcb_port_208",".U7 > .imported_pcb_port_223",".U1 > .imported_pcb_port_243",".D6 > .imported_pcb_port_273",".U4 > .imported_pcb_port_278",".U4 > .imported_pcb_port_279"]} />
-    <net name={"VREG"} connectsTo={[".JP1 > .imported_pcb_port_14",".TP7 > .imported_pcb_port_20",".P2 > .imported_pcb_port_43",".C9 > .imported_pcb_port_85",".C8 > .imported_pcb_port_87",".C4 > .imported_pcb_port_91",".R3 > .imported_pcb_port_101",".R4 > .imported_pcb_port_103",".R5 > .imported_pcb_port_105",".R11 > .imported_pcb_port_107",".R12 > .imported_pcb_port_109",".R13 > .imported_pcb_port_111",".R21 > .imported_pcb_port_117",".R22 > .imported_pcb_port_119",".R23 > .imported_pcb_port_121",".U8 > .imported_pcb_port_132",".U9 > .imported_pcb_port_152",".C17 > .imported_pcb_port_166",".C20 > .imported_pcb_port_168",".R1 > .imported_pcb_port_171",".R2 > .imported_pcb_port_173",".R9 > .imported_pcb_port_175",".C6 > .imported_pcb_port_195",".U11 > .imported_pcb_port_200",".D3 > .imported_pcb_port_206",".U7 > .imported_pcb_port_217",".U7 > .imported_pcb_port_218",".U1 > .imported_pcb_port_246",".U5 > .imported_pcb_port_285",".U5 > .imported_pcb_port_286"]} />
-    <net name={"VSW"} connectsTo={[".R26 > .imported_pcb_port_183",".R16 > .imported_pcb_port_194",".U1 > .imported_pcb_port_263"]} />
+    <net name={"VM"} connectsTo={[".TP9 > .imported_pcb_port_7",".P1 > .imported_pcb_port_42",".C1 > .imported_pcb_port_55",".U3 > .imported_pcb_port_65",".U3 > .imported_pcb_port_66",".U2 > .imported_pcb_port_73",".U2 > .imported_pcb_port_74",".C2 > .imported_pcb_port_94",".C14 > .imported_pcb_port_95",".C15 > .imported_pcb_port_97",".D4 > .imported_pcb_port_208",".U1 > .imported_pcb_port_243",".D6 > .imported_pcb_port_273",".U4 > .imported_pcb_port_278",".U4 > .imported_pcb_port_279",".U7 > .imported_pcb_port_223",".U9 > .imported_pcb_port_154"]} />
+    <net name={"VREG"} connectsTo={[".JP1 > .imported_pcb_port_14",".C9 > .imported_pcb_port_85",".C8 > .imported_pcb_port_87",".C4 > .imported_pcb_port_91",".R3 > .imported_pcb_port_101",".R4 > .imported_pcb_port_103",".R5 > .imported_pcb_port_105",".R11 > .imported_pcb_port_107",".R12 > .imported_pcb_port_109",".R13 > .imported_pcb_port_111",".R21 > .imported_pcb_port_117",".R22 > .imported_pcb_port_119",".R23 > .imported_pcb_port_121",".U8 > .imported_pcb_port_132",".U9 > .imported_pcb_port_152",".C17 > .imported_pcb_port_166",".C20 > .imported_pcb_port_168",".R1 > .imported_pcb_port_171",".R2 > .imported_pcb_port_173",".R9 > .imported_pcb_port_175",".C6 > .imported_pcb_port_195",".U11 > .imported_pcb_port_200",".D3 > .imported_pcb_port_206",".U7 > .imported_pcb_port_218",".U1 > .imported_pcb_port_246",".U5 > .imported_pcb_port_285",".U5 > .imported_pcb_port_286",".U7 > .imported_pcb_port_217",".TP7 > .imported_pcb_port_20",".P2 > .imported_pcb_port_43"]} />
+    <net name={"VSW"} connectsTo={[".R16 > .imported_pcb_port_194",".U1 > .imported_pcb_port_263",".R26 > .imported_pcb_port_183"]} />
     <net name={"V"} connectsTo={[".P2 > .imported_pcb_port_44",".U3 > .imported_pcb_port_61",".U3 > .imported_pcb_port_67",".U3 > .imported_pcb_port_68",".U1 > .imported_pcb_port_234",".U1 > .imported_pcb_port_241"]} />
-    <net name={"HW_"} connectsTo={[".TP6 > .imported_pcb_port_13",".P3 > .imported_pcb_port_51",".C12 > .imported_pcb_port_79",".U8 > .imported_pcb_port_138",".D8 > .imported_pcb_port_179",".U7 > .imported_pcb_port_216",".U1 > .imported_pcb_port_265"]} />
-    <net name={"HW__2"} connectsTo={[".TP5 > .imported_pcb_port_12",".P3 > .imported_pcb_port_52",".C12 > .imported_pcb_port_80",".U8 > .imported_pcb_port_130",".R25 > .imported_pcb_port_181",".U7 > .imported_pcb_port_224",".U1 > .imported_pcb_port_264"]} />
+    <net name={"HW_"} connectsTo={[".TP6 > .imported_pcb_port_13",".P3 > .imported_pcb_port_51",".C12 > .imported_pcb_port_79",".U8 > .imported_pcb_port_138",".U7 > .imported_pcb_port_216",".U1 > .imported_pcb_port_265",".D8 > .imported_pcb_port_179"]} />
+    <net name={"HW__2"} connectsTo={[".TP5 > .imported_pcb_port_12",".P3 > .imported_pcb_port_52",".C12 > .imported_pcb_port_80",".U8 > .imported_pcb_port_130",".U7 > .imported_pcb_port_224",".U1 > .imported_pcb_port_264",".R25 > .imported_pcb_port_181"]} />
     <net name={"WHS_GATE"} connectsTo={[".R28 > .imported_pcb_port_188",".U1 > .imported_pcb_port_232",".U1 > .imported_pcb_port_245"]} />
     <net name={"WLS_GATE"} connectsTo={[".R29 > .imported_pcb_port_190",".U1 > .imported_pcb_port_230",".U1 > .imported_pcb_port_249"]} />
-    <net name={"W"} connectsTo={[".P2 > .imported_pcb_port_45",".U1 > .imported_pcb_port_231",".U1 > .imported_pcb_port_247",".U4 > .imported_pcb_port_274",".U4 > .imported_pcb_port_280",".U4 > .imported_pcb_port_281"]} />
+    <net name={"W"} connectsTo={[".P2 > .imported_pcb_port_45",".U1 > .imported_pcb_port_231",".U4 > .imported_pcb_port_274",".U4 > .imported_pcb_port_280",".U4 > .imported_pcb_port_281",".U1 > .imported_pcb_port_247"]} />
     <net name={"HGND"} connectsTo={[".JP2 > .imported_pcb_port_30",".P3 > .imported_pcb_port_53",".R17 > .imported_pcb_port_78",".U5 > .imported_pcb_port_288"]} />
-    <net name={"HALLOUT"} connectsTo={[".TP8 > .imported_pcb_port_21",".R12 > .imported_pcb_port_110",".U11 > .imported_pcb_port_201",".U1 > .imported_pcb_port_254"]} />
+    <net name={"HALLOUT"} connectsTo={[".TP8 > .imported_pcb_port_21",".R12 > .imported_pcb_port_110",".U1 > .imported_pcb_port_254",".U11 > .imported_pcb_port_201"]} />
     <net name={"NetC5_1"} connectsTo={[".C5 > .imported_pcb_port_90",".U5 > .imported_pcb_port_282"]} />
     <net name={"NetJP3_2"} connectsTo={[".JP3 > .imported_pcb_port_39",".U9 > .imported_pcb_port_161",".R1 > .imported_pcb_port_172",".U11 > .imported_pcb_port_204",".U7 > .imported_pcb_port_217",".U7 > .imported_pcb_port_228"]} />
     <net name={"NetJP4_2"} connectsTo={[".JP4 > .imported_pcb_port_18",".U9 > .imported_pcb_port_151",".R2 > .imported_pcb_port_174",".U11 > .imported_pcb_port_202"]} />
@@ -938,15 +938,105 @@ exports[`TI DRV8307EVM Circuit JSON to tscircuit round trip 1`] = `
     <net name={"NetU8_1"} connectsTo={[".U8 > .imported_pcb_port_131",".U8 > .imported_pcb_port_142",".U9 > .imported_pcb_port_150",".U9 > .imported_pcb_port_154"]} />
     <net name={"NetU9_1"} connectsTo={[".U9 > .imported_pcb_port_162",".U11 > .imported_pcb_port_201"]} />
     <net name={"PWM_X"} connectsTo={[".JP6 > .imported_pcb_port_27",".R21 > .imported_pcb_port_118",".U5 > .imported_pcb_port_284"]} />
-    <net name={"PWM"} connectsTo={[".JP6 > .imported_pcb_port_26",".D4 > .imported_pcb_port_207",".U1 > .imported_pcb_port_251"]} />
+    <net name={"PWM"} connectsTo={[".JP6 > .imported_pcb_port_26",".U1 > .imported_pcb_port_251",".D4 > .imported_pcb_port_207"]} />
     <net name={"FAULTn"} connectsTo={[".U11 > .imported_pcb_port_203"]} />
     <net name={"UH_"} connectsTo={[".R1 > .imported_pcb_port_171"]} />
-    <net name={"VH_"} connectsTo={[".R23 > .imported_pcb_port_121",".R9 > .imported_pcb_port_175",".U4 > .imported_pcb_port_277"]} />
+    <net name={"VH_"} connectsTo={[".R9 > .imported_pcb_port_175",".U4 > .imported_pcb_port_277",".R23 > .imported_pcb_port_121"]} />
     <net name={"UH__2"} connectsTo={[".R4 > .imported_pcb_port_103",".R2 > .imported_pcb_port_173"]} />
-    <net name={"VH__2"} connectsTo={[".R10 > .imported_pcb_port_177",".U4 > .imported_pcb_port_279"]} />
+    <net name={"VH__2"} connectsTo={[".U4 > .imported_pcb_port_279",".R10 > .imported_pcb_port_177"]} />
     <net name={"WH_"} connectsTo={[".R25 > .imported_pcb_port_181"]} />
     <net name={"WH__2"} connectsTo={[".D8 > .imported_pcb_port_179"]} />
     <net name={"LOCKn"} connectsTo={[".D3 > .imported_pcb_port_205"]} />
+    <trace path={[".R29 > .imported_pcb_port_189",".U4 > .imported_pcb_port_277","net.NetR29_2"]} />
+    <trace path={[".R28 > .imported_pcb_port_187",".U4 > .imported_pcb_port_275","net.NetR28_2"]} />
+    <trace path={[".U3 > .imported_pcb_port_64",".R27 > .imported_pcb_port_185","net.NetR27_2"]} />
+    <trace path={[".U3 > .imported_pcb_port_62",".R26 > .imported_pcb_port_183","net.NetR26_2"]} />
+    <trace path={[".U2 > .imported_pcb_port_72",".R25 > .imported_pcb_port_181","net.NetR25_2"]} />
+    <trace path={[".U2 > .imported_pcb_port_70",".R24 > .imported_pcb_port_191","net.NetR24_2"]} />
+    <trace path={[".R20 > .imported_pcb_port_31",".D8 > .imported_pcb_port_179","net.NetD8_1"]} />
+    <trace path={[".R20 > .imported_pcb_port_33",".D7 > .imported_pcb_port_271","net.NetD7_2"]} />
+    <trace path={[".C3 > .imported_pcb_port_59",".D8 > .imported_pcb_port_180",".D7 > .imported_pcb_port_270",".U5 > .imported_pcb_port_283",".U5 > .imported_pcb_port_288","net.THRES"]} />
+    <trace path={[".U9 > .imported_pcb_port_143",".U11 > .imported_pcb_port_199","net.NetU9_11"]} />
+    <trace path={[".JP7 > .imported_pcb_port_25",".R23 > .imported_pcb_port_122",".U1 > .imported_pcb_port_250","net.BRAKE"]} />
+    <trace path={[".C13 > .imported_pcb_port_164",".U1 > .imported_pcb_port_240","net.CP1"]} />
+    <trace path={[".C13 > .imported_pcb_port_163",".U1 > .imported_pcb_port_241","net.CP2"]} />
+    <trace path={[".JP5 > .imported_pcb_port_37",".R22 > .imported_pcb_port_120",".U1 > .imported_pcb_port_249","net.DIR"]} />
+    <trace path={[".TP7 > .imported_pcb_port_20",".R18 > .imported_pcb_port_115",".U1 > .imported_pcb_port_248","net.ENABLE_"]} />
+    <trace path={[".TP11 > .imported_pcb_port_23",".R13 > .imported_pcb_port_112",".R14 > .imported_pcb_port_114",".U1 > .imported_pcb_port_253","net.FAULTN"]} />
+    <trace path={[".R14 > .imported_pcb_port_5",".R14 > .imported_pcb_port_6",".JP4 > .imported_pcb_port_17",".JP7 > .imported_pcb_port_24",".JP6a > .imported_pcb_port_28",".JP2 > .imported_pcb_port_29",".U14 > .imported_pcb_port_34",".U14 > .imported_pcb_port_35",".JP5 > .imported_pcb_port_36",".JP3 > .imported_pcb_port_38",".P1 > .imported_pcb_port_41",".TP13 > .imported_pcb_port_54",".C1 > .imported_pcb_port_56",".R15 > .imported_pcb_port_58",".C3 > .imported_pcb_port_60",".R17 > .imported_pcb_port_77",".C9 > .imported_pcb_port_86",".C8 > .imported_pcb_port_88",".C5 > .imported_pcb_port_89",".C4 > .imported_pcb_port_92",".C2 > .imported_pcb_port_93",".C15 > .imported_pcb_port_98",".C16 > .imported_pcb_port_99",".R18 > .imported_pcb_port_116",".U8 > .imported_pcb_port_133",".U9 > .imported_pcb_port_153",".C17 > .imported_pcb_port_165",".C20 > .imported_pcb_port_167",".C7 > .imported_pcb_port_169",".R10 > .imported_pcb_port_178",".C6 > .imported_pcb_port_196",".R19 > .imported_pcb_port_198",".U11 > .imported_pcb_port_203",".U7 > .imported_pcb_port_219",".U1 > .imported_pcb_port_229",".U1 > .imported_pcb_port_244",".D6 > .imported_pcb_port_272",".U5 > .imported_pcb_port_289","net.GND"]} />
+    <trace path={[".JP1 > .imported_pcb_port_15",".P3 > .imported_pcb_port_46","net.HPWR"]} />
+    <trace path={[".U3 > .imported_pcb_port_63",".U2 > .imported_pcb_port_71",".R19 > .imported_pcb_port_197",".U1 > .imported_pcb_port_239",".U4 > .imported_pcb_port_276","net.ISENSE"]} />
+    <trace path={[".TP10 > .imported_pcb_port_22",".R11 > .imported_pcb_port_108",".U1 > .imported_pcb_port_252","net.LOCKN"]} />
+    <trace path={[".R14 > .imported_pcb_port_113",".D3 > .imported_pcb_port_205","net.NetD3_2"]} />
+    <trace path={[".R15 > .imported_pcb_port_57",".D4 > .imported_pcb_port_207","net.NetD4_2"]} />
+    <trace path={[".JP1 > .imported_pcb_port_16",".R16 > .imported_pcb_port_193","net.NetJP1_1"]} />
+    <trace path={[".TP2 > .imported_pcb_port_10",".P3 > .imported_pcb_port_47",".C10 > .imported_pcb_port_83",".U8 > .imported_pcb_port_134",".U7 > .imported_pcb_port_212",".U1 > .imported_pcb_port_269","net.HU_"]} />
+    <trace path={[".TP1 > .imported_pcb_port_9",".P3 > .imported_pcb_port_48",".C10 > .imported_pcb_port_84",".U8 > .imported_pcb_port_126",".U7 > .imported_pcb_port_220",".U1 > .imported_pcb_port_268","net.HU__2"]} />
+    <trace path={[".R24 > .imported_pcb_port_192",".U1 > .imported_pcb_port_238","net.UHS_GATE"]} />
+    <trace path={[".R25 > .imported_pcb_port_182",".U1 > .imported_pcb_port_236","net.ULS_GATE"]} />
+    <trace path={[".P2 > .imported_pcb_port_43",".U2 > .imported_pcb_port_69",".U2 > .imported_pcb_port_75",".U2 > .imported_pcb_port_76",".U1 > .imported_pcb_port_237","net.U"]} />
+    <trace path={[".U8 > .imported_pcb_port_123",".U8 > .imported_pcb_port_125",".U8 > .imported_pcb_port_127",".C7 > .imported_pcb_port_170",".R9 > .imported_pcb_port_176",".R10 > .imported_pcb_port_177",".U7 > .imported_pcb_port_209",".U7 > .imported_pcb_port_211",".U7 > .imported_pcb_port_213","net.NET_2V"]} />
+    <trace path={[".C14 > .imported_pcb_port_96",".U1 > .imported_pcb_port_242","net.VCP"]} />
+    <trace path={[".TP4 > .imported_pcb_port_8",".P3 > .imported_pcb_port_49",".C11 > .imported_pcb_port_81",".U8 > .imported_pcb_port_136",".U7 > .imported_pcb_port_214",".U1 > .imported_pcb_port_267","net.HV_"]} />
+    <trace path={[".TP3 > .imported_pcb_port_11",".P3 > .imported_pcb_port_50",".C11 > .imported_pcb_port_82",".U8 > .imported_pcb_port_128",".U7 > .imported_pcb_port_222",".U1 > .imported_pcb_port_266","net.HV__2"]} />
+    <trace path={[".R26 > .imported_pcb_port_184",".U1 > .imported_pcb_port_235","net.VHS_GATE"]} />
+    <trace path={[".C16 > .imported_pcb_port_100",".U1 > .imported_pcb_port_245","net.VINT"]} />
+    <trace path={[".R27 > .imported_pcb_port_186",".U1 > .imported_pcb_port_233","net.VLS_GATE"]} />
+    <trace path={[".TP9 > .imported_pcb_port_7",".P1 > .imported_pcb_port_42",".C1 > .imported_pcb_port_55",".U3 > .imported_pcb_port_65",".U3 > .imported_pcb_port_66",".U2 > .imported_pcb_port_73",".U2 > .imported_pcb_port_74",".C2 > .imported_pcb_port_94",".C14 > .imported_pcb_port_95",".C15 > .imported_pcb_port_97",".D4 > .imported_pcb_port_208",".U1 > .imported_pcb_port_243",".D6 > .imported_pcb_port_273",".U4 > .imported_pcb_port_278",".U4 > .imported_pcb_port_279","net.VM"]} />
+    <trace path={[".JP1 > .imported_pcb_port_14",".C9 > .imported_pcb_port_85",".C8 > .imported_pcb_port_87",".C4 > .imported_pcb_port_91",".R3 > .imported_pcb_port_101",".R4 > .imported_pcb_port_103",".R5 > .imported_pcb_port_105",".R11 > .imported_pcb_port_107",".R12 > .imported_pcb_port_109",".R13 > .imported_pcb_port_111",".R21 > .imported_pcb_port_117",".R22 > .imported_pcb_port_119",".R23 > .imported_pcb_port_121",".U8 > .imported_pcb_port_132",".U9 > .imported_pcb_port_152",".C17 > .imported_pcb_port_166",".C20 > .imported_pcb_port_168",".R1 > .imported_pcb_port_171",".R2 > .imported_pcb_port_173",".R9 > .imported_pcb_port_175",".C6 > .imported_pcb_port_195",".U11 > .imported_pcb_port_200",".D3 > .imported_pcb_port_206",".U7 > .imported_pcb_port_218",".U1 > .imported_pcb_port_246",".U5 > .imported_pcb_port_285",".U5 > .imported_pcb_port_286","net.VREG"]} />
+    <trace path={[".R16 > .imported_pcb_port_194",".U1 > .imported_pcb_port_263","net.VSW"]} />
+    <trace path={[".P2 > .imported_pcb_port_44",".U3 > .imported_pcb_port_61",".U3 > .imported_pcb_port_67",".U3 > .imported_pcb_port_68",".U1 > .imported_pcb_port_234","net.V"]} />
+    <trace path={[".TP6 > .imported_pcb_port_13",".P3 > .imported_pcb_port_51",".C12 > .imported_pcb_port_79",".U8 > .imported_pcb_port_138",".U7 > .imported_pcb_port_216",".U1 > .imported_pcb_port_265","net.HW_"]} />
+    <trace path={[".TP5 > .imported_pcb_port_12",".P3 > .imported_pcb_port_52",".C12 > .imported_pcb_port_80",".U8 > .imported_pcb_port_130",".U7 > .imported_pcb_port_224",".U1 > .imported_pcb_port_264","net.HW__2"]} />
+    <trace path={[".R28 > .imported_pcb_port_188",".U1 > .imported_pcb_port_232","net.WHS_GATE"]} />
+    <trace path={[".R29 > .imported_pcb_port_190",".U1 > .imported_pcb_port_230","net.WLS_GATE"]} />
+    <trace path={[".P2 > .imported_pcb_port_45",".U1 > .imported_pcb_port_231",".U4 > .imported_pcb_port_274",".U4 > .imported_pcb_port_280",".U4 > .imported_pcb_port_281","net.W"]} />
+    <trace path={[".JP2 > .imported_pcb_port_30",".P3 > .imported_pcb_port_53",".R17 > .imported_pcb_port_78","net.HGND"]} />
+    <trace path={[".TP8 > .imported_pcb_port_21",".R12 > .imported_pcb_port_110",".U1 > .imported_pcb_port_254","net.HALLOUT"]} />
+    <trace path={[".C5 > .imported_pcb_port_90",".U5 > .imported_pcb_port_282","net.NetC5_1"]} />
+    <trace path={[".JP3 > .imported_pcb_port_39",".U9 > .imported_pcb_port_161",".R1 > .imported_pcb_port_172",".U11 > .imported_pcb_port_204",".U7 > .imported_pcb_port_217",".U7 > .imported_pcb_port_228","net.NetJP3_2"]} />
+    <trace path={[".JP4 > .imported_pcb_port_18",".U9 > .imported_pcb_port_151",".R2 > .imported_pcb_port_174",".U11 > .imported_pcb_port_202","net.NetJP4_2"]} />
+    <trace path={[".R3 > .imported_pcb_port_102",".U8 > .imported_pcb_port_137",".U7 > .imported_pcb_port_223","net.NetR3_1"]} />
+    <trace path={[".R4 > .imported_pcb_port_104",".U8 > .imported_pcb_port_139",".U7 > .imported_pcb_port_225","net.NetR4_1"]} />
+    <trace path={[".R5 > .imported_pcb_port_106",".U8 > .imported_pcb_port_141",".U7 > .imported_pcb_port_227","net.NetR5_1"]} />
+    <trace path={[".R20 > .imported_pcb_port_32",".U5 > .imported_pcb_port_287","net.NetR20_2"]} />
+    <trace path={[".U8 > .imported_pcb_port_131",".U8 > .imported_pcb_port_142",".U9 > .imported_pcb_port_150",".U9 > .imported_pcb_port_154","net.NetU8_1"]} />
+    <trace path={[".U9 > .imported_pcb_port_162",".U11 > .imported_pcb_port_201","net.NetU9_1"]} />
+    <trace path={[".JP6 > .imported_pcb_port_27",".R21 > .imported_pcb_port_118",".U5 > .imported_pcb_port_284","net.PWM_X"]} />
+    <trace path={[".JP6 > .imported_pcb_port_26",".U1 > .imported_pcb_port_251","net.PWM"]} />
+    <trace path={[".U1 > .imported_pcb_port_229","net.CP1"]} />
+    <trace path={[".U7 > .imported_pcb_port_227","net.CP2"]} />
+    <trace path={[".U7 > .imported_pcb_port_225","net.VCP"]} />
+    <trace path={[".R26 > .imported_pcb_port_183","net.VSW"]} />
+    <trace path={[".U7 > .imported_pcb_port_219","net.VINT"]} />
+    <trace path={[".U7 > .imported_pcb_port_221",".U1 > .imported_pcb_port_251","net.GND"]} />
+    <trace path={[".U7 > .imported_pcb_port_209","net.BRAKE"]} />
+    <trace path={[".D4 > .imported_pcb_port_207","net.PWM"]} />
+    <trace path={[".U11 > .imported_pcb_port_203","net.FAULTn"]} />
+    <trace path={[".U11 > .imported_pcb_port_201","net.HALLOUT"]} />
+    <trace path={[".U7 > .imported_pcb_port_211","net.DIR"]} />
+    <trace path={[".U7 > .imported_pcb_port_213","net.ENABLE_"]} />
+    <trace path={[".U1 > .imported_pcb_port_233","net.UHS_GATE"]} />
+    <trace path={[".U1 > .imported_pcb_port_239","net.VHS_GATE"]} />
+    <trace path={[".U1 > .imported_pcb_port_249","net.WLS_GATE"]} />
+    <trace path={[".U1 > .imported_pcb_port_245","net.WHS_GATE"]} />
+    <trace path={[".U1 > .imported_pcb_port_243","net.VLS_GATE"]} />
+    <trace path={[".U1 > .imported_pcb_port_237","net.ULS_GATE"]} />
+    <trace path={[".R1 > .imported_pcb_port_171","net.HU_","net.UH_"]} />
+    <trace path={[".R9 > .imported_pcb_port_175",".U4 > .imported_pcb_port_277",".R23 > .imported_pcb_port_121","net.HV_","net.VH_"]} />
+    <trace path={[".U7 > .imported_pcb_port_223",".U9 > .imported_pcb_port_154","net.VM"]} />
+    <trace path={[".R4 > .imported_pcb_port_103",".R2 > .imported_pcb_port_173","net.HU__2","net.UH__2"]} />
+    <trace path={[".U4 > .imported_pcb_port_279",".R10 > .imported_pcb_port_177","net.HV__2","net.VH__2"]} />
+    <trace path={[".R25 > .imported_pcb_port_181","net.HW__2","net.WH_"]} />
+    <trace path={[".D8 > .imported_pcb_port_179","net.HW_","net.WH__2"]} />
+    <trace path={[".U7 > .imported_pcb_port_217",".TP7 > .imported_pcb_port_20",".P2 > .imported_pcb_port_43","net.VREG"]} />
+    <trace path={[".U1 > .imported_pcb_port_231","net.ISENSE"]} />
+    <trace path={[".D3 > .imported_pcb_port_205","net.LOCKn"]} />
+    <trace path={[".U1 > .imported_pcb_port_247","net.W"]} />
+    <trace path={[".U1 > .imported_pcb_port_241","net.V"]} />
+    <trace path={[".U1 > .imported_pcb_port_235","net.U"]} />
+    <trace path={[".U5 > .imported_pcb_port_288","net.HGND"]} />
+    <trace path={[".JP4 > .imported_pcb_port_18","net.HPWR"]} />
     <copperpour layer={"bottom"} connectsTo={"net[name=\\"VM\\"]"} outline={[{"x":91.06358469999999,"y":98.65361778},{"x":91.06358469999999,"y":67.86213504000001},{"x":97.45226128,"y":67.86213504000001},{"x":97.45226128,"y":98.65361778}]} padMargin={0} traceMargin={0} clearance={0} boardEdgeMargin={0} cutoutMargin={0} useThermalReliefs={false} coveredWithSolderMask={true} />
     <copperpour layer={"top"} connectsTo={"net[name=\\"VM\\"]"} outline={[{"x":93.49376271999999,"y":93.91151905999999},{"x":97.45488002,"y":91.68339042},{"x":97.42145362,"y":98.63421726},{"x":95.7832857,"y":98.67256618},{"x":93.13602912,"y":98.64993986},{"x":91.07226134,"y":98.6349183},{"x":91.07217752,"y":95.64676578},{"x":91.99702454,"y":93.94690634}]} padMargin={0} traceMargin={0} clearance={0} boardEdgeMargin={0} cutoutMargin={0} useThermalReliefs={false} coveredWithSolderMask={true} />
     <copperpour layer={"top"} connectsTo={"net[name=\\"VM\\"]"} outline={[{"x":87.98220148,"y":52.073223260000006},{"x":91.88438824,"y":52.0511786},{"x":94.22128984,"y":56.59270368},{"x":97.38228936,"y":58.933890260000005},{"x":101.8301113,"y":59.92394162},{"x":103.38771296,"y":66.69314068},{"x":103.39384706,"y":67.83418996},{"x":100.1268,"y":69.6976},{"x":99.21154655999999,"y":70.3787137},{"x":98.85679999999999,"y":71.72959999999999},{"x":95.72899828,"y":69.50624909999999},{"x":93.7080168,"y":68.63146802},{"x":91.10142562,"y":68.62651248},{"x":89.82052394,"y":67.33625852},{"x":89.7967089,"y":62.89124327999999},{"x":89.3758309,"y":59.30375744},{"x":88.23344558,"y":56.137149599999994}]} padMargin={0} traceMargin={0} clearance={0} boardEdgeMargin={0} cutoutMargin={0} useThermalReliefs={false} coveredWithSolderMask={true} />

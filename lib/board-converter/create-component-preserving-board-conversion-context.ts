@@ -28,32 +28,8 @@ export function createComponentPreservingBoardConversionContext(
     }
   }
 
-  const runtimeNetNamesBySourcePortId = new Map<
+  const pcbPortSelectorsBySourcePortId = new Map<
     SourcePortId,
-    Set<RuntimeNetName>
-  >()
-  for (const element of circuitJson) {
-    if (element.type !== "source_trace") continue
-    const runtimeNetNames = element.connected_source_net_ids.flatMap(
-      (sourceNetId) => {
-        const runtimeNetName =
-          context.runtimeNetNameBySourceNetId.get(sourceNetId)
-        return runtimeNetName ? [runtimeNetName] : []
-      },
-    )
-    for (const sourcePortId of element.connected_source_port_ids) {
-      const runtimeNetNamesForPort =
-        runtimeNetNamesBySourcePortId.get(sourcePortId) ??
-        new Set<RuntimeNetName>()
-      for (const runtimeNetName of runtimeNetNames) {
-        runtimeNetNamesForPort.add(runtimeNetName)
-      }
-      runtimeNetNamesBySourcePortId.set(sourcePortId, runtimeNetNamesForPort)
-    }
-  }
-
-  const pcbPortSelectorsByRuntimeNetName = new Map<
-    RuntimeNetName,
     PcbPortSelector[]
   >()
   for (const element of circuitJson) {
@@ -68,16 +44,39 @@ export function createComponentPreservingBoardConversionContext(
     if (!portHint) continue
 
     const componentName = sourceComponent?.name ?? context.pcbChipName
+    const selectors =
+      pcbPortSelectorsBySourcePortId.get(element.source_port_id) ?? []
+    selectors.push(`.${componentName} > .${portHint}`)
+    pcbPortSelectorsBySourcePortId.set(element.source_port_id, selectors)
+  }
 
-    for (const runtimeNetName of runtimeNetNamesBySourcePortId.get(
-      element.source_port_id,
-    ) ?? []) {
+  const pcbPortSelectorsByRuntimeNetName = new Map<
+    RuntimeNetName,
+    PcbPortSelector[]
+  >()
+  for (const element of circuitJson) {
+    if (element.type !== "source_trace") continue
+    for (const sourceNetId of element.connected_source_net_ids) {
+      const runtimeNetName =
+        context.runtimeNetNameBySourceNetId.get(sourceNetId)
+      if (!runtimeNetName) continue
+
       const selectors =
         pcbPortSelectorsByRuntimeNetName.get(runtimeNetName) ?? []
-      selectors.push(`.${componentName} > .${portHint}`)
+      for (const sourcePortId of element.connected_source_port_ids) {
+        for (const selector of pcbPortSelectorsBySourcePortId.get(
+          sourcePortId,
+        ) ?? []) {
+          if (!selectors.includes(selector)) selectors.push(selector)
+        }
+      }
       pcbPortSelectorsByRuntimeNetName.set(runtimeNetName, selectors)
     }
   }
 
-  return { ...context, pcbPortSelectorsByRuntimeNetName }
+  return {
+    ...context,
+    pcbPortSelectorsBySourcePortId,
+    pcbPortSelectorsByRuntimeNetName,
+  }
 }

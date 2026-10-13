@@ -12,5 +12,6 @@ export interface BoardConversionContext {
   pcbChipName: string
   portHintByPcbPortId: Map<PcbPortId, ImportedPortHint>
   runtimeNetNameBySourceNetId: Map<SourceNetId, RuntimeNetName>
+  pcbPortSelectorsBySourcePortId: Map<SourcePortId, PcbPortSelector[]>
   pcbPortSelectorsByRuntimeNetName: Map<RuntimeNetName, PcbPortSelector[]>
 }
