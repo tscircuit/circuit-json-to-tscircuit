@@ -1,5 +1,5 @@
-import { generateFootprintTsx } from "../../generate-footprint-tsx"
 import type { PcbComponent } from "circuit-json"
+import { generateFootprintTsx } from "../../generate-footprint-tsx"
 import type { BoardConverterStage } from "../BoardConverterContext"
 
 type PcbComponentId = PcbComponent["pcb_component_id"]
@@ -31,6 +31,7 @@ export const convertStandalonePcbPrimitives: BoardConverterStage = ({
   const footprintContainerProps = [
     `name="${footprintConversionContext.pcbChipName}"`,
     "noSchematicRepresentation",
+    "obstructsWithinBounds={false}",
   ]
   if (pcbBoard.center.x !== 0) {
     footprintContainerProps.push(`pcbX={${-pcbBoard.center.x}}`)

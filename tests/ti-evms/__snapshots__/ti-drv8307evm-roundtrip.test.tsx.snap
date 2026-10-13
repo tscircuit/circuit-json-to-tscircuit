@@ -3138,7 +3138,7 @@ exports[`TI DRV8307EVM Circuit JSON to tscircuit round trip 1`] = `
     <schematictext text={"To use single-ended Halls with polarity inversion, install JP3_1-2 and"} schX={-12.575711689884919} schY={2.2486371895820714} anchor={"bottom_left"} fontSize={0.18322228952150213} color={"#ee0e22"} schRotation={0} />
     <schematictext text={"JP4_2-3, and connect motor wires to the - pins of P3."} schX={-12.575711689884919} schY={2.082071471835251} anchor={"bottom_left"} fontSize={0.18322228952150213} color={"#ee0e22"} schRotation={0} />
     </schematicsheet>
-    <chip name="ImportedBoard" noSchematicRepresentation pcbX={-61.4426} pcbY={-76.463652} footprint={<footprint>
+    <chip name="ImportedBoard" noSchematicRepresentation obstructsWithinBounds={false} pcbX={-61.4426} pcbY={-76.463652} footprint={<footprint>
             <platedhole portHints={["imported_pcb_port_1"]} pcbX="21.6408mm" pcbY="43.0276mm" outerDiameter="4.318mm" holeDiameter="3.81mm" shape="circle" />
     <platedhole portHints={["imported_pcb_port_2"]} pcbX="21.6408mm" pcbY="109.8296mm" outerDiameter="4.318mm" holeDiameter="3.81mm" shape="circle" />
     <platedhole portHints={["imported_pcb_port_3"]} pcbX="101.1428mm" pcbY="109.8296mm" outerDiameter="4.318mm" holeDiameter="3.81mm" shape="circle" />
