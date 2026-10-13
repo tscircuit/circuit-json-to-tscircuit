@@ -42,6 +42,17 @@ test("normalizes floating point noise in component-local coordinates", () => {
       radius: 0.5,
       port_hints: ["1"],
     },
+    {
+      type: "pcb_smtpad",
+      pcb_smtpad_id: "pcb_smtpad_offset",
+      pcb_component_id: "pcb_component_fiducial",
+      x: 97.56680004,
+      y: 51.663599999999995,
+      layer: "bottom",
+      shape: "circle",
+      radius: 0.5,
+      port_hints: ["2"],
+    },
   ]
 
   const generated = convertCircuitJsonToTscircuit(source, {
@@ -49,5 +60,6 @@ test("normalizes floating point noise in component-local coordinates", () => {
   })
 
   expect(generated).toContain('pcbX="0mm" pcbY="0mm"')
+  expect(generated).toContain('pcbX="-1.25000004mm" pcbY="0mm"')
   expect(generated).not.toMatch(/[+-]?\d+(?:\.\d+)?e-\d+mm/u)
 })

@@ -15,6 +15,7 @@ type PcbSilkscreenGraphic = Extract<
 >
 
 const FLOATING_POINT_NOISE_THRESHOLD = 1e-12
+const LOCAL_COORDINATE_DECIMAL_PLACES = 12
 
 const normalizeFloatingPointNoise = (value: unknown): void => {
   if (Array.isArray(value)) {
@@ -33,6 +34,19 @@ const normalizeFloatingPointNoise = (value: unknown): void => {
     } else {
       normalizeFloatingPointNoise(property)
     }
+  }
+}
+
+const normalizeRoutableElementCoordinates = (
+  localComponentElements: AnyCircuitElement[],
+): void => {
+  for (const element of localComponentElements) {
+    if (element.type !== "pcb_smtpad" && element.type !== "pcb_plated_hole") {
+      continue
+    }
+    if (!("x" in element) || !("y" in element)) continue
+    element.x = Number(element.x.toFixed(LOCAL_COORDINATE_DECIMAL_PLACES))
+    element.y = Number(element.y.toFixed(LOCAL_COORDINATE_DECIMAL_PLACES))
   }
 }
 
@@ -164,6 +178,7 @@ export const localizePcbComponentElements = ({
   if (pcbComponent.layer === "bottom") {
     localizeBottomComponentLayers(localComponentElements)
   }
+  normalizeRoutableElementCoordinates(localComponentElements)
   normalizeFloatingPointNoise(localComponentElements)
 
   return localComponentElements
