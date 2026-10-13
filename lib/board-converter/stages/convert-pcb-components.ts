@@ -20,7 +20,7 @@ type PcbComponentId = PcbComponent["pcb_component_id"]
 const getCompoundPinNumber = (sourcePort: SourcePort): number | undefined => {
   if (sourcePort.pin_number !== undefined) return sourcePort.pin_number
 
-  const firstPinNumber = /\d+/u.exec(sourcePort.name)?.[0]
+  const firstPinNumber = /^\d+/u.exec(sourcePort.name)?.[0]
   return firstPinNumber ? Number.parseInt(firstPinNumber, 10) : undefined
 }
 
@@ -64,17 +64,22 @@ const getPinLabels = ({
       ),
   )
 
-  for (const sourcePort of circuitJson) {
-    if (
-      sourcePort.type !== "source_port" ||
-      sourcePort.source_component_id === undefined ||
-      !sourceComponentIds.has(sourcePort.source_component_id) ||
-      (sourcePort.pin_number === undefined &&
-        sourcePort.source_component_id !== pcbComponent.source_component_id)
-    ) {
-      continue
-    }
+  const sourcePorts = circuitJson.filter(
+    (element): element is SourcePort =>
+      element.type === "source_port" &&
+      element.source_component_id !== undefined &&
+      sourceComponentIds.has(element.source_component_id) &&
+      (element.pin_number !== undefined ||
+        element.source_component_id === pcbComponent.source_component_id),
+  )
+  const usedPinNumbers = new Set(
+    sourcePorts
+      .map(getCompoundPinNumber)
+      .filter((pinNumber): pinNumber is number => pinNumber !== undefined),
+  )
+  let nextSyntheticPinNumber = Math.max(0, ...usedPinNumbers) + 1
 
+  for (const sourcePort of sourcePorts) {
     const importedPortHints = circuitJson.flatMap((element) => {
       if (
         sourcePort.source_component_id !== pcbComponent.source_component_id ||
@@ -97,8 +102,15 @@ const getPinLabels = ({
         alias.length > 0 && allAliases.indexOf(alias) === aliasIndex,
     )
 
-    const pinNumber = getCompoundPinNumber(sourcePort)
-    if (pinNumber === undefined) continue
+    let pinNumber = getCompoundPinNumber(sourcePort)
+    if (pinNumber === undefined) {
+      while (usedPinNumbers.has(nextSyntheticPinNumber)) {
+        nextSyntheticPinNumber += 1
+      }
+      pinNumber = nextSyntheticPinNumber
+      usedPinNumbers.add(pinNumber)
+      nextSyntheticPinNumber += 1
+    }
 
     const pinLabelKey: PinLabelKey = `pin${pinNumber}`
     pinLabels[pinLabelKey] = [
