@@ -854,7 +854,7 @@ exports[`TI DRV8307EVM Circuit JSON to tscircuit round trip 1`] = `
     <silkscreentext pcbX={-2.793999999999997} pcbY={0.7620000000000005} anchorAlignment="center" fontSize={1.499997} font="tscircuit2024" pcbRotation="180deg" mirrored={false} layer="top" text="+" />
           </footprint>} />
     <chip name="JP3" pcbX={-29.6418} pcbY={33.873948} pcbRotation="270deg" layer="top" noSchematicRepresentation pinLabels={{"pin3":["3","pin3","imported_pcb_port_38"],"pin2":["2","pin2","imported_pcb_port_39"],"pin1":["1","pin1","imported_pcb_port_40"]}} obstructsWithinBounds={false} footprint={<footprint>
-            <platedhole portHints={["imported_pcb_port_38"]} pcbX="5.079999999999998mm" pcbY="3.552713678800501e-15mm" outerDiameter="1.524mm" holeDiameter="0.9652mm" shape="circle" />
+            <platedhole portHints={["imported_pcb_port_38"]} pcbX="5.079999999999998mm" pcbY="0mm" outerDiameter="1.524mm" holeDiameter="0.9652mm" shape="circle" />
     <platedhole portHints={["imported_pcb_port_39"]} pcbX="2.5400000000000063mm" pcbY="0mm" outerDiameter="1.524mm" holeDiameter="0.9652mm" shape="circle" />
     <platedhole portHints={["imported_pcb_port_40"]} pcbX="0mm" pcbY="0mm" holeShape="circle" padShape="rect" holeDiameter="0.9652mm" rectPadWidth="1.524mm" rectPadHeight="1.524mm" holeOffsetX="0mm" holeOffsetY="0mm" pcbRotation="270deg" shape="circular_hole_with_rect_pad" />
     <silkscreenline x1={-1.269999999999996} y1={-0.6350000000000016} x2={-1.269999999999996} y2={0.6350000000000016} strokeWidth={0.254} />

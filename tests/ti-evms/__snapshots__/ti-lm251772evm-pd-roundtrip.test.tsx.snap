@@ -182,7 +182,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
           </footprint>} />
     <chip name="C40" pcbX={-20.518000620000002} pcbY={12.315997719999999} pcbRotation="270deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["1","pin1","imported_pcb_port_140"],"pin2":["2","pin2","imported_pcb_port_141"]}} obstructsWithinBounds={false} footprint={<footprint>
             <smtpad portHints={["imported_pcb_port_140"]} pcbX="-1.6499992399999996mm" pcbY="0mm" layer="top" solderMaskMargin="0mm" cornerRadius="0.0495000153mm" width="1.10000034mm" height="2.20000068mm" ccwRotation={270} shape="rotated_rect" />
-    <smtpad portHints={["imported_pcb_port_141"]} pcbX="1.6499992399999996mm" pcbY="7.105427357601002e-15mm" layer="top" solderMaskMargin="0mm" cornerRadius="0.0495000153mm" width="1.10000034mm" height="2.20000068mm" ccwRotation={270} shape="rotated_rect" />
+    <smtpad portHints={["imported_pcb_port_141"]} pcbX="1.6499992399999996mm" pcbY="0mm" layer="top" solderMaskMargin="0mm" cornerRadius="0.0495000153mm" width="1.10000034mm" height="2.20000068mm" ccwRotation={270} shape="rotated_rect" />
     <silkscreenline x1={0.7249998200000078} y1={1.4250009600000055} x2={-0.7249998199999936} y2={1.4250009599999984} strokeWidth={0.14999969999999999} />
     <silkscreenline x1={0.7249998200000078} y1={-1.4250009599999913} x2={-0.7249998199999936} y2={-1.4250009599999984} strokeWidth={0.14999969999999999} />
     <fabricationnotetext pcbX={0.049987200000003895} pcbY={0.049987200000003895} anchorAlignment="bottom_left" text="C40" font="tscircuit2024" fontSize={0.49999899999999997} color="#ec4899" pcbRotation="0deg" />
@@ -411,7 +411,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
     <silkscreentext pcbX={-3.073445719999995} pcbY={0.48507396000000824} anchorAlignment="center" fontSize={1.143} font="tscircuit2024" pcbRotation="90deg" mirrored={false} layer="top" text="R31" />
           </footprint>} />
     <chip name="R6" pcbX={-11.168458740000005} pcbY={11.844002220000007} pcbRotation="180deg" layer="top" noSchematicRepresentation pinLabels={{"pin2":["2","pin2","imported_pcb_port_244"],"pin1":["1","pin1","imported_pcb_port_245"]}} obstructsWithinBounds={false} footprint={<footprint>
-            <smtpad portHints={["imported_pcb_port_244"]} pcbX="0.6500012400000017mm" pcbY="1.4210854715202004e-14mm" layer="top" solderMaskMargin="0mm" cornerRadius="0.0490000798mm" width="0.70000114mm" height="2.20000068mm" ccwRotation={180} shape="rotated_rect" />
+            <smtpad portHints={["imported_pcb_port_244"]} pcbX="0.6500012400000017mm" pcbY="0mm" layer="top" solderMaskMargin="0mm" cornerRadius="0.0490000798mm" width="0.70000114mm" height="2.20000068mm" ccwRotation={180} shape="rotated_rect" />
     <smtpad portHints={["imported_pcb_port_245"]} pcbX="-0.6500012400000017mm" pcbY="0mm" layer="top" solderMaskMargin="0mm" cornerRadius="0.0490000798mm" width="0.70000114mm" height="2.20000068mm" ccwRotation={180} shape="rotated_rect" />
     <silkscreenline x1={0.7249998199999936} y1={-1.4999995399999762} x2={-0.7249998200000078} y2={-1.4999995399999904} strokeWidth={0.14999969999999999} />
     <silkscreenline x1={0.7249998199999936} y1={1.4999995400000188} x2={-0.7249998200000078} y2={1.4999995400000046} strokeWidth={0.14999969999999999} />
@@ -580,7 +580,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
     <silkscreentext pcbX={1.667215359999986} pcbY={0.3608425600000018} anchorAlignment="center" fontSize={1.143} font="tscircuit2024" pcbRotation="90deg" mirrored={true} layer="top" text="R40" />
           </footprint>} />
     <chip name="R4" pcbX={-11.153538779999998} pcbY={8.476000319999997} pcbRotation="180deg" layer="top" noSchematicRepresentation pinLabels={{"pin2":["2","pin2","imported_pcb_port_242"],"pin1":["1","pin1","imported_pcb_port_243"]}} obstructsWithinBounds={false} footprint={<footprint>
-            <smtpad portHints={["imported_pcb_port_242"]} pcbX="0.6500012400000017mm" pcbY="1.4210854715202004e-14mm" layer="top" solderMaskMargin="0mm" cornerRadius="0.0490000798mm" width="0.70000114mm" height="2.20000068mm" ccwRotation={180} shape="rotated_rect" />
+            <smtpad portHints={["imported_pcb_port_242"]} pcbX="0.6500012400000017mm" pcbY="0mm" layer="top" solderMaskMargin="0mm" cornerRadius="0.0490000798mm" width="0.70000114mm" height="2.20000068mm" ccwRotation={180} shape="rotated_rect" />
     <smtpad portHints={["imported_pcb_port_243"]} pcbX="-0.6500012400000017mm" pcbY="0mm" layer="top" solderMaskMargin="0mm" cornerRadius="0.0490000798mm" width="0.70000114mm" height="2.20000068mm" ccwRotation={180} shape="rotated_rect" />
     <silkscreenline x1={0.7249998200000078} y1={-1.4999995399999904} x2={-0.7249998199999936} y2={-1.4999995400000046} strokeWidth={0.14999969999999999} />
     <silkscreenline x1={0.7249998200000078} y1={1.4999995400000188} x2={-0.7249998199999936} y2={1.4999995400000046} strokeWidth={0.14999969999999999} />
@@ -1261,7 +1261,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
           </footprint>} />
     <chip name="C24" pcbX={7.239000000000004} pcbY={31.114999999999995} pcbRotation="270deg" layer="top" noSchematicRepresentation pinLabels={{"pin2":["2","pin2","imported_pcb_port_113"],"pin1":["1","pin1","imported_pcb_port_114"]}} obstructsWithinBounds={false} footprint={<footprint>
             <smtpad portHints={["imported_pcb_port_113"]} pcbX="0.5079999999999956mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.381mm" height="0.6095999999999999mm" shape="rect" />
-    <smtpad portHints={["imported_pcb_port_114"]} pcbX="-0.5079999999999956mm" pcbY="-1.4210854715202004e-14mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.381mm" height="0.6095999999999999mm" shape="rect" />
+    <smtpad portHints={["imported_pcb_port_114"]} pcbX="-0.5079999999999956mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="0.381mm" height="0.6095999999999999mm" shape="rect" />
     <fabricationnotetext pcbX={-0.5499989000000056} pcbY={-0.1499997000000235} anchorAlignment="center" text="C24" font="tscircuit2024" fontSize={0.30479999999999996} color="#ec4899" pcbRotation="0deg" />
     <silkscreentext pcbX={0.5909868800000027} pcbY={1.504370879999982} anchorAlignment="center" fontSize={1.143} font="tscircuit2024" pcbRotation="90deg" mirrored={false} layer="top" text="C24" />
           </footprint>} />

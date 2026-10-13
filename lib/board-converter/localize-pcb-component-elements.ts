@@ -14,6 +14,28 @@ type PcbSilkscreenGraphic = Extract<
   { type: "pcb_silkscreen_graphic" }
 >
 
+const FLOATING_POINT_NOISE_THRESHOLD = 1e-12
+
+const normalizeFloatingPointNoise = (value: unknown): void => {
+  if (Array.isArray(value)) {
+    for (const item of value) normalizeFloatingPointNoise(item)
+    return
+  }
+  if (typeof value !== "object" || value === null) return
+
+  const record = value as Record<string, unknown>
+  for (const [key, property] of Object.entries(record)) {
+    if (
+      typeof property === "number" &&
+      Math.abs(property) < FLOATING_POINT_NOISE_THRESHOLD
+    ) {
+      record[key] = 0
+    } else {
+      normalizeFloatingPointNoise(property)
+    }
+  }
+}
+
 const transformSilkscreenGraphic = ({
   graphic,
   transform,
@@ -142,6 +164,7 @@ export const localizePcbComponentElements = ({
   if (pcbComponent.layer === "bottom") {
     localizeBottomComponentLayers(localComponentElements)
   }
+  normalizeFloatingPointNoise(localComponentElements)
 
   return localComponentElements
 }
