@@ -1,6 +1,7 @@
 import type { PcbBoard } from "circuit-json"
 import type { CadModelGroup } from "./converter-types"
 import { generateCadModelTsx } from "./generate-cad-model-tsx"
+import { generateJscadCadModelPropTsx } from "./generate-jscad-cad-model-prop-tsx"
 
 export function generateCadModelGroupModelTsx({
   cadModelGroup,
@@ -9,7 +10,21 @@ export function generateCadModelGroupModelTsx({
   cadModelGroup: CadModelGroup
   pcbBoard: PcbBoard
 }): string | undefined {
-  const modelElements = cadModelGroup.cadComponents.flatMap((cadComponent) => {
+  const jscadCadComponents = cadModelGroup.cadComponents.filter(
+    (cadComponent) => cadComponent.model_jscad !== undefined,
+  )
+  const urlCadComponents = cadModelGroup.cadComponents.filter(
+    (cadComponent) => cadComponent.model_jscad === undefined,
+  )
+  if (jscadCadComponents.length > 0 && urlCadComponents.length === 0) {
+    return generateJscadCadModelPropTsx({
+      cadComponents: jscadCadComponents,
+      parentPlacement: cadModelGroup.parentPlacement,
+      pcbBoard,
+    })
+  }
+
+  const modelElements = urlCadComponents.flatMap((cadComponent) => {
     const modelElement = generateCadModelTsx({
       cadComponent,
       parentPlacement: cadModelGroup.parentPlacement,
