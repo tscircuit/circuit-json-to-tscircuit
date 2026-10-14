@@ -60,11 +60,11 @@ test("preserves each body transform in a grouped JSCAD model", async () => {
       pcb_component_id: "pcb_component_1",
       source_component_id: "source_component_1",
       position: { x: 15, y: 20, z: 0.8 },
-      rotation: { x: 0, y: 0, z: 90 },
+      rotation: { x: 90, y: 90, z: 0 },
       layer: "top",
       anchor_alignment: "center",
       model_object_fit: "contain_within_bounds",
-      model_jscad: { type: "cuboid", size: [4, 2, 2] },
+      model_jscad: { type: "cuboid", size: [4, 2, 1] },
       model_unit_to_mm_scale_factor: 1,
       model_board_normal_direction: "z+",
       model_origin_position: { x: 0, y: 0, z: 0 },
@@ -90,6 +90,6 @@ test("preserves each body transform in a grouped JSCAD model", async () => {
   expect(modelJscad).toMatchObject({ type: "union" })
   expect(boundingBox).toEqual([
     [-1, -2, -1],
-    [6, 2, 1],
+    [5.5, 2, 1],
   ])
 })

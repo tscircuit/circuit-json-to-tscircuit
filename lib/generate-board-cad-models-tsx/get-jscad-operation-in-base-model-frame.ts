@@ -41,9 +41,9 @@ const rotateOperation = ({
 }): JscadOperation => {
   let result = operation
   for (const [axis, degrees] of [
-    ["X", rotation.x],
-    ["Y", rotation.y],
     ["Z", rotation.z],
+    ["Y", rotation.y],
+    ["X", rotation.x],
   ] as const) {
     if (degrees === 0) continue
     result = {
@@ -64,9 +64,9 @@ const rotateOperationByInverse = ({
 }): JscadOperation => {
   let result = operation
   for (const [axis, degrees] of [
-    ["Z", rotation.z],
-    ["Y", rotation.y],
     ["X", rotation.x],
+    ["Y", rotation.y],
+    ["Z", rotation.z],
   ] as const) {
     if (degrees === 0) continue
     result = {
