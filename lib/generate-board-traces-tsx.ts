@@ -12,13 +12,15 @@ export function generateBoardTracesTsx(
       (sourcePortId) =>
         context.pcbPortSelectorsBySourcePortId.get(sourcePortId) ?? [],
     )
-    const netSelectors = element.connected_source_net_ids.flatMap(
-      (sourceNetId) => {
-        const runtimeNetName =
-          context.runtimeNetNameBySourceNetId.get(sourceNetId)
-        return runtimeNetName ? [`net.${runtimeNetName}`] : []
-      },
-    )
+    const netSelectors = [
+      ...new Set(
+        element.connected_source_net_ids.flatMap((sourceNetId) => {
+          const runtimeNetName =
+            context.runtimeNetNameBySourceNetId.get(sourceNetId)
+          return runtimeNetName ? [`net.${runtimeNetName}`] : []
+        }),
+      ),
+    ]
     const path = [...portSelectors, ...netSelectors]
 
     return path.length >= 2 ? [`<trace path={${JSON.stringify(path)}} />`] : []

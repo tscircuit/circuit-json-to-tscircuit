@@ -940,12 +940,6 @@ exports[`TI DRV8307EVM Circuit JSON to tscircuit round trip 1`] = `
     <net name={"PWM_X"} connectsTo={[".JP6 > .imported_pcb_port_27",".R21 > .imported_pcb_port_118",".U5 > .imported_pcb_port_284"]} />
     <net name={"PWM"} connectsTo={[".JP6 > .imported_pcb_port_26",".U1 > .imported_pcb_port_251",".D4 > .imported_pcb_port_207"]} />
     <net name={"FAULTn"} connectsTo={[".U11 > .imported_pcb_port_203"]} />
-    <net name={"UH_"} connectsTo={[".R1 > .imported_pcb_port_171"]} />
-    <net name={"VH_"} connectsTo={[".R9 > .imported_pcb_port_175",".U4 > .imported_pcb_port_277",".R23 > .imported_pcb_port_121"]} />
-    <net name={"UH__2"} connectsTo={[".R4 > .imported_pcb_port_103",".R2 > .imported_pcb_port_173"]} />
-    <net name={"VH__2"} connectsTo={[".U4 > .imported_pcb_port_279",".R10 > .imported_pcb_port_177"]} />
-    <net name={"WH_"} connectsTo={[".R25 > .imported_pcb_port_181"]} />
-    <net name={"WH__2"} connectsTo={[".D8 > .imported_pcb_port_179"]} />
     <net name={"LOCKn"} connectsTo={[".D3 > .imported_pcb_port_205"]} />
     <trace path={[".R29 > .imported_pcb_port_189",".U4 > .imported_pcb_port_277","net.NetR29_2"]} />
     <trace path={[".R28 > .imported_pcb_port_187",".U4 > .imported_pcb_port_275","net.NetR28_2"]} />
@@ -1022,13 +1016,13 @@ exports[`TI DRV8307EVM Circuit JSON to tscircuit round trip 1`] = `
     <trace path={[".U1 > .imported_pcb_port_245","net.WHS_GATE"]} />
     <trace path={[".U1 > .imported_pcb_port_243","net.VLS_GATE"]} />
     <trace path={[".U1 > .imported_pcb_port_237","net.ULS_GATE"]} />
-    <trace path={[".R1 > .imported_pcb_port_171","net.HU_","net.UH_"]} />
-    <trace path={[".R9 > .imported_pcb_port_175",".U4 > .imported_pcb_port_277",".R23 > .imported_pcb_port_121","net.HV_","net.VH_"]} />
+    <trace path={[".R1 > .imported_pcb_port_171","net.HU_"]} />
+    <trace path={[".R9 > .imported_pcb_port_175",".U4 > .imported_pcb_port_277",".R23 > .imported_pcb_port_121","net.HV_"]} />
     <trace path={[".U7 > .imported_pcb_port_223",".U9 > .imported_pcb_port_154","net.VM"]} />
-    <trace path={[".R4 > .imported_pcb_port_103",".R2 > .imported_pcb_port_173","net.HU__2","net.UH__2"]} />
-    <trace path={[".U4 > .imported_pcb_port_279",".R10 > .imported_pcb_port_177","net.HV__2","net.VH__2"]} />
-    <trace path={[".R25 > .imported_pcb_port_181","net.HW__2","net.WH_"]} />
-    <trace path={[".D8 > .imported_pcb_port_179","net.HW_","net.WH__2"]} />
+    <trace path={[".R4 > .imported_pcb_port_103",".R2 > .imported_pcb_port_173","net.HU__2"]} />
+    <trace path={[".U4 > .imported_pcb_port_279",".R10 > .imported_pcb_port_177","net.HV__2"]} />
+    <trace path={[".R25 > .imported_pcb_port_181","net.HW__2"]} />
+    <trace path={[".D8 > .imported_pcb_port_179","net.HW_"]} />
     <trace path={[".U7 > .imported_pcb_port_217",".TP7 > .imported_pcb_port_20",".P2 > .imported_pcb_port_43","net.VREG"]} />
     <trace path={[".U1 > .imported_pcb_port_231","net.ISENSE"]} />
     <trace path={[".D3 > .imported_pcb_port_205","net.LOCKn"]} />
