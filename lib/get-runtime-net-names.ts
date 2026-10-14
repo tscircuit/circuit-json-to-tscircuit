@@ -122,16 +122,19 @@ const getCanonicalSourceNetIdBySourceNetId = (
   )
 }
 
-const findCanonicalSourceNetId = (params: {
+const findCanonicalSourceNetId = ({
+  parentSourceNetIdBySourceNetId,
+  sourceNetId,
+}: {
   parentSourceNetIdBySourceNetId: ReadonlyMap<SourceNetId, SourceNetId>
   sourceNetId: SourceNetId
 }): SourceNetId => {
-  let currentSourceNetId = params.sourceNetId
+  let currentSourceNetId = sourceNetId
   const visitedSourceNetIds = new Set<SourceNetId>()
   while (!visitedSourceNetIds.has(currentSourceNetId)) {
     visitedSourceNetIds.add(currentSourceNetId)
     const parentSourceNetId =
-      params.parentSourceNetIdBySourceNetId.get(currentSourceNetId)
+      parentSourceNetIdBySourceNetId.get(currentSourceNetId)
     if (!parentSourceNetId || parentSourceNetId === currentSourceNetId) {
       return currentSourceNetId
     }
