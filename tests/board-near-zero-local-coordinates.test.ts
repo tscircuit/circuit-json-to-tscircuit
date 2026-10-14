@@ -60,6 +60,6 @@ test("normalizes floating point noise in component-local coordinates", () => {
   })
 
   expect(generated).toContain('pcbX="0mm" pcbY="0mm"')
-  expect(generated).toContain('pcbX="-1.25000004mm" pcbY="0mm"')
+  expect(generated).toContain('pcbX="1.25000004mm" pcbY="0mm"')
   expect(generated).not.toMatch(/[+-]?\d+(?:\.\d+)?e-\d+mm/u)
 })

@@ -1,5 +1,4 @@
 import type { AnyCircuitElement, PcbComponent } from "circuit-json"
-import { applyToPoint, inverse, translate } from "transformation-matrix"
 import { formatJsxStringAttribute } from "../../format-jsx-string-attribute"
 import type { BoardConversionContext as FootprintConversionContext } from "../../board-conversion-context"
 import type { CadModelGroup } from "../../generate-board-cad-models-tsx/converter-types"
@@ -7,6 +6,7 @@ import { generateCadModelGroupModelTsx } from "../../generate-board-cad-models-t
 import { getCadModelGroups } from "../../generate-board-cad-models-tsx/get-cad-model-groups"
 import { generateFootprintTsx } from "../../generate-footprint-tsx"
 import type { BoardConverterStage } from "../BoardConverterContext"
+import { getPcbComponentRenderPlacement } from "../get-pcb-component-render-placement"
 import { getSchematicComponentsForPcbComponent } from "../get-schematic-components-for-pcb-component"
 import { localizePcbComponentElements } from "../localize-pcb-component-elements"
 
@@ -131,7 +131,6 @@ export const convertPcbComponents: BoardConverterStage = ({
   pcbBoard,
   boardChildren,
 }) => {
-  const boardToLocal = inverse(translate(pcbBoard.center.x, pcbBoard.center.y))
   const pcbComponents = circuitJson.filter(
     (element): element is PcbComponent => element.type === "pcb_component",
   )
@@ -168,7 +167,12 @@ export const convertPcbComponents: BoardConverterStage = ({
           (element.source_component_id !== undefined &&
             schematicSourceComponentIds.has(element.source_component_id))),
     )
-    const componentPosition = applyToPoint(boardToLocal, pcbComponent.center)
+    const { cadModelParentCenter, componentPosition } =
+      getPcbComponentRenderPlacement({
+        circuitJson,
+        pcbBoard,
+        pcbComponent,
+      })
     const footprintTsx = getComponentFootprintTsx({
       circuitJson,
       footprintConversionContext,
@@ -186,7 +190,16 @@ export const convertPcbComponents: BoardConverterStage = ({
       pcbComponent.pcb_component_id,
     )
     const cadModelTsx = cadModelGroup
-      ? generateCadModelGroupModelTsx({ cadModelGroup, pcbBoard })
+      ? generateCadModelGroupModelTsx({
+          cadModelGroup: {
+            ...cadModelGroup,
+            parentPlacement: {
+              ...cadModelGroup.parentPlacement,
+              center: cadModelParentCenter,
+            },
+          },
+          pcbBoard,
+        })
       : undefined
     const componentProps = [
       `name=${formatJsxStringAttribute(componentName)}`,

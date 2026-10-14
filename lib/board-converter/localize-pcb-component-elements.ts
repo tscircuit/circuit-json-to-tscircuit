@@ -4,6 +4,8 @@ import {
   type Matrix,
   applyToPoint,
   compose,
+  decomposeTSR,
+  flipY,
   inverse,
   rotateDEG,
   translate,
@@ -73,6 +75,72 @@ const transformSilkscreenGraphic = ({
 
 const normalizeDegrees = (degrees: number): number =>
   ((degrees % 360) + 360) % 360
+
+interface PcbPrimitiveRotations {
+  ccw_rotation?: number
+  hole_ccw_rotation?: number
+  rect_ccw_rotation?: number
+}
+
+type PcbElementWithPrimitiveRotations = AnyCircuitElement &
+  PcbPrimitiveRotations
+
+const getTransformedCcwRotationDegrees = ({
+  absoluteCcwRotationDegrees,
+  absoluteToComponentLocalRotationTransform,
+}: {
+  absoluteCcwRotationDegrees: number
+  absoluteToComponentLocalRotationTransform: Matrix
+}): number => {
+  const transformedRotation = decomposeTSR(
+    compose(
+      absoluteToComponentLocalRotationTransform,
+      rotateDEG(absoluteCcwRotationDegrees),
+    ),
+  ).rotation.angle
+
+  return normalizeDegrees((transformedRotation * 180) / Math.PI)
+}
+
+const localizePrimitiveRotations = ({
+  absoluteComponentElements,
+  absoluteToComponentLocalRotationTransform,
+  localComponentElements,
+}: {
+  absoluteComponentElements: AnyCircuitElement[]
+  absoluteToComponentLocalRotationTransform: Matrix
+  localComponentElements: AnyCircuitElement[]
+}): void => {
+  const rotationPropertyNames = [
+    "ccw_rotation",
+    "hole_ccw_rotation",
+    "rect_ccw_rotation",
+  ] as const
+
+  for (const [elementIndex, localElement] of localComponentElements.entries()) {
+    if (
+      localElement.type === "pcb_silkscreen_text" ||
+      localElement.type === "pcb_copper_text" ||
+      localElement.type === "pcb_fabrication_note_text"
+    ) {
+      continue
+    }
+    const absoluteElement = absoluteComponentElements[elementIndex]
+    if (absoluteElement?.type !== localElement.type) continue
+
+    const absoluteRotations =
+      absoluteElement as PcbElementWithPrimitiveRotations
+    const localRotations = localElement as PcbElementWithPrimitiveRotations
+    for (const rotationPropertyName of rotationPropertyNames) {
+      const absoluteCcwRotationDegrees = absoluteRotations[rotationPropertyName]
+      if (typeof absoluteCcwRotationDegrees !== "number") continue
+      localRotations[rotationPropertyName] = getTransformedCcwRotationDegrees({
+        absoluteCcwRotationDegrees,
+        absoluteToComponentLocalRotationTransform,
+      })
+    }
+  }
+}
 
 const getOppositeOuterLayer = (layer: LayerRef): LayerRef => {
   if (layer === "top") return "bottom"
@@ -149,12 +217,19 @@ export const localizePcbComponentElements = ({
       element.pcb_component_id === pcbComponent.pcb_component_id,
   )
   const localComponentElements = structuredClone(absoluteComponentElements)
-  const absoluteToComponentLocalTransform = inverse(
-    compose(
-      translate(pcbComponent.center.x, pcbComponent.center.y),
-      rotateDEG(pcbComponent.rotation),
-    ),
+  const componentLocalToAbsoluteTransform = compose(
+    translate(pcbComponent.center.x, pcbComponent.center.y),
+    rotateDEG(pcbComponent.rotation),
   )
+  let absoluteToComponentLocalTransform = inverse(
+    componentLocalToAbsoluteTransform,
+  )
+  if (pcbComponent.layer === "bottom") {
+    absoluteToComponentLocalTransform = compose(
+      flipY(),
+      absoluteToComponentLocalTransform,
+    )
+  }
 
   transformPCBElements(
     localComponentElements,
@@ -173,6 +248,13 @@ export const localizePcbComponentElements = ({
   localizeTextRotations({
     absoluteComponentElements,
     componentRotation: pcbComponent.rotation,
+    localComponentElements,
+  })
+  localizePrimitiveRotations({
+    absoluteComponentElements,
+    absoluteToComponentLocalRotationTransform: inverse(
+      componentLocalToAbsoluteTransform,
+    ),
     localComponentElements,
   })
   if (pcbComponent.layer === "bottom") {
