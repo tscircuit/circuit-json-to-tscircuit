@@ -42,9 +42,9 @@ export function getCadModelPlacementAttributes({
   if (cadComponent.size !== undefined) {
     attributes.push(`size={${formatPointProp(cadComponent.size)}}`)
   }
-  if (cadComponent.show_as_translucent_model === true) {
-    attributes.push("showAsTranslucentModel")
-  }
+  attributes.push(
+    `showAsTranslucentModel={${cadComponent.show_as_translucent_model === true}}`,
+  )
 
   return attributes
 }

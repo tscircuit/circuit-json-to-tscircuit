@@ -102,6 +102,9 @@ test("combines grouped JSCAD bodies using the component CAD model API", async ()
   const geometry = executeJscadPlan(getModelJscadOrThrow(renderedCadComponent))
   const boundingBox: number[][] =
     jscad.measurements.measureBoundingBox(geometry)
+  const polygonColors = jscad.geometries.geom3
+    .toPolygons(geometry)
+    .flatMap((polygon) => (polygon.color ? [polygon.color] : []))
 
   expect(generatedTsx).toContain("cadModel={{ jscad:")
   expect(generatedTsx).not.toContain("<cadmodel jscad=")
@@ -116,4 +119,6 @@ test("combines grouped JSCAD bodies using the component CAD model API", async ()
     [-1, -2, -1],
     [5.5, 2, 1],
   ])
+  expect(polygonColors).toContainEqual([1, 0, 0, 1])
+  expect(polygonColors).toContainEqual([0, 0, 1, 1])
 })
