@@ -19,14 +19,15 @@ type PcbSilkscreenGraphic = Extract<
 const FLOATING_POINT_NOISE_THRESHOLD = 1e-12
 const LOCAL_COORDINATE_DECIMAL_PLACES = 12
 
-const normalizeFloatingPointNoise = (value: unknown): void => {
-  if (Array.isArray(value)) {
-    for (const item of value) normalizeFloatingPointNoise(item)
+const normalizeFloatingPointNoise = (elementPropertyValue: unknown): void => {
+  if (Array.isArray(elementPropertyValue)) {
+    for (const item of elementPropertyValue) normalizeFloatingPointNoise(item)
     return
   }
-  if (typeof value !== "object" || value === null) return
+  if (typeof elementPropertyValue !== "object" || elementPropertyValue === null)
+    return
 
-  const record = value as Record<string, unknown>
+  const record = elementPropertyValue as Record<string, unknown>
   for (const [key, property] of Object.entries(record)) {
     if (
       typeof property === "number" &&
@@ -53,22 +54,24 @@ const normalizeRoutableElementCoordinates = (
 }
 
 const transformSilkscreenGraphic = ({
+  absoluteToComponentLocalTransform,
   graphic,
-  transform,
 }: {
+  absoluteToComponentLocalTransform: Matrix
   graphic: PcbSilkscreenGraphic
-  transform: Matrix
 }): void => {
   if (graphic.shape !== "brep") return
 
   graphic.brep_shape.outer_ring.vertices =
     graphic.brep_shape.outer_ring.vertices.map((vertex) =>
-      applyToPoint(transform, vertex),
+      applyToPoint(absoluteToComponentLocalTransform, vertex),
     )
   graphic.brep_shape.inner_rings = graphic.brep_shape.inner_rings.map(
     (ring) => ({
       ...ring,
-      vertices: ring.vertices.map((vertex) => applyToPoint(transform, vertex)),
+      vertices: ring.vertices.map((vertex) =>
+        applyToPoint(absoluteToComponentLocalTransform, vertex),
+      ),
     }),
   )
 }
@@ -170,11 +173,11 @@ const localizeBottomComponentLayers = (
 
 const localizeTextRotations = ({
   absoluteComponentElements,
-  componentRotation,
+  componentCcwRotationDegrees,
   localComponentElements,
 }: {
   absoluteComponentElements: AnyCircuitElement[]
-  componentRotation: number
+  componentCcwRotationDegrees: number
   localComponentElements: AnyCircuitElement[]
 }): void => {
   for (const [elementIndex, localElement] of localComponentElements.entries()) {
@@ -198,7 +201,7 @@ const localizeTextRotations = ({
       localElement.ccw_rotation = absoluteRotation
     } else {
       localElement.ccw_rotation = normalizeDegrees(
-        absoluteRotation - componentRotation,
+        absoluteRotation - componentCcwRotationDegrees,
       )
     }
   }
@@ -239,15 +242,15 @@ export const localizePcbComponentElements = ({
   for (const localElement of localComponentElements) {
     if (localElement.type === "pcb_silkscreen_graphic") {
       transformSilkscreenGraphic({
+        absoluteToComponentLocalTransform,
         graphic: localElement,
-        transform: absoluteToComponentLocalTransform,
       })
     }
   }
 
   localizeTextRotations({
     absoluteComponentElements,
-    componentRotation: pcbComponent.rotation,
+    componentCcwRotationDegrees: pcbComponent.rotation,
     localComponentElements,
   })
   localizePrimitiveRotations({

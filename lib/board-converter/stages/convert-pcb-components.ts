@@ -137,9 +137,22 @@ export const convertPcbComponents: BoardConverterStage = ({
   const cadModelGroupByPcbComponentId = new Map<PcbComponentId, CadModelGroup>()
   for (const cadModelGroup of getCadModelGroups(circuitJson)) {
     const pcbComponentId = cadModelGroup.cadComponents[0]?.pcb_component_id
-    if (pcbComponentId !== undefined) {
-      cadModelGroupByPcbComponentId.set(pcbComponentId, cadModelGroup)
-    }
+    if (pcbComponentId === undefined) continue
+
+    const existingCadModelGroup =
+      cadModelGroupByPcbComponentId.get(pcbComponentId)
+    cadModelGroupByPcbComponentId.set(
+      pcbComponentId,
+      existingCadModelGroup
+        ? {
+            ...existingCadModelGroup,
+            cadComponents: [
+              ...existingCadModelGroup.cadComponents,
+              ...cadModelGroup.cadComponents,
+            ],
+          }
+        : cadModelGroup,
+    )
   }
 
   for (const [componentIndex, pcbComponent] of pcbComponents.entries()) {
@@ -194,8 +207,9 @@ export const convertPcbComponents: BoardConverterStage = ({
           cadModelGroup: {
             ...cadModelGroup,
             parentPlacement: {
-              ...cadModelGroup.parentPlacement,
               center: cadModelParentCenter,
+              ccwRotationDegrees: pcbComponent.rotation,
+              layer: pcbComponent.layer === "bottom" ? "bottom" : "top",
             },
           },
           pcbBoard,
