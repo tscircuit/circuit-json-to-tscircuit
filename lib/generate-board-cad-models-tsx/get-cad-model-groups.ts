@@ -22,19 +22,6 @@ export function getCadModelGroups(
     if (element.type !== "cad_component" || !hasCadModelSource(element))
       continue
 
-    if (element.model_jscad !== undefined) {
-      const layer = element.layer === "bottom" ? "bottom" : "top"
-      cadModelGroupByKey.set(element.cad_component_id, {
-        cadComponents: [element],
-        parentPlacement: {
-          center: element.position,
-          ccwRotationDegrees: 0,
-          layer,
-        },
-      })
-      continue
-    }
-
     const pcbComponent = element.pcb_component_id
       ? pcbComponentById.get(element.pcb_component_id)
       : undefined

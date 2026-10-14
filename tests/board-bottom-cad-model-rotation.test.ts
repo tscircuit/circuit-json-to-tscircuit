@@ -8,7 +8,7 @@ test("preserves bottom CAD model rotation", async () => {
     {
       type: "pcb_board",
       pcb_board_id: "pcb_board_1",
-      center: { x: 0, y: 0 },
+      center: { x: 100, y: 50 },
       width: 20,
       height: 20,
       thickness: 1.6,
@@ -19,7 +19,7 @@ test("preserves bottom CAD model rotation", async () => {
       type: "pcb_component",
       pcb_component_id: "pcb_component_1",
       source_component_id: "source_component_1",
-      center: { x: 2, y: 3 },
+      center: { x: 102, y: 53 },
       width: 2,
       height: 1,
       layer: "bottom",
@@ -31,7 +31,7 @@ test("preserves bottom CAD model rotation", async () => {
       cad_component_id: "cad_component_1",
       pcb_component_id: "pcb_component_1",
       source_component_id: "source_component_1",
-      position: { x: 2, y: 3, z: -0.8 },
+      position: { x: 102, y: 53, z: -0.8 },
       rotation: { x: 10, y: 200, z: 250 },
       layer: "bottom",
       anchor_alignment: "center",
@@ -56,8 +56,8 @@ test("preserves bottom CAD model rotation", async () => {
   }).toMatchInlineSnapshot(`
     {
       "position": {
-        "x": 2,
-        "y": 3,
+        "x": 102,
+        "y": 53,
         "z": -0.8,
       },
       "rotation": {

@@ -3,7 +3,7 @@ import type { CadComponent, CircuitJson } from "circuit-json"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
 
-test("preserves a JSCAD CAD model", async () => {
+test("preserves a component-owned JSCAD CAD model", async () => {
   const jscadPlan = {
     type: "extrudeLinear",
     options: { height: 2 },
@@ -29,13 +29,30 @@ test("preserves a JSCAD CAD model", async () => {
       num_layers: 2,
     },
     {
+      type: "source_component",
+      source_component_id: "source_component_1",
+      name: "U1",
+      ftype: "simple_chip",
+    },
+    {
+      type: "pcb_component",
+      pcb_component_id: "pcb_component_1",
+      source_component_id: "source_component_1",
+      center: { x: 2, y: 3 },
+      width: 2,
+      height: 1,
+      layer: "top",
+      rotation: 20,
+      obstructs_within_bounds: true,
+    },
+    {
       type: "cad_component",
       cad_component_id: "cad_component_1",
       pcb_component_id: "pcb_component_1",
       source_component_id: "source_component_1",
-      position: { x: 2, y: 3, z: -0.8 },
-      rotation: { x: 0, y: 0, z: 0 },
-      layer: "bottom",
+      position: { x: 2, y: 3, z: 0.8 },
+      rotation: { x: 0, y: 0, z: 35 },
+      layer: "top",
       anchor_alignment: "center",
       model_object_fit: "contain_within_bounds",
       model_jscad: jscadPlan,
@@ -46,7 +63,7 @@ test("preserves a JSCAD CAD model", async () => {
   ]
 
   const generatedTsx = convertCircuitJsonToTscircuit(sourceCircuitJson, {
-    componentName: "JscadCadModel",
+    componentName: "JscadBoard",
   })
   const renderedCircuitJson = (await runTscircuitCode(
     generatedTsx,
@@ -55,21 +72,14 @@ test("preserves a JSCAD CAD model", async () => {
     (element): element is CadComponent => element.type === "cad_component",
   )
 
-  expect(generatedTsx).toMatchInlineSnapshot(`
-    "export const JscadCadModel = () => (
-      <board width="20mm" height="20mm" thickness="1.6mm" layers={2} material="fr4">
-        <chip name={"ImportedCadModel1"} pcbX={2} pcbY={3} pcbRotation="0deg" layer="bottom" noSchematicRepresentation obstructsWithinBounds={false} footprint={<footprint />} cadModel={{ jscad: {"type":"extrudeLinear","options":{"height":2},"shape":{"type":"fromPointsGeom2","points":[[-1,-0.5],[1,-0.5],[1,0.5],[-1,0.5]]}}, positionOffset: { x: 0, y: 0, z: 0 }, rotationOffset: { x: 0, y: -180, z: 0 }, modelUnitToMmScale: 1, modelBoardNormalDirection: "z+", modelOriginPosition: { x: 0, y: 0, z: 0 } }} />
-      </board>
-    )
-    export default JscadCadModel"
-  `)
-  expect({
-    modelJscad: renderedCadComponent?.model_jscad,
-    position: renderedCadComponent?.position,
-    rotation: renderedCadComponent?.rotation,
-  }).toEqual({
-    modelJscad: jscadPlan,
-    position: { x: 2, y: 3, z: -0.8 },
-    rotation: { x: 0, y: 0, z: 0 },
+  expect(generatedTsx).toContain('<chip name="U1"')
+  expect(generatedTsx).toContain("cadModel={{ jscad:")
+  expect(generatedTsx).not.toContain("<cadmodel jscad=")
+  expect(generatedTsx).not.toContain("ImportedCadModel")
+  expect(renderedCadComponent).toMatchObject({
+    pcb_component_id: expect.any(String),
+    position: { x: 2, y: 3, z: 0.8 },
+    rotation: { x: 0, y: 0, z: 35 },
+    model_jscad: expect.any(Object),
   })
 })

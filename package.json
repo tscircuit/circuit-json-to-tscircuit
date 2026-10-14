@@ -6,7 +6,7 @@
     "./cli": "./dist/cli/main.js"
   },
   "type": "module",
-  "version": "0.0.91",
+  "version": "0.0.92",
   "repository": {
     "type": "git",
     "url": "https://github.com/tscircuit/circuit-json-to-tscircuit.git"
@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@jscad/modeling": "^2.13.0",
     "@tscircuit/mm": "^0.0.8",
     "@tscircuit/soup-util": "^0.0.41",
     "@types/bun": "latest",
@@ -33,6 +34,8 @@
     "color": "^5.0.3",
     "commander": "^13.1.0",
     "fast-png": "8.0.0",
+    "jscad-electronics": "0.0.210",
+    "jscad-planner": "^0.0.19",
     "prettier": "^3.9.5",
     "poppygl": "0.0.34",
     "schematic-symbols": "0.0.248",
