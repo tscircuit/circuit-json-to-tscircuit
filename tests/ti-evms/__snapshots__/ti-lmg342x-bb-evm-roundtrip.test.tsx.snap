@@ -895,8 +895,8 @@ exports[`TI LMG342X-BB-EVM Circuit JSON to tscircuit round trip 1`] = `
     <silkscreentext pcbX={4.022001099999983} pcbY={1.1430000000000007} anchorAlignment="bottom_left" fontSize={1.016} font="tscircuit2024" pcbRotation="360deg" mirrored={false} layer="top" text="R15" />
           </footprint>} />
     <chip name="R14" pcbX={-70.99499644} pcbY={16.570055760000002} pcbRotation="270deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1","imported_pcb_port_220"],"pin2":["2","pin2","imported_pcb_port_221"]}} obstructsWithinBounds={false} footprint={<footprint>
-            <smtpad portHints={["imported_pcb_port_220"]} pcbX="1.44999964mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.8499988399999998mm" height="1.29999994mm" ccwRotation={270} shape="rotated_rect" />
-    <smtpad portHints={["imported_pcb_port_221"]} pcbX="-1.44999964mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.8499988399999998mm" height="1.29999994mm" ccwRotation={270} shape="rotated_rect" />
+            <smtpad portHints={["imported_pcb_port_220","1"]} pcbX="1.44999964mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.8499988399999998mm" height="1.29999994mm" ccwRotation={270} shape="rotated_rect" />
+    <smtpad portHints={["imported_pcb_port_221","2"]} pcbX="-1.44999964mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.8499988399999998mm" height="1.29999994mm" ccwRotation={270} shape="rotated_rect" />
     <silkscreenline x1={1.4999995400000046} y1={1.2100001199999966} x2={2.4000002800000004} y2={1.2100001199999966} strokeWidth={0.17779999999999999} />
     <silkscreenline x1={2.4000002800000004} y1={-1.2100001200000001} x2={2.4000002800000004} y2={1.2100001199999966} strokeWidth={0.17779999999999999} />
     <silkscreenline x1={1.4999995400000046} y1={-1.2100001200000001} x2={2.4000002800000004} y2={-1.2100001200000001} strokeWidth={0.17779999999999999} />
@@ -1338,8 +1338,8 @@ exports[`TI LMG342X-BB-EVM Circuit JSON to tscircuit round trip 1`] = `
     <courtyardoutline outline={[{"x":3.050001519999995,"y":1.950001180000001},{"x":3.050001519999995,"y":-1.949998640000004},{"x":-3.049998979999998,"y":-1.949998640000004},{"x":-3.049998979999998,"y":1.950001180000001}]} layer="top" />
           </footprint>} />
     <chip name="CIN3" pcbX={-8.762999999999991} pcbY={-26.860499999999995} pcbRotation="90deg" layer="bottom" noSchematicRepresentation pinLabels={{"pin1":["1","pin1","imported_pcb_port_206"],"pin2":["2","pin2","imported_pcb_port_207"]}} obstructsWithinBounds={false} footprint={<footprint>
-            <smtpad portHints={["imported_pcb_port_206"]} pcbX="2.159mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.524mm" height="3.556mm" ccwRotation={0} shape="rotated_rect" />
-    <smtpad portHints={["imported_pcb_port_207"]} pcbX="-2.159mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.524mm" height="3.556mm" ccwRotation={0} shape="rotated_rect" />
+            <smtpad portHints={["imported_pcb_port_206","1"]} pcbX="2.159mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.524mm" height="3.556mm" ccwRotation={0} shape="rotated_rect" />
+    <smtpad portHints={["imported_pcb_port_207","2"]} pcbX="-2.159mm" pcbY="0mm" layer="top" solderMaskMargin="0.04999989999999999mm" width="1.524mm" height="3.556mm" ccwRotation={0} shape="rotated_rect" />
     <silkscreenline x1={-1.3716000000000008} y1={2.1336000000000013} x2={-3.276599999999995} y2={2.1336000000000013} strokeWidth={0.17779999999999999} />
     <silkscreenline x1={-3.276599999999995} y1={2.1336000000000013} x2={-3.276599999999995} y2={0} strokeWidth={0.17779999999999999} />
     <silkscreenline x1={3.276600000000002} y1={2.1336000000000013} x2={3.276600000000002} y2={0} strokeWidth={0.17779999999999999} />
@@ -1439,7 +1439,7 @@ exports[`TI LMG342X-BB-EVM Circuit JSON to tscircuit round trip 1`] = `
     <net name={"NetC16_2"} connectsTo={[".U4 > .imported_pcb_port_117",".R25 > .imported_pcb_port_152",".R26 > .imported_pcb_port_155",".C16 > .imported_pcb_port_159"]} />
     <net name={"NetR18_1"} connectsTo={[".R18 > .imported_pcb_port_226",".R19 > .imported_pcb_port_228"]} />
     <net name={"NetR16_1"} connectsTo={[".R16 > .imported_pcb_port_222",".R17 > .imported_pcb_port_224"]} />
-    <net name={"NetR13_2"} connectsTo={[".R13 > .imported_pcb_port_219",".CIN3 > .imported_pcb_port_221"]} />
+    <net name={"NetR13_2"} connectsTo={[".R13 > .imported_pcb_port_219",".R14 > .imported_pcb_port_221"]} />
     <net name={"NetR11_2"} connectsTo={[".R11 > .imported_pcb_port_215",".R12 > .imported_pcb_port_217"]} />
     <net name={"LS_FET_TEMP_2"} connectsTo={[".J4 > .imported_pcb_port_19",".J27 > .imported_pcb_port_52",".R27 > .imported_pcb_port_262"]} />
     <net name={"LS_FET_PWM_2"} connectsTo={[".J4 > .imported_pcb_port_14",".J30 > .imported_pcb_port_38",".LS_FET_PWM > .imported_pcb_port_86",".R4 > .imported_pcb_port_210"]} />
@@ -1452,7 +1452,7 @@ exports[`TI LMG342X-BB-EVM Circuit JSON to tscircuit round trip 1`] = `
     <net name={"PWM_LS_2"} connectsTo={[".J8 > .imported_pcb_port_7",".PWM_LS > .imported_pcb_port_21",".J14 > .imported_pcb_port_78",".U5 > .imported_pcb_port_168"]} />
     <net name={"NetC23_1"} connectsTo={[".D3 > .imported_pcb_port_105",".R15 > .imported_pcb_port_112",".U5 > .imported_pcb_port_174",".C23 > .imported_pcb_port_232"]} />
     <net name={"NetHVIN_EN_1"} connectsTo={[".HVIN_EN > .imported_pcb_port_107",".R20 > .imported_pcb_port_166"]} />
-    <net name={"NetR14_1"} connectsTo={[".R20 > .imported_pcb_port_167",".CIN3 > .imported_pcb_port_220"]} />
+    <net name={"NetR14_1"} connectsTo={[".R20 > .imported_pcb_port_167",".R14 > .imported_pcb_port_220"]} />
     <net name={"NetR13_1"} connectsTo={[".R13 > .imported_pcb_port_218",".R19 > .imported_pcb_port_229"]} />
     <net name={"NetR12_1"} connectsTo={[".R12 > .imported_pcb_port_216",".R18 > .imported_pcb_port_227"]} />
     <net name={"NetR11_1"} connectsTo={[".R11 > .imported_pcb_port_214",".R17 > .imported_pcb_port_225"]} />
@@ -1519,7 +1519,7 @@ exports[`TI LMG342X-BB-EVM Circuit JSON to tscircuit round trip 1`] = `
     <trace path={[".U4 > .imported_pcb_port_117",".R25 > .imported_pcb_port_152",".R26 > .imported_pcb_port_155",".C16 > .imported_pcb_port_159","net.NetC16_2"]} />
     <trace path={[".R18 > .imported_pcb_port_226",".R19 > .imported_pcb_port_228","net.NetR18_1"]} />
     <trace path={[".R16 > .imported_pcb_port_222",".R17 > .imported_pcb_port_224","net.NetR16_1"]} />
-    <trace path={[".R13 > .imported_pcb_port_219",".CIN3 > .imported_pcb_port_221","net.NetR13_2"]} />
+    <trace path={[".R13 > .imported_pcb_port_219",".R14 > .imported_pcb_port_221","net.NetR13_2"]} />
     <trace path={[".R11 > .imported_pcb_port_215",".R12 > .imported_pcb_port_217","net.NetR11_2"]} />
     <trace path={[".J4 > .imported_pcb_port_19",".J27 > .imported_pcb_port_52",".R27 > .imported_pcb_port_262","net.LS_FET_TEMP_2"]} />
     <trace path={[".J4 > .imported_pcb_port_14",".J30 > .imported_pcb_port_38",".LS_FET_PWM > .imported_pcb_port_86",".R4 > .imported_pcb_port_210","net.LS_FET_PWM_2"]} />
@@ -1532,7 +1532,7 @@ exports[`TI LMG342X-BB-EVM Circuit JSON to tscircuit round trip 1`] = `
     <trace path={[".J8 > .imported_pcb_port_7",".PWM_LS > .imported_pcb_port_21",".J14 > .imported_pcb_port_78",".U5 > .imported_pcb_port_168","net.PWM_LS_2"]} />
     <trace path={[".D3 > .imported_pcb_port_105",".R15 > .imported_pcb_port_112",".U5 > .imported_pcb_port_174",".C23 > .imported_pcb_port_232","net.NetC23_1"]} />
     <trace path={[".HVIN_EN > .imported_pcb_port_107",".R20 > .imported_pcb_port_166","net.NetHVIN_EN_1"]} />
-    <trace path={[".R20 > .imported_pcb_port_167",".CIN3 > .imported_pcb_port_220","net.NetR14_1"]} />
+    <trace path={[".R20 > .imported_pcb_port_167",".R14 > .imported_pcb_port_220","net.NetR14_1"]} />
     <trace path={[".R13 > .imported_pcb_port_218",".R19 > .imported_pcb_port_229","net.NetR13_1"]} />
     <trace path={[".R12 > .imported_pcb_port_216",".R18 > .imported_pcb_port_227","net.NetR12_1"]} />
     <trace path={[".R11 > .imported_pcb_port_214",".R17 > .imported_pcb_port_225","net.NetR11_1"]} />

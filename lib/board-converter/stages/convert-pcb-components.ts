@@ -1,13 +1,13 @@
 import type { AnyCircuitElement, PcbComponent } from "circuit-json"
-import { formatJsxStringAttribute } from "../../format-jsx-string-attribute"
 import type { BoardConversionContext as FootprintConversionContext } from "../../board-conversion-context"
+import { formatJsxStringAttribute } from "../../format-jsx-string-attribute"
 import type { CadModelGroup } from "../../generate-board-cad-models-tsx/converter-types"
 import { generateCadModelGroupModelTsx } from "../../generate-board-cad-models-tsx/generate-cad-model-group-model-tsx"
 import { getCadModelGroups } from "../../generate-board-cad-models-tsx/get-cad-model-groups"
 import { generateFootprintTsx } from "../../generate-footprint-tsx"
 import type { BoardConverterStage } from "../BoardConverterContext"
-import { getPinLabels } from "../get-pin-labels"
 import { getPcbComponentRenderPlacement } from "../get-pcb-component-render-placement"
+import { getPinLabels } from "../get-pin-labels"
 import { getSchematicComponentsForPcbComponent } from "../get-schematic-components-for-pcb-component"
 import { localizePcbComponentElements } from "../localize-pcb-component-elements"
 
@@ -35,6 +35,7 @@ const getComponentFootprintTsx = ({
 export const convertPcbComponents: BoardConverterStage = ({
   circuitJson,
   footprintConversionContext,
+  pcbComponentRuntimeNameByPcbComponentId,
   pcbBoard,
   boardChildren,
 }) => {
@@ -62,7 +63,7 @@ export const convertPcbComponents: BoardConverterStage = ({
     )
   }
 
-  for (const [componentIndex, pcbComponent] of pcbComponents.entries()) {
+  for (const pcbComponent of pcbComponents) {
     const sourceComponent = circuitJson.find(
       (element): element is SourceComponent =>
         element.type === "source_component" &&
@@ -104,8 +105,12 @@ export const convertPcbComponents: BoardConverterStage = ({
       pcbComponent,
       sourceComponents,
     })
-    const componentName =
-      sourceComponent?.name ?? `imported_component_${componentIndex + 1}`
+    const componentName = pcbComponentRuntimeNameByPcbComponentId.get(
+      pcbComponent.pcb_component_id,
+    )
+    if (!componentName) {
+      throw new Error("Expected every PCB component to have a runtime name")
+    }
     const cadModelGroup = cadModelGroupByPcbComponentId.get(
       pcbComponent.pcb_component_id,
     )

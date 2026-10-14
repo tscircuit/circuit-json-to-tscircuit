@@ -1,13 +1,14 @@
 import type { AnyCircuitElement } from "circuit-json"
-import { createComponentPreservingBoardConversionContext } from "./create-component-preserving-board-conversion-context"
 import type {
   BoardConverterContext,
   BoardConverterStage,
 } from "./BoardConverterContext"
+import { createComponentPreservingBoardConversionContext } from "./create-component-preserving-board-conversion-context"
+import { getPcbComponentRuntimeNameByPcbComponentId } from "./get-pcb-component-runtime-name-by-pcb-component-id"
 import { convertBoardCadModels } from "./stages/convert-board-cad-models"
+import { convertBoardNets } from "./stages/convert-board-nets"
 import { convertBoardProperties } from "./stages/convert-board-properties"
 import { convertBoardSchematic } from "./stages/convert-board-schematic"
-import { convertBoardNets } from "./stages/convert-board-nets"
 import { convertBoardTraces } from "./stages/convert-board-traces"
 import { convertCopperPours } from "./stages/convert-copper-pours"
 import { convertPcbComponents } from "./stages/convert-pcb-components"
@@ -37,10 +38,18 @@ export const convertBoardCircuitJson = ({
     throw new Error("Board conversion requires a pcb_board element")
   }
 
+  const pcbComponentRuntimeNameByPcbComponentId =
+    getPcbComponentRuntimeNameByPcbComponentId(circuitJson)
+
   const context: BoardConverterContext = {
     circuitJson,
-    footprintConversionContext:
-      createComponentPreservingBoardConversionContext(circuitJson),
+    footprintConversionContext: createComponentPreservingBoardConversionContext(
+      {
+        circuitJson,
+        pcbComponentRuntimeNameByPcbComponentId,
+      },
+    ),
+    pcbComponentRuntimeNameByPcbComponentId,
     pcbBoard,
     boardProps: [],
     boardChildren: [],

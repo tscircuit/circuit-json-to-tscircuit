@@ -1,45 +1,31 @@
 import type { AnyCircuitElement, PcbComponent } from "circuit-json"
 import {
-  createBoardConversionContext,
   type BoardConversionContext,
+  createBoardConversionContext,
 } from "../board-conversion-context"
 import type {
   PcbPortSelector,
   RuntimeNetName,
   SourcePortId,
 } from "../board-conversion-types"
+import type { PcbComponentRuntimeNameByPcbComponentId } from "./get-pcb-component-runtime-name-by-pcb-component-id"
 
 type PcbComponentId = PcbComponent["pcb_component_id"]
-type SourceComponent = Extract<AnyCircuitElement, { type: "source_component" }>
-type SourceComponentId = SourceComponent["source_component_id"]
-type SourceComponentName = SourceComponent["name"]
-
-export function createComponentPreservingBoardConversionContext(
-  circuitJson: AnyCircuitElement[],
-): BoardConversionContext {
+export function createComponentPreservingBoardConversionContext({
+  circuitJson,
+  pcbComponentRuntimeNameByPcbComponentId,
+}: {
+  circuitJson: AnyCircuitElement[]
+  pcbComponentRuntimeNameByPcbComponentId: PcbComponentRuntimeNameByPcbComponentId
+}): BoardConversionContext {
   const context = createBoardConversionContext(circuitJson)
-  const sourceComponentsById = new Map<SourceComponentId, SourceComponent>()
   const pcbComponentsById = new Map<PcbComponentId, PcbComponent>()
-  const pcbComponentCountByName = new Map<SourceComponentName, number>()
 
   for (const element of circuitJson) {
-    if (element.type === "source_component") {
-      sourceComponentsById.set(element.source_component_id, element)
-    } else if (element.type === "pcb_component") {
+    if (element.type === "pcb_component") {
       pcbComponentsById.set(element.pcb_component_id, element)
     }
   }
-  for (const pcbComponent of pcbComponentsById.values()) {
-    const sourceComponent = pcbComponent.source_component_id
-      ? sourceComponentsById.get(pcbComponent.source_component_id)
-      : undefined
-    if (!sourceComponent?.name) continue
-    pcbComponentCountByName.set(
-      sourceComponent.name,
-      (pcbComponentCountByName.get(sourceComponent.name) ?? 0) + 1,
-    )
-  }
-
   const pcbPortSelectorsBySourcePortId = new Map<
     SourcePortId,
     PcbPortSelector[]
@@ -50,12 +36,10 @@ export function createComponentPreservingBoardConversionContext(
       const pcbComponent = element.pcb_component_id
         ? pcbComponentsById.get(element.pcb_component_id)
         : undefined
-      const sourceComponent = pcbComponent?.source_component_id
-        ? sourceComponentsById.get(pcbComponent.source_component_id)
-        : undefined
-
-      return sourceComponent?.name &&
-        pcbComponentCountByName.get(sourceComponent.name) === 1
+      return pcbComponent &&
+        pcbComponentRuntimeNameByPcbComponentId.has(
+          pcbComponent.pcb_component_id,
+        )
         ? [element.pcb_port_id]
         : []
     }),
@@ -65,16 +49,17 @@ export function createComponentPreservingBoardConversionContext(
     const pcbComponent = element.pcb_component_id
       ? pcbComponentsById.get(element.pcb_component_id)
       : undefined
-    const sourceComponent = pcbComponent?.source_component_id
-      ? sourceComponentsById.get(pcbComponent.source_component_id)
-      : undefined
     const portHint = context.portHintByPcbPortId.get(element.pcb_port_id)
     if (!portHint) continue
 
-    const componentName = sourceComponent?.name ?? context.pcbChipName
+    const componentName = pcbComponent
+      ? pcbComponentRuntimeNameByPcbComponentId.get(
+          pcbComponent.pcb_component_id,
+        )
+      : undefined
     const selectors =
       pcbPortSelectorsBySourcePortId.get(element.source_port_id) ?? []
-    selectors.push(`.${componentName} > .${portHint}`)
+    selectors.push(`.${componentName ?? context.pcbChipName} > .${portHint}`)
     pcbPortSelectorsBySourcePortId.set(element.source_port_id, selectors)
   }
 
