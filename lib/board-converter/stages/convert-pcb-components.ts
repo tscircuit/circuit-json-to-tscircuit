@@ -2,7 +2,10 @@ import type { AnyCircuitElement, PcbComponent } from "circuit-json"
 import type { BoardConversionContext as FootprintConversionContext } from "../../board-conversion-context"
 import { formatJsxStringAttribute } from "../../format-jsx-string-attribute"
 import type { CadModelGroup } from "../../generate-board-cad-models-tsx/converter-types"
-import { generateCadModelGroupModelTsx } from "../../generate-board-cad-models-tsx/generate-cad-model-group-model-tsx"
+import {
+  generateCadModelGroupChildrenTsx,
+  generateCadModelGroupModelTsx,
+} from "../../generate-board-cad-models-tsx/generate-cad-model-group-model-tsx"
 import { getCadModelGroups } from "../../generate-board-cad-models-tsx/get-cad-model-groups"
 import { generateFootprintTsx } from "../../generate-footprint-tsx"
 import type { BoardConverterStage } from "../BoardConverterContext"
@@ -114,19 +117,28 @@ export const convertPcbComponents: BoardConverterStage = ({
     const cadModelGroup = cadModelGroupByPcbComponentId.get(
       pcbComponent.pcb_component_id,
     )
-    const cadModelTsx = cadModelGroup
-      ? generateCadModelGroupModelTsx({
-          cadModelGroup: {
-            ...cadModelGroup,
-            parentPlacement: {
-              center: cadModelParentCenter,
-              ccwRotationDegrees: pcbComponent.rotation,
-              layer: pcbComponent.layer === "bottom" ? "bottom" : "top",
-            },
+    const localizedCadModelGroup: CadModelGroup | undefined = cadModelGroup
+      ? {
+          ...cadModelGroup,
+          parentPlacement: {
+            center: cadModelParentCenter,
+            ccwRotationDegrees: pcbComponent.rotation,
+            layer: pcbComponent.layer === "bottom" ? "bottom" : "top",
           },
+        }
+      : undefined
+    const cadModelTsx = localizedCadModelGroup
+      ? generateCadModelGroupModelTsx({
+          cadModelGroup: localizedCadModelGroup,
           pcbBoard,
         })
       : undefined
+    const cadModelChildrenTsx = localizedCadModelGroup
+      ? generateCadModelGroupChildrenTsx({
+          cadModelGroup: localizedCadModelGroup,
+          pcbBoard,
+        })
+      : []
     const componentProps = [
       `name=${formatJsxStringAttribute(componentName)}`,
       `pcbX={${componentPosition.x}}`,
@@ -161,8 +173,11 @@ export const convertPcbComponents: BoardConverterStage = ({
     if (pcbComponent.obstructs_within_bounds === false) {
       componentProps.push("obstructsWithinBounds={false}")
     }
+    const chipContents = cadModelChildrenTsx.join("\n")
     boardChildren.push(
-      `<chip ${componentProps.join(" ")} footprint={${footprintTsx ?? "<footprint />"}} />`,
+      chipContents
+        ? `<chip ${componentProps.join(" ")} footprint={${footprintTsx ?? "<footprint />"}}>${chipContents}</chip>`
+        : `<chip ${componentProps.join(" ")} footprint={${footprintTsx ?? "<footprint />"}} />`,
     )
   }
 }
