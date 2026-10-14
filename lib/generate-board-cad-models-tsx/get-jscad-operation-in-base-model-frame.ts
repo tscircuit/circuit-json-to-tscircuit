@@ -1,12 +1,11 @@
 import type { CadComponent } from "circuit-json"
+import type { JscadOperation } from "jscad-planner"
 
 interface Point3 {
   x: number
   y: number
   z: number
 }
-
-type JscadOperation = Record<string, unknown>
 
 const degreesToRadians = (degrees: number): number => (degrees * Math.PI) / 180
 
@@ -127,7 +126,7 @@ export function getJscadOperationInBaseModelFrame({
   const modelOriginPosition = getModelOriginPosition(cadComponent)
   const cadRotation = getCadComponentRotation(cadComponent)
   const baseCadRotation = getCadComponentRotation(baseCadComponent)
-  let operation = cadComponent.model_jscad as JscadOperation
+  let operation: JscadOperation = cadComponent.model_jscad
 
   operation = scaleOperation({
     operation,

@@ -1,9 +1,14 @@
 import { expect, test } from "bun:test"
 import * as jscad from "@jscad/modeling"
 import type { CadComponent, CircuitJson } from "circuit-json"
-import { executeJscadOperations, type JscadImplementation } from "jscad-planner"
+import { executeJscadOperations, type JscadOperation } from "jscad-planner"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
+
+const executeJscadPlan = (jscadOperation: JscadOperation) => {
+  // @ts-expect-error @jscad/modeling overloads differ from the planner adapter.
+  return executeJscadOperations(jscad, jscadOperation)
+}
 
 test("preserves each body transform in a grouped JSCAD model", async () => {
   const sourceCircuitJson: CircuitJson = [
@@ -76,10 +81,7 @@ test("preserves each body transform in a grouped JSCAD model", async () => {
     (element): element is CadComponent => element.type === "cad_component",
   )
   const modelJscad = renderedCadComponents[0]?.model_jscad
-  const geometry = executeJscadOperations(
-    jscad as unknown as JscadImplementation,
-    modelJscad,
-  )
+  const geometry = executeJscadPlan(modelJscad)
   const boundingBox = jscad.measurements.measureBoundingBox(
     geometry,
   ) as number[][]
