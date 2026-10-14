@@ -65,6 +65,7 @@ export const createBoardConversionContext = (
 
   return {
     pcbChipName: PCB_CHIP_NAME,
+    pcbPortIdsWithUnambiguousComponentSelectors: new Set<PcbPortId>(),
     portHintByPcbPortId,
     runtimeNetNameBySourceNetId,
     pcbPortSelectorsBySourcePortId,

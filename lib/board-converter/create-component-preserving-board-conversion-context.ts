@@ -12,6 +12,7 @@ import type {
 type PcbComponentId = PcbComponent["pcb_component_id"]
 type SourceComponent = Extract<AnyCircuitElement, { type: "source_component" }>
 type SourceComponentId = SourceComponent["source_component_id"]
+type SourceComponentName = SourceComponent["name"]
 
 export function createComponentPreservingBoardConversionContext(
   circuitJson: AnyCircuitElement[],
@@ -19,6 +20,7 @@ export function createComponentPreservingBoardConversionContext(
   const context = createBoardConversionContext(circuitJson)
   const sourceComponentsById = new Map<SourceComponentId, SourceComponent>()
   const pcbComponentsById = new Map<PcbComponentId, PcbComponent>()
+  const pcbComponentCountByName = new Map<SourceComponentName, number>()
 
   for (const element of circuitJson) {
     if (element.type === "source_component") {
@@ -27,11 +29,37 @@ export function createComponentPreservingBoardConversionContext(
       pcbComponentsById.set(element.pcb_component_id, element)
     }
   }
+  for (const pcbComponent of pcbComponentsById.values()) {
+    const sourceComponent = pcbComponent.source_component_id
+      ? sourceComponentsById.get(pcbComponent.source_component_id)
+      : undefined
+    if (!sourceComponent?.name) continue
+    pcbComponentCountByName.set(
+      sourceComponent.name,
+      (pcbComponentCountByName.get(sourceComponent.name) ?? 0) + 1,
+    )
+  }
 
   const pcbPortSelectorsBySourcePortId = new Map<
     SourcePortId,
     PcbPortSelector[]
   >()
+  const pcbPortIdsWithUnambiguousComponentSelectors = new Set(
+    circuitJson.flatMap((element) => {
+      if (element.type !== "pcb_port") return []
+      const pcbComponent = element.pcb_component_id
+        ? pcbComponentsById.get(element.pcb_component_id)
+        : undefined
+      const sourceComponent = pcbComponent?.source_component_id
+        ? sourceComponentsById.get(pcbComponent.source_component_id)
+        : undefined
+
+      return sourceComponent?.name &&
+        pcbComponentCountByName.get(sourceComponent.name) === 1
+        ? [element.pcb_port_id]
+        : []
+    }),
+  )
   for (const element of circuitJson) {
     if (element.type !== "pcb_port") continue
     const pcbComponent = element.pcb_component_id
@@ -76,6 +104,7 @@ export function createComponentPreservingBoardConversionContext(
 
   return {
     ...context,
+    pcbPortIdsWithUnambiguousComponentSelectors,
     pcbPortSelectorsBySourcePortId,
     pcbPortSelectorsByRuntimeNetName,
   }

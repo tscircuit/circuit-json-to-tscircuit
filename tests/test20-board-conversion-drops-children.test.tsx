@@ -57,8 +57,8 @@ test("test20 board conversion preserves child component geometry", async () => {
     "export const ConvertedBoard = () => (
       <board width="12mm" height="8mm" thickness="1.4mm" layers={2} material="fr4">
         <chip name="U1" pcbX={0} pcbY={0} pcbRotation="0deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["pin1","1","imported_pcb_port_1"],"pin2":["pin2","2","imported_pcb_port_2"]}} footprint={<footprint>
-                <smtpad portHints={["imported_pcb_port_1"]} pcbX="-1mm" pcbY="0mm" layer="top" coveredWithSolderMask={false} width="1mm" height="0.8mm" shape="rect" />
-        <smtpad portHints={["imported_pcb_port_2"]} pcbX="1mm" pcbY="0mm" layer="top" coveredWithSolderMask={false} width="1mm" height="0.8mm" shape="rect" />
+                <smtpad portHints={["imported_pcb_port_1","1"]} pcbX="-1mm" pcbY="0mm" layer="top" coveredWithSolderMask={false} width="1mm" height="0.8mm" shape="rect" />
+        <smtpad portHints={["imported_pcb_port_2","2"]} pcbX="1mm" pcbY="0mm" layer="top" coveredWithSolderMask={false} width="1mm" height="0.8mm" shape="rect" />
               </footprint>} />
         <schematictext text={""} schX={-0.2} schY={-0.33} anchor={"left"} fontSize={0.18} color={"#006464"} schRotation={0} />
         <schematictext text={"U1"} schX={-0.2} schY={0.33} anchor={"left"} fontSize={0.18} color={"#006464"} schRotation={0} />

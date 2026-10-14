@@ -10,6 +10,7 @@ export type PcbPortSelector = string
 
 export interface BoardConversionContext {
   pcbChipName: string
+  pcbPortIdsWithUnambiguousComponentSelectors: Set<PcbPortId>
   portHintByPcbPortId: Map<PcbPortId, ImportedPortHint>
   runtimeNetNameBySourceNetId: Map<SourceNetId, RuntimeNetName>
   pcbPortSelectorsBySourcePortId: Map<SourcePortId, PcbPortSelector[]>
