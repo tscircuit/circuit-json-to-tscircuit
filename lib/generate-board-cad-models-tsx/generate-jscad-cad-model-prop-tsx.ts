@@ -4,6 +4,7 @@ import type { CadModelParentPlacement } from "./converter-types"
 import { formatPointProp } from "./format-point-prop"
 import { getCadModelPlacement } from "./get-cad-model-placement"
 import { getJscadOperationInBaseModelFrame } from "./get-jscad-operation-in-base-model-frame"
+import { packJscadOperations } from "./pack-jscad-operations"
 
 export function generateJscadCadModelPropTsx({
   cadComponents,
@@ -41,7 +42,9 @@ export function generateJscadCadModelPropTsx({
   if (shapes.length === 0) return undefined
 
   const jscad: JscadOperation =
-    shapes.length === 1 ? shapes[0] : { type: "union", shapes }
+    shapes.length === 1
+      ? shapes[0]
+      : (packJscadOperations(shapes) ?? { type: "union", shapes })
   const properties = [
     `jscad: ${JSON.stringify(jscad)}`,
     `positionOffset: ${formatPointProp(basePlacement.positionOffset)}`,

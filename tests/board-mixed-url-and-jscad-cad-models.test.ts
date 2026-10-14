@@ -1,9 +1,23 @@
 import { expect, test } from "bun:test"
+import * as jscad from "@jscad/modeling"
 import type { CadComponent, CircuitJson, PcbComponent } from "circuit-json"
+import { executeJscadOperations, type JscadOperation } from "jscad-planner"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
 
-test("uses URL CAD models when a group also contains JSCAD", async () => {
+const executeJscadPlan = (jscadOperation: JscadOperation) => {
+  // @ts-expect-error @jscad/modeling overloads differ from the planner adapter.
+  return executeJscadOperations(jscad, jscadOperation)
+}
+
+const getModelJscadOrThrow = (cadComponent: CadComponent): JscadOperation => {
+  if (cadComponent.model_jscad === undefined) {
+    throw new Error("Expected a JSCAD CAD component")
+  }
+  return cadComponent.model_jscad
+}
+
+test("preserves URL and JSCAD bodies owned by the same component", async () => {
   const sourceCircuitJson: CircuitJson = [
     {
       type: "pcb_board",
@@ -80,11 +94,21 @@ test("uses URL CAD models when a group also contains JSCAD", async () => {
   const renderedStepModel = renderedCadComponents.find(
     (cadComponent) => cadComponent.model_step_url !== undefined,
   )
+  const renderedJscadModel = renderedCadComponents.find(
+    (cadComponent) => cadComponent.model_jscad !== undefined,
+  )
+  if (!renderedJscadModel) throw new Error("Expected a rendered JSCAD model")
+
+  const jscadGeometry = executeJscadPlan(
+    getModelJscadOrThrow(renderedJscadModel),
+  )
+  const jscadBoundingBox: number[][] =
+    jscad.measurements.measureBoundingBox(jscadGeometry)
 
   expect(generatedTsx).toContain("<cadmodel modelUrl=")
   expect(generatedTsx).not.toContain("<cadmodel jscad=")
-  expect(generatedTsx).not.toContain("jscad:")
-  expect(renderedCadComponents).toHaveLength(1)
+  expect(generatedTsx).toContain("cadModel={{ jscad:")
+  expect(renderedCadComponents).toHaveLength(2)
   expect(
     renderedCadComponents.every(
       (cadComponent) =>
@@ -98,5 +122,18 @@ test("uses URL CAD models when a group also contains JSCAD", async () => {
     position: { x: 4, y: 5, z: 0.8 },
     rotation: { x: 0, y: 0, z: 30 },
     model_step_url: "https://example.com/housing.step",
+    show_as_translucent_model: false,
   })
+  expect(renderedJscadModel).toMatchObject({
+    position: { x: 4, y: 5, z: 0.8 },
+    rotation: { x: 0, y: 0, z: 30 },
+    model_unit_to_mm_scale_factor: 1,
+    model_board_normal_direction: "z+",
+    model_origin_position: { x: 0, y: 0, z: 0 },
+    show_as_translucent_model: true,
+  })
+  expect(jscadBoundingBox).toEqual([
+    [-6, -4, -3],
+    [6, 4, 1],
+  ])
 })
