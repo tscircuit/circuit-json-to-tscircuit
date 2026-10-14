@@ -5,6 +5,17 @@ import {
   type JscadPolygon3,
 } from "jscad-planner"
 
+interface Point3 {
+  x: number
+  y: number
+  z: number
+}
+
+interface PackedJscadOperations {
+  jscad: JscadOperation
+  size?: Point3
+}
+
 const executeJscadOperation = (operation: JscadOperation): unknown => {
   // @ts-expect-error @jscad/modeling overloads differ from the planner adapter.
   return executeJscadOperations(jscad, operation)
@@ -21,9 +32,33 @@ const copyPolygon = ({
   color: polygon.color ?? geometryColor,
 })
 
+const getPackedJscadSize = (polygons: JscadPolygon3[]): Point3 | undefined => {
+  const vertices = polygons.flatMap((polygon) => polygon.vertices)
+  if (vertices.length === 0) return undefined
+
+  const [firstVertex, ...remainingVertices] = vertices
+  let minX = firstVertex[0]
+  let minY = firstVertex[1]
+  let minZ = firstVertex[2]
+  let maxX = firstVertex[0]
+  let maxY = firstVertex[1]
+  let maxZ = firstVertex[2]
+
+  for (const [x, y, z] of remainingVertices) {
+    minX = Math.min(minX, x)
+    minY = Math.min(minY, y)
+    minZ = Math.min(minZ, z)
+    maxX = Math.max(maxX, x)
+    maxY = Math.max(maxY, y)
+    maxZ = Math.max(maxZ, z)
+  }
+
+  return { x: maxX - minX, y: maxY - minY, z: maxZ - minZ }
+}
+
 export const packJscadOperations = (
   operations: JscadOperation[],
-): JscadOperation | undefined => {
+): PackedJscadOperations | undefined => {
   const polygons: JscadPolygon3[] = []
 
   for (const operation of operations) {
@@ -40,5 +75,8 @@ export const packJscadOperations = (
     )
   }
 
-  return { type: "createGeom3", polygons }
+  return {
+    jscad: { type: "createGeom3", polygons },
+    size: getPackedJscadSize(polygons),
+  }
 }
