@@ -114,6 +114,7 @@ test("combines grouped JSCAD bodies using the component CAD model API", async ()
     source_component_id: renderedPcbComponent?.source_component_id,
     position: { x: 10, y: 20, z: 0.8 },
     rotation: { x: 0, y: 0, z: 0 },
+    size: { x: 6.5, y: 4, z: 2 },
   })
   expect(boundingBox).toEqual([
     [-1, -2, -1],

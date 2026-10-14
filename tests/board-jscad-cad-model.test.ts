@@ -59,6 +59,7 @@ test("preserves a component-owned JSCAD CAD model", async () => {
       model_unit_to_mm_scale_factor: 1,
       model_board_normal_direction: "z+",
       model_origin_position: { x: 0, y: 0, z: 0 },
+      size: { x: 6, y: 3, z: 6 },
       show_as_translucent_model: true,
     },
   ]
@@ -86,6 +87,7 @@ test("preserves a component-owned JSCAD CAD model", async () => {
     position: { x: 2, y: 3, z: 0.8 },
     rotation: { x: 0, y: 0, z: 35 },
     model_jscad: expect.any(Object),
+    size: { x: 6, y: 3, z: 6 },
     show_as_translucent_model: true,
   })
 })
