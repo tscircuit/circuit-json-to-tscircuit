@@ -8,17 +8,19 @@ import type {
   RuntimeNetName,
   SourcePortId,
 } from "../board-conversion-types"
-import type { PcbComponentRuntimeNameByPcbComponentId } from "./get-pcb-component-runtime-name-by-pcb-component-id"
+import type { PcbComponentRuntimeNameByPcbComponentId } from "./get-board-child-runtime-names"
 
 type PcbComponentId = PcbComponent["pcb_component_id"]
 export function createComponentPreservingBoardConversionContext({
   circuitJson,
+  pcbChipName,
   pcbComponentRuntimeNameByPcbComponentId,
 }: {
   circuitJson: AnyCircuitElement[]
+  pcbChipName: string
   pcbComponentRuntimeNameByPcbComponentId: PcbComponentRuntimeNameByPcbComponentId
 }): BoardConversionContext {
-  const context = createBoardConversionContext(circuitJson)
+  const context = createBoardConversionContext({ circuitJson, pcbChipName })
   const pcbComponentsById = new Map<PcbComponentId, PcbComponent>()
 
   for (const element of circuitJson) {

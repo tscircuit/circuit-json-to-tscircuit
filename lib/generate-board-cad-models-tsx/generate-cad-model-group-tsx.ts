@@ -4,12 +4,12 @@ import { generateCadModelGroupModelTsx } from "./generate-cad-model-group-model-
 
 export function generateCadModelGroupTsx({
   cadModelGroup,
-  groupIndex,
   pcbBoard,
+  runtimeName,
 }: {
   cadModelGroup: CadModelGroup
-  groupIndex: number
   pcbBoard: PcbBoard
+  runtimeName: string
 }): string | undefined {
   const { parentPlacement } = cadModelGroup
   const cadModelTsx = generateCadModelGroupModelTsx({
@@ -19,7 +19,7 @@ export function generateCadModelGroupTsx({
   if (!cadModelTsx) return undefined
 
   const attributes = [
-    `name={${JSON.stringify(`ImportedCadModel${groupIndex + 1}`)}}`,
+    `name={${JSON.stringify(runtimeName)}}`,
     `pcbX={${parentPlacement.center.x}}`,
     `pcbY={${parentPlacement.center.y}}`,
     `pcbRotation="${parentPlacement.ccwRotationDegrees}deg"`,

@@ -4,7 +4,7 @@ import type {
   BoardConverterStage,
 } from "./BoardConverterContext"
 import { createComponentPreservingBoardConversionContext } from "./create-component-preserving-board-conversion-context"
-import { getPcbComponentRuntimeNameByPcbComponentId } from "./get-pcb-component-runtime-name-by-pcb-component-id"
+import { getBoardChildRuntimeNames } from "./get-board-child-runtime-names"
 import { convertBoardCadModels } from "./stages/convert-board-cad-models"
 import { convertBoardNets } from "./stages/convert-board-nets"
 import { convertBoardProperties } from "./stages/convert-board-properties"
@@ -38,18 +38,23 @@ export const convertBoardCircuitJson = ({
     throw new Error("Board conversion requires a pcb_board element")
   }
 
-  const pcbComponentRuntimeNameByPcbComponentId =
-    getPcbComponentRuntimeNameByPcbComponentId(circuitJson)
+  const {
+    pcbChipName,
+    pcbComponentRuntimeNameByPcbComponentId,
+    standaloneCadModelRuntimeNameByCadComponentId,
+  } = getBoardChildRuntimeNames(circuitJson)
 
   const context: BoardConverterContext = {
     circuitJson,
     footprintConversionContext: createComponentPreservingBoardConversionContext(
       {
         circuitJson,
+        pcbChipName,
         pcbComponentRuntimeNameByPcbComponentId,
       },
     ),
     pcbComponentRuntimeNameByPcbComponentId,
+    standaloneCadModelRuntimeNameByCadComponentId,
     pcbBoard,
     boardProps: [],
     boardChildren: [],

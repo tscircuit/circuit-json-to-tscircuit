@@ -33,7 +33,7 @@ test("distinct net names remain distinct regardless of input order", () => {
 
   for (const sourceNets of sourceNetOrders) {
     const circuitJson: AnyCircuitElement[] = [...sourceNets, via]
-    const context = createBoardConversionContext(circuitJson)
+    const context = createBoardConversionContext({ circuitJson })
 
     expect(Object.fromEntries(context.runtimeNetNameBySourceNetId)).toEqual({
       source_net_existing: "NET_12V_",

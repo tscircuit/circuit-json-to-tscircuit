@@ -6,6 +6,7 @@ export const convertBoardCadModels: BoardConverterStage = ({
   circuitJson,
   pcbBoard,
   boardChildren,
+  standaloneCadModelRuntimeNameByCadComponentId,
 }) => {
   const standaloneCadModelGroups = getCadModelGroups(circuitJson).filter(
     (cadModelGroup) =>
@@ -14,14 +15,21 @@ export const convertBoardCadModels: BoardConverterStage = ({
       ),
   )
 
-  for (const [
-    groupIndex,
-    cadModelGroup,
-  ] of standaloneCadModelGroups.entries()) {
+  for (const cadModelGroup of standaloneCadModelGroups) {
+    const firstCadComponent = cadModelGroup.cadComponents[0]
+    if (!firstCadComponent) continue
+    const runtimeName = standaloneCadModelRuntimeNameByCadComponentId.get(
+      firstCadComponent.cad_component_id,
+    )
+    if (!runtimeName) {
+      throw new Error(
+        `Missing runtime name for standalone CAD model ${firstCadComponent.cad_component_id}`,
+      )
+    }
     const cadModelGroupTsx = generateCadModelGroupTsx({
       cadModelGroup,
-      groupIndex,
       pcbBoard,
+      runtimeName,
     })
     if (cadModelGroupTsx) boardChildren.push(cadModelGroupTsx)
   }
