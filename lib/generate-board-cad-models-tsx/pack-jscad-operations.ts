@@ -6,6 +6,7 @@ import {
 } from "jscad-planner"
 
 const executeJscadOperation = (operation: JscadOperation): unknown => {
+  // @ts-expect-error @jscad/modeling overloads differ from the planner adapter.
   return executeJscadOperations(jscad, operation)
 }
 
