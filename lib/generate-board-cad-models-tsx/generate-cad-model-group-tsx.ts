@@ -1,35 +1,25 @@
 import type { PcbBoard } from "circuit-json"
 import type { CadModelGroup } from "./converter-types"
-import { generateCadModelTsx } from "./generate-cad-model-tsx"
+import { generateCadModelGroupModelTsx } from "./generate-cad-model-group-model-tsx"
 
 export function generateCadModelGroupTsx({
   cadModelGroup,
-  groupIndex,
   pcbBoard,
+  runtimeName,
 }: {
   cadModelGroup: CadModelGroup
-  groupIndex: number
   pcbBoard: PcbBoard
+  runtimeName: string
 }): string | undefined {
-  const { cadComponents, parentPlacement } = cadModelGroup
-  const modelElements = cadComponents.flatMap((cadComponent) => {
-    const modelElement = generateCadModelTsx({
-      cadComponent,
-      parentPlacement,
-      pcbBoard,
-    })
-    return modelElement ? [modelElement] : []
+  const { parentPlacement } = cadModelGroup
+  const cadModelTsx = generateCadModelGroupModelTsx({
+    cadModelGroup,
+    pcbBoard,
   })
-  if (modelElements.length === 0) return undefined
-
-  let cadModelTsx = modelElements[0]
-  if (modelElements.length > 1) {
-    cadModelTsx = `<cadassembly>${modelElements.join("\n")}</cadassembly>`
-  }
   if (!cadModelTsx) return undefined
 
   const attributes = [
-    `name={${JSON.stringify(`ImportedCadModel${groupIndex + 1}`)}}`,
+    `name={${JSON.stringify(runtimeName)}}`,
     `pcbX={${parentPlacement.center.x}}`,
     `pcbY={${parentPlacement.center.y}}`,
     `pcbRotation="${parentPlacement.ccwRotationDegrees}deg"`,

@@ -12,11 +12,15 @@ import { getRuntimeNetNames } from "./get-runtime-net-names"
 
 export type { BoardConversionContext } from "./board-conversion-types"
 
-const PCB_CHIP_NAME = "ImportedBoard"
+export const DEFAULT_PCB_CHIP_NAME = "ImportedBoard"
 
-export const createBoardConversionContext = (
-  circuitJson: AnyCircuitElement[],
-): BoardConversionContext => {
+export const createBoardConversionContext = ({
+  circuitJson,
+  pcbChipName = DEFAULT_PCB_CHIP_NAME,
+}: {
+  circuitJson: AnyCircuitElement[]
+  pcbChipName?: string
+}): BoardConversionContext => {
   const sourceNetIdsRequiringSelector =
     getSourceNetIdsRequiringSelector(circuitJson)
   const runtimeNetNameBySourceNetId = getRuntimeNetNames(
@@ -37,6 +41,10 @@ export const createBoardConversionContext = (
     circuitJson,
     runtimeNetNameBySourceNetId,
   })
+  const pcbPortSelectorsBySourcePortId = new Map<
+    SourcePortId,
+    PcbPortSelector[]
+  >()
   const pcbPortSelectorsByRuntimeNetName = new Map<
     RuntimeNetName,
     PcbPortSelector[]
@@ -44,20 +52,27 @@ export const createBoardConversionContext = (
   for (const [pcbPortId, sourcePortId] of sourcePortIdByPcbPortId) {
     const portHint = portHintByPcbPortId.get(pcbPortId)
     if (!portHint) continue
+    const selector = `.${pcbChipName} > .${portHint}`
+    const sourcePortSelectors =
+      pcbPortSelectorsBySourcePortId.get(sourcePortId) ?? []
+    sourcePortSelectors.push(selector)
+    pcbPortSelectorsBySourcePortId.set(sourcePortId, sourcePortSelectors)
     for (const runtimeNetName of runtimeNetNamesBySourcePortId.get(
       sourcePortId,
     ) ?? []) {
       const selectors =
         pcbPortSelectorsByRuntimeNetName.get(runtimeNetName) ?? []
-      selectors.push(`.${PCB_CHIP_NAME} > .${portHint}`)
+      selectors.push(selector)
       pcbPortSelectorsByRuntimeNetName.set(runtimeNetName, selectors)
     }
   }
 
   return {
-    pcbChipName: PCB_CHIP_NAME,
+    pcbChipName,
+    pcbPortIdsWithUnambiguousComponentSelectors: new Set<PcbPortId>(),
     portHintByPcbPortId,
     runtimeNetNameBySourceNetId,
+    pcbPortSelectorsBySourcePortId,
     pcbPortSelectorsByRuntimeNetName,
   }
 }
