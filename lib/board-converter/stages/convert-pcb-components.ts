@@ -114,16 +114,19 @@ export const convertPcbComponents: BoardConverterStage = ({
     const cadModelGroup = cadModelGroupByPcbComponentId.get(
       pcbComponent.pcb_component_id,
     )
-    const cadModelTsx = cadModelGroup
-      ? generateCadModelGroupModelTsx({
-          cadModelGroup: {
-            ...cadModelGroup,
-            parentPlacement: {
-              center: cadModelParentCenter,
-              ccwRotationDegrees: pcbComponent.rotation,
-              layer: pcbComponent.layer === "bottom" ? "bottom" : "top",
-            },
+    const localizedCadModelGroup: CadModelGroup | undefined = cadModelGroup
+      ? {
+          ...cadModelGroup,
+          parentPlacement: {
+            center: cadModelParentCenter,
+            ccwRotationDegrees: pcbComponent.rotation,
+            layer: pcbComponent.layer === "bottom" ? "bottom" : "top",
           },
+        }
+      : undefined
+    const cadModelTsx = localizedCadModelGroup
+      ? generateCadModelGroupModelTsx({
+          cadModelGroup: localizedCadModelGroup,
           pcbBoard,
         })
       : undefined
