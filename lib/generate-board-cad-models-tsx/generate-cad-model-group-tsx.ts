@@ -1,9 +1,6 @@
 import type { PcbBoard } from "circuit-json"
 import type { CadModelGroup } from "./converter-types"
-import {
-  generateCadModelGroupChildrenTsx,
-  generateCadModelGroupModelTsx,
-} from "./generate-cad-model-group-model-tsx"
+import { generateCadModelGroupModelTsx } from "./generate-cad-model-group-model-tsx"
 
 export function generateCadModelGroupTsx({
   cadModelGroup,
@@ -20,10 +17,6 @@ export function generateCadModelGroupTsx({
     pcbBoard,
   })
   if (!cadModelTsx) return undefined
-  const cadModelChildrenTsx = generateCadModelGroupChildrenTsx({
-    cadModelGroup,
-    pcbBoard,
-  })
 
   const attributes = [
     `name={${JSON.stringify(`ImportedCadModel${groupIndex + 1}`)}}`,
@@ -36,8 +29,5 @@ export function generateCadModelGroupTsx({
     "footprint={<footprint />}",
     `cadModel={${cadModelTsx}}`,
   ]
-  const chipContents = cadModelChildrenTsx.join("\n")
-  return chipContents
-    ? `<chip ${attributes.join(" ")}>${chipContents}</chip>`
-    : `<chip ${attributes.join(" ")} />`
+  return `<chip ${attributes.join(" ")} />`
 }

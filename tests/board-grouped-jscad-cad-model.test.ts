@@ -1,16 +1,43 @@
 import { expect, test } from "bun:test"
 import * as jscad from "@jscad/modeling"
 import type { CadComponent, CircuitJson } from "circuit-json"
+import { convertCSGToThreeGeom } from "jscad-electronics/vanilla"
 import { executeJscadOperations, type JscadOperation } from "jscad-planner"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
+
+type ViewerVertexColorKey = string
 
 const executeJscadPlan = (jscadOperation: JscadOperation) => {
   // @ts-expect-error @jscad/modeling overloads differ from the planner adapter.
   return executeJscadOperations(jscad, jscadOperation)
 }
 
-test("preserves each body transform in a grouped JSCAD model", async () => {
+const getModelJscadOrThrow = (cadComponent: CadComponent): JscadOperation => {
+  if (cadComponent.model_jscad === undefined) {
+    throw new Error("Expected a JSCAD CAD component")
+  }
+  return cadComponent.model_jscad
+}
+
+const getViewerVertexColors = (cadComponent: CadComponent): number[][] => {
+  const geometry = executeJscadPlan(getModelJscadOrThrow(cadComponent))
+  const threeGeometry = convertCSGToThreeGeom(geometry)
+  const colorAttribute = threeGeometry.getAttribute("color")
+  const colors = new Map<ViewerVertexColorKey, number[]>()
+  for (let vertexIndex = 0; vertexIndex < colorAttribute.count; vertexIndex++) {
+    const color = [
+      colorAttribute.getX(vertexIndex),
+      colorAttribute.getY(vertexIndex),
+      colorAttribute.getZ(vertexIndex),
+    ]
+    colors.set(color.join(","), color)
+  }
+  threeGeometry.dispose()
+  return [...colors.values()]
+}
+
+test("preserves each body transform and color in a grouped JSCAD model", async () => {
   const sourceCircuitJson: CircuitJson = [
     {
       type: "pcb_board",
@@ -49,7 +76,11 @@ test("preserves each body transform in a grouped JSCAD model", async () => {
       layer: "top",
       anchor_alignment: "center",
       model_object_fit: "contain_within_bounds",
-      model_jscad: { type: "cuboid", size: [2, 2, 2] },
+      model_jscad: {
+        type: "colorize",
+        color: [1, 0, 0],
+        shape: { type: "cuboid", size: [2, 2, 2] },
+      },
       model_unit_to_mm_scale_factor: 1,
       model_board_normal_direction: "z+",
       model_origin_position: { x: 0, y: 0, z: 0 },
@@ -64,7 +95,11 @@ test("preserves each body transform in a grouped JSCAD model", async () => {
       layer: "top",
       anchor_alignment: "center",
       model_object_fit: "contain_within_bounds",
-      model_jscad: { type: "cuboid", size: [4, 2, 1] },
+      model_jscad: {
+        type: "colorize",
+        color: [0, 0, 1],
+        shape: { type: "cuboid", size: [4, 2, 1] },
+      },
       model_unit_to_mm_scale_factor: 1,
       model_board_normal_direction: "z+",
       model_origin_position: { x: 0, y: 0, z: 0 },
@@ -80,16 +115,21 @@ test("preserves each body transform in a grouped JSCAD model", async () => {
   const renderedCadComponents = renderedCircuitJson.filter(
     (element): element is CadComponent => element.type === "cad_component",
   )
-  const modelJscad = renderedCadComponents[0]?.model_jscad
-  const geometry = executeJscadPlan(modelJscad)
-  const boundingBox = jscad.measurements.measureBoundingBox(
-    geometry,
-  ) as number[][]
-
-  expect(renderedCadComponents).toHaveLength(1)
-  expect(modelJscad).toMatchObject({ type: "union" })
-  expect(boundingBox).toEqual([
-    [-1, -2, -1],
-    [5.5, 2, 1],
+  expect(renderedCadComponents).toHaveLength(2)
+  expect(
+    renderedCadComponents.map((cadComponent) => cadComponent.position),
+  ).toEqual([
+    { x: 10, y: 20, z: 0.8 },
+    { x: 15, y: 20, z: 0.8 },
+  ])
+  expect(
+    renderedCadComponents.map((cadComponent) => cadComponent.rotation),
+  ).toEqual([
+    { x: 0, y: 0, z: 0 },
+    { x: 90, y: 90, z: 0 },
+  ])
+  expect(renderedCadComponents.map(getViewerVertexColors)).toEqual([
+    [[1, 0, 0]],
+    [[0, 0, 1]],
   ])
 })

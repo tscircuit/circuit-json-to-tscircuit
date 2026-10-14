@@ -1,9 +1,9 @@
 import type { PcbBoard } from "circuit-json"
 import type { CadModelGroup } from "./converter-types"
 import { generateCadModelTsx } from "./generate-cad-model-tsx"
-import { generateJscadCadModelPropTsx } from "./generate-jscad-cad-model-prop-tsx"
+import { generateJscadCadModelTsx } from "./generate-jscad-cad-model-tsx"
 
-const generateUrlCadModelElementsTsx = ({
+const generateCadModelElementsTsx = ({
   cadModelGroup,
   pcbBoard,
 }: {
@@ -11,9 +11,11 @@ const generateUrlCadModelElementsTsx = ({
   pcbBoard: PcbBoard
 }): string[] =>
   cadModelGroup.cadComponents.flatMap((cadComponent) => {
-    if (cadComponent.model_jscad !== undefined) return []
-
-    const modelElement = generateCadModelTsx({
+    const modelElementGenerator =
+      cadComponent.model_jscad === undefined
+        ? generateCadModelTsx
+        : generateJscadCadModelTsx
+    const modelElement = modelElementGenerator({
       cadComponent,
       parentPlacement: cadModelGroup.parentPlacement,
       pcbBoard,
@@ -28,18 +30,7 @@ export function generateCadModelGroupModelTsx({
   cadModelGroup: CadModelGroup
   pcbBoard: PcbBoard
 }): string | undefined {
-  const jscadCadComponents = cadModelGroup.cadComponents.filter(
-    (cadComponent) => cadComponent.model_jscad !== undefined,
-  )
-  if (jscadCadComponents.length > 0) {
-    return generateJscadCadModelPropTsx({
-      cadComponents: jscadCadComponents,
-      parentPlacement: cadModelGroup.parentPlacement,
-      pcbBoard,
-    })
-  }
-
-  const modelElements = generateUrlCadModelElementsTsx({
+  const modelElements = generateCadModelElementsTsx({
     cadModelGroup,
     pcbBoard,
   })
@@ -47,19 +38,4 @@ export function generateCadModelGroupModelTsx({
   if (modelElements.length === 1) return modelElements[0]
 
   return `<cadassembly>${modelElements.join("\n")}</cadassembly>`
-}
-
-export function generateCadModelGroupChildrenTsx({
-  cadModelGroup,
-  pcbBoard,
-}: {
-  cadModelGroup: CadModelGroup
-  pcbBoard: PcbBoard
-}): string[] {
-  const hasJscadCadComponent = cadModelGroup.cadComponents.some(
-    (cadComponent) => cadComponent.model_jscad !== undefined,
-  )
-  if (!hasJscadCadComponent) return []
-
-  return generateUrlCadModelElementsTsx({ cadModelGroup, pcbBoard })
 }

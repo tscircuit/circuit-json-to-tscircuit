@@ -99,12 +99,12 @@ test("preserves URL and JSCAD bodies owned by the same component", async () => {
   expect(renderedJscadModel).toMatchObject({
     position: { x: 4, y: 5, z: 0.8 },
     rotation: { x: 0, y: 0, z: 30 },
-    model_unit_to_mm_scale_factor: 1,
-    model_board_normal_direction: "z+",
-    model_origin_position: { x: 0, y: 0, z: 0 },
+    model_unit_to_mm_scale_factor: 2,
+    model_board_normal_direction: "x+",
+    model_origin_position: { x: 1, y: 0, z: 0 },
   })
   expect(jscadBoundingBox).toEqual([
-    [-6, -4, -3],
-    [6, 4, 1],
+    [-1, -2, -3],
+    [1, 2, 3],
   ])
 })
