@@ -1,6 +1,7 @@
 import type { PcbBoard } from "circuit-json"
 import type { CadModelGroup } from "./converter-types"
 import { generateCadModelGroupModelTsx } from "./generate-cad-model-group-model-tsx"
+import { isJscadCadModelGroupTranslucent } from "./is-jscad-cad-model-group-translucent"
 
 export function generateCadModelGroupTsx({
   cadModelGroup,
@@ -29,5 +30,8 @@ export function generateCadModelGroupTsx({
     "footprint={<footprint />}",
     `cadModel={${cadModelTsx}}`,
   ]
+  if (isJscadCadModelGroupTranslucent(cadModelGroup)) {
+    attributes.push("showAsTranslucentModel")
+  }
   return `<chip ${attributes.join(" ")} />`
 }

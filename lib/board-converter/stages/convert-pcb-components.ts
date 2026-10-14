@@ -4,6 +4,7 @@ import { formatJsxStringAttribute } from "../../format-jsx-string-attribute"
 import type { CadModelGroup } from "../../generate-board-cad-models-tsx/converter-types"
 import { generateCadModelGroupModelTsx } from "../../generate-board-cad-models-tsx/generate-cad-model-group-model-tsx"
 import { getCadModelGroups } from "../../generate-board-cad-models-tsx/get-cad-model-groups"
+import { isJscadCadModelGroupTranslucent } from "../../generate-board-cad-models-tsx/is-jscad-cad-model-group-translucent"
 import { generateFootprintTsx } from "../../generate-footprint-tsx"
 import type { BoardConverterStage } from "../BoardConverterContext"
 import { getPcbComponentRenderPlacement } from "../get-pcb-component-render-placement"
@@ -141,6 +142,12 @@ export const convertPcbComponents: BoardConverterStage = ({
 
     if (cadModelTsx) {
       componentProps.push(`cadModel={${cadModelTsx}}`)
+    }
+    if (
+      localizedCadModelGroup &&
+      isJscadCadModelGroupTranslucent(localizedCadModelGroup)
+    ) {
+      componentProps.push("showAsTranslucentModel")
     }
     if (pinLabels) {
       componentProps.push(`pinLabels={${JSON.stringify(pinLabels)}}`)

@@ -48,9 +48,5 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
-  },
-  "overrides": {
-    "@tscircuit/core": "https://pkg.pr.new/tscircuit/core/@tscircuit/core@3013d38",
-    "@tscircuit/props": "https://pkg.pr.new/@tscircuit/props@074b67d"
   }
 }

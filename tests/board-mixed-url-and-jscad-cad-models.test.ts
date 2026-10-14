@@ -1,16 +1,9 @@
 import { expect, test } from "bun:test"
-import * as jscad from "@jscad/modeling"
-import type { CadComponent, CircuitJson } from "circuit-json"
-import { executeJscadOperations, type JscadOperation } from "jscad-planner"
+import type { CadComponent, CircuitJson, PcbComponent } from "circuit-json"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
 
-const executeJscadPlan = (jscadOperation: JscadOperation) => {
-  // @ts-expect-error @jscad/modeling overloads differ from the planner adapter.
-  return executeJscadOperations(jscad, jscadOperation)
-}
-
-test("preserves URL and JSCAD bodies owned by the same component", async () => {
+test("uses URL CAD models when a group also contains JSCAD", async () => {
   const sourceCircuitJson: CircuitJson = [
     {
       type: "pcb_board",
@@ -68,6 +61,7 @@ test("preserves URL and JSCAD bodies owned by the same component", async () => {
       model_unit_to_mm_scale_factor: 2,
       model_board_normal_direction: "x+",
       model_origin_position: { x: 1, y: 0, z: 0 },
+      show_as_translucent_model: true,
     },
   ]
 
@@ -80,31 +74,29 @@ test("preserves URL and JSCAD bodies owned by the same component", async () => {
   const renderedCadComponents = renderedCircuitJson.filter(
     (element): element is CadComponent => element.type === "cad_component",
   )
+  const renderedPcbComponent = renderedCircuitJson.find(
+    (element): element is PcbComponent => element.type === "pcb_component",
+  )
   const renderedStepModel = renderedCadComponents.find(
     (cadComponent) => cadComponent.model_step_url !== undefined,
   )
-  const renderedJscadModel = renderedCadComponents.find(
-    (cadComponent) => cadComponent.model_jscad !== undefined,
-  )
-  const jscadGeometry = executeJscadPlan(renderedJscadModel?.model_jscad)
-  const jscadBoundingBox: number[][] =
-    jscad.measurements.measureBoundingBox(jscadGeometry)
 
-  expect(renderedCadComponents).toHaveLength(2)
+  expect(generatedTsx).toContain("<cadmodel modelUrl=")
+  expect(generatedTsx).not.toContain("<cadmodel jscad=")
+  expect(generatedTsx).not.toContain("jscad:")
+  expect(renderedCadComponents).toHaveLength(1)
+  expect(
+    renderedCadComponents.every(
+      (cadComponent) =>
+        cadComponent.pcb_component_id ===
+          renderedPcbComponent?.pcb_component_id &&
+        cadComponent.source_component_id ===
+          renderedPcbComponent?.source_component_id,
+    ),
+  ).toBe(true)
   expect(renderedStepModel).toMatchObject({
     position: { x: 4, y: 5, z: 0.8 },
     rotation: { x: 0, y: 0, z: 30 },
     model_step_url: "https://example.com/housing.step",
   })
-  expect(renderedJscadModel).toMatchObject({
-    position: { x: 4, y: 5, z: 0.8 },
-    rotation: { x: 0, y: 0, z: 30 },
-    model_unit_to_mm_scale_factor: 2,
-    model_board_normal_direction: "x+",
-    model_origin_position: { x: 1, y: 0, z: 0 },
-  })
-  expect(jscadBoundingBox).toEqual([
-    [-1, -2, -3],
-    [1, 2, 3],
-  ])
 })
