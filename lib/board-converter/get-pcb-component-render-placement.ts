@@ -28,6 +28,26 @@ const isPhysicalPcbElement = (
 ): element is AnyCircuitElement & { type: PhysicalPcbElementType } =>
   physicalPcbElementTypes.has(element.type as PhysicalPcbElementType)
 
+const getElementsAsRenderedByGeneratedTsx = (
+  elements: AnyCircuitElement[],
+): AnyCircuitElement[] =>
+  elements.map((element) => {
+    if (
+      element.type !== "pcb_plated_hole" ||
+      element.shape !== "rotated_pill_hole_with_rect_pad"
+    ) {
+      return element
+    }
+
+    // The plated-hole component has one rotation for both the hole and its
+    // rectangular pad. The TSX converter uses the imported hole rotation, so
+    // calculate the parent bounds from that same rendered geometry.
+    return {
+      ...element,
+      rect_ccw_rotation: element.hole_ccw_rotation,
+    }
+  })
+
 export interface PcbComponentRenderPlacement {
   cadModelParentCenter: { x: number; y: number }
   componentPosition: { x: number; y: number }
@@ -52,7 +72,9 @@ export const getPcbComponentRenderPlacement = ({
       "pcb_component_id" in element &&
       element.pcb_component_id === pcbComponent.pcb_component_id,
   )
-  const physicalBounds = getBoundsOfPcbElements(physicalElements)
+  const physicalBounds = getBoundsOfPcbElements(
+    getElementsAsRenderedByGeneratedTsx(physicalElements),
+  )
   const physicalWidth = physicalBounds.maxX - physicalBounds.minX
   const physicalHeight = physicalBounds.maxY - physicalBounds.minY
 
