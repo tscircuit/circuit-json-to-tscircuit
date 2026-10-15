@@ -2,8 +2,12 @@ import type { AnyCircuitElement, PcbComponent } from "circuit-json"
 import type { BoardConversionContext as FootprintConversionContext } from "../../board-conversion-context"
 import { formatJsxStringAttribute } from "../../format-jsx-string-attribute"
 import type { CadModelGroup } from "../../generate-board-cad-models-tsx/converter-types"
-import { generateCadModelGroupModelTsx } from "../../generate-board-cad-models-tsx/generate-cad-model-group-model-tsx"
+import {
+  generateCadModelGroupChildrenTsx,
+  generateCadModelGroupModelTsx,
+} from "../../generate-board-cad-models-tsx/generate-cad-model-group-model-tsx"
 import { getCadModelGroups } from "../../generate-board-cad-models-tsx/get-cad-model-groups"
+import { isJscadCadModelGroupTranslucent } from "../../generate-board-cad-models-tsx/is-jscad-cad-model-group-translucent"
 import { generateFootprintTsx } from "../../generate-footprint-tsx"
 import type { BoardConverterStage } from "../BoardConverterContext"
 import { getPcbComponentRenderPlacement } from "../get-pcb-component-render-placement"
@@ -130,6 +134,12 @@ export const convertPcbComponents: BoardConverterStage = ({
           pcbBoard,
         })
       : undefined
+    const childModelElementsTsx = localizedCadModelGroup
+      ? generateCadModelGroupChildrenTsx({
+          cadModelGroup: localizedCadModelGroup,
+          pcbBoard,
+        })
+      : []
     const componentProps = [
       `name=${formatJsxStringAttribute(componentName)}`,
       `pcbX={${componentPosition.x}}`,
@@ -141,6 +151,12 @@ export const convertPcbComponents: BoardConverterStage = ({
 
     if (cadModelTsx) {
       componentProps.push(`cadModel={${cadModelTsx}}`)
+    }
+    if (
+      localizedCadModelGroup &&
+      isJscadCadModelGroupTranslucent(localizedCadModelGroup)
+    ) {
+      componentProps.push("showAsTranslucentModel")
     }
     if (pinLabels) {
       componentProps.push(`pinLabels={${JSON.stringify(pinLabels)}}`)
@@ -164,8 +180,11 @@ export const convertPcbComponents: BoardConverterStage = ({
     if (pcbComponent.obstructs_within_bounds === false) {
       componentProps.push("obstructsWithinBounds={false}")
     }
+    const chipOpeningTsx = `<chip ${componentProps.join(" ")} footprint={${footprintTsx ?? "<footprint />"}}`
     boardChildren.push(
-      `<chip ${componentProps.join(" ")} footprint={${footprintTsx ?? "<footprint />"}} />`,
+      childModelElementsTsx.length === 0
+        ? `${chipOpeningTsx} />`
+        : `${chipOpeningTsx}>${childModelElementsTsx.join("\n")}</chip>`,
     )
   }
 }
