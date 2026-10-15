@@ -36,8 +36,8 @@ test("test1 basic circuit", async () => {
     <courtyardoutline outline={[{"x":-1.647000000000162,"y":0.9103999999999814},{"x":1.6216000000000577,"y":0.9103999999999814},{"x":1.6216000000000577,"y":-0.9103999999998678},{"x":-1.647000000000162,"y":-0.9103999999998678},{"x":-1.647000000000162,"y":0.9103999999999814}]} layer="top" />
           </footprint>}
         symbol={<symbol>
-      <schematictext text="A_0603WAF1002T5E" x={-0.6000000000000001} y={-0.33} anchorAlignment="left" fontSize={0.18} color="#006464" rotation={0} />
-      <schematictext text="" x={-0.6000000000000001} y={0.33} anchorAlignment="left" fontSize={0.18} color="#006464" rotation={0} />
+      <schematictext text="A_0603WAF1002T5E" schX={-0.6000000000000001} schY={-0.33} anchor="left" fontSize={0.18} color="#006464" schRotation={0} />
+      <schematictext text="" schX={-0.6000000000000001} schY={0.33} anchor="left" fontSize={0.18} color="#006464" schRotation={0} />
     </symbol>}
         {...props}
       />
