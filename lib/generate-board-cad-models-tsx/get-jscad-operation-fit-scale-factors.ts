@@ -30,18 +30,22 @@ export function getJscadOperationFitScaleFactors({
 
   const [minimumPoint, maximumPoint] =
     jscad.measurements.measureBoundingBox(geometry)
+  // CAD size is measured in model units, so the renderer scales both the
+  // geometry and its target bounds before applying object fit.
+  const modelUnitToMmScaleFactor =
+    cadComponent.model_unit_to_mm_scale_factor ?? 1
   const axisScaleFactors: Point3 = {
     x: getSafeScaleFactor({
       sourceLength: maximumPoint[0] - minimumPoint[0],
-      targetLength: cadComponent.size.x,
+      targetLength: cadComponent.size.x * modelUnitToMmScaleFactor,
     }),
     y: getSafeScaleFactor({
       sourceLength: maximumPoint[1] - minimumPoint[1],
-      targetLength: cadComponent.size.y,
+      targetLength: cadComponent.size.y * modelUnitToMmScaleFactor,
     }),
     z: getSafeScaleFactor({
       sourceLength: maximumPoint[2] - minimumPoint[2],
-      targetLength: cadComponent.size.z,
+      targetLength: cadComponent.size.z * modelUnitToMmScaleFactor,
     }),
   }
 

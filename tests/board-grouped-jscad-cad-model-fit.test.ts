@@ -61,7 +61,7 @@ test("preserves each grouped JSCAD body's fitted size", async () => {
         color: [1, 0, 0],
         shape: { type: "cuboid", size: [2, 2, 2] },
       },
-      model_unit_to_mm_scale_factor: 1,
+      model_unit_to_mm_scale_factor: 2,
       model_board_normal_direction: "z+",
       model_origin_position: { x: 0, y: 0, z: 0 },
       size: { x: 6, y: 6, z: 6 },
@@ -103,9 +103,9 @@ test("preserves each grouped JSCAD body's fitted size", async () => {
     jscad.measurements.measureBoundingBox(geometry)
 
   expect(renderedCadComponents).toHaveLength(1)
-  expect(renderedCadComponent.size).toEqual({ x: 14, y: 6, z: 6 })
+  expect(renderedCadComponent.size).toEqual({ x: 17, y: 12, z: 12 })
   expect(boundingBox).toEqual([
-    [-3, -3, -3],
-    [11, 3, 3],
+    [-6, -6, -6],
+    [11, 6, 6],
   ])
 })
