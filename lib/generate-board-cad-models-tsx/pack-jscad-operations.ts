@@ -1,24 +1,11 @@
 import jscad from "@jscad/modeling"
-import {
-  executeJscadOperations,
-  type JscadOperation,
-  type JscadPolygon3,
-} from "jscad-planner"
-
-interface Point3 {
-  x: number
-  y: number
-  z: number
-}
+import { type JscadOperation, type JscadPolygon3 } from "jscad-planner"
+import type { Point3 } from "./converter-types"
+import { executeJscadOperation } from "./execute-jscad-operation"
 
 interface PackedJscadOperations {
   jscad: JscadOperation
   size?: Point3
-}
-
-const executeJscadOperation = (operation: JscadOperation): unknown => {
-  // @ts-expect-error @jscad/modeling overloads differ from the planner adapter.
-  return executeJscadOperations(jscad, operation)
 }
 
 const copyPolygon = ({

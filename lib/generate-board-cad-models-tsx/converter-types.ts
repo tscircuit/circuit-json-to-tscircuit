@@ -1,5 +1,11 @@
 import type { CadComponent, PcbComponent } from "circuit-json"
 
+export interface Point3 {
+  x: number
+  y: number
+  z: number
+}
+
 export interface CadModelUrl {
   format: "glb" | "gltf" | "obj" | "step" | "stl" | "wrl"
   url: string
