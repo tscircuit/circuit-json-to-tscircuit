@@ -132,13 +132,13 @@ export const generateSymbolElements = (
     const y = text.position?.y ?? 0
     const rawText = String(text.text ?? "")
     const escapedText = escapeJsxText(rawText)
-    const anchorAlignment = text.anchor ?? "center"
+    const anchor = text.anchor ?? "center"
     const fontSize = text.font_size ?? 0.1
     const color = text.color ?? "black"
     const rotation = text.rotation ?? 0
 
     elementStrings.push(
-      `<schematictext text="${escapedText}" x={${x}} y={${y}} anchorAlignment="${anchorAlignment}" fontSize={${fontSize}} color="${color}" rotation={${rotation}} />`,
+      `<schematictext text="${escapedText}" schX={${x}} schY={${y}} anchor="${anchor}" fontSize={${fontSize}} color="${color}" schRotation={${rotation}} />`,
     )
   }
 
