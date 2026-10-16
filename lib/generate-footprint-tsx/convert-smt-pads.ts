@@ -21,10 +21,10 @@ export const convertSmtPads: FootprintElementConverter = (
     if (portHints !== undefined) {
       commonAttrs.push(`portHints={${JSON.stringify(portHints)}}`)
     }
-    if ("x" in smtPad && smtPad.x !== undefined) {
+    if (smtPad.shape !== "polygon" && "x" in smtPad && smtPad.x !== undefined) {
       commonAttrs.push(`pcbX="${mmStr(smtPad.x)}"`)
     }
-    if ("y" in smtPad && smtPad.y !== undefined) {
+    if (smtPad.shape !== "polygon" && "y" in smtPad && smtPad.y !== undefined) {
       commonAttrs.push(`pcbY="${mmStr(smtPad.y)}"`)
     }
     if (smtPad.layer !== undefined) {
