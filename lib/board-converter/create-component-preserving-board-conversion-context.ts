@@ -9,6 +9,7 @@ import type {
   SourcePortId,
 } from "../board-conversion-types"
 import type { PcbComponentRuntimeNameByPcbComponentId } from "./get-board-child-runtime-names"
+import { getPcbPortIdsWithSafeOriginalHints } from "./get-pcb-port-ids-with-safe-original-hints"
 
 type PcbComponentId = PcbComponent["pcb_component_id"]
 export function createComponentPreservingBoardConversionContext({
@@ -32,20 +33,6 @@ export function createComponentPreservingBoardConversionContext({
     SourcePortId,
     PcbPortSelector[]
   >()
-  const pcbPortIdsWithUnambiguousComponentSelectors = new Set(
-    circuitJson.flatMap((element) => {
-      if (element.type !== "pcb_port") return []
-      const pcbComponent = element.pcb_component_id
-        ? pcbComponentsById.get(element.pcb_component_id)
-        : undefined
-      return pcbComponent &&
-        pcbComponentRuntimeNameByPcbComponentId.has(
-          pcbComponent.pcb_component_id,
-        )
-        ? [element.pcb_port_id]
-        : []
-    }),
-  )
   for (const element of circuitJson) {
     if (element.type !== "pcb_port") continue
     const pcbComponent = element.pcb_component_id
@@ -91,7 +78,10 @@ export function createComponentPreservingBoardConversionContext({
 
   return {
     ...context,
-    pcbPortIdsWithUnambiguousComponentSelectors,
+    pcbPortIdsWithSafeOriginalHints: getPcbPortIdsWithSafeOriginalHints({
+      circuitJson,
+      pcbComponentRuntimeNameByPcbComponentId,
+    }),
     pcbPortSelectorsBySourcePortId,
     pcbPortSelectorsByRuntimeNetName,
   }
