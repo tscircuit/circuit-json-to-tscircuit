@@ -5,6 +5,7 @@ import { formatElement } from "./format-attributes"
 import type { SchematicElementConverter } from "./converter-types"
 import { getSchematicPrimitivesInRenderOrder } from "./get-schematic-primitives-in-render-order"
 import { getSchematicPrimitivePaint } from "./get-schematic-primitive-paint"
+import { getNativeSchematicComponentIds } from "./get-native-schematic-component-ids"
 
 export const convertPrimitives: SchematicElementConverter = (circuitJson) => [
   ...generateSymbolElements(
@@ -14,7 +15,10 @@ export const convertPrimitives: SchematicElementConverter = (circuitJson) => [
         element.type === "schematic_table_cell",
     ),
   ),
-  ...getSchematicPrimitivesInRenderOrder(circuitJson).flatMap((element) => {
+  ...getSchematicPrimitivesInRenderOrder(
+    circuitJson,
+    getNativeSchematicComponentIds(circuitJson),
+  ).flatMap((element) => {
     const paint = getSchematicPrimitivePaint(element)
     switch (element.type) {
       case "schematic_text":

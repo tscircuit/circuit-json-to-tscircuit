@@ -24,13 +24,15 @@ export const convertSymbolPrimitives = ({
   symbolToSchematicTransform,
   reference,
   displayText,
+  includeReferenceAndValue = true,
 }: {
   symbol: SchSymbol
   symbolToSchematicTransform: Matrix
   reference: string
   displayText: string
+  includeReferenceAndValue?: boolean
 }): string[] =>
-  symbol.primitives.map((primitive) => {
+  symbol.primitives.flatMap((primitive) => {
     if (primitive.type === "path") {
       const points = primitive.points.map((point) =>
         applyToPoint(symbolToSchematicTransform, point),
@@ -44,20 +46,29 @@ export const convertSymbolPrimitives = ({
     }
     const center = applyToPoint(symbolToSchematicTransform, primitive)
     if (primitive.type === "text") {
+      if (
+        !includeReferenceAndValue &&
+        (primitive.text === "{REF}" || primitive.text === "{VAL}")
+      ) {
+        return []
+      }
       const text =
         primitive.text === "{REF}"
           ? reference
           : primitive.text === "{VAL}"
             ? displayText
             : primitive.text
-      return formatElement("schematictext", {
-        text,
-        schX: center.x,
-        schY: center.y,
-        anchor: anchors[primitive.anchor],
-        fontSize:
-          primitive.fontSize ?? schematic_text.shape.font_size.parse(undefined),
-      })
+      return [
+        formatElement("schematictext", {
+          text,
+          schX: center.x,
+          schY: center.y,
+          anchor: anchors[primitive.anchor],
+          fontSize:
+            primitive.fontSize ??
+            schematic_text.shape.font_size.parse(undefined),
+        }),
+      ]
     }
     const symbolToSchematicVectorTransform = {
       ...symbolToSchematicTransform,
@@ -69,12 +80,14 @@ export const convertSymbolPrimitives = ({
         x: primitive.radius,
         y: 0,
       })
-      return formatElement("schematiccircle", {
-        center,
-        radius: Math.hypot(radiusVector.x, radiusVector.y),
-        strokeWidth: SYMBOL_OUTLINE_STROKE_WIDTH,
-        isFilled: primitive.fill,
-      })
+      return [
+        formatElement("schematiccircle", {
+          center,
+          radius: Math.hypot(radiusVector.x, radiusVector.y),
+          strokeWidth: SYMBOL_OUTLINE_STROKE_WIDTH,
+          isFilled: primitive.fill,
+        }),
+      ]
     }
     const widthVector = applyToPoint(symbolToSchematicVectorTransform, {
       x: primitive.width,
@@ -86,11 +99,13 @@ export const convertSymbolPrimitives = ({
     })
     const ccwRotationDegrees =
       (Math.atan2(widthVector.y, widthVector.x) * 180) / Math.PI
-    return formatElement("schematicrect", {
-      schX: center.x,
-      schY: center.y,
-      width: Math.hypot(widthVector.x, widthVector.y),
-      height: Math.hypot(heightVector.x, heightVector.y),
-      rotation: ccwRotationDegrees,
-    })
+    return [
+      formatElement("schematicrect", {
+        schX: center.x,
+        schY: center.y,
+        width: Math.hypot(widthVector.x, widthVector.y),
+        height: Math.hypot(heightVector.x, heightVector.y),
+        rotation: ccwRotationDegrees,
+      }),
+    ]
   })
