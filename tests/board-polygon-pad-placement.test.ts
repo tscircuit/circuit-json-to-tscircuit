@@ -1,9 +1,54 @@
 import { expect, test } from "bun:test"
-import type { CircuitJson } from "circuit-json"
+import type { CircuitJson, PcbSmtPad } from "circuit-json"
 import { convertCircuitJsonToPcbSvg } from "circuit-to-svg"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { stackSvgsHorizontally } from "stack-svgs"
 import { runTscircuitCode } from "tscircuit"
+
+type PolygonPcbSmtPad = Extract<PcbSmtPad, { shape: "polygon" }>
+
+function getPolygonPadCenter(polygonPad: PolygonPcbSmtPad): {
+  x: number
+  y: number
+} {
+  const coordinateSum = polygonPad.points.reduce(
+    (sum, point) => ({ x: sum.x + point.x, y: sum.y + point.y }),
+    { x: 0, y: 0 },
+  )
+  return {
+    x: coordinateSum.x / polygonPad.points.length,
+    y: coordinateSum.y / polygonPad.points.length,
+  }
+}
+
+function getPolygonPads(circuitJson: CircuitJson): PolygonPcbSmtPad[] {
+  return circuitJson
+    .filter(
+      (element): element is PolygonPcbSmtPad =>
+        element.type === "pcb_smtpad" && element.shape === "polygon",
+    )
+    .sort(
+      (first, second) =>
+        getPolygonPadCenter(first).x - getPolygonPadCenter(second).x,
+    )
+}
+
+function expectPolygonPointsMatch(params: {
+  renderedPad: PolygonPcbSmtPad
+  sourcePad: PolygonPcbSmtPad
+}): void {
+  expect(params.renderedPad.points).toHaveLength(params.sourcePad.points.length)
+  for (const [pointIndex, sourcePoint] of params.sourcePad.points.entries()) {
+    expect(params.renderedPad.points[pointIndex]?.x).toBeCloseTo(
+      sourcePoint.x,
+      6,
+    )
+    expect(params.renderedPad.points[pointIndex]?.y).toBeCloseTo(
+      sourcePoint.y,
+      6,
+    )
+  }
+}
 
 test("preserves polygon pad placement on rotated components", async () => {
   const sourceCircuitJson: CircuitJson = [
@@ -100,6 +145,14 @@ test("preserves polygon pad placement on rotated components", async () => {
   const renderedCircuitJson = (await runTscircuitCode(
     generatedTsx,
   )) as CircuitJson
+  const sourcePolygonPads = getPolygonPads(sourceCircuitJson)
+  const renderedPolygonPads = getPolygonPads(renderedCircuitJson)
+  expect(renderedPolygonPads).toHaveLength(sourcePolygonPads.length)
+  for (const [padIndex, sourcePad] of sourcePolygonPads.entries()) {
+    const renderedPad = renderedPolygonPads[padIndex]
+    if (!renderedPad) throw new Error("Missing rendered polygon pad")
+    expectPolygonPointsMatch({ renderedPad, sourcePad })
+  }
   const comparisonSvg = stackSvgsHorizontally(
     [
       convertCircuitJsonToPcbSvg(sourceCircuitJson),
