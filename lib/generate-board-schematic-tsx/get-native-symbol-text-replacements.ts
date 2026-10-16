@@ -7,6 +7,11 @@ import type {
 } from "circuit-json"
 import { resolveNativeSchematicSymbolName } from "./resolve-native-schematic-symbol-name"
 import { isPinDesignatorForPort } from "./is-pin-designator-for-port"
+import {
+  getDistanceFromSchematicTextAxis,
+  getNearestSchematicText,
+} from "./get-nearest-schematic-text"
+import { hasMultipleNativeSymbolUnits } from "./has-multiple-native-symbol-units"
 
 export type SchematicComponentId = SchematicComponent["schematic_component_id"]
 export type SchematicPortId = SchematicPort["schematic_port_id"]
@@ -21,7 +26,9 @@ export interface NativeSymbolTextReplacement {
   importedTextIds: Set<SchematicTextId>
   replacedPinPortIds: Set<SchematicPortId>
   replacesReference: boolean
-  replacesDisplayText: boolean
+  includeNativeDisplayText: boolean
+  referenceFontSize?: number
+  displayTextFontSize?: number
 }
 
 const distanceBetween = (
@@ -29,27 +36,6 @@ const distanceBetween = (
   secondPoint: { x: number; y: number },
 ): number =>
   Math.hypot(firstPoint.x - secondPoint.x, firstPoint.y - secondPoint.y)
-
-const hasMultipleNativeSymbolUnits = ({
-  circuitJson,
-  schematicComponent,
-  symbolName,
-}: {
-  circuitJson: CircuitJson
-  schematicComponent: SchematicComponent
-  symbolName: string
-}): boolean =>
-  circuitJson.filter(
-    (candidate): candidate is SchematicComponent =>
-      candidate.type === "schematic_component" &&
-      candidate.source_component_id ===
-        schematicComponent.source_component_id &&
-      !candidate.symbol_name &&
-      resolveNativeSchematicSymbolName({
-        circuitJson,
-        schematicComponent: candidate,
-      }) === symbolName,
-  ).length > 1
 
 export const getNativeSymbolTextReplacements = (
   circuitJson: CircuitJson,
@@ -86,18 +72,25 @@ export const getNativeSymbolTextReplacements = (
         distanceBetween(schematicText.position, element.center) <=
           labelSearchDistance,
     )
-    const displayValueTexts = hasMultipleNativeSymbolUnits({
+    const nearestDisplayValueText = getNearestSchematicText({
+      schematicTexts: schematicTexts.filter((schematicText) =>
+        displayTexts.has(schematicText.text),
+      ),
+      schematicComponent: element,
+    })
+    const displayValueTexts =
+      nearestDisplayValueText &&
+      getDistanceFromSchematicTextAxis({
+        schematicText: nearestDisplayValueText,
+        schematicComponent: element,
+      }) <= labelSearchDistance
+        ? [nearestDisplayValueText]
+        : []
+    const isMultiUnitSymbol = hasMultipleNativeSymbolUnits({
       circuitJson,
       schematicComponent: element,
       symbolName,
     })
-      ? []
-      : schematicTexts.filter(
-          (schematicText) =>
-            displayTexts.has(schematicText.text) &&
-            distanceBetween(schematicText.position, element.center) <=
-              labelSearchDistance,
-        )
     const schematicPorts = circuitJson.filter(
       (candidate): candidate is SchematicPort =>
         candidate.type === "schematic_port" &&
@@ -126,7 +119,13 @@ export const getNativeSymbolTextReplacements = (
         ),
         replacedPinPortIds,
         replacesReference: referenceTexts.length > 0,
-        replacesDisplayText: displayValueTexts.length > 0,
+        includeNativeDisplayText:
+          displayValueTexts.length > 0 && !isMultiUnitSymbol,
+        referenceFontSize: getNearestSchematicText({
+          schematicTexts: referenceTexts,
+          schematicComponent: element,
+        })?.font_size,
+        displayTextFontSize: nearestDisplayValueText?.font_size,
       },
     ]
   })

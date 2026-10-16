@@ -6,10 +6,12 @@ import type {
   CircuitJson,
   SchematicComponent,
   SchematicPort,
+  SchematicText,
   SourcePort,
 } from "circuit-json"
 import { symbols, type SchSymbol } from "schematic-symbols"
-import { applyToPoint } from "transformation-matrix"
+import { applyToPoint, identity } from "transformation-matrix"
+import { convertSymbolPrimitives } from "../lib/generate-board-schematic-tsx/convert-symbol-primitives"
 import { getSymbolToSchematicTransform } from "../lib/generate-board-schematic-tsx/get-symbol-to-schematic-transform"
 import { matchSymbolPortsByPinIdentity } from "../lib/generate-board-schematic-tsx/match-symbol-ports-by-pin-identity"
 import { getNativeSymbolTextReplacements } from "../lib/generate-board-schematic-tsx/get-native-symbol-text-replacements"
@@ -134,7 +136,7 @@ test("real TI custom components use aligned native schematic symbols", () => {
   }
 })
 
-test("multi-unit native symbols preserve their imported value placement", () => {
+test("multi-unit native symbols keep one package value label", () => {
   const circuitJson = loadTiFixture("lmg342x-bb-evm")
   const schmittComponentIds = circuitJson.flatMap((element) =>
     element.type === "schematic_component" &&
@@ -155,6 +157,95 @@ test("multi-unit native symbols preserve their imported value placement", () => 
     replacements.every((replacement) => replacement.replacesReference),
   ).toBe(true)
   expect(
-    replacements.every((replacement) => !replacement.replacesDisplayText),
+    replacements.every((replacement) => !replacement.includeNativeDisplayText),
+  ).toBe(true)
+
+  const removedTextIds = new Set(
+    replacements.flatMap((replacement) => [...replacement.importedTextIds]),
+  )
+  const packageValueTexts = circuitJson.filter(
+    (element): element is SchematicText =>
+      element.type === "schematic_text" &&
+      element.text === "SN74LVC3G14DCUTG4" &&
+      element.rotation === 0,
+  )
+  const perUnitValueTexts = circuitJson.filter(
+    (element): element is SchematicText =>
+      element.type === "schematic_text" &&
+      element.text === "SN74LVC3G14DCUTG4" &&
+      element.rotation === 90,
+  )
+
+  expect(packageValueTexts).toHaveLength(2)
+  expect(
+    packageValueTexts.every(
+      (schematicText) => !removedTextIds.has(schematicText.schematic_text_id),
+    ),
+  ).toBe(true)
+  expect(perUnitValueTexts).toHaveLength(6)
+  expect(
+    perUnitValueTexts.every((schematicText) =>
+      removedTextIds.has(schematicText.schematic_text_id),
+    ),
+  ).toBe(true)
+  expect(
+    replacements.every(
+      (replacement) => replacement.referenceFontSize === 0.12737378415933304,
+    ),
+  ).toBe(true)
+})
+
+test("filled native symbol details use the schematic outline color", () => {
+  const symbolsWithSolidDetails: NativeSchematicSymbolName[] = [
+    "phototransistor_optocoupler_right",
+    "transformer_4_winding_right",
+    "dual_series_schottky_diode_right",
+  ]
+
+  for (const symbolName of symbolsWithSolidDetails) {
+    const symbol = nativeSymbols[symbolName]
+    expect(symbol, symbolName).toBeDefined()
+    if (!symbol) continue
+    const convertedPrimitives = convertSymbolPrimitives({
+      symbol,
+      symbolToSchematicTransform: identity(),
+      reference: "REF",
+      displayText: "VALUE",
+      filledPrimitiveColor: "#840000",
+    })
+    const filledPrimitives = convertedPrimitives.filter((element) =>
+      element.includes('fillColor={"#840000"}'),
+    )
+
+    expect(filledPrimitives.length, symbolName).toBeGreaterThan(0)
+  }
+})
+
+test("native symbol labels preserve imported font sizes", () => {
+  const symbol = nativeSymbols.dual_series_schottky_diode_right
+  expect(symbol).toBeDefined()
+  if (!symbol) return
+
+  const convertedPrimitives = convertSymbolPrimitives({
+    symbol,
+    symbolToSchematicTransform: identity(),
+    reference: "D1",
+    displayText: "BAS70-04-E3-18",
+    referenceFontSize: 0.12,
+    displayTextFontSize: 0.13,
+  })
+
+  expect(
+    convertedPrimitives.some(
+      (element) =>
+        element.includes('text={"D1"}') && element.includes("fontSize={0.12}"),
+    ),
+  ).toBe(true)
+  expect(
+    convertedPrimitives.some(
+      (element) =>
+        element.includes('text={"BAS70-04-E3-18"}') &&
+        element.includes("fontSize={0.13}"),
+    ),
   ).toBe(true)
 })

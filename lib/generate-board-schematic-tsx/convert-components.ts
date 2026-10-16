@@ -8,6 +8,7 @@ import { resolveNativeSchematicSymbolName } from "./resolve-native-schematic-sym
 import { getNativeSymbolTextReplacements } from "./get-native-symbol-text-replacements"
 import { matchSymbolPortsByPinIdentity } from "./match-symbol-ports-by-pin-identity"
 import { convertNativeSymbolPinNumbers } from "./convert-native-symbol-pin-numbers"
+import { COMPONENT_OUTLINE_COLOR } from "./get-schematic-primitive-paint"
 
 export const convertComponents: SchematicElementConverter = (circuitJson) => {
   const textReplacements = getNativeSymbolTextReplacements(circuitJson)
@@ -60,7 +61,12 @@ export const convertComponents: SchematicElementConverter = (circuitJson) => {
             includeReference:
               !isInferredSymbol || textReplacement?.replacesReference,
             includeDisplayText:
-              !isInferredSymbol || textReplacement?.replacesDisplayText,
+              !isInferredSymbol || textReplacement?.includeNativeDisplayText,
+            referenceFontSize: textReplacement?.referenceFontSize,
+            displayTextFontSize: textReplacement?.displayTextFontSize,
+            filledPrimitiveColor: isInferredSymbol
+              ? COMPONENT_OUTLINE_COLOR
+              : undefined,
           }),
           ...(isInferredSymbol && textReplacement
             ? convertNativeSymbolPinNumbers({
