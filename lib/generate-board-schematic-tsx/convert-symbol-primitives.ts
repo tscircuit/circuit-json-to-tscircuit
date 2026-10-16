@@ -24,13 +24,15 @@ export const convertSymbolPrimitives = ({
   symbolToSchematicTransform,
   reference,
   displayText,
-  includeReferenceAndValue = true,
+  includeReference = true,
+  includeDisplayText = true,
 }: {
   symbol: SchSymbol
   symbolToSchematicTransform: Matrix
   reference: string
   displayText: string
-  includeReferenceAndValue?: boolean
+  includeReference?: boolean
+  includeDisplayText?: boolean
 }): string[] =>
   symbol.primitives.flatMap((primitive) => {
     if (primitive.type === "path") {
@@ -46,12 +48,8 @@ export const convertSymbolPrimitives = ({
     }
     const center = applyToPoint(symbolToSchematicTransform, primitive)
     if (primitive.type === "text") {
-      if (
-        !includeReferenceAndValue &&
-        (primitive.text === "{REF}" || primitive.text === "{VAL}")
-      ) {
-        return []
-      }
+      if (!includeReference && primitive.text === "{REF}") return []
+      if (!includeDisplayText && primitive.text === "{VAL}") return []
       const text =
         primitive.text === "{REF}"
           ? reference

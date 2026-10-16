@@ -12,6 +12,7 @@ import { symbols, type SchSymbol } from "schematic-symbols"
 import { applyToPoint } from "transformation-matrix"
 import { getSymbolToSchematicTransform } from "../lib/generate-board-schematic-tsx/get-symbol-to-schematic-transform"
 import { matchSymbolPortsByPinIdentity } from "../lib/generate-board-schematic-tsx/match-symbol-ports-by-pin-identity"
+import { getNativeSymbolTextReplacements } from "../lib/generate-board-schematic-tsx/get-native-symbol-text-replacements"
 import {
   resolveNativeSchematicSymbolName,
   type NativeSchematicSymbolName,
@@ -98,7 +99,9 @@ test("real TI custom components use aligned native schematic symbols", () => {
       schematicComponent,
     })
     const sourcePorts = circuitJson.filter(
-      (element): element is SourcePort => element.type === "source_port",
+      (element): element is SourcePort =>
+        element.type === "source_port" &&
+        element.source_component_id === schematicComponent.source_component_id,
     )
     const matches = matchSymbolPortsByPinIdentity({
       schematicPorts,
@@ -106,6 +109,11 @@ test("real TI custom components use aligned native schematic symbols", () => {
       symbol,
     })
     expect(matches, symbolName).toHaveLength(symbol.ports.length)
+    expect(
+      new Set(matches.map((match) => match.schematicPort.schematic_port_id))
+        .size,
+      symbolName,
+    ).toBe(symbol.ports.length)
 
     const transform = getSymbolToSchematicTransform({
       schematicComponent,
@@ -124,4 +132,29 @@ test("real TI custom components use aligned native schematic symbols", () => {
       ).toBeLessThan(PORT_ALIGNMENT_TOLERANCE)
     }
   }
+})
+
+test("multi-unit native symbols preserve their imported value placement", () => {
+  const circuitJson = loadTiFixture("lmg342x-bb-evm")
+  const schmittComponentIds = circuitJson.flatMap((element) =>
+    element.type === "schematic_component" &&
+    resolveNativeSchematicSymbolName({
+      circuitJson,
+      schematicComponent: element,
+    }) === "schmitt_trigger_inverter_right"
+      ? [element.schematic_component_id]
+      : [],
+  )
+  const replacements = getNativeSymbolTextReplacements(circuitJson).filter(
+    (replacement) =>
+      schmittComponentIds.includes(replacement.schematicComponentId),
+  )
+
+  expect(replacements.length).toBeGreaterThan(1)
+  expect(
+    replacements.every((replacement) => replacement.replacesReference),
+  ).toBe(true)
+  expect(
+    replacements.every((replacement) => !replacement.replacesDisplayText),
+  ).toBe(true)
 })

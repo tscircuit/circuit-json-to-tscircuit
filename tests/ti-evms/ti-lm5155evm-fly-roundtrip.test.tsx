@@ -1821,10 +1821,10 @@ test(
           <schematictext text={"R18"} schX={3.6328462251} schY={-0.20556276049999997} anchor={"center_left"} fontSize={0.18} />
           <schematictext text={"4.99k"} schX={3.6328462251} schY={-0.5255627605} anchor={"center_left"} fontSize={0.18} />
           <schematicpath points={[{"x":6.515386837518524,"y":-0.9964144725991696},{"x":4.817453884305394,"y":-0.9964144725991696},{"x":4.817453884305394,"y":-1.9280876116008305},{"x":6.515386837518524,"y":-1.9280876116008305},{"x":6.515386837518524,"y":-0.9964144725991696}]} strokeWidth={0.02} isFilled={false} />
-          <schematicpath points={[{"x":6.762911069885,"y":-1.2050540190899448},{"x":6.515386837518524,"y":-1.2050540190899448},{"x":6.515386837518524,"y":-1.3538854170625712},{"x":6.762911069885,"y":-1.3538854170625712}]} strokeWidth={0.02} isFilled={false} />
-          <schematicpath points={[{"x":6.762911069885,"y":-1.570616667137429},{"x":6.515386837518524,"y":-1.570616667137429},{"x":6.515386837518524,"y":-1.7194480651100554},{"x":6.762911069885,"y":-1.7194480651100554}]} strokeWidth={0.02} isFilled={false} />
-          <schematicpath points={[{"x":4.817453884305394,"y":-1.2050540190899448},{"x":4.569534506715,"y":-1.2050540190899448},{"x":4.569534506715,"y":-1.3538854170625712},{"x":4.817453884305394,"y":-1.3538854170625712}]} strokeWidth={0.02} isFilled={false} />
-          <schematicpath points={[{"x":4.817453884305394,"y":-1.570616667137429},{"x":4.569534506715,"y":-1.570616667137429},{"x":4.569534506715,"y":-1.7194480651100554},{"x":4.817453884305394,"y":-1.7194480651100554}]} strokeWidth={0.02} isFilled={false} />
+          <schematicpath points={[{"x":6.762911069885,"y":-1.279469718076258},{"x":6.515386837518524,"y":-1.279469718076258}]} strokeWidth={0.02} isFilled={false} />
+          <schematicpath points={[{"x":6.762911069885,"y":-1.6450323661237418},{"x":6.515386837518524,"y":-1.6450323661237418}]} strokeWidth={0.02} isFilled={false} />
+          <schematicpath points={[{"x":4.817453884305394,"y":-1.279469718076258},{"x":4.569534506715,"y":-1.279469718076258}]} strokeWidth={0.02} isFilled={false} />
+          <schematicpath points={[{"x":4.817453884305394,"y":-1.6450323661237418},{"x":4.569534506715,"y":-1.6450323661237418}]} strokeWidth={0.02} isFilled={false} />
           <schematicpath points={[{"x":6.515386837518524,"y":-1.279469718076258},{"x":6.1186372430044225,"y":-1.279469718076258},{"x":6.1186372430044225,"y":-1.6450323661237418},{"x":6.515386837518524,"y":-1.6450323661237418}]} strokeWidth={0.02} isFilled={false} />
           <schematicpath points={[{"x":6.044419116630069,"y":-1.3939543575611089},{"x":6.1186372430044225,"y":-1.5305477266388912},{"x":6.205487193727347,"y":-1.3939543575611089}]} strokeWidth={0.02} isFilled={true} />
           <schematicpath points={[{"x":6.031785942511306,"y":-1.5305477266388912},{"x":6.205487193727347,"y":-1.5305477266388912}]} strokeWidth={0.02} isFilled={false} />
@@ -1836,6 +1836,12 @@ test(
           <schematicpath points={[{"x":5.486600095248496,"y":-1.4681724839354626},{"x":5.660301346464537,"y":-1.4310634207482857},{"x":5.62279831910236,"y":-1.3564525112478507}]} strokeWidth={0.02} isFilled={true} />
           <schematicpath points={[{"x":5.610559109158597,"y":-1.5676567898260683},{"x":5.8458466624004215,"y":-1.4681724839354626}]} strokeWidth={0.02} isFilled={false} />
           <schematicpath points={[{"x":5.486600095248496,"y":-1.6300322012507704},{"x":5.660301346464537,"y":-1.592527824118401},{"x":5.62279831910236,"y":-1.5179147212414024}]} strokeWidth={0.02} isFilled={true} />
+          <schematictext text={"U2"} schX={5.6662227883} schY={-0.8211102005579998} anchor={"bottom_center"} fontSize={0.18} />
+          <schematictext text={"PS2811-1-M-A"} schX={5.6662227883} schY={-2.103391883642} anchor={"top_center"} fontSize={0.18} />
+          <schematictext text={"2"} schX={6.639148953701762} schY={-1.6250323942439264} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
+          <schematictext text={"1"} schX={6.639148953701762} schY={-1.2594696899560738} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
+          <schematictext text={"3"} schX={4.693494195510197} schY={-1.6250323942439264} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
+          <schematictext text={"4"} schX={4.693494195510197} schY={-1.2594696899560738} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
           <schematicpath points={[{"x":-6.0317855489,"y":-3.1331113941999997},{"x":-6.0317855489,"y":-2.8931113942}]} strokeWidth={0.02} isFilled={false} />
           <schematicpath points={[{"x":-6.0317855489,"y":-2.7731113942},{"x":-6.0317855489,"y":-2.5331113942}]} strokeWidth={0.02} isFilled={false} />
           <schematicpath points={[{"x":-5.8717655489,"y":-2.8931113942},{"x":-6.191805548900001,"y":-2.8931113942}]} strokeWidth={0.02} isFilled={false} />
@@ -2150,10 +2156,19 @@ test(
           <schematicpath points={[{"x":2.741263750616,"y":5.666222788333379},{"x":3.472846225133379,"y":5.666222788333379}]} strokeWidth={0.02} isFilled={false} />
           <schematicpath points={[{"x":2.5095883511280004,"y":7.02794407132},{"x":2.5095883511280004,"y":5.21840840668}]} strokeWidth={0.02} isFilled={false} />
           <schematicpath points={[{"x":2.598694274008,"y":7.02794407132},{"x":2.598694274008,"y":5.21840840668}]} strokeWidth={0.02} isFilled={false} />
+          <schematictext text={"T1"} schX={2.5589393238} schY={7.1101956924400005} anchor={"bottom_center"} fontSize={0.18} />
           <schematiccircle center={{"x":2.2902506948080004,"y":6.85658652732}} radius={0.0235787980544} strokeWidth={0.02} isFilled={true} />
           <schematiccircle center={{"x":2.2902506948080004,"y":5.942679625986622}} radius={0.0235787980544} strokeWidth={0.02} isFilled={true} />
           <schematiccircle center={{"x":2.8194027906800003,"y":6.708533609304}} radius={0.0235787980544} strokeWidth={0.02} isFilled={true} />
           <schematiccircle center={{"x":2.8194027906800003,"y":5.79416975452}} radius={0.0235787980544} strokeWidth={0.02} isFilled={true} />
+          <schematictext text={"1"} schX={2.004654788141311} schY={5.3206600278} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
+          <schematictext text={"2"} schX={2.004654788141311} schY={6.05178554886662} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
+          <schematictext text={"5"} schX={2.004654788141311} schY={6.234566929133379} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
+          <schematictext text={"3"} schX={2.004654788141311} schY={6.9656924502} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
+          <schematictext text={"9"} schX={3.1070549878746894} schY={5.686222788333379} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
+          <schematictext text={"10"} schX={3.1070549878746894} schY={5.8690041686} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
+          <schematictext text={"6"} schX={3.1070549878746894} schY={6.600129689666621} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
+          <schematictext text={"7"} schX={3.1070549878746894} schY={6.782911069933379} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
           <schematicpath points={[{"x":-10.375757295000001,"y":4.2039717462},{"x":-10.115757295000002,"y":4.3339717462}]} strokeWidth={0.02} isFilled={false} />
           <schematicpath points={[{"x":-10.115757295000002,"y":4.0639717462},{"x":-10.375757295000001,"y":4.2039717462}]} strokeWidth={0.02} isFilled={false} />
           <schematicpath points={[{"x":-10.115757295000002,"y":4.3339717462},{"x":-10.115757295000002,"y":4.0639717462}]} strokeWidth={0.02} isFilled={false} />
@@ -2377,12 +2392,6 @@ test(
           <schematictext text={"D1"} schX={5.099600509495136} schY={6.94569245020843} anchor={"bottom_left"} fontSize={0.1827813802686429} color={"#1f2937"} schRotation={0} />
           <schematictext text={"U3"} schX={7.138672417786012} schY={-2.7772834645669287} anchor={"bottom_left"} fontSize={0.18} color={"#006464"} schRotation={0} />
           <schematictext text={"LMV431BIMF/NOPB"} schX={7.138672417786012} schY={-3.437283464566929} anchor={"top_left"} fontSize={0.18} color={"#006464"} schRotation={0} />
-          <schematictext text={"1"} schX={6.580129689671143} schY={-1.2794696618804995} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={0} />
-          <schematictext text={"2"} schX={6.580129689671143} schY={-1.6450324224177848} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={0} />
-          <schematictext text={"4"} schX={4.752315886984714} schY={-1.2794696618804995} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={0} />
-          <schematictext text={"3"} schX={4.752315886984714} schY={-1.6450324224177848} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={0} />
-          <schematictext text={"U2"} schX={4.916819129226493} schY={-1.0784101435849927} anchor={"bottom_left"} fontSize={0.1827813802686429} color={"#1f2937"} schRotation={0} />
-          <schematictext text={"PS2811-1-M-A"} schX={4.916819129226493} schY={-2.028873320981935} anchor={"bottom_left"} fontSize={0.1827813802686429} color={"#1f2937"} schRotation={0} />
           <schematictext text={"D4"} schX={10.218538675312647} schY={1.2632445576655886} anchor={"bottom_left"} fontSize={0.18} color={"#006464"} schRotation={0} />
           <schematictext text={"30V"} schX={10.218538675312647} schY={0.2355627605372863} anchor={"top_left"} fontSize={0.18} color={"#006464"} schRotation={0} />
           <schematictext text={"1"} schX={13.343040759610933} schY={5.849004168596574} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={0} />
@@ -2448,15 +2457,6 @@ test(
           <schematicline x1={-3.600793191292265} y1={-2.2847672533580354} x2={-3.472846225104215} y2={-2.1933765632237145} strokeWidth={0.05} color={"#840000"} isDashed={false} />
           <schematictext text={"Q2"} schX={-3.4180118110236233} schY={-2.357879805465493} anchor={"bottom_left"} fontSize={0.1827813802686429} color={"#1f2937"} schRotation={0} />
           <schematictext text={"FMMT718TA"} schX={-3.4180118110236233} schY={-2.5406611857341357} anchor={"bottom_left"} fontSize={0.1827813802686429} color={"#1f2937"} schRotation={0} />
-          <schematictext text={"2"} schX={1.8278138026864283} schY={6.031785548865216} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={0} />
-          <schematictext text={"7"} schX={3.290064844835573} schY={6.76291106993979} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={0} />
-          <schematictext text={"5"} schX={1.8278138026864283} schY={6.214566929133859} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={0} />
-          <schematictext text={"6"} schX={3.290064844835573} schY={6.580129689671146} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={0} />
-          <schematictext text={"1"} schX={1.8278138026864283} schY={5.300660027790645} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={0} />
-          <schematictext text={"3"} schX={1.8278138026864283} schY={6.94569245020843} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={0} />
-          <schematictext text={"9"} schX={3.290064844835573} schY={5.66622278832793} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={0} />
-          <schematictext text={"10"} schX={3.290064844835573} schY={5.849004168596574} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={0} />
-          <schematictext text={"T1"} schX={1.9923170449282068} schY={7.128473830477073} anchor={"bottom_left"} fontSize={0.1827813802686429} color={"#1f2937"} schRotation={0} />
           <schematictext text={"750317933"} schX={1.9923170449282068} schY={4.93509726725336} anchor={"bottom_left"} fontSize={0.1827813802686429} color={"#1f2937"} schRotation={0} />
           <schematictext text={"1"} schX={12.429133858267718} schY={-9.321850393700787} anchor={"bottom_left"} fontSize={0.1827813802686429} color={"#000080"} schRotation={0} />
           <schematictext text={"2"} schX={12.886087308939324} schY={-9.321850393700787} anchor={"bottom_left"} fontSize={0.1827813802686429} color={"#000080"} schRotation={0} />
