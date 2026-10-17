@@ -1,3 +1,5 @@
+import type { PcbSmtPad, PcbSolderPaste } from "circuit-json"
+import { getSolderPasteMargin } from "./get-solder-paste-margin"
 import { su } from "@tscircuit/soup-util"
 import { mmStr } from "@tscircuit/mm"
 import type { FootprintElementConverter } from "./converter-types"
@@ -12,6 +14,14 @@ export const convertSmtPads: FootprintElementConverter = (
 ) => {
   const smtPads = su(circuitJson).pcb_smtpad.list()
   const elementStrings: string[] = []
+
+  const pastesByPadId = new Map<PcbSmtPad["pcb_smtpad_id"], PcbSolderPaste[]>()
+  for (const paste of su(circuitJson).pcb_solder_paste.list()) {
+    if (!paste.pcb_smtpad_id) continue
+    const pastes = pastesByPadId.get(paste.pcb_smtpad_id) ?? []
+    pastes.push(paste)
+    pastesByPadId.set(paste.pcb_smtpad_id, pastes)
+  }
 
   for (const smtPad of smtPads) {
     const commonAttrs: string[] = []
@@ -29,6 +39,14 @@ export const convertSmtPads: FootprintElementConverter = (
     }
     if (smtPad.layer !== undefined) {
       commonAttrs.push(`layer="${smtPad.layer}"`)
+    }
+
+    const solderPasteMargin = getSolderPasteMargin(
+      smtPad,
+      pastesByPadId.get(smtPad.pcb_smtpad_id) ?? [],
+    )
+    if (solderPasteMargin !== undefined) {
+      commonAttrs.push(`solderPasteMargin={${solderPasteMargin}}`)
     }
 
     if (smtPad.shape === "circle") {
