@@ -15,6 +15,7 @@ import { convertSymbolPrimitives } from "../lib/generate-board-schematic-tsx/con
 import { getSymbolToSchematicTransform } from "../lib/generate-board-schematic-tsx/get-symbol-to-schematic-transform"
 import { matchSymbolPortsByPinIdentity } from "../lib/generate-board-schematic-tsx/match-symbol-ports-by-pin-identity"
 import { getNativeSymbolTextReplacements } from "../lib/generate-board-schematic-tsx/get-native-symbol-text-replacements"
+import { getNativeSymbolPortMatchingInputs } from "../lib/generate-board-schematic-tsx/get-native-symbol-port-matching-inputs"
 import {
   resolveNativeSchematicSymbolName,
   type NativeSchematicSymbolName,
@@ -105,10 +106,14 @@ test("real TI custom components use aligned native schematic symbols", () => {
         element.type === "source_port" &&
         element.source_component_id === schematicComponent.source_component_id,
     )
+    const portMatchingInputs = getNativeSymbolPortMatchingInputs({
+      symbolName,
+      sourcePorts,
+    })
     const matches = matchSymbolPortsByPinIdentity({
       schematicPorts,
-      sourcePorts,
       symbol,
+      ...portMatchingInputs,
     })
     expect(matches, symbolName).toHaveLength(symbol.ports.length)
     expect(
@@ -120,8 +125,8 @@ test("real TI custom components use aligned native schematic symbols", () => {
     const transform = getSymbolToSchematicTransform({
       schematicComponent,
       schematicPorts,
-      sourcePorts,
       symbol,
+      ...portMatchingInputs,
     })
     for (const match of matches) {
       const renderedPort = applyToPoint(transform, match.symbolPort)

@@ -14,11 +14,13 @@ export const getSymbolToSchematicTransform = ({
   schematicComponent,
   schematicPorts,
   sourcePorts,
+  includeSchematicPinNumbers,
 }: {
   symbol: SchSymbol
   schematicComponent: SchematicComponent
   schematicPorts: SchematicPort[]
   sourcePorts: SourcePort[]
+  includeSchematicPinNumbers?: boolean
 }) => {
   const componentSourcePorts = sourcePorts.filter(
     (sourcePort) =>
@@ -28,6 +30,7 @@ export const getSymbolToSchematicTransform = ({
     schematicPorts,
     sourcePorts: componentSourcePorts,
     symbol,
+    includeSchematicPinNumbers,
   })
   const rigidPinIdentityTransform =
     getRigidPinIdentityTransform(pinIdentityMatches)

@@ -9,6 +9,7 @@ import { getNativeSymbolTextReplacements } from "./get-native-symbol-text-replac
 import { matchSymbolPortsByPinIdentity } from "./match-symbol-ports-by-pin-identity"
 import { convertNativeSymbolPinNumbers } from "./convert-native-symbol-pin-numbers"
 import { COMPONENT_OUTLINE_COLOR } from "./get-schematic-primitive-paint"
+import { getNativeSymbolPortMatchingInputs } from "./get-native-symbol-port-matching-inputs"
 
 export const convertComponents: SchematicElementConverter = (circuitJson) => {
   const textReplacements = getNativeSymbolTextReplacements(circuitJson)
@@ -32,11 +33,15 @@ export const convertComponents: SchematicElementConverter = (circuitJson) => {
         const sourcePorts = su(circuitJson).source_port.list({
           source_component_id: schematicComponent.source_component_id,
         })
+        const portMatchingInputs = getNativeSymbolPortMatchingInputs({
+          symbolName,
+          sourcePorts,
+        })
         const symbolToSchematicTransform = getSymbolToSchematicTransform({
           symbol,
           schematicComponent,
           schematicPorts,
-          sourcePorts,
+          ...portMatchingInputs,
         })
         const textReplacement = textReplacements.find(
           (replacement) =>
@@ -45,8 +50,8 @@ export const convertComponents: SchematicElementConverter = (circuitJson) => {
         )
         const portMatches = matchSymbolPortsByPinIdentity({
           schematicPorts,
-          sourcePorts,
           symbol,
+          ...portMatchingInputs,
         })
         return [
           ...convertSymbolPrimitives({
