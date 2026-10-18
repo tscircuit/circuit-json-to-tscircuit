@@ -5,21 +5,21 @@ const getFourWindingTransformerAlias = (
 ): string | undefined => {
   switch (sourcePinNumber) {
     case "1":
-      return "primary_start"
-    case "2":
       return "primary_end"
+    case "2":
+      return "primary_start"
     case "5":
-      return "auxiliary_start"
-    case "3":
       return "auxiliary_end"
+    case "3":
+      return "auxiliary_start"
     case "9":
-      return "secondary1_start"
-    case "10":
       return "secondary1_end"
+    case "10":
+      return "secondary1_start"
     case "6":
-      return "secondary2_start"
-    case "7":
       return "secondary2_end"
+    case "7":
+      return "secondary2_start"
     default:
       return undefined
   }
