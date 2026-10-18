@@ -197,7 +197,6 @@ test("multi-unit native symbols keep one package value label", () => {
 
 test("filled native symbol details use the schematic outline color", () => {
   const symbolsWithSolidDetails: NativeSchematicSymbolName[] = [
-    "phototransistor_optocoupler_right",
     "transformer_4_winding_right",
     "dual_series_schottky_diode_right",
   ]
@@ -219,6 +218,22 @@ test("filled native symbol details use the schematic outline color", () => {
 
     expect(filledPrimitives.length, symbolName).toBeGreaterThan(0)
   }
+
+  const optocoupler = nativeSymbols.phototransistor_optocoupler_right
+  expect(optocoupler).toBeDefined()
+  if (!optocoupler) return
+  const optocouplerPrimitives = convertSymbolPrimitives({
+    symbol: optocoupler,
+    symbolToSchematicTransform: identity(),
+    reference: "U1",
+    displayText: "PS2811-1-M-A",
+    filledPrimitiveColor: "#840000",
+  })
+  expect(
+    optocouplerPrimitives.some((element) =>
+      element.includes('fillColor={"#840000"}'),
+    ),
+  ).toBe(false)
 })
 
 test("native symbol labels preserve imported font sizes", () => {
