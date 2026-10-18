@@ -38,7 +38,7 @@
     "jscad-planner": "^0.0.19",
     "prettier": "^3.9.5",
     "poppygl": "0.0.34",
-    "schematic-symbols": "https://pkg.pr.new/schematic-symbols@f31fecc",
+    "schematic-symbols": "https://pkg.pr.new/schematic-symbols@8b3ffde",
     "shiki": "^4.3.1",
     "stack-svgs": "^0.0.1",
     "transformation-matrix": "3.1.0",
