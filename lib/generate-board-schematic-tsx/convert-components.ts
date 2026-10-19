@@ -36,6 +36,7 @@ export const convertComponents: SchematicElementConverter = (circuitJson) => {
         const portMatchingInputs = getNativeSymbolPortMatchingInputs({
           symbolName,
           sourcePorts,
+          isInferredSymbol,
         })
         const symbolToSchematicTransform = getSymbolToSchematicTransform({
           symbol,

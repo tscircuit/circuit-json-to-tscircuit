@@ -109,6 +109,7 @@ test("real TI custom components use aligned native schematic symbols", () => {
     const portMatchingInputs = getNativeSymbolPortMatchingInputs({
       symbolName,
       sourcePorts,
+      isInferredSymbol: true,
     })
     const matches = matchSymbolPortsByPinIdentity({
       schematicPorts,
@@ -139,6 +140,27 @@ test("real TI custom components use aligned native schematic symbols", () => {
       ).toBeLessThan(PORT_ALIGNMENT_TOLERANCE)
     }
   }
+})
+
+test("explicit transformer symbols keep generic sequential pin identities", () => {
+  const sourcePorts = Array.from({ length: 8 }, (_, pinIndex) => ({
+    type: "source_port" as const,
+    source_port_id: `source_port_${pinIndex + 1}`,
+    source_component_id: "source_component_transformer",
+    name: String(pinIndex + 1),
+    pin_number: pinIndex + 1,
+  }))
+  const matchingInputs = getNativeSymbolPortMatchingInputs({
+    symbolName: "transformer_4_winding_right",
+    sourcePorts,
+    isInferredSymbol: false,
+  })
+
+  expect(matchingInputs.sourcePorts).toBe(sourcePorts)
+  expect(matchingInputs.includeSchematicPinNumbers).toBe(true)
+  expect(
+    matchingInputs.sourcePorts.map((sourcePort) => sourcePort.pin_number),
+  ).toEqual([1, 2, 3, 4, 5, 6, 7, 8])
 })
 
 test("multi-unit native symbols keep one package value label", () => {
@@ -198,6 +220,91 @@ test("multi-unit native symbols keep one package value label", () => {
       (replacement) => replacement.referenceFontSize === 0.12737378415933304,
     ),
   ).toBe(true)
+})
+
+test("multi-unit native symbols restore one value when the package label is absent", () => {
+  const circuitJson = loadTiFixture("lmg342x-bb-evm").filter(
+    (element) =>
+      element.type !== "schematic_text" ||
+      element.text !== "SN74LVC3G14DCUTG4" ||
+      element.schematic_component_id === undefined,
+  )
+  const replacements = getNativeSymbolTextReplacements(circuitJson)
+  const replacementsWithValues = replacements.filter(
+    (replacement) => replacement.includeNativeDisplayText,
+  )
+  const sourceComponentIds = replacementsWithValues.flatMap((replacement) => {
+    const component = circuitJson.find(
+      (element): element is SchematicComponent =>
+        element.type === "schematic_component" &&
+        element.schematic_component_id === replacement.schematicComponentId,
+    )
+    return component?.source_component_id ? [component.source_component_id] : []
+  })
+
+  expect(replacementsWithValues).toHaveLength(2)
+  expect(new Set(sourceComponentIds).size).toBe(2)
+})
+
+test("distant same-value text is not claimed as a native symbol label", () => {
+  const circuitJson = loadTiFixture("lm251772evm-pd")
+  const diodeComponent = circuitJson.find(
+    (element): element is SchematicComponent =>
+      element.type === "schematic_component" &&
+      resolveNativeSchematicSymbolName({
+        circuitJson,
+        schematicComponent: element,
+      }) === "dual_series_schottky_diode_right",
+  )
+  expect(diodeComponent).toBeDefined()
+  if (!diodeComponent) return
+  const sourceComponent = circuitJson.find(
+    (element) =>
+      element.type === "source_component" &&
+      element.source_component_id === diodeComponent.source_component_id,
+  )
+  const displayValue =
+    sourceComponent?.type === "source_component"
+      ? sourceComponent.display_value
+      : undefined
+  const originalValueText = circuitJson.find(
+    (element): element is SchematicText =>
+      element.type === "schematic_text" &&
+      element.schematic_component_id === undefined &&
+      element.text === displayValue,
+  )
+  expect(originalValueText).toBeDefined()
+  if (!originalValueText || !displayValue) return
+  const distantValueText: SchematicText = {
+    ...originalValueText,
+    schematic_text_id: "schematic_text_distant_value",
+    position: {
+      x: diodeComponent.center.x + 10,
+      y: diodeComponent.center.y,
+    },
+    rotation: 0,
+  }
+  const circuitJsonWithDistantValue = [
+    ...circuitJson.filter(
+      (element) =>
+        element.type !== "schematic_text" ||
+        element.schematic_component_id !== undefined ||
+        element.text !== displayValue,
+    ),
+    distantValueText,
+  ] as CircuitJson
+  const replacement = getNativeSymbolTextReplacements(
+    circuitJsonWithDistantValue,
+  ).find(
+    (candidate) =>
+      candidate.schematicComponentId === diodeComponent.schematic_component_id,
+  )
+
+  expect(replacement).toBeDefined()
+  expect(replacement?.importedTextIds).not.toContain(
+    distantValueText.schematic_text_id,
+  )
+  expect(replacement?.includeNativeDisplayText).toBe(false)
 })
 
 test("filled native symbol details use the schematic outline color", () => {

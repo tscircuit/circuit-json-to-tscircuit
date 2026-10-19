@@ -25,31 +25,70 @@ const getFourWindingTransformerAlias = (
   }
 }
 
+const getDualSeriesSchottkyAlias = (
+  sourcePinNumber: string,
+): string | undefined => {
+  switch (sourcePinNumber) {
+    case "1":
+      return "anode"
+    case "2":
+      return "cathode"
+    case "3":
+      return "common"
+    default:
+      return undefined
+  }
+}
+
+const getInferredPortAlias = ({
+  symbolName,
+  sourcePinNumber,
+}: {
+  symbolName: string
+  sourcePinNumber: string
+}): string | undefined => {
+  if (symbolName === "transformer_4_winding_right") {
+    return getFourWindingTransformerAlias(sourcePinNumber)
+  }
+  if (symbolName === "dual_series_schottky_diode_right") {
+    return getDualSeriesSchottkyAlias(sourcePinNumber)
+  }
+  return undefined
+}
+
 export const getNativeSymbolPortMatchingInputs = ({
   symbolName,
   sourcePorts,
+  isInferredSymbol,
 }: {
   symbolName: string
   sourcePorts: SourcePort[]
+  isInferredSymbol: boolean
 }): {
   sourcePorts: SourcePort[]
   includeSchematicPinNumbers: boolean
 } => {
-  if (symbolName !== "transformer_4_winding_right") {
+  const usesInferredPortAliases =
+    symbolName === "transformer_4_winding_right" ||
+    symbolName === "dual_series_schottky_diode_right"
+  if (!isInferredSymbol || !usesInferredPortAliases) {
     return { sourcePorts, includeSchematicPinNumbers: true }
   }
 
   const aliasedSourcePorts = sourcePorts.map((sourcePort) => {
     const sourcePinNumber = String(sourcePort.pin_number ?? sourcePort.name)
-    const windingAlias = getFourWindingTransformerAlias(sourcePinNumber)
-    if (!windingAlias) return sourcePort
+    const inferredPortAlias = getInferredPortAlias({
+      symbolName,
+      sourcePinNumber,
+    })
+    if (!inferredPortAlias) return sourcePort
 
     // Part-specific numbers overlap the generic symbol's sequential labels.
-    // Match this inferred symbol through unambiguous winding identities instead.
+    // Match inferred symbols through unambiguous terminal identities instead.
     return {
       ...sourcePort,
-      name: windingAlias,
-      port_hints: [windingAlias],
+      name: inferredPortAlias,
+      port_hints: [inferredPortAlias],
       pin_number: undefined,
     }
   })
