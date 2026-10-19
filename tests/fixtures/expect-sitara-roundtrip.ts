@@ -51,7 +51,7 @@ function getCircuitInventory(circuitJson: CircuitJson): Record<string, number> {
   )
 }
 
-export async function expectSitaraRoundtrip({
+export async function expectSitaraPcbRoundtrip({
   boardId,
   testPath,
 }: {
@@ -111,7 +111,17 @@ export async function expectSitaraRoundtrip({
       }),
     ).toMatchSvgSnapshot(testPath, `pcb-${layer}`)
   }
+}
 
+export async function expectSitaraSchematicRoundtrip({
+  boardId,
+  testPath,
+}: {
+  boardId: SitaraBoardId
+  testPath: string
+}): Promise<void> {
+  const board = sitaraBoards.find(({ id }) => id === boardId)
+  if (!board) throw new Error(`Unknown Sitara board: ${boardId}`)
   for (
     let sheetIndex = 0;
     sheetIndex < board.schematicSheetCount;
@@ -148,6 +158,6 @@ export async function expectSitaraRoundtrip({
         sourceSvg,
         renderedSvg,
       }),
-    ).toMatchSvgSnapshot(testPath, `schematic-${sheetNumber}`)
+    ).toMatchSvgSnapshot(testPath, sheetNumber)
   }
 }

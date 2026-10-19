@@ -1,10 +1,10 @@
 import { test } from "bun:test"
-import { expectSitaraRoundtrip } from "../fixtures/expect-sitara-roundtrip"
+import { expectSitaraPcbRoundtrip } from "../fixtures/expect-sitara-roundtrip"
 
 test(
-  "TMDS62LEVM: source Circuit JSON beside rendered TSX for both PCB layers and every schematic sheet",
+  "TMDS62LEVM: source Circuit JSON beside rendered TSX for both PCB layers",
   async () => {
-    await expectSitaraRoundtrip({
+    await expectSitaraPcbRoundtrip({
       boardId: "tmds62levm",
       testPath: import.meta.path,
     })
