@@ -1,0 +1,567 @@
+{
+  "altiumConverter": {
+    "repository": "https://github.com/tscircuit/altium-to-circuit-json",
+    "commit": "a9b8bd37e77bcb35790d91d2d033ed58d8a49a7b",
+    "version": "0.0.106"
+  },
+  "altiumParser": {
+    "repository": "https://github.com/tscircuit/altiumts",
+    "commit": "50434443e86e4598b653cbdbed9d204649c905f2"
+  },
+  "generator": "scripts/convert-sitara-boards.ts in the Altium repro PR; no element filtering, geometry repairs, or source rewrites",
+  "fixtures": [
+    {
+      "filename": "beaglebone-black-pcb.circuit.json.gz",
+      "sha256": "c7fd65a2e534e8d828ccd5825b7477a8615e8d5ea0a92da1b961a8e054eff001"
+    },
+    {
+      "filename": "beaglebone-black-schematic-01.circuit.json.gz",
+      "sha256": "b17bafb7d6887f210890df2a03b9acfe3d9a54015b9c4316277008580064368e"
+    },
+    {
+      "filename": "beaglebone-black-schematic-02.circuit.json.gz",
+      "sha256": "8f259a9a5dfa84a6326c4aff1e0a436446971da8d025d557c39cb5dfc3e7927e"
+    },
+    {
+      "filename": "beaglebone-black-schematic-03.circuit.json.gz",
+      "sha256": "9b0d01d978440cb77676980358acf102b5c02bd9f83078d82483eaeb823735eb"
+    },
+    {
+      "filename": "beaglebone-black-schematic-04.circuit.json.gz",
+      "sha256": "003796b0915bb4bc37503d9c10aba3e285191a125f2984938ad8cdab6b6c7c5f"
+    },
+    {
+      "filename": "beaglebone-black-schematic-05.circuit.json.gz",
+      "sha256": "bdbadafe44903f067c32b87aa99b6f0efc63990d4a80469ce7a414fb97131be8"
+    },
+    {
+      "filename": "beaglebone-black-schematic-06.circuit.json.gz",
+      "sha256": "43590a272ade60b10538d691917cd1aaba760b62fea84403527ff5fc31aed032"
+    },
+    {
+      "filename": "beaglebone-black-schematic-07.circuit.json.gz",
+      "sha256": "fce4ed14db99efc1ffd94b244e37364795b14d9d9349b08dda47c3912ee6bb62"
+    },
+    {
+      "filename": "beaglebone-black-schematic-08.circuit.json.gz",
+      "sha256": "ef02c3169e192790996d1911794714dc10296707017208a4779713068450ad64"
+    },
+    {
+      "filename": "beaglebone-black-schematic-09.circuit.json.gz",
+      "sha256": "0c7c716448e7c559096e57b321f7e79cdd27d8a9afdb8fc2a5d273b4672149a0"
+    },
+    {
+      "filename": "beaglebone-black-schematic-10.circuit.json.gz",
+      "sha256": "ca08dc1e987b6dfeea3d87eebe1a842cfe948e9c7b874bd3a2feca047f493d5a"
+    },
+    {
+      "filename": "beaglebone-black-schematic-11.circuit.json.gz",
+      "sha256": "9e163308b636156d63e499c398ebdd73eea70c8e97611fad4936e0cb1ef4955c"
+    },
+    {
+      "filename": "beagleplay-pcb.circuit.json.gz",
+      "sha256": "178fa6786b4d3356b8930348b15502cb61f81a994ef33012173131e901d219f0"
+    },
+    {
+      "filename": "beagleplay-schematic-01.circuit.json.gz",
+      "sha256": "69352655cec19985e2e86a8d817820eb0fe835ae76a2f75cef8157be7acf9f71"
+    },
+    {
+      "filename": "beagleplay-schematic-02.circuit.json.gz",
+      "sha256": "ed241430cd2d59bc4fc2e8b7b3bf8252c3747a012af401938b7c71ece360fc36"
+    },
+    {
+      "filename": "beagleplay-schematic-03.circuit.json.gz",
+      "sha256": "e5e9bb3118b71d9b47766a7ef83f0532ce9400efa62e3b79cdff6e9b706fda5a"
+    },
+    {
+      "filename": "beagleplay-schematic-04.circuit.json.gz",
+      "sha256": "67c96c81a02ef77d590207c3b07cf9c43641c9b5df99acba7865f7ef7e81dfd4"
+    },
+    {
+      "filename": "beagleplay-schematic-05.circuit.json.gz",
+      "sha256": "3cdb3239df375e24305760e9d467aaa45f2b053f9feff2df7232e4accc15669e"
+    },
+    {
+      "filename": "beagleplay-schematic-06.circuit.json.gz",
+      "sha256": "b9054e0bfc9d8f12f860eb5ed4ffb2e16295d30f86b079680e0012928b051af6"
+    },
+    {
+      "filename": "beagleplay-schematic-07.circuit.json.gz",
+      "sha256": "14a163b864a9a535ff7aeb14c53f909cee113e8db9f7eae9a3bc9ee51c681aaf"
+    },
+    {
+      "filename": "beagleplay-schematic-08.circuit.json.gz",
+      "sha256": "d37598f51cedc0644b9811a218f380871b00b2654091562438aa2e7799005a14"
+    },
+    {
+      "filename": "beagleplay-schematic-09.circuit.json.gz",
+      "sha256": "22d705c5e75d571638b8d15e1963bd943f13e8ec912fc24d386c726232dbcbdd"
+    },
+    {
+      "filename": "beagleplay-schematic-10.circuit.json.gz",
+      "sha256": "3489212bd75c8f414c132bdd9d513c751ed1722233383905a36aba8f9d1a2ec0"
+    },
+    {
+      "filename": "beagleplay-schematic-11.circuit.json.gz",
+      "sha256": "8bd049624095e66b89bdd17452c2bf73d5695596f5a4eeda6f7a25854c92fb79"
+    },
+    {
+      "filename": "beagleplay-schematic-12.circuit.json.gz",
+      "sha256": "ee0344b8d92b85af3e49c7db7858154595f85be89f00fad5a5d497248518b45d"
+    },
+    {
+      "filename": "beagleplay-schematic-13.circuit.json.gz",
+      "sha256": "ccf06f4ae0c6e257503f75d6b8acb1bd2dee7467a4bbd65f3478e81624d150ef"
+    },
+    {
+      "filename": "beagleplay-schematic-14.circuit.json.gz",
+      "sha256": "3e9d9716e65932a89c8135fe9925b8df3dbe5a47ef6d748218b2216c1f2183da"
+    },
+    {
+      "filename": "beagleplay-schematic-15.circuit.json.gz",
+      "sha256": "f2b518b1dde09ad12d1f44c5b6871b5b2f57ed22a2eeb53ca8c1cfa066aeb8d2"
+    },
+    {
+      "filename": "beagleplay-schematic-16.circuit.json.gz",
+      "sha256": "c948ba31855fbd49c9a5cce483761e7a0c58f0f8c36814d8e92444be99ad1408"
+    },
+    {
+      "filename": "beagleplay-schematic-17.circuit.json.gz",
+      "sha256": "d5d4127c60685a10426770dc08ddf64fad6e3bc47bd888033549479f63d50aab"
+    },
+    {
+      "filename": "beagleplay-schematic-18.circuit.json.gz",
+      "sha256": "1ef18eda5240702d92df21b6ef789d865cbbc25d8cf2088b772963aea1a57093"
+    },
+    {
+      "filename": "beagleplay-schematic-19.circuit.json.gz",
+      "sha256": "28b5d6d064caec493169aedc3a05f4a4dbab9d64d5ccf1ca4d93f0fde4c53cce"
+    },
+    {
+      "filename": "beagleplay-schematic-20.circuit.json.gz",
+      "sha256": "0e39e9d7ab29d084830744ef8b2336f988080c03e2eb8b85cf58b8b5d31faf29"
+    },
+    {
+      "filename": "beagleplay-schematic-21.circuit.json.gz",
+      "sha256": "0bf7b5fb4d9c947de3e76e10002e5cfc806ac32b3ac6344cedcabca1f56b77d9"
+    },
+    {
+      "filename": "beagleplay-schematic-22.circuit.json.gz",
+      "sha256": "0093b02b54658ccc88d53cd8e121c9a4e21e6a62d9687534b65da031830cec54"
+    },
+    {
+      "filename": "sk-am62-pcb.circuit.json.gz",
+      "sha256": "ae5a7e21018f4f1942b7b3d41b69e7ced1bb054668159b3b226ba50d113e763e"
+    },
+    {
+      "filename": "sk-am62-schematic-01.circuit.json.gz",
+      "sha256": "d27c4c538530985de6ab56da642ed9e093a9a0ea068ecfc171e031db579d0963"
+    },
+    {
+      "filename": "sk-am62-schematic-02.circuit.json.gz",
+      "sha256": "d006de0d0dcd193647efcb4bac2c347b1c6c068901ba02e119461f8477b7367b"
+    },
+    {
+      "filename": "sk-am62-schematic-03.circuit.json.gz",
+      "sha256": "72f43459713b07c20eca558a18320837ca73c88ed14e87835297c3755a30d09c"
+    },
+    {
+      "filename": "sk-am62-schematic-04.circuit.json.gz",
+      "sha256": "674eb0aa1e1ad571dcb0a4b1bfd2c05ccb425d81f953b833a1790a00b24683d3"
+    },
+    {
+      "filename": "sk-am62-schematic-05.circuit.json.gz",
+      "sha256": "cf791c9484850746e323802e9cf0310690f07a136bd797a473966c82e545d915"
+    },
+    {
+      "filename": "sk-am62-schematic-06.circuit.json.gz",
+      "sha256": "eedf5040304ade401dba2b814bbbb62dea9bde34b46b36c72dc7d57d58c7c6cb"
+    },
+    {
+      "filename": "sk-am62-schematic-07.circuit.json.gz",
+      "sha256": "37894c9007ba510baeed9b298b24f5955c848fe6822f26fa833c6f2b0a067465"
+    },
+    {
+      "filename": "sk-am62-schematic-08.circuit.json.gz",
+      "sha256": "a4cfb84e53632344908c8d77601204494ad21b8d8dcded60531a40efa55340b9"
+    },
+    {
+      "filename": "sk-am62-schematic-09.circuit.json.gz",
+      "sha256": "fdc80f9d24459a2707da386826c2ba55486da7f49a69ff6b628defb8e0089fb9"
+    },
+    {
+      "filename": "sk-am62-schematic-10.circuit.json.gz",
+      "sha256": "54162841d4ab4bfff6525f88d238371c78685a0879b87b11ac464552bbfcae72"
+    },
+    {
+      "filename": "sk-am62-schematic-11.circuit.json.gz",
+      "sha256": "b129d3ba94af7cc71f13ddb09d17747e60c20e6f7a77ae080bc7522a982343cc"
+    },
+    {
+      "filename": "sk-am62-schematic-12.circuit.json.gz",
+      "sha256": "941e972690f40864cd68dd0e58e24aa9464a7cef40be14731191566da2050729"
+    },
+    {
+      "filename": "sk-am62-schematic-13.circuit.json.gz",
+      "sha256": "b21a27df44f48b9b1fd3abc860db46d576beccb088f740a61111e9fbfc19d008"
+    },
+    {
+      "filename": "sk-am62-schematic-14.circuit.json.gz",
+      "sha256": "fc10368e79357ecaa3d0dbc308654218d61e73a1e6f7a3c84e3cb7e4bcb4be01"
+    },
+    {
+      "filename": "sk-am62-schematic-15.circuit.json.gz",
+      "sha256": "7737021adb640f4e975a7485cceac5bd0c62e7abaa563631df8243ae42d04c18"
+    },
+    {
+      "filename": "sk-am62-schematic-16.circuit.json.gz",
+      "sha256": "0f369e1d427b9ced88786e5878628651c3943c7e4d2d4e1d7ea4ce9aca2c1d17"
+    },
+    {
+      "filename": "sk-am62-schematic-17.circuit.json.gz",
+      "sha256": "0cb0da85729ef8b262f7e946c721458b3f1a6d331bde463e0d80baa94e18571e"
+    },
+    {
+      "filename": "sk-am62-schematic-18.circuit.json.gz",
+      "sha256": "89cbe14b3c4e01c3c578743bfe4c7932f2a2f85fea8ade260a25479e374115f1"
+    },
+    {
+      "filename": "sk-am62-schematic-19.circuit.json.gz",
+      "sha256": "be1800a3ea698b4bf90f54945a5d5e1a309f7e561a98cab52bc73164b797c8f8"
+    },
+    {
+      "filename": "sk-am62-schematic-20.circuit.json.gz",
+      "sha256": "0b92abd6f4b28af63c215a92470b3412c80d0b6cf260fa5fc76b06f71baaa27c"
+    },
+    {
+      "filename": "sk-am62-schematic-21.circuit.json.gz",
+      "sha256": "f64f742b8fd0953028a347f8d5148a193b37972f645d0884d418332d82bb531d"
+    },
+    {
+      "filename": "sk-am62-schematic-22.circuit.json.gz",
+      "sha256": "1e2171b6d31b2e916e6749bbdb6b68bc1ea0d79e45401b941c460b1e1d483c48"
+    },
+    {
+      "filename": "sk-am62-schematic-23.circuit.json.gz",
+      "sha256": "eb34cba093398dcb9510a0514d17ab9ab4ffc12df3b875695efbecfb06b2979e"
+    },
+    {
+      "filename": "sk-am62-schematic-24.circuit.json.gz",
+      "sha256": "7d2f845a905f33b831c85c8b07b38a0a7df25a7a7d54537bbb212d9e386a7b26"
+    },
+    {
+      "filename": "sk-am62-schematic-25.circuit.json.gz",
+      "sha256": "14a1086ef6336b7ae539d892ef0bad4475a85410d09cc285edd177f7277e08d2"
+    },
+    {
+      "filename": "sk-am62-schematic-26.circuit.json.gz",
+      "sha256": "380283b3409d1af875fca148d3f9d105ca3c0d472276b9ee85a3bcd41daf34ce"
+    },
+    {
+      "filename": "sk-am62-schematic-27.circuit.json.gz",
+      "sha256": "a8c9bd9110fb13fff6ee63e43b8e061a09cadd460065b744e28f8a181039f0a1"
+    },
+    {
+      "filename": "sk-am62-schematic-28.circuit.json.gz",
+      "sha256": "298da7134575e4b965a34efaa94535365d6818ad77464c1642043a93687ff119"
+    },
+    {
+      "filename": "sk-am62-schematic-29.circuit.json.gz",
+      "sha256": "3ff50bd4783f0d5b71c200d0d4c22d187cc7aebb08479cdd1d213a703205ccb5"
+    },
+    {
+      "filename": "sk-am62-schematic-30.circuit.json.gz",
+      "sha256": "eed465a5708967ffb3fb5cb2a9953ce07b9c3b1b9766b92e50e0d8aee247598a"
+    },
+    {
+      "filename": "sk-am62-schematic-31.circuit.json.gz",
+      "sha256": "ab6b8339fbe22599b384fff1a8b5a1e9bb9b5b2380f4b8feb8a0bb2c3a02f89b"
+    },
+    {
+      "filename": "sk-am62-schematic-32.circuit.json.gz",
+      "sha256": "4bbcbd5c1b3a44c248bee4cdc21b6a3516eced42acf7ee9bf3c63374e0f58908"
+    },
+    {
+      "filename": "sk-am62-schematic-33.circuit.json.gz",
+      "sha256": "62085cbedba9b23742035cb8bb7bf047bdd867a88141b1aeccdeb63853b7e217"
+    },
+    {
+      "filename": "sk-am62-schematic-34.circuit.json.gz",
+      "sha256": "78fa252f91a94862af3bb0939e588c6f31606fbe7d90c9c79a81afd2f66eea35"
+    },
+    {
+      "filename": "sk-am62-schematic-35.circuit.json.gz",
+      "sha256": "3124a5cc8569b9c9676221f4706340d3ca4b4fc216bb4063aeb7bfc71e8ba96c"
+    },
+    {
+      "filename": "sk-am62-schematic-36.circuit.json.gz",
+      "sha256": "5915663ae91692d0031a17187513fe79ffd0847f6233653f13b8b93a00d64961"
+    },
+    {
+      "filename": "sk-am62-schematic-37.circuit.json.gz",
+      "sha256": "a6c814e445e3899126fb2c63a6cae1302532016e9cf626ba0cf8967b0e0fb378"
+    },
+    {
+      "filename": "sk-am62-schematic-38.circuit.json.gz",
+      "sha256": "06eb13e95b6b5b2e9bf64c89ea26580aeda4f049a2073669be0f26cbd2f791b7"
+    },
+    {
+      "filename": "sk-am62-schematic-39.circuit.json.gz",
+      "sha256": "8e85679f9fd14a2702fac94c228e387e3fc64c00d74109ab0b6146ed8aff8e16"
+    },
+    {
+      "filename": "sk-am62-schematic-40.circuit.json.gz",
+      "sha256": "da19abf7f21bc1f414c39a7343fc5bb9ff3a8ab44f59f39ac90348f8eaaad0a5"
+    },
+    {
+      "filename": "sk-am62-schematic-41.circuit.json.gz",
+      "sha256": "8f14a271e6ef8cb50537d08d9bee854a4d9ca2eb3c544c837ba7ed17033682fa"
+    },
+    {
+      "filename": "sk-am62-schematic-42.circuit.json.gz",
+      "sha256": "7af3904e8f6a5bf1df1499282b835b0509713d20f023cdbb1497014a0fd198f6"
+    },
+    {
+      "filename": "sk-am62-schematic-43.circuit.json.gz",
+      "sha256": "b1038a35175f5aef7643cad99bb5cb1ff69caffb607c8615ac6d390a63957edc"
+    },
+    {
+      "filename": "sk-am62-schematic-44.circuit.json.gz",
+      "sha256": "003c405281d492743cbaa5f404c2a471223ce161dbcb0c0bab637efadd98f4dc"
+    },
+    {
+      "filename": "tmds62levm-pcb.circuit.json.gz",
+      "sha256": "e565118f16556de1c168f8f1fda2c8dd33caf3af0c6dbb8ba8d8b29a2002e1fe"
+    },
+    {
+      "filename": "tmds62levm-schematic-01.circuit.json.gz",
+      "sha256": "ca98551980d667446cc6fa6e2dd4be9d82beb298c1f4a243938a5f9a7710b502"
+    },
+    {
+      "filename": "tmds62levm-schematic-02.circuit.json.gz",
+      "sha256": "86366adde75f8455b3bee40f1aa042288913ed9b334339f80c20f301756fd541"
+    },
+    {
+      "filename": "tmds62levm-schematic-03.circuit.json.gz",
+      "sha256": "dd806e8eddd30cf5ac73d21addd255eed51ef3c8ad36b3e2f8c859909ab603e1"
+    },
+    {
+      "filename": "tmds62levm-schematic-04.circuit.json.gz",
+      "sha256": "306a0404518d5944b94b58e6732e84602afc6ba6dd3df71f61600c4a3a509a4a"
+    },
+    {
+      "filename": "tmds62levm-schematic-05.circuit.json.gz",
+      "sha256": "f55d9cbb0f313950463dcfcc2ccf89552a90f600e7c8403b4dfd542b3090804c"
+    },
+    {
+      "filename": "tmds62levm-schematic-06.circuit.json.gz",
+      "sha256": "43195a093bb0454be5c434a8a3a02c2f0075b316a890ccf16e040fd381e5fa28"
+    },
+    {
+      "filename": "tmds62levm-schematic-07.circuit.json.gz",
+      "sha256": "b3d9e4e0246d31f09cd32530daa6baa322a2674c7a1394387712e307925549fa"
+    },
+    {
+      "filename": "tmds62levm-schematic-08.circuit.json.gz",
+      "sha256": "50d71104dcce4dcb662f41b7ec1ba5267816373adec7bb8748e4c6bb11a5e906"
+    },
+    {
+      "filename": "tmds62levm-schematic-09.circuit.json.gz",
+      "sha256": "36396f399b527d608a8db38e2cf6b9de6c0ab19202ed259b4e0cc6a6715e4c6b"
+    },
+    {
+      "filename": "tmds62levm-schematic-10.circuit.json.gz",
+      "sha256": "1024742f899b998e12dbebad421f4090c88cf21e06a59a7a02843b89cbf71b8e"
+    },
+    {
+      "filename": "tmds62levm-schematic-11.circuit.json.gz",
+      "sha256": "a8af763cb70794e470e95b5f876665c5dc9e2fb3770a32bd4e0fa2029efbaeeb"
+    },
+    {
+      "filename": "tmds62levm-schematic-12.circuit.json.gz",
+      "sha256": "e69754fb1c7cc95523ecf457db6e6b2547252d730d66f72a5f91044300cf03c0"
+    },
+    {
+      "filename": "tmds62levm-schematic-13.circuit.json.gz",
+      "sha256": "950930b60201103e309dcb21b67ef468bc108ef34f901a958919ecdb69bec6c4"
+    },
+    {
+      "filename": "tmds62levm-schematic-14.circuit.json.gz",
+      "sha256": "83d43b5b59a928230d7622ac6ff0d978d92cfd6ffa153a2e0736d6f541724ae7"
+    },
+    {
+      "filename": "tmds62levm-schematic-15.circuit.json.gz",
+      "sha256": "3cde7118d7c045b3c92c6295f45bedc6393130acb92c43feaa9d00440f9d008a"
+    },
+    {
+      "filename": "tmds62levm-schematic-16.circuit.json.gz",
+      "sha256": "70964a0da2f4010cb03cac30f07bbfed993cdc19c53f30a9777d4fd77a01754b"
+    },
+    {
+      "filename": "tmds62levm-schematic-17.circuit.json.gz",
+      "sha256": "1d3fbd6f8cb5cc7f07a71d972a7e7a0bb1e1072604c963e37f7798f17964a682"
+    },
+    {
+      "filename": "tmds62levm-schematic-18.circuit.json.gz",
+      "sha256": "e0587ad8f4d403fdc7a0bb72f617f482d846651857a2af0352c3ca9cf998f4c4"
+    },
+    {
+      "filename": "tmds62levm-schematic-19.circuit.json.gz",
+      "sha256": "fa89745a55c696cb937f7b619140dd1499e9842d016674a09143a85a808f4463"
+    },
+    {
+      "filename": "tmds62levm-schematic-20.circuit.json.gz",
+      "sha256": "db78c90985e8c57a6dc9e215d17be005b38d7e4d34b7e865fde53000fe3dc689"
+    },
+    {
+      "filename": "tmds62levm-schematic-21.circuit.json.gz",
+      "sha256": "e807acc836190d092052f2f48c32c67e83c75674a64de4c414be5c4336688875"
+    },
+    {
+      "filename": "tmds62levm-schematic-22.circuit.json.gz",
+      "sha256": "d34299482394b7068c30a0a33e8192dc6a0a8216ce0dd3dba29a464c5c1de8c5"
+    },
+    {
+      "filename": "tmds62levm-schematic-23.circuit.json.gz",
+      "sha256": "a7ac90ccfbb2a5348f47add1604ded4fd6c3b3e88caf33ad471a5be918252189"
+    },
+    {
+      "filename": "tmds62levm-schematic-24.circuit.json.gz",
+      "sha256": "fecb335543e50f63460aab682f5b6339326704cdcc14897001524b7162a660d9"
+    },
+    {
+      "filename": "tmds62levm-schematic-25.circuit.json.gz",
+      "sha256": "bf27a0d654381c6262beaac84854f99cab64625f788ab1eaba3bcce27fe1785c"
+    },
+    {
+      "filename": "tmds62levm-schematic-26.circuit.json.gz",
+      "sha256": "34aac410051ce3fc5377f25a41a370802a75df14a630538f841c72ce15902e72"
+    },
+    {
+      "filename": "tmds62levm-schematic-27.circuit.json.gz",
+      "sha256": "e6d821fac6d067f489a46c8e604589fb21ccd00e26257591c5edeeb2d6cc8a7b"
+    },
+    {
+      "filename": "tmds62levm-schematic-28.circuit.json.gz",
+      "sha256": "f24621c77aab9d22872110865218599a1e446c08bc00391cd0189f1b1d4dad13"
+    },
+    {
+      "filename": "tmds62levm-schematic-29.circuit.json.gz",
+      "sha256": "39b670b4d2e6f1a46a7c1f1700abbe97e1593b96d9356903b2d13ce77084562d"
+    },
+    {
+      "filename": "tmds62levm-schematic-30.circuit.json.gz",
+      "sha256": "8ef78c7a5af907074b37af3a9d371f015c7a717103899c9b4e2f7e73bdcdd13e"
+    },
+    {
+      "filename": "tmds62levm-schematic-31.circuit.json.gz",
+      "sha256": "f1b8a9c1cb3da75d9e227f3701a558457dff674c15306dffdbfd88b8711ab4da"
+    },
+    {
+      "filename": "tmds62levm-schematic-32.circuit.json.gz",
+      "sha256": "af307d2736fa2d410ce501390f2314b63a1e03c64bf05df79b39a355da76bed0"
+    },
+    {
+      "filename": "tmds62levm-schematic-33.circuit.json.gz",
+      "sha256": "55d10da61d67ccc5fdb6722239aa9048b6657f3a16b514bd33340fed586a7e5c"
+    },
+    {
+      "filename": "tmds62levm-schematic-34.circuit.json.gz",
+      "sha256": "aaa2f47fe87ce90228947ceebad441ef8a029a927672f711b14cbd9cb89489ec"
+    },
+    {
+      "filename": "tmds62levm-schematic-35.circuit.json.gz",
+      "sha256": "bbc9b22f582954d49d6063ec8effa17fa367592c1f542c655fda68ecec506a40"
+    },
+    {
+      "filename": "tmds62levm-schematic-36.circuit.json.gz",
+      "sha256": "79e8f1835f2180090e1cf2a5f763eff711b72c9beab4872b081b63431fd3c802"
+    },
+    {
+      "filename": "tmds62levm-schematic-37.circuit.json.gz",
+      "sha256": "599eef46423fdd6ce57ed4807c77c362f46bd391862a1924ede72c656802c6c3"
+    },
+    {
+      "filename": "tmds62levm-schematic-38.circuit.json.gz",
+      "sha256": "75a5e9da0119b14d8c170c7475c2aaea2fb32e2006bdac8ec1c62affba09f998"
+    },
+    {
+      "filename": "tmds62levm-schematic-39.circuit.json.gz",
+      "sha256": "f236534094283ef4c9f45b980c18d5875c8b1fb9bd91f09860ff8edff724274f"
+    },
+    {
+      "filename": "tmds62levm-schematic-40.circuit.json.gz",
+      "sha256": "978b7d31e8a0bab11d8a07cb204a619c25933f68e3a031577468e40dbc2a3edd"
+    },
+    {
+      "filename": "tmds62levm-schematic-41.circuit.json.gz",
+      "sha256": "a02a372243288dd6d338f00a2b8c1c26ae25fb7763dc561e1de4bbd68782182e"
+    },
+    {
+      "filename": "tmds62levm-schematic-42.circuit.json.gz",
+      "sha256": "d48e55b509b2619b05c00703f562a553da8c88b5290ea147f6c4bbd1522a01be"
+    },
+    {
+      "filename": "tmds62levm-schematic-43.circuit.json.gz",
+      "sha256": "4a90d3360c43e1020d33789bea1c4d4ef4f15051fd9c185475676e361c1b21ac"
+    },
+    {
+      "filename": "tmds62levm-schematic-44.circuit.json.gz",
+      "sha256": "be0dfaa1bd134cca7ffd9a7db9e332348e0928be827ede0875b797c10b568318"
+    },
+    {
+      "filename": "tmds62levm-schematic-45.circuit.json.gz",
+      "sha256": "4b701d1ad270e8f3268e8a2469223481ba4da0497762b870db20bc82e1a7342a"
+    },
+    {
+      "filename": "tmds62levm-schematic-46.circuit.json.gz",
+      "sha256": "1a8b11adb4b26a4630f94c53d4ce5b84af0e9526ec0410ee526cc6b65559e9a0"
+    },
+    {
+      "filename": "tmds62levm-schematic-47.circuit.json.gz",
+      "sha256": "1286f7a1d8f330be4742182c9a2dad67b42916c2993db720e7968db1828c60e0"
+    },
+    {
+      "filename": "tmds62levm-schematic-48.circuit.json.gz",
+      "sha256": "b7c524c884bf3e206237e53ebf2b2c71992138cabb38ed54b5c3ba923d76b70a"
+    },
+    {
+      "filename": "tmds62levm-schematic-49.circuit.json.gz",
+      "sha256": "1ef4ab18348e8babcf0b2122f03311f76f9a575837b03babe2a8684a09157992"
+    },
+    {
+      "filename": "tmds62levm-schematic-50.circuit.json.gz",
+      "sha256": "f46a1547214053a3fef43af49f489b5bda2e5b061bff6498d2f5a9799fb51dd8"
+    },
+    {
+      "filename": "tmds62levm-schematic-51.circuit.json.gz",
+      "sha256": "b48b15f3e9b51ac1ef76a7ae3a6950136a3c730713d3effe9d4b35c7041b5bf0"
+    },
+    {
+      "filename": "tmds62levm-schematic-52.circuit.json.gz",
+      "sha256": "0542b68f2e8383e30ef4f1fe9cc1f0789075d15b7f6692e33cfae2cc187fa603"
+    },
+    {
+      "filename": "tmds62levm-schematic-53.circuit.json.gz",
+      "sha256": "2eb0c3a17f593ae658756c2b05128568a0f4ad361ad1c8cf1d3dac25dddacb4c"
+    },
+    {
+      "filename": "tmds62levm-schematic-54.circuit.json.gz",
+      "sha256": "930dad9bcd97876bf92a2817bd5fbcc2c51b7122f70509802648bd0196494c27"
+    },
+    {
+      "filename": "tmds62levm-schematic-55.circuit.json.gz",
+      "sha256": "0556aba50c5ed65fafd405f6fe4126c1921e6f4383ce4f7d6f806ab027e85eeb"
+    },
+    {
+      "filename": "tmds62levm-schematic-56.circuit.json.gz",
+      "sha256": "3d35e41718660a43af43b15e851c393c1a603970dbba3993e95e9b0700ecfe40"
+    },
+    {
+      "filename": "tmds62levm-schematic-57.circuit.json.gz",
+      "sha256": "1dd44c9ac62e57730fed6bf1c65becb0529d8b519c2b10a0b98a7cd3f5a32ef6"
+    }
+  ],
+  "pcbConnectivity": "Native PCB nets, except SK-AM62 whose pad connectivity is supplied by its 44 native schematic sheets through convertAltiumProjectToCircuitJson"
+}
