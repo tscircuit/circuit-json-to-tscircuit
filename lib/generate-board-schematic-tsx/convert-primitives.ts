@@ -3,8 +3,8 @@ import { generateSymbolElements } from "../generate-symbol-tsx"
 import type { SchematicElementConverter } from "./converter-types"
 import { convertRect } from "./convert-rect"
 import { formatElement } from "./format-attributes"
-import { getNativeSchematicComponentIds } from "./get-native-schematic-component-ids"
 import { getNativeSymbolTextReplacements } from "./get-native-symbol-text-replacements"
+import { getReplacedSchematicComponentIds } from "./get-replaced-schematic-component-ids"
 import { getSchematicPrimitivePaint } from "./get-schematic-primitive-paint"
 import {
   getSchematicPrimitivesInRenderOrder,
@@ -21,7 +21,7 @@ const getRenderablePrimitives = (
   )
   return getSchematicPrimitivesInRenderOrder(
     circuitJson,
-    getNativeSchematicComponentIds(circuitJson),
+    getReplacedSchematicComponentIds(circuitJson),
   ).filter(
     (primitive) =>
       primitive.type !== "schematic_text" ||

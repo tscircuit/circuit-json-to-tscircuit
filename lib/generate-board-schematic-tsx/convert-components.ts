@@ -61,10 +61,11 @@ export const convertComponents: SchematicElementConverter = (circuitJson) => {
             symbolToSchematicTransform,
             reference:
               sourceComponent?.display_name ?? sourceComponent?.name ?? "",
-            displayText:
-              sourceComponent?.display_value ??
-              schematicComponent.symbol_display_value ??
-              "",
+            displayText: isInferredSymbol
+              ? (sourceComponent?.display_value ??
+                schematicComponent.symbol_display_value ??
+                "")
+              : (schematicComponent.symbol_display_value ?? ""),
             includeReference:
               !isInferredSymbol || textReplacement?.replacesReference,
             includeDisplayText:

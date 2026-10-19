@@ -5,13 +5,13 @@ export const hasPreservedPackageValueText = ({
   circuitJson,
   schematicComponent,
   schematicComponents,
-  nativeComponentIds,
+  replacedSchematicComponentIds,
   displayTexts,
 }: {
   circuitJson: CircuitJson
   schematicComponent: SchematicComponent
   schematicComponents: SchematicComponent[]
-  nativeComponentIds: Set<SchematicComponentId>
+  replacedSchematicComponentIds: Set<SchematicComponentId>
   displayTexts: Set<string>
 }): boolean =>
   circuitJson.some((candidate) => {
@@ -19,7 +19,7 @@ export const hasPreservedPackageValueText = ({
       candidate.type !== "schematic_text" ||
       !candidate.schematic_component_id ||
       !displayTexts.has(candidate.text) ||
-      nativeComponentIds.has(candidate.schematic_component_id)
+      replacedSchematicComponentIds.has(candidate.schematic_component_id)
     ) {
       return false
     }

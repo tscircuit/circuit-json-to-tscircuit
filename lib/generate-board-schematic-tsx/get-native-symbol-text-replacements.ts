@@ -4,11 +4,11 @@ import type {
   SchematicPort,
   SchematicText,
 } from "circuit-json"
-import { getNativeSchematicComponentIds } from "./get-native-schematic-component-ids"
 import {
   getNativeSymbolTextReplacementCandidate,
   type NativeSymbolTextReplacementCandidate,
 } from "./get-native-symbol-text-replacement-candidate"
+import { getReplacedSchematicComponentIds } from "./get-replaced-schematic-component-ids"
 
 export type SchematicComponentId = SchematicComponent["schematic_component_id"]
 export type SchematicPortId = SchematicPort["schematic_port_id"]
@@ -46,7 +46,8 @@ export const getNativeSymbolTextReplacements = (
       element.type === "schematic_text" &&
       element.schematic_component_id === undefined,
   )
-  const nativeComponentIds = getNativeSchematicComponentIds(circuitJson)
+  const replacedSchematicComponentIds =
+    getReplacedSchematicComponentIds(circuitJson)
   const schematicComponents = circuitJson.filter(
     (element): element is SchematicComponent =>
       element.type === "schematic_component",
@@ -56,7 +57,7 @@ export const getNativeSymbolTextReplacements = (
       circuitJson,
       schematicComponent,
       unownedSchematicTexts,
-      nativeComponentIds,
+      replacedSchematicComponentIds,
       schematicComponents,
     })
     return candidate ? [candidate] : []

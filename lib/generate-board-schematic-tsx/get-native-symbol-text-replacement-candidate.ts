@@ -38,7 +38,7 @@ interface CandidateContext {
   circuitJson: CircuitJson
   schematicComponent: SchematicComponent
   unownedSchematicTexts: SchematicText[]
-  nativeComponentIds: Set<SchematicComponentId>
+  replacedSchematicComponentIds: Set<SchematicComponentId>
   schematicComponents: SchematicComponent[]
 }
 
@@ -146,7 +146,7 @@ export const getNativeSymbolTextReplacementCandidate = (
       circuitJson,
       schematicComponent,
       schematicComponents: context.schematicComponents,
-      nativeComponentIds: context.nativeComponentIds,
+      replacedSchematicComponentIds: context.replacedSchematicComponentIds,
       displayTexts,
     }),
   }
