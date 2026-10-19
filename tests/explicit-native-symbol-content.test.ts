@@ -14,16 +14,16 @@ test("explicit native symbols preserve display values and owned text", async () 
   const sourceComponent = circuitJson.find(
     (element) => element.type === "source_component" && element.name === "R1",
   )
+  if (sourceComponent?.type !== "source_component") {
+    throw new Error("Missing resistor source component in fixture")
+  }
   const schematicComponent = circuitJson.find(
     (element) =>
       element.type === "schematic_component" &&
-      element.source_component_id === sourceComponent?.source_component_id,
+      element.source_component_id === sourceComponent.source_component_id,
   )
-  if (
-    sourceComponent?.type !== "source_component" ||
-    schematicComponent?.type !== "schematic_component"
-  ) {
-    throw new Error("Missing resistor components in fixture")
+  if (schematicComponent?.type !== "schematic_component") {
+    throw new Error("Missing resistor schematic component in fixture")
   }
 
   sourceComponent.display_value = "10k"
