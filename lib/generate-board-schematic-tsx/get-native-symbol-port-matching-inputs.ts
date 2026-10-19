@@ -7,6 +7,9 @@ const getNumericPortHint = (sourcePort: SourcePort): string | undefined => {
   return numericPortHint?.replace(/^pin/, "")
 }
 
+const getNumericPortName = (sourcePort: SourcePort): string | undefined =>
+  /^\d+$/.test(sourcePort.name) ? sourcePort.name : undefined
+
 const getSourcePinNumber = ({
   sourcePort,
   schematicPorts,
@@ -21,7 +24,8 @@ const getSourcePinNumber = ({
   const sourcePinNumber =
     sourcePort.pin_number ??
     linkedSchematicPort?.pin_number ??
-    getNumericPortHint(sourcePort)
+    getNumericPortHint(sourcePort) ??
+    getNumericPortName(sourcePort)
   return sourcePinNumber === undefined ? undefined : String(sourcePinNumber)
 }
 

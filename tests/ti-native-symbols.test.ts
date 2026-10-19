@@ -10,7 +10,7 @@ import type {
   SourcePort,
 } from "circuit-json"
 import { symbols, type SchSymbol } from "schematic-symbols"
-import { applyToPoint, identity } from "transformation-matrix"
+import { applyToPoint, identity, rotateDEG } from "transformation-matrix"
 import { convertSymbolPrimitives } from "../lib/generate-board-schematic-tsx/convert-symbol-primitives"
 import { getSymbolToSchematicTransform } from "../lib/generate-board-schematic-tsx/get-symbol-to-schematic-transform"
 import { matchSymbolPortsByPinIdentity } from "../lib/generate-board-schematic-tsx/match-symbol-ports-by-pin-identity"
@@ -221,6 +221,84 @@ test("inferred Schottky aliases survive omitted source pin numbers", () => {
   const transform = getSymbolToSchematicTransform({
     symbol,
     schematicComponent,
+    schematicPorts,
+    ...matchingInputs,
+  })
+  for (const match of matches) {
+    const renderedPort = applyToPoint(transform, match.symbolPort)
+    expect(
+      Math.hypot(
+        renderedPort.x - match.schematicPort.center.x,
+        renderedPort.y - match.schematicPort.center.y,
+      ),
+    ).toBeLessThan(PORT_ALIGNMENT_TOLERANCE)
+  }
+})
+
+test("inferred transformer aliases fall back to numeric source-port names", () => {
+  const circuitJson = loadTiFixture("lm5155evm-fly")
+  const schematicComponent = circuitJson.find(
+    (element): element is SchematicComponent =>
+      element.type === "schematic_component" &&
+      resolveNativeSchematicSymbolName({
+        circuitJson,
+        schematicComponent: element,
+      }) === "transformer_4_winding_right",
+  )
+  expect(schematicComponent).toBeDefined()
+  if (!schematicComponent) return
+
+  const quarterTurn = rotateDEG(
+    90,
+    schematicComponent.center.x,
+    schematicComponent.center.y,
+  )
+  const rotatedSchematicComponent: SchematicComponent = {
+    ...schematicComponent,
+    size: {
+      width: schematicComponent.size.height,
+      height: schematicComponent.size.width,
+    },
+  }
+  const schematicPorts = getSchematicPorts({
+    circuitJson,
+    schematicComponent,
+  }).map((schematicPort) => ({
+    ...schematicPort,
+    center: applyToPoint(quarterTurn, schematicPort.center),
+    pin_number: undefined,
+  }))
+  const sourcePorts = circuitJson
+    .filter(
+      (element): element is SourcePort =>
+        element.type === "source_port" &&
+        element.source_component_id === schematicComponent.source_component_id,
+    )
+    .map((sourcePort) => ({
+      ...sourcePort,
+      pin_number: undefined,
+      port_hints: undefined,
+    }))
+  const symbol = nativeSymbols.transformer_4_winding_right
+  expect(symbol).toBeDefined()
+  if (!symbol) return
+
+  const matchingInputs = getNativeSymbolPortMatchingInputs({
+    symbolName: "transformer_4_winding_right",
+    sourcePorts,
+    schematicPorts,
+    isInferredSymbol: true,
+  })
+  const matches = matchSymbolPortsByPinIdentity({
+    schematicPorts,
+    symbol,
+    ...matchingInputs,
+  })
+  expect(matches).toHaveLength(symbol.ports.length)
+
+  const transform = getSymbolToSchematicTransform({
+    symbol,
+    schematicComponent: rotatedSchematicComponent,
     schematicPorts,
     ...matchingInputs,
   })
