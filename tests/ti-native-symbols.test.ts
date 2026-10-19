@@ -109,6 +109,7 @@ test("real TI custom components use aligned native schematic symbols", () => {
     const portMatchingInputs = getNativeSymbolPortMatchingInputs({
       symbolName,
       sourcePorts,
+      schematicPorts,
       isInferredSymbol: true,
     })
     const matches = matchSymbolPortsByPinIdentity({
@@ -153,6 +154,7 @@ test("explicit transformer symbols keep generic sequential pin identities", () =
   const matchingInputs = getNativeSymbolPortMatchingInputs({
     symbolName: "transformer_4_winding_right",
     sourcePorts,
+    schematicPorts: [],
     isInferredSymbol: false,
   })
 
@@ -161,6 +163,76 @@ test("explicit transformer symbols keep generic sequential pin identities", () =
   expect(
     matchingInputs.sourcePorts.map((sourcePort) => sourcePort.pin_number),
   ).toEqual([1, 2, 3, 4, 5, 6, 7, 8])
+})
+
+test("inferred Schottky aliases survive omitted source pin numbers", () => {
+  const circuitJson = loadTiFixture("lm251772evm-pd")
+  const schematicComponent = circuitJson.find(
+    (element): element is SchematicComponent =>
+      element.type === "schematic_component" &&
+      resolveNativeSchematicSymbolName({
+        circuitJson,
+        schematicComponent: element,
+      }) === "dual_series_schottky_diode_right",
+  )
+  expect(schematicComponent).toBeDefined()
+  if (!schematicComponent) return
+
+  const schematicPorts = getSchematicPorts({
+    circuitJson,
+    schematicComponent,
+  })
+  const sourcePorts = circuitJson
+    .filter(
+      (element): element is SourcePort =>
+        element.type === "source_port" &&
+        element.source_component_id === schematicComponent.source_component_id,
+    )
+    .map((sourcePort) => ({ ...sourcePort, pin_number: undefined }))
+  const symbol = nativeSymbols.dual_series_schottky_diode_right
+  expect(symbol).toBeDefined()
+  if (!symbol) return
+
+  const matchingInputs = getNativeSymbolPortMatchingInputs({
+    symbolName: "dual_series_schottky_diode_right",
+    sourcePorts,
+    schematicPorts,
+    isInferredSymbol: true,
+  })
+  const matches = matchSymbolPortsByPinIdentity({
+    schematicPorts,
+    symbol,
+    ...matchingInputs,
+  })
+  const semanticLabelByImportedPin = Object.fromEntries(
+    matches.map(({ schematicPort, symbolPort }) => [
+      schematicPort.pin_number,
+      symbolPort.labels.find((label) =>
+        ["anode", "cathode", "common"].includes(label),
+      ),
+    ]),
+  )
+  expect(semanticLabelByImportedPin).toEqual({
+    1: "anode",
+    2: "cathode",
+    3: "common",
+  })
+
+  const transform = getSymbolToSchematicTransform({
+    symbol,
+    schematicComponent,
+    schematicPorts,
+    ...matchingInputs,
+  })
+  for (const match of matches) {
+    const renderedPort = applyToPoint(transform, match.symbolPort)
+    expect(
+      Math.hypot(
+        renderedPort.x - match.schematicPort.center.x,
+        renderedPort.y - match.schematicPort.center.y,
+      ),
+    ).toBeLessThan(PORT_ALIGNMENT_TOLERANCE)
+  }
 })
 
 test("multi-unit native symbols keep one package value label", () => {

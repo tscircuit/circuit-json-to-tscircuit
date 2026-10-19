@@ -1,4 +1,29 @@
-import type { SourcePort } from "circuit-json"
+import type { SchematicPort, SourcePort } from "circuit-json"
+
+const getNumericPortHint = (sourcePort: SourcePort): string | undefined => {
+  const numericPortHint = sourcePort.port_hints?.find((portHint) =>
+    /^(?:pin)?\d+$/.test(portHint),
+  )
+  return numericPortHint?.replace(/^pin/, "")
+}
+
+const getSourcePinNumber = ({
+  sourcePort,
+  schematicPorts,
+}: {
+  sourcePort: SourcePort
+  schematicPorts: SchematicPort[]
+}): string | undefined => {
+  const linkedSchematicPort = schematicPorts.find(
+    (schematicPort) =>
+      schematicPort.source_port_id === sourcePort.source_port_id,
+  )
+  const sourcePinNumber =
+    sourcePort.pin_number ??
+    linkedSchematicPort?.pin_number ??
+    getNumericPortHint(sourcePort)
+  return sourcePinNumber === undefined ? undefined : String(sourcePinNumber)
+}
 
 const getFourWindingTransformerAlias = (
   sourcePinNumber: string,
@@ -59,10 +84,12 @@ const getInferredPortAlias = ({
 export const getNativeSymbolPortMatchingInputs = ({
   symbolName,
   sourcePorts,
+  schematicPorts,
   isInferredSymbol,
 }: {
   symbolName: string
   sourcePorts: SourcePort[]
+  schematicPorts: SchematicPort[]
   isInferredSymbol: boolean
 }): {
   sourcePorts: SourcePort[]
@@ -76,7 +103,8 @@ export const getNativeSymbolPortMatchingInputs = ({
   }
 
   const aliasedSourcePorts = sourcePorts.map((sourcePort) => {
-    const sourcePinNumber = String(sourcePort.pin_number ?? sourcePort.name)
+    const sourcePinNumber = getSourcePinNumber({ sourcePort, schematicPorts })
+    if (!sourcePinNumber) return sourcePort
     const inferredPortAlias = getInferredPortAlias({
       symbolName,
       sourcePinNumber,
