@@ -4,10 +4,24 @@ import type {
   SourcePort,
 } from "circuit-json"
 import type { SchSymbol } from "schematic-symbols"
-import { fromTriangles } from "transformation-matrix"
+import { fromTriangles, type Matrix } from "transformation-matrix"
 import { getRendererCompatibleSymbolTransform } from "./get-renderer-compatible-symbol-transform"
 import { getRigidPinIdentityTransform } from "./get-rigid-pin-identity-transform"
 import { matchSymbolPortsByPinIdentity } from "./match-symbol-ports-by-pin-identity"
+
+const TRANSFORM_DECIMAL_PLACES = 12
+
+const normalizeTransformValue = (transformValue: number): number =>
+  Number(transformValue.toFixed(TRANSFORM_DECIMAL_PLACES))
+
+const normalizeSymbolToSchematicTransform = (transform: Matrix): Matrix => ({
+  a: normalizeTransformValue(transform.a),
+  b: normalizeTransformValue(transform.b),
+  c: normalizeTransformValue(transform.c),
+  d: normalizeTransformValue(transform.d),
+  e: normalizeTransformValue(transform.e),
+  f: normalizeTransformValue(transform.f),
+})
 
 export const getSymbolToSchematicTransform = ({
   symbol,
@@ -34,7 +48,9 @@ export const getSymbolToSchematicTransform = ({
   })
   const rigidPinIdentityTransform =
     getRigidPinIdentityTransform(pinIdentityMatches)
-  if (rigidPinIdentityTransform) return rigidPinIdentityTransform
+  if (rigidPinIdentityTransform) {
+    return normalizeSymbolToSchematicTransform(rigidPinIdentityTransform)
+  }
 
   if (pinIdentityMatches.length >= 3) {
     // Inconsistent pin identities must not shear standard symbol artwork.
@@ -44,26 +60,30 @@ export const getSymbolToSchematicTransform = ({
       schematicPorts,
       symbol,
     })
-    if (rendererCompatibleTransform) return rendererCompatibleTransform
+    if (rendererCompatibleTransform) {
+      return normalizeSymbolToSchematicTransform(rendererCompatibleTransform)
+    }
   }
 
   // Without matching ports, use the explicitly imported component bounds.
-  return fromTriangles(
-    [
-      symbol.center,
-      { x: symbol.center.x + symbol.size.width, y: symbol.center.y },
-      { x: symbol.center.x, y: symbol.center.y + symbol.size.height },
-    ],
-    [
-      schematicComponent.center,
-      {
-        x: schematicComponent.center.x + schematicComponent.size.width,
-        y: schematicComponent.center.y,
-      },
-      {
-        x: schematicComponent.center.x,
-        y: schematicComponent.center.y + schematicComponent.size.height,
-      },
-    ],
+  return normalizeSymbolToSchematicTransform(
+    fromTriangles(
+      [
+        symbol.center,
+        { x: symbol.center.x + symbol.size.width, y: symbol.center.y },
+        { x: symbol.center.x, y: symbol.center.y + symbol.size.height },
+      ],
+      [
+        schematicComponent.center,
+        {
+          x: schematicComponent.center.x + schematicComponent.size.width,
+          y: schematicComponent.center.y,
+        },
+        {
+          x: schematicComponent.center.x,
+          y: schematicComponent.center.y + schematicComponent.size.height,
+        },
+      ],
+    ),
   )
 }
