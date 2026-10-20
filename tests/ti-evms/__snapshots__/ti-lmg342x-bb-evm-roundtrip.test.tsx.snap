@@ -2251,10 +2251,10 @@ exports[`TI LMG342X-BB-EVM Circuit JSON to tscircuit round trip 1`] = `
     <schematicline x1={-10.1899027327465} y1={-3.66327003242203} x2={-10.189902732746642} y2={-4.075961093098657} strokeWidth={0.02} color={"#840000"} />
     <schematicline x1={-10.6993978693835} y1={-3.46966188049997} x2={-10.699397869383974} y2={-3.0569708198239933} strokeWidth={0.02} color={"#840000"} />
     <schematicline x1={-10.6993978693835} y1={-3.66327003242203} x2={-10.699397869383974} y2={-4.075961093098657} strokeWidth={0.02} color={"#840000"} />
-    <schematictext text={"1"} schX={-10.235757295043829} schY={-3.44966188049997} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
-    <schematictext text={"2"} schX={-10.235757295043829} schY={-3.64327003242203} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
-    <schematictext text={"3"} schX={-10.65354330708617} schY={-3.44966188049997} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
-    <schematictext text={"4"} schX={-10.65354330708617} schY={-3.64327003242203} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
+    <schematictext text={"1"} schX={-10.2557572950439} schY={-3.2633163501619817} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
+    <schematictext text={"2"} schX={-10.2557572950439} schY={-3.8696155627603437} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
+    <schematictext text={"3"} schX={-10.673543307086407} schY={-3.2633163501619817} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
+    <schematictext text={"4"} schX={-10.673543307086407} schY={-3.8696155627603437} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
     <schematicpath points={[{"x":-2.1653543307,"y":-4.6307086614},{"x":-2.1653543307,"y":-4.5306886614}]} strokeWidth={0.02} isFilled={false} />
     <schematicpath points={[{"x":-2.1653543307,"y":-4.1307286614},{"x":-2.1653543307,"y":-4.0307086614}]} strokeWidth={0.02} isFilled={false} />
     <schematicpath points={[{"x":-2.2453343307,"y":-4.5306886614},{"x":-2.2453343307,"y":-4.1307286614},{"x":-2.0853743307,"y":-4.1307286614},{"x":-2.0853743307,"y":-4.5306886614},{"x":-2.2453343307,"y":-4.5306886614}]} strokeWidth={0.02} isFilled={false} />
@@ -2468,9 +2468,9 @@ exports[`TI LMG342X-BB-EVM Circuit JSON to tscircuit round trip 1`] = `
     <schematicpath points={[{"x":4.84020379802,"y":-4.935734136180001},{"x":4.84020379802,"y":-4.712830013900001}]} strokeWidth={0.02} isFilled={false} />
     <schematicpath points={[{"x":4.96757758218,"y":-4.935734136180001},{"x":4.96757758218,"y":-4.712830013900001}]} strokeWidth={0.02} isFilled={false} />
     <schematictext text={"C22"} schX={5.2223251505} schY={-4.954840203804} anchor={"center_left"} fontSize={0.12737378415933304} />
-    <schematictext text={"3"} schX={4.94757758218} schY={-5.23824687356} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
+    <schematictext text={"3"} schX={4.987577582179999} schY={-5.23824687356} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
     <schematictext text={"1"} schX={4.8202037980200005} schY={-5.23824687356} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
-    <schematictext text={"4"} schX={4.94757758218} schY={-4.824282075040001} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
+    <schematictext text={"4"} schX={4.987577582179999} schY={-4.824282075040001} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
     <schematictext text={"2"} schX={4.8202037980200005} schY={-4.824282075040001} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
     <schematicpath points={[{"x":11.5209587772,"y":3.2990921723},{"x":11.660958777200001,"y":3.5690921723}]} strokeWidth={0.02} isFilled={false} />
     <schematicpath points={[{"x":11.5209587772,"y":3.3090921723},{"x":11.5209587772,"y":2.8990921723}]} strokeWidth={0.02} isFilled={false} />
