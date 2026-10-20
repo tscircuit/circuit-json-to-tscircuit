@@ -94,6 +94,11 @@ test("five more real TI components use aligned native symbols", () => {
         element.source_component_id === schematicComponent.source_component_id,
     )
     const symbol = symbols[nativeSymbolCase.symbolName]
+    if (!symbol) {
+      throw new Error(
+        `Missing schematic symbol: ${nativeSymbolCase.symbolName}`,
+      )
+    }
     const portMatchingInputs = getNativeSymbolPortMatchingInputs({
       symbolName: nativeSymbolCase.symbolName,
       sourcePorts,
