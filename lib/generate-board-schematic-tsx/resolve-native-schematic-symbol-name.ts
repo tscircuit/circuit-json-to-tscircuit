@@ -126,7 +126,7 @@ export const resolveNativeSchematicSymbolName = ({
     designator.startsWith("L") &&
     hasExactPortNames(sourcePortNames, ["1", "2", "3", "4"])
   ) {
-    return "coupled_inductor_up"
+    return "coupled_inductor_right"
   }
   if (
     designator.startsWith("C") &&

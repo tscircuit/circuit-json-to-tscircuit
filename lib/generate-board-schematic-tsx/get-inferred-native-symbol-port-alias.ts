@@ -56,9 +56,9 @@ const getCoupledInductorAlias = (
     case "1":
       return "winding1_start"
     case "2":
-      return "winding1_end"
-    case "3":
       return "winding2_start"
+    case "3":
+      return "winding1_end"
     case "4":
       return "winding2_end"
   }
@@ -114,6 +114,7 @@ export const getInferredNativeSymbolPortAlias = ({
     case "dual_common_cathode_schottky_diode_right":
       return getDualCommonCathodeSchottkyAlias(sourcePinNumber)
     case "coupled_inductor_up":
+    case "coupled_inductor_right":
       return getCoupledInductorAlias(sourcePinNumber)
     case "four_terminal_capacitor_up":
       return getFourTerminalCapacitorAlias(sourcePinNumber)

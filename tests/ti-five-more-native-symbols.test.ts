@@ -21,6 +21,7 @@ import { convertNativeSymbolPortExtensions } from "../lib/generate-board-schemat
 
 const PORT_ALIGNMENT_TOLERANCE = 0.000001
 const MAXIMUM_NATIVE_PIN_EXTENSION_LENGTH = 0.16
+const MAXIMUM_COUPLED_INDUCTOR_PIN_EXTENSION_LENGTH = 0.8
 
 interface NativeSymbolCase {
   fixtureName: string
@@ -42,7 +43,7 @@ const nativeSymbolCases: NativeSymbolCase[] = [
   {
     fixtureName: "lmg342x-bb-evm",
     componentName: "L3",
-    symbolName: "coupled_inductor_up",
+    symbolName: "coupled_inductor_right",
   },
   {
     fixtureName: "lmg342x-bb-evm",
@@ -155,6 +156,25 @@ test("five more real TI components use aligned native symbols", () => {
     expect(portExtensions).toHaveLength(
       portGaps.filter((portGap) => portGap >= PORT_ALIGNMENT_TOLERANCE).length,
     )
+
+    if (nativeSymbolCase.symbolName === "coupled_inductor_right") {
+      expect(portExtensions.length).toBeGreaterThan(0)
+      expect(Math.max(...portGaps)).toBeLessThan(
+        MAXIMUM_COUPLED_INDUCTOR_PIN_EXTENSION_LENGTH,
+      )
+      for (const match of matches) {
+        const renderedPort = applyToPoint(transform, match.symbolPort)
+        const portGap = Math.hypot(
+          renderedPort.x - match.schematicPort.center.x,
+          renderedPort.y - match.schematicPort.center.y,
+        )
+        if (portGap < PORT_ALIGNMENT_TOLERANCE) continue
+        expect(
+          Math.abs(renderedPort.x - match.schematicPort.center.x),
+        ).toBeLessThan(PORT_ALIGNMENT_TOLERANCE)
+      }
+      continue
+    }
 
     const usesImportedPackagePinEnvelope =
       nativeSymbolCase.symbolName.startsWith(

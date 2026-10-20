@@ -38,6 +38,7 @@ const usesInferredPortAliases = (symbolName: string): boolean => {
     case "dual_series_schottky_diode_right":
     case "dual_common_cathode_schottky_diode_right":
     case "coupled_inductor_up":
+    case "coupled_inductor_right":
     case "four_terminal_capacitor_up":
     case "or_gate_with_power_right":
       return true
