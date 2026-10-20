@@ -36,7 +36,7 @@ const getDualSeriesSchottkyAlias = (
   }
 }
 
-const getDualAnodeSchottkyAlias = (
+const getThreePinSchottkyAlias = (
   sourcePinNumber?: string,
 ): string | undefined => {
   switch (sourcePinNumber) {
@@ -111,8 +111,8 @@ export const getInferredNativeSymbolPortAlias = ({
       return getFourWindingTransformerAlias(sourcePinNumber)
     case "dual_series_schottky_diode_right":
       return getDualSeriesSchottkyAlias(sourcePinNumber)
-    case "dual_anode_schottky_diode_right":
-      return getDualAnodeSchottkyAlias(sourcePinNumber)
+    case "schottky_diode_3_pin_right":
+      return getThreePinSchottkyAlias(sourcePinNumber)
     case "coupled_inductor_up":
     case "coupled_inductor_right":
       return getCoupledInductorAlias(sourcePinNumber)

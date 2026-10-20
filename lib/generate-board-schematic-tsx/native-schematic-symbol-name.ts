@@ -4,7 +4,7 @@ export type NativeSchematicSymbolName =
   | "and_gate_right"
   | "coupled_inductor_up"
   | "coupled_inductor_right"
-  | "dual_anode_schottky_diode_right"
+  | "schottky_diode_3_pin_right"
   | "dual_series_schottky_diode_right"
   | "four_terminal_capacitor_up"
   | FiveTerminalMosfetSymbolName

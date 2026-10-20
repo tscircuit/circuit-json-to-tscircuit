@@ -45,7 +45,7 @@ export const convertComponents: SchematicElementConverter = (circuitJson) => {
           schematicComponent,
           schematicPorts,
           preferCenteredBoundsTransform: [
-            "dual_anode_schottky_diode_right",
+            "schottky_diode_3_pin_right",
             "coupled_inductor_right",
           ].includes(symbolName),
           ...portMatchingInputs,
