@@ -3000,7 +3000,6 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
     <schematicpath points={[{"x":3.154624054355,"y":-3.388142658679},{"x":3.154624054355,"y":-3.5749575421209996}]} strokeWidth={0.02} isFilled={false} />
     <schematiccircle center={{"x":3.248031496076,"y":-3.4815501004}} radius={0.24625598271899998} strokeWidth={0.02} isFilled={false} />
     <schematictext text={"Q7"} schX={3.1121661263} schY={-3.1758530184039997} anchor={"center_right"} fontSize={0.12737378415933304} />
-    <schematictext text={"ISC0703NLSATMA1"} schX={3.1121661263} schY={-3.838196696062} anchor={"center_right"} fontSize={0.12737378415933304} />
     <schematicpath points={[{"x":2.865910143581,"y":-3.5664659565099996},{"x":3.154624054355,"y":-3.5749575421209996}]} strokeWidth={0.02} isFilled={false} />
     <schematicpath points={[{"x":3.375405280241,"y":-3.0569708198499996},{"x":3.375405280241,"y":-3.388142658679}]} strokeWidth={0.02} isFilled={false} />
     <schematicpath points={[{"x":3.248031496076,"y":-3.7532808399519997},{"x":3.502779064406,"y":-3.7532808399519997}]} strokeWidth={0.02} isFilled={false} />
@@ -3026,7 +3025,6 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
     <schematicpath points={[{"x":4.364675003855,"y":-3.388142658679},{"x":4.364675003855,"y":-3.5749575421209996}]} strokeWidth={0.02} isFilled={false} />
     <schematiccircle center={{"x":4.458082445576,"y":-3.4815501004}} radius={0.24625598271899998} strokeWidth={0.02} isFilled={false} />
     <schematictext text={"Q8"} schX={4.3222170758} schY={-3.1758530184039997} anchor={"center_right"} fontSize={0.12737378415933304} />
-    <schematictext text={"ISC0703NLSATMA1"} schX={4.3222170758} schY={-3.838196696062} anchor={"center_right"} fontSize={0.12737378415933304} />
     <schematicpath points={[{"x":4.075961093081,"y":-3.5664659565099996},{"x":4.364675003855,"y":-3.5749575421209996}]} strokeWidth={0.02} isFilled={false} />
     <schematicpath points={[{"x":4.585456229741,"y":-3.0569708198499996},{"x":4.585456229741,"y":-3.388142658679}]} strokeWidth={0.02} isFilled={false} />
     <schematicpath points={[{"x":4.458082445576,"y":-3.7532808399519997},{"x":4.712830013906,"y":-3.7532808399519997}]} strokeWidth={0.02} isFilled={false} />
@@ -3080,7 +3078,6 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
     <schematicpath points={[{"x":4.063223714721,"y":3.0909371622550004},{"x":3.8764088312790004,"y":3.0909371622550004}]} strokeWidth={0.02} isFilled={false} />
     <schematiccircle center={{"x":3.969816273,"y":3.184344603976}} radius={0.24625598271899998} strokeWidth={0.02} isFilled={false} />
     <schematictext text={"Q5"} schX={4.275513354996} schY={3.0484792342} anchor={"bottom_center"} fontSize={0.12737378415933304} />
-    <schematictext text={"ISC0703NLSATMA1"} schX={3.613169677338} schY={3.0484792342} anchor={"bottom_center"} fontSize={0.12737378415933304} />
     <schematicpath points={[{"x":3.8849004168900003,"y":2.802223251481},{"x":3.8764088312790004,"y":3.0909371622550004}]} strokeWidth={0.02} isFilled={false} />
     <schematicpath points={[{"x":4.39439555355,"y":3.311718388141},{"x":4.063223714721,"y":3.311718388141}]} strokeWidth={0.02} isFilled={false} />
     <schematicpath points={[{"x":3.6980855334480003,"y":3.184344603976},{"x":3.6980855334480003,"y":3.439092172306}]} strokeWidth={0.02} isFilled={false} />
@@ -3919,6 +3916,9 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
     <schematicline x1={9.68040759610931} y1={-2.2927281148679945} x2={9.425660027790643} y2={-2.2927281148679945} strokeWidth={0.1} color={"#840000"} isDashed={false} />
     <schematicline x1={9.68040759610931} y1={-2.420101899027328} x2={9.425660027790643} y2={-2.420101899027328} strokeWidth={0.1} color={"#840000"} isDashed={false} />
     <schematictext text={"JP12"} schX={9.667670217693376} schY={-2.674849467345993} anchor={"bottom_left"} fontSize={0.12737378415933304} color={"#1f2937"} schRotation={0} />
+    <schematictext text={"ISC0703NLSATMA1"} schX={3.6938397406206587} schY={-3.884900416859658} anchor={"bottom_left"} fontSize={0.12737378415933304} color={"#000080"} schRotation={90} />
+    <schematictext text={"ISC0703NLSATMA1"} schX={4.751042149143123} schY={-3.5537285780453916} anchor={"bottom_left"} fontSize={0.12737378415933304} color={"#000080"} schRotation={0} />
+    <schematictext text={"ISC0703NLSATMA1"} schX={3.884900416859656} schY={3.439092172301992} anchor={"bottom_left"} fontSize={0.12737378415933304} color={"#000080"} schRotation={0} />
     <schematictext text={"1"} schX={1.1463640574339973} schY={-6.050254747568319} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={0} />
     <schematictext text={"2"} schX={1.1463640574339973} schY={-5.922880963408986} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={0} />
     <schematictext text={"3"} schX={1.1463640574339973} schY={-5.795507179249653} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={0} />

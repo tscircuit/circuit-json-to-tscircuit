@@ -26,6 +26,24 @@ const symbolNameByGateAndDrainSides: Partial<
   "top:right": "n_channel_power_mosfet_5_pin_gate_top_drain_right",
 }
 
+const getSchematicPortForSourceName = ({
+  sourcePortName,
+  sourcePorts,
+  schematicPorts,
+}: {
+  sourcePortName: string
+  sourcePorts: SourcePort[]
+  schematicPorts: SchematicPort[]
+}): SchematicPort | undefined => {
+  const sourcePort = sourcePorts.find(
+    (candidate) => candidate.name.toLowerCase() === sourcePortName,
+  )
+  return schematicPorts.find(
+    (schematicPort) =>
+      schematicPort.source_port_id === sourcePort?.source_port_id,
+  )
+}
+
 export const getFiveTerminalMosfetSymbolName = ({
   sourcePorts,
   schematicPorts,
@@ -33,20 +51,16 @@ export const getFiveTerminalMosfetSymbolName = ({
   sourcePorts: SourcePort[]
   schematicPorts: SchematicPort[]
 }): FiveTerminalMosfetSymbolName | undefined => {
-  const getSchematicPortForSourceName = (
-    sourcePortName: string,
-  ): SchematicPort | undefined => {
-    const sourcePort = sourcePorts.find(
-      (candidate) => candidate.name.toLowerCase() === sourcePortName,
-    )
-    return schematicPorts.find(
-      (schematicPort) =>
-        schematicPort.source_port_id === sourcePort?.source_port_id,
-    )
-  }
-
-  const gatePort = getSchematicPortForSourceName("gate")
-  const drainPort = getSchematicPortForSourceName("drain")
+  const gatePort = getSchematicPortForSourceName({
+    sourcePortName: "gate",
+    sourcePorts,
+    schematicPorts,
+  })
+  const drainPort = getSchematicPortForSourceName({
+    sourcePortName: "drain",
+    sourcePorts,
+    schematicPorts,
+  })
   if (!gatePort || !drainPort) return undefined
 
   return symbolNameByGateAndDrainSides[

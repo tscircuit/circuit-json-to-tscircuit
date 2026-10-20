@@ -6,19 +6,14 @@ import type {
   SourcePort,
 } from "circuit-json"
 import { hasExactPortNameOccurrences } from "./has-exact-port-name-occurrences"
+import { hasExactPortNames } from "./has-exact-port-names"
 import { getFiveTerminalMosfetSymbolName } from "./get-five-terminal-mosfet-symbol-name"
+import { hasCoupledInductorPortLayout } from "./has-coupled-inductor-port-layout"
 import type { NativeSchematicSymbolName } from "./native-schematic-symbol-name"
+import { hasFourTerminalCapacitorConnections } from "./has-four-terminal-capacitor-connections"
+import { hasRedundantAnodeSchottkyConnections } from "./has-redundant-anode-schottky-connections"
+import { normalizePortName } from "./normalize-port-name"
 export type { NativeSchematicSymbolName } from "./native-schematic-symbol-name"
-
-const normalizePortName = (portName: string): string =>
-  portName.toLowerCase().replace(/[^a-z0-9]/gu, "")
-
-const hasExactPortNames = (
-  sourcePortNames: Set<string>,
-  expectedPortNames: string[],
-): boolean =>
-  sourcePortNames.size === expectedPortNames.length &&
-  expectedPortNames.every((portName) => sourcePortNames.has(portName))
 
 export const resolveNativeSchematicSymbolName = ({
   circuitJson,
@@ -118,19 +113,29 @@ export const resolveNativeSchematicSymbolName = ({
   }
   if (
     designator.startsWith("D") &&
-    hasExactPortNameOccurrences(normalizedSourcePortNames, ["a", "a", "k"])
+    hasExactPortNameOccurrences(normalizedSourcePortNames, ["a", "a", "k"]) &&
+    hasRedundantAnodeSchottkyConnections({
+      circuitJson,
+      sourcePorts,
+    })
   ) {
     return "schottky_diode_3_pin_right"
   }
   if (
     designator.startsWith("L") &&
-    hasExactPortNames(sourcePortNames, ["1", "2", "3", "4"])
+    hasExactPortNames(sourcePortNames, ["1", "2", "3", "4"]) &&
+    hasCoupledInductorPortLayout({ sourcePorts, schematicPorts })
   ) {
     return "coupled_inductor_right"
   }
   if (
     designator.startsWith("C") &&
-    hasExactPortNames(sourcePortNames, ["1", "2", "3", "4"])
+    hasExactPortNames(sourcePortNames, ["1", "2", "3", "4"]) &&
+    hasFourTerminalCapacitorConnections({
+      circuitJson,
+      sourcePorts,
+      schematicPorts,
+    })
   ) {
     return "four_terminal_capacitor_up"
   }

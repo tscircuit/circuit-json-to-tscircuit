@@ -135,7 +135,7 @@ test("five more real TI components use aligned native symbols", () => {
       schematicPorts.length,
     )
 
-    const transform = getSymbolToSchematicTransform({
+    const symbolToSchematicTransform = getSymbolToSchematicTransform({
       symbol,
       schematicComponent,
       schematicPorts,
@@ -145,14 +145,17 @@ test("five more real TI components use aligned native symbols", () => {
       ...portMatchingInputs,
     })
     const portGaps = matches.map((match) => {
-      const renderedPort = applyToPoint(transform, match.symbolPort)
+      const renderedPort = applyToPoint(
+        symbolToSchematicTransform,
+        match.symbolPort,
+      )
       return Math.hypot(
         renderedPort.x - match.schematicPort.center.x,
         renderedPort.y - match.schematicPort.center.y,
       )
     })
     const portExtensions = convertNativeSymbolPortExtensions({
-      symbolToSchematicTransform: transform,
+      symbolToSchematicTransform,
       portMatches: matches,
     })
     expect(portExtensions).toHaveLength(
@@ -165,7 +168,10 @@ test("five more real TI components use aligned native symbols", () => {
         MAXIMUM_COUPLED_INDUCTOR_PIN_EXTENSION_LENGTH,
       )
       for (const match of matches) {
-        const renderedPort = applyToPoint(transform, match.symbolPort)
+        const renderedPort = applyToPoint(
+          symbolToSchematicTransform,
+          match.symbolPort,
+        )
         const portGap = Math.hypot(
           renderedPort.x - match.schematicPort.center.x,
           renderedPort.y - match.schematicPort.center.y,
@@ -179,7 +185,10 @@ test("five more real TI components use aligned native symbols", () => {
     }
 
     for (const match of matches) {
-      const renderedPort = applyToPoint(transform, match.symbolPort)
+      const renderedPort = applyToPoint(
+        symbolToSchematicTransform,
+        match.symbolPort,
+      )
       expect(
         Math.hypot(
           renderedPort.x - match.schematicPort.center.x,

@@ -88,8 +88,13 @@ const getFiveTerminalMosfetAlias = ({
 }): string | undefined => {
   if (sourcePort.name.toLowerCase() === "drain") return "drain"
   if (sourcePort.name.toLowerCase() === "gate") return "gate"
-  if (["1", "2", "3"].includes(sourcePinNumber ?? "")) {
-    return `source${sourcePinNumber}`
+  switch (sourcePinNumber) {
+    case "1":
+      return "source_left"
+    case "2":
+      return "source_center"
+    case "3":
+      return "source_right"
   }
 }
 

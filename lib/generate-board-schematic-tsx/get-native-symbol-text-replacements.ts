@@ -38,6 +38,11 @@ const isFirstUnitWithDisplayValue = ({
       otherCandidate.displayValueTextIds.size > 0,
   )?.schematicComponentId === candidate.schematicComponentId
 
+const shouldPreserveImportedDisplayValue = (
+  candidate: NativeSymbolTextReplacementCandidate,
+): boolean =>
+  candidate.symbolName.startsWith("n_channel_power_mosfet_5_pin_gate_")
+
 export const getNativeSymbolTextReplacements = (
   circuitJson: CircuitJson,
 ): NativeSymbolTextReplacement[] => {
@@ -63,20 +68,32 @@ export const getNativeSymbolTextReplacements = (
     return candidate ? [candidate] : []
   })
 
-  return candidates.map((candidate) => ({
-    schematicComponentId: candidate.schematicComponentId,
-    importedTextIds: candidate.importedTextIds,
-    replacedPinPortIds: candidate.replacedPinPortIds,
-    replacesReference: candidate.replacesReference,
-    includeNativeDisplayText:
-      candidate.displayValueTextIds.size > 0 &&
-      (!candidate.isMultiUnitSymbol ||
-        (!candidate.hasPreservedPackageValueText &&
-          isFirstUnitWithDisplayValue({
-            candidate,
-            allCandidates: candidates,
-          }))),
-    referenceFontSize: candidate.referenceFontSize,
-    displayTextFontSize: candidate.displayTextFontSize,
-  }))
+  return candidates.map((candidate) => {
+    const preserveImportedDisplayValue =
+      shouldPreserveImportedDisplayValue(candidate)
+    return {
+      schematicComponentId: candidate.schematicComponentId,
+      importedTextIds: preserveImportedDisplayValue
+        ? new Set(
+            [...candidate.importedTextIds].filter(
+              (schematicTextId) =>
+                !candidate.displayValueTextIds.has(schematicTextId),
+            ),
+          )
+        : candidate.importedTextIds,
+      replacedPinPortIds: candidate.replacedPinPortIds,
+      replacesReference: candidate.replacesReference,
+      includeNativeDisplayText:
+        !preserveImportedDisplayValue &&
+        candidate.displayValueTextIds.size > 0 &&
+        (!candidate.isMultiUnitSymbol ||
+          (!candidate.hasPreservedPackageValueText &&
+            isFirstUnitWithDisplayValue({
+              candidate,
+              allCandidates: candidates,
+            }))),
+      referenceFontSize: candidate.referenceFontSize,
+      displayTextFontSize: candidate.displayTextFontSize,
+    }
+  })
 }
