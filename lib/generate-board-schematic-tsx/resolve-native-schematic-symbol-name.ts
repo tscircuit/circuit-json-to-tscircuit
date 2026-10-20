@@ -5,10 +5,16 @@ import type {
   AnySourceComponent,
   SourcePort,
 } from "circuit-json"
+import { hasExactPortNameOccurrences } from "./has-exact-port-name-occurrences"
 
 export type NativeSchematicSymbolName =
   | "and_gate_right"
+  | "coupled_inductor_up"
+  | "dual_common_cathode_schottky_diode_right"
   | "dual_series_schottky_diode_right"
+  | "four_terminal_capacitor_up"
+  | "n_channel_power_mosfet_5_pin_gate_left_drain_top"
+  | "or_gate_with_power_right"
   | "phototransistor_optocoupler_right"
   | "schmitt_trigger_inverter_right"
   | "transformer_4_winding_right"
@@ -47,6 +53,9 @@ export const resolveNativeSchematicSymbolName = ({
   const sourcePortNames = new Set(
     sourcePorts.map((sourcePort) => normalizePortName(sourcePort.name)),
   )
+  const normalizedSourcePortNames = sourcePorts.map((sourcePort) =>
+    normalizePortName(sourcePort.name),
+  )
   const schematicPorts = circuitJson.filter(
     (element): element is SchematicPort =>
       element.type === "schematic_port" &&
@@ -75,6 +84,12 @@ export const resolveNativeSchematicSymbolName = ({
     hasExactPortNames(logicPortNames, ["a", "b", "y"])
   ) {
     return "and_gate_right"
+  }
+  if (
+    componentValue.startsWith("SN74LVC1G32") &&
+    hasExactPortNames(logicPortNames, ["a", "b", "gnd", "vcc", "y"])
+  ) {
+    return "or_gate_with_power_right"
   }
   if (
     /^SN74LVC[23]G14/u.test(componentValue) &&
@@ -109,6 +124,36 @@ export const resolveNativeSchematicSymbolName = ({
     hasExactPortNames(sourcePortNames, ["1anode", "2cathode", "1cathode2anode"])
   ) {
     return "dual_series_schottky_diode_right"
+  }
+  if (
+    designator.startsWith("D") &&
+    hasExactPortNameOccurrences(normalizedSourcePortNames, ["a", "a", "k"])
+  ) {
+    return "dual_common_cathode_schottky_diode_right"
+  }
+  if (
+    designator.startsWith("L") &&
+    hasExactPortNames(sourcePortNames, ["1", "2", "3", "4"])
+  ) {
+    return "coupled_inductor_up"
+  }
+  if (
+    designator.startsWith("C") &&
+    hasExactPortNames(sourcePortNames, ["1", "2", "3", "4"])
+  ) {
+    return "four_terminal_capacitor_up"
+  }
+  if (
+    designator.startsWith("Q") &&
+    hasExactPortNameOccurrences(normalizedSourcePortNames, [
+      "drain",
+      "gate",
+      "source",
+      "source",
+      "source",
+    ])
+  ) {
+    return "n_channel_power_mosfet_5_pin_gate_left_drain_top"
   }
   return undefined
 }

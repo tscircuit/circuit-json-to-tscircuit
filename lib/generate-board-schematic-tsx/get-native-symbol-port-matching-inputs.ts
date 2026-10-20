@@ -1,4 +1,5 @@
 import type { SchematicPort, SourcePort } from "circuit-json"
+import { getInferredNativeSymbolPortAlias } from "./get-inferred-native-symbol-port-alias"
 
 const getNumericPortHint = (sourcePort: SourcePort): string | undefined => {
   const numericPortHint = sourcePort.port_hints?.find((portHint) =>
@@ -29,60 +30,19 @@ const getSourcePinNumber = ({
   return sourcePinNumber === undefined ? undefined : String(sourcePinNumber)
 }
 
-const getFourWindingTransformerAlias = (
-  sourcePinNumber: string,
-): string | undefined => {
-  switch (sourcePinNumber) {
-    case "1":
-      return "primary_end"
-    case "2":
-      return "primary_start"
-    case "5":
-      return "auxiliary_end"
-    case "3":
-      return "auxiliary_start"
-    case "9":
-      return "secondary1_end"
-    case "10":
-      return "secondary1_start"
-    case "6":
-      return "secondary2_end"
-    case "7":
-      return "secondary2_start"
+const usesInferredPortAliases = (symbolName: string): boolean => {
+  switch (symbolName) {
+    case "transformer_4_winding_right":
+    case "dual_series_schottky_diode_right":
+    case "dual_common_cathode_schottky_diode_right":
+    case "coupled_inductor_up":
+    case "four_terminal_capacitor_up":
+    case "n_channel_power_mosfet_5_pin_gate_left_drain_top":
+    case "or_gate_with_power_right":
+      return true
     default:
-      return undefined
+      return false
   }
-}
-
-const getDualSeriesSchottkyAlias = (
-  sourcePinNumber: string,
-): string | undefined => {
-  switch (sourcePinNumber) {
-    case "1":
-      return "anode"
-    case "2":
-      return "cathode"
-    case "3":
-      return "common"
-    default:
-      return undefined
-  }
-}
-
-const getInferredPortAlias = ({
-  symbolName,
-  sourcePinNumber,
-}: {
-  symbolName: string
-  sourcePinNumber: string
-}): string | undefined => {
-  if (symbolName === "transformer_4_winding_right") {
-    return getFourWindingTransformerAlias(sourcePinNumber)
-  }
-  if (symbolName === "dual_series_schottky_diode_right") {
-    return getDualSeriesSchottkyAlias(sourcePinNumber)
-  }
-  return undefined
 }
 
 export const getNativeSymbolPortMatchingInputs = ({
@@ -99,18 +59,15 @@ export const getNativeSymbolPortMatchingInputs = ({
   sourcePorts: SourcePort[]
   includeSchematicPinNumbers: boolean
 } => {
-  const usesInferredPortAliases =
-    symbolName === "transformer_4_winding_right" ||
-    symbolName === "dual_series_schottky_diode_right"
-  if (!isInferredSymbol || !usesInferredPortAliases) {
+  if (!isInferredSymbol || !usesInferredPortAliases(symbolName)) {
     return { sourcePorts, includeSchematicPinNumbers: true }
   }
 
   const aliasedSourcePorts = sourcePorts.map((sourcePort) => {
     const sourcePinNumber = getSourcePinNumber({ sourcePort, schematicPorts })
-    if (!sourcePinNumber) return sourcePort
-    const inferredPortAlias = getInferredPortAlias({
+    const inferredPortAlias = getInferredNativeSymbolPortAlias({
       symbolName,
+      sourcePort,
       sourcePinNumber,
     })
     if (!inferredPortAlias) return sourcePort
