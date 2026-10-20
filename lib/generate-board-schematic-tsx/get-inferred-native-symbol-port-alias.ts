@@ -36,16 +36,16 @@ const getDualSeriesSchottkyAlias = (
   }
 }
 
-const getDualCommonCathodeSchottkyAlias = (
+const getDualAnodeSchottkyAlias = (
   sourcePinNumber?: string,
 ): string | undefined => {
   switch (sourcePinNumber) {
     case "1":
-      return "anode2"
-    case "2":
       return "anode1"
+    case "2":
+      return "anode2"
     case "3":
-      return "common_cathode"
+      return "cathode"
   }
 }
 
@@ -111,8 +111,8 @@ export const getInferredNativeSymbolPortAlias = ({
       return getFourWindingTransformerAlias(sourcePinNumber)
     case "dual_series_schottky_diode_right":
       return getDualSeriesSchottkyAlias(sourcePinNumber)
-    case "dual_common_cathode_schottky_diode_right":
-      return getDualCommonCathodeSchottkyAlias(sourcePinNumber)
+    case "dual_anode_schottky_diode_right":
+      return getDualAnodeSchottkyAlias(sourcePinNumber)
     case "coupled_inductor_up":
     case "coupled_inductor_right":
       return getCoupledInductorAlias(sourcePinNumber)

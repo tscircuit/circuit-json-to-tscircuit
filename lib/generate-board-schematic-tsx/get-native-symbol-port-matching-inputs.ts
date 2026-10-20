@@ -36,7 +36,7 @@ const usesInferredPortAliases = (symbolName: string): boolean => {
   switch (symbolName) {
     case "transformer_4_winding_right":
     case "dual_series_schottky_diode_right":
-    case "dual_common_cathode_schottky_diode_right":
+    case "dual_anode_schottky_diode_right":
     case "coupled_inductor_up":
     case "coupled_inductor_right":
     case "four_terminal_capacitor_up":

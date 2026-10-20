@@ -44,8 +44,10 @@ export const convertComponents: SchematicElementConverter = (circuitJson) => {
           symbol,
           schematicComponent,
           schematicPorts,
-          preferCenteredBoundsTransform:
-            symbolName === "dual_common_cathode_schottky_diode_right",
+          preferCenteredBoundsTransform: [
+            "dual_anode_schottky_diode_right",
+            "coupled_inductor_right",
+          ].includes(symbolName),
           ...portMatchingInputs,
         })
         const textReplacement = textReplacements.find(

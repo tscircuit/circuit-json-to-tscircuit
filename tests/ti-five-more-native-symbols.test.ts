@@ -22,7 +22,7 @@ import { convertNativeSymbolPortExtensions } from "../lib/generate-board-schemat
 const PORT_ALIGNMENT_TOLERANCE = 0.000001
 const MAXIMUM_NATIVE_PIN_EXTENSION_LENGTH = 0.3
 const MAXIMUM_COUPLED_INDUCTOR_PIN_EXTENSION_LENGTH = 0.8
-const MAXIMUM_DUAL_DIODE_PIN_EXTENSION_LENGTH = 0.8
+const MAXIMUM_SCHOTTKY_PIN_EXTENSION_LENGTH = 0.8
 
 interface NativeSymbolCase {
   fixtureName: string
@@ -39,7 +39,7 @@ const nativeSymbolCases: NativeSymbolCase[] = [
   {
     fixtureName: "lm5155evm-fly",
     componentName: "D1",
-    symbolName: "dual_common_cathode_schottky_diode_right",
+    symbolName: "dual_anode_schottky_diode_right",
   },
   {
     fixtureName: "lmg342x-bb-evm",
@@ -141,9 +141,10 @@ test("five more real TI components use aligned native symbols", () => {
       symbol,
       schematicComponent,
       schematicPorts,
-      preferCenteredBoundsTransform:
-        nativeSymbolCase.symbolName ===
-        "dual_common_cathode_schottky_diode_right",
+      preferCenteredBoundsTransform: [
+        "dual_anode_schottky_diode_right",
+        "coupled_inductor_right",
+      ].includes(nativeSymbolCase.symbolName),
       ...portMatchingInputs,
     })
     const portGaps = matches.map((match) => {
@@ -161,12 +162,10 @@ test("five more real TI components use aligned native symbols", () => {
       portGaps.filter((portGap) => portGap >= PORT_ALIGNMENT_TOLERANCE).length,
     )
 
-    if (
-      nativeSymbolCase.symbolName === "dual_common_cathode_schottky_diode_right"
-    ) {
+    if (nativeSymbolCase.symbolName === "dual_anode_schottky_diode_right") {
       expect(portExtensions.length).toBeGreaterThan(0)
       expect(Math.max(...portGaps)).toBeLessThan(
-        MAXIMUM_DUAL_DIODE_PIN_EXTENSION_LENGTH,
+        MAXIMUM_SCHOTTKY_PIN_EXTENSION_LENGTH,
       )
       continue
     }

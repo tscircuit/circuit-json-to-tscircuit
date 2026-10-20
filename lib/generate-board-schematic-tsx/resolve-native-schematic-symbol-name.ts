@@ -120,7 +120,7 @@ export const resolveNativeSchematicSymbolName = ({
     designator.startsWith("D") &&
     hasExactPortNameOccurrences(normalizedSourcePortNames, ["a", "a", "k"])
   ) {
-    return "dual_common_cathode_schottky_diode_right"
+    return "dual_anode_schottky_diode_right"
   }
   if (
     designator.startsWith("L") &&

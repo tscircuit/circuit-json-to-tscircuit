@@ -1808,23 +1808,20 @@ test(
           <schematicpath points={[{"x":-5.8717655489,"y":6.429931102399999},{"x":-6.191805548900001,"y":6.429931102399999}]} strokeWidth={0.02} isFilled={false} />
           <schematictext text={"C2"} schX={-5.9167855489} schY={6.5699311024} anchor={"bottom_left"} fontSize={0.18} />
           <schematictext text={"100uF"} schX={-5.9167855489} schY={6.1699311024} anchor={"top_left"} fontSize={0.18} />
-          <schematicpath points={[{"x":5.3349315365906,"y":6.9456924502085995},{"x":5.3349315365906,"y":6.808606415007}]} strokeWidth={0.02} isFilled={false} />
-          <schematicpath points={[{"x":5.28009712250996,"y":6.808606415007},{"x":5.38976595067124,"y":6.808606415007},{"x":5.3349315365906,"y":6.7172157248726},{"x":5.28009712250996,"y":6.808606415007}]} strokeWidth={0.02} fillColor={"#840000"} isFilled={true} />
-          <schematicpath points={[{"x":5.2663885189898,"y":6.73777863015284},{"x":5.2663885189898,"y":6.7172157248726},{"x":5.4034745541913995,"y":6.7172157248726},{"x":5.4034745541913995,"y":6.69665281959236}]} strokeWidth={0.02} isFilled={false} />
-          <schematicpath points={[{"x":5.3349315365906,"y":6.7172157248726},{"x":5.3349315365906,"y":6.580129689671}]} strokeWidth={0.02} isFilled={false} />
-          <schematicpath points={[{"x":5.3349315365906,"y":6.2145669291334},{"x":5.3349315365906,"y":6.351652964335}]} strokeWidth={0.02} isFilled={false} />
-          <schematicpath points={[{"x":5.28009712250996,"y":6.351652964335},{"x":5.38976595067124,"y":6.351652964335},{"x":5.3349315365906,"y":6.4430436544694},{"x":5.28009712250996,"y":6.351652964335}]} strokeWidth={0.02} fillColor={"#840000"} isFilled={true} />
-          <schematicpath points={[{"x":5.2663885189898,"y":6.42248074918916},{"x":5.2663885189898,"y":6.4430436544694},{"x":5.4034745541913995,"y":6.4430436544694},{"x":5.4034745541913995,"y":6.46360655974964}]} strokeWidth={0.02} isFilled={false} />
-          <schematicpath points={[{"x":5.3349315365906,"y":6.4430436544694},{"x":5.3349315365906,"y":6.580129689671}]} strokeWidth={0.02} isFilled={false} />
-          <schematicpath points={[{"x":5.3349315365906,"y":6.580129689671},{"x":5.7004942971282,"y":6.580129689671}]} strokeWidth={0.02} isFilled={false} />
-          <schematictext text={"D1"} schX={5.48115664080564} schY={6.808606415007} anchor={"bottom_center"} fontSize={0.1827813802686429} />
-          <schematiccircle center={{"x":5.3349315365906,"y":6.580129689671}} radius={0.010052975914784} strokeWidth={0.02} fillColor={"#840000"} isFilled={true} />
-          <schematicline x1={5.3349315365906} y1={6.9456924502085995} x2={4.752315886984714} y2={6.76291106993979} strokeWidth={0.02} color={"#840000"} />
-          <schematicline x1={5.3349315365906} y1={6.2145669291334} x2={4.752315886984714} y2={6.397348309402503} strokeWidth={0.02} color={"#840000"} />
-          <schematicline x1={5.7004942971282} y1={6.580129689671} x2={6.214566929133859} y2={6.580129689671146} strokeWidth={0.02} color={"#840000"} />
-          <schematictext text={"1"} schX={5.3149315365906} schY={6.8771494326077995} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
-          <schematictext text={"2"} schX={5.3149315365906} schY={6.2831099467342} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
-          <schematictext text={"3"} schX={5.5177129168594} schY={6.600129689670999} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
+          <schematicpath points={[{"x":5.1178786475214,"y":6.7172157248726},{"x":5.3006600277902,"y":6.7172157248726},{"x":5.3463553728574,"y":6.66238131079196}]} strokeWidth={0.02} isFilled={false} />
+          <schematicpath points={[{"x":5.1178786475214,"y":6.4430436544694},{"x":5.3006600277902,"y":6.4430436544694},{"x":5.3463553728574,"y":6.4978780685500395}]} strokeWidth={0.02} isFilled={false} />
+          <schematicpath points={[{"x":5.3463553728574,"y":6.66238131079196},{"x":5.3463553728574,"y":6.4978780685500395},{"x":5.5291367531262,"y":6.580129689671},{"x":5.3463553728574,"y":6.66238131079196}]} strokeWidth={0.02} isFilled={false} />
+          <schematicpath points={[{"x":5.5291367531262,"y":6.66238131079196},{"x":5.5291367531262,"y":6.4978780685500395}]} strokeWidth={0.02} isFilled={false} />
+          <schematicpath points={[{"x":5.5291367531262,"y":6.66238131079196},{"x":5.56569302917996,"y":6.66238131079196},{"x":5.56569302917996,"y":6.634964103751639}]} strokeWidth={0.02} isFilled={false} />
+          <schematicpath points={[{"x":5.5291367531262,"y":6.4978780685500395},{"x":5.49258047707244,"y":6.4978780685500395},{"x":5.49258047707244,"y":6.525295275590359}]} strokeWidth={0.02} isFilled={false} />
+          <schematicpath points={[{"x":5.5291367531262,"y":6.580129689671},{"x":5.8490041685966,"y":6.580129689671}]} strokeWidth={0.02} isFilled={false} />
+          <schematictext text={"D1"} schX={5.483441408059} schY={6.836023622047319} anchor={"bottom_center"} fontSize={0.1827813802686429} />
+          <schematicline x1={5.1178786475214} y1={6.4430436544694} x2={4.752315886984714} y2={6.397348309402503} strokeWidth={0.02} color={"#840000"} />
+          <schematicline x1={5.1178786475214} y1={6.7172157248726} x2={4.752315886984714} y2={6.76291106993979} strokeWidth={0.02} color={"#840000"} />
+          <schematicline x1={5.8490041685966} y1={6.580129689671} x2={6.214566929133859} y2={6.580129689671146} strokeWidth={0.02} color={"#840000"} />
+          <schematictext text={"2"} schX={5.2092693376558} schY={6.463043654469399} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
+          <schematictext text={"1"} schX={5.2092693376558} schY={6.737215724872599} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
+          <schematictext text={"3"} schX={5.6890704608614} schY={6.600129689670999} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
           <schematicpath points={[{"x":7.138672417786011,"y":-3.307283464566929},{"x":7.538672417786011,"y":-3.307283464566929},{"x":7.538672417786011,"y":-2.9072834645669285},{"x":7.138672417786011,"y":-2.9072834645669285},{"x":7.138672417786011,"y":-3.307283464566929}]} strokeWidth={0.02} strokeColor={"#840000"} fillColor={"#ffffc2"} isFilled={true} />
           <schematicline x1={7.538672417786011} y1={-3.1072834645669287} x2={7.6768179712830005} y2={-3.1072834645669287} strokeWidth={0.02} color={"#840000"} />
           <schematictext text={"1"} schX={7.607745194534505} schY={-3.0872834645669287} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
