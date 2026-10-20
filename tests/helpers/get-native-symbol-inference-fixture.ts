@@ -91,15 +91,22 @@ export const replaceComponentPortTraces = ({
   const sourcePortIds = new Set(
     sourcePorts.map((sourcePort) => sourcePort.source_port_id),
   )
-  const circuitJsonWithoutComponentPorts = circuitJson.flatMap((element) => {
-    if (element.type !== "source_trace") return [element]
+  const circuitJsonWithoutComponentPorts: CircuitJson = []
+  for (const element of circuitJson) {
+    if (element.type !== "source_trace") {
+      circuitJsonWithoutComponentPorts.push(element)
+      continue
+    }
     const connectedSourcePortIds = element.connected_source_port_ids.filter(
       (sourcePortId) => !sourcePortIds.has(sourcePortId),
     )
-    return connectedSourcePortIds.length > 0
-      ? [{ ...element, connected_source_port_ids: connectedSourcePortIds }]
-      : []
-  })
+    if (connectedSourcePortIds.length > 0) {
+      circuitJsonWithoutComponentPorts.push({
+        ...element,
+        connected_source_port_ids: connectedSourcePortIds,
+      })
+    }
+  }
   const replacementTraces: SourceTrace[] = assignments.map(
     ({ sourcePort, sourceTraceId }) => ({
       type: "source_trace",
