@@ -3,7 +3,6 @@ import { readFileSync } from "node:fs"
 import { join } from "node:path"
 import { gunzipSync } from "node:zlib"
 import type {
-  AnySourceComponent,
   CircuitJson,
   SchematicComponent,
   SchematicPort,
@@ -80,7 +79,7 @@ test("five more real TI components use aligned native symbols", () => {
   for (const nativeSymbolCase of nativeSymbolCases) {
     const circuitJson = loadTiFixture(nativeSymbolCase.fixtureName)
     const sourceComponent = circuitJson.find(
-      (element): element is AnySourceComponent =>
+      (element) =>
         element.type === "source_component" &&
         element.name === nativeSymbolCase.componentName &&
         circuitJson.some(
@@ -90,7 +89,7 @@ test("five more real TI components use aligned native symbols", () => {
         ),
     )
     expect(sourceComponent, nativeSymbolCase.componentName).toBeDefined()
-    if (!sourceComponent) continue
+    if (sourceComponent?.type !== "source_component") continue
 
     const schematicComponent = circuitJson.find(
       (element): element is SchematicComponent =>
