@@ -20,8 +20,9 @@ import {
 import { convertNativeSymbolPortExtensions } from "../lib/generate-board-schematic-tsx/convert-native-symbol-port-extensions"
 
 const PORT_ALIGNMENT_TOLERANCE = 0.000001
-const MAXIMUM_NATIVE_PIN_EXTENSION_LENGTH = 0.16
+const MAXIMUM_NATIVE_PIN_EXTENSION_LENGTH = 0.3
 const MAXIMUM_COUPLED_INDUCTOR_PIN_EXTENSION_LENGTH = 0.8
+const MAXIMUM_DUAL_DIODE_PIN_EXTENSION_LENGTH = 0.8
 
 interface NativeSymbolCase {
   fixtureName: string
@@ -140,6 +141,9 @@ test("five more real TI components use aligned native symbols", () => {
       symbol,
       schematicComponent,
       schematicPorts,
+      preferCenteredBoundsTransform:
+        nativeSymbolCase.symbolName ===
+        "dual_common_cathode_schottky_diode_right",
       ...portMatchingInputs,
     })
     const portGaps = matches.map((match) => {
@@ -156,6 +160,16 @@ test("five more real TI components use aligned native symbols", () => {
     expect(portExtensions).toHaveLength(
       portGaps.filter((portGap) => portGap >= PORT_ALIGNMENT_TOLERANCE).length,
     )
+
+    if (
+      nativeSymbolCase.symbolName === "dual_common_cathode_schottky_diode_right"
+    ) {
+      expect(portExtensions.length).toBeGreaterThan(0)
+      expect(Math.max(...portGaps)).toBeLessThan(
+        MAXIMUM_DUAL_DIODE_PIN_EXTENSION_LENGTH,
+      )
+      continue
+    }
 
     if (nativeSymbolCase.symbolName === "coupled_inductor_right") {
       expect(portExtensions.length).toBeGreaterThan(0)

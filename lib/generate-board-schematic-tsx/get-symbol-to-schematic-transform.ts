@@ -4,7 +4,13 @@ import type {
   SourcePort,
 } from "circuit-json"
 import type { SchSymbol } from "schematic-symbols"
-import { fromTriangles, type Matrix } from "transformation-matrix"
+import {
+  compose,
+  fromTriangles,
+  scale,
+  translate,
+  type Matrix,
+} from "transformation-matrix"
 import { getRendererCompatibleSymbolTransform } from "./get-renderer-compatible-symbol-transform"
 import { getRigidPinIdentityTransform } from "./get-rigid-pin-identity-transform"
 import { matchSymbolPortsByPinIdentity } from "./match-symbol-ports-by-pin-identity"
@@ -29,12 +35,14 @@ export const getSymbolToSchematicTransform = ({
   schematicPorts,
   sourcePorts,
   includeSchematicPinNumbers,
+  preferCenteredBoundsTransform,
 }: {
   symbol: SchSymbol
   schematicComponent: SchematicComponent
   schematicPorts: SchematicPort[]
   sourcePorts: SourcePort[]
   includeSchematicPinNumbers?: boolean
+  preferCenteredBoundsTransform?: boolean
 }) => {
   const componentSourcePorts = sourcePorts.filter(
     (sourcePort) =>
@@ -50,6 +58,20 @@ export const getSymbolToSchematicTransform = ({
     getRigidPinIdentityTransform(pinIdentityMatches)
   if (rigidPinIdentityTransform) {
     return normalizeSymbolToSchematicTransform(rigidPinIdentityTransform)
+  }
+
+  if (preferCenteredBoundsTransform) {
+    const uniformScale = Math.min(
+      schematicComponent.size.width / symbol.size.width,
+      schematicComponent.size.height / symbol.size.height,
+    )
+    return normalizeSymbolToSchematicTransform(
+      compose(
+        translate(schematicComponent.center.x, schematicComponent.center.y),
+        scale(uniformScale),
+        translate(-symbol.center.x, -symbol.center.y),
+      ),
+    )
   }
 
   if (pinIdentityMatches.length >= 3) {
