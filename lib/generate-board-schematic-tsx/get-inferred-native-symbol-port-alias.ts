@@ -54,13 +54,13 @@ const getCoupledInductorAlias = (
 ): string | undefined => {
   switch (sourcePinNumber) {
     case "1":
-      return "winding2_end"
-    case "2":
-      return "winding2_start"
-    case "3":
-      return "winding1_end"
-    case "4":
       return "winding1_start"
+    case "2":
+      return "winding1_end"
+    case "3":
+      return "winding2_start"
+    case "4":
+      return "winding2_end"
   }
 }
 
