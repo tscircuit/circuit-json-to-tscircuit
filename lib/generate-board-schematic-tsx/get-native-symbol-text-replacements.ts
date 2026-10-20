@@ -5,8 +5,8 @@ import type {
   SchematicText,
 } from "circuit-json"
 import {
-  getNativeSymbolTextReplacementCandidate,
   type NativeSymbolTextReplacementCandidate,
+  getNativeSymbolTextReplacementCandidate,
 } from "./get-native-symbol-text-replacement-candidate"
 import { getReplacedSchematicComponentIds } from "./get-replaced-schematic-component-ids"
 
@@ -41,6 +41,7 @@ const isFirstUnitWithDisplayValue = ({
 const shouldPreserveImportedDisplayValue = (
   candidate: NativeSymbolTextReplacementCandidate,
 ): boolean =>
+  candidate.preserveImportedDisplayValue ||
   candidate.symbolName.startsWith("n_channel_power_mosfet_5_pin_gate_")
 
 export const getNativeSymbolTextReplacements = (

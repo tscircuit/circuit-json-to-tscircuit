@@ -5,6 +5,7 @@ import type {
   SchematicPort,
   SchematicText,
 } from "circuit-json"
+import { getDisplayValueTextLayout } from "./get-display-value-text-layout"
 import type {
   NativeSymbolTextReplacement,
   SchematicComponentId,
@@ -30,6 +31,7 @@ export interface NativeSymbolTextReplacementCandidate
   sourceComponentId: SchematicComponent["source_component_id"]
   symbolName: string
   displayValueTextIds: Set<SchematicTextId>
+  preserveImportedDisplayValue: boolean
   isMultiUnitSymbol: boolean
   hasPreservedPackageValueText: boolean
 }
@@ -90,13 +92,10 @@ export const getNativeSymbolTextReplacementCandidate = (
         maximumDistance: labelSearchDistance,
       }),
   )
-  const nearestDisplayValueText = getNearestSchematicText({
+  const displayValueTextLayout = getDisplayValueTextLayout({
     schematicTexts: displayValueTextsInRange,
     schematicComponent,
   })
-  const displayValueTexts = nearestDisplayValueText
-    ? [nearestDisplayValueText]
-    : []
   const schematicPorts = circuitJson.filter(
     (candidate): candidate is SchematicPort =>
       candidate.type === "schematic_port" &&
@@ -120,9 +119,11 @@ export const getNativeSymbolTextReplacementCandidate = (
   return {
     schematicComponentId: schematicComponent.schematic_component_id,
     importedTextIds: new Set(
-      [...referenceTexts, ...displayValueTexts, ...pinDesignatorTexts].map(
-        (schematicText) => schematicText.schematic_text_id,
-      ),
+      [
+        ...referenceTexts,
+        ...displayValueTextLayout.replacementTexts,
+        ...pinDesignatorTexts,
+      ].map((schematicText) => schematicText.schematic_text_id),
     ),
     replacedPinPortIds,
     replacesReference: referenceTexts.length > 0,
@@ -131,12 +132,15 @@ export const getNativeSymbolTextReplacementCandidate = (
       schematicTexts: referenceTexts,
       schematicComponent,
     })?.font_size,
-    displayTextFontSize: nearestDisplayValueText?.font_size,
+    displayTextFontSize: displayValueTextLayout.nearestText?.font_size,
     sourceComponentId: schematicComponent.source_component_id,
     symbolName,
     displayValueTextIds: new Set(
-      displayValueTexts.map((schematicText) => schematicText.schematic_text_id),
+      displayValueTextLayout.replacementTexts.map(
+        (schematicText) => schematicText.schematic_text_id,
+      ),
     ),
+    preserveImportedDisplayValue: displayValueTextLayout.preserveImportedText,
     isMultiUnitSymbol: hasMultipleNativeSymbolUnits({
       circuitJson,
       schematicComponent,

@@ -2247,7 +2247,6 @@ exports[`TI LMG342X-BB-EVM Circuit JSON to tscircuit round trip 1`] = `
     <schematiccircle center={{"x":-10.24594719777657,"y":-3.4085224641035303}} radius={0.015284854099109998} strokeWidth={0.02} fillColor={"#840000"} isFilled={true} />
     <schematiccircle center={{"x":-10.24594719777657,"y":-3.72440944881847}} radius={0.015284854099109998} strokeWidth={0.02} fillColor={"#840000"} isFilled={true} />
     <schematictext text={"L3"} schX={-10.444650301065} schY={-3.32190829087524} anchor={"bottom_center"} fontSize={0.12737378415933304} />
-    <schematictext text={"47uH"} schX={-10.444650301065} schY={-3.8110236220467604} anchor={"top_center"} fontSize={0.12737378415933304} />
     <schematicline x1={-10.1899027327465} y1={-3.46966188049997} x2={-10.189902732746642} y2={-3.0569708198239933} strokeWidth={0.02} color={"#840000"} />
     <schematicline x1={-10.1899027327465} y1={-3.66327003242203} x2={-10.189902732746642} y2={-4.075961093098657} strokeWidth={0.02} color={"#840000"} />
     <schematicline x1={-10.6993978693835} y1={-3.46966188049997} x2={-10.699397869383974} y2={-3.0569708198239933} strokeWidth={0.02} color={"#840000"} />
@@ -3100,6 +3099,7 @@ exports[`TI LMG342X-BB-EVM Circuit JSON to tscircuit round trip 1`] = `
     <schematicarc center={{"x":-4.840203798054654,"y":1.8469198703103284}} radius={0.06368689207966652} startAngleDegrees={90} endAngleDegrees={270} strokeWidth={0.05} color={"#840000"} isDashed={false} direction={"counterclockwise"} />
     <schematictext text={"SH-J1"} schX={-4.967577582213988} schY={2.0379805465493277} anchor={"bottom_left"} fontSize={0.12737378415933304} color={"#000080"} schRotation={0} />
     <schematictext text={"SNT-100-BK-G"} schX={-5.4770727188513195} schY={1.5284854099119958} anchor={"bottom_left"} fontSize={0.12737378415933304} color={"#1f2937"} schRotation={0} />
+    <schematictext text={"47uH"} schX={-10.151690597498842} schY={-3.5537285780453916} anchor={"bottom_left"} fontSize={0.12737378415933304} color={"#000080"} schRotation={0} />
     <schematictext text={"47uH"} schX={-10.151690597498842} schY={-3.681102362204725} anchor={"bottom_left"} fontSize={0.12737378415933304} color={"#000080"} schRotation={0} />
     <schematictext text={"5"} schX={7.132931912922652} schY={2.420101899027326} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={0} />
     <schematictext text={"4"} schX={7.132931912922652} schY={2.2927281148679945} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={0} />

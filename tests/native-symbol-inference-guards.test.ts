@@ -1,4 +1,5 @@
 import { expect, test } from "bun:test"
+import type { SchematicText } from "circuit-json"
 import { getNativeSymbolTextReplacements } from "../lib/generate-board-schematic-tsx/get-native-symbol-text-replacements"
 import { resolveNativeSchematicSymbolName } from "../lib/generate-board-schematic-tsx/resolve-native-schematic-symbol-name"
 import {
@@ -94,4 +95,28 @@ test("keeps imported five-terminal MOSFET value placement", () => {
   expect(
     replacement?.importedTextIds.has(importedValueText.schematic_text_id),
   ).toBe(false)
+})
+
+test("keeps both imported coupled-inductor winding values", () => {
+  const context = getNativeSymbolInferenceFixture({
+    fixtureName: "lmg342x-bb-evm",
+    componentName: "L3",
+  })
+  const importedValueTexts = context.circuitJson.filter(
+    (element): element is SchematicText =>
+      element.type === "schematic_text" && element.text === "47uH",
+  )
+  expect(importedValueTexts).toHaveLength(2)
+
+  const replacement = getNativeSymbolTextReplacements(context.circuitJson).find(
+    (candidate) =>
+      candidate.schematicComponentId ===
+      context.schematicComponent.schematic_component_id,
+  )
+  expect(replacement?.includeNativeDisplayText).toBe(false)
+  for (const importedValueText of importedValueTexts) {
+    expect(
+      replacement?.importedTextIds.has(importedValueText.schematic_text_id),
+    ).toBe(false)
+  }
 })
