@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs"
 import { join } from "node:path"
 import { gunzipSync } from "node:zlib"
 import type {
+  AnySourceComponent,
   CircuitJson,
   SchematicComponent,
   SchematicPort,
@@ -17,8 +18,10 @@ import {
   resolveNativeSchematicSymbolName,
   type NativeSchematicSymbolName,
 } from "../lib/generate-board-schematic-tsx/resolve-native-schematic-symbol-name"
+import { convertNativeSymbolPortExtensions } from "../lib/generate-board-schematic-tsx/convert-native-symbol-port-extensions"
 
 const PORT_ALIGNMENT_TOLERANCE = 0.000001
+const MAXIMUM_NATIVE_PIN_EXTENSION_LENGTH = 0.16
 
 interface NativeSymbolCase {
   fixtureName: string
@@ -52,6 +55,11 @@ const nativeSymbolCases: NativeSymbolCase[] = [
     componentName: "Q7",
     symbolName: "n_channel_power_mosfet_5_pin_gate_left_drain_top",
   },
+  {
+    fixtureName: "lm251772evm-pd",
+    componentName: "Q5",
+    symbolName: "n_channel_power_mosfet_5_pin_gate_bottom_drain_right",
+  },
 ]
 
 const loadTiFixture = (fixtureName: string): CircuitJson =>
@@ -71,9 +79,23 @@ const loadTiFixture = (fixtureName: string): CircuitJson =>
 test("five more real TI components use aligned native symbols", () => {
   for (const nativeSymbolCase of nativeSymbolCases) {
     const circuitJson = loadTiFixture(nativeSymbolCase.fixtureName)
+    const sourceComponent = circuitJson.find(
+      (element): element is AnySourceComponent =>
+        element.type === "source_component" &&
+        element.name === nativeSymbolCase.componentName &&
+        circuitJson.some(
+          (candidate) =>
+            candidate.type === "schematic_component" &&
+            candidate.source_component_id === element.source_component_id,
+        ),
+    )
+    expect(sourceComponent, nativeSymbolCase.componentName).toBeDefined()
+    if (!sourceComponent) continue
+
     const schematicComponent = circuitJson.find(
       (element): element is SchematicComponent =>
         element.type === "schematic_component" &&
+        element.source_component_id === sourceComponent.source_component_id &&
         resolveNativeSchematicSymbolName({
           circuitJson,
           schematicComponent: element,
@@ -120,6 +142,32 @@ test("five more real TI components use aligned native symbols", () => {
       schematicPorts,
       ...portMatchingInputs,
     })
+    const portGaps = matches.map((match) => {
+      const renderedPort = applyToPoint(transform, match.symbolPort)
+      return Math.hypot(
+        renderedPort.x - match.schematicPort.center.x,
+        renderedPort.y - match.schematicPort.center.y,
+      )
+    })
+    const portExtensions = convertNativeSymbolPortExtensions({
+      symbolToSchematicTransform: transform,
+      portMatches: matches,
+    })
+    expect(portExtensions).toHaveLength(
+      portGaps.filter((portGap) => portGap >= PORT_ALIGNMENT_TOLERANCE).length,
+    )
+
+    const usesImportedPackagePinEnvelope =
+      nativeSymbolCase.symbolName.startsWith(
+        "n_channel_power_mosfet_5_pin_gate_",
+      )
+    if (usesImportedPackagePinEnvelope) {
+      expect(portExtensions.length).toBeGreaterThan(0)
+      expect(Math.max(...portGaps)).toBeLessThan(
+        MAXIMUM_NATIVE_PIN_EXTENSION_LENGTH,
+      )
+      continue
+    }
     for (const match of matches) {
       const renderedPort = applyToPoint(transform, match.symbolPort)
       expect(

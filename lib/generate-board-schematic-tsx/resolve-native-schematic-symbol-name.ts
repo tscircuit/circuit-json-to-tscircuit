@@ -6,18 +6,9 @@ import type {
   SourcePort,
 } from "circuit-json"
 import { hasExactPortNameOccurrences } from "./has-exact-port-name-occurrences"
-
-export type NativeSchematicSymbolName =
-  | "and_gate_right"
-  | "coupled_inductor_up"
-  | "dual_common_cathode_schottky_diode_right"
-  | "dual_series_schottky_diode_right"
-  | "four_terminal_capacitor_up"
-  | "n_channel_power_mosfet_5_pin_gate_left_drain_top"
-  | "or_gate_with_power_right"
-  | "phototransistor_optocoupler_right"
-  | "schmitt_trigger_inverter_right"
-  | "transformer_4_winding_right"
+import { getFiveTerminalMosfetSymbolName } from "./get-five-terminal-mosfet-symbol-name"
+import type { NativeSchematicSymbolName } from "./native-schematic-symbol-name"
+export type { NativeSchematicSymbolName } from "./native-schematic-symbol-name"
 
 const normalizePortName = (portName: string): string =>
   portName.toLowerCase().replace(/[^a-z0-9]/gu, "")
@@ -153,7 +144,7 @@ export const resolveNativeSchematicSymbolName = ({
       "source",
     ])
   ) {
-    return "n_channel_power_mosfet_5_pin_gate_left_drain_top"
+    return getFiveTerminalMosfetSymbolName({ sourcePorts, schematicPorts })
   }
   return undefined
 }

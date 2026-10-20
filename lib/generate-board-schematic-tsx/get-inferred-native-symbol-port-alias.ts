@@ -69,11 +69,11 @@ const getFourTerminalCapacitorAlias = (
 ): string | undefined => {
   switch (sourcePinNumber) {
     case "1":
-      return "plate1_terminal2"
+      return "plate1_terminal1"
     case "2":
       return "plate2_terminal1"
     case "3":
-      return "plate1_terminal1"
+      return "plate1_terminal2"
     case "4":
       return "plate2_terminal2"
   }
@@ -102,6 +102,10 @@ export const getInferredNativeSymbolPortAlias = ({
   sourcePort: SourcePort
   sourcePinNumber?: string
 }): string | undefined => {
+  if (symbolName.startsWith("n_channel_power_mosfet_5_pin_gate_")) {
+    return getFiveTerminalMosfetAlias({ sourcePort, sourcePinNumber })
+  }
+
   switch (symbolName) {
     case "transformer_4_winding_right":
       return getFourWindingTransformerAlias(sourcePinNumber)
@@ -113,8 +117,6 @@ export const getInferredNativeSymbolPortAlias = ({
       return getCoupledInductorAlias(sourcePinNumber)
     case "four_terminal_capacitor_up":
       return getFourTerminalCapacitorAlias(sourcePinNumber)
-    case "n_channel_power_mosfet_5_pin_gate_left_drain_top":
-      return getFiveTerminalMosfetAlias({ sourcePort, sourcePinNumber })
     case "or_gate_with_power_right":
       return sourcePort.name.toLowerCase()
   }
