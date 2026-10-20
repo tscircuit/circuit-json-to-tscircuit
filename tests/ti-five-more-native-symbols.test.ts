@@ -20,9 +20,7 @@ import {
 import { convertNativeSymbolPortExtensions } from "../lib/generate-board-schematic-tsx/convert-native-symbol-port-extensions"
 
 const PORT_ALIGNMENT_TOLERANCE = 0.000001
-const MAXIMUM_NATIVE_PIN_EXTENSION_LENGTH = 0.3
 const MAXIMUM_COUPLED_INDUCTOR_PIN_EXTENSION_LENGTH = 0.8
-const MAXIMUM_SCHOTTKY_PIN_EXTENSION_LENGTH = 0.8
 
 interface NativeSymbolCase {
   fixtureName: string
@@ -141,10 +139,9 @@ test("five more real TI components use aligned native symbols", () => {
       symbol,
       schematicComponent,
       schematicPorts,
-      preferCenteredBoundsTransform: [
-        "schottky_diode_3_pin_right",
-        "coupled_inductor_right",
-      ].includes(nativeSymbolCase.symbolName),
+      preferCenteredBoundsTransform: ["coupled_inductor_right"].includes(
+        nativeSymbolCase.symbolName,
+      ),
       ...portMatchingInputs,
     })
     const portGaps = matches.map((match) => {
@@ -161,14 +158,6 @@ test("five more real TI components use aligned native symbols", () => {
     expect(portExtensions).toHaveLength(
       portGaps.filter((portGap) => portGap >= PORT_ALIGNMENT_TOLERANCE).length,
     )
-
-    if (nativeSymbolCase.symbolName === "schottky_diode_3_pin_right") {
-      expect(portExtensions.length).toBeGreaterThan(0)
-      expect(Math.max(...portGaps)).toBeLessThan(
-        MAXIMUM_SCHOTTKY_PIN_EXTENSION_LENGTH,
-      )
-      continue
-    }
 
     if (nativeSymbolCase.symbolName === "coupled_inductor_right") {
       expect(portExtensions.length).toBeGreaterThan(0)
@@ -189,17 +178,6 @@ test("five more real TI components use aligned native symbols", () => {
       continue
     }
 
-    const usesImportedPackagePinEnvelope =
-      nativeSymbolCase.symbolName.startsWith(
-        "n_channel_power_mosfet_5_pin_gate_",
-      )
-    if (usesImportedPackagePinEnvelope) {
-      expect(portExtensions.length).toBeGreaterThan(0)
-      expect(Math.max(...portGaps)).toBeLessThan(
-        MAXIMUM_NATIVE_PIN_EXTENSION_LENGTH,
-      )
-      continue
-    }
     for (const match of matches) {
       const renderedPort = applyToPoint(transform, match.symbolPort)
       expect(
