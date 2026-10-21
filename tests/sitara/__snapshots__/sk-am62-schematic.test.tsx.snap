@@ -1,0 +1,1492 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 01 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 81,
+    "schematic_path": 8,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 112,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 81,
+    "schematic_rect": 8,
+    "schematic_sheet": 1,
+    "schematic_text": 112,
+    "source_component": 1,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 02 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 21,
+    "schematic_path": 5,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 56,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 21,
+    "schematic_rect": 5,
+    "schematic_sheet": 1,
+    "schematic_text": 56,
+    "source_component": 1,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 03 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 5,
+    "schematic_path": 5,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 15,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 5,
+    "schematic_rect": 5,
+    "schematic_sheet": 1,
+    "schematic_text": 15,
+    "source_component": 1,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 04 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 5,
+    "schematic_path": 5,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 15,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 5,
+    "schematic_rect": 5,
+    "schematic_sheet": 1,
+    "schematic_text": 15,
+    "source_component": 1,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 05 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 5,
+    "schematic_path": 5,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 15,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 5,
+    "schematic_rect": 5,
+    "schematic_sheet": 1,
+    "schematic_text": 15,
+    "source_component": 1,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 06 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 5,
+    "schematic_path": 5,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 15,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 5,
+    "schematic_rect": 5,
+    "schematic_sheet": 1,
+    "schematic_text": 15,
+    "source_component": 1,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 07 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 5,
+    "schematic_path": 5,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 15,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 5,
+    "schematic_rect": 5,
+    "schematic_sheet": 1,
+    "schematic_text": 15,
+    "source_component": 1,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 08 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 5,
+    "schematic_path": 5,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 15,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 5,
+    "schematic_rect": 5,
+    "schematic_sheet": 1,
+    "schematic_text": 15,
+    "source_component": 1,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 09 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 3,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 792,
+    "schematic_path": 456,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 476,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 78,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 137,
+    "schematic_net_label": 52,
+    "schematic_port": 254,
+    "schematic_rect": 9,
+    "schematic_sheet": 1,
+    "schematic_text": 148,
+    "schematic_trace": 334,
+    "source_component": 78,
+    "source_net": 44,
+    "source_port": 269,
+    "source_trace": 57,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 10 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 152,
+    "schematic_path": 146,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 105,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 25,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 9,
+    "schematic_net_label": 17,
+    "schematic_path": 2,
+    "schematic_port": 53,
+    "schematic_rect": 6,
+    "schematic_sheet": 1,
+    "schematic_text": 24,
+    "schematic_trace": 83,
+    "source_component": 25,
+    "source_net": 7,
+    "source_port": 53,
+    "source_trace": 13,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 11 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 298,
+    "schematic_path": 300,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 228,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 46,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 5,
+    "schematic_net_label": 39,
+    "schematic_port": 110,
+    "schematic_rect": 10,
+    "schematic_sheet": 1,
+    "schematic_text": 44,
+    "schematic_trace": 173,
+    "source_component": 46,
+    "source_net": 18,
+    "source_port": 110,
+    "source_trace": 23,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 12 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 405,
+    "schematic_path": 366,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 307,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 59,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 49,
+    "schematic_net_label": 47,
+    "schematic_path": 5,
+    "schematic_port": 141,
+    "schematic_rect": 13,
+    "schematic_sheet": 1,
+    "schematic_text": 94,
+    "schematic_trace": 217,
+    "source_component": 59,
+    "source_net": 25,
+    "source_port": 141,
+    "source_trace": 33,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 13 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 474,
+    "schematic_path": 324,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 379,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 53,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 38,
+    "schematic_net_label": 43,
+    "schematic_path": 6,
+    "schematic_port": 173,
+    "schematic_rect": 12,
+    "schematic_sheet": 1,
+    "schematic_text": 163,
+    "schematic_trace": 206,
+    "source_component": 53,
+    "source_net": 16,
+    "source_port": 173,
+    "source_trace": 46,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 14 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 561,
+    "schematic_path": 494,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 384,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 56,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 47,
+    "schematic_net_label": 95,
+    "schematic_path": 20,
+    "schematic_port": 181,
+    "schematic_rect": 5,
+    "schematic_sheet": 1,
+    "schematic_text": 128,
+    "schematic_trace": 257,
+    "source_component": 55,
+    "source_net": 31,
+    "source_port": 181,
+    "source_trace": 31,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 15 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 549,
+    "schematic_path": 288,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 280,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 60,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 33,
+    "schematic_net_label": 18,
+    "schematic_path": 14,
+    "schematic_port": 178,
+    "schematic_rect": 5,
+    "schematic_sheet": 1,
+    "schematic_text": 98,
+    "schematic_trace": 280,
+    "source_component": 60,
+    "source_net": 7,
+    "source_port": 178,
+    "source_trace": 7,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 16 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 662,
+    "schematic_path": 257,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 537,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 39,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 18,
+    "schematic_net_label": 26,
+    "schematic_path": 2,
+    "schematic_port": 224,
+    "schematic_rect": 5,
+    "schematic_sheet": 1,
+    "schematic_text": 287,
+    "schematic_trace": 284,
+    "source_component": 39,
+    "source_net": 57,
+    "source_port": 224,
+    "source_trace": 61,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 17 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 4,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 631,
+    "schematic_path": 414,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 480,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_circle": 4,
+    "schematic_component": 65,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 28,
+    "schematic_net_label": 50,
+    "schematic_path": 2,
+    "schematic_port": 237,
+    "schematic_rect": 10,
+    "schematic_sheet": 1,
+    "schematic_text": 119,
+    "schematic_trace": 300,
+    "source_component": 64,
+    "source_net": 43,
+    "source_port": 237,
+    "source_trace": 59,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 18 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 743,
+    "schematic_path": 204,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 502,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 31,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 330,
+    "schematic_net_label": 35,
+    "schematic_path": 2,
+    "schematic_port": 237,
+    "schematic_rect": 7,
+    "schematic_sheet": 1,
+    "schematic_text": 253,
+    "schematic_trace": 145,
+    "source_component": 31,
+    "source_net": 36,
+    "source_port": 237,
+    "source_trace": 37,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 19 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 261,
+    "schematic_path": 171,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 179,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 23,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 79,
+    "schematic_net_label": 31,
+    "schematic_path": 1,
+    "schematic_port": 74,
+    "schematic_rect": 6,
+    "schematic_sheet": 1,
+    "schematic_text": 62,
+    "schematic_trace": 90,
+    "source_component": 23,
+    "source_net": 16,
+    "source_port": 74,
+    "source_trace": 16,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 20 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 325,
+    "schematic_path": 165,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 255,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 32,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 28,
+    "schematic_net_label": 16,
+    "schematic_path": 2,
+    "schematic_port": 112,
+    "schematic_rect": 6,
+    "schematic_sheet": 1,
+    "schematic_text": 132,
+    "schematic_trace": 153,
+    "source_component": 32,
+    "source_net": 29,
+    "source_port": 112,
+    "source_trace": 32,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 21 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 115,
+    "schematic_path": 116,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 121,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 16,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 7,
+    "schematic_net_label": 18,
+    "schematic_path": 3,
+    "schematic_port": 43,
+    "schematic_rect": 5,
+    "schematic_sheet": 1,
+    "schematic_text": 39,
+    "schematic_trace": 57,
+    "source_component": 16,
+    "source_net": 13,
+    "source_port": 43,
+    "source_trace": 13,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 22 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 45,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 877,
+    "schematic_path": 563,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 405,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_circle": 42,
+    "schematic_component": 80,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 315,
+    "schematic_net_label": 49,
+    "schematic_path": 111,
+    "schematic_port": 217,
+    "schematic_rect": 7,
+    "schematic_sheet": 1,
+    "schematic_text": 114,
+    "schematic_trace": 333,
+    "source_component": 80,
+    "source_net": 46,
+    "source_port": 232,
+    "source_trace": 58,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 23 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 45,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 875,
+    "schematic_path": 557,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 400,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_circle": 42,
+    "schematic_component": 79,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 315,
+    "schematic_net_label": 48,
+    "schematic_path": 111,
+    "schematic_port": 215,
+    "schematic_rect": 7,
+    "schematic_sheet": 1,
+    "schematic_text": 112,
+    "schematic_trace": 329,
+    "source_component": 79,
+    "source_net": 45,
+    "source_port": 230,
+    "source_trace": 57,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 24 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 286,
+    "schematic_path": 302,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 241,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 36,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 7,
+    "schematic_net_label": 42,
+    "schematic_path": 2,
+    "schematic_port": 112,
+    "schematic_rect": 6,
+    "schematic_sheet": 1,
+    "schematic_text": 63,
+    "schematic_trace": 149,
+    "source_component": 36,
+    "source_net": 42,
+    "source_port": 112,
+    "source_trace": 59,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 25 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 349,
+    "schematic_path": 232,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 317,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 40,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 53,
+    "schematic_net_label": 31,
+    "schematic_port": 128,
+    "schematic_rect": 7,
+    "schematic_sheet": 1,
+    "schematic_text": 139,
+    "schematic_trace": 158,
+    "source_component": 40,
+    "source_net": 17,
+    "source_port": 128,
+    "source_trace": 32,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 26 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 779,
+    "schematic_path": 359,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 458,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 56,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 343,
+    "schematic_net_label": 48,
+    "schematic_path": 2,
+    "schematic_port": 216,
+    "schematic_rect": 26,
+    "schematic_sheet": 1,
+    "schematic_text": 212,
+    "schematic_trace": 219,
+    "source_component": 56,
+    "source_net": 46,
+    "source_port": 216,
+    "source_trace": 63,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 27 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 3,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 767,
+    "schematic_path": 596,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 525,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 67,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 159,
+    "schematic_net_label": 49,
+    "schematic_path": 2,
+    "schematic_port": 269,
+    "schematic_rect": 6,
+    "schematic_sheet": 1,
+    "schematic_text": 61,
+    "schematic_trace": 284,
+    "source_component": 65,
+    "source_net": 34,
+    "source_port": 269,
+    "source_trace": 50,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 28 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 212,
+    "schematic_path": 290,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 207,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 33,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 5,
+    "schematic_net_label": 48,
+    "schematic_port": 94,
+    "schematic_rect": 5,
+    "schematic_sheet": 1,
+    "schematic_text": 27,
+    "schematic_trace": 136,
+    "source_component": 33,
+    "source_net": 25,
+    "source_port": 94,
+    "source_trace": 39,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 29 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 389,
+    "schematic_path": 364,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 345,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_circle": 1,
+    "schematic_component": 38,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 18,
+    "schematic_net_label": 54,
+    "schematic_path": 1,
+    "schematic_port": 134,
+    "schematic_rect": 5,
+    "schematic_sheet": 1,
+    "schematic_text": 98,
+    "schematic_trace": 184,
+    "source_component": 38,
+    "source_net": 28,
+    "source_port": 134,
+    "source_trace": 31,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 30 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 140,
+    "schematic_path": 129,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 118,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 14,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 29,
+    "schematic_net_label": 24,
+    "schematic_path": 8,
+    "schematic_port": 49,
+    "schematic_rect": 6,
+    "schematic_sheet": 1,
+    "schematic_text": 55,
+    "schematic_trace": 62,
+    "source_component": 14,
+    "source_net": 14,
+    "source_port": 49,
+    "source_trace": 17,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 31 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 749,
+    "schematic_path": 675,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 592,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 65,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 64,
+    "schematic_net_label": 89,
+    "schematic_path": 3,
+    "schematic_port": 265,
+    "schematic_rect": 7,
+    "schematic_sheet": 1,
+    "schematic_text": 82,
+    "schematic_trace": 327,
+    "source_component": 65,
+    "source_net": 45,
+    "source_port": 265,
+    "source_trace": 57,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 32 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 344,
+    "schematic_path": 314,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 327,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 35,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 15,
+    "schematic_net_label": 66,
+    "schematic_port": 137,
+    "schematic_rect": 8,
+    "schematic_sheet": 1,
+    "schematic_text": 124,
+    "schematic_trace": 177,
+    "source_component": 34,
+    "source_net": 70,
+    "source_port": 137,
+    "source_trace": 75,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 33 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 353,
+    "schematic_path": 320,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 296,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 36,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 5,
+    "schematic_net_label": 63,
+    "schematic_path": 1,
+    "schematic_port": 132,
+    "schematic_rect": 8,
+    "schematic_sheet": 1,
+    "schematic_text": 87,
+    "schematic_trace": 184,
+    "source_component": 36,
+    "source_net": 46,
+    "source_port": 132,
+    "source_trace": 54,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 34 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 322,
+    "schematic_path": 250,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 273,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 28,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 16,
+    "schematic_net_label": 35,
+    "schematic_port": 115,
+    "schematic_rect": 10,
+    "schematic_sheet": 1,
+    "schematic_text": 101,
+    "schematic_trace": 146,
+    "source_component": 28,
+    "source_net": 38,
+    "source_port": 115,
+    "source_trace": 42,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 35 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 3,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 235,
+    "schematic_path": 169,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 129,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_circle": 2,
+    "schematic_component": 17,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 63,
+    "schematic_net_label": 19,
+    "schematic_path": 21,
+    "schematic_port": 67,
+    "schematic_rect": 7,
+    "schematic_sheet": 1,
+    "schematic_text": 71,
+    "schematic_trace": 78,
+    "source_component": 17,
+    "source_net": 11,
+    "source_port": 72,
+    "source_trace": 16,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 36 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 4,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 212,
+    "schematic_path": 162,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 148,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_circle": 2,
+    "schematic_component": 22,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 55,
+    "schematic_net_label": 20,
+    "schematic_path": 26,
+    "schematic_port": 62,
+    "schematic_rect": 8,
+    "schematic_sheet": 1,
+    "schematic_text": 65,
+    "schematic_trace": 81,
+    "source_component": 22,
+    "source_net": 16,
+    "source_port": 62,
+    "source_trace": 20,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 37 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 511,
+    "schematic_path": 290,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 355,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_circle": 1,
+    "schematic_component": 23,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 148,
+    "schematic_net_label": 51,
+    "schematic_path": 11,
+    "schematic_port": 138,
+    "schematic_rect": 12,
+    "schematic_sheet": 1,
+    "schematic_text": 148,
+    "schematic_trace": 164,
+    "source_component": 23,
+    "source_net": 50,
+    "source_port": 138,
+    "source_trace": 52,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 38 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 2,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 231,
+    "schematic_path": 137,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 138,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 16,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 80,
+    "schematic_net_label": 16,
+    "schematic_path": 3,
+    "schematic_port": 71,
+    "schematic_rect": 6,
+    "schematic_sheet": 1,
+    "schematic_text": 83,
+    "schematic_trace": 73,
+    "source_component": 16,
+    "source_net": 14,
+    "source_port": 81,
+    "source_trace": 21,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 39 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 252,
+    "schematic_path": 355,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 273,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 22,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 10,
+    "schematic_net_label": 61,
+    "schematic_path": 1,
+    "schematic_port": 97,
+    "schematic_rect": 9,
+    "schematic_sheet": 1,
+    "schematic_text": 54,
+    "schematic_trace": 129,
+    "source_component": 22,
+    "source_net": 50,
+    "source_port": 97,
+    "source_trace": 51,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 40 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 403,
+    "schematic_path": 304,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 302,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 55,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 42,
+    "schematic_net_label": 39,
+    "schematic_path": 1,
+    "schematic_port": 147,
+    "schematic_rect": 9,
+    "schematic_sheet": 1,
+    "schematic_text": 68,
+    "schematic_trace": 197,
+    "source_component": 55,
+    "source_net": 29,
+    "source_port": 147,
+    "source_trace": 44,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 41 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 699,
+    "schematic_path": 380,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 536,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 50,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 64,
+    "schematic_net_label": 50,
+    "schematic_path": 9,
+    "schematic_port": 231,
+    "schematic_rect": 9,
+    "schematic_sheet": 1,
+    "schematic_text": 158,
+    "schematic_trace": 293,
+    "source_component": 50,
+    "source_net": 70,
+    "source_port": 231,
+    "source_trace": 75,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 42 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 217,
+    "schematic_path": 215,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 212,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 26,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 43,
+    "schematic_net_label": 44,
+    "schematic_path": 2,
+    "schematic_port": 81,
+    "schematic_rect": 8,
+    "schematic_sheet": 1,
+    "schematic_text": 95,
+    "schematic_trace": 108,
+    "source_component": 25,
+    "source_net": 38,
+    "source_port": 81,
+    "source_trace": 39,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 43 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 15,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 193,
+    "schematic_path": 166,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 120,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_circle": 12,
+    "schematic_component": 22,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 43,
+    "schematic_net_label": 20,
+    "schematic_port": 52,
+    "schematic_rect": 9,
+    "schematic_sheet": 1,
+    "schematic_text": 51,
+    "schematic_trace": 83,
+    "source_component": 22,
+    "source_net": 12,
+    "source_port": 52,
+    "source_trace": 12,
+  },
+}
+`;
+
+exports[`SK-AM62: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 44 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 12,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 5,
+    "schematic_path": 13,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 76,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_circle": 12,
+    "schematic_component": 14,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_line": 5,
+    "schematic_rect": 13,
+    "schematic_sheet": 1,
+    "schematic_text": 76,
+    "source_component": 14,
+  },
+}
+`;
