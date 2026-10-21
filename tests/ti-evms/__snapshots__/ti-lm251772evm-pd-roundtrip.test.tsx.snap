@@ -3077,7 +3077,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
     <schematicpath points={[{"x":3.969816273,"y":3.124903504699},{"x":3.9613246873890002,"y":3.311718388141}]} strokeWidth={0.02} isFilled={false} />
     <schematicpath points={[{"x":4.063223714721,"y":3.0909371622550004},{"x":3.8764088312790004,"y":3.0909371622550004}]} strokeWidth={0.02} isFilled={false} />
     <schematiccircle center={{"x":3.969816273,"y":3.184344603976}} radius={0.24625598271899998} strokeWidth={0.02} isFilled={false} />
-    <schematictext text={"Q5"} schX={4.267021769385} schY={3.0484792342} anchor={"center_left"} fontSize={0.12737378415933304} />
+    <schematictext text={"Q5"} schX={4.267021769385} schY={3.1503782615320004} anchor={"center_left"} fontSize={0.12737378415933304} />
     <schematicpath points={[{"x":3.8849004168900003,"y":2.802223251481},{"x":3.8764088312790004,"y":3.0909371622550004}]} strokeWidth={0.02} isFilled={false} />
     <schematicpath points={[{"x":4.39439555355,"y":3.311718388141},{"x":4.063223714721,"y":3.311718388141}]} strokeWidth={0.02} isFilled={false} />
     <schematicpath points={[{"x":3.6980855334480003,"y":3.184344603976},{"x":3.6980855334480003,"y":3.439092172306}]} strokeWidth={0.02} isFilled={false} />
