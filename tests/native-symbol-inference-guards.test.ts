@@ -26,6 +26,30 @@ test("does not infer a redundant-anode Schottky from separate anode nets", () =>
   ).toBeUndefined()
 })
 
+test("does not infer an ordinary redundant-anode diode as Schottky", () => {
+  const context = getNativeSymbolInferenceFixture({
+    fixtureName: "lm5155evm-fly",
+    componentName: "D1",
+  })
+  const ordinaryDiodeCircuitJson = context.circuitJson.filter(
+    (element) =>
+      element.type !== "schematic_line" ||
+      ![
+        "schematic_line_altium_1235_line",
+        "schematic_line_altium_1236_line",
+        "schematic_line_altium_1237_line",
+        "schematic_line_altium_1238_line",
+      ].includes(element.schematic_line_id),
+  )
+
+  expect(
+    resolveNativeSchematicSymbolName({
+      circuitJson: ordinaryDiodeCircuitJson,
+      schematicComponent: context.schematicComponent,
+    }),
+  ).toBeUndefined()
+})
+
 test("does not infer a four-terminal capacitor without paired electrodes", () => {
   const context = getNativeSymbolInferenceFixture({
     fixtureName: "lmg342x-bb-evm",
@@ -95,6 +119,27 @@ test("keeps imported five-terminal MOSFET value placement", () => {
   expect(
     replacement?.importedTextIds.has(importedValueText.schematic_text_id),
   ).toBe(false)
+})
+
+test("does not infer an N-channel symbol for a P-channel MOSFET", () => {
+  const context = getNativeSymbolInferenceFixture({
+    fixtureName: "lm251772evm-pd",
+    componentName: "Q7",
+  })
+  const pChannelCircuitJson = context.circuitJson.map((element) =>
+    element.type === "source_component" &&
+    element.source_component_id ===
+      context.schematicComponent.source_component_id
+      ? { ...element, display_value: "P-channel MOSFET" }
+      : element,
+  )
+
+  expect(
+    resolveNativeSchematicSymbolName({
+      circuitJson: pChannelCircuitJson,
+      schematicComponent: context.schematicComponent,
+    }),
+  ).toBeUndefined()
 })
 
 test("keeps both imported coupled-inductor winding values", () => {

@@ -12,6 +12,8 @@ import { hasCoupledInductorPortLayout } from "./has-coupled-inductor-port-layout
 import type { NativeSchematicSymbolName } from "./native-schematic-symbol-name"
 import { hasFourTerminalCapacitorConnections } from "./has-four-terminal-capacitor-connections"
 import { hasRedundantAnodeSchottkyConnections } from "./has-redundant-anode-schottky-connections"
+import { hasSchottkyCathodeHooks } from "./has-schottky-cathode-hooks"
+import { isSupportedFiveTerminalNChannelMosfet } from "./is-supported-five-terminal-n-channel-mosfet"
 import { normalizePortName } from "./normalize-port-name"
 export type { NativeSchematicSymbolName } from "./native-schematic-symbol-name"
 
@@ -23,14 +25,12 @@ export const resolveNativeSchematicSymbolName = ({
   schematicComponent: SchematicComponent
 }): string | NativeSchematicSymbolName | undefined => {
   if (schematicComponent.symbol_name) return schematicComponent.symbol_name
-
   const sourceComponent = circuitJson.find(
     (element): element is AnySourceComponent =>
       element.type === "source_component" &&
       element.source_component_id === schematicComponent.source_component_id,
   )
   if (sourceComponent?.type !== "source_component") return undefined
-
   const sourcePorts = circuitJson.filter(
     (element): element is SourcePort =>
       element.type === "source_port" &&
@@ -64,7 +64,6 @@ export const resolveNativeSchematicSymbolName = ({
   )
   const designator = sourceComponent.display_name ?? ""
   const componentValue = sourceComponent.display_value?.toUpperCase() ?? ""
-
   if (
     componentValue.startsWith("SN74LVC2G08") &&
     hasExactPortNames(logicPortNames, ["a", "b", "y"])
@@ -117,6 +116,10 @@ export const resolveNativeSchematicSymbolName = ({
     hasRedundantAnodeSchottkyConnections({
       circuitJson,
       sourcePorts,
+    }) &&
+    hasSchottkyCathodeHooks({
+      circuitJson,
+      schematicComponentId: schematicComponent.schematic_component_id,
     })
   ) {
     return "schottky_diode_3_pin_right"
@@ -141,6 +144,7 @@ export const resolveNativeSchematicSymbolName = ({
   }
   if (
     designator.startsWith("Q") &&
+    isSupportedFiveTerminalNChannelMosfet(componentValue) &&
     hasExactPortNameOccurrences(normalizedSourcePortNames, [
       "drain",
       "gate",
