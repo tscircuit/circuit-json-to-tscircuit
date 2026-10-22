@@ -8,12 +8,14 @@ export const isPinDesignatorForPort = ({
   schematicText,
   schematicPort,
   schematicComponent,
+  pinDesignator,
 }: {
   schematicText: SchematicText
   schematicPort: SchematicPort
   schematicComponent: SchematicComponent
+  pinDesignator: string
 }): boolean => {
-  if (schematicText.text !== String(schematicPort.pin_number)) return false
+  if (schematicText.text !== pinDesignator) return false
   const portToCenter = {
     x: schematicComponent.center.x - schematicPort.center.x,
     y: schematicComponent.center.y - schematicPort.center.y,

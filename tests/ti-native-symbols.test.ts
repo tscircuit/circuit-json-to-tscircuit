@@ -379,7 +379,19 @@ test("multi-unit native symbols restore one value when the package label is abse
       element.text !== "SN74LVC3G14DCUTG4" ||
       element.schematic_component_id === undefined,
   )
-  const replacements = getNativeSymbolTextReplacements(circuitJson)
+  const schmittComponentIds = circuitJson.flatMap((element) =>
+    element.type === "schematic_component" &&
+    resolveNativeSchematicSymbolName({
+      circuitJson,
+      schematicComponent: element,
+    }) === "schmitt_trigger_inverter_right"
+      ? [element.schematic_component_id]
+      : [],
+  )
+  const replacements = getNativeSymbolTextReplacements(circuitJson).filter(
+    (replacement) =>
+      schmittComponentIds.includes(replacement.schematicComponentId),
+  )
   const replacementsWithValues = replacements.filter(
     (replacement) => replacement.includeNativeDisplayText,
   )
