@@ -1,5 +1,6 @@
 import type { CircuitJson } from "circuit-json"
 import { convertCircuitJsonToSchematicSvg } from "circuit-to-svg"
+import { applyToPoint, fromString, type Matrix } from "transformation-matrix"
 
 interface PixelCropSize {
   width: number
@@ -14,31 +15,21 @@ interface SchematicPoint {
 const OUTPUT_WIDTH = 480
 const COMPARISON_GAP = 24
 
-const getViewportMatrix = (schematicSvg: string): number[] => {
+const getViewportTransform = (schematicSvg: string): Matrix => {
   const matrixText = schematicSvg.match(
     /data-real-to-screen-transform="matrix\(([^)]+)\)"/u,
   )?.[1]
   if (!matrixText) throw new Error("Schematic SVG is missing its viewport")
 
-  const matrix = matrixText.split(",").map(Number)
-  if (matrix.length !== 6 || matrix.some((value) => !Number.isFinite(value))) {
+  const realToScreenTransform = fromString(`matrix(${matrixText})`)
+  if (
+    Object.values(realToScreenTransform).some(
+      (transformEntry) => !Number.isFinite(transformEntry),
+    )
+  ) {
     throw new Error("Schematic SVG has an invalid viewport matrix")
   }
-  return matrix
-}
-
-const transformPointToPixels = ({
-  matrix,
-  point,
-}: {
-  matrix: number[]
-  point: SchematicPoint
-}): SchematicPoint => {
-  const [a, b, c, d, e, f] = matrix
-  return {
-    x: a! * point.x + c! * point.y + e!,
-    y: b! * point.x + d! * point.y + f!,
-  }
+  return realToScreenTransform
 }
 
 const cropSchematicSvg = ({
@@ -50,10 +41,10 @@ const cropSchematicSvg = ({
   focusPoint: SchematicPoint
   cropSize: PixelCropSize
 }): string => {
-  const pixelCenter = transformPointToPixels({
-    matrix: getViewportMatrix(schematicSvg),
-    point: focusPoint,
-  })
+  const pixelCenter = applyToPoint(
+    getViewportTransform(schematicSvg),
+    focusPoint,
+  )
   const outerSvgEnd = schematicSvg.indexOf(">")
   const outerSvgClose = schematicSvg.lastIndexOf("</svg>")
   if (outerSvgEnd < 0 || outerSvgClose < 0) {

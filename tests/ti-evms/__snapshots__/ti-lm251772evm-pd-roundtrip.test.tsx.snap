@@ -3011,6 +3011,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
     <schematicpath points={[{"x":3.5027790644125,"y":-3.9485873089775},{"x":3.5027790644125,"y":-3.7532808399245}]} strokeWidth={0.02} isFilled={false} />
     <schematictext text={"Q7"} schX={3.116411919112} schY={-3.1758530183765} anchor={"center_right"} fontSize={0.12737378415933304} />
     <schematiccircle center={{"x":3.2480314960825,"y":-3.4815501003724996}} radius={0.24625598271899998} strokeWidth={0.02} isFilled={false} />
+    <schematictext text={"5-6-7-8"} schX={3.3554052802475} schY={-3.2225567392369996} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
     <schematictext text={"1"} schX={3.2280314960825} schY={-3.8509340744509997} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
     <schematictext text={"2"} schX={3.3554052802475} schY={-3.8509340744509997} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
     <schematictext text={"3"} schX={3.4827790644125} schY={-3.8509340744509997} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
@@ -3036,6 +3037,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
     <schematicpath points={[{"x":4.7128300139125,"y":-3.9485873089775},{"x":4.7128300139125,"y":-3.7532808399245}]} strokeWidth={0.02} isFilled={false} />
     <schematictext text={"Q8"} schX={4.3264628686119995} schY={-3.1758530183765} anchor={"center_right"} fontSize={0.12737378415933304} />
     <schematiccircle center={{"x":4.4580824455825,"y":-3.4815501003724996}} radius={0.24625598271899998} strokeWidth={0.02} isFilled={false} />
+    <schematictext text={"5-6-7-8"} schX={4.5654562297475} schY={-3.2225567392369996} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
     <schematictext text={"1"} schX={4.4380824455825} schY={-3.8509340744509997} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
     <schematictext text={"2"} schX={4.5654562297475} schY={-3.8509340744509997} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
     <schematictext text={"3"} schX={4.6928300139125} schY={-3.8509340744509997} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} schRotation={-90} />
@@ -3089,6 +3091,7 @@ exports[`TI LM251772EVM-PD Circuit JSON to tscircuit round trip 1`] = `
     <schematicpath points={[{"x":3.5027790643225,"y":3.4390921723125},{"x":3.6980855333755,"y":3.4390921723125}]} strokeWidth={0.02} isFilled={false} />
     <schematictext text={"Q5"} schX={4.237301219674} schY={3.2140651536209996} anchor={"center_left"} fontSize={0.12737378415933304} />
     <schematiccircle center={{"x":3.9698162729275,"y":3.1843446039825}} radius={0.24625598271899998} strokeWidth={0.02} isFilled={false} />
+    <schematictext text={"5-6-7-8"} schX={4.2288096340629995} schY={3.3317183881475} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
     <schematictext text={"1"} schX={3.6004322988490003} schY={3.2043446039825} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
     <schematictext text={"2"} schX={3.6004322988490003} schY={3.3317183881475} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />
     <schematictext text={"3"} schX={3.6004322988490003} schY={3.4590921723125} anchor={"bottom_center"} fontSize={0.15} color={"#a90000"} />

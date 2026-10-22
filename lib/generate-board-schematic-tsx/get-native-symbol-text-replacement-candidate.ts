@@ -9,7 +9,6 @@ import { getDisplayValueTextLayout } from "./get-display-value-text-layout"
 import type {
   NativeSymbolTextReplacement,
   SchematicComponentId,
-  SchematicPortId,
   SchematicTextId,
 } from "./get-native-symbol-text-replacements"
 import {
@@ -18,8 +17,8 @@ import {
 } from "./get-nearest-schematic-text"
 import { hasMultipleNativeSymbolUnits } from "./has-multiple-native-symbol-units"
 import { hasPreservedPackageValueText } from "./has-preserved-package-value-text"
-import { isPinDesignatorForPort } from "./is-pin-designator-for-port"
 import { resolveNativeSchematicSymbolName } from "./resolve-native-schematic-symbol-name"
+import { getPinDesignatorReplacements } from "./get-pin-designator-replacements"
 
 type CircuitSourceComponent = Extract<
   AnyCircuitElement,
@@ -102,19 +101,12 @@ export const getNativeSymbolTextReplacementCandidate = (
       candidate.schematic_component_id ===
         schematicComponent.schematic_component_id,
   )
-  const replacedPinPortIds = new Set<SchematicPortId>()
-  const pinDesignatorTexts = schematicPorts.flatMap((schematicPort) => {
-    const matches = unownedSchematicTexts.filter((schematicText) =>
-      isPinDesignatorForPort({
-        schematicText,
-        schematicPort,
-        schematicComponent,
-      }),
-    )
-    if (matches.length > 0)
-      replacedPinPortIds.add(schematicPort.schematic_port_id)
-    return matches
-  })
+  const { pinDesignatorTexts, replacedPinPortIds } =
+    getPinDesignatorReplacements({
+      circuitJson,
+      schematicComponent,
+      schematicPorts,
+    })
 
   return {
     schematicComponentId: schematicComponent.schematic_component_id,

@@ -20,13 +20,15 @@ const TRANSFORM_DECIMAL_PLACES = 12
 const normalizeTransformValue = (transformValue: number): number =>
   Number(transformValue.toFixed(TRANSFORM_DECIMAL_PLACES))
 
-const normalizeSymbolToSchematicTransform = (transform: Matrix): Matrix => ({
-  a: normalizeTransformValue(transform.a),
-  b: normalizeTransformValue(transform.b),
-  c: normalizeTransformValue(transform.c),
-  d: normalizeTransformValue(transform.d),
-  e: normalizeTransformValue(transform.e),
-  f: normalizeTransformValue(transform.f),
+const normalizeSymbolToSchematicTransform = (
+  symbolToSchematicTransform: Matrix,
+): Matrix => ({
+  a: normalizeTransformValue(symbolToSchematicTransform.a),
+  b: normalizeTransformValue(symbolToSchematicTransform.b),
+  c: normalizeTransformValue(symbolToSchematicTransform.c),
+  d: normalizeTransformValue(symbolToSchematicTransform.d),
+  e: normalizeTransformValue(symbolToSchematicTransform.e),
+  f: normalizeTransformValue(symbolToSchematicTransform.f),
 })
 
 export const getSymbolToSchematicTransform = ({

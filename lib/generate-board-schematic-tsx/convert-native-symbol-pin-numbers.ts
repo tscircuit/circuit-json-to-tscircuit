@@ -1,10 +1,12 @@
 import type { SchSymbol } from "schematic-symbols"
+import type { SourcePort } from "circuit-json"
 import { applyToPoint, type Matrix } from "transformation-matrix"
 import type { SchematicPortId } from "./get-native-symbol-text-replacements"
 import { getNativeSymbolPinNumberPosition } from "./get-native-symbol-pin-number-position"
 import { hasNearbyParallelPort } from "./has-nearby-parallel-port"
 import type { SchematicSymbolPortMatch } from "./match-symbol-ports-by-pin-identity"
 import { formatElement } from "./format-attributes"
+import { getSourcePinDesignator } from "./get-source-pin-designator"
 
 const PIN_TEXT_FONT_SIZE = 0.15
 const PIN_TEXT_COLOR = "#a90000"
@@ -38,16 +40,24 @@ export const convertNativeSymbolPinNumbers = ({
   symbol,
   symbolToSchematicTransform,
   portMatches,
+  sourcePorts,
   replacedPinPortIds,
 }: {
   symbol: SchSymbol
   symbolToSchematicTransform: Matrix
   portMatches: SchematicSymbolPortMatch[]
+  sourcePorts: SourcePort[]
   replacedPinPortIds: Set<SchematicPortId>
 }): string[] =>
   portMatches.flatMap(({ schematicPort, symbolPort }) => {
+    const sourcePort = sourcePorts.find(
+      (candidate) => candidate.source_port_id === schematicPort.source_port_id,
+    )
+    const pinDesignator = sourcePort
+      ? getSourcePinDesignator({ sourcePort, schematicPort })
+      : undefined
     if (
-      schematicPort.pin_number === undefined ||
+      pinDesignator === undefined ||
       !replacedPinPortIds.has(schematicPort.schematic_port_id)
     ) {
       return []
@@ -95,7 +105,7 @@ export const convertNativeSymbolPinNumbers = ({
       : preliminaryPosition
     return [
       formatElement("schematictext", {
-        text: String(schematicPort.pin_number),
+        text: pinDesignator,
         schX: pinNumberCenter.x,
         schY: pinNumberCenter.y,
         anchor: "bottom_center",

@@ -1,8 +1,9 @@
-import { test } from "bun:test"
+import { expect, test } from "bun:test"
 import { readFileSync } from "node:fs"
 import { join } from "node:path"
 import { gunzipSync } from "node:zlib"
 import type { CircuitJson } from "circuit-json"
+import { generateBoardSchematicElements } from "../lib/generate-board-schematic-tsx"
 import {
   assertNativeSymbolPortAlignment,
   type NativeSymbolAlignmentCase,
@@ -66,4 +67,13 @@ test("five more real TI components use aligned native symbols", () => {
       nativeSymbolCase,
     })
   }
+})
+
+test("five-terminal MOSFETs preserve composite drain designators", () => {
+  const circuitJson = loadTiFixture("lm251772evm-pd")
+  const compoundDrainLabels = generateBoardSchematicElements(
+    circuitJson,
+  ).filter((element) => element.includes('text={"5-6-7-8"}'))
+
+  expect(compoundDrainLabels).toHaveLength(6)
 })

@@ -90,6 +90,7 @@ export const convertComponents: SchematicElementConverter = (circuitJson) => {
                 symbol,
                 symbolToSchematicTransform,
                 portMatches,
+                sourcePorts,
                 replacedPinPortIds: textReplacement.replacedPinPortIds,
               })
             : []),
