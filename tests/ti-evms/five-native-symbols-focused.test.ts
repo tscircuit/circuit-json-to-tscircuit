@@ -60,7 +60,7 @@ test("zoomed real-board integration comparisons show each symbol", async () => {
     componentName: "U57",
     description: "TMDS62LEVM U57 powered OR gate",
     snapshotName: "or-gate",
-    cropSize: { width: 110, height: 90 },
+    cropSize: { width: 125, height: 90 },
   })
 
   const lm5155 = await createTiEvmRoundtrip({
