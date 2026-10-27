@@ -66,58 +66,52 @@ const makeBoard = (physicalPins: Array<number | string>): CircuitJson =>
   ] as CircuitJson
 
 for (const physicalPin of ["A1", "H3", "MP"]) {
-  test.failing(
-    `imports physical pin ${physicalPin} using valid pin label keys`,
-    () => {
-      const generated = convertCircuitJsonToTscircuit(
-        makeBoard([1, physicalPin, 3]),
-        { componentName: "BgaBoard" },
-      )
-      expect(generated).not.toContain(`"pin${physicalPin}"`)
-      expect(generated).toContain(
-        `"pin4":["${physicalPin}","imported_pcb_port_2"]`,
-      )
-      expect(generated).toContain('"pin1":["1","imported_pcb_port_1"]')
-      expect(generated).toContain('"pin3":["3","imported_pcb_port_3"]')
-    },
-  )
-}
-
-test.failing(
-  "renders imported BGA balls without dropping the component",
-  async () => {
+  test(`imports physical pin ${physicalPin} using valid pin label keys`, () => {
     const generated = convertCircuitJsonToTscircuit(
-      makeBoard(["A1", "B2", "MP"]),
+      makeBoard([1, physicalPin, 3]),
       { componentName: "BgaBoard" },
     )
-    const rendered = (await runTscircuitCode(generated)) as CircuitJson
-    expect(
-      rendered.filter(
-        (element) => element.type === "source_failed_to_create_component_error",
-      ),
-    ).toHaveLength(0)
-    expect(
-      rendered.filter((element) => element.type === "pcb_component"),
-    ).toHaveLength(1)
-    const pads = rendered.filter((element) => element.type === "pcb_smtpad")
-    expect(pads).toHaveLength(3)
-    for (const [i, pin] of ["A1", "B2", "MP"].entries()) {
-      const port = rendered.find(
-        (element): element is SourcePort =>
-          element.type === "source_port" &&
-          element.port_hints?.includes(pin) === true,
-      )
-      expect(port?.type).toBe("source_port")
-      const pcbPort = rendered.find(
-        (element): element is PcbPort =>
-          element.type === "pcb_port" &&
-          element.source_port_id === port?.source_port_id,
-      )
-      expect(pcbPort).toMatchObject({ x: i - 1, y: 0 })
-      expect(pads[i]?.pcb_port_id).toBe(pcbPort?.pcb_port_id)
-    }
-  },
-)
+    expect(generated).not.toContain(`"pin${physicalPin}"`)
+    expect(generated).toContain(
+      `"pin4":["${physicalPin}","imported_pcb_port_2"]`,
+    )
+    expect(generated).toContain('"pin1":["1","imported_pcb_port_1"]')
+    expect(generated).toContain('"pin3":["3","imported_pcb_port_3"]')
+  })
+}
+
+test("renders imported BGA balls without dropping the component", async () => {
+  const generated = convertCircuitJsonToTscircuit(
+    makeBoard(["A1", "B2", "MP"]),
+    { componentName: "BgaBoard" },
+  )
+  const rendered = (await runTscircuitCode(generated)) as CircuitJson
+  expect(
+    rendered.filter(
+      (element) => element.type === "source_failed_to_create_component_error",
+    ),
+  ).toHaveLength(0)
+  expect(
+    rendered.filter((element) => element.type === "pcb_component"),
+  ).toHaveLength(1)
+  const pads = rendered.filter((element) => element.type === "pcb_smtpad")
+  expect(pads).toHaveLength(3)
+  for (const [i, pin] of ["A1", "B2", "MP"].entries()) {
+    const port = rendered.find(
+      (element): element is SourcePort =>
+        element.type === "source_port" &&
+        element.port_hints?.includes(pin) === true,
+    )
+    expect(port?.type).toBe("source_port")
+    const pcbPort = rendered.find(
+      (element): element is PcbPort =>
+        element.type === "pcb_port" &&
+        element.source_port_id === port?.source_port_id,
+    )
+    expect(pcbPort).toMatchObject({ x: i - 1, y: 0 })
+    expect(pads[i]?.pcb_port_id).toBe(pcbPort?.pcb_port_id)
+  }
+})
 
 test("keeps numeric string pins compatible", async () => {
   const generated = convertCircuitJsonToTscircuit(makeBoard(["1", "3"]), {

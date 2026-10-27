@@ -8,7 +8,12 @@ type SourceComponentId = NonNullable<SourceComponent["source_component_id"]>
 type SourcePort = Extract<AnyCircuitElement, { type: "source_port" }>
 
 const getCompoundPinNumber = (sourcePort: SourcePort): number | undefined => {
-  if (sourcePort.pin_number !== undefined) return sourcePort.pin_number
+  if (sourcePort.pin_number !== undefined) {
+    const pinNumber = Number(sourcePort.pin_number)
+    return Number.isSafeInteger(pinNumber) && pinNumber >= 0
+      ? pinNumber
+      : undefined
+  }
 
   const firstPinNumber = /^\d+/u.exec(sourcePort.name)?.[0]
   return firstPinNumber ? Number.parseInt(firstPinNumber, 10) : undefined
