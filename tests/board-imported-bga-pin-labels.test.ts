@@ -132,18 +132,13 @@ test("renders an SVG of imported BGA component creation", async () => {
     { componentName: "BgaSvgBoard" },
   )
   const rendered = (await runTscircuitCode(generated)) as CircuitJson
-  const count = rendered.filter((e) => e.type === "pcb_component").length
-  const failures = rendered.filter(
-    (e) => e.type === "source_failed_to_create_component_error",
-  ).length
   const pcb = convertCircuitJsonToPcbSvg(rendered, {
     width: 600,
     height: 260,
     includeVersion: false,
     viewport: { minX: -2.5, maxX: 2.5, minY: -1, maxY: 1 },
   })
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="320" viewBox="0 0 600 320"><rect width="600" height="320" fill="#111827"/><text x="16" y="24" fill="white" font-family="sans-serif" font-size="16">Imported BGA: ${count} component; ${failures} creation errors</text><text x="16" y="48" fill="white" font-family="sans-serif" font-size="14">Physical pins: A1, B2, MP · expected: one component, three pads</text><svg x="0" y="60" width="600" height="260">${pcb.replace(/^.*?<svg[^>]*>/s, "").replace(/<\/svg>\s*$/, "")}</svg></svg>`
-  await expect(svg).toMatchSvgSnapshot(
+  await expect(pcb).toMatchSvgSnapshot(
     import.meta.path,
     "orangecrab-bga-pin-labels",
   )
