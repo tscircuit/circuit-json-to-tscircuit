@@ -2,10 +2,10 @@ import { schematic_text } from "circuit-json"
 import type { SchSymbol } from "schematic-symbols"
 import { applyToPoint, type Matrix } from "transformation-matrix"
 import { formatElement } from "./format-attributes"
+import { SYMBOL_OUTLINE_STROKE_WIDTH } from "./get-schematic-primitive-paint"
 
 // circuit-to-svg renders library symbol paths and circles with a fixed
 // component outline width, independent of library strokeWidth and symbol scale.
-const SYMBOL_OUTLINE_STROKE_WIDTH = 0.02
 const MINIMUM_FILL_AREA = 1e-12
 
 const pathHasFillArea = (points: Array<{ x: number; y: number }>): boolean => {
