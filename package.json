@@ -28,7 +28,7 @@
     "@types/react": "18",
     "@types/react-dom": "18",
     "bun-match-svg": "^0.0.15",
-    "circuit-json": "^0.0.521",
+    "circuit-json": "^0.0.539",
     "circuit-json-to-gltf": "0.0.151",
     "circuit-to-svg": "https://pkg.pr.new/tscircuit/circuit-to-svg@738ef1d",
     "color": "^5.0.3",
@@ -42,7 +42,7 @@
     "shiki": "^4.3.1",
     "stack-svgs": "^0.0.1",
     "transformation-matrix": "3.1.0",
-    "tscircuit": "0.0.2775-libonly",
+    "tscircuit": "0.0.3043-libonly",
     "tsup": "^8.3.5",
     "zod": "^3.25.76"
   },
