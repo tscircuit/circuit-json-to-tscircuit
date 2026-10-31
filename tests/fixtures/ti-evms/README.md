@@ -24,3 +24,11 @@ the same five TI EVMs. Their `cad-models` directories contain the referenced
 STEP files in gzip form. The tests embed those models before rendering top and
 bottom 3D snapshots, so the complete Circuit JSON to TSX round trip is visible
 without network access.
+
+`dp83825-usb-cad-origin.circuit.json.gz` isolates J1 (Molex 475890001), its
+native pads and silkscreen, and its embedded STEP placement from the same
+DP83825EVM PcbDoc, converted with `altium-to-circuit-json@0.0.114`. Only the
+surrounding board is cropped, and references to omitted electrical ports are
+removed. The model reuses `cad-models/dp83825evm/8.step.gz`, verified against
+the PcbDoc's embedded model bytes (SHA-256
+`5c5fe4d712828519a11d3421da933f5b610d55c80e6c82a976539dff61385191`).
