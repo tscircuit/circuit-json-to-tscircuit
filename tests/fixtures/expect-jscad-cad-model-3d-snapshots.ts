@@ -1,3 +1,4 @@
+import { expect } from "bun:test"
 import { basename, dirname, join } from "node:path"
 import type { CircuitJson, PcbBoard } from "circuit-json"
 import {
@@ -25,6 +26,7 @@ export async function expectJscadCadModel3dSnapshots({
     aspectRatio: 4 / 3,
     direction: [-0.7, 1.2, -0.8],
   })
+  let sourcePng: Uint8Array | undefined
 
   for (const [snapshotName, circuitJson] of [
     ["source", sourceCircuitJson],
@@ -51,5 +53,14 @@ export async function expectJscadCadModel3dSnapshots({
         `${testName}-${snapshotName}-3d.snap.png`,
       ),
     })
+    if (snapshotName === "source") {
+      sourcePng = renderedPng
+      continue
+    }
+    if (!sourcePng) throw new Error("Missing source 3D render")
+    expect(
+      Buffer.from(renderedPng).equals(sourcePng),
+      "Converted 3D render must match the native source",
+    ).toBe(true)
   }
 }
