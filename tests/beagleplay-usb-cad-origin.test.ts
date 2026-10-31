@@ -2,6 +2,7 @@ import { expect, test } from "bun:test"
 import type { CadComponent, CircuitJson } from "circuit-json"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { runTscircuitCode } from "tscircuit"
+import { expectJscadCadModel3dSnapshots } from "./fixtures/expect-jscad-cad-model-3d-snapshots"
 
 test("preserves BeaglePlay J13 CAD placement when pad bounds differ from its footprint origin", async () => {
   // J13, its native pads and its ComponentBody come from BEAGLEPLAYV020_220915.
@@ -36,6 +37,12 @@ test("preserves BeaglePlay J13 CAD placement when pad bounds differ from its foo
   const renderedCadComponent = renderedCircuitJson.find(
     (element): element is CadComponent => element.type === "cad_component",
   )
+
+  await expectJscadCadModel3dSnapshots({
+    sourceCircuitJson,
+    generatedCircuitJson: renderedCircuitJson,
+    testPath: import.meta.path,
+  })
 
   for (const axis of ["x", "y", "z"] as const) {
     expect(renderedCadComponent?.position[axis]).toBeCloseTo(
