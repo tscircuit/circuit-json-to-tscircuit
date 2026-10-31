@@ -94,7 +94,6 @@ export const convertPcbComponents: BoardConverterStage = ({
     )
     const { cadModelParentCenter, componentPosition } =
       getPcbComponentRenderPlacement({
-        circuitJson,
         pcbBoard,
         pcbComponent,
       })
