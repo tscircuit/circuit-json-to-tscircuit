@@ -1,6 +1,7 @@
 import type { AnyCircuitElement, PcbComponent } from "circuit-json"
 import type { BoardConversionContext as FootprintConversionContext } from "../board-conversion-context"
-import { getInternallyConnectedSourcePortIds } from "./get-internally-connected-source-port-ids"
+import type { SourcePortId } from "../board-conversion-types"
+import { getInternallyConnectedPins } from "./get-internally-connected-pins"
 import { getUnambiguousSourcePortAliases } from "./get-unambiguous-source-port-aliases"
 
 type PinLabelKey = `pin${number}`
@@ -21,7 +22,7 @@ const getCompoundPinNumber = (sourcePort: SourcePort): number | undefined => {
   return firstPinNumber ? Number.parseInt(firstPinNumber, 10) : undefined
 }
 
-export const getPinLabels = ({
+export const getPcbComponentPinProps = ({
   circuitJson,
   footprintConversionContext,
   pcbComponent,
@@ -31,10 +32,13 @@ export const getPinLabels = ({
   footprintConversionContext: FootprintConversionContext
   pcbComponent: PcbComponent
   sourceComponents: SourceComponent[]
-}): PinLabels | undefined => {
+}):
+  | { pinLabels: PinLabels; internallyConnectedPins: number[][] }
+  | undefined => {
   if (sourceComponents.length === 0) return undefined
 
   const pinLabels: PinLabels = {}
+  const pinNumberBySourcePortId = new Map<SourcePortId, number>()
   const sourceComponentIds = new Set<SourceComponentId>(
     sourceComponents
       .map((sourceComponent) => sourceComponent.source_component_id)
@@ -73,19 +77,10 @@ export const getPinLabels = ({
         footprintConversionContext.portHintByPcbPortId.get(element.pcb_port_id)
       return importedPortHint ? [importedPortHint] : []
     })
-    const sourceComponent = sourceComponents.find(
-      (component) =>
-        component.source_component_id === sourcePort.source_component_id,
-    )
-    const internallyConnectedSourcePortIds = sourceComponent
-      ? getInternallyConnectedSourcePortIds({ circuitJson, sourceComponent })
-      : undefined
     const aliases = [
-      sourcePort.name,
       ...getUnambiguousSourcePortAliases({
         sourcePort,
         sourcePorts,
-        internallyConnectedSourcePortIds,
       }),
       ...importedPortHints,
     ].filter(
@@ -104,6 +99,7 @@ export const getPinLabels = ({
     }
 
     const pinLabelKey: PinLabelKey = `pin${pinNumber}`
+    pinNumberBySourcePortId.set(sourcePort.source_port_id, pinNumber)
     pinLabels[pinLabelKey] = [
       ...(pinLabels[pinLabelKey] ?? []),
       ...aliases,
@@ -113,5 +109,13 @@ export const getPinLabels = ({
     )
   }
 
-  return Object.keys(pinLabels).length > 0 ? pinLabels : undefined
+  if (Object.keys(pinLabels).length === 0) return undefined
+  return {
+    pinLabels,
+    internallyConnectedPins: getInternallyConnectedPins({
+      circuitJson,
+      sourceComponents,
+      pinNumberBySourcePortId,
+    }),
+  }
 }
