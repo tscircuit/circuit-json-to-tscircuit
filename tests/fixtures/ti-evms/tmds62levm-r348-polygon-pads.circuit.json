@@ -1,0 +1,168 @@
+[
+  {
+    "type": "pcb_board",
+    "pcb_board_id": "pcb_pcb_board_altium",
+    "center": {
+      "x": 113.03034544,
+      "y": 111.41557599999999
+    },
+    "width": 1,
+    "height": 1,
+    "shape": "polygon",
+    "thickness": 1.6,
+    "num_layers": 6,
+    "material": "fr4",
+    "is_via_in_pad_allowed": true,
+    "min_trace_width": 0.08128,
+    "min_via_hole_diameter": 0.7111999999999999,
+    "min_via_pad_diameter": 1.27
+  },
+  {
+    "type": "source_component",
+    "ftype": "simple_chip",
+    "source_component_id": "pcb_source_component_altium_274",
+    "name": "R348",
+    "display_name": "R348"
+  },
+  {
+    "type": "source_port",
+    "source_port_id": "pcb_source_port_altium_123024",
+    "source_component_id": "pcb_source_component_altium_274",
+    "name": "2",
+    "port_hints": ["2", "pin2"],
+    "pin_number": 2
+  },
+  {
+    "type": "source_port",
+    "source_port_id": "pcb_source_port_altium_123025",
+    "source_component_id": "pcb_source_component_altium_274",
+    "name": "1",
+    "port_hints": ["1", "pin1"],
+    "pin_number": 1
+  },
+  {
+    "type": "pcb_component",
+    "pcb_component_id": "pcb_pcb_component_altium_274",
+    "source_component_id": "pcb_source_component_altium_274",
+    "center": {
+      "x": 113.03034544,
+      "y": 111.41557599999999
+    },
+    "width": 4.696531119999996,
+    "height": 5.776978539999995,
+    "layer": "bottom",
+    "rotation": 315,
+    "position_mode": "none",
+    "obstructs_within_bounds": false
+  },
+  {
+    "type": "pcb_port",
+    "pcb_port_id": "pcb_pcb_port_altium_123024",
+    "source_port_id": "pcb_source_port_altium_123024",
+    "x": 113.22826986,
+    "y": 111.21752458,
+    "layers": ["bottom"],
+    "pcb_component_id": "pcb_pcb_component_altium_274"
+  },
+  {
+    "type": "pcb_smtpad",
+    "pcb_smtpad_id": "pcb_pcb_smtpad_altium_123024",
+    "x": 113.22826986,
+    "y": 111.21752458,
+    "layer": "bottom",
+    "soldermask_margin": 0.0508,
+    "shape": "polygon",
+    "points": [
+      {
+        "x": 113.22191986,
+        "y": 111.20482458000001
+      },
+      {
+        "x": 113.23461986,
+        "y": 111.20482458000001
+      },
+      {
+        "x": 113.24096985999999,
+        "y": 111.21117458
+      },
+      {
+        "x": 113.24096985999999,
+        "y": 111.22387458
+      },
+      {
+        "x": 113.23461986,
+        "y": 111.23022458
+      },
+      {
+        "x": 113.22191986,
+        "y": 111.23022458
+      },
+      {
+        "x": 113.21556986,
+        "y": 111.22387458
+      },
+      {
+        "x": 113.21556986,
+        "y": 111.21117458
+      }
+    ],
+    "pcb_port_id": "pcb_pcb_port_altium_123024",
+    "port_hints": ["2"],
+    "pcb_component_id": "pcb_pcb_component_altium_274"
+  },
+  {
+    "type": "pcb_port",
+    "pcb_port_id": "pcb_pcb_port_altium_123025",
+    "source_port_id": "pcb_source_port_altium_123025",
+    "x": 112.83242356000001,
+    "y": 111.61337341999999,
+    "layers": ["bottom"],
+    "pcb_component_id": "pcb_pcb_component_altium_274"
+  },
+  {
+    "type": "pcb_smtpad",
+    "pcb_smtpad_id": "pcb_pcb_smtpad_altium_123025",
+    "x": 112.83242356000001,
+    "y": 111.61337341999999,
+    "layer": "bottom",
+    "soldermask_margin": 0.0508,
+    "shape": "polygon",
+    "points": [
+      {
+        "x": 112.82607356000001,
+        "y": 111.60067341999999
+      },
+      {
+        "x": 112.83877356,
+        "y": 111.60067341999999
+      },
+      {
+        "x": 112.84512356,
+        "y": 111.60702341999999
+      },
+      {
+        "x": 112.84512356,
+        "y": 111.61972341999999
+      },
+      {
+        "x": 112.83877356,
+        "y": 111.62607341999998
+      },
+      {
+        "x": 112.82607356000001,
+        "y": 111.62607341999998
+      },
+      {
+        "x": 112.81972356000001,
+        "y": 111.61972341999999
+      },
+      {
+        "x": 112.81972356000001,
+        "y": 111.60702341999999
+      }
+    ],
+    "pcb_port_id": "pcb_pcb_port_altium_123025",
+    "port_hints": ["1"],
+    "pcb_component_id": "pcb_pcb_component_altium_274"
+  }
+]
