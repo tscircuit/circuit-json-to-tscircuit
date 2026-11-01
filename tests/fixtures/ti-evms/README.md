@@ -32,3 +32,10 @@ surrounding board is cropped, and references to omitted electrical ports are
 removed. The model reuses `cad-models/dp83825evm/8.step.gz`, verified against
 the PcbDoc's embedded model bytes (SHA-256
 `5c5fe4d712828519a11d3421da933f5b610d55c80e6c82a976539dff61385191`).
+
+`tmds62levm-r348-polygon-pads.circuit.json` isolates R348, its two ports and
+polygon pads from TI's TMDS62LEVM Altium design, converted with
+`altium-to-circuit-json@0.0.114`. Only the surrounding board is cropped to 1 mm.
+The bottom-side 315-degree component and every polygon vertex retain their
+original coordinates. The redundant pad `x`/`y` fields also remain as emitted
+by the Altium converter, so the regression exercises the actual imported input.
