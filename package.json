@@ -22,6 +22,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@jscad/modeling": "^2.13.0",
+    "@tscircuit/math-utils": "0.0.36",
     "@tscircuit/mm": "^0.0.8",
     "@tscircuit/soup-util": "^0.0.41",
     "@types/bun": "latest",
@@ -29,6 +30,7 @@
     "@types/react-dom": "18",
     "bun-match-svg": "^0.0.15",
     "circuit-json": "^0.0.539",
+    "circuit-json-to-connectivity-map": "0.0.33",
     "circuit-json-to-gltf": "0.0.151",
     "circuit-to-svg": "https://pkg.pr.new/tscircuit/circuit-to-svg@738ef1d",
     "color": "^5.0.3",

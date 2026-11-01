@@ -23,7 +23,7 @@ test.each(["embedded", "standalone", "both"])(
         source_component_id: "jumper",
         name: "OUT",
         pin_number: 2,
-        port_hints: ["OUT", "IN"],
+        port_hints: ["OUT"],
       },
       {
         type: "source_port",
@@ -39,7 +39,7 @@ test.each(["embedded", "standalone", "both"])(
         source_component_id: "jumper",
         name: "AUX_OUT",
         pin_number: 4,
-        port_hints: ["AUX_OUT", "AUX_IN"],
+        port_hints: ["AUX_OUT"],
       },
     ]
     const internalConnectionGroups = [
