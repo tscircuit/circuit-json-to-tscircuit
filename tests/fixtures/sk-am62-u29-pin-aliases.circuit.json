@@ -1,0 +1,97 @@
+[
+  {
+    "type": "pcb_board",
+    "pcb_board_id": "sk-am62-u29-alias-crop",
+    "center": {
+      "x": 36.03371,
+      "y": 69.56552
+    },
+    "width": 14,
+    "height": 16,
+    "thickness": 1.6,
+    "material": "fr4",
+    "num_layers": 2
+  },
+  {
+    "type": "source_component",
+    "display_name": "U29",
+    "display_value": "MT40A1G16KD-062E IT:E",
+    "manufacturer_part_number": "MT40A1G16KD-062E IT:E",
+    "name": "U29",
+    "source_component_id": "schematic_16_source_component_altium_2124",
+    "ftype": "simple_chip"
+  },
+  {
+    "type": "source_port",
+    "name": "A1",
+    "port_hints": ["P7", "A1"],
+    "source_component_id": "schematic_16_source_component_altium_2124",
+    "source_port_id": "schematic_16_source_port_altium_2159"
+  },
+  {
+    "type": "source_port",
+    "name": "VDDQ",
+    "port_hints": ["A1", "VDDQ"],
+    "source_component_id": "schematic_16_source_component_altium_2124",
+    "source_port_id": "schematic_16_source_port_altium_2231"
+  },
+  {
+    "type": "pcb_component",
+    "pcb_component_id": "pcb_pcb_component_altium_651",
+    "source_component_id": "schematic_16_source_component_altium_2124",
+    "center": {
+      "x": 36.03371,
+      "y": 69.56552
+    },
+    "width": 62.4586,
+    "height": 24.892,
+    "layer": "top",
+    "rotation": 180,
+    "position_mode": "none",
+    "obstructs_within_bounds": false
+  },
+  {
+    "type": "pcb_port",
+    "pcb_port_id": "pcb_pcb_port_altium_24455",
+    "source_port_id": "schematic_16_source_port_altium_2231",
+    "x": 39.233602,
+    "y": 63.565532,
+    "layers": ["top"],
+    "pcb_component_id": "pcb_pcb_component_altium_651"
+  },
+  {
+    "type": "pcb_port",
+    "pcb_port_id": "pcb_pcb_port_altium_24490",
+    "source_port_id": "schematic_16_source_port_altium_2159",
+    "x": 34.433764000000004,
+    "y": 73.965562,
+    "layers": ["top"],
+    "pcb_component_id": "pcb_pcb_component_altium_651"
+  },
+  {
+    "type": "pcb_smtpad",
+    "pcb_smtpad_id": "pcb_pcb_smtpad_altium_24455",
+    "x": 39.233602,
+    "y": 63.565532,
+    "layer": "top",
+    "soldermask_margin": 0.1016,
+    "shape": "circle",
+    "radius": 0.2032,
+    "pcb_port_id": "pcb_pcb_port_altium_24455",
+    "port_hints": ["A1"],
+    "pcb_component_id": "pcb_pcb_component_altium_651"
+  },
+  {
+    "type": "pcb_smtpad",
+    "pcb_smtpad_id": "pcb_pcb_smtpad_altium_24490",
+    "x": 34.433764000000004,
+    "y": 73.965562,
+    "layer": "top",
+    "soldermask_margin": 0.1016,
+    "shape": "circle",
+    "radius": 0.2032,
+    "pcb_port_id": "pcb_pcb_port_altium_24490",
+    "port_hints": ["P7"],
+    "pcb_component_id": "pcb_pcb_component_altium_651"
+  }
+]
