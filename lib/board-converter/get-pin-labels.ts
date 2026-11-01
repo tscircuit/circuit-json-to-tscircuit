@@ -1,5 +1,6 @@
 import type { AnyCircuitElement, PcbComponent } from "circuit-json"
 import type { BoardConversionContext as FootprintConversionContext } from "../board-conversion-context"
+import { getInternallyConnectedSourcePortIds } from "./get-internally-connected-source-port-ids"
 import { getUnambiguousSourcePortAliases } from "./get-unambiguous-source-port-aliases"
 
 type PinLabelKey = `pin${number}`
@@ -76,11 +77,9 @@ export const getPinLabels = ({
       (component) =>
         component.source_component_id === sourcePort.source_component_id,
     )
-    const internallyConnectedSourcePortIds =
-      sourceComponent &&
-      "internally_connected_source_port_ids" in sourceComponent
-        ? sourceComponent.internally_connected_source_port_ids
-        : undefined
+    const internallyConnectedSourcePortIds = sourceComponent
+      ? getInternallyConnectedSourcePortIds({ circuitJson, sourceComponent })
+      : undefined
     const aliases = [
       sourcePort.name,
       ...getUnambiguousSourcePortAliases({
