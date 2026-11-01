@@ -15,7 +15,7 @@ export function getPcbPortIdsWithSafeOriginalHints({
 }): Set<PcbPortId> {
   const sourcePortById = new Map<SourcePortId, SourcePort>()
   const sourcePortsByComponentId = new Map<SourceComponentId, SourcePort[]>()
-  const originalHintsByPcbPortId = new Map<PcbPortId, Set<PortHint>>()
+  const originalHintSetsByPcbPortId = new Map<PcbPortId, PortHint[][]>()
 
   for (const element of circuitJson) {
     if (element.type !== "source_port") continue
@@ -29,16 +29,16 @@ export function getPcbPortIdsWithSafeOriginalHints({
 
   for (const element of circuitJson) {
     if (
-      !["pcb_plated_hole", "pcb_smtpad"].includes(element.type) ||
+      (element.type !== "pcb_plated_hole" && element.type !== "pcb_smtpad") ||
       !element.pcb_port_id ||
       !element.port_hints
     ) {
       continue
     }
-    originalHintsByPcbPortId.set(
-      element.pcb_port_id,
-      new Set(element.port_hints),
-    )
+    const originalHintSets =
+      originalHintSetsByPcbPortId.get(element.pcb_port_id) ?? []
+    originalHintSets.push(element.port_hints)
+    originalHintSetsByPcbPortId.set(element.pcb_port_id, originalHintSets)
   }
 
   const safePcbPortIds = new Set<PcbPortId>()
@@ -51,14 +51,10 @@ export function getPcbPortIdsWithSafeOriginalHints({
       continue
     }
     const sourcePort = sourcePortById.get(element.source_port_id)
-    const originalHints = originalHintsByPcbPortId.get(element.pcb_port_id)
-    if (!sourcePort?.source_component_id || !originalHints) continue
-    if (
-      [...originalHints].some((portHint) => /^(?:pin)?\d+$/u.test(portHint))
-    ) {
-      safePcbPortIds.add(element.pcb_port_id)
-      continue
-    }
+    const originalHintSets = originalHintSetsByPcbPortId.get(
+      element.pcb_port_id,
+    )
+    if (!sourcePort?.source_component_id || !originalHintSets) continue
 
     const aliasesOnOtherPorts = new Set<PortHint>()
     for (const siblingPort of sourcePortsByComponentId.get(
@@ -70,8 +66,13 @@ export function getPcbPortIdsWithSafeOriginalHints({
         aliasesOnOtherPorts.add(portHint)
       }
     }
+    // A numbered hint only disambiguates the primitive carrying it.
     if (
-      [...originalHints].every((portHint) => !aliasesOnOtherPorts.has(portHint))
+      originalHintSets.every(
+        (originalHints) =>
+          originalHints.some((portHint) => /^(?:pin)?\d+$/u.test(portHint)) ||
+          originalHints.every((portHint) => !aliasesOnOtherPorts.has(portHint)),
+      )
     ) {
       safePcbPortIds.add(element.pcb_port_id)
     }

@@ -1,5 +1,6 @@
 import type { AnyCircuitElement, PcbComponent } from "circuit-json"
 import type { BoardConversionContext as FootprintConversionContext } from "../board-conversion-context"
+import { getUnambiguousSourcePortAliases } from "./get-unambiguous-source-port-aliases"
 
 type PinLabelKey = `pin${number}`
 type PinLabels = Partial<Record<PinLabelKey, string[]>>
@@ -71,9 +72,22 @@ export const getPinLabels = ({
         footprintConversionContext.portHintByPcbPortId.get(element.pcb_port_id)
       return importedPortHint ? [importedPortHint] : []
     })
+    const sourceComponent = sourceComponents.find(
+      (component) =>
+        component.source_component_id === sourcePort.source_component_id,
+    )
+    const internallyConnectedSourcePortIds =
+      sourceComponent &&
+      "internally_connected_source_port_ids" in sourceComponent
+        ? sourceComponent.internally_connected_source_port_ids
+        : undefined
     const aliases = [
       sourcePort.name,
-      ...(sourcePort.port_hints ?? []),
+      ...getUnambiguousSourcePortAliases({
+        sourcePort,
+        sourcePorts,
+        internallyConnectedSourcePortIds,
+      }),
       ...importedPortHints,
     ].filter(
       (alias, aliasIndex, allAliases) =>
