@@ -155,6 +155,7 @@ const localizeBottomComponentLayers = (
   localComponentElements: AnyCircuitElement[],
 ): void => {
   for (const localElement of localComponentElements) {
+    if (localElement.type === "pcb_stackup") continue
     if (
       "layer" in localElement &&
       (localElement.layer === "top" || localElement.layer === "bottom")
