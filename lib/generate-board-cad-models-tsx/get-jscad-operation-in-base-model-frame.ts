@@ -1,13 +1,10 @@
 import type { CadComponent } from "circuit-json"
 import type { JscadOperation } from "jscad-planner"
+import type { Point3 } from "./converter-types"
+import { getJscadOperationFitScaleFactors } from "./get-jscad-operation-fit-scale-factors"
 
-interface Point3 {
-  x: number
-  y: number
-  z: number
-}
-
-const degreesToRadians = (degrees: number): number => (degrees * Math.PI) / 180
+const degreesToRadians = (angleDegrees: number): number =>
+  (angleDegrees * Math.PI) / 180
 
 const getCadComponentRotation = (cadComponent: CadComponent): Point3 =>
   cadComponent.rotation ?? { x: 0, y: 0, z: 0 }
@@ -34,21 +31,21 @@ const getBoardNormalRotation = (cadComponent: CadComponent): Point3 => {
 
 const rotateOperation = ({
   operation,
-  rotation,
+  rotationDegrees,
 }: {
   operation: JscadOperation
-  rotation: Point3
+  rotationDegrees: Point3
 }): JscadOperation => {
   let rotatedOperation = operation
-  for (const [axis, degrees] of [
-    ["Z", rotation.z],
-    ["Y", rotation.y],
-    ["X", rotation.x],
+  for (const [axis, angleDegrees] of [
+    ["Z", rotationDegrees.z],
+    ["Y", rotationDegrees.y],
+    ["X", rotationDegrees.x],
   ] as const) {
-    if (degrees === 0) continue
+    if (angleDegrees === 0) continue
     rotatedOperation = {
       type: `rotate${axis}`,
-      angle: degreesToRadians(degrees),
+      angle: degreesToRadians(angleDegrees),
       shape: rotatedOperation,
     }
   }
@@ -57,21 +54,21 @@ const rotateOperation = ({
 
 const rotateOperationByInverse = ({
   operation,
-  rotation,
+  rotationDegrees,
 }: {
   operation: JscadOperation
-  rotation: Point3
+  rotationDegrees: Point3
 }): JscadOperation => {
   let rotatedOperation = operation
-  for (const [axis, degrees] of [
-    ["X", rotation.x],
-    ["Y", rotation.y],
-    ["Z", rotation.z],
+  for (const [axis, angleDegrees] of [
+    ["X", rotationDegrees.x],
+    ["Y", rotationDegrees.y],
+    ["Z", rotationDegrees.z],
   ] as const) {
-    if (degrees === 0) continue
+    if (angleDegrees === 0) continue
     rotatedOperation = {
       type: `rotate${axis}`,
-      angle: degreesToRadians(-degrees),
+      angle: degreesToRadians(-angleDegrees),
       shape: rotatedOperation,
     }
   }
@@ -97,16 +94,18 @@ const translateOperation = ({
 
 const scaleOperation = ({
   operation,
-  scale,
+  scaleFactors,
 }: {
   operation: JscadOperation
-  scale: number
+  scaleFactors: Point3
 }): JscadOperation => {
-  if (scale === 1) return operation
+  if (scaleFactors.x === 1 && scaleFactors.y === 1 && scaleFactors.z === 1) {
+    return operation
+  }
 
   return {
     type: "scale",
-    factors: [scale, scale, scale],
+    factors: [scaleFactors.x, scaleFactors.y, scaleFactors.z],
     shape: operation,
   }
 }
@@ -125,13 +124,19 @@ export function getJscadOperationInBaseModelFrame({
   if (cadComponent.model_jscad === undefined) return undefined
 
   const modelOriginPosition = getModelOriginPosition(cadComponent)
-  const cadRotation = getCadComponentRotation(cadComponent)
-  const baseCadRotation = getCadComponentRotation(baseCadComponent)
+  const cadRotationDegrees = getCadComponentRotation(cadComponent)
+  const baseCadRotationDegrees = getCadComponentRotation(baseCadComponent)
+  const modelUnitToMmScaleFactor =
+    cadComponent.model_unit_to_mm_scale_factor ?? 1
   let operation: JscadOperation = cadComponent.model_jscad
 
   operation = scaleOperation({
     operation,
-    scale: cadComponent.model_unit_to_mm_scale_factor ?? 1,
+    scaleFactors: {
+      x: modelUnitToMmScaleFactor,
+      y: modelUnitToMmScaleFactor,
+      z: modelUnitToMmScaleFactor,
+    },
   })
   operation = translateOperation({
     operation,
@@ -143,9 +148,21 @@ export function getJscadOperationInBaseModelFrame({
   })
   operation = rotateOperation({
     operation,
-    rotation: getBoardNormalRotation(cadComponent),
+    rotationDegrees: getBoardNormalRotation(cadComponent),
   })
-  operation = rotateOperation({ operation, rotation: cadRotation })
+  // The viewer fits models after their source-coordinate transform and before
+  // applying their component rotation and placement.
+  operation = scaleOperation({
+    operation,
+    scaleFactors: getJscadOperationFitScaleFactors({
+      cadComponent,
+      operation,
+    }),
+  })
+  operation = rotateOperation({
+    operation,
+    rotationDegrees: cadRotationDegrees,
+  })
   operation = translateOperation({
     operation,
     translation: {
@@ -157,6 +174,6 @@ export function getJscadOperationInBaseModelFrame({
 
   return rotateOperationByInverse({
     operation,
-    rotation: baseCadRotation,
+    rotationDegrees: baseCadRotationDegrees,
   })
 }

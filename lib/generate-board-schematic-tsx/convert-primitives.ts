@@ -1,10 +1,33 @@
-import { schematic_text } from "circuit-json"
-import { convertRect } from "./convert-rect"
+import { schematic_text, type AnyCircuitElement } from "circuit-json"
 import { generateSymbolElements } from "../generate-symbol-tsx"
-import { formatElement } from "./format-attributes"
 import type { SchematicElementConverter } from "./converter-types"
-import { getSchematicPrimitivesInRenderOrder } from "./get-schematic-primitives-in-render-order"
+import { convertRect } from "./convert-rect"
+import { formatElement } from "./format-attributes"
+import { getNativeSymbolTextReplacements } from "./get-native-symbol-text-replacements"
+import { getReplacedSchematicComponentIds } from "./get-replaced-schematic-component-ids"
 import { getSchematicPrimitivePaint } from "./get-schematic-primitive-paint"
+import {
+  getSchematicPrimitivesInRenderOrder,
+  type SchematicPrimitive,
+} from "./get-schematic-primitives-in-render-order"
+
+const getRenderablePrimitives = (
+  circuitJson: AnyCircuitElement[],
+): SchematicPrimitive[] => {
+  const replacedTextIds = new Set(
+    getNativeSymbolTextReplacements(circuitJson).flatMap((replacement) => [
+      ...replacement.importedTextIds,
+    ]),
+  )
+  return getSchematicPrimitivesInRenderOrder(
+    circuitJson,
+    getReplacedSchematicComponentIds(circuitJson),
+  ).filter(
+    (primitive) =>
+      primitive.type !== "schematic_text" ||
+      !replacedTextIds.has(primitive.schematic_text_id),
+  )
+}
 
 export const convertPrimitives: SchematicElementConverter = (circuitJson) => [
   ...generateSymbolElements(
@@ -14,7 +37,7 @@ export const convertPrimitives: SchematicElementConverter = (circuitJson) => [
         element.type === "schematic_table_cell",
     ),
   ),
-  ...getSchematicPrimitivesInRenderOrder(circuitJson).flatMap((element) => {
+  ...getRenderablePrimitives(circuitJson).flatMap((element) => {
     const paint = getSchematicPrimitivePaint(element)
     switch (element.type) {
       case "schematic_text":

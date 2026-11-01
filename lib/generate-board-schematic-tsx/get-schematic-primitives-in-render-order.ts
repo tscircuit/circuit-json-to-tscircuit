@@ -18,7 +18,7 @@ export type SchematicPrimitive = Extract<
   }
 >
 
-type SchematicComponentId = SchematicComponent["schematic_component_id"]
+export type SchematicComponentId = SchematicComponent["schematic_component_id"]
 
 const isSchematicPrimitive = (
   element: AnyCircuitElement,
@@ -47,6 +47,7 @@ const isCustomComponentBody = ({
 
 export const getSchematicPrimitivesInRenderOrder = (
   circuitJson: AnyCircuitElement[],
+  nativeComponentIds: Set<SchematicComponentId> = new Set(),
 ): SchematicPrimitive[] => {
   const customComponentById = new Map<
     SchematicComponentId,
@@ -61,7 +62,13 @@ export const getSchematicPrimitivesInRenderOrder = (
     }
   }
 
-  const primitives = circuitJson.filter(isSchematicPrimitive)
+  const primitives = circuitJson
+    .filter(isSchematicPrimitive)
+    .filter(
+      (primitive) =>
+        !primitive.schematic_component_id ||
+        !nativeComponentIds.has(primitive.schematic_component_id),
+    )
   const componentBodyById = new Map<SchematicComponentId, SchematicRect>()
   for (const primitive of primitives) {
     if (

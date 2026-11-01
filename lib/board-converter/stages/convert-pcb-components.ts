@@ -11,7 +11,7 @@ import { isJscadCadModelGroupTranslucent } from "../../generate-board-cad-models
 import { generateFootprintTsx } from "../../generate-footprint-tsx"
 import type { BoardConverterStage } from "../BoardConverterContext"
 import { getPcbComponentRenderPlacement } from "../get-pcb-component-render-placement"
-import { getPinLabels } from "../get-pin-labels"
+import { getPcbComponentPinProps } from "../get-pcb-component-pin-props"
 import { getSchematicComponentsForPcbComponent } from "../get-schematic-components-for-pcb-component"
 import { localizePcbComponentElements } from "../localize-pcb-component-elements"
 
@@ -94,7 +94,6 @@ export const convertPcbComponents: BoardConverterStage = ({
     )
     const { cadModelParentCenter, componentPosition } =
       getPcbComponentRenderPlacement({
-        circuitJson,
         pcbBoard,
         pcbComponent,
       })
@@ -103,7 +102,7 @@ export const convertPcbComponents: BoardConverterStage = ({
       footprintConversionContext,
       pcbComponent,
     })
-    const pinLabels = getPinLabels({
+    const pinProps = getPcbComponentPinProps({
       circuitJson,
       footprintConversionContext,
       pcbComponent,
@@ -158,8 +157,13 @@ export const convertPcbComponents: BoardConverterStage = ({
     ) {
       componentProps.push("showAsTranslucentModel")
     }
-    if (pinLabels) {
-      componentProps.push(`pinLabels={${JSON.stringify(pinLabels)}}`)
+    if (pinProps) {
+      componentProps.push(`pinLabels={${JSON.stringify(pinProps.pinLabels)}}`)
+      if (pinProps.internallyConnectedPins.length > 0) {
+        componentProps.push(
+          `internallyConnectedPins={${JSON.stringify(pinProps.internallyConnectedPins)}}`,
+        )
+      }
     }
     if (sourceComponent?.manufacturer_part_number) {
       componentProps.push(
