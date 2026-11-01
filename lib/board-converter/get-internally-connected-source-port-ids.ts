@@ -1,5 +1,6 @@
 import type { AnyCircuitElement } from "circuit-json"
 import type { SourcePortId } from "../board-conversion-types"
+import { mergeOverlappingSourcePortGroups } from "./merge-overlapping-source-port-groups"
 
 type SourceComponent = Extract<AnyCircuitElement, { type: "source_component" }>
 
@@ -24,5 +25,5 @@ export function getInternallyConnectedSourcePortIds({
       internallyConnectedSourcePortIds.push(element.source_port_ids)
     }
   }
-  return internallyConnectedSourcePortIds
+  return mergeOverlappingSourcePortGroups(internallyConnectedSourcePortIds)
 }
