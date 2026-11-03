@@ -26,9 +26,21 @@ test("regenerates scoped copper with runtime net aliases and preserves authored 
     throw new Error("Missing fixture nets")
   const aliasId = "source_net_hv_alias"
   const input: CircuitJson = [
-    ...original.filter(
-      (element) => element.type !== "pcb_trace" && element.type !== "pcb_via",
-    ),
+    ...original
+      .filter(
+        (element) => element.type !== "pcb_trace" && element.type !== "pcb_via",
+      )
+      .map((element) =>
+        element.type === "pcb_board"
+          ? {
+              ...element,
+              min_board_edge_clearance: 0.1999996,
+              min_trace_to_pad_edge_clearance: 0.1,
+              min_pad_edge_to_pad_edge_clearance: 0.1,
+              min_via_edge_to_pad_edge_clearance: 0.1,
+            }
+          : element,
+      ),
     {
       type: "pcb_cutout",
       pcb_cutout_id: "slot",
@@ -94,6 +106,14 @@ test("regenerates scoped copper with runtime net aliases and preserves authored 
     copperPourMode: "recompute",
   })
   const rendered = await renderConvertedBoard(tsx)
+  expect(
+    rendered.find((element) => element.type === "pcb_board"),
+  ).toMatchObject({
+    min_board_edge_clearance: 0.1999996,
+    min_trace_to_pad_edge_clearance: 0.1,
+    min_pad_edge_to_pad_edge_clearance: 0.1,
+    min_via_edge_to_pad_edge_clearance: 0.1,
+  })
   expect(JSON.stringify(input)).toBe(before)
   expect(hasCopperPourAt(rendered, { x: -3.1, y: 0 })).toBe(false)
   expect(hasCopperPourAt(rendered, { x: -2.9, y: 0 })).toBe(true)

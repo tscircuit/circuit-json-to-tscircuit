@@ -4,7 +4,24 @@ import type { BoardConverterStage } from "../BoardConverterContext"
 export const convertBoardProperties: BoardConverterStage = ({
   pcbBoard,
   boardProps,
+  copperPourMode,
 }) => {
+  if (copperPourMode === "recompute") {
+    for (const [field, prop] of [
+      ["min_trace_to_pad_edge_clearance", "minTraceToPadEdgeClearance"],
+      ["min_pad_edge_to_pad_edge_clearance", "minPadEdgeToPadEdgeClearance"],
+      ["min_via_edge_to_pad_edge_clearance", "minViaEdgeToPadEdgeClearance"],
+      ["min_board_edge_clearance", "minBoardEdgeClearance"],
+    ] as const) {
+      const clearance = pcbBoard[field]
+      if (clearance === undefined) continue
+      if (!Number.isFinite(clearance) || clearance < 0)
+        throw new Error(
+          `Board recomputation requires a finite, nonnegative pcb_board.${field}`,
+        )
+      boardProps.push(`${prop}={${clearance}}`)
+    }
+  }
   if (pcbBoard.center.x !== 0) {
     boardProps.push(`pcbX={${pcbBoard.center.x}}`)
   }
