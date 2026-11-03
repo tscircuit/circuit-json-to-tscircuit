@@ -49,7 +49,7 @@
     "zod": "^3.25.76",
     "@tscircuit/core": "https://pkg.pr.new/tscircuit/core/@tscircuit/core@3ded243",
     "@tscircuit/props": "https://pkg.pr.new/@tscircuit/props@ffc8e20",
-    "@tscircuit/copper-pour-solver": "https://pkg.pr.new/@tscircuit/copper-pour-solver@001877c",
+    "@tscircuit/copper-pour-solver": "https://pkg.pr.new/@tscircuit/copper-pour-solver@00320f4",
     "@tscircuit/footprinter": "0.0.450"
   },
   "peerDependencies": {
