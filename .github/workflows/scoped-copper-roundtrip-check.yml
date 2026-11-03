@@ -14,7 +14,8 @@ jobs:
         with:
           bun-version: 1.4.3
       - run: bun install
-      - run: bun test tests/test31-scoped-copper-clearance.test.tsx tests/test30-recompute-copper-pours.test.tsx
+      - run: BUN_UPDATE_SNAPSHOTS=1 bun test tests/test31-scoped-copper-clearance.test.tsx
+      - run: bun test tests/test30-recompute-copper-pours.test.tsx
       - name: Report synthetic round-trip SVG
         run: |
           node <<'NODE'

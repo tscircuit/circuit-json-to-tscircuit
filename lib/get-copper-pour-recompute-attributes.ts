@@ -24,7 +24,10 @@ export function getCopperPourRecomputeAttributes(
       pour?.board_edge_margin ?? board?.min_board_edge_clearance ?? clearance,
     field: "min_board_edge_clearance",
   })
-  return `padMargin={${padMargin}} traceMargin={${traceMargin}} clearance={${clearance}} boardEdgeMargin={${boardEdgeMargin}} cutoutMargin={${clearance}}`
+  // A physical PCB cutout is another board edge; drill holes have separate electrical rules.
+  const cutoutMargin =
+    pour?.board_edge_margin === undefined ? clearance : boardEdgeMargin
+  return `padMargin={${padMargin}} traceMargin={${traceMargin}} clearance={${clearance}} boardEdgeMargin={${boardEdgeMargin}} cutoutMargin={${cutoutMargin}}`
 }
 
 function requireClearance({
