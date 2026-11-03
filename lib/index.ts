@@ -1,5 +1,8 @@
 import type { CircuitJson } from "circuit-json"
-import { getBoardUsingTemplate } from "./get-board-using-template"
+import {
+  getBoardUsingTemplate,
+  type BoardTemplateParams,
+} from "./get-board-using-template"
 import {
   getComponentUsingTemplate,
   type ComponentTemplateParams,
@@ -8,7 +11,8 @@ import { getSchematicUsingTemplate } from "./get-schematic-using-template"
 
 export const convertCircuitJsonToTscircuit = (
   circuitJson: CircuitJson,
-  opts: Omit<ComponentTemplateParams, "circuitJson">,
+  opts: Omit<ComponentTemplateParams, "circuitJson"> &
+    Pick<BoardTemplateParams, "copperPourMode">,
 ) => {
   // A pcb_board is only present when the circuit json was authored as a
   // board, so it routes to the board converter. A footprint/component import
@@ -19,6 +23,7 @@ export const convertCircuitJsonToTscircuit = (
     return getBoardUsingTemplate({
       circuitJson,
       componentName: opts.componentName,
+      copperPourMode: opts.copperPourMode,
     })
   }
 

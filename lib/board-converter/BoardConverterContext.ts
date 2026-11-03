@@ -7,6 +7,7 @@ import type {
 
 export interface BoardConverterContext {
   circuitJson: AnyCircuitElement[]
+  copperPourMode?: "preserve" | "recompute"
   footprintConversionContext: FootprintConversionContext
   pcbComponentRuntimeNameByPcbComponentId: PcbComponentRuntimeNameByPcbComponentId
   standaloneCadModelRuntimeNameByCadComponentId: StandaloneCadModelRuntimeNameByCadComponentId
