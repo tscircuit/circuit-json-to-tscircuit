@@ -86,6 +86,7 @@ test("regenerates scoped copper with runtime net aliases and preserves authored 
     copperPourMode: "recompute",
   })
   const rendered = await renderConvertedBoard(tsx)
+  console.log("SCOPED_TSX_DIAG "+JSON.stringify({tsx, inputPads:input.filter(e=>e.type==="pcb_smtpad"), rendered:rendered.filter(e=>["pcb_copper_pour","pcb_smtpad","source_net","pcb_port"].includes(e.type))}))
   expect(JSON.stringify(input)).toBe(before)
   expect(hasCopperPourAt(rendered, { x: -3.1, y: 0 })).toBe(false)
   expect(hasCopperPourAt(rendered, { x: -2.9, y: 0 })).toBe(true)
