@@ -28,9 +28,11 @@ const conversionStages: BoardConverterStage[] = [
 export const convertBoardCircuitJson = ({
   circuitJson,
   componentName,
+  copperPourMode,
 }: {
   circuitJson: AnyCircuitElement[]
   componentName?: string
+  copperPourMode?: BoardConverterContext["copperPourMode"]
 }): string => {
   const pcbBoard = circuitJson.find((element) => element.type === "pcb_board")
 
@@ -46,6 +48,7 @@ export const convertBoardCircuitJson = ({
 
   const context: BoardConverterContext = {
     circuitJson,
+    copperPourMode,
     footprintConversionContext: createComponentPreservingBoardConversionContext(
       {
         circuitJson,

@@ -5,8 +5,12 @@ export const convertCopperPours: BoardConverterStage = ({
   boardChildren,
   circuitJson,
   footprintConversionContext,
+  copperPourMode,
 }) => {
   boardChildren.push(
-    ...generateCopperPoursTsx(circuitJson, footprintConversionContext),
+    ...generateCopperPoursTsx(circuitJson, {
+      ...footprintConversionContext,
+      copperPourMode,
+    }),
   )
 }

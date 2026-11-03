@@ -1,3 +1,4 @@
+import { getCopperPourRecomputeAttributes } from "./get-copper-pour-recompute-attributes"
 import { su } from "@tscircuit/soup-util"
 import type { AnyCircuitElement } from "circuit-json"
 import { getCopperPourOutline } from "./get-copper-pour-outline"
@@ -5,8 +6,15 @@ import type { BoardConversionContext } from "./board-conversion-context"
 
 export function generateCopperPoursTsx(
   circuitJson: AnyCircuitElement[],
-  context?: BoardConversionContext,
+  context?: BoardConversionContext & {
+    copperPourMode?: "preserve" | "recompute"
+  },
 ): string[] {
+  const clearanceAttributes =
+    context?.copperPourMode === "recompute" &&
+    circuitJson.some((element) => element.type === "pcb_copper_pour")
+      ? getCopperPourRecomputeAttributes(circuitJson)
+      : "padMargin={0} traceMargin={0} clearance={0} boardEdgeMargin={0} cutoutMargin={0}"
   const sourceNetNameById = new Map(
     su(circuitJson)
       .source_net.list()
@@ -34,7 +42,7 @@ export function generateCopperPoursTsx(
       const netSelector = `net[name=${JSON.stringify(sourceNetName)}]`
 
       return [
-        `<copperpour layer={${JSON.stringify(pour.layer)}} connectsTo={${JSON.stringify(netSelector)}} outline={${JSON.stringify(outline)}} padMargin={0} traceMargin={0} clearance={0} boardEdgeMargin={0} cutoutMargin={0} useThermalReliefs={false} coveredWithSolderMask={${pour.covered_with_solder_mask ?? true}} />`,
+        `<copperpour layer={${JSON.stringify(pour.layer)}} connectsTo={${JSON.stringify(netSelector)}} outline={${JSON.stringify(outline)}} ${clearanceAttributes} useThermalReliefs={false} coveredWithSolderMask={${pour.covered_with_solder_mask ?? true}} />`,
       ]
     })
   const contextNetNames = new Set(
