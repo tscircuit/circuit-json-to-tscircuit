@@ -13,7 +13,7 @@ test("regenerates scoped copper with runtime net aliases and preserves authored 
       <net name="GND" /><net name="HV" /><net name="LV" />
       <chip name="H" footprint={footprint} pcbX={-5} connections={{pin1:"net.HV"}} />
       <chip name="L" footprint={footprint} pcbX={5} connections={{pin1:"net.LV"}} />
-      <pcbnotetext text="Scoped copper: HV 1.5 mm, LV 0.2 mm, fixed copper 0.8 mm" pcbY={4} fontSize={0.4} />
+      <pcbnotetext text="HV: 1.5 mm; LV: 0.2 mm; fixed: 0.8 mm; cutout: 0.4 mm" pcbY={4} fontSize={0.4} />
     </board>
   `)
   const ground = original.find(
@@ -29,6 +29,14 @@ test("regenerates scoped copper with runtime net aliases and preserves authored 
     ...original.filter(
       (element) => element.type !== "pcb_trace" && element.type !== "pcb_via",
     ),
+    {
+      type: "pcb_cutout",
+      pcb_cutout_id: "slot",
+      shape: "rect",
+      center: { x: 0, y: 3 },
+      width: 2,
+      height: 0.5,
+    },
     { ...high, source_net_id: aliasId, name: "HV_ALIAS" },
     {
       type: "source_trace",
@@ -94,6 +102,8 @@ test("regenerates scoped copper with runtime net aliases and preserves authored 
   expect(hasCopperPourAt(rendered, { x: 1.2, y: 0 })).toBe(false)
   expect(hasCopperPourAt(rendered, { x: 1.4, y: 0 })).toBe(true)
   expect(hasCopperPourAt(rendered, { x: 0, y: 0 })).toBe(true)
+  expect(hasCopperPourAt(rendered, { x: 0, y: 2.5 })).toBe(false)
+  expect(hasCopperPourAt(rendered, { x: 0, y: 2.2 })).toBe(true)
   // Board-edge spacing must not shrink an authored polygon boundary inside the board.
   expect(hasCopperPourAt(rendered, { x: 7.9, y: 3 })).toBe(true)
   expect(

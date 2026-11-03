@@ -47,9 +47,10 @@
     "tscircuit": "0.0.3043-libonly",
     "tsup": "^8.3.5",
     "zod": "^3.25.76",
-    "@tscircuit/core": "https://pkg.pr.new/tscircuit/core/@tscircuit/core@a892086",
+    "@tscircuit/core": "https://pkg.pr.new/tscircuit/core/@tscircuit/core@3ded243",
     "@tscircuit/props": "https://pkg.pr.new/@tscircuit/props@ffc8e20",
-    "@tscircuit/copper-pour-solver": "https://pkg.pr.new/@tscircuit/copper-pour-solver@8c338ef"
+    "@tscircuit/copper-pour-solver": "https://pkg.pr.new/@tscircuit/copper-pour-solver@001877c",
+    "@tscircuit/footprinter": "0.0.450"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
