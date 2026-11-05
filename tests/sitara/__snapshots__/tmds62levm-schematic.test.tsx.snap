@@ -1,0 +1,1856 @@
+// Bun Snapshot v1, https://bun.sh/docs/test/snapshots
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 01 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_group": 1,
+    "schematic_path": 11,
+    "schematic_sheet": 1,
+    "schematic_text": 43,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_path": 9,
+    "schematic_rect": 2,
+    "schematic_sheet": 1,
+    "schematic_text": 43,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 02 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_group": 1,
+    "schematic_line": 62,
+    "schematic_path": 3,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 131,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_line": 62,
+    "schematic_rect": 3,
+    "schematic_sheet": 1,
+    "schematic_text": 131,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 03 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_group": 1,
+    "schematic_line": 40,
+    "schematic_path": 1,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 245,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_line": 40,
+    "schematic_rect": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 245,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 04 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_group": 1,
+    "schematic_line": 11,
+    "schematic_path": 4,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 46,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_line": 11,
+    "schematic_path": 1,
+    "schematic_rect": 3,
+    "schematic_sheet": 1,
+    "schematic_text": 46,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 05 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 1,
+    "schematic_group": 1,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 2,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_graphic": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 2,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 06 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 1,
+    "schematic_group": 1,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 2,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_graphic": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 2,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 07 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 1,
+    "schematic_group": 1,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 2,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_graphic": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 2,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 08 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 1,
+    "schematic_group": 1,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 12,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_graphic": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 12,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 09 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 4,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_graphic": 2,
+    "schematic_sheet": 1,
+    "schematic_text": 4,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 10 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 2,
+    "schematic_group": 1,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 3,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_graphic": 2,
+    "schematic_sheet": 1,
+    "schematic_text": 3,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 11 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_graphic": 1,
+    "schematic_group": 1,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 2,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_graphic": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 2,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 12 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 42,
+    "schematic_element_outside_sheet_warning": 2,
+    "schematic_group": 1,
+    "schematic_line": 555,
+    "schematic_net_label": 9,
+    "schematic_path": 264,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 351,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 9,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 54,
+    "schematic_group": 1,
+    "schematic_line": 106,
+    "schematic_net_label": 39,
+    "schematic_port": 175,
+    "schematic_rect": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 101,
+    "schematic_trace": 229,
+    "source_component": 54,
+    "source_net": 43,
+    "source_port": 175,
+    "source_trace": 51,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 13 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 30,
+    "schematic_group": 1,
+    "schematic_line": 240,
+    "schematic_net_label": 6,
+    "schematic_path": 193,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 152,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 5,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 24,
+    "schematic_group": 1,
+    "schematic_line": 50,
+    "schematic_net_label": 30,
+    "schematic_path": 5,
+    "schematic_port": 85,
+    "schematic_rect": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 74,
+    "schematic_trace": 106,
+    "source_component": 24,
+    "source_net": 11,
+    "source_port": 85,
+    "source_trace": 16,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 14 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 67,
+    "schematic_group": 1,
+    "schematic_line": 423,
+    "schematic_net_label": 3,
+    "schematic_path": 410,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 279,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 3,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 67,
+    "schematic_group": 1,
+    "schematic_line": 4,
+    "schematic_net_label": 47,
+    "schematic_path": 2,
+    "schematic_port": 153,
+    "schematic_rect": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 48,
+    "schematic_trace": 242,
+    "source_component": 67,
+    "source_net": 24,
+    "source_port": 157,
+    "source_trace": 33,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 15 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 48,
+    "schematic_graphic": 1,
+    "schematic_group": 1,
+    "schematic_line": 331,
+    "schematic_net_label": 12,
+    "schematic_path": 268,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 340,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 10,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_circle": 15,
+    "schematic_component": 41,
+    "schematic_graphic": 1,
+    "schematic_group": 1,
+    "schematic_line": 54,
+    "schematic_net_label": 50,
+    "schematic_path": 1,
+    "schematic_port": 113,
+    "schematic_rect": 9,
+    "schematic_sheet": 1,
+    "schematic_text": 180,
+    "schematic_trace": 160,
+    "source_component": 41,
+    "source_net": 22,
+    "source_port": 113,
+    "source_trace": 31,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 16 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 33,
+    "schematic_group": 1,
+    "schematic_line": 320,
+    "schematic_net_label": 11,
+    "schematic_path": 276,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 253,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 9,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 45,
+    "schematic_group": 1,
+    "schematic_line": 6,
+    "schematic_net_label": 53,
+    "schematic_port": 117,
+    "schematic_rect": 2,
+    "schematic_sheet": 1,
+    "schematic_text": 61,
+    "schematic_trace": 170,
+    "source_component": 45,
+    "source_net": 35,
+    "source_port": 117,
+    "source_trace": 39,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 17 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 20,
+    "schematic_group": 1,
+    "schematic_line": 190,
+    "schematic_net_label": 8,
+    "schematic_path": 162,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 147,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 8,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 23,
+    "schematic_group": 1,
+    "schematic_net_label": 30,
+    "schematic_port": 67,
+    "schematic_rect": 5,
+    "schematic_sheet": 1,
+    "schematic_text": 34,
+    "schematic_trace": 97,
+    "source_component": 23,
+    "source_net": 23,
+    "source_port": 67,
+    "source_trace": 27,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 18 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 31,
+    "schematic_group": 1,
+    "schematic_line": 158,
+    "schematic_net_label": 4,
+    "schematic_path": 132,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 144,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 3,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_circle": 6,
+    "schematic_component": 21,
+    "schematic_group": 1,
+    "schematic_line": 12,
+    "schematic_net_label": 22,
+    "schematic_port": 55,
+    "schematic_rect": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 62,
+    "schematic_trace": 82,
+    "source_component": 21,
+    "source_net": 12,
+    "source_port": 55,
+    "source_trace": 14,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 19 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 123,
+    "schematic_group": 1,
+    "schematic_line": 467,
+    "schematic_path": 107,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 397,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 9,
+    "schematic_group": 1,
+    "schematic_net_label": 25,
+    "schematic_port": 159,
+    "schematic_rect": 2,
+    "schematic_sheet": 1,
+    "schematic_text": 213,
+    "schematic_trace": 163,
+    "source_component": 7,
+    "source_net": 17,
+    "source_port": 159,
+    "source_trace": 17,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 20 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 128,
+    "schematic_group": 1,
+    "schematic_line": 604,
+    "schematic_path": 250,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 300,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 65,
+    "schematic_group": 1,
+    "schematic_line": 240,
+    "schematic_net_label": 24,
+    "schematic_path": 102,
+    "schematic_port": 153,
+    "schematic_rect": 11,
+    "schematic_sheet": 1,
+    "schematic_text": 249,
+    "schematic_trace": 179,
+    "source_component": 65,
+    "source_net": 12,
+    "source_port": 153,
+    "source_trace": 12,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 21 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 27,
+    "schematic_group": 1,
+    "schematic_line": 253,
+    "schematic_net_label": 14,
+    "schematic_path": 193,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 278,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 14,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 35,
+    "schematic_group": 1,
+    "schematic_line": 24,
+    "schematic_net_label": 31,
+    "schematic_path": 1,
+    "schematic_port": 92,
+    "schematic_rect": 8,
+    "schematic_sheet": 1,
+    "schematic_text": 159,
+    "schematic_trace": 139,
+    "source_component": 34,
+    "source_net": 27,
+    "source_port": 92,
+    "source_trace": 36,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 22 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 49,
+    "schematic_group": 1,
+    "schematic_line": 243,
+    "schematic_net_label": 8,
+    "schematic_path": 150,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 197,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 8,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_circle": 18,
+    "schematic_component": 29,
+    "schematic_group": 1,
+    "schematic_line": 45,
+    "schematic_net_label": 25,
+    "schematic_path": 1,
+    "schematic_port": 75,
+    "schematic_rect": 3,
+    "schematic_sheet": 1,
+    "schematic_text": 118,
+    "schematic_trace": 111,
+    "source_component": 29,
+    "source_net": 16,
+    "source_port": 75,
+    "source_trace": 16,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 23 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 42,
+    "schematic_group": 1,
+    "schematic_line": 495,
+    "schematic_net_label": 48,
+    "schematic_path": 56,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 300,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 48,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 39,
+    "schematic_group": 1,
+    "schematic_line": 303,
+    "schematic_net_label": 54,
+    "schematic_port": 128,
+    "schematic_rect": 31,
+    "schematic_sheet": 1,
+    "schematic_text": 262,
+    "schematic_trace": 112,
+    "source_component": 39,
+    "source_net": 50,
+    "source_port": 128,
+    "source_trace": 66,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 24 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 171,
+    "schematic_group": 1,
+    "schematic_line": 1070,
+    "schematic_path": 322,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 738,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 80,
+    "schematic_group": 1,
+    "schematic_line": 180,
+    "schematic_net_label": 16,
+    "schematic_path": 5,
+    "schematic_port": 367,
+    "schematic_sheet": 1,
+    "schematic_text": 355,
+    "schematic_trace": 374,
+    "source_component": 79,
+    "source_net": 39,
+    "source_port": 367,
+    "source_trace": 41,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 25 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 51,
+    "schematic_group": 1,
+    "schematic_line": 440,
+    "schematic_net_label": 3,
+    "schematic_path": 263,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 381,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 2,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 58,
+    "schematic_group": 1,
+    "schematic_line": 75,
+    "schematic_net_label": 28,
+    "schematic_path": 3,
+    "schematic_port": 155,
+    "schematic_rect": 3,
+    "schematic_sheet": 1,
+    "schematic_text": 211,
+    "schematic_trace": 200,
+    "source_component": 58,
+    "source_net": 22,
+    "source_port": 155,
+    "source_trace": 24,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 26 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 52,
+    "schematic_group": 1,
+    "schematic_line": 755,
+    "schematic_net_label": 18,
+    "schematic_path": 152,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 606,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 18,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 37,
+    "schematic_group": 1,
+    "schematic_line": 327,
+    "schematic_net_label": 33,
+    "schematic_path": 2,
+    "schematic_port": 244,
+    "schematic_rect": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 370,
+    "schematic_trace": 154,
+    "source_component": 37,
+    "source_net": 36,
+    "source_port": 244,
+    "source_trace": 37,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 27 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 40,
+    "schematic_group": 1,
+    "schematic_line": 233,
+    "schematic_net_label": 9,
+    "schematic_path": 172,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 191,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 9,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 27,
+    "schematic_group": 1,
+    "schematic_line": 22,
+    "schematic_net_label": 30,
+    "schematic_path": 1,
+    "schematic_port": 81,
+    "schematic_rect": 2,
+    "schematic_sheet": 1,
+    "schematic_text": 64,
+    "schematic_trace": 116,
+    "source_component": 27,
+    "source_net": 14,
+    "source_port": 81,
+    "source_trace": 16,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 28 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 39,
+    "schematic_element_outside_sheet_warning": 2,
+    "schematic_group": 1,
+    "schematic_line": 482,
+    "schematic_net_label": 21,
+    "schematic_path": 264,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 368,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 21,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 43,
+    "schematic_group": 1,
+    "schematic_line": 60,
+    "schematic_net_label": 54,
+    "schematic_port": 171,
+    "schematic_rect": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 70,
+    "schematic_trace": 204,
+    "source_component": 43,
+    "source_net": 37,
+    "source_port": 171,
+    "source_trace": 41,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 29 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_group": 1,
+    "schematic_line": 169,
+    "schematic_net_label": 54,
+    "schematic_path": 41,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 176,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 54,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 15,
+    "schematic_group": 1,
+    "schematic_net_label": 54,
+    "schematic_port": 80,
+    "schematic_sheet": 1,
+    "schematic_text": 96,
+    "schematic_trace": 93,
+    "source_component": 14,
+    "source_net": 67,
+    "source_port": 80,
+    "source_trace": 67,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 30 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_group": 1,
+    "schematic_line": 138,
+    "schematic_net_label": 18,
+    "schematic_path": 33,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 72,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 18,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 6,
+    "schematic_group": 1,
+    "schematic_line": 78,
+    "schematic_net_label": 21,
+    "schematic_path": 7,
+    "schematic_port": 29,
+    "schematic_sheet": 1,
+    "schematic_text": 40,
+    "schematic_trace": 33,
+    "source_component": 5,
+    "source_net": 22,
+    "source_port": 29,
+    "source_trace": 23,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 31 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 21,
+    "schematic_group": 1,
+    "schematic_line": 186,
+    "schematic_net_label": 32,
+    "schematic_path": 88,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 181,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 32,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 23,
+    "schematic_group": 1,
+    "schematic_line": 2,
+    "schematic_net_label": 40,
+    "schematic_port": 76,
+    "schematic_rect": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 97,
+    "schematic_trace": 108,
+    "source_component": 20,
+    "source_net": 42,
+    "source_port": 76,
+    "source_trace": 45,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 32 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 143,
+    "schematic_group": 1,
+    "schematic_line": 890,
+    "schematic_net_label": 19,
+    "schematic_path": 521,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 427,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 18,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_circle": 42,
+    "schematic_component": 87,
+    "schematic_group": 1,
+    "schematic_line": 300,
+    "schematic_net_label": 49,
+    "schematic_path": 111,
+    "schematic_port": 227,
+    "schematic_rect": 3,
+    "schematic_sheet": 1,
+    "schematic_text": 144,
+    "schematic_trace": 348,
+    "source_component": 87,
+    "source_net": 45,
+    "source_port": 242,
+    "source_trace": 66,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 33 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 145,
+    "schematic_group": 1,
+    "schematic_line": 885,
+    "schematic_net_label": 18,
+    "schematic_path": 521,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 417,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 18,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_circle": 42,
+    "schematic_component": 87,
+    "schematic_group": 1,
+    "schematic_line": 300,
+    "schematic_net_label": 48,
+    "schematic_path": 111,
+    "schematic_port": 227,
+    "schematic_rect": 3,
+    "schematic_sheet": 1,
+    "schematic_text": 134,
+    "schematic_trace": 349,
+    "source_component": 87,
+    "source_net": 45,
+    "source_port": 242,
+    "source_trace": 66,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 34 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 15,
+    "schematic_group": 1,
+    "schematic_line": 105,
+    "schematic_path": 103,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 81,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 17,
+    "schematic_group": 1,
+    "schematic_net_label": 13,
+    "schematic_port": 39,
+    "schematic_sheet": 1,
+    "schematic_text": 18,
+    "schematic_trace": 63,
+    "source_component": 17,
+    "source_net": 7,
+    "source_port": 39,
+    "source_trace": 9,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 35 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 76,
+    "schematic_group": 1,
+    "schematic_line": 392,
+    "schematic_net_label": 4,
+    "schematic_path": 294,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 192,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 4,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_circle": 2,
+    "schematic_component": 42,
+    "schematic_group": 1,
+    "schematic_line": 65,
+    "schematic_net_label": 28,
+    "schematic_path": 27,
+    "schematic_port": 122,
+    "schematic_rect": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 80,
+    "schematic_trace": 182,
+    "source_component": 42,
+    "source_net": 14,
+    "source_port": 137,
+    "source_trace": 23,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 36 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 31,
+    "schematic_group": 1,
+    "schematic_line": 181,
+    "schematic_net_label": 3,
+    "schematic_path": 143,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 111,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 3,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_circle": 2,
+    "schematic_component": 20,
+    "schematic_group": 1,
+    "schematic_line": 45,
+    "schematic_net_label": 18,
+    "schematic_path": 27,
+    "schematic_port": 53,
+    "schematic_rect": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 40,
+    "schematic_trace": 77,
+    "source_component": 20,
+    "source_net": 12,
+    "source_port": 53,
+    "source_trace": 13,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 37 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 11,
+    "schematic_group": 1,
+    "schematic_line": 137,
+    "schematic_net_label": 16,
+    "schematic_path": 127,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 127,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 14,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 12,
+    "schematic_group": 1,
+    "schematic_line": 15,
+    "schematic_net_label": 29,
+    "schematic_port": 48,
+    "schematic_rect": 7,
+    "schematic_sheet": 1,
+    "schematic_text": 38,
+    "schematic_trace": 64,
+    "source_component": 12,
+    "source_net": 22,
+    "source_port": 48,
+    "source_trace": 23,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 38 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 14,
+    "schematic_group": 1,
+    "schematic_line": 370,
+    "schematic_net_label": 84,
+    "schematic_path": 311,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 341,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 84,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 16,
+    "schematic_group": 1,
+    "schematic_line": 59,
+    "schematic_net_label": 96,
+    "schematic_port": 154,
+    "schematic_rect": 8,
+    "schematic_sheet": 1,
+    "schematic_text": 47,
+    "schematic_trace": 147,
+    "source_component": 16,
+    "source_net": 90,
+    "source_port": 154,
+    "source_trace": 93,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 39 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 86,
+    "schematic_group": 1,
+    "schematic_line": 722,
+    "schematic_net_label": 37,
+    "schematic_path": 397,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 509,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 37,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 68,
+    "schematic_group": 1,
+    "schematic_line": 63,
+    "schematic_net_label": 76,
+    "schematic_path": 11,
+    "schematic_port": 245,
+    "schematic_rect": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 106,
+    "schematic_trace": 332,
+    "source_component": 68,
+    "source_net": 70,
+    "source_port": 245,
+    "source_trace": 78,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 40 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 41,
+    "schematic_group": 1,
+    "schematic_line": 414,
+    "schematic_net_label": 6,
+    "schematic_path": 275,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 295,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 6,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 58,
+    "schematic_group": 1,
+    "schematic_line": 41,
+    "schematic_net_label": 35,
+    "schematic_path": 3,
+    "schematic_port": 155,
+    "schematic_rect": 2,
+    "schematic_sheet": 1,
+    "schematic_text": 65,
+    "schematic_trace": 207,
+    "source_component": 58,
+    "source_net": 28,
+    "source_port": 155,
+    "source_trace": 47,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 41 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 13,
+    "schematic_group": 1,
+    "schematic_line": 162,
+    "schematic_net_label": 16,
+    "schematic_path": 137,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 149,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 16,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_circle": 1,
+    "schematic_component": 12,
+    "schematic_group": 1,
+    "schematic_line": 30,
+    "schematic_net_label": 32,
+    "schematic_port": 55,
+    "schematic_rect": 7,
+    "schematic_sheet": 1,
+    "schematic_text": 51,
+    "schematic_trace": 68,
+    "source_component": 12,
+    "source_net": 20,
+    "source_port": 55,
+    "source_trace": 22,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 42 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 23,
+    "schematic_group": 1,
+    "schematic_line": 244,
+    "schematic_net_label": 21,
+    "schematic_path": 125,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 172,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 21,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 16,
+    "schematic_group": 1,
+    "schematic_line": 65,
+    "schematic_net_label": 42,
+    "schematic_path": 5,
+    "schematic_port": 74,
+    "schematic_sheet": 1,
+    "schematic_text": 42,
+    "schematic_trace": 82,
+    "source_component": 16,
+    "source_net": 24,
+    "source_port": 74,
+    "source_trace": 26,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 43 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 29,
+    "schematic_group": 1,
+    "schematic_line": 239,
+    "schematic_net_label": 29,
+    "schematic_path": 157,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 149,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 29,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 27,
+    "schematic_group": 1,
+    "schematic_net_label": 52,
+    "schematic_port": 93,
+    "schematic_sheet": 1,
+    "schematic_text": 33,
+    "schematic_trace": 128,
+    "source_component": 27,
+    "source_net": 34,
+    "source_port": 93,
+    "source_trace": 38,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 44 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 36,
+    "schematic_group": 1,
+    "schematic_line": 423,
+    "schematic_net_label": 52,
+    "schematic_path": 339,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 358,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 36,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 35,
+    "schematic_group": 1,
+    "schematic_line": 30,
+    "schematic_net_label": 86,
+    "schematic_path": 2,
+    "schematic_port": 158,
+    "schematic_rect": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 73,
+    "schematic_trace": 199,
+    "source_component": 35,
+    "source_net": 51,
+    "source_port": 158,
+    "source_trace": 53,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 45 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 23,
+    "schematic_group": 1,
+    "schematic_line": 342,
+    "schematic_net_label": 35,
+    "schematic_path": 331,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 253,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 35,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 34,
+    "schematic_group": 1,
+    "schematic_line": 24,
+    "schematic_net_label": 55,
+    "schematic_path": 2,
+    "schematic_port": 128,
+    "schematic_sheet": 1,
+    "schematic_text": 43,
+    "schematic_trace": 158,
+    "source_component": 34,
+    "source_net": 45,
+    "source_port": 138,
+    "source_trace": 63,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 46 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 16,
+    "schematic_group": 1,
+    "schematic_line": 191,
+    "schematic_net_label": 8,
+    "schematic_path": 175,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 169,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 8,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 25,
+    "schematic_group": 1,
+    "schematic_line": 12,
+    "schematic_net_label": 32,
+    "schematic_path": 4,
+    "schematic_port": 72,
+    "schematic_sheet": 1,
+    "schematic_text": 65,
+    "schematic_trace": 98,
+    "source_component": 25,
+    "source_net": 19,
+    "source_port": 72,
+    "source_trace": 21,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 47 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 41,
+    "schematic_group": 1,
+    "schematic_line": 324,
+    "schematic_net_label": 24,
+    "schematic_path": 203,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 256,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 17,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 34,
+    "schematic_group": 1,
+    "schematic_line": 11,
+    "schematic_net_label": 54,
+    "schematic_port": 105,
+    "schematic_rect": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 73,
+    "schematic_trace": 158,
+    "source_component": 34,
+    "source_net": 30,
+    "source_port": 105,
+    "source_trace": 31,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 48 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 32,
+    "schematic_group": 1,
+    "schematic_line": 266,
+    "schematic_net_label": 18,
+    "schematic_path": 153,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 217,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 15,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 24,
+    "schematic_group": 1,
+    "schematic_line": 11,
+    "schematic_net_label": 42,
+    "schematic_port": 80,
+    "schematic_rect": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 73,
+    "schematic_trace": 120,
+    "source_component": 24,
+    "source_net": 25,
+    "source_port": 80,
+    "source_trace": 25,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 49 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 11,
+    "schematic_group": 1,
+    "schematic_line": 147,
+    "schematic_net_label": 18,
+    "schematic_path": 51,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 168,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 14,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 4,
+    "schematic_group": 1,
+    "schematic_line": 27,
+    "schematic_net_label": 28,
+    "schematic_path": 4,
+    "schematic_port": 48,
+    "schematic_rect": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 110,
+    "schematic_trace": 40,
+    "source_component": 4,
+    "source_net": 16,
+    "source_port": 48,
+    "source_trace": 16,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 50 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 8,
+    "schematic_group": 1,
+    "schematic_line": 150,
+    "schematic_net_label": 18,
+    "schematic_path": 57,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 170,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 14,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 4,
+    "schematic_group": 1,
+    "schematic_line": 27,
+    "schematic_net_label": 30,
+    "schematic_path": 4,
+    "schematic_port": 48,
+    "schematic_rect": 1,
+    "schematic_sheet": 1,
+    "schematic_text": 110,
+    "schematic_trace": 40,
+    "source_component": 4,
+    "source_net": 16,
+    "source_port": 48,
+    "source_trace": 16,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 51 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 53,
+    "schematic_group": 1,
+    "schematic_line": 453,
+    "schematic_net_label": 12,
+    "schematic_path": 344,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 321,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 12,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 38,
+    "schematic_group": 1,
+    "schematic_line": 63,
+    "schematic_net_label": 49,
+    "schematic_path": 3,
+    "schematic_port": 158,
+    "schematic_sheet": 1,
+    "schematic_text": 32,
+    "schematic_trace": 184,
+    "source_component": 38,
+    "source_net": 28,
+    "source_port": 158,
+    "source_trace": 32,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 52 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 34,
+    "schematic_group": 1,
+    "schematic_line": 287,
+    "schematic_net_label": 24,
+    "schematic_path": 304,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 237,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 24,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 32,
+    "schematic_group": 1,
+    "schematic_net_label": 66,
+    "schematic_port": 116,
+    "schematic_sheet": 1,
+    "schematic_text": 15,
+    "schematic_trace": 159,
+    "source_component": 32,
+    "source_net": 28,
+    "source_port": 116,
+    "source_trace": 36,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 53 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 95,
+    "schematic_group": 1,
+    "schematic_line": 776,
+    "schematic_net_label": 15,
+    "schematic_path": 549,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 607,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 15,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 68,
+    "schematic_group": 1,
+    "schematic_line": 158,
+    "schematic_net_label": 48,
+    "schematic_path": 2,
+    "schematic_port": 273,
+    "schematic_rect": 2,
+    "schematic_sheet": 1,
+    "schematic_text": 155,
+    "schematic_trace": 294,
+    "source_component": 66,
+    "source_net": 34,
+    "source_port": 273,
+    "source_trace": 51,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 54 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 9,
+    "schematic_group": 1,
+    "schematic_line": 120,
+    "schematic_net_label": 15,
+    "schematic_path": 131,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 113,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 14,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 11,
+    "schematic_group": 1,
+    "schematic_net_label": 35,
+    "schematic_port": 48,
+    "schematic_sheet": 1,
+    "schematic_text": 13,
+    "schematic_trace": 62,
+    "source_component": 11,
+    "source_net": 20,
+    "source_port": 48,
+    "source_trace": 21,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 55 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 29,
+    "schematic_group": 1,
+    "schematic_line": 288,
+    "schematic_net_label": 18,
+    "schematic_path": 159,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 185,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 18,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_component": 36,
+    "schematic_group": 1,
+    "schematic_line": 72,
+    "schematic_net_label": 38,
+    "schematic_port": 92,
+    "schematic_sheet": 1,
+    "schematic_text": 61,
+    "schematic_trace": 124,
+    "source_component": 36,
+    "source_net": 33,
+    "source_port": 92,
+    "source_trace": 36,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 56 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_circle": 35,
+    "schematic_group": 1,
+    "schematic_line": 400,
+    "schematic_net_label": 8,
+    "schematic_path": 341,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 318,
+    "source_board": 1,
+    "source_group": 1,
+    "source_net": 7,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_circle": 1,
+    "schematic_component": 42,
+    "schematic_group": 1,
+    "schematic_line": 57,
+    "schematic_net_label": 57,
+    "schematic_path": 8,
+    "schematic_port": 144,
+    "schematic_rect": 5,
+    "schematic_sheet": 1,
+    "schematic_text": 108,
+    "schematic_trace": 191,
+    "source_component": 42,
+    "source_net": 25,
+    "source_port": 144,
+    "source_trace": 33,
+  },
+}
+`;
+
+exports[`TMDS62LEVM: source Circuit JSON beside rendered TSX for every schematic sheet: schematic 57 roundtrip inventory 1`] = `
+{
+  "rendered": {
+    "pcb_board": 1,
+    "schematic_arc": 2,
+    "schematic_circle": 12,
+    "schematic_graphic": 1,
+    "schematic_group": 1,
+    "schematic_line": 16,
+    "schematic_path": 22,
+    "schematic_sheet": 1,
+    "schematic_sheet_styling_warning": 1,
+    "schematic_text": 93,
+    "source_board": 1,
+    "source_group": 1,
+    "source_project_metadata": 1,
+  },
+  "source": {
+    "schematic_arc": 2,
+    "schematic_circle": 12,
+    "schematic_component": 25,
+    "schematic_graphic": 1,
+    "schematic_group": 1,
+    "schematic_line": 16,
+    "schematic_rect": 22,
+    "schematic_sheet": 1,
+    "schematic_text": 93,
+    "source_component": 25,
+  },
+}
+`;
