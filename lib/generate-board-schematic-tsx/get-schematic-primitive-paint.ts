@@ -3,6 +3,7 @@ import type { SchematicPrimitive } from "./get-schematic-primitives-in-render-or
 
 export const COMPONENT_OUTLINE_COLOR = "#840000"
 export const COMPONENT_BODY_COLOR = "#ffffc2"
+export const SYMBOL_OUTLINE_STROKE_WIDTH = 0.02
 const COMPONENT_LOCAL_LABEL_COLOR = "#0f0f0f"
 const COMPONENT_REFERENCE_COLOR = "#006464"
 const COMPONENT_PIN_NUMBER_COLOR = "#a90000"
