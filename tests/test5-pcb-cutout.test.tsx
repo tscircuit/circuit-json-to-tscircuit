@@ -49,7 +49,7 @@ test("test pcb_cutout conversion - all shapes", async () => {
     export const ComponentWithCutouts = (props: ChipProps) => (
       <chip
         footprint={<footprint>
-            <cutout shape="rect" pcbX="0mm" pcbY="0mm" width="5mm" height="3mm" pcbRotation="45mm" />
+            <cutout shape="polygon" points={[{"x":-0.7071,"y":-2.8284},{"x":2.8284,"y":0.7071},{"x":0.7071,"y":2.8284},{"x":-2.8284,"y":-0.7071}]} />
     <cutout shape="circle" pcbX="10mm" pcbY="10mm" radius="2.5mm" />
     <cutout shape="polygon" points={[{"x":0,"y":0},{"x":5,"y":0},{"x":5,"y":5},{"x":0,"y":5}]} />
           </footprint>}
@@ -61,6 +61,72 @@ test("test pcb_cutout conversion - all shapes", async () => {
   const result = await runTscircuitCode(tscircuit)
   expect(Array.isArray(result)).toBe(true)
   expect(result).not.toHaveLength(0)
+}, 10000)
+
+test("test pcb_cutout conversion - rect rotation is preserved", async () => {
+  const circuitJson: AnyCircuitElement[] = [
+    {
+      type: "pcb_cutout",
+      pcb_cutout_id: "cutout1",
+      shape: "rect",
+      center: { x: 0, y: 0 },
+      width: 5,
+      height: 3,
+      rotation: 45,
+    },
+    {
+      type: "pcb_cutout",
+      pcb_cutout_id: "cutout2",
+      shape: "rect",
+      center: { x: 10, y: 0 },
+      width: 4,
+      height: 2,
+      rotation: 90,
+    },
+  ]
+
+  const tscircuit = convertCircuitJsonToTscircuit(circuitJson, {
+    componentName: "ComponentWithRotatedCutouts",
+  })
+
+  expect(tscircuit).toMatchInlineSnapshot(`
+    "import { type ChipProps } from "tscircuit"
+    export const ComponentWithRotatedCutouts = (props: ChipProps) => (
+      <chip
+        footprint={<footprint>
+            <cutout shape="polygon" points={[{"x":-0.7071,"y":-2.8284},{"x":2.8284,"y":0.7071},{"x":0.7071,"y":2.8284},{"x":-2.8284,"y":-0.7071}]} />
+    <cutout shape="rect" pcbX="10mm" pcbY="0mm" width="2mm" height="4mm" />
+          </footprint>}
+        {...props}
+      />
+    )"
+  `)
+
+  const result = (await runTscircuitCode(tscircuit)) as AnyCircuitElement[]
+  const cutouts = result.filter((elm) => elm.type === "pcb_cutout")
+  expect(cutouts).toHaveLength(2)
+
+  const polygonCutout = cutouts.find(
+    (elm) => "shape" in elm && elm.shape === "polygon",
+  )
+  expect(polygonCutout).toMatchObject({
+    shape: "polygon",
+    points: [
+      { x: -0.7071, y: -2.8284 },
+      { x: 2.8284, y: 0.7071 },
+      { x: 0.7071, y: 2.8284 },
+      { x: -2.8284, y: -0.7071 },
+    ],
+  })
+
+  const rectCutout = cutouts.find(
+    (elm) => "shape" in elm && elm.shape === "rect",
+  )
+  expect(rectCutout).toMatchObject({
+    shape: "rect",
+    width: 2,
+    height: 4,
+  })
 }, 10000)
 
 test("test pcb_cutout conversion - rect without rotation", async () => {
