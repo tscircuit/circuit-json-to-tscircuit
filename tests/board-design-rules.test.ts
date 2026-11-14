@@ -145,14 +145,6 @@ test("renders an SVG of the design rules before and after the round trip", async
       },
     },
   )
-  // TEMPORARY: print the snapshot so it can be committed from the CI log.
-  const encodedSnapshot = Buffer.from(comparison).toString("base64")
-  for (let offset = 0; offset < encodedSnapshot.length; offset += 3000) {
-    console.log(`SNAPSHOT|${encodedSnapshot.slice(offset, offset + 3000)}`)
-  }
-  console.log(
-    `RULES|${JSON.stringify([getDesignRules(imported), getDesignRules(rendered)])}`,
-  )
   await expect(comparison).toMatchSvgSnapshot(
     import.meta.path,
     "h616-ddr-design-rules",
