@@ -87,10 +87,5 @@ test("recomputes copper using board clearances around new routing", async () => 
       },
     },
   )
-  // TEMPORARY: print the snapshot so it can be committed from the CI log.
-  const encodedSnapshot30 = Buffer.from(comparison).toString("base64")
-  for (let offset = 0; offset < encodedSnapshot30.length; offset += 3000) {
-    console.log(`SNAP30|${encodedSnapshot30.slice(offset, offset + 3000)}`)
-  }
   await expect(comparison).toMatchSvgSnapshot(import.meta.path)
 }, 30000)
