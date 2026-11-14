@@ -102,25 +102,20 @@ const roundTripImportedBoard = async () => {
   return { imported, tsx, rendered }
 }
 
-// This expected failure must become a normal test in the stacked fix.
-test.failing(
-  "generated TSX keeps the board minimums and net trace widths",
-  async () => {
-    const { imported, tsx, rendered } = await roundTripImportedBoard()
-    const importedDesignRules = getDesignRules(imported)
-    const renderedDesignRules = getDesignRules(rendered)
+test("generated TSX keeps the board minimums and net trace widths", async () => {
+  const { imported, tsx, rendered } = await roundTripImportedBoard()
+  const importedDesignRules = getDesignRules(imported)
+  const renderedDesignRules = getDesignRules(rendered)
 
-    expect(tsx).toContain('minViaPadDiameter="0.35mm"')
-    expect(tsx).toContain('nominalTraceWidth="0.0975mm"')
-    expect(renderedDesignRules.boardRules).toMatchObject(
-      importedDesignRules.boardRules,
-    )
-    expect(renderedDesignRules.traceWidthByNetName).toEqual(
-      importedDesignRules.traceWidthByNetName,
-    )
-  },
-  30000,
-)
+  expect(tsx).toContain('minViaPadDiameter="0.35mm"')
+  expect(tsx).toContain('nominalTraceWidth="0.0975mm"')
+  expect(renderedDesignRules.boardRules).toMatchObject(
+    importedDesignRules.boardRules,
+  )
+  expect(renderedDesignRules.traceWidthByNetName).toEqual(
+    importedDesignRules.traceWidthByNetName,
+  )
+}, 30000)
 
 test("renders an SVG of the design rules before and after the round trip", async () => {
   const { imported, rendered } = await roundTripImportedBoard()

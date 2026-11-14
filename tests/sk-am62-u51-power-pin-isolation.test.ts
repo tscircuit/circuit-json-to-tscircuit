@@ -45,7 +45,7 @@ test("SK-AM62 U51 keeps its two VDDA1P8 test-point networks separate", async () 
   })
   expect(generatedTsx).toMatchInlineSnapshot(`
     "export const SkAm62PhyPowerPins = () => (
-      <board pcbX={56.352694} pcbY={86.521544} width="10.072628000000002mm" height="10.03706799999999mm" thickness="1.6mm" layers={10} material="fr4" routingDisabled>
+      <board pcbX={56.352694} pcbY={86.521544} width="10.072628000000002mm" height="10.03706799999999mm" thickness="1.6mm" layers={10} material="fr4" minTraceWidth="0.254mm" minViaHoleDiameter="0.7111999999999999mm" minViaPadDiameter="1.27mm" routingDisabled>
         <chip name="TP30" pcbX={4.036313999999997} pcbY={4.018533999999988} pcbRotation="0deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["TP","1","pin1","imported_pcb_port_1"]}} manufacturerPartNumber="TP20_SMD" obstructsWithinBounds={false} footprint={<footprint>
                 <smtpad portHints={["imported_pcb_port_1","1"]} pcbX="0mm" pcbY="0mm" layer="top" solderMaskMargin="0.1016mm" radius="0.2286mm" shape="circle" />
         <silkscreenpath route={[{"x":0.5080000000000027,"y":0},{"x":0.5036539895778986,"y":0.06630730564779697},{"x":0.49069031975484734,"y":0.13148007491209057},{"x":0.469330802515735,"y":0.19440318364146947},{"x":0.43994090512249784,"y":0.2540000000000049},{"x":0.40302349686795225,"y":0.3092508059364434},{"x":0.359210244842771,"y":0.359210244842771},{"x":0.3092508059364292,"y":0.40302349686795935},{"x":0.2539999999999978,"y":0.43994090512249784},{"x":0.19440318364146947,"y":0.4693308025157421},{"x":0.13148007491207636,"y":0.49069031975486155},{"x":0.06630730564778986,"y":0.5036539895778986},{"x":0,"y":0.5080000000000098},{"x":-0.06630730564778986,"y":0.5036539895778986},{"x":-0.13148007491207636,"y":0.49069031975486155},{"x":-0.19440318364146947,"y":0.4693308025157421},{"x":-0.2539999999999978,"y":0.43994090512249784},{"x":-0.3092508059364292,"y":0.40302349686795935},{"x":-0.359210244842771,"y":0.359210244842771},{"x":-0.40302349686795225,"y":0.3092508059364434},{"x":-0.43994090512249784,"y":0.2540000000000049},{"x":-0.469330802515735,"y":0.19440318364146947},{"x":-0.49069031975484734,"y":0.13148007491209057},{"x":-0.5036539895778986,"y":0.06630730564779697},{"x":-0.5080000000000027,"y":0},{"x":-0.5036539895778986,"y":-0.06630730564778275},{"x":-0.49069031975484734,"y":-0.13148007491207636},{"x":-0.469330802515735,"y":-0.19440318364145526},{"x":-0.43994090512249784,"y":-0.2539999999999907},{"x":-0.40302349686795225,"y":-0.3092508059364292},{"x":-0.359210244842771,"y":-0.35921024484275677},{"x":-0.3092508059364292,"y":-0.40302349686794514},{"x":-0.2539999999999978,"y":-0.4399409051224836},{"x":-0.19440318364146947,"y":-0.4693308025157279},{"x":-0.13148007491207636,"y":-0.49069031975484734},{"x":-0.06630730564778986,"y":-0.5036539895778986},{"x":0,"y":-0.5079999999999956},{"x":0.06630730564778986,"y":-0.5036539895778986},{"x":0.13148007491207636,"y":-0.49069031975484734},{"x":0.19440318364146947,"y":-0.4693308025157279},{"x":0.2539999999999978,"y":-0.4399409051224836},{"x":0.3092508059364292,"y":-0.40302349686794514},{"x":0.359210244842771,"y":-0.35921024484275677},{"x":0.40302349686795225,"y":-0.3092508059364292},{"x":0.43994090512249784,"y":-0.2539999999999907},{"x":0.469330802515735,"y":-0.19440318364145526},{"x":0.49069031975484734,"y":-0.13148007491207636},{"x":0.5036539895778986,"y":-0.06630730564778275},{"x":0.5080000000000027,"y":0}]} strokeWidth={0.15239999999999998} />
@@ -112,45 +112,45 @@ test("SK-AM62 U51 keeps its two VDDA1P8 test-point networks separate", async () 
         <silkscreentext pcbX={1.8275299999999959} pcbY={4.083811999999995} anchorAlignment="bottom_left" fontSize={0.508} font="tscircuit2024" pcbRotation="360deg" mirrored={true} layer="top" text="37" />
         <silkscreentext pcbX={-2.820670000000007} pcbY={4.083811999999995} anchorAlignment="bottom_left" fontSize={0.508} font="tscircuit2024" pcbRotation="360deg" mirrored={true} layer="top" text="48" />
               </footprint>} />
-        <net name={"DGND"} connectsTo={[".U51 > .imported_pcb_port_27"]} />
-        <net name={"VCC_3V3_SYS"} connectsTo={[".U51 > .imported_pcb_port_29",".U51 > .imported_pcb_port_30",".U51 > .imported_pcb_port_46"]} />
-        <net name={"VDD_2V5"} connectsTo={[".U51 > .imported_pcb_port_11",".U51 > .imported_pcb_port_5"]} />
-        <net name={"VDD_1V0"} connectsTo={[".U51 > .imported_pcb_port_45",".U51 > .imported_pcb_port_28",".U51 > .imported_pcb_port_39",".U51 > .imported_pcb_port_8"]} />
-        <net name={"CPSW_RGMII1_ETH1_CLK"} connectsTo={[".U51 > .imported_pcb_port_20"]} />
-        <net name={"CPSW_RGMII1_TD0"} connectsTo={[".U51 > .imported_pcb_port_48"]} />
-        <net name={"CPSW_RGMII1_TX_CTL"} connectsTo={[".U51 > .imported_pcb_port_38"]} />
-        <net name={"CPSW_RGMII1_TXC"} connectsTo={[".U51 > .imported_pcb_port_47"]} />
-        <net name={"N17105648"} connectsTo={[".TP30 > .imported_pcb_port_1",".U51 > .imported_pcb_port_15"]} />
-        <net name={"CPSW_RGMII1_MDC"} connectsTo={[".U51 > .imported_pcb_port_22"]} />
-        <net name={"CPSW_RGMII1_MDIO"} connectsTo={[".U51 > .imported_pcb_port_24"]} />
-        <net name={"CPSW_RGMII1_RD0"} connectsTo={[".U51 > .imported_pcb_port_43"]} />
-        <net name={"CPSW_RGMII1_RX_CTL"} connectsTo={[".U51 > .imported_pcb_port_36"]} />
-        <net name={"CPSW_RGMII_INTn"} connectsTo={[".U51 > .imported_pcb_port_23"]} />
-        <net name={"CPSW_RGMII1_TD1"} connectsTo={[".U51 > .imported_pcb_port_49"]} />
-        <net name={"CPSW_RGMII1_TD3"} connectsTo={[".U51 > .imported_pcb_port_51"]} />
-        <net name={"CPSW_RGMII1_TD2"} connectsTo={[".U51 > .imported_pcb_port_50"]} />
-        <net name={"CPSW_RGMII1_RD3"} connectsTo={[".U51 > .imported_pcb_port_40"]} />
-        <net name={"CPSW_RGMII1_RD2"} connectsTo={[".U51 > .imported_pcb_port_41"]} />
-        <net name={"CPSW_RGMII1_RD1"} connectsTo={[".U51 > .imported_pcb_port_42"]} />
-        <net name={"CPSW_ETH1_LED_ACT"} connectsTo={[".U51 > .imported_pcb_port_21"]} />
-        <net name={"CPSW_ETH1_LED_1000"} connectsTo={[".U51 > .imported_pcb_port_19"]} />
-        <net name={"CPSW_ETH1_LED0"} connectsTo={[".U51 > .imported_pcb_port_17"]} />
-        <net name={"N17167245"} connectsTo={[".U51 > .imported_pcb_port_44"]} />
-        <net name={"CPSW_RGMII1_RESETn"} connectsTo={[".U51 > .imported_pcb_port_25"]} />
-        <net name={"N18576337"} connectsTo={[".U51 > .imported_pcb_port_34"]} />
-        <net name={"N18576340"} connectsTo={[".U51 > .imported_pcb_port_32"]} />
-        <net name={"CPSW_RGMII1_ETH1_RBIAS"} connectsTo={[".U51 > .imported_pcb_port_14"]} />
-        <net name={"N20329675"} connectsTo={[".U51 > .imported_pcb_port_18"]} />
-        <net name={"CPSW_RGMII1_ETH1_CLK_OUT"} connectsTo={[".U51 > .imported_pcb_port_26"]} />
-        <net name={"CPSW_ETH1_D0P"} connectsTo={[".U51 > .imported_pcb_port_3"]} />
-        <net name={"CPSW_ETH1_D0N"} connectsTo={[".U51 > .imported_pcb_port_4"]} />
-        <net name={"CPSW_ETH1_D1P"} connectsTo={[".U51 > .imported_pcb_port_6"]} />
-        <net name={"CPSW_ETH1_D1M"} connectsTo={[".U51 > .imported_pcb_port_7"]} />
-        <net name={"CPSW_ETH1_D2M"} connectsTo={[".U51 > .imported_pcb_port_10"]} />
-        <net name={"CPSW_ETH1_D2P"} connectsTo={[".U51 > .imported_pcb_port_9"]} />
-        <net name={"CPSW_ETH1_D3P"} connectsTo={[".U51 > .imported_pcb_port_12"]} />
-        <net name={"CPSW_ETH1_D3M"} connectsTo={[".U51 > .imported_pcb_port_13"]} />
-        <net name={"N20329347"} connectsTo={[".U51 > .imported_pcb_port_16",".TP100 > .imported_pcb_port_2"]} />
+        <net name={"DGND"} connectsTo={[".U51 > .imported_pcb_port_27"]} nominalTraceWidth="0.254mm" />
+        <net name={"VCC_3V3_SYS"} connectsTo={[".U51 > .imported_pcb_port_29",".U51 > .imported_pcb_port_30",".U51 > .imported_pcb_port_46"]} nominalTraceWidth="0.254mm" />
+        <net name={"VDD_2V5"} connectsTo={[".U51 > .imported_pcb_port_11",".U51 > .imported_pcb_port_5"]} nominalTraceWidth="0.254mm" />
+        <net name={"VDD_1V0"} connectsTo={[".U51 > .imported_pcb_port_45",".U51 > .imported_pcb_port_28",".U51 > .imported_pcb_port_39",".U51 > .imported_pcb_port_8"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_RGMII1_ETH1_CLK"} connectsTo={[".U51 > .imported_pcb_port_20"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_RGMII1_TD0"} connectsTo={[".U51 > .imported_pcb_port_48"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_RGMII1_TX_CTL"} connectsTo={[".U51 > .imported_pcb_port_38"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_RGMII1_TXC"} connectsTo={[".U51 > .imported_pcb_port_47"]} nominalTraceWidth="0.254mm" />
+        <net name={"N17105648"} connectsTo={[".TP30 > .imported_pcb_port_1",".U51 > .imported_pcb_port_15"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_RGMII1_MDC"} connectsTo={[".U51 > .imported_pcb_port_22"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_RGMII1_MDIO"} connectsTo={[".U51 > .imported_pcb_port_24"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_RGMII1_RD0"} connectsTo={[".U51 > .imported_pcb_port_43"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_RGMII1_RX_CTL"} connectsTo={[".U51 > .imported_pcb_port_36"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_RGMII_INTn"} connectsTo={[".U51 > .imported_pcb_port_23"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_RGMII1_TD1"} connectsTo={[".U51 > .imported_pcb_port_49"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_RGMII1_TD3"} connectsTo={[".U51 > .imported_pcb_port_51"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_RGMII1_TD2"} connectsTo={[".U51 > .imported_pcb_port_50"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_RGMII1_RD3"} connectsTo={[".U51 > .imported_pcb_port_40"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_RGMII1_RD2"} connectsTo={[".U51 > .imported_pcb_port_41"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_RGMII1_RD1"} connectsTo={[".U51 > .imported_pcb_port_42"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_ETH1_LED_ACT"} connectsTo={[".U51 > .imported_pcb_port_21"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_ETH1_LED_1000"} connectsTo={[".U51 > .imported_pcb_port_19"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_ETH1_LED0"} connectsTo={[".U51 > .imported_pcb_port_17"]} nominalTraceWidth="0.254mm" />
+        <net name={"N17167245"} connectsTo={[".U51 > .imported_pcb_port_44"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_RGMII1_RESETn"} connectsTo={[".U51 > .imported_pcb_port_25"]} nominalTraceWidth="0.254mm" />
+        <net name={"N18576337"} connectsTo={[".U51 > .imported_pcb_port_34"]} nominalTraceWidth="0.254mm" />
+        <net name={"N18576340"} connectsTo={[".U51 > .imported_pcb_port_32"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_RGMII1_ETH1_RBIAS"} connectsTo={[".U51 > .imported_pcb_port_14"]} nominalTraceWidth="0.254mm" />
+        <net name={"N20329675"} connectsTo={[".U51 > .imported_pcb_port_18"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_RGMII1_ETH1_CLK_OUT"} connectsTo={[".U51 > .imported_pcb_port_26"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_ETH1_D0P"} connectsTo={[".U51 > .imported_pcb_port_3"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_ETH1_D0N"} connectsTo={[".U51 > .imported_pcb_port_4"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_ETH1_D1P"} connectsTo={[".U51 > .imported_pcb_port_6"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_ETH1_D1M"} connectsTo={[".U51 > .imported_pcb_port_7"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_ETH1_D2M"} connectsTo={[".U51 > .imported_pcb_port_10"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_ETH1_D2P"} connectsTo={[".U51 > .imported_pcb_port_9"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_ETH1_D3P"} connectsTo={[".U51 > .imported_pcb_port_12"]} nominalTraceWidth="0.254mm" />
+        <net name={"CPSW_ETH1_D3M"} connectsTo={[".U51 > .imported_pcb_port_13"]} nominalTraceWidth="0.254mm" />
+        <net name={"N20329347"} connectsTo={[".U51 > .imported_pcb_port_16",".TP100 > .imported_pcb_port_2"]} nominalTraceWidth="0.254mm" />
         <trace path={[".U51 > .imported_pcb_port_27","net.DGND"]} />
         <trace path={[".U51 > .imported_pcb_port_29",".U51 > .imported_pcb_port_30",".U51 > .imported_pcb_port_46","net.VCC_3V3_SYS"]} />
         <trace path={[".U51 > .imported_pcb_port_11",".U51 > .imported_pcb_port_5","net.VDD_2V5"]} />
