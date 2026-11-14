@@ -18,7 +18,7 @@ test("test19 board conversion", async () => {
 
   expect(tscircuitCode).toMatchInlineSnapshot(`
     "export const MyBoard = () => (
-      <board width="20mm" height="10mm" thickness="1.4mm" layers={2} material="fr4" minTraceWidth="0.1mm" minViaHoleDiameter="0.2mm" minViaPadDiameter="0.3mm" minViaHoleEdgeToViaHoleEdgeClearance="0.1mm" minTraceToPadEdgeClearance="0.1mm" minPadEdgeToPadEdgeClearance="0.1mm" minPlatedHoleDrillEdgeToDrillEdgeClearance="0.15mm" minBoardEdgeClearance="0.2mm">
+      <board width="20mm" height="10mm" thickness="1.4mm" layers={2} material="fr4">
       </board>
     )
     export default MyBoard"
