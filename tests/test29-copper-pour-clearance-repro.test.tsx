@@ -38,5 +38,10 @@ test("shows zero-clearance copper around a newly routed trace", async () => {
       },
     },
   )
+  // TEMPORARY: print the snapshot so it can be committed from the CI log.
+  const encodedSnapshot29 = Buffer.from(comparison).toString("base64")
+  for (let offset = 0; offset < encodedSnapshot29.length; offset += 3000) {
+    console.log(`SNAP29|${encodedSnapshot29.slice(offset, offset + 3000)}`)
+  }
   await expect(comparison).toMatchSvgSnapshot(import.meta.path)
 }, 30000)

@@ -55,7 +55,7 @@ test("test20 board conversion preserves child component geometry", async () => {
 
   expect(convertedTscircuit).toMatchInlineSnapshot(`
     "export const ConvertedBoard = () => (
-      <board width="12mm" height="8mm" thickness="1.4mm" layers={2} material="fr4">
+      <board width="12mm" height="8mm" thickness="1.4mm" layers={2} material="fr4" minTraceWidth="0.1mm" minViaHoleDiameter="0.2mm" minViaPadDiameter="0.3mm" minViaHoleEdgeToViaHoleEdgeClearance="0.1mm" minTraceToHoleEdgeClearance="0.2mm" minTraceToPadEdgeClearance="0.1mm" minPadEdgeToPadEdgeClearance="0.1mm" minPlatedHoleDrillEdgeToDrillEdgeClearance="0.15mm" minBoardEdgeClearance="0.2mm">
         <chip name="U1" pcbX={0} pcbY={0} pcbRotation="0deg" layer="top" noSchematicRepresentation pinLabels={{"pin1":["pin1","1","imported_pcb_port_1"],"pin2":["pin2","2","imported_pcb_port_2"]}} footprint={<footprint>
                 <smtpad portHints={["imported_pcb_port_1","1"]} pcbX="-1mm" pcbY="0mm" layer="top" coveredWithSolderMask={false} width="1mm" height="0.8mm" shape="rect" />
         <smtpad portHints={["imported_pcb_port_2","2"]} pcbX="1mm" pcbY="0mm" layer="top" coveredWithSolderMask={false} width="1mm" height="0.8mm" shape="rect" />
