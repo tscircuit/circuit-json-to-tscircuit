@@ -1,5 +1,26 @@
 import { mmStr } from "@tscircuit/mm"
+import type { PcbBoard } from "circuit-json"
 import type { BoardConverterStage } from "../BoardConverterContext"
+
+// The pcb_board minimums and the <board /> props that core reads them from.
+const boardPropNamesByPcbBoardField: [keyof PcbBoard, string][] = [
+  ["min_trace_width", "minTraceWidth"],
+  ["min_via_hole_diameter", "minViaHoleDiameter"],
+  ["min_via_pad_diameter", "minViaPadDiameter"],
+  [
+    "min_via_hole_edge_to_via_hole_edge_clearance",
+    "minViaHoleEdgeToViaHoleEdgeClearance",
+  ],
+  ["min_via_edge_to_pad_edge_clearance", "minViaEdgeToPadEdgeClearance"],
+  ["min_trace_to_hole_edge_clearance", "minTraceToHoleEdgeClearance"],
+  ["min_trace_to_pad_edge_clearance", "minTraceToPadEdgeClearance"],
+  ["min_pad_edge_to_pad_edge_clearance", "minPadEdgeToPadEdgeClearance"],
+  [
+    "min_plated_hole_drill_edge_to_drill_edge_clearance",
+    "minPlatedHoleDrillEdgeToDrillEdgeClearance",
+  ],
+  ["min_board_edge_clearance", "minBoardEdgeClearance"],
+]
 
 export const convertBoardProperties: BoardConverterStage = ({
   pcbBoard,
@@ -45,5 +66,10 @@ export const convertBoardProperties: BoardConverterStage = ({
   }
   if (pcbBoard.anchor_alignment !== undefined) {
     boardProps.push(`boardAnchorAlignment="${pcbBoard.anchor_alignment}"`)
+  }
+  for (const [pcbBoardField, boardPropName] of boardPropNamesByPcbBoardField) {
+    const minimum = pcbBoard[pcbBoardField]
+    if (typeof minimum !== "number") continue
+    boardProps.push(`${boardPropName}="${mmStr(minimum)}"`)
   }
 }
