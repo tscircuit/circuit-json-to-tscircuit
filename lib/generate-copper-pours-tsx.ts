@@ -3,6 +3,7 @@ import { su } from "@tscircuit/soup-util"
 import type { AnyCircuitElement } from "circuit-json"
 import { getCopperPourOutline } from "./get-copper-pour-outline"
 import type { BoardConversionContext } from "./board-conversion-context"
+import { getCopperPourClearanceRulesTsx } from "./get-copper-pour-clearance-rules-tsx"
 
 export function generateCopperPoursTsx(
   circuitJson: AnyCircuitElement[],
@@ -10,11 +11,6 @@ export function generateCopperPoursTsx(
     copperPourMode?: "preserve" | "recompute"
   },
 ): string[] {
-  const clearanceAttributes =
-    context?.copperPourMode === "recompute" &&
-    circuitJson.some((element) => element.type === "pcb_copper_pour")
-      ? getCopperPourRecomputeAttributes(circuitJson)
-      : "padMargin={0} traceMargin={0} clearance={0} boardEdgeMargin={0} cutoutMargin={0}"
   const sourceNetNameById = new Map(
     su(circuitJson)
       .source_net.list()
@@ -38,11 +34,21 @@ export function generateCopperPoursTsx(
 
       const outline = getCopperPourOutline(pour)
       if (!outline || outline.length < 3) return []
+      const recompute = context?.copperPourMode === "recompute"
+      const clearanceAttributes = recompute
+        ? getCopperPourRecomputeAttributes(circuitJson, pour)
+        : "padMargin={0} traceMargin={0} clearance={0} boardEdgeMargin={0} cutoutMargin={0}"
+      const ruleAttributes =
+        recompute &&
+        (pour.clearance !== undefined || pour.clearance_rules !== undefined)
+          ? ` ${getCopperPourClearanceRulesTsx({ pour, circuitJson, context })}`
+          : ""
+      const staticAttributes = pour.is_static ? " isStatic={true}" : ""
       usedNetNames.add(sourceNetName)
       const netSelector = `net[name=${JSON.stringify(sourceNetName)}]`
 
       return [
-        `<copperpour layer={${JSON.stringify(pour.layer)}} connectsTo={${JSON.stringify(netSelector)}} outline={${JSON.stringify(outline)}} ${clearanceAttributes} useThermalReliefs={false} coveredWithSolderMask={${pour.covered_with_solder_mask ?? true}} />`,
+        `<copperpour layer={${JSON.stringify(pour.layer)}} connectsTo={${JSON.stringify(netSelector)}} outline={${JSON.stringify(outline)}} ${clearanceAttributes}${ruleAttributes}${staticAttributes} useThermalReliefs={false} coveredWithSolderMask={${pour.covered_with_solder_mask ?? true}} />`,
       ]
     })
   const contextNetNames = new Set(
