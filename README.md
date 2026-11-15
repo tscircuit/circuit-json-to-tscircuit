@@ -10,6 +10,12 @@ like DSN, KiCad, and Eagle.
 This converter is primarily useful for creating tscircuit components from
 Circuit JSON, e.g. for a `kicad_mod` -> circuit json -> tscircuit conversion.
 
+For imported boards with copper definitions, `copperPourMode: "recompute"`
+preserves per-pour clearances, ordered net/object exceptions, board-edge spacing,
+and authored static copper. Render the generated TSX through core to compute
+fresh copper; conversion alone does not run the pour solver. Omitting this option
+retains the existing zero-margin geometry-preservation behavior.
+
 ## Usage
 
 ```bash
