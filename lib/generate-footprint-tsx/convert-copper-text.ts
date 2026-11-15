@@ -1,18 +1,27 @@
 import { su } from "@tscircuit/soup-util"
 import type { FootprintElementConverter } from "./converter-types"
 import { escapeJsxText } from "./footprint-tsx-attribute-formatters/escape-jsx-text"
+import { normalizeFootprintReferenceText } from "./footprint-tsx-attribute-formatters/normalize-footprint-reference-text"
 
-export const convertCopperText: FootprintElementConverter = (circuitJson) => {
+export const convertCopperText: FootprintElementConverter = (
+  circuitJson,
+  context,
+) => {
   const copperTexts = su(circuitJson).pcb_copper_text.list()
   const elementStrings: string[] = []
 
   for (const copperText of copperTexts) {
     const anchorPosition = copperText.anchor_position ?? { x: 0, y: 0 }
+    const resolvedText = normalizeFootprintReferenceText(
+      copperText.text,
+      circuitJson,
+      context,
+    )
     const attrs = [
       `pcbX={${anchorPosition.x}}`,
       `pcbY={${anchorPosition.y}}`,
       `anchorAlignment="${copperText.anchor_alignment ?? "center"}"`,
-      `text="${escapeJsxText(copperText.text)}"`,
+      `text="${escapeJsxText(resolvedText)}"`,
     ]
 
     if (copperText.font !== undefined) {

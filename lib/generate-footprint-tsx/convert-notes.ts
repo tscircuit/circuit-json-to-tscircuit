@@ -1,9 +1,13 @@
 import { su } from "@tscircuit/soup-util"
 import type { FootprintElementConverter } from "./converter-types"
 import { escapeJsxText } from "./footprint-tsx-attribute-formatters/escape-jsx-text"
+import { normalizeFootprintReferenceText } from "./footprint-tsx-attribute-formatters/normalize-footprint-reference-text"
 import { convertPcbNoteDimension } from "./convert-pcb-note-dimension"
 
-export const convertNotes: FootprintElementConverter = (circuitJson) => {
+export const convertNotes: FootprintElementConverter = (
+  circuitJson,
+  context,
+) => {
   const noteTexts = su(circuitJson).pcb_note_text.list()
   const noteRects = su(circuitJson).pcb_note_rect.list()
   const notePaths = su(circuitJson).pcb_note_path.list()
@@ -14,9 +18,14 @@ export const convertNotes: FootprintElementConverter = (circuitJson) => {
   for (const noteText of noteTexts) {
     const anchorPosition = noteText.anchor_position ?? { x: 0, y: 0 }
     const colorAttr = noteText.color ? ` color="${noteText.color}"` : ""
+    const resolvedText = normalizeFootprintReferenceText(
+      noteText.text,
+      circuitJson,
+      context,
+    )
 
     elementStrings.push(
-      `<pcbnotetext pcbX={${anchorPosition.x}} pcbY={${anchorPosition.y}} anchorAlignment="${noteText.anchor_alignment ?? "center"}" font="${noteText.font ?? "tscircuit2024"}" fontSize={${noteText.font_size ?? 0}} text="${escapeJsxText(noteText.text)}"${colorAttr} />`,
+      `<pcbnotetext pcbX={${anchorPosition.x}} pcbY={${anchorPosition.y}} anchorAlignment="${noteText.anchor_alignment ?? "center"}" font="${noteText.font ?? "tscircuit2024"}" fontSize={${noteText.font_size ?? 0}} text="${escapeJsxText(resolvedText)}"${colorAttr} />`,
     )
   }
 

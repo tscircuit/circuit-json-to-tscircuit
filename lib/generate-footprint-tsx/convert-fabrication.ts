@@ -2,9 +2,13 @@ import { su } from "@tscircuit/soup-util"
 import { formatPcbRotationAttr } from "./footprint-tsx-attribute-formatters/format-pcb-rotation-attr"
 import type { FootprintElementConverter } from "./converter-types"
 import { escapeJsxText } from "./footprint-tsx-attribute-formatters/escape-jsx-text"
+import { normalizeFootprintReferenceText } from "./footprint-tsx-attribute-formatters/normalize-footprint-reference-text"
 import { convertFabricationNoteDimension } from "./convert-fabrication-note-dimension"
 
-export const convertFabrication: FootprintElementConverter = (circuitJson) => {
+export const convertFabrication: FootprintElementConverter = (
+  circuitJson,
+  context,
+) => {
   const fabricationNotePaths = su(circuitJson).pcb_fabrication_note_path.list()
   const fabricationNoteTexts = su(circuitJson).pcb_fabrication_note_text.list()
   const fabricationNoteRects = su(circuitJson).pcb_fabrication_note_rect.list()
@@ -30,11 +34,16 @@ export const convertFabrication: FootprintElementConverter = (circuitJson) => {
 
   for (const fabText of fabricationNoteTexts) {
     const anchorPosition = fabText.anchor_position ?? { x: 0, y: 0 }
+    const resolvedText = normalizeFootprintReferenceText(
+      fabText.text,
+      circuitJson,
+      context,
+    )
     const attrs = [
       `pcbX={${anchorPosition.x}}`,
       `pcbY={${anchorPosition.y}}`,
       `anchorAlignment="${fabText.anchor_alignment ?? "center"}"`,
-      `text="${escapeJsxText(fabText.text)}"`,
+      `text="${escapeJsxText(resolvedText)}"`,
     ]
 
     if (fabText.font !== undefined) {
