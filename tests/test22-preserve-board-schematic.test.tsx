@@ -2,7 +2,7 @@ import { expect, test } from "bun:test"
 import type { CircuitJson, SchematicLine } from "circuit-json"
 import { convertCircuitJsonToSchematicSvg } from "circuit-to-svg"
 import { convertCircuitJsonToTscircuit } from "lib"
-import { runTscircuitCode } from "tscircuit"
+import { runTscircuitCode } from "tests/fixtures/run-tscircuit-code"
 
 const circuitJson: CircuitJson = [
   {

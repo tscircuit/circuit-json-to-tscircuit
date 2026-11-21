@@ -4,7 +4,7 @@ import { gunzipSync } from "node:zlib"
 import type { CircuitJson } from "circuit-json"
 import { convertCircuitJsonToSchematicSvg } from "circuit-to-svg"
 import { convertCircuitJsonToTscircuit } from "lib"
-import { runTscircuitCode } from "tscircuit"
+import { runTscircuitCode } from "tests/fixtures/run-tscircuit-code"
 import { applyToPoint, compose, scale, translate } from "transformation-matrix"
 
 // Compare stroke/segment-length ratios so SVG auto-fit does not affect the test.
