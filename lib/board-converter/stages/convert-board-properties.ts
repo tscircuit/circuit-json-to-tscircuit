@@ -1,10 +1,23 @@
+import { LEGACY_SCHEMATIC_LENGTH_UNIT } from "circuit-json"
 import { mmStr } from "@tscircuit/mm"
 import type { BoardConverterStage } from "../BoardConverterContext"
 
 export const convertBoardProperties: BoardConverterStage = ({
+  circuitJson,
   pcbBoard,
   boardProps,
 }) => {
+  if (
+    circuitJson.some(
+      (element) =>
+        element.type === "source_group" &&
+        element.default_schematic_length_unit,
+    )
+  ) {
+    boardProps.push(
+      `defaultSchematicLengthUnit="${LEGACY_SCHEMATIC_LENGTH_UNIT}"`,
+    )
+  }
   if (pcbBoard.center.x !== 0) {
     boardProps.push(`pcbX={${pcbBoard.center.x}}`)
   }

@@ -1,3 +1,7 @@
+import {
+  convertSchematicLengthUnits,
+  LEGACY_SCHEMATIC_LENGTH_UNIT,
+} from "circuit-json"
 import type { CircuitJson } from "circuit-json"
 import {
   getBoardUsingTemplate,
@@ -14,6 +18,10 @@ export const convertCircuitJsonToTscircuit = (
   opts: Omit<ComponentTemplateParams, "circuitJson"> &
     Pick<BoardTemplateParams, "copperPourMode">,
 ) => {
+  circuitJson = convertSchematicLengthUnits(
+    circuitJson,
+    LEGACY_SCHEMATIC_LENGTH_UNIT,
+  )
   // A pcb_board is only present when the circuit json was authored as a
   // board, so it routes to the board converter. A footprint/component import
   // (the chip use case) has no pcb_board and falls through to the chip path.

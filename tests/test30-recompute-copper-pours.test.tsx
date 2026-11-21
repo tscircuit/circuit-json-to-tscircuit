@@ -2,7 +2,7 @@ import { expect, test } from "bun:test"
 import { convertCircuitJsonToPcbSvg } from "circuit-to-svg"
 import { convertCircuitJsonToTscircuit } from "lib"
 import { stackSvgsHorizontally } from "stack-svgs"
-import { runTscircuitCode } from "tscircuit"
+import { runTscircuitCode } from "tests/fixtures/run-tscircuit-code"
 import {
   createCopperPourClearanceCircuit,
   hasCopperPourAt,

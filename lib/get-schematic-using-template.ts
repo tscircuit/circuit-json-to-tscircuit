@@ -1,3 +1,4 @@
+import { LEGACY_SCHEMATIC_LENGTH_UNIT } from "circuit-json"
 import type { AnyCircuitElement } from "circuit-json"
 import { generateBoardSchematicSheetTsx } from "./generate-board-schematic-sheet-tsx"
 import { generateBoardSchematicElements } from "./generate-board-schematic-tsx"
@@ -17,9 +18,15 @@ export const getSchematicUsingTemplate = ({
     schematicElements,
   })
 
+  const unitProp = circuitJson.some(
+    (element) =>
+      element.type === "source_group" && element.default_schematic_length_unit,
+  )
+    ? ` defaultSchematicLengthUnit="${LEGACY_SCHEMATIC_LENGTH_UNIT}"`
+    : ""
   return `
 ${componentName ? `export const ${componentName} =` : "export default"} () => (
-  <board routingDisabled>
+  <board routingDisabled${unitProp}>
     ${schematicSheetTsx}
   </board>
 )

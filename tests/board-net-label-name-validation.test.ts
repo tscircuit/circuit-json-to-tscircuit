@@ -1,6 +1,6 @@
 import { expect, test } from "bun:test"
 import { convertNetLabels } from "../lib/generate-board-schematic-tsx/convert-net-labels"
-import { runTscircuitCode } from "tscircuit"
+import { runTscircuitCode } from "tests/fixtures/run-tscircuit-code"
 
 function convertPlainNetLabel(text: string) {
   return convertNetLabels([

@@ -1,5 +1,5 @@
 import type { CircuitJson, Point } from "circuit-json"
-import { runTscircuitCode } from "tscircuit"
+import { runTscircuitCode } from "tests/fixtures/run-tscircuit-code"
 
 export async function createCopperPourClearanceCircuit(): Promise<CircuitJson> {
   const rendered = await runTscircuitCode(`
