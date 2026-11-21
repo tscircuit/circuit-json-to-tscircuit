@@ -22,6 +22,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@jscad/modeling": "^2.13.0",
+    "@tscircuit/footprinter": "0.0.451",
     "@tscircuit/math-utils": "0.0.36",
     "@tscircuit/mm": "^0.0.8",
     "@tscircuit/soup-util": "^0.0.41",
@@ -31,24 +32,27 @@
     "bun-match-svg": "^0.0.15",
     "circuit-json": "https://pkg.pr.new/tscircuit/circuit-json/circuit-json@419411e",
     "circuit-json-to-connectivity-map": "0.0.33",
-    "circuit-json-to-gltf": "0.0.151",
+    "circuit-json-to-gltf": "0.0.164",
     "circuit-to-svg": "https://pkg.pr.new/tscircuit/circuit-to-svg@738ef1d",
     "color": "^5.0.3",
     "commander": "^13.1.0",
     "fast-png": "8.0.0",
     "jscad-electronics": "0.0.210",
     "jscad-planner": "^0.0.19",
-    "prettier": "^3.9.5",
     "poppygl": "0.0.34",
-    "schematic-symbols": "0.0.249",
+    "prettier": "^3.9.5",
+    "schematic-symbols": "0.0.251",
     "shiki": "^4.3.1",
     "stack-svgs": "^0.0.1",
     "transformation-matrix": "3.1.0",
-    "tscircuit": "0.0.3043-libonly",
+    "tscircuit": "0.0.3274-libonly",
     "tsup": "^8.3.5",
     "zod": "^3.25.76"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "overrides": {
+    "circuit-json": "https://pkg.pr.new/tscircuit/circuit-json/circuit-json@419411e"
   }
 }
