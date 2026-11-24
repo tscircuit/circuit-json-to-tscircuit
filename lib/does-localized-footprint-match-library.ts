@@ -654,8 +654,9 @@ export const doesLocalizedFootprintMatchLibrary = ({
       if (!approxEqualAngle(locTextRot, expectedLocalTextRot)) {
         return false
       }
-      const isPlaceholder = ft.text.startsWith("{") && ft.text.endsWith("}")
-      if (!isPlaceholder && !approxEqual(lt.font_size, ft.font_size)) {
+      const expectedFontSize =
+        lt.type === "pcb_silkscreen_text" ? ft.font_size + 0.2 : ft.font_size
+      if (!approxEqual(lt.font_size, expectedFontSize)) {
         return false
       }
       return (

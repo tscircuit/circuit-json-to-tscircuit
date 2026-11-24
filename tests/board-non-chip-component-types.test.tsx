@@ -321,6 +321,7 @@ test("preserves scaled schematic symbols, custom source port names, and rotated 
         <resistor name="R_SCALED" resistance="2.2k" footprint="0402" pcbX={-10} schX={-8} />
         <resistor name="R_PORT" resistance="3.3k" footprint="0402" pcbX={0} schX={0} />
         <resistor name="R_TXTROT" resistance="4.7k" footprint="0402" pcbX={10} schX={8} />
+        <resistor name="R_TXTSIZE" resistance="5.1k" footprint="0402" pcbX={0} pcbY={4} schX={0} schY={4} />
       </board>
     )
   `)) as CircuitJson
@@ -346,6 +347,15 @@ test("preserves scaled schematic symbols, custom source port names, and rotated 
     (el): el is Extract<CircuitJson[number], { type: "pcb_component" }> =>
       el.type === "pcb_component" &&
       el.source_component_id === rTxtRotSrc?.source_component_id,
+  )
+  const rTxtSizeSrc = baseCircuitJson.find(
+    (el): el is Extract<CircuitJson[number], { type: "source_component" }> =>
+      el.type === "source_component" && el.name === "R_TXTSIZE",
+  )
+  const rTxtSizePcb = baseCircuitJson.find(
+    (el): el is Extract<CircuitJson[number], { type: "pcb_component" }> =>
+      el.type === "pcb_component" &&
+      el.source_component_id === rTxtSizeSrc?.source_component_id,
   )
 
   const customized: CircuitJson = baseCircuitJson.map((element) => {
@@ -393,6 +403,15 @@ test("preserves scaled schematic symbols, custom source port names, and rotated 
         ccw_rotation: 90,
       }
     }
+    if (
+      element.type === "pcb_silkscreen_text" &&
+      element.pcb_component_id === rTxtSizePcb?.pcb_component_id
+    ) {
+      return {
+        ...element,
+        font_size: 1.25,
+      }
+    }
     return element
   })
 
@@ -408,6 +427,10 @@ test("preserves scaled schematic symbols, custom source port names, and rotated 
     '<resistor name="R_TXTROT" resistance="4.7kΩ" footprint={<footprint>',
   )
   expect(generatedTsx).toContain('pcbRotation="90deg"')
+  expect(generatedTsx).toContain(
+    '<resistor name="R_TXTSIZE" resistance="5.1kΩ" footprint={<footprint>',
+  )
+  expect(generatedTsx).toContain("fontSize={1.25}")
 
   const rendered = (await runTscircuitCode(generatedTsx)) as CircuitJson
   expect(rendered.filter((el) => el.type.includes("error"))).toEqual([])
