@@ -138,9 +138,8 @@ const isSchematicSymbolCompatible = ({
       includeSchematicPinNumbers: true,
     })
     if (
-      transform.a <= 0 ||
-      transform.d <= 0 ||
-      Math.abs(transform.a - transform.d) > 0.05 ||
+      Math.abs(transform.a - 1) > 0.05 ||
+      Math.abs(transform.d - 1) > 0.05 ||
       Math.abs(transform.b) > 0.05 ||
       Math.abs(transform.c) > 0.05
     ) {

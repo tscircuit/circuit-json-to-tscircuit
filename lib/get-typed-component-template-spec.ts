@@ -197,6 +197,13 @@ export const areSourcePortsCompatibleWithSpec = ({
     ) {
       return false
     }
+    if (
+      requireExactPinCount &&
+      port.name !== `pin${pinNumber}` &&
+      port.name !== String(pinNumber)
+    ) {
+      return false
+    }
     seenPins.add(pinNumber)
   }
   if (requireExactPinCount) {

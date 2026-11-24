@@ -75,12 +75,8 @@ export function createComponentPreservingBoardConversionContext({
         (pcbPortIdsWithSafeOriginalHints.has(element.pcb_port_id) &&
           (pcbPortCountBySourcePortId.get(element.source_port_id) ?? 0) === 1))
     const resolvedPortHint =
-      canUseSourcePinSelector && sourcePort
-        ? /^[A-Za-z_][A-Za-z0-9_]*$/u.test(sourcePort.name)
-          ? sourcePort.name
-          : sourcePort.pin_number !== undefined
-            ? `pin${sourcePort.pin_number}`
-            : portHint
+      canUseSourcePinSelector && sourcePort?.pin_number !== undefined
+        ? `pin${sourcePort.pin_number}`
         : portHint
     const selector: PcbPortSelector = `.${componentName ?? context.pcbChipName} > .${resolvedPortHint}`
     const selectors =

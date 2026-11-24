@@ -313,3 +313,102 @@ test("preserves precise numeric ratings, unreproducible schematic labels, and si
     resistance: 1234.5,
   })
 }, 20_000)
+
+test("preserves scaled schematic symbols, custom source port names, and rotated silkscreen text", async () => {
+  const baseCircuitJson = (await runTscircuitCode(`
+    export default () => (
+      <board width="32mm" height="14mm" routingDisabled>
+        <resistor name="R_SCALED" resistance="2.2k" footprint="0402" pcbX={-10} schX={-8} />
+        <resistor name="R_PORT" resistance="3.3k" footprint="0402" pcbX={0} schX={0} />
+        <resistor name="R_TXTROT" resistance="4.7k" footprint="0402" pcbX={10} schX={8} />
+      </board>
+    )
+  `)) as CircuitJson
+
+  const rScaledSrc = baseCircuitJson.find(
+    (el): el is Extract<CircuitJson[number], { type: "source_component" }> =>
+      el.type === "source_component" && el.name === "R_SCALED",
+  )
+  const rScaledSch = baseCircuitJson.find(
+    (el): el is Extract<CircuitJson[number], { type: "schematic_component" }> =>
+      el.type === "schematic_component" &&
+      el.source_component_id === rScaledSrc?.source_component_id,
+  )
+  const rPortSrc = baseCircuitJson.find(
+    (el): el is Extract<CircuitJson[number], { type: "source_component" }> =>
+      el.type === "source_component" && el.name === "R_PORT",
+  )
+  const rTxtRotSrc = baseCircuitJson.find(
+    (el): el is Extract<CircuitJson[number], { type: "source_component" }> =>
+      el.type === "source_component" && el.name === "R_TXTROT",
+  )
+  const rTxtRotPcb = baseCircuitJson.find(
+    (el): el is Extract<CircuitJson[number], { type: "pcb_component" }> =>
+      el.type === "pcb_component" &&
+      el.source_component_id === rTxtRotSrc?.source_component_id,
+  )
+
+  const customized: CircuitJson = baseCircuitJson.map((element) => {
+    if (
+      element.type === "schematic_component" &&
+      element.schematic_component_id === rScaledSch?.schematic_component_id
+    ) {
+      return {
+        ...element,
+        size: {
+          width: element.size.width * 2,
+          height: element.size.height * 2,
+        },
+      }
+    }
+    if (
+      element.type === "schematic_port" &&
+      element.schematic_component_id === rScaledSch?.schematic_component_id &&
+      rScaledSch
+    ) {
+      return {
+        ...element,
+        center: {
+          x: rScaledSch.center.x + (element.center.x - rScaledSch.center.x) * 2,
+          y: rScaledSch.center.y + (element.center.y - rScaledSch.center.y) * 2,
+        },
+      }
+    }
+    if (
+      element.type === "source_port" &&
+      element.source_component_id === rPortSrc?.source_component_id &&
+      element.pin_number === 1
+    ) {
+      return {
+        ...element,
+        name: "CUSTOM_TERMINAL_A",
+      }
+    }
+    if (
+      element.type === "pcb_silkscreen_text" &&
+      element.pcb_component_id === rTxtRotPcb?.pcb_component_id
+    ) {
+      return {
+        ...element,
+        ccw_rotation: 90,
+      }
+    }
+    return element
+  })
+
+  const generatedTsx = convertCircuitJsonToTscircuit(customized, {
+    componentName: "InvariantsBoard",
+  })
+
+  expect(generatedTsx).not.toContain('<resistor name="R_SCALED"')
+  expect(generatedTsx).toContain('<chip name="R_SCALED"')
+  expect(generatedTsx).not.toContain('<resistor name="R_PORT"')
+  expect(generatedTsx).toContain("CUSTOM_TERMINAL_A")
+  expect(generatedTsx).toContain(
+    '<resistor name="R_TXTROT" resistance="4.7kΩ" footprint={<footprint>',
+  )
+  expect(generatedTsx).toContain('pcbRotation="90deg"')
+
+  const rendered = (await runTscircuitCode(generatedTsx)) as CircuitJson
+  expect(rendered.filter((el) => el.type.includes("error"))).toEqual([])
+}, 20_000)

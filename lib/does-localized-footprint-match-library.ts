@@ -1,6 +1,7 @@
 import { fp } from "@tscircuit/footprinter"
 import type {
   AnyCircuitElement,
+  PcbComponent,
   PcbCourtyardCircle,
   PcbCourtyardOutline,
   PcbCourtyardRect,
@@ -26,6 +27,13 @@ const approxEqual = (
   b: number | undefined,
   tol = COORD_TOLERANCE_MM,
 ): boolean => Math.abs((a ?? 0) - (b ?? 0)) <= tol
+
+const normalizeDegrees = (deg: number): number => ((deg % 360) + 360) % 360
+
+const approxEqualAngle = (a: number, b: number): boolean => {
+  const diff = Math.abs(normalizeDegrees(a) - normalizeDegrees(b))
+  return Math.min(diff, 360 - diff) <= ANGLE_TOLERANCE_DEG
+}
 
 const extractNumericHints = (hints: string[] | undefined): string[] =>
   [...new Set((hints ?? []).filter((hint) => /^\d+$/u.test(hint)))].sort()
@@ -601,6 +609,12 @@ export const doesLocalizedFootprintMatchLibrary = ({
     }
   }
 
+  const pcbComponent = localizedElements.find(
+    (el): el is PcbComponent => el.type === "pcb_component",
+  )
+  const componentRotation = pcbComponent?.rotation ?? 0
+  const isBottomComponent = pcbComponent?.layer === "bottom"
+
   const compareTexts = <T extends PcbSilkscreenText | PcbFabricationNoteText>(
     locTexts: T[],
     fpTexts: T[],
@@ -621,6 +635,23 @@ export const doesLocalizedFootprintMatchLibrary = ({
         return false
       }
       if (Boolean(lRec.is_knockout) !== Boolean(fRec.is_knockout)) {
+        return false
+      }
+      const fpTextRot =
+        typeof fRec.ccw_rotation === "number" ? fRec.ccw_rotation : 0
+      const locTextRot =
+        typeof lRec.ccw_rotation === "number" ? lRec.ccw_rotation : 0
+      const expectedLocalTextRot =
+        lt.type === "pcb_silkscreen_text"
+          ? pcbComponent
+            ? isBottomComponent
+              ? -(fpTextRot + componentRotation)
+              : fpTextRot + componentRotation
+            : fpTextRot
+          : isBottomComponent
+            ? -fpTextRot
+            : fpTextRot
+      if (!approxEqualAngle(locTextRot, expectedLocalTextRot)) {
         return false
       }
       const isPlaceholder = ft.text.startsWith("{") && ft.text.endsWith("}")
