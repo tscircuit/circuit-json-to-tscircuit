@@ -319,6 +319,8 @@ test("preserves scaled schematic symbols, custom source port names, and rotated 
     export default () => (
       <board width="32mm" height="14mm" routingDisabled>
         <resistor name="R_SCALED" resistance="2.2k" footprint="0402" pcbX={-10} schX={-8} />
+        <resistor name="R_OFFSET" resistance="6.8k" footprint="0402" pcbX={-5} pcbY={4} schX={-4} schY={4} />
+        <resistor name="R_STRPREC" resistance="1234.5" footprint="0402" pcbX={5} pcbY={4} schX={4} schY={4} />
         <resistor name="R_PORT" resistance="3.3k" footprint="0402" pcbX={0} schX={0} />
         <resistor name="R_TXTROT" resistance="4.7k" footprint="0402" pcbX={10} schX={8} />
         <resistor name="R_TXTSIZE" resistance="5.1k" footprint="0402" pcbX={0} pcbY={4} schX={0} schY={4} />
@@ -334,6 +336,19 @@ test("preserves scaled schematic symbols, custom source port names, and rotated 
     (el): el is Extract<CircuitJson[number], { type: "schematic_component" }> =>
       el.type === "schematic_component" &&
       el.source_component_id === rScaledSrc?.source_component_id,
+  )
+  const rOffsetSrc = baseCircuitJson.find(
+    (el): el is Extract<CircuitJson[number], { type: "source_component" }> =>
+      el.type === "source_component" && el.name === "R_OFFSET",
+  )
+  const rOffsetSch = baseCircuitJson.find(
+    (el): el is Extract<CircuitJson[number], { type: "schematic_component" }> =>
+      el.type === "schematic_component" &&
+      el.source_component_id === rOffsetSrc?.source_component_id,
+  )
+  const rStrPrecSrc = baseCircuitJson.find(
+    (el): el is Extract<CircuitJson[number], { type: "source_component" }> =>
+      el.type === "source_component" && el.name === "R_STRPREC",
   )
   const rPortSrc = baseCircuitJson.find(
     (el): el is Extract<CircuitJson[number], { type: "source_component" }> =>
@@ -385,6 +400,38 @@ test("preserves scaled schematic symbols, custom source port names, and rotated 
       }
     }
     if (
+      element.type === "schematic_port" &&
+      element.schematic_component_id === rOffsetSch?.schematic_component_id
+    ) {
+      return {
+        ...element,
+        center: {
+          x: element.center.x + 1.5,
+          y: element.center.y,
+        },
+      }
+    }
+    if (
+      element.type === "source_component" &&
+      element.source_component_id === rStrPrecSrc?.source_component_id &&
+      element.ftype === "simple_resistor"
+    ) {
+      return {
+        ...element,
+        resistance: "1234.5" as unknown as number,
+        display_resistance: "1.2kΩ",
+      }
+    }
+    if (
+      element.type === "schematic_component" &&
+      element.source_component_id === rStrPrecSrc?.source_component_id
+    ) {
+      return {
+        ...element,
+        symbol_display_value: "1.2kΩ",
+      }
+    }
+    if (
       element.type === "source_port" &&
       element.source_component_id === rPortSrc?.source_component_id &&
       element.pin_number === 1
@@ -421,6 +468,11 @@ test("preserves scaled schematic symbols, custom source port names, and rotated 
 
   expect(generatedTsx).not.toContain('<resistor name="R_SCALED"')
   expect(generatedTsx).toContain('<chip name="R_SCALED"')
+  expect(generatedTsx).not.toContain('<resistor name="R_OFFSET"')
+  expect(generatedTsx).toContain('<chip name="R_OFFSET"')
+  expect(generatedTsx).toContain(
+    '<resistor name="R_STRPREC" resistance="1234.5" footprint="0402"',
+  )
   expect(generatedTsx).not.toContain('<resistor name="R_PORT"')
   expect(generatedTsx).toContain("CUSTOM_TERMINAL_A")
   expect(generatedTsx).toContain(

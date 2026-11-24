@@ -8,6 +8,7 @@ import type {
   SourceTrace,
 } from "circuit-json"
 import { symbols } from "schematic-symbols"
+import { applyToPoint } from "transformation-matrix"
 import { doesLocalizedFootprintMatchLibrary } from "../does-localized-footprint-match-library"
 import { getCadModelGroups } from "../generate-board-cad-models-tsx/get-cad-model-groups"
 import { getSymbolToSchematicTransform } from "../generate-board-schematic-tsx/get-symbol-to-schematic-transform"
@@ -137,11 +138,14 @@ const isSchematicSymbolCompatible = ({
       sourcePorts,
       includeSchematicPinNumbers: true,
     })
+    const mappedCenter = applyToPoint(transform, symbol.center)
     if (
       Math.abs(transform.a - 1) > 0.05 ||
       Math.abs(transform.d - 1) > 0.05 ||
       Math.abs(transform.b) > 0.05 ||
-      Math.abs(transform.c) > 0.05
+      Math.abs(transform.c) > 0.05 ||
+      Math.abs(mappedCenter.x - schematicComponent.center.x) > 0.01 ||
+      Math.abs(mappedCenter.y - schematicComponent.center.y) > 0.01
     ) {
       return false
     }

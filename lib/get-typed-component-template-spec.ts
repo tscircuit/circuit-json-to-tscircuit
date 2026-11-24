@@ -90,10 +90,17 @@ const formatRatingProp = ({
 }): string => {
   const trimmedDisplay = displayValue?.trim()
   if (trimmedDisplay && trimmedDisplay.length > 0) {
-    if (
-      typeof rawValue !== "number" ||
-      isLosslessDisplayForNumericValue(rawValue, trimmedDisplay)
-    ) {
+    const canonicalNumber =
+      typeof rawValue === "number"
+        ? rawValue
+        : parseDisplayNumericValue(rawValue)
+    const isSafeDisplay =
+      canonicalNumber !== undefined
+        ? isLosslessDisplayForNumericValue(canonicalNumber, trimmedDisplay)
+        : typeof rawValue === "string" &&
+          normalizeUnitString(trimmedDisplay) ===
+            normalizeUnitString(rawValue.trim())
+    if (isSafeDisplay) {
       return `${propName}=${formatJsxStringAttribute(normalizeUnitString(trimmedDisplay))}`
     }
   }
