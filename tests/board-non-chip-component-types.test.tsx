@@ -217,3 +217,99 @@ test("retains custom localized footprint and non-default schematic symbols inste
     ),
   ).toBe(true)
 }, 20_000)
+
+test("preserves precise numeric ratings, unreproducible schematic labels, and silkscreen styling overrides", async () => {
+  const baseCircuitJson = (await runTscircuitCode(`
+    export default () => (
+      <board width="28mm" height="12mm" routingDisabled>
+        <resistor name="R_PRECISE" resistance={1234.5} footprint="0402" pcbX={-8} schX={-6} />
+        <resistor name="R_SILK" resistance="10k" footprint="0402" pcbX={0} schX={0} />
+        <diode name="D_TVS" footprint="sod123" pcbX={8} schX={6} />
+      </board>
+    )
+  `)) as CircuitJson
+
+  const rPreciseSrc = baseCircuitJson.find(
+    (el): el is Extract<CircuitJson[number], { type: "source_component" }> =>
+      el.type === "source_component" && el.name === "R_PRECISE",
+  )
+  const rSilkSrc = baseCircuitJson.find(
+    (el): el is Extract<CircuitJson[number], { type: "source_component" }> =>
+      el.type === "source_component" && el.name === "R_SILK",
+  )
+  const rSilkPcb = baseCircuitJson.find(
+    (el): el is Extract<CircuitJson[number], { type: "pcb_component" }> =>
+      el.type === "pcb_component" &&
+      el.source_component_id === rSilkSrc?.source_component_id,
+  )
+  const dTvsSrc = baseCircuitJson.find(
+    (el): el is Extract<CircuitJson[number], { type: "source_component" }> =>
+      el.type === "source_component" && el.name === "D_TVS",
+  )
+
+  const customized: CircuitJson = baseCircuitJson.map((element) => {
+    if (
+      element.type === "source_component" &&
+      element.source_component_id === rPreciseSrc?.source_component_id &&
+      element.ftype === "simple_resistor"
+    ) {
+      return {
+        ...element,
+        resistance: 1234.5,
+        display_resistance: "1.2kΩ",
+      }
+    }
+    if (
+      element.type === "schematic_component" &&
+      element.source_component_id === rPreciseSrc?.source_component_id
+    ) {
+      return {
+        ...element,
+        symbol_display_value: "1.2kΩ",
+      }
+    }
+    if (
+      element.type === "pcb_silkscreen_path" &&
+      element.pcb_component_id === rSilkPcb?.pcb_component_id
+    ) {
+      return {
+        ...element,
+        stroke_width: 0.35,
+      }
+    }
+    if (
+      element.type === "schematic_component" &&
+      element.source_component_id === dTvsSrc?.source_component_id
+    ) {
+      return {
+        ...element,
+        symbol_display_value: "D1 / TVS-5V",
+      }
+    }
+    return element
+  })
+
+  const generatedTsx = convertCircuitJsonToTscircuit(customized, {
+    componentName: "PrecisionBoard",
+  })
+
+  expect(generatedTsx).toContain(
+    '<resistor name="R_PRECISE" resistance={1234.5} footprint="0402"',
+  )
+  expect(generatedTsx).toContain(
+    '<resistor name="R_SILK" resistance="10kΩ" footprint={<footprint>',
+  )
+  expect(generatedTsx).not.toContain('<diode name="D_TVS"')
+  expect(generatedTsx).toContain('text={"D1 / TVS-5V"}')
+
+  const rendered = (await runTscircuitCode(generatedTsx)) as CircuitJson
+  expect(rendered.filter((el) => el.type.includes("error"))).toEqual([])
+  const renderedPrecise = rendered.find(
+    (el): el is Extract<CircuitJson[number], { type: "source_component" }> =>
+      el.type === "source_component" && el.name === "R_PRECISE",
+  )
+  expect(renderedPrecise).toMatchObject({
+    ftype: "simple_resistor",
+    resistance: 1234.5,
+  })
+}, 20_000)

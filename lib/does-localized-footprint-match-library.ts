@@ -77,10 +77,12 @@ const compareRoutes = (
   locRoutes: Array<{
     route: Array<{ x: number; y: number }>
     stroke_width: number
+    layer?: string
   }>,
   fpRoutes: Array<{
     route: Array<{ x: number; y: number }>
     stroke_width: number
+    layer?: string
   }>,
 ): boolean => {
   if (locRoutes.length !== fpRoutes.length) return false
@@ -88,6 +90,7 @@ const compareRoutes = (
   for (const locItem of locRoutes) {
     const matchIdx = fpRoutes.findIndex((fpItem, idx) => {
       if (used.has(idx)) return false
+      if ((locItem.layer ?? "top") !== (fpItem.layer ?? "top")) return false
       if (!approxEqual(locItem.stroke_width, fpItem.stroke_width)) return false
       return (
         comparePointList(locItem.route, fpItem.route) ||
@@ -214,6 +217,20 @@ const comparePlatedHoles = (
   return sortedLoc.every((locHole, idx) => {
     const fpHole = sortedFp[idx]!
     if (locHole.shape !== fpHole.shape) return false
+    if (
+      (locHole.is_covered_with_solder_mask ?? false) !==
+      (fpHole.is_covered_with_solder_mask ?? false)
+    ) {
+      return false
+    }
+    if (
+      !sameStringArray(
+        [...(locHole.layers ?? [])].sort(),
+        [...(fpHole.layers ?? [])].sort(),
+      )
+    ) {
+      return false
+    }
     if (
       !approxEqual(locHole.x, fpHole.x) ||
       !approxEqual(locHole.y, fpHole.y)
@@ -421,13 +438,46 @@ export const doesLocalizedFootprintMatchLibrary = ({
   ): boolean => {
     const sLoc = sortByCenter(locRects)
     const sFp = sortByCenter(fpRects)
-    return sLoc.every(
-      (lr, idx) =>
-        approxEqual(lr.center.x, sFp[idx]!.center.x) &&
-        approxEqual(lr.center.y, sFp[idx]!.center.y) &&
-        approxEqual(lr.width, sFp[idx]!.width) &&
-        approxEqual(lr.height, sFp[idx]!.height),
-    )
+    return sLoc.every((lr, idx) => {
+      const fr = sFp[idx]!
+      const lRec = lr as unknown as Record<string, unknown>
+      const fRec = fr as unknown as Record<string, unknown>
+      if ((lr.layer ?? "top") !== (fr.layer ?? "top")) return false
+      if (Boolean(lRec.is_filled) !== Boolean(fRec.is_filled)) return false
+      if ((lRec.has_stroke ?? true) !== (fRec.has_stroke ?? true)) return false
+      if (Boolean(lRec.is_stroke_dashed) !== Boolean(fRec.is_stroke_dashed)) {
+        return false
+      }
+      const lStroke =
+        typeof lRec.stroke_width === "number" ? lRec.stroke_width : undefined
+      const fStroke =
+        typeof fRec.stroke_width === "number" ? fRec.stroke_width : undefined
+      if (
+        (lStroke !== undefined || fStroke !== undefined) &&
+        !approxEqual(lStroke, fStroke)
+      ) {
+        return false
+      }
+      const lRadius =
+        typeof lRec.corner_radius === "number" ? lRec.corner_radius : undefined
+      const fRadius =
+        typeof fRec.corner_radius === "number" ? fRec.corner_radius : undefined
+      if (
+        (lRadius !== undefined || fRadius !== undefined) &&
+        !approxEqual(lRadius, fRadius)
+      ) {
+        return false
+      }
+      const lRot = typeof lRec.ccw_rotation === "number" ? lRec.ccw_rotation : 0
+      const fRot = typeof fRec.ccw_rotation === "number" ? fRec.ccw_rotation : 0
+      return (
+        approxEqual(lr.center.x, fr.center.x) &&
+        approxEqual(lr.center.y, fr.center.y) &&
+        approxEqual(lr.width, fr.width) &&
+        approxEqual(lr.height, fr.height) &&
+        approxEqual(lRot, fRot, ANGLE_TOLERANCE_DEG)
+      )
+    })
   }
 
   if (
@@ -453,12 +503,28 @@ export const doesLocalizedFootprintMatchLibrary = ({
   ): boolean => {
     const sLoc = sortByCenter(locCircles)
     const sFp = sortByCenter(fpCircles)
-    return sLoc.every(
-      (lc, idx) =>
-        approxEqual(lc.center.x, sFp[idx]!.center.x) &&
-        approxEqual(lc.center.y, sFp[idx]!.center.y) &&
-        approxEqual(lc.radius, sFp[idx]!.radius),
-    )
+    return sLoc.every((lc, idx) => {
+      const fc = sFp[idx]!
+      const lRec = lc as unknown as Record<string, unknown>
+      const fRec = fc as unknown as Record<string, unknown>
+      if ((lc.layer ?? "top") !== (fc.layer ?? "top")) return false
+      if (Boolean(lRec.is_filled) !== Boolean(fRec.is_filled)) return false
+      const lStroke =
+        typeof lRec.stroke_width === "number" ? lRec.stroke_width : undefined
+      const fStroke =
+        typeof fRec.stroke_width === "number" ? fRec.stroke_width : undefined
+      if (
+        (lStroke !== undefined || fStroke !== undefined) &&
+        !approxEqual(lStroke, fStroke)
+      ) {
+        return false
+      }
+      return (
+        approxEqual(lc.center.x, fc.center.x) &&
+        approxEqual(lc.center.y, fc.center.y) &&
+        approxEqual(lc.radius, fc.radius)
+      )
+    })
   }
 
   if (
@@ -477,21 +543,29 @@ export const doesLocalizedFootprintMatchLibrary = ({
   const compareLines = (
     locLines: PcbSilkscreenLine[],
     fpLines: PcbSilkscreenLine[],
-  ): boolean =>
-    locLines.every((ll) =>
-      fpLines.some(
-        (fl) =>
-          approxEqual(ll.stroke_width, fl.stroke_width) &&
-          ((approxEqual(ll.x1, fl.x1) &&
+  ): boolean => {
+    const used = new Set<number>()
+    for (const ll of locLines) {
+      const matchIdx = fpLines.findIndex((fl, idx) => {
+        if (used.has(idx)) return false
+        if ((ll.layer ?? "top") !== (fl.layer ?? "top")) return false
+        if (!approxEqual(ll.stroke_width, fl.stroke_width)) return false
+        return (
+          (approxEqual(ll.x1, fl.x1) &&
             approxEqual(ll.y1, fl.y1) &&
             approxEqual(ll.x2, fl.x2) &&
             approxEqual(ll.y2, fl.y2)) ||
-            (approxEqual(ll.x1, fl.x2) &&
-              approxEqual(ll.y1, fl.y2) &&
-              approxEqual(ll.x2, fl.x1) &&
-              approxEqual(ll.y2, fl.y1))),
-      ),
-    )
+          (approxEqual(ll.x1, fl.x2) &&
+            approxEqual(ll.y1, fl.y2) &&
+            approxEqual(ll.x2, fl.x1) &&
+            approxEqual(ll.y2, fl.y1))
+        )
+      })
+      if (matchIdx === -1) return false
+      used.add(matchIdx)
+    }
+    return true
+  }
 
   if (
     !compareLines(
@@ -511,8 +585,10 @@ export const doesLocalizedFootprintMatchLibrary = ({
     "pcb_courtyard_outline",
   ) as PcbCourtyardOutline[]
   if (
-    !locOutlines.every((lo, idx) =>
-      comparePointList(lo.outline, fpOutlines[idx]!.outline),
+    !locOutlines.every(
+      (lo, idx) =>
+        (lo.layer ?? "top") === (fpOutlines[idx]!.layer ?? "top") &&
+        comparePointList(lo.outline, fpOutlines[idx]!.outline),
     )
   ) {
     return false
@@ -531,17 +607,37 @@ export const doesLocalizedFootprintMatchLibrary = ({
   ): boolean => {
     const sLoc = sortByAnchor(locTexts)
     const sFp = sortByAnchor(fpTexts)
-    return sLoc.every(
-      (lt, idx) =>
-        approxEqual(lt.anchor_position.x, sFp[idx]!.anchor_position.x) &&
-        approxEqual(lt.anchor_position.y, sFp[idx]!.anchor_position.y) &&
+    return sLoc.every((lt, idx) => {
+      const ft = sFp[idx]!
+      const lRec = lt as unknown as Record<string, unknown>
+      const fRec = ft as unknown as Record<string, unknown>
+      if ((lt.layer ?? "top") !== (ft.layer ?? "top")) return false
+      if (
+        (lt.anchor_alignment ?? "center") !== (ft.anchor_alignment ?? "center")
+      ) {
+        return false
+      }
+      if ((lt.font ?? "tscircuit2024") !== (ft.font ?? "tscircuit2024")) {
+        return false
+      }
+      if (Boolean(lRec.is_knockout) !== Boolean(fRec.is_knockout)) {
+        return false
+      }
+      const isPlaceholder = ft.text.startsWith("{") && ft.text.endsWith("}")
+      if (!isPlaceholder && !approxEqual(lt.font_size, ft.font_size)) {
+        return false
+      }
+      return (
+        approxEqual(lt.anchor_position.x, ft.anchor_position.x) &&
+        approxEqual(lt.anchor_position.y, ft.anchor_position.y) &&
         matchesTemplateText({
           locText: lt.text,
-          fpText: sFp[idx]!.text,
+          fpText: ft.text,
           componentName,
           sourcePortNameByPin,
-        }),
-    )
+        })
+      )
+    })
   }
 
   return (

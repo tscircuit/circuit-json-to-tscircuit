@@ -40,6 +40,45 @@ const hasValidRatingValue = (
   return false
 }
 
+const SI_MULTIPLIERS: Record<string, number> = {
+  p: 1e-12,
+  n: 1e-9,
+  u: 1e-6,
+  "\u00b5": 1e-6,
+  "\u03bc": 1e-6,
+  m: 1e-3,
+  "": 1,
+  k: 1e3,
+  K: 1e3,
+  M: 1e6,
+  G: 1e9,
+}
+
+const parseDisplayNumericValue = (display: string): number | undefined => {
+  const match =
+    /^([+-]?(?:\d+\.?\d*|\.\d+)(?:e[+-]?\d+)?)\s*([pnu\u00b5\u03bcmkKMG])?(?:[\u03a9\u2126]|ohm|F|H|A|V|Hz|s)?$/iu.exec(
+      display.trim(),
+    )
+  if (!match) return undefined
+  const base = Number(match[1])
+  if (!Number.isFinite(base)) return undefined
+  const prefix = match[2] ?? ""
+  // Keep case-sensitivity between 'm' (1e-3) and 'M' (1e6)
+  const multiplier = SI_MULTIPLIERS[prefix]
+  if (multiplier === undefined) return undefined
+  return base * multiplier
+}
+
+const isLosslessDisplayForNumericValue = (
+  rawValue: number,
+  displayValue: string,
+): boolean => {
+  const parsed = parseDisplayNumericValue(displayValue)
+  if (parsed === undefined) return false
+  const tol = Math.max(1e-18, Math.abs(rawValue) * 1e-9)
+  return Math.abs(parsed - rawValue) <= tol
+}
+
 const formatRatingProp = ({
   propName,
   rawValue,
@@ -51,7 +90,12 @@ const formatRatingProp = ({
 }): string => {
   const trimmedDisplay = displayValue?.trim()
   if (trimmedDisplay && trimmedDisplay.length > 0) {
-    return `${propName}=${formatJsxStringAttribute(normalizeUnitString(trimmedDisplay))}`
+    if (
+      typeof rawValue !== "number" ||
+      isLosslessDisplayForNumericValue(rawValue, trimmedDisplay)
+    ) {
+      return `${propName}=${formatJsxStringAttribute(normalizeUnitString(trimmedDisplay))}`
+    }
   }
   if (typeof rawValue === "string") {
     return `${propName}=${formatJsxStringAttribute(normalizeUnitString(rawValue.trim()))}`
@@ -203,10 +247,9 @@ export const getTypedComponentTemplateSpec = ({
         footprintString,
         rawFootprinterString,
         validPinCounts: [2],
-        expectedDisplayValues: [
-          sourceComponent.display_resistance,
-          sourceComponent.display_value,
-        ].filter((v): v is string => Boolean(v)),
+        expectedDisplayValues: [sourceComponent.display_resistance].filter(
+          (v): v is string => Boolean(v),
+        ),
         expectedSymbolBaseNames: ["boxresistor"],
         symbolOrientationStyle: "compass",
       }
@@ -251,10 +294,9 @@ export const getTypedComponentTemplateSpec = ({
         footprintString,
         rawFootprinterString,
         validPinCounts: [2],
-        expectedDisplayValues: [
-          sourceComponent.display_capacitance,
-          sourceComponent.display_value,
-        ].filter((v): v is string => Boolean(v)),
+        expectedDisplayValues: [sourceComponent.display_capacitance].filter(
+          (v): v is string => Boolean(v),
+        ),
         expectedSymbolBaseNames: [
           isPolarized ? "capacitor_polarized" : "capacitor",
         ],
@@ -294,7 +336,6 @@ export const getTypedComponentTemplateSpec = ({
           typeof sourceComponent.inductance === "string"
             ? sourceComponent.inductance
             : undefined,
-          sourceComponent.display_value,
         ].filter((v): v is string => Boolean(v)),
         expectedSymbolBaseNames: ["inductor"],
         symbolOrientationStyle: "compass",
@@ -310,9 +351,7 @@ export const getTypedComponentTemplateSpec = ({
         footprintString,
         rawFootprinterString,
         validPinCounts: [2],
-        expectedDisplayValues: [sourceComponent.display_value].filter(
-          (v): v is string => Boolean(v),
-        ),
+        expectedDisplayValues: [],
         expectedSymbolBaseNames: ["diode"],
         symbolOrientationStyle: "compass",
       }
@@ -336,10 +375,9 @@ export const getTypedComponentTemplateSpec = ({
         footprintString,
         rawFootprinterString,
         validPinCounts: [2],
-        expectedDisplayValues: [
-          sourceComponent.color,
-          sourceComponent.display_value,
-        ].filter((v): v is string => Boolean(v)),
+        expectedDisplayValues: [sourceComponent.color].filter(
+          (v): v is string => Boolean(v),
+        ),
         expectedSymbolBaseNames: ["led"],
         symbolOrientationStyle: "compass",
       }
@@ -378,10 +416,9 @@ export const getTypedComponentTemplateSpec = ({
         footprintString,
         rawFootprinterString,
         validPinCounts: [2, 3],
-        expectedDisplayValues: [
-          sourceComponent.display_max_resistance,
-          sourceComponent.display_value,
-        ].filter((v): v is string => Boolean(v)),
+        expectedDisplayValues: [sourceComponent.display_max_resistance].filter(
+          (v): v is string => Boolean(v),
+        ),
         expectedSymbolBaseNames: [
           isThreePinSymbol ? "potentiometer3" : "potentiometer2",
         ],
@@ -414,6 +451,11 @@ export const getTypedComponentTemplateSpec = ({
         )
       }
       const isFourPin = sourceComponent.pin_variant === "four_pin"
+      const combinedCrystalDisplay =
+        sourceComponent.display_frequency &&
+        sourceComponent.display_load_capacitance
+          ? `${sourceComponent.display_frequency} / ${sourceComponent.display_load_capacitance}`
+          : undefined
       return {
         tagName: "crystal",
         propsTypeName: "CrystalProps",
@@ -423,8 +465,8 @@ export const getTypedComponentTemplateSpec = ({
         rawFootprinterString,
         validPinCounts: isFourPin ? [4] : [2],
         expectedDisplayValues: [
+          combinedCrystalDisplay,
           sourceComponent.display_frequency,
-          sourceComponent.display_value,
         ].filter((v): v is string => Boolean(v)),
         expectedSymbolBaseNames: [isFourPin ? "crystal_4pin" : "crystal"],
         symbolOrientationStyle: "compass",
@@ -461,9 +503,7 @@ export const getTypedComponentTemplateSpec = ({
         footprintString,
         rawFootprinterString,
         validPinCounts: [2, 3, 4],
-        expectedDisplayValues: [sourceComponent.display_value].filter(
-          (v): v is string => Boolean(v),
-        ),
+        expectedDisplayValues: [],
         expectedSymbolBaseNames: ["crystal"],
         symbolOrientationStyle: "compass",
       }
@@ -489,9 +529,7 @@ export const getTypedComponentTemplateSpec = ({
         footprintString,
         rawFootprinterString,
         validPinCounts: [3],
-        expectedDisplayValues: [sourceComponent.display_value].filter(
-          (v): v is string => Boolean(v),
-        ),
+        expectedDisplayValues: [],
         expectedSymbolBaseNames,
         symbolOrientationStyle: "compass",
       }
@@ -524,9 +562,7 @@ export const getTypedComponentTemplateSpec = ({
         footprintString,
         rawFootprinterString,
         validPinCounts: [3],
-        expectedDisplayValues: [sourceComponent.display_value].filter(
-          (v): v is string => Boolean(v),
-        ),
+        expectedDisplayValues: [],
         expectedSymbolBaseNames,
         symbolOrientationStyle: "axis",
       }
@@ -556,9 +592,7 @@ export const getTypedComponentTemplateSpec = ({
         rawFootprinterString,
         hasIntrinsicFootprintProps: Boolean(pinHeaderPitch),
         validPinCounts: [sourceComponent.pin_count],
-        expectedDisplayValues: [sourceComponent.display_value].filter(
-          (v): v is string => Boolean(v),
-        ),
+        expectedDisplayValues: [],
         expectedSymbolBaseNames: [],
         symbolOrientationStyle: "compass",
       }
@@ -574,9 +608,7 @@ export const getTypedComponentTemplateSpec = ({
         footprintString,
         rawFootprinterString,
         validPinCounts: [2, 4],
-        expectedDisplayValues: [sourceComponent.display_value].filter(
-          (v): v is string => Boolean(v),
-        ),
+        expectedDisplayValues: [],
         expectedSymbolBaseNames: ["push_button_normally_open_momentary"],
         symbolOrientationStyle: "compass",
       }
@@ -600,6 +632,11 @@ export const getTypedComponentTemplateSpec = ({
           }),
         )
       }
+      const fuseCurrentStr = `${sourceComponent.current_rating_amps}A`
+      const fuseDisplayValues =
+        sourceComponent.voltage_rating_volts !== undefined
+          ? [`${fuseCurrentStr} / ${sourceComponent.voltage_rating_volts}V`]
+          : [fuseCurrentStr, `${fuseCurrentStr} / V`]
       return {
         tagName: "fuse",
         propsTypeName: "FuseProps",
@@ -608,9 +645,7 @@ export const getTypedComponentTemplateSpec = ({
         footprintString,
         rawFootprinterString,
         validPinCounts: [2],
-        expectedDisplayValues: [sourceComponent.display_value].filter(
-          (v): v is string => Boolean(v),
-        ),
+        expectedDisplayValues: fuseDisplayValues,
         expectedSymbolBaseNames: ["fuse"],
         symbolOrientationStyle: "axis",
       }
@@ -635,9 +670,7 @@ export const getTypedComponentTemplateSpec = ({
         footprintString,
         rawFootprinterString,
         validPinCounts: [2],
-        expectedDisplayValues: [sourceComponent.display_value].filter(
-          (v): v is string => Boolean(v),
-        ),
+        expectedDisplayValues: [],
         expectedSymbolBaseNames: [
           isBatterySymbol ? "battery" : "power_factor_meter",
         ],
@@ -689,6 +722,15 @@ export const getTypedComponentTemplateSpec = ({
               sourceComponent.wave_shape === "sinewave"
             ? ["ac_voltmeter"]
             : []
+      const vsDisplayValues: string[] = []
+      if (sourceComponent.voltage !== undefined) {
+        vsDisplayValues.push(`${sourceComponent.voltage}V`)
+        if (sourceComponent.frequency !== undefined) {
+          vsDisplayValues.push(
+            `${sourceComponent.voltage}V ${sourceComponent.frequency}Hz`,
+          )
+        }
+      }
       return {
         tagName: "voltagesource",
         propsTypeName: "VoltageSourceProps",
@@ -697,9 +739,7 @@ export const getTypedComponentTemplateSpec = ({
         footprintString,
         rawFootprinterString,
         validPinCounts: [2],
-        expectedDisplayValues: [sourceComponent.display_value].filter(
-          (v): v is string => Boolean(v),
-        ),
+        expectedDisplayValues: vsDisplayValues,
         expectedSymbolBaseNames,
         symbolOrientationStyle: "compass",
       }
@@ -741,9 +781,7 @@ export const getTypedComponentTemplateSpec = ({
         rawFootprinterString,
         hasIntrinsicFootprintProps,
         validPinCounts: [1],
-        expectedDisplayValues: [sourceComponent.display_value].filter(
-          (v): v is string => Boolean(v),
-        ),
+        expectedDisplayValues: [],
         expectedSymbolBaseNames: ["testpoint"],
         symbolOrientationStyle: "compass",
       }

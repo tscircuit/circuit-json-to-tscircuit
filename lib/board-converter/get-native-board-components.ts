@@ -151,6 +151,12 @@ const isSchematicSymbolCompatible = ({
   return true
 }
 
+const normalizeDisplayLabel = (value: string): string =>
+  value
+    .trim()
+    .replace(/[\u00b5\u03bc]/gu, "u")
+    .replace(/\u2126/gu, "\u03a9")
+
 const isSymbolDisplayValueCompatible = ({
   schematicComponent,
   spec,
@@ -160,16 +166,13 @@ const isSymbolDisplayValueCompatible = ({
 }): boolean => {
   const symbolDisplayValue = schematicComponent.symbol_display_value?.trim()
   if (!symbolDisplayValue) return true
-  if (spec.expectedDisplayValues.length > 0) {
-    return spec.expectedDisplayValues.some((expected) => {
-      const trimmedExpected = expected.trim()
-      return (
-        symbolDisplayValue === trimmedExpected ||
-        symbolDisplayValue.startsWith(`${trimmedExpected} /`)
-      )
-    })
+  if (spec.expectedDisplayValues.length === 0) {
+    return false
   }
-  return /\d/u.test(symbolDisplayValue)
+  const normalizedActual = normalizeDisplayLabel(symbolDisplayValue)
+  return spec.expectedDisplayValues.some(
+    (expected) => normalizeDisplayLabel(expected) === normalizedActual,
+  )
 }
 
 export const getNativeBoardComponents = (
