@@ -55,7 +55,7 @@ test("preserves typed non-chip components, rotations, and custom footprints in b
     '<mosfet name="M1" channelType="n" mosfetMode="enhancement" footprint="sot23"',
   )
   expect(generatedTsx).toContain(
-    '<potentiometer name="RV1" maxResistance="10kΩ" footprint="pinrow3"',
+    '<potentiometer name="RV1" maxResistance="10kΩ" pinVariant="two_pin" footprint="pinrow3"',
   )
   expect(generatedTsx).toContain('<crystal name="Y1" frequency="16MHz"')
   expect(generatedTsx).toContain(
@@ -64,6 +64,7 @@ test("preserves typed non-chip components, rotations, and custom footprints in b
   expect(generatedTsx).toContain(
     '<testpoint name="TP1" footprintVariant="pad" padShape="circle" padDiameter="1.2mm"',
   )
+  expect(generatedTsx).not.toContain("<schematicline")
 
   const renderedCircuitJson = (await runTscircuitCode(
     generatedTsx,
@@ -116,4 +117,103 @@ test("preserves typed non-chip components, rotations, and custom footprints in b
   expect(rCustomPcb.layer).toBe("bottom")
   expect(rCustomPcb.rotation).toBe(90)
   expect(rCustomSch.symbol_name).toBe("boxresistor_up")
+}, 20_000)
+
+test("retains custom localized footprint and non-default schematic symbols instead of overwriting them", async () => {
+  const baseCircuitJson = (await runTscircuitCode(`
+    export default () => (
+      <board width="20mm" height="12mm" routingDisabled>
+        <resistor name="R_MOD" resistance="1k" footprint="0402" pcbX={-4} schX={-3} />
+        <diode name="D_SCHOTTKY" footprint="sod123" pcbX={4} schX={3} />
+      </board>
+    )
+  `)) as CircuitJson
+
+  const rModSource = baseCircuitJson.find(
+    (el): el is Extract<CircuitJson[number], { type: "source_component" }> =>
+      el.type === "source_component" && el.name === "R_MOD",
+  )
+  const rModPcb = baseCircuitJson.find(
+    (el): el is Extract<CircuitJson[number], { type: "pcb_component" }> =>
+      el.type === "pcb_component" &&
+      el.source_component_id === rModSource?.source_component_id,
+  )
+  const dSchottkySource = baseCircuitJson.find(
+    (el): el is Extract<CircuitJson[number], { type: "source_component" }> =>
+      el.type === "source_component" && el.name === "D_SCHOTTKY",
+  )
+
+  const modifiedCircuitJson: CircuitJson = baseCircuitJson.map((element) => {
+    if (
+      element.type === "pcb_smtpad" &&
+      element.pcb_component_id === rModPcb?.pcb_component_id &&
+      element.shape === "rect"
+    ) {
+      return {
+        ...element,
+        width: 0.72,
+        height: 0.9,
+      }
+    }
+    if (
+      element.type === "schematic_component" &&
+      element.source_component_id === dSchottkySource?.source_component_id
+    ) {
+      return {
+        ...element,
+        symbol_name: "schottky_diode_right",
+      }
+    }
+    return element
+  })
+
+  const generatedTsx = convertCircuitJsonToTscircuit(modifiedCircuitJson, {
+    componentName: "ModifiedBoard",
+  })
+
+  expect(generatedTsx).toContain(
+    '<resistor name="R_MOD" resistance="1kΩ" footprint={<footprint>',
+  )
+  expect(generatedTsx).not.toContain(
+    'name="R_MOD" resistance="1kΩ" footprint="0402"',
+  )
+  expect(generatedTsx).not.toContain('<diode name="D_SCHOTTKY"')
+  expect(generatedTsx).toContain('<chip name="D_SCHOTTKY"')
+
+  const rendered = (await runTscircuitCode(generatedTsx)) as CircuitJson
+  expect(rendered.filter((el) => el.type.includes("error"))).toEqual([])
+
+  const renderedRModSource = rendered.find(
+    (el): el is Extract<CircuitJson[number], { type: "source_component" }> =>
+      el.type === "source_component" && el.name === "R_MOD",
+  )
+  const renderedRModPcb = rendered.find(
+    (el): el is Extract<CircuitJson[number], { type: "pcb_component" }> =>
+      el.type === "pcb_component" &&
+      el.source_component_id === renderedRModSource?.source_component_id,
+  )
+  const renderedRModPads = rendered.filter(
+    (
+      el,
+    ): el is Extract<
+      CircuitJson[number],
+      { type: "pcb_smtpad"; shape: "rect" }
+    > =>
+      el.type === "pcb_smtpad" &&
+      el.pcb_component_id === renderedRModPcb?.pcb_component_id &&
+      el.shape === "rect",
+  )
+  expect(renderedRModPads).toHaveLength(2)
+  for (const pad of renderedRModPads) {
+    expect(pad.width).toBeCloseTo(0.72, 4)
+    expect(pad.height).toBeCloseTo(0.9, 4)
+  }
+  expect(
+    rendered.filter((el) => el.type === "schematic_path").length,
+  ).toBeGreaterThan(0)
+  expect(
+    rendered.some(
+      (el) => el.type === "schematic_text" && el.text === "D_SCHOTTKY",
+    ),
+  ).toBe(true)
 }, 20_000)

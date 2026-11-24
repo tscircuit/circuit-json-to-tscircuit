@@ -3,10 +3,14 @@ import type {
   CadComponent,
   PcbComponent,
   SchematicComponent,
+  SchematicPort,
   SourcePort,
   SourceTrace,
 } from "circuit-json"
+import { symbols } from "schematic-symbols"
+import { doesLocalizedFootprintMatchLibrary } from "../does-localized-footprint-match-library"
 import { getCadModelGroups } from "../generate-board-cad-models-tsx/get-cad-model-groups"
+import { getSymbolToSchematicTransform } from "../generate-board-schematic-tsx/get-symbol-to-schematic-transform"
 import { generateFootprintTsx } from "../generate-footprint-tsx"
 import {
   areSourcePortsCompatibleWithSpec,
@@ -39,7 +43,6 @@ export interface NativeBoardComponentsResult {
   >
   reconstructedSchematicComponentIds: Set<SchematicComponentId>
   reconstructedSchematicSourceTraceIds: Set<SourceTraceId>
-  canAutorouteAllPcbTraces: boolean
 }
 
 const getSchematicRotationFromComponent = (
@@ -83,6 +86,70 @@ const hasOwnedSchematicPrimitives = ({
       "schematic_component_id" in element &&
       element.schematic_component_id === schematicComponentId,
   )
+
+const isSchematicSymbolCompatible = ({
+  schematicComponent,
+  schematicPorts,
+  sourcePorts,
+  spec,
+}: {
+  schematicComponent: SchematicComponent
+  schematicPorts: SchematicPort[]
+  sourcePorts: SourcePort[]
+  spec: TypedComponentTemplateSpec
+}): boolean => {
+  const symbolName = schematicComponent.symbol_name
+  if (!symbolName || spec.expectedSymbolBaseNames.length === 0) {
+    return false
+  }
+  if (
+    "rotation" in schematicComponent &&
+    typeof schematicComponent.rotation === "number" &&
+    schematicComponent.rotation !== 0
+  ) {
+    return false
+  }
+  if ("is_mirrored" in schematicComponent && schematicComponent.is_mirrored) {
+    return false
+  }
+
+  const validSuffixes =
+    spec.symbolOrientationStyle === "axis"
+      ? ["horz", "vert"]
+      : ["right", "up", "left", "down"]
+  const matchesExpectedSymbolName = spec.expectedSymbolBaseNames.some((base) =>
+    validSuffixes.some((suffix) => symbolName === `${base}_${suffix}`),
+  )
+  if (!matchesExpectedSymbolName) {
+    return false
+  }
+
+  const symbol = symbols[symbolName as keyof typeof symbols]
+  if (!symbol) {
+    return false
+  }
+
+  if (schematicPorts.length > 0) {
+    const transform = getSymbolToSchematicTransform({
+      symbol,
+      schematicComponent,
+      schematicPorts,
+      sourcePorts,
+      includeSchematicPinNumbers: true,
+    })
+    if (
+      transform.a <= 0 ||
+      transform.d <= 0 ||
+      Math.abs(transform.a - transform.d) > 0.05 ||
+      Math.abs(transform.b) > 0.05 ||
+      Math.abs(transform.c) > 0.05
+    ) {
+      return false
+    }
+  }
+
+  return true
+}
 
 const isSymbolDisplayValueCompatible = ({
   schematicComponent,
@@ -169,15 +236,32 @@ export const getNativeBoardComponents = (
     })
     if (!spec) continue
 
-    if (!isSymbolDisplayValueCompatible({ schematicComponent, spec })) {
-      continue
-    }
-
     const sourcePorts = circuitJson.filter(
       (element): element is SourcePort =>
         element.type === "source_port" &&
         element.source_component_id === sourceComponent.source_component_id,
     )
+    const schematicPorts = circuitJson.filter(
+      (element): element is SchematicPort =>
+        element.type === "schematic_port" &&
+        element.schematic_component_id ===
+          schematicComponent.schematic_component_id,
+    )
+    if (
+      !isSchematicSymbolCompatible({
+        schematicComponent,
+        schematicPorts,
+        sourcePorts,
+        spec,
+      })
+    ) {
+      continue
+    }
+
+    if (!isSymbolDisplayValueCompatible({ schematicComponent, spec })) {
+      continue
+    }
+
     if (
       !areSourcePortsCompatibleWithSpec({
         sourcePorts,
@@ -194,21 +278,25 @@ export const getNativeBoardComponents = (
       continue
     }
 
+    const localizedElements = localizePcbComponentElements({
+      circuitJson,
+      pcbComponent,
+    })
     const hasCustomCadModel = cadModelPcbComponentIds.has(
       pcbComponent.pcb_component_id,
     )
     const usesIntrinsicFootprint = Boolean(
       (spec.footprintString || spec.hasIntrinsicFootprintProps) &&
-        !hasCustomCadModel,
+        !hasCustomCadModel &&
+        doesLocalizedFootprintMatchLibrary({
+          localizedElements,
+          rawFootprinterString: spec.rawFootprinterString,
+          componentName: sourceComponent.name,
+          sourcePorts,
+        }),
     )
-    if (!usesIntrinsicFootprint) {
-      const localizedElements = localizePcbComponentElements({
-        circuitJson,
-        pcbComponent,
-      })
-      if (!generateFootprintTsx(localizedElements)) {
-        continue
-      }
+    if (!usesIntrinsicFootprint && !generateFootprintTsx(localizedElements)) {
+      continue
     }
 
     const nativeComponent: NativeBoardComponent = {
@@ -236,14 +324,24 @@ export const getNativeBoardComponents = (
     }
   }
 
-  const sourceTracesById = new Map<SourceTraceId, SourceTrace>()
-  const reconstructedSchematicSourceTraceIds = new Set<SourceTraceId>()
-  const autoroutableNativeSourceTraceIds = new Set<SourceTraceId>()
+  const schematicPortIdsBySourcePortId = new Map<string, string[]>()
+  for (const element of circuitJson) {
+    if (
+      element.type === "schematic_port" &&
+      element.source_port_id &&
+      element.schematic_component_id &&
+      reconstructedSchematicComponentIds.has(element.schematic_component_id)
+    ) {
+      const existing =
+        schematicPortIdsBySourcePortId.get(element.source_port_id) ?? []
+      existing.push(element.schematic_port_id)
+      schematicPortIdsBySourcePortId.set(element.source_port_id, existing)
+    }
+  }
 
+  const reconstructedSchematicSourceTraceIds = new Set<SourceTraceId>()
   for (const element of circuitJson) {
     if (element.type !== "source_trace") continue
-    sourceTracesById.set(element.source_trace_id, element)
-
     if (
       element.connected_source_port_ids.length >= 2 &&
       element.connected_source_net_ids.length === 0 &&
@@ -252,38 +350,22 @@ export const getNativeBoardComponents = (
       )
     ) {
       reconstructedSchematicSourceTraceIds.add(element.source_trace_id)
-      if (
-        element.connected_source_port_ids.every(
-          (portId) =>
-            nativePcbComponentBySourcePortId.get(portId)
-              ?.usesIntrinsicFootprint === true,
-        )
-      ) {
-        autoroutableNativeSourceTraceIds.add(element.source_trace_id)
+      const schPortIds = element.connected_source_port_ids.flatMap(
+        (portId) => schematicPortIdsBySourcePortId.get(portId) ?? [],
+      )
+      for (const portA of schPortIds) {
+        for (const portB of schPortIds) {
+          if (portA !== portB) {
+            reconstructedSchematicSourceTraceIds.add(`${portA}-${portB}`)
+          }
+        }
       }
     }
   }
-
-  const pcbTraces = circuitJson.filter(
-    (element) => element.type === "pcb_trace",
-  )
-  const hasViasOrPours = circuitJson.some(
-    (element) =>
-      element.type === "pcb_via" || element.type === "pcb_copper_pour",
-  )
-  const canAutorouteAllPcbTraces =
-    pcbTraces.length > 0 &&
-    !hasViasOrPours &&
-    pcbTraces.every(
-      (trace) =>
-        trace.source_trace_id !== undefined &&
-        autoroutableNativeSourceTraceIds.has(trace.source_trace_id),
-    )
 
   return {
     nativeBoardComponentByPcbComponentId,
     reconstructedSchematicComponentIds,
     reconstructedSchematicSourceTraceIds,
-    canAutorouteAllPcbTraces,
   }
 }

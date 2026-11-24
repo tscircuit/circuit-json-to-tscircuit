@@ -30,12 +30,22 @@ export function createComponentPreservingBoardConversionContext({
   const context = createBoardConversionContext({ circuitJson, pcbChipName })
   const pcbComponentsById = new Map<PcbComponentId, PcbComponent>()
   const sourcePortById = new Map<SourcePortId, SourcePort>()
+  const pcbPortCountBySourcePortId = new Map<SourcePortId, number>()
+  const pcbPortIdsWithSafeOriginalHints = getPcbPortIdsWithSafeOriginalHints({
+    circuitJson,
+    pcbComponentRuntimeNameByPcbComponentId,
+  })
 
   for (const element of circuitJson) {
     if (element.type === "pcb_component") {
       pcbComponentsById.set(element.pcb_component_id, element)
     } else if (element.type === "source_port") {
       sourcePortById.set(element.source_port_id, element)
+    } else if (element.type === "pcb_port") {
+      pcbPortCountBySourcePortId.set(
+        element.source_port_id,
+        (pcbPortCountBySourcePortId.get(element.source_port_id) ?? 0) + 1,
+      )
     }
   }
   const pcbPortSelectorsBySourcePortId = new Map<
@@ -59,8 +69,13 @@ export function createComponentPreservingBoardConversionContext({
       ? nativeBoardComponentByPcbComponentId?.get(pcbComponent.pcb_component_id)
       : undefined
     const sourcePort = sourcePortById.get(element.source_port_id)
+    const canUseSourcePinSelector =
+      Boolean(nativeComponent && sourcePort) &&
+      (nativeComponent!.usesIntrinsicFootprint ||
+        (pcbPortIdsWithSafeOriginalHints.has(element.pcb_port_id) &&
+          (pcbPortCountBySourcePortId.get(element.source_port_id) ?? 0) === 1))
     const resolvedPortHint =
-      nativeComponent?.usesIntrinsicFootprint && sourcePort
+      canUseSourcePinSelector && sourcePort
         ? /^[A-Za-z_][A-Za-z0-9_]*$/u.test(sourcePort.name)
           ? sourcePort.name
           : sourcePort.pin_number !== undefined
@@ -102,10 +117,7 @@ export function createComponentPreservingBoardConversionContext({
 
   return {
     ...context,
-    pcbPortIdsWithSafeOriginalHints: getPcbPortIdsWithSafeOriginalHints({
-      circuitJson,
-      pcbComponentRuntimeNameByPcbComponentId,
-    }),
+    pcbPortIdsWithSafeOriginalHints,
     pcbPortSelectorsBySourcePortId,
     pcbPortSelectorsByRuntimeNetName,
   }

@@ -1,9 +1,12 @@
 import type {
   AnyCircuitElement,
   CadComponent,
+  PcbComponent,
   SchematicComponent,
   SourcePort,
 } from "circuit-json"
+import { localizePcbComponentElements } from "./board-converter/localize-pcb-component-elements"
+import { doesLocalizedFootprintMatchLibrary } from "./does-localized-footprint-match-library"
 import { formatJsxStringAttribute } from "./format-jsx-string-attribute"
 import { generateFootprintTsx } from "./generate-footprint-tsx"
 import { generateSymbolTsx } from "./generate-symbol-tsx"
@@ -62,14 +65,37 @@ export const getComponentUsingTemplate = ({
         element.type === "source_port" &&
         element.source_component_id === sourceComponent.source_component_id,
     )
+    const hasCompatibleSymbol =
+      Boolean(symbolTsx) ||
+      !schematicComponent?.symbol_name ||
+      spec?.expectedSymbolBaseNames.some((base) =>
+        schematicComponent.symbol_name?.startsWith(`${base}_`),
+      ) === true
     if (
       spec &&
+      hasCompatibleSymbol &&
       areSourcePortsCompatibleWithSpec({
         sourcePorts,
         spec,
         requireExactPinCount: false,
       })
     ) {
+      const pcbComponent = circuitJson.find(
+        (element): element is PcbComponent =>
+          element.type === "pcb_component" &&
+          element.source_component_id === sourceComponent.source_component_id,
+      )
+      const localizedElements = pcbComponent
+        ? localizePcbComponentElements({ circuitJson, pcbComponent })
+        : circuitJson
+      const canUseIntrinsicFootprint =
+        !footprintTsx ||
+        doesLocalizedFootprintMatchLibrary({
+          localizedElements,
+          rawFootprinterString: spec.rawFootprinterString,
+          componentName: sourceComponent.name,
+          sourcePorts,
+        })
       const nonEmptySourceSupplierParts = sourceComponent.supplier_part_numbers
         ? Object.fromEntries(
             Object.entries(sourceComponent.supplier_part_numbers).filter(
@@ -86,11 +112,13 @@ export const getComponentUsingTemplate = ({
           : undefined)
       const resolvedManufacturerPartNumber =
         manufacturerPartNumber ?? sourceComponent.manufacturer_part_number
-      const footprintAttr = spec.footprintString
-        ? `footprint=${formatJsxStringAttribute(spec.footprintString)}`
-        : footprintTsx && !spec.hasIntrinsicFootprintProps
-          ? `footprint={${footprintTsx}}`
-          : ""
+      const footprintAttr =
+        canUseIntrinsicFootprint && spec.footprintString
+          ? `footprint=${formatJsxStringAttribute(spec.footprintString)}`
+          : footprintTsx &&
+              !(canUseIntrinsicFootprint && spec.hasIntrinsicFootprintProps)
+            ? `footprint={${footprintTsx}}`
+            : ""
 
       return `
 import { type ${spec.propsTypeName} } from "${spec.propsImportSource}"

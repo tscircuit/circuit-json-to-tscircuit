@@ -7,7 +7,6 @@ type PcbComponentId = PcbComponent["pcb_component_id"]
 export const convertStandalonePcbPrimitives: BoardConverterStage = ({
   circuitJson,
   footprintConversionContext,
-  nativeBoardComponents,
   pcbBoard,
   boardChildren,
 }) => {
@@ -16,19 +15,12 @@ export const convertStandalonePcbPrimitives: BoardConverterStage = ({
       element.type === "pcb_component" ? [element.pcb_component_id] : [],
     ),
   )
-  const standaloneElements = circuitJson.filter((element) => {
-    if (
-      nativeBoardComponents.canAutorouteAllPcbTraces &&
-      element.type === "pcb_trace"
-    ) {
-      return false
-    }
-    return (
+  const standaloneElements = circuitJson.filter(
+    (element) =>
       !("pcb_component_id" in element) ||
       !element.pcb_component_id ||
-      !existingPcbComponentIds.has(element.pcb_component_id)
-    )
-  })
+      !existingPcbComponentIds.has(element.pcb_component_id),
+  )
   const footprintTsx = generateFootprintTsx(
     standaloneElements,
     footprintConversionContext,

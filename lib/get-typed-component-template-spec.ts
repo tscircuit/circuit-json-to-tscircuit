@@ -16,9 +16,12 @@ export interface TypedComponentTemplateSpec {
   propsImportSource: "@tscircuit/props"
   typeSpecificProps: string[]
   footprintString?: string
+  rawFootprinterString?: string
   hasIntrinsicFootprintProps?: boolean
   validPinCounts: number[]
   expectedDisplayValues: string[]
+  expectedSymbolBaseNames: string[]
+  symbolOrientationStyle: "compass" | "axis"
 }
 
 const normalizeUnitString = (value: string): string =>
@@ -64,6 +67,7 @@ const normalizeFootprinter = ({
   cadComponent?: CadComponent
 }): {
   footprintString?: string
+  rawFootprinterString?: string
   isPolarizedCapacitor?: boolean
   pinHeaderPitch?: string
 } => {
@@ -75,7 +79,10 @@ const normalizeFootprinter = ({
 
   if (sourceComponent.ftype === "simple_resistor") {
     const match = /^res(\d{4})$/u.exec(raw)
-    return { footprintString: match ? match[1] : raw }
+    return {
+      footprintString: match ? match[1] : raw,
+      rawFootprinterString: raw,
+    }
   }
 
   if (sourceComponent.ftype === "simple_capacitor") {
@@ -83,10 +90,11 @@ const normalizeFootprinter = ({
     if (match) {
       return {
         footprintString: match[1],
+        rawFootprinterString: raw,
         isPolarizedCapacitor: match[2] === "polarized",
       }
     }
-    return { footprintString: raw }
+    return { footprintString: raw, rawFootprinterString: raw }
   }
 
   if (
@@ -94,18 +102,24 @@ const normalizeFootprinter = ({
     sourceComponent.ftype === "simple_led"
   ) {
     const match = /^(?:diode|led)(\d{4})(?:_color\([^)]*\))?$/u.exec(raw)
-    return { footprintString: match ? match[1] : raw }
+    return {
+      footprintString: match ? match[1] : raw,
+      rawFootprinterString: raw,
+    }
   }
 
   if (sourceComponent.ftype === "simple_pin_header") {
     const match = /^pinrow(\d+)_p([\d.]+)(?:_nopinlabels)?$/u.exec(raw)
     if (match && Number(match[1]) === sourceComponent.pin_count) {
-      return { pinHeaderPitch: `${match[2]}mm` }
+      return {
+        rawFootprinterString: raw,
+        pinHeaderPitch: `${match[2]}mm`,
+      }
     }
-    return { footprintString: raw }
+    return { footprintString: raw, rawFootprinterString: raw }
   }
 
-  return { footprintString: raw }
+  return { footprintString: raw, rawFootprinterString: raw }
 }
 
 export const areSourcePortsCompatibleWithSpec = ({
@@ -158,11 +172,15 @@ export const getTypedComponentTemplateSpec = ({
   cadComponent?: CadComponent
   schematicComponent?: SchematicComponent
 }): TypedComponentTemplateSpec | undefined => {
-  const { footprintString, isPolarizedCapacitor, pinHeaderPitch } =
-    normalizeFootprinter({
-      sourceComponent,
-      cadComponent,
-    })
+  const {
+    footprintString,
+    rawFootprinterString,
+    isPolarizedCapacitor: footprinterPolarized,
+    pinHeaderPitch,
+  } = normalizeFootprinter({
+    sourceComponent,
+    cadComponent,
+  })
 
   switch (sourceComponent.ftype) {
     case "simple_resistor": {
@@ -183,11 +201,14 @@ export const getTypedComponentTemplateSpec = ({
           }),
         ],
         footprintString,
+        rawFootprinterString,
         validPinCounts: [2],
         expectedDisplayValues: [
           sourceComponent.display_resistance,
           sourceComponent.display_value,
         ].filter((v): v is string => Boolean(v)),
+        expectedSymbolBaseNames: ["boxresistor"],
+        symbolOrientationStyle: "compass",
       }
     }
 
@@ -195,6 +216,10 @@ export const getTypedComponentTemplateSpec = ({
       if (!hasValidRatingValue(sourceComponent.capacitance)) {
         return undefined
       }
+      const isPolarized = Boolean(
+        footprinterPolarized ||
+          schematicComponent?.symbol_name?.startsWith("capacitor_polarized_"),
+      )
       const props = [
         formatRatingProp({
           propName: "capacitance",
@@ -215,7 +240,7 @@ export const getTypedComponentTemplateSpec = ({
           `maxDecouplingTraceLength={${sourceComponent.max_decoupling_trace_length}}`,
         )
       }
-      if (isPolarizedCapacitor) {
+      if (isPolarized) {
         props.push("polarized")
       }
       return {
@@ -224,11 +249,16 @@ export const getTypedComponentTemplateSpec = ({
         propsImportSource: "@tscircuit/props",
         typeSpecificProps: props,
         footprintString,
+        rawFootprinterString,
         validPinCounts: [2],
         expectedDisplayValues: [
           sourceComponent.display_capacitance,
           sourceComponent.display_value,
         ].filter((v): v is string => Boolean(v)),
+        expectedSymbolBaseNames: [
+          isPolarized ? "capacitor_polarized" : "capacitor",
+        ],
+        symbolOrientationStyle: "compass",
       }
     }
 
@@ -257,6 +287,7 @@ export const getTypedComponentTemplateSpec = ({
         propsImportSource: "@tscircuit/props",
         typeSpecificProps: props,
         footprintString,
+        rawFootprinterString,
         validPinCounts: [2],
         expectedDisplayValues: [
           sourceComponent.display_inductance,
@@ -265,6 +296,8 @@ export const getTypedComponentTemplateSpec = ({
             : undefined,
           sourceComponent.display_value,
         ].filter((v): v is string => Boolean(v)),
+        expectedSymbolBaseNames: ["inductor"],
+        symbolOrientationStyle: "compass",
       }
     }
 
@@ -275,10 +308,13 @@ export const getTypedComponentTemplateSpec = ({
         propsImportSource: "@tscircuit/props",
         typeSpecificProps: [],
         footprintString,
+        rawFootprinterString,
         validPinCounts: [2],
         expectedDisplayValues: [sourceComponent.display_value].filter(
           (v): v is string => Boolean(v),
         ),
+        expectedSymbolBaseNames: ["diode"],
+        symbolOrientationStyle: "compass",
       }
     }
 
@@ -298,11 +334,14 @@ export const getTypedComponentTemplateSpec = ({
         propsImportSource: "@tscircuit/props",
         typeSpecificProps: props,
         footprintString,
+        rawFootprinterString,
         validPinCounts: [2],
         expectedDisplayValues: [
           sourceComponent.color,
           sourceComponent.display_value,
         ].filter((v): v is string => Boolean(v)),
+        expectedSymbolBaseNames: ["led"],
+        symbolOrientationStyle: "compass",
       }
     }
 
@@ -314,23 +353,39 @@ export const getTypedComponentTemplateSpec = ({
       ) {
         return undefined
       }
+      const props = [
+        formatRatingProp({
+          propName: "maxResistance",
+          rawValue: sourceComponent.max_resistance,
+          displayValue: sourceComponent.display_max_resistance,
+        }),
+      ]
+      const rawPinVariant = (sourceComponent as Record<string, unknown>)
+        .pin_variant
+      const isThreePinSymbol =
+        rawPinVariant === "three_pin" ||
+        schematicComponent?.symbol_name?.startsWith("potentiometer3_") === true
+      if (typeof rawPinVariant === "string" && rawPinVariant.length > 0) {
+        props.push(`pinVariant=${formatJsxStringAttribute(rawPinVariant)}`)
+      } else if (isThreePinSymbol) {
+        props.push('pinVariant="three_pin"')
+      }
       return {
         tagName: "potentiometer",
         propsTypeName: "PotentiometerProps",
         propsImportSource: "@tscircuit/props",
-        typeSpecificProps: [
-          formatRatingProp({
-            propName: "maxResistance",
-            rawValue: sourceComponent.max_resistance,
-            displayValue: sourceComponent.display_max_resistance,
-          }),
-        ],
+        typeSpecificProps: props,
         footprintString,
+        rawFootprinterString,
         validPinCounts: [2, 3],
         expectedDisplayValues: [
           sourceComponent.display_max_resistance,
           sourceComponent.display_value,
         ].filter((v): v is string => Boolean(v)),
+        expectedSymbolBaseNames: [
+          isThreePinSymbol ? "potentiometer3" : "potentiometer2",
+        ],
+        symbolOrientationStyle: "compass",
       }
     }
 
@@ -358,17 +413,21 @@ export const getTypedComponentTemplateSpec = ({
           `pinVariant=${formatJsxStringAttribute(sourceComponent.pin_variant)}`,
         )
       }
+      const isFourPin = sourceComponent.pin_variant === "four_pin"
       return {
         tagName: "crystal",
         propsTypeName: "CrystalProps",
         propsImportSource: "@tscircuit/props",
         typeSpecificProps: props,
         footprintString,
-        validPinCounts: sourceComponent.pin_variant === "four_pin" ? [4] : [2],
+        rawFootprinterString,
+        validPinCounts: isFourPin ? [4] : [2],
         expectedDisplayValues: [
           sourceComponent.display_frequency,
           sourceComponent.display_value,
         ].filter((v): v is string => Boolean(v)),
+        expectedSymbolBaseNames: [isFourPin ? "crystal_4pin" : "crystal"],
+        symbolOrientationStyle: "compass",
       }
     }
 
@@ -400,10 +459,13 @@ export const getTypedComponentTemplateSpec = ({
         propsImportSource: "@tscircuit/props",
         typeSpecificProps: props,
         footprintString,
+        rawFootprinterString,
         validPinCounts: [2, 3, 4],
         expectedDisplayValues: [sourceComponent.display_value].filter(
           (v): v is string => Boolean(v),
         ),
+        expectedSymbolBaseNames: ["crystal"],
+        symbolOrientationStyle: "compass",
       }
     }
 
@@ -411,6 +473,12 @@ export const getTypedComponentTemplateSpec = ({
       if (typeof sourceComponent.transistor_type !== "string") {
         return undefined
       }
+      const expectedSymbolBaseNames =
+        sourceComponent.transistor_type === "npn"
+          ? ["npn_bipolar_transistor"]
+          : sourceComponent.transistor_type === "pnp"
+            ? ["pnp_bipolar_transistor"]
+            : []
       return {
         tagName: "transistor",
         propsTypeName: "TransistorProps",
@@ -419,10 +487,13 @@ export const getTypedComponentTemplateSpec = ({
           `type=${formatJsxStringAttribute(sourceComponent.transistor_type)}`,
         ],
         footprintString,
+        rawFootprinterString,
         validPinCounts: [3],
         expectedDisplayValues: [sourceComponent.display_value].filter(
           (v): v is string => Boolean(v),
         ),
+        expectedSymbolBaseNames,
+        symbolOrientationStyle: "compass",
       }
     }
 
@@ -433,6 +504,15 @@ export const getTypedComponentTemplateSpec = ({
       ) {
         return undefined
       }
+      const expectedSymbolBaseNames =
+        (sourceComponent.channel_type === "n" ||
+          sourceComponent.channel_type === "p") &&
+        (sourceComponent.mosfet_mode === "enhancement" ||
+          sourceComponent.mosfet_mode === "depletion")
+          ? [
+              `${sourceComponent.channel_type}_channel_${sourceComponent.mosfet_mode === "enhancement" ? "e" : "d"}_mosfet_transistor`,
+            ]
+          : []
       return {
         tagName: "mosfet",
         propsTypeName: "MosfetProps",
@@ -442,10 +522,13 @@ export const getTypedComponentTemplateSpec = ({
           `mosfetMode=${formatJsxStringAttribute(sourceComponent.mosfet_mode)}`,
         ],
         footprintString,
+        rawFootprinterString,
         validPinCounts: [3],
         expectedDisplayValues: [sourceComponent.display_value].filter(
           (v): v is string => Boolean(v),
         ),
+        expectedSymbolBaseNames,
+        symbolOrientationStyle: "axis",
       }
     }
 
@@ -470,11 +553,14 @@ export const getTypedComponentTemplateSpec = ({
         propsImportSource: "@tscircuit/props",
         typeSpecificProps: props,
         footprintString,
+        rawFootprinterString,
         hasIntrinsicFootprintProps: Boolean(pinHeaderPitch),
         validPinCounts: [sourceComponent.pin_count],
         expectedDisplayValues: [sourceComponent.display_value].filter(
           (v): v is string => Boolean(v),
         ),
+        expectedSymbolBaseNames: [],
+        symbolOrientationStyle: "compass",
       }
     }
 
@@ -486,10 +572,13 @@ export const getTypedComponentTemplateSpec = ({
         propsImportSource: "@tscircuit/props",
         typeSpecificProps: [],
         footprintString,
+        rawFootprinterString,
         validPinCounts: [2, 4],
         expectedDisplayValues: [sourceComponent.display_value].filter(
           (v): v is string => Boolean(v),
         ),
+        expectedSymbolBaseNames: ["push_button_normally_open_momentary"],
+        symbolOrientationStyle: "compass",
       }
     }
 
@@ -517,10 +606,13 @@ export const getTypedComponentTemplateSpec = ({
         propsImportSource: "@tscircuit/props",
         typeSpecificProps: props,
         footprintString,
+        rawFootprinterString,
         validPinCounts: [2],
         expectedDisplayValues: [sourceComponent.display_value].filter(
           (v): v is string => Boolean(v),
         ),
+        expectedSymbolBaseNames: ["fuse"],
+        symbolOrientationStyle: "axis",
       }
     }
 
@@ -529,7 +621,7 @@ export const getTypedComponentTemplateSpec = ({
         return undefined
       }
       const isBatterySymbol =
-        schematicComponent?.symbol_name?.startsWith("battery") === true
+        schematicComponent?.symbol_name?.startsWith("battery_") === true
       return {
         tagName: isBatterySymbol ? "battery" : "powersource",
         propsTypeName: isBatterySymbol ? "BatteryProps" : "PowerSourceProps",
@@ -541,10 +633,15 @@ export const getTypedComponentTemplateSpec = ({
           }),
         ],
         footprintString,
+        rawFootprinterString,
         validPinCounts: [2],
         expectedDisplayValues: [sourceComponent.display_value].filter(
           (v): v is string => Boolean(v),
         ),
+        expectedSymbolBaseNames: [
+          isBatterySymbol ? "battery" : "power_factor_meter",
+        ],
+        symbolOrientationStyle: isBatterySymbol ? "compass" : "axis",
       }
     }
 
@@ -585,16 +682,26 @@ export const getTypedComponentTemplateSpec = ({
       if (sourceComponent.duty_cycle !== undefined) {
         props.push(`dutyCycle={${sourceComponent.duty_cycle}}`)
       }
+      const expectedSymbolBaseNames =
+        sourceComponent.wave_shape === "square"
+          ? ["square_wave"]
+          : !sourceComponent.wave_shape ||
+              sourceComponent.wave_shape === "sinewave"
+            ? ["ac_voltmeter"]
+            : []
       return {
         tagName: "voltagesource",
         propsTypeName: "VoltageSourceProps",
         propsImportSource: "@tscircuit/props",
         typeSpecificProps: props,
         footprintString,
+        rawFootprinterString,
         validPinCounts: [2],
         expectedDisplayValues: [sourceComponent.display_value].filter(
           (v): v is string => Boolean(v),
         ),
+        expectedSymbolBaseNames,
+        symbolOrientationStyle: "compass",
       }
     }
 
@@ -631,11 +738,14 @@ export const getTypedComponentTemplateSpec = ({
         footprintString: hasIntrinsicFootprintProps
           ? undefined
           : footprintString,
+        rawFootprinterString,
         hasIntrinsicFootprintProps,
         validPinCounts: [1],
         expectedDisplayValues: [sourceComponent.display_value].filter(
           (v): v is string => Boolean(v),
         ),
+        expectedSymbolBaseNames: ["testpoint"],
+        symbolOrientationStyle: "compass",
       }
     }
 
