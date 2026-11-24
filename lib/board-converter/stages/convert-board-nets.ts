@@ -6,12 +6,14 @@ export const convertBoardNets: BoardConverterStage = ({
   boardProps,
   circuitJson,
   footprintConversionContext,
+  nativeBoardComponents,
 }) => {
   boardChildren.push(
     ...generateBoardNetsTsx(circuitJson, footprintConversionContext),
   )
   if (
     circuitJson.some((element) => element.type === "pcb_trace") &&
+    !nativeBoardComponents.canAutorouteAllPcbTraces &&
     !boardProps.includes("routingDisabled")
   ) {
     boardProps.push("routingDisabled")

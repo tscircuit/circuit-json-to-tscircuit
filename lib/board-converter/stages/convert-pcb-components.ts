@@ -39,6 +39,7 @@ const getComponentFootprintTsx = ({
 export const convertPcbComponents: BoardConverterStage = ({
   circuitJson,
   footprintConversionContext,
+  nativeBoardComponents,
   pcbComponentRuntimeNameByPcbComponentId,
   pcbBoard,
   boardChildren,
@@ -139,6 +140,94 @@ export const convertPcbComponents: BoardConverterStage = ({
           pcbBoard,
         })
       : []
+    const nativeComponent =
+      nativeBoardComponents.nativeBoardComponentByPcbComponentId.get(
+        pcbComponent.pcb_component_id,
+      )
+    if (nativeComponent) {
+      const { spec, usesIntrinsicFootprint, schX, schY, schRotation } =
+        nativeComponent
+      const typedProps = [
+        `name=${formatJsxStringAttribute(componentName)}`,
+        ...spec.typeSpecificProps,
+      ]
+      if (usesIntrinsicFootprint) {
+        if (spec.footprintString) {
+          typedProps.push(
+            `footprint=${formatJsxStringAttribute(spec.footprintString)}`,
+          )
+        }
+      } else if (footprintTsx) {
+        typedProps.push(`footprint={${footprintTsx}}`)
+      }
+
+      if (componentPosition.x !== 0 || componentPosition.y === 0) {
+        typedProps.push(`pcbX={${componentPosition.x}}`)
+      }
+      if (componentPosition.y !== 0 || componentPosition.x === 0) {
+        typedProps.push(`pcbY={${componentPosition.y}}`)
+      }
+      if (pcbComponent.rotation !== 0) {
+        typedProps.push(`pcbRotation="${pcbComponent.rotation}deg"`)
+      }
+      if (pcbComponent.layer !== "top") {
+        typedProps.push(`layer="${pcbComponent.layer}"`)
+      }
+      if (schX !== 0 || schY === 0) {
+        typedProps.push(`schX={${schX}}`)
+      }
+      if (schY !== 0 || schX === 0) {
+        typedProps.push(`schY={${schY}}`)
+      }
+      if (schRotation !== 0) {
+        typedProps.push(`schRotation={${schRotation}}`)
+      }
+      if (cadModelTsx) {
+        typedProps.push(`cadModel={${cadModelTsx}}`)
+      }
+      if (
+        localizedCadModelGroup &&
+        isJscadCadModelGroupTranslucent(localizedCadModelGroup)
+      ) {
+        typedProps.push("showAsTranslucentModel")
+      }
+      if (sourceComponent?.manufacturer_part_number) {
+        typedProps.push(
+          `manufacturerPartNumber=${formatJsxStringAttribute(sourceComponent.manufacturer_part_number)}`,
+        )
+      }
+      if (sourceComponent?.supplier_part_numbers) {
+        const nonEmptySupplierPartNumbers = Object.fromEntries(
+          Object.entries(sourceComponent.supplier_part_numbers).filter(
+            ([, partNumbers]) =>
+              Array.isArray(partNumbers) && partNumbers.length > 0,
+          ),
+        )
+        if (Object.keys(nonEmptySupplierPartNumbers).length > 0) {
+          typedProps.push(
+            `supplierPartNumbers={${JSON.stringify(nonEmptySupplierPartNumbers)}}`,
+          )
+        }
+      }
+      if (pcbComponent.do_not_place === true) {
+        typedProps.push("doNotPlace")
+      }
+      if (pcbComponent.is_allowed_to_be_off_board === true) {
+        typedProps.push("allowOffBoard")
+      }
+      if (pcbComponent.obstructs_within_bounds === false) {
+        typedProps.push("obstructsWithinBounds={false}")
+      }
+
+      const typedOpeningTsx = `<${spec.tagName} ${typedProps.join(" ")}`
+      boardChildren.push(
+        childModelElementsTsx.length === 0
+          ? `${typedOpeningTsx} />`
+          : `${typedOpeningTsx}>${childModelElementsTsx.join("\n")}</${spec.tagName}>`,
+      )
+      continue
+    }
+
     const componentProps = [
       `name=${formatJsxStringAttribute(componentName)}`,
       `pcbX={${componentPosition.x}}`,

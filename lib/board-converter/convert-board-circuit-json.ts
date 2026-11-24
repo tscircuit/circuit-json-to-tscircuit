@@ -5,6 +5,7 @@ import type {
 } from "./BoardConverterContext"
 import { createComponentPreservingBoardConversionContext } from "./create-component-preserving-board-conversion-context"
 import { getBoardChildRuntimeNames } from "./get-board-child-runtime-names"
+import { getNativeBoardComponents } from "./get-native-board-components"
 import { convertBoardCadModels } from "./stages/convert-board-cad-models"
 import { convertBoardNets } from "./stages/convert-board-nets"
 import { convertBoardProperties } from "./stages/convert-board-properties"
@@ -45,6 +46,7 @@ export const convertBoardCircuitJson = ({
     pcbComponentRuntimeNameByPcbComponentId,
     standaloneCadModelRuntimeNameByCadComponentId,
   } = getBoardChildRuntimeNames(circuitJson)
+  const nativeBoardComponents = getNativeBoardComponents(circuitJson)
 
   const context: BoardConverterContext = {
     circuitJson,
@@ -54,8 +56,11 @@ export const convertBoardCircuitJson = ({
         circuitJson,
         pcbChipName,
         pcbComponentRuntimeNameByPcbComponentId,
+        nativeBoardComponentByPcbComponentId:
+          nativeBoardComponents.nativeBoardComponentByPcbComponentId,
       },
     ),
+    nativeBoardComponents,
     pcbComponentRuntimeNameByPcbComponentId,
     standaloneCadModelRuntimeNameByCadComponentId,
     pcbBoard,
