@@ -16,7 +16,7 @@ export const convertNotes: FootprintElementConverter = (circuitJson) => {
     const colorAttr = noteText.color ? ` color="${noteText.color}"` : ""
 
     elementStrings.push(
-      `<pcbnotetext pcbX={${anchorPosition.x}} pcbY={${anchorPosition.y}} anchorAlignment="${noteText.anchor_alignment ?? "center"}" font="${noteText.font ?? "tscircuit2024"}" fontSize={${noteText.font_size ?? 0}} text="${escapeJsxText(noteText.text)}"${colorAttr} />`,
+      `<pcbnotetext pcbX={${anchorPosition.x}} pcbY={${anchorPosition.y}} anchorAlignment="${noteText.anchor_alignment ?? "center"}" font="${noteText.font ?? "tscircuit2024"}" fontSize={${noteText.font_size ?? 0}} text="${escapeJsxText(noteText.text)}"${colorAttr}${noteText.layer === "bottom" ? ` layer="bottom"` : ""} />`,
     )
   }
 
@@ -30,6 +30,7 @@ export const convertNotes: FootprintElementConverter = (circuitJson) => {
       `strokeWidth={${noteRect.stroke_width ?? 0}}`,
     ]
 
+    if (noteRect.layer === "bottom") attrs.push(`layer="bottom"`)
     if (noteRect.is_filled !== undefined) {
       attrs.push(`isFilled={${noteRect.is_filled}}`)
     }
@@ -52,6 +53,7 @@ export const convertNotes: FootprintElementConverter = (circuitJson) => {
   for (const notePath of notePaths) {
     const attrs = [`route={${JSON.stringify(notePath.route ?? [])}}`]
 
+    if (notePath.layer === "bottom") attrs.push(`layer="bottom"`)
     if (notePath.stroke_width !== undefined) {
       attrs.push(`strokeWidth={${notePath.stroke_width}}`)
     }
@@ -70,6 +72,7 @@ export const convertNotes: FootprintElementConverter = (circuitJson) => {
       `y2={${noteLine.y2 ?? 0}}`,
     ]
 
+    if (noteLine.layer === "bottom") attrs.push(`layer="bottom"`)
     if (noteLine.stroke_width !== undefined) {
       attrs.push(`strokeWidth={${noteLine.stroke_width}}`)
     }
