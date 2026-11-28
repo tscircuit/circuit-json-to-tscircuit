@@ -4,11 +4,13 @@ import type {
   PcbComponentRuntimeNameByPcbComponentId,
   StandaloneCadModelRuntimeNameByCadComponentId,
 } from "./get-board-child-runtime-names"
+import type { NativeBoardComponentsResult } from "./get-native-board-components"
 
 export interface BoardConverterContext {
   circuitJson: AnyCircuitElement[]
   copperPourMode?: "preserve" | "recompute"
   footprintConversionContext: FootprintConversionContext
+  nativeBoardComponents: NativeBoardComponentsResult
   pcbComponentRuntimeNameByPcbComponentId: PcbComponentRuntimeNameByPcbComponentId
   standaloneCadModelRuntimeNameByCadComponentId: StandaloneCadModelRuntimeNameByCadComponentId
   pcbBoard: PcbBoard
