@@ -287,6 +287,27 @@ const comparePlatedHoles = (
   })
 }
 
+const tryBuildFootprinterElements = (
+  rawFootprinterString?: string,
+): AnyCircuitElement[] | undefined => {
+  const trimmed = rawFootprinterString?.trim()
+  if (!trimmed) return undefined
+
+  try {
+    const fpElements = fp.string(trimmed).circuitJson() as AnyCircuitElement[]
+    if (!Array.isArray(fpElements) || fpElements.length === 0) {
+      return undefined
+    }
+    return fpElements
+  } catch {
+    return undefined
+  }
+}
+
+export const isFootprinterStringSupported = (
+  rawFootprinterString?: string,
+): boolean => tryBuildFootprinterElements(rawFootprinterString) !== undefined
+
 export const doesLocalizedFootprintMatchLibrary = ({
   localizedElements,
   rawFootprinterString,
@@ -298,16 +319,8 @@ export const doesLocalizedFootprintMatchLibrary = ({
   componentName?: string
   sourcePorts?: SourcePort[]
 }): boolean => {
-  const trimmed = rawFootprinterString?.trim()
-  if (!trimmed) return false
-
-  let fpElements: AnyCircuitElement[]
-  try {
-    fpElements = fp.string(trimmed).circuitJson() as AnyCircuitElement[]
-  } catch {
-    return false
-  }
-  if (!Array.isArray(fpElements) || fpElements.length === 0) {
+  const fpElements = tryBuildFootprinterElements(rawFootprinterString)
+  if (!fpElements) {
     return false
   }
 

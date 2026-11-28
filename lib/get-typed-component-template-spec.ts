@@ -516,7 +516,7 @@ export const getTypedComponentTemplateSpec = ({
         typeSpecificProps: props,
         footprintString,
         rawFootprinterString,
-        validPinCounts: [2, 3, 4],
+        validPinCounts: [2],
         expectedDisplayValues: [],
         expectedSymbolBaseNames: ["crystal"],
         symbolOrientationStyle: "compass",

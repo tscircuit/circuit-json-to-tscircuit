@@ -126,29 +126,34 @@ const isSchematicSymbolCompatible = ({
   }
 
   const symbol = symbols[symbolName as keyof typeof symbols]
-  if (!symbol) {
+  if (
+    !symbol ||
+    !schematicComponent.size ||
+    symbol.size.width <= 0 ||
+    symbol.size.height <= 0 ||
+    schematicComponent.size.width <= 0 ||
+    schematicComponent.size.height <= 0
+  ) {
     return false
   }
 
-  if (schematicPorts.length > 0) {
-    const transform = getSymbolToSchematicTransform({
-      symbol,
-      schematicComponent,
-      schematicPorts,
-      sourcePorts,
-      includeSchematicPinNumbers: true,
-    })
-    const mappedCenter = applyToPoint(transform, symbol.center)
-    if (
-      Math.abs(transform.a - 1) > 0.05 ||
-      Math.abs(transform.d - 1) > 0.05 ||
-      Math.abs(transform.b) > 0.05 ||
-      Math.abs(transform.c) > 0.05 ||
-      Math.abs(mappedCenter.x - schematicComponent.center.x) > 0.01 ||
-      Math.abs(mappedCenter.y - schematicComponent.center.y) > 0.01
-    ) {
-      return false
-    }
+  const transform = getSymbolToSchematicTransform({
+    symbol,
+    schematicComponent,
+    schematicPorts,
+    sourcePorts,
+    includeSchematicPinNumbers: true,
+  })
+  const mappedCenter = applyToPoint(transform, symbol.center)
+  if (
+    Math.abs(transform.a - 1) > 0.05 ||
+    Math.abs(transform.d - 1) > 0.05 ||
+    Math.abs(transform.b) > 0.05 ||
+    Math.abs(transform.c) > 0.05 ||
+    Math.abs(mappedCenter.x - schematicComponent.center.x) > 0.01 ||
+    Math.abs(mappedCenter.y - schematicComponent.center.y) > 0.01
+  ) {
+    return false
   }
 
   return true

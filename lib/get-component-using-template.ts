@@ -6,7 +6,10 @@ import type {
   SourcePort,
 } from "circuit-json"
 import { localizePcbComponentElements } from "./board-converter/localize-pcb-component-elements"
-import { doesLocalizedFootprintMatchLibrary } from "./does-localized-footprint-match-library"
+import {
+  doesLocalizedFootprintMatchLibrary,
+  isFootprinterStringSupported,
+} from "./does-localized-footprint-match-library"
 import { formatJsxStringAttribute } from "./format-jsx-string-attribute"
 import { generateFootprintTsx } from "./generate-footprint-tsx"
 import { generateSymbolTsx } from "./generate-symbol-tsx"
@@ -88,14 +91,14 @@ export const getComponentUsingTemplate = ({
       const localizedElements = pcbComponent
         ? localizePcbComponentElements({ circuitJson, pcbComponent })
         : circuitJson
-      const canUseIntrinsicFootprint =
-        !footprintTsx ||
-        doesLocalizedFootprintMatchLibrary({
-          localizedElements,
-          rawFootprinterString: spec.rawFootprinterString,
-          componentName: sourceComponent.name,
-          sourcePorts,
-        })
+      const canUseIntrinsicFootprint = footprintTsx
+        ? doesLocalizedFootprintMatchLibrary({
+            localizedElements,
+            rawFootprinterString: spec.rawFootprinterString,
+            componentName: sourceComponent.name,
+            sourcePorts,
+          })
+        : isFootprinterStringSupported(spec.rawFootprinterString)
       const nonEmptySourceSupplierParts = sourceComponent.supplier_part_numbers
         ? Object.fromEntries(
             Object.entries(sourceComponent.supplier_part_numbers).filter(
