@@ -63,6 +63,7 @@ test("keeps 3-pin and 4-pin simple_resonator components on the generic chip path
       center: { x: 0, y: 0 },
       size: { width: 1, height: 1 },
       symbol_name: "crystal_horz",
+      is_box_with_pins: false,
     },
   ]
 
@@ -146,6 +147,7 @@ test("rejects portless scaled schematic symbols from native board reconstruction
       center: { x: 0, y: 0 },
       size: { width: 4.5, height: 2.0 },
       symbol_name: "boxresistor_horz",
+      is_box_with_pins: false,
     },
   ]
 
@@ -195,6 +197,8 @@ test("omits unsupported raw footprinter_string when no PCB primitives are presen
       source_component_id: "source_component_0",
       position: { x: 0, y: 0, z: 0 },
       footprinter_string: "not_a_real_footprinter_name",
+      anchor_alignment: "center",
+      model_object_fit: "contain_within_bounds",
     },
   ]
 
